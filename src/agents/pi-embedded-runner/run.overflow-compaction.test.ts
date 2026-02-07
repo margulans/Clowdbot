@@ -129,7 +129,21 @@ vi.mock("../pi-embedded-helpers.js", async () => {
     isContextOverflowError: (msg?: string) => {
       if (!msg) return false;
       const lower = msg.toLowerCase();
-      return lower.includes("request_too_large") || lower.includes("request size exceeds");
+      return (
+        lower.includes("request_too_large") ||
+        lower.includes("request size exceeds") ||
+        lower.includes("exceed context limit")
+      );
+    },
+    isLikelyContextOverflowError: (msg?: string) => {
+      if (!msg) return false;
+      const lower = msg.toLowerCase();
+      return (
+        lower.includes("request_too_large") ||
+        lower.includes("request size exceeds") ||
+        lower.includes("exceed context limit") ||
+        lower.includes("context overflow")
+      );
     },
     isFailoverAssistantError: vi.fn(() => false),
     isFailoverErrorMessage: vi.fn(() => false),
@@ -263,6 +277,74 @@ describe("overflow compaction in run loop", () => {
     expect(mockedCompactDirect).toHaveBeenCalledTimes(1);
     // Two attempts: first overflow -> compact -> retry -> second overflow -> return error
     expect(mockedRunEmbeddedAttempt).toHaveBeenCalledTimes(2);
+    expect(result.meta.error?.kind).toBe("context_overflow");
+    expect(result.payloads?.[0]?.isError).toBe(true);
+  });
+
+  it("triggers auto-compaction on assistant errorMessage context overflow (not promptError)", async () => {
+    // When pi-ai embeds the error in lastAssistant.errorMessage instead of throwing,
+    // auto-compaction should still trigger.
+    const assistantWithError = {
+      stopReason: "error" as const,
+      errorMessage:
+        '{"type":"error","error":{"type":"invalid_request_error","message":"input length and max_tokens exceed context limit: 170618 + 34048 > 200000"}}',
+      content: [],
+    };
+
+    mockedRunEmbeddedAttempt
+      .mockResolvedValueOnce(
+        makeAttemptResult({
+          promptError: null,
+          lastAssistant: assistantWithError as any,
+        }),
+      )
+      .mockResolvedValueOnce(makeAttemptResult({ promptError: null }));
+
+    mockedCompactDirect.mockResolvedValueOnce({
+      ok: true,
+      compacted: true,
+      result: {
+        summary: "Compacted session",
+        firstKeptEntryId: "entry-5",
+        tokensBefore: 170000,
+      },
+    });
+
+    const result = await runEmbeddedPiAgent(baseParams);
+
+    expect(mockedCompactDirect).toHaveBeenCalledTimes(1);
+    expect(mockedRunEmbeddedAttempt).toHaveBeenCalledTimes(2);
+    expect(log.warn).toHaveBeenCalledWith(
+      expect.stringContaining("context overflow detected in assistant error"),
+    );
+    expect(log.info).toHaveBeenCalledWith(expect.stringContaining("auto-compaction succeeded"));
+    expect(result.meta.error).toBeUndefined();
+  });
+
+  it("returns error when assistant errorMessage overflow compaction fails", async () => {
+    const assistantWithError = {
+      stopReason: "error" as const,
+      errorMessage: "input length and max_tokens exceed context limit: 170618 + 34048 > 200000",
+      content: [],
+    };
+
+    mockedRunEmbeddedAttempt.mockResolvedValue(
+      makeAttemptResult({
+        promptError: null,
+        lastAssistant: assistantWithError as any,
+      }),
+    );
+
+    mockedCompactDirect.mockResolvedValueOnce({
+      ok: false,
+      compacted: false,
+      reason: "nothing to compact",
+    });
+
+    const result = await runEmbeddedPiAgent(baseParams);
+
+    expect(mockedCompactDirect).toHaveBeenCalledTimes(1);
+    expect(mockedRunEmbeddedAttempt).toHaveBeenCalledTimes(1);
     expect(result.meta.error?.kind).toBe("context_overflow");
     expect(result.payloads?.[0]?.isError).toBe(true);
   });
