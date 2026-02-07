@@ -1,0 +1,9 @@
+{
+  "gateway": {
+    "mode": "remote",
+    "remote": {
+      "url": "ws://100.73.176.127:18789",
+      "token": "<GATEWAY_AUTH_TOKEN>"
+    }
+  }
+}

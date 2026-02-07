@@ -1,16 +1,11 @@
-# 💻 Конфигурация Mac Node
+# Конфигурация Mac Node
 
-## Параметры
+## Mac как Node для OpenClaw Gateway
 
-| Параметр | Значение |
-|----------|----------|
-| Hostname | `nano-m4-macbook-pro` |
-| Tailscale IP | `100.91.12.108` |
-| Node Name | `mac-files` |
-| Node ID | `5da5ec985d8a963a04a6723fd325bf1dd5c563cde23f852f207df1fdc19cd723` |
-| Capabilities | `browser`, `system` |
+Mac подключается к серверному Gateway через Tailscale как удалённый node,
+предоставляя доступ к файловой системе и shell.
 
-## OpenClaw конфигурация
+## OpenClaw конфиг
 
 ### Путь: `~/.openclaw/openclaw.json`
 
@@ -20,136 +15,82 @@
     "mode": "remote",
     "remote": {
       "url": "ws://100.73.176.127:18789",
-      "token": "<GATEWAY_TOKEN>"
+      "token": "<GATEWAY_AUTH_TOKEN>"
     }
   }
 }
 ```
 
-## Node Service (LaunchAgent)
+## LaunchAgent
 
 ### Путь: `~/Library/LaunchAgents/ai.openclaw.node.plist`
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>ai.openclaw.node</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/opt/homebrew/bin/node</string>
-        <string>/opt/homebrew/lib/node_modules/openclaw/dist/index.js</string>
-        <string>node</string>
-        <string>run</string>
-        <string>--host</string>
-        <string>100.73.176.127</string>
-        <string>--port</string>
-        <string>18789</string>
-        <string>--display-name</string>
-        <string>mac-files</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>KeepAlive</key>
-    <true/>
-</dict>
-</plist>
-```
+- **Label:** `ai.openclaw.node`
+- **RunAtLoad:** true
+- **KeepAlive:** true
+- **Display Name:** `mac-files`
+- **Host:** `100.73.176.127`
+- **Port:** `18789`
+- **Logs:** `~/.openclaw/logs/node.log`, `~/.openclaw/logs/node.err.log`
 
 ### Управление
 
 ```bash
-# Статус
-openclaw node status
-
 # Перезапуск
+launchctl unload ~/Library/LaunchAgents/ai.openclaw.node.plist
+launchctl load ~/Library/LaunchAgents/ai.openclaw.node.plist
+
+# Через OpenClaw CLI
 openclaw node restart
-
-# Остановка
-openclaw node stop
-
-# Удаление
-openclaw node uninstall
-
-# Установка
-openclaw node install --host 100.73.176.127 --port 18789 --display-name "mac-files"
 ```
 
-## Exec Approvals (разрешённые команды)
+## Exec-Approvals
 
 ### Путь: `~/.openclaw/exec-approvals.json`
 
-```json
-{
-  "version": 1,
-  "socket": {
-    "path": "/Users/margulanseissembayev/.openclaw/exec-approvals.sock",
-    "token": "<EXEC_APPROVALS_TOKEN>"
-  },
-  "defaults": {},
-  "agents": {
-    "*": {
-      "allowlist": [
-        {"pattern": "/Users/margulanseissembayev/.openclaw/cleanup-scripts/start-cleanup.sh"},
-        {"pattern": "/Users/margulanseissembayev/.openclaw/cleanup-scripts/confirm-cleanup.sh"},
-        {"pattern": "/Users/margulanseissembayev/.openclaw/cleanup-scripts/rollback-cleanup.sh"},
-        {"pattern": "/Users/margulanseissembayev/.openclaw/cleanup-scripts/cleanup-status.sh"},
-        {"pattern": "/bin/ls"},
-        {"pattern": "/bin/rm"},
-        {"pattern": "/usr/bin/du"},
-        {"pattern": "/usr/bin/find"},
-        {"pattern": "/bin/cat"},
-        {"pattern": "/usr/bin/file"}
-      ]
-    }
-  }
-}
-```
+Актуальный файл: `mac-exec-approvals.json` в этой директории.
+
+### Разрешённые команды:
+
+| Паттерн | Описание |
+|---------|----------|
+| `~/.openclaw/cleanup-scripts/*` | Скрипты очистки |
+| `/bin/ls` | Просмотр файлов |
+| `/bin/rm` | Удаление (с подтверждением) |
+| `/bin/mv` | Перемещение файлов |
+| `/bin/cp` | Копирование файлов |
+| `/bin/mkdir` | Создание папок |
+| `/bin/cat` | Чтение файлов |
+| `/usr/bin/du` | Размер файлов |
+| `/usr/bin/find` | Поиск файлов |
+| `/usr/bin/file` | Тип файла |
+| `/usr/bin/head` | Начало файла |
+| `/usr/bin/tail` | Конец файла |
+| `/usr/bin/wc` | Подсчёт строк |
+| `/usr/bin/grep` | Поиск в файлах |
+| `/usr/bin/sort` | Сортировка |
+| `/usr/bin/open` | Открытие файлов |
 
 ## Скрипты очистки
 
 ### Путь: `~/.openclaw/cleanup-scripts/`
 
-| Скрипт | Назначение |
-|--------|------------|
-| `start-cleanup.sh` | Начать сессию (создать бэкап) |
-| `confirm-cleanup.sh` | Завершить сессию (удалить бэкап) |
-| `rollback-cleanup.sh` | Откатить изменения |
-| `cleanup-status.sh` | Проверить статус сессии |
-| `auto-cleanup-old-backups.sh` | Автоудаление старых бэкапов (cron) |
+Актуальные скрипты: `mac-cleanup-scripts/` в этой директории.
 
-### Бэкапы: `~/.openclaw/cleanup-backups/`
+| Скрипт | Описание |
+|--------|----------|
+| `start-cleanup.sh` | Создать бэкап перед очисткой |
+| `confirm-cleanup.sh` | Удалить бэкап после успешной очистки |
+| `rollback-cleanup.sh` | Откатить изменения из бэкапа |
+| `cleanup-status.sh` | Проверить статус текущей сессии |
+| `auto-cleanup-old-backups.sh` | Автоудаление бэкапов старше 24ч |
 
-## Cron задачи
-
-```bash
-# Автоочистка бэкапов старше 24 часов (каждый час)
-0 * * * * /Users/margulanseissembayev/.openclaw/cleanup-scripts/auto-cleanup-old-backups.sh
-```
-
-Проверить crontab:
-```bash
-crontab -l
-```
-
-## SSH ключ для сервера
-
-### Путь: `~/.ssh/id_ed25519`
-
-Публичный ключ добавлен на сервер в `~/.ssh/authorized_keys` пользователя `openclaw`.
-
-## Логи
-
-```bash
-# Логи node
-tail -f ~/.openclaw/logs/node.log
-
-# Или через launchd
-log show --predicate 'subsystem == "ai.openclaw.node"' --last 1h
-```
+### Директории для бэкапов:
+- `~/Downloads`
+- `~/Desktop`
+- `~/Documents`
+- `~/Pictures`
 
 ---
 
-*Последнее обновление: 2026-02-05*
+*Последнее обновление: 2026-02-07*

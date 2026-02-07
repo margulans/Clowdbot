@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/Users/margulanseissembayev/.openclaw/exec-approvals.sock",
+    "token": "<EXEC_APPROVALS_TOKEN>"
+  },
+  "defaults": {},
+  "agents": {
+    "*": {
+      "allowlist": [
+        {"pattern": "/Users/margulanseissembayev/.openclaw/cleanup-scripts/*"},
+        {"pattern": "/bin/ls"},
+        {"pattern": "/bin/rm"},
+        {"pattern": "/bin/mv"},
+        {"pattern": "/bin/cp"},
+        {"pattern": "/bin/mkdir"},
+        {"pattern": "/bin/cat"},
+        {"pattern": "/usr/bin/du"},
+        {"pattern": "/usr/bin/find"},
+        {"pattern": "/usr/bin/file"},
+        {"pattern": "/usr/bin/head"},
+        {"pattern": "/usr/bin/tail"},
+        {"pattern": "/usr/bin/wc"},
+        {"pattern": "/usr/bin/grep"},
+        {"pattern": "/usr/bin/sort"},
+        {"pattern": "/usr/bin/open"}
+      ]
+    }
+  }
+}
