@@ -96,6 +96,32 @@ systemctl --user start openclaw-gateway
 - **Allowed User ID:** `685668909`
 - **Telegram Bot:** `@neironassistant_bot`
 
+## Репозиторий Clowdbot
+
+На сервере клонирован репозиторий для работы через Telegram:
+
+| Параметр | Значение |
+|----------|----------|
+| Путь | `~/Clowdbot` |
+| Remote | `https://github.com/margulans/Clowdbot` |
+| Branch | `main` |
+
+### Синхронизация
+
+```bash
+# На сервере (через Telegram или SSH)
+cd ~/Clowdbot && git pull origin main
+
+# Или через skill /git (автоматически делает pull + commit + push)
+```
+
+## Skills (пользовательские команды)
+
+| Skill | Путь | Команда |
+|-------|------|---------|
+| git-sync | `~/.openclaw/skills/git-sync/SKILL.md` | `/git` |
+| digest | `~/Clowdbot/.cursor/deployment/server-workspace/skills/digest/SKILL.md` | `/digest` |
+
 ## Полезные команды
 
 ```bash
