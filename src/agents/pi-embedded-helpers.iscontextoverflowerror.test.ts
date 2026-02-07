@@ -40,6 +40,20 @@ describe("isContextOverflowError", () => {
     }
   });
 
+  it("matches Anthropic 'exceed context limit' error format", () => {
+    // This is the format Anthropic returns when input + max_tokens exceeds the context window.
+    // Example: "input length and max_tokens exceed context limit: 171395 + 34048 > 200000"
+    const samples = [
+      "LLM request rejected: input length and max_tokens exceed context limit: 171395 + 34048 > 200000",
+      "input length and max_tokens exceed context limit",
+      "input length exceeds context limit",
+      '{"type":"error","error":{"type":"invalid_request_error","message":"input length and max_tokens exceed context limit: 172000 + 34048 > 200000"}}',
+    ];
+    for (const sample of samples) {
+      expect(isContextOverflowError(sample)).toBe(true);
+    }
+  });
+
   it("ignores unrelated errors", () => {
     expect(isContextOverflowError("rate limit exceeded")).toBe(false);
     expect(isContextOverflowError("request size exceeds upload limit")).toBe(false);

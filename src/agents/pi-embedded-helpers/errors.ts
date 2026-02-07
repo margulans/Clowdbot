@@ -12,6 +12,9 @@ export function isContextOverflowError(errorMessage?: string): boolean {
     lower.includes("context window") ||
     lower.includes("context length") ||
     lower.includes("maximum context length");
+  // Anthropic-style: "input length and max_tokens exceed context limit"
+  const hasExceedContextLimit =
+    lower.includes("exceed context limit") || lower.includes("exceeds context limit");
   return (
     lower.includes("request_too_large") ||
     lower.includes("request exceeds the maximum size") ||
@@ -21,6 +24,7 @@ export function isContextOverflowError(errorMessage?: string): boolean {
     lower.includes("exceeds model context window") ||
     (hasRequestSizeExceeds && hasContextWindow) ||
     lower.includes("context overflow") ||
+    hasExceedContextLimit ||
     (lower.includes("413") && lower.includes("too large"))
   );
 }
