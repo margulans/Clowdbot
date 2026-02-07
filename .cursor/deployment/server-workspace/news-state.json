@@ -1,0 +1,19 @@
+{
+  "lastChecks": {
+    "web_sources": null,
+    "telegram_channels": null, 
+    "rss_feeds": null,
+    "urgent_scan": null
+  },
+  "digestsSent": {
+    "morning": null,
+    "afternoon": null,
+    "evening": null
+  },
+  "seenArticles": [],
+  "totalArticlesProcessed": 0,
+  "relevantArticlesSent": 0,
+  "lastUpdate": null,
+  "version": "1.0",
+  "status": "initialized"
+}

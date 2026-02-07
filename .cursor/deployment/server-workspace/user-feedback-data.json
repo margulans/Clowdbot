@@ -1,0 +1,73 @@
+{
+  "user_id": 685668909,
+  "user_name": "@margulan_seissembai",
+  "learning_enabled": true,
+  "total_reactions": 0,
+  "last_analysis": null,
+  "reactions_log": [],
+  "learned_preferences": {
+    "categories": {
+      "AI": {
+        "weight": 2.0,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "vibe_coding": {
+        "weight": 1.9,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "robotics": {
+        "weight": 1.8,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "eVTOL": {
+        "weight": 1.7,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "technology": {
+        "weight": 1.6,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "business": {
+        "weight": 1.5,
+        "avg_score": 0,
+        "total_reactions": 0
+      },
+      "investments": {
+        "weight": 1.4,
+        "avg_score": 0,
+        "total_reactions": 0
+      }
+    },
+    "sources": {
+      "@serge_ai": {
+        "bonus": 15,
+        "avg_score": 0,
+        "total_reactions": 0
+      }
+    },
+    "keywords": {},
+    "optimal_length": null,
+    "preferred_time_freshness": null
+  },
+  "reaction_mapping": {
+    "👍": 3,
+    "❤️": 2,
+    "👌": 1,
+    "😐": 0,
+    "👎": -2,
+    "💩": -5
+  },
+  "analysis_schedule": "weekly",
+  "created_at": "2026-02-05T07:55:00Z",
+  "reaction_weights": {
+    "excellent": 10,
+    "like": 5,
+    "dislike": -3,
+    "trash": -5
+  }
+}

@@ -1,0 +1,525 @@
+{
+  "sources": {
+    "@serge_ai": {
+      "status": "user_recommended",
+      "category": "AI",
+      "total_reactions": 13,
+      "avg_rating": 2,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "proven",
+      "reaction_history": [
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:24.203Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.462Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.523Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.577Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.620Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.672Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.725Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.773Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.825Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.881Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.938Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:29.993Z",
+          "running_avg": 2
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:19:30.047Z",
+          "running_avg": 2
+        }
+      ]
+    },
+    "@ai_daily_digest": {
+      "status": "auto_discovered",
+      "category": "AI",
+      "total_reactions": 0,
+      "avg_rating": 0,
+      "first_added": "2026-02-05",
+      "priority_bonus": 9,
+      "exploration_status": "new",
+      "discovery_method": "citation_analysis",
+      "discovery_date": "2026-02-05T08:19:20.155Z",
+      "topics": [
+        "AI",
+        "research"
+      ]
+    },
+    "https://evtol.news/feed": {
+      "status": "auto_discovered",
+      "category": "eVTOL",
+      "total_reactions": 1,
+      "avg_rating": 1.5,
+      "first_added": "2026-02-05",
+      "priority_bonus": 9,
+      "exploration_status": "new",
+      "discovery_method": "citation_analysis",
+      "discovery_date": "2026-02-05T08:19:20.156Z",
+      "topics": [
+        "eVTOL",
+        "aviation"
+      ],
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:26:46.506Z",
+          "running_avg": 1.5
+        }
+      ]
+    },
+    "@robotics_today": {
+      "status": "auto_discovered",
+      "category": "robotics",
+      "total_reactions": 0,
+      "avg_rating": 0,
+      "first_added": "2026-02-05",
+      "priority_bonus": 7,
+      "exploration_status": "new",
+      "discovery_method": "trending_hashtags",
+      "discovery_date": "2026-02-05T08:19:20.156Z",
+      "topics": [
+        "robotics",
+        "automation"
+      ]
+    },
+    "https://t.me/data_secrets": {
+      "status": "user_recommended",
+      "category": "AI",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:27:09.669Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:27:14.959Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/khudaibergenkz": {
+      "status": "user_recommended",
+      "category": "business",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:29:50.341Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:30:00.932Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/vibecodings": {
+      "status": "user_recommended",
+      "category": "tools",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:29:53.715Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:30:00.989Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/cryptoEssay": {
+      "status": "user_recommended",
+      "category": "investments",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:29:56.446Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:30:01.044Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/banksta": {
+      "status": "user_recommended",
+      "category": "business",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:31:16.745Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:31:19.836Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/alexkrol": {
+      "status": "user_recommended",
+      "category": "business",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:32:11.533Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:32:15.397Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/andre_dataist": {
+      "status": "user_recommended",
+      "category": "AI",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:33:03.943Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:33:06.956Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/theworldisnoteasy": {
+      "status": "user_recommended",
+      "category": "business",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:33:47.916Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:33:51.552Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/robotless": {
+      "status": "user_recommended",
+      "category": "robotics",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:34:47.165Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:34:50.315Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/obsidianru": {
+      "status": "user_recommended",
+      "category": "tools",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:36:16.340Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:36:19.457Z",
+          "running_avg": 1.75
+        }
+      ]
+    },
+    "https://t.me/+UcKkr64NU1tmNTg0": {
+      "status": "user_recommended",
+      "category": "business",
+      "total_reactions": 2,
+      "avg_rating": 1.75,
+      "first_added": "2026-02-05",
+      "priority_bonus": 15,
+      "exploration_status": "new",
+      "reaction_history": [
+        {
+          "reaction": "🆕",
+          "value": 1.5,
+          "date": "2026-02-05T08:37:21.981Z",
+          "running_avg": 1.5
+        },
+        {
+          "reaction": "👍",
+          "value": 2,
+          "date": "2026-02-05T08:37:25.449Z",
+          "running_avg": 1.75
+        }
+      ]
+    }
+  },
+  "exploration_stats": {
+    "total_sources": 15,
+    "proven_sources": 1,
+    "exploration_sources": 14,
+    "rejected_sources": 0,
+    "last_discovery": "2026-02-05",
+    "discovery_rate_month": 0,
+    "quality_growth_rate": 0
+  },
+  "discovery_targets": {
+    "weekly_new_sources": 3,
+    "monthly_proven_promotions": 2,
+    "diversity_requirements": {
+      "min_sources_per_digest": 8,
+      "max_source_repeat_rate": 0.25,
+      "required_categories": [
+        "AI",
+        "robotics",
+        "eVTOL",
+        "business",
+        "investments"
+      ]
+    }
+  },
+  "digest_config": {
+    "min_news": 10,
+    "max_news": 15,
+    "target_news": 12,
+    "exploration_ratio": 0.33,
+    "quality_threshold": 5,
+    "adaptive_sizing": true,
+    "priority_system": "adaptive_hierarchical",
+    "topic_priorities": {
+      "AI": {
+        "priority_level": 1,
+        "weight": 10,
+        "max_share": 1.0,
+        "description": "Высший приоритет - может занять весь дайджест"
+      },
+      "robotics": {
+        "priority_level": 2,
+        "weight": 9,
+        "max_share": 0.8,
+        "description": "Второй приоритет"
+      },
+      "eVTOL": {
+        "priority_level": 3,
+        "weight": 8,
+        "max_share": 0.6,
+        "description": "Третий приоритет"
+      },
+      "tools": {
+        "priority_level": 4,
+        "weight": 7,
+        "max_share": 0.5,
+        "description": "Инструменты вайбкодинга"
+      },
+      "technology": {
+        "priority_level": 5,
+        "weight": 6,
+        "max_share": 0.4,
+        "description": "Общие технологии"
+      },
+      "business": {
+        "priority_level": 6,
+        "weight": 5,
+        "max_share": 0.3,
+        "description": "Бизнес новости"
+      },
+      "investments": {
+        "priority_level": 7,
+        "weight": 4,
+        "max_share": 0.2,
+        "description": "Инвестиции и финансы"
+      },
+      "other": {
+        "priority_level": 8,
+        "weight": 3,
+        "max_share": 0.1,
+        "description": "Прочие новости"
+      }
+    }
+  },
+  "exploration_queue": {
+    "high_priority": [],
+    "medium_priority": [
+      {
+        "name": "https://techcrunch.com/tag/artificial-intelligence/feed/",
+        "type": "rss_feed",
+        "discovery_method": "topic_clustering",
+        "relevance_score": 6.8,
+        "topics": [
+          "AI",
+          "business",
+          "startups"
+        ],
+        "keyword_matches": [
+          "artificial intelligence",
+          "startup funding"
+        ],
+        "discovered_date": "2026-02-05T08:19:20.156Z",
+        "status": "queued"
+      }
+    ],
+    "low_priority": [],
+    "scheduled_rediscovery": []
+  },
+  "source_categories": {
+    "proven": {
+      "threshold_reactions": 10,
+      "threshold_rating": 1.5,
+      "allocation_percent": 67
+    },
+    "exploration": {
+      "new_source_priority": 10,
+      "candidate_priority": 8,
+      "rotational_priority": 6,
+      "allocation_percent": 33
+    }
+  },
+  "anti_bubble_metrics": {
+    "source_diversity_index": 0,
+    "geographic_diversity": [],
+    "format_diversity": [],
+    "temporal_diversity": []
+  }
+}
