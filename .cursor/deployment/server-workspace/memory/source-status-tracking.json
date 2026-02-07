@@ -1,0 +1,82 @@
+{
+  "discovered_sources": {
+    "2026-02-06": [
+      {
+        "name": "Crescendo.ai",
+        "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates",
+        "category": "AI/ML",
+        "status": "candidate",
+        "discovered_date": "2026-02-06",
+        "quality_score": null,
+        "user_reactions": []
+      },
+      {
+        "name": "Berkeley AI Research (BAIR)",
+        "url": "https://bair.berkeley.edu/blog/",
+        "category": "AI/ML", 
+        "status": "candidate",
+        "discovered_date": "2026-02-06",
+        "quality_score": null,
+        "user_reactions": []
+      },
+      {
+        "name": "Hugging Face Community",
+        "url": "https://huggingface.co/blog",
+        "category": "AI/ML",
+        "status": "candidate", 
+        "discovered_date": "2026-02-06",
+        "quality_score": null,
+        "user_reactions": []
+      },
+      {
+        "name": "AeroTime.aero",
+        "url": "https://www.aerotime.aero/",
+        "category": "eVTOL/Aviation",
+        "status": "candidate",
+        "discovered_date": "2026-02-06", 
+        "quality_score": null,
+        "user_reactions": []
+      },
+      {
+        "name": "Habr.com", 
+        "url": "https://habr.com/",
+        "category": "AI/Tech",
+        "status": "recommended",
+        "discovered_date": "2026-02-06",
+        "quality_score": 9,
+        "user_reactions": ["user_recommended"],
+        "notes": "Recommended by user - Russian tech articles, high quality AI/startup content"
+      }
+    ]
+  },
+  "exploration_metrics": {
+    "total_sources_discovered_feb": 5,
+    "promotion_candidates": ["AeroTime.aero"],
+    "exploration_ratio_recent_digests": 0.40,
+    "user_satisfaction_signals": ["positive_reaction_to_matrix_evtol_news"],
+    "last_digest_stats": {
+      "date": "2026-02-06",
+      "type": "day",
+      "news_count": 14,
+      "sources_used": ["ScienceDaily", "Mezha.net", "ABC News", "GlobeNewswire", "AeroTime", "ZDNET", "New Atlas", "Auto Connected Car News", "Morocco World News", "AI News"],
+      "new_sources_ratio": 0.40
+    }
+  },
+  "rating_system": {
+    "platform": "telegram_channel_reactions",
+    "channel": "@newsneiron",
+    "reactions_mapping": {
+      "🔥": 10,
+      "👍": 5, 
+      "👎": -3,
+      "💩": -5
+    },
+    "filter_user_id": 685668909,
+    "dual_rating_enabled": true,
+    "multi_armed_bandit": {
+      "exploration_ratio": 0.30,
+      "exploitation_ratio": 0.70
+    },
+    "updated": "2026-02-06"
+  }
+}

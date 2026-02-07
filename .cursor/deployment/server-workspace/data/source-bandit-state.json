@@ -1,0 +1,285 @@
+{
+  "sources": {
+    "OpenAI Blog": {
+      "name": "OpenAI Blog",
+      "url": "openai.com/blog",
+      "category": "AI",
+      "totalScore": 25,
+      "timesSelected": 1,
+      "timesShown": 3,
+      "reactions": [
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414345,
+          "userId": 685668909
+        },
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414348,
+          "userId": 685668909
+        },
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414352,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "proven"
+    },
+    "Anthropic": {
+      "name": "Anthropic",
+      "url": "anthropic.com/news",
+      "category": "AI",
+      "totalScore": 20,
+      "timesSelected": 1,
+      "timesShown": 2,
+      "reactions": [
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414346,
+          "userId": 685668909
+        },
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414351,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "Habr.com": {
+      "name": "Habr.com",
+      "url": "habr.com",
+      "category": "AI/Tech",
+      "totalScore": 20,
+      "timesSelected": 1,
+      "timesShown": 3,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414346,
+          "userId": 685668909
+        },
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414348,
+          "userId": 685668909
+        },
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414352,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "ScienceDaily AI": {
+      "name": "ScienceDaily AI",
+      "url": "sciencedaily.com/ai",
+      "category": "AI",
+      "totalScore": 5,
+      "timesSelected": 1,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414347,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "TechCrunch AI": {
+      "name": "TechCrunch AI",
+      "url": "techcrunch.com/category/artificial-intelligence",
+      "category": "AI",
+      "totalScore": -8,
+      "timesSelected": 0,
+      "timesShown": 2,
+      "reactions": [
+        {
+          "reaction": "👎",
+          "score": -3,
+          "timestamp": 1770374414347,
+          "userId": 685668909
+        },
+        {
+          "reaction": "💩",
+          "score": -5,
+          "timestamp": 1770374414351,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": null,
+      "status": "candidate"
+    },
+    "Boston Dynamics": {
+      "name": "Boston Dynamics",
+      "url": "bostondynamics.com/blog",
+      "category": "Robotics",
+      "totalScore": 5,
+      "timesSelected": 1,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414348,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "IEEE Spectrum Robotics": {
+      "name": "IEEE Spectrum Robotics",
+      "url": "spectrum.ieee.org/robotics",
+      "category": "Robotics",
+      "totalScore": 0,
+      "timesSelected": 1,
+      "timesShown": 0,
+      "reactions": [],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "AeroTime": {
+      "name": "AeroTime",
+      "url": "aerotime.aero",
+      "category": "eVTOL",
+      "totalScore": 5,
+      "timesSelected": 1,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414350,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "Vertical Mag": {
+      "name": "Vertical Mag",
+      "url": "verticalmag.com",
+      "category": "eVTOL",
+      "totalScore": 5,
+      "timesSelected": 0,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414352,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": null,
+      "status": "candidate"
+    },
+    "GitHub Blog": {
+      "name": "GitHub Blog",
+      "url": "github.blog",
+      "category": "Coding",
+      "totalScore": 5,
+      "timesSelected": 0,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👍",
+          "score": 5,
+          "timestamp": 1770374414349,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": null,
+      "status": "candidate"
+    },
+    "Cursor Blog": {
+      "name": "Cursor Blog",
+      "url": "cursor.com/blog",
+      "category": "Coding",
+      "totalScore": 10,
+      "timesSelected": 1,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "timestamp": 1770374414351,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": 1770374414354,
+      "status": "candidate"
+    },
+    "TechStartups": {
+      "name": "TechStartups",
+      "url": "techstartups.com",
+      "category": "Business",
+      "totalScore": 0,
+      "timesSelected": 0,
+      "timesShown": 0,
+      "reactions": [],
+      "confidence": 0.5,
+      "lastUsed": null,
+      "status": "candidate"
+    },
+    "VC News Daily": {
+      "name": "VC News Daily",
+      "url": "vcnewsdaily.com",
+      "category": "Funding",
+      "totalScore": -3,
+      "timesSelected": 0,
+      "timesShown": 1,
+      "reactions": [
+        {
+          "reaction": "👎",
+          "score": -3,
+          "timestamp": 1770374414353,
+          "userId": 685668909
+        }
+      ],
+      "confidence": 0.5,
+      "lastUsed": null,
+      "status": "candidate"
+    }
+  },
+  "config": {
+    "explorationRate": 0.3,
+    "exploitationRate": 0.7,
+    "userId": 685668909,
+    "reactionScores": {
+      "🔥": 10,
+      "👍": 5,
+      "👎": -3,
+      "💩": -5
+    }
+  },
+  "timestamp": 1770374414354
+}

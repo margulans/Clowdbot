@@ -1,0 +1,603 @@
+{
+  "sourceRatings": {
+    "OpenAI Blog": {
+      "name": "OpenAI Blog",
+      "url": "https://openai.com/blog",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Anthropic News": {
+      "name": "Anthropic News",
+      "url": "https://anthropic.com/news",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "DeepMind Blog": {
+      "name": "DeepMind Blog",
+      "url": "https://deepmind.com/blog",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Hugging Face": {
+      "name": "Hugging Face",
+      "url": "https://huggingface.co/blog",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Papers With Code": {
+      "name": "Papers With Code",
+      "url": "https://paperswithcode.com",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "TechCrunch": {
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "The Verge": {
+      "name": "The Verge",
+      "url": "https://theverge.com",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Ars Technica": {
+      "name": "Ars Technica",
+      "url": "https://arstechnica.com",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Habr.com": {
+      "name": "Habr.com",
+      "url": "https://habr.com",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Hacker News": {
+      "name": "Hacker News",
+      "url": "https://news.ycombinator.com",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "IEEE Spectrum": {
+      "name": "IEEE Spectrum",
+      "url": "https://spectrum.ieee.org",
+      "category": "Robotics",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Vertical Magazine": {
+      "name": "Vertical Magazine",
+      "url": "https://verticalmag.com",
+      "category": "eVTOL",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Boston Dynamics": {
+      "name": "Boston Dynamics",
+      "url": "https://bostondynamics.com/news",
+      "category": "Robotics",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Joby Aviation": {
+      "name": "Joby Aviation",
+      "url": "https://jobyaviation.com/news",
+      "category": "eVTOL",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Tesla Blog": {
+      "name": "Tesla Blog",
+      "url": "https://tesla.com/blog/optimus-production",
+      "category": "Robotics",
+      "totalScore": 10,
+      "reactionsCount": 1,
+      "reactions": [
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "userId": 685668909,
+          "timestamp": 1770378156167
+        }
+      ],
+      "averageScore": 10,
+      "status": "candidate",
+      "lastReaction": 1770378156168
+    },
+    "Apple Newsroom": {
+      "name": "Apple Newsroom",
+      "url": "https://apple.com/newsroom/vision-pro-2",
+      "category": "Tech",
+      "totalScore": 10,
+      "reactionsCount": 1,
+      "reactions": [
+        {
+          "reaction": "🔥",
+          "score": 10,
+          "userId": 685668909,
+          "timestamp": 1770378156571
+        }
+      ],
+      "averageScore": 10,
+      "status": "candidate",
+      "lastReaction": 1770378156571
+    },
+    "High Rated Source": {
+      "name": "High Rated Source",
+      "url": "https://high.com",
+      "category": "AI",
+      "totalScore": 45,
+      "reactionsCount": 5,
+      "reactions": [],
+      "averageScore": 9,
+      "status": "proven",
+      "lastReaction": null
+    },
+    "Medium Rated Source": {
+      "name": "Medium Rated Source",
+      "url": "https://medium.com",
+      "category": "AI",
+      "totalScore": 15,
+      "reactionsCount": 5,
+      "reactions": [],
+      "averageScore": 3,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Low Rated Source": {
+      "name": "Low Rated Source",
+      "url": "https://low.com",
+      "category": "AI",
+      "totalScore": -10,
+      "reactionsCount": 5,
+      "reactions": [],
+      "averageScore": -2,
+      "status": "rejected",
+      "lastReaction": null
+    },
+    "New Source": {
+      "name": "New Source",
+      "url": "https://new.com",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    }
+  },
+  "expertRatings": {
+    "Андрей Карпатый": {
+      "name": "Андрей Карпатый",
+      "handle": "@karpathy",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Сэм Альтман": {
+      "name": "Сэм Альтман",
+      "handle": "@sama",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Демис Хассабис": {
+      "name": "Демис Хассабис",
+      "handle": "@demishassabis",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Ян Лекун": {
+      "name": "Ян Лекун",
+      "handle": "@ylecun",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Джеффри Хинтон": {
+      "name": "Джеффри Хинтон",
+      "handle": "@geoffreyhinton",
+      "category": "AI",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Илон Маск": {
+      "name": "Илон Маск",
+      "handle": "@elonmusk",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Сергей Брин": {
+      "name": "Сергей Брин",
+      "handle": "@sergeybrin",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Тим Кук": {
+      "name": "Тим Кук",
+      "handle": "@tim_cook",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Редакция Habr": {
+      "name": "Редакция Habr",
+      "handle": "@habr",
+      "category": "Tech",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Марк Райберт": {
+      "name": "Марк Райберт",
+      "handle": "@bostondynamics",
+      "category": "Robotics",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "JoeBen Bevirt": {
+      "name": "JoeBen Bevirt",
+      "handle": "@jobyaviation",
+      "category": "eVTOL",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Ральф Холлис": {
+      "name": "Ральф Холлис",
+      "handle": "@cmu_ri",
+      "category": "Robotics",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    },
+    "Vertical Magazine": {
+      "name": "Vertical Magazine",
+      "handle": "@verticalmag",
+      "category": "eVTOL",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "reactions": [],
+      "averageScore": 0,
+      "status": "candidate",
+      "lastReaction": null
+    }
+  },
+  "messageHistory": {
+    "msg_3": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/atlas-parkour-update"
+      },
+      "expert": {
+        "name": "Марк Райберт",
+        "handle": "@bostondynamics",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770378149654
+    },
+    "msg_5": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/gpt6"
+      },
+      "expert": {
+        "name": "Андрей Карпатый",
+        "handle": "@karpathy",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394332034
+    },
+    "msg_7": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Anthropic News",
+        "url": "https://anthropic.com/news/claude-opus-5"
+      },
+      "expert": {
+        "name": "Андрей Карпатый",
+        "handle": "@karpathy",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394333536
+    },
+    "msg_9": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/flying-atlas"
+      },
+      "expert": {
+        "name": "Андрей Карпатый",
+        "handle": "@karpathy",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394335039
+    },
+    "msg_11": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/gpt6"
+      },
+      "expert": {
+        "name": "Марк Райберт",
+        "handle": "@bostondynamics",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394336542
+    },
+    "msg_13": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Anthropic News",
+        "url": "https://anthropic.com/news/claude-opus-5"
+      },
+      "expert": {
+        "name": "Марк Райберт",
+        "handle": "@bostondynamics",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394338045
+    },
+    "msg_15": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/flying-atlas"
+      },
+      "expert": {
+        "name": "Марк Райберт",
+        "handle": "@bostondynamics",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394339546
+    },
+    "msg_17": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/gpt6"
+      },
+      "expert": {
+        "name": "JoeBen Bevirt",
+        "handle": "@jobyaviation",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394341049
+    },
+    "msg_19": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Anthropic News",
+        "url": "https://anthropic.com/news/claude-opus-5"
+      },
+      "expert": {
+        "name": "JoeBen Bevirt",
+        "handle": "@jobyaviation",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394342551
+    },
+    "msg_21": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/flying-atlas"
+      },
+      "expert": {
+        "name": "JoeBen Bevirt",
+        "handle": "@jobyaviation",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394344053
+    },
+    "msg_23": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "OpenAI Blog",
+        "url": "https://openai.com/blog/gpt6"
+      },
+      "expert": {
+        "name": "Илон Маск",
+        "handle": "@elonmusk",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394345556
+    },
+    "msg_25": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Anthropic News",
+        "url": "https://anthropic.com/news/claude-opus-5"
+      },
+      "expert": {
+        "name": "Илон Маск",
+        "handle": "@elonmusk",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394347058
+    },
+    "msg_27": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Boston Dynamics",
+        "url": "https://bostondynamics.com/news/flying-atlas"
+      },
+      "expert": {
+        "name": "Илон Маск",
+        "handle": "@elonmusk",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770394348560
+    },
+    "test_1770399754519": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Test Source",
+        "url": "https://test.com"
+      },
+      "expert": {
+        "name": "Марк Райберт",
+        "handle": "@bostondynamics",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770399754519
+    },
+    "test_1770399756022": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Test Source",
+        "url": "https://test.com"
+      },
+      "expert": {
+        "name": "JoeBen Bevirt",
+        "handle": "@jobyaviation",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770399756022
+    },
+    "test_1770399757523": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "Test Source",
+        "url": "https://test.com"
+      },
+      "expert": {
+        "name": "Илон Маск",
+        "handle": "@elonmusk",
+        "opinion": "Интересное развитие в данной области."
+      },
+      "timestamp": 1770399757524
+    }
+  },
+  "config": {
+    "userId": 685668909,
+    "reactionScores": {
+      "🔥": 10,
+      "👍": 5,
+      "👎": -3,
+      "💩": -5
+    }
+  },
+  "timestamp": 1770399759027
+}
