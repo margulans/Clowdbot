@@ -1,0 +1,90 @@
+{
+  "description": "Cron jobs для Dual Rating системы - готовые к добавлению в OpenClaw",
+  "timezone": "Asia/Dubai",
+  "jobs": [
+    {
+      "name": "Утренний умный дайджест",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "0 8 * * *", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "createScheduledSmartDigest('morning')" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    },
+    {
+      "name": "Дневной умный дайджест",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "0 13 * * *", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "createScheduledSmartDigest('afternoon')" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    },
+    {
+      "name": "Вечерний умный дайджест",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "0 18 * * *", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "createScheduledSmartDigest('evening')" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    },
+    {
+      "name": "Утренний брифинг",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "0 6 * * *", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "morning_action_plan()" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    },
+    {
+      "name": "Ежедневная рефлексия",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "30 20 * * *", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "daily_reflection()" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    },
+    {
+      "name": "Еженедельная аналитика рефлексий",
+      "schedule": { 
+        "kind": "cron", 
+        "expr": "30 20 * * 0", 
+        "tz": "Asia/Dubai" 
+      },
+      "payload": { 
+        "kind": "systemEvent", 
+        "text": "weekly_reflection_analytics()" 
+      },
+      "sessionTarget": "main",
+      "enabled": true
+    }
+  ]
+}
