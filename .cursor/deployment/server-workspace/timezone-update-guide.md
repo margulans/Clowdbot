@@ -19,14 +19,14 @@
 
 ### Для Алматы:
 ```bash
-openclaw cron update 1c292387-c997-46f1-b8a1-e5fd40059713 --schedule "0 8 * * *" --tz "Asia/Almaty"
+openclaw cron update 1c292387-c997-46f1-b8a1-e5fd40059713 --schedule "30 8 * * *" --tz "Asia/Almaty"
 openclaw cron update ba7c0bf7-f70a-4785-9a4d-4a443d40c4b8 --schedule "0 13 * * *" --tz "Asia/Almaty"  
 openclaw cron update 582cc3f0-9941-4e74-ae77-0afac52c6258 --schedule "0 18 * * *" --tz "Asia/Almaty"
 ```
 
 ### Для Москвы:
 ```bash
-openclaw cron update 1c292387-c997-46f1-b8a1-e5fd40059713 --schedule "0 8 * * *" --tz "Europe/Moscow"
+openclaw cron update 1c292387-c997-46f1-b8a1-e5fd40059713 --schedule "30 8 * * *" --tz "Europe/Moscow"
 openclaw cron update ba7c0bf7-f70a-4785-9a4d-4a443d40c4b8 --schedule "0 13 * * *" --tz "Europe/Moscow"
 openclaw cron update 582cc3f0-9941-4e74-ae77-0afac52c6258 --schedule "0 18 * * *" --tz "Europe/Moscow"
 ```

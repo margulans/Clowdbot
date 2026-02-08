@@ -165,9 +165,9 @@ async function processUserMessage(userMessage, userId) {
 ### Cron задачи для автоматических дайджестов
 
 ```javascript
-// Утренний дайджест: 08:00 местного времени (Asia/Dubai)
+// Утренний дайджест: 08:30 местного времени (Asia/Dubai)
 {
-    "schedule": { "kind": "cron", "expr": "0 8 * * *", "tz": "Asia/Dubai" },
+    "schedule": { "kind": "cron", "expr": "30 8 * * *", "tz": "Asia/Dubai" },
     "payload": { "kind": "systemEvent", "text": "createScheduledSmartDigest('morning')" }
 }
 

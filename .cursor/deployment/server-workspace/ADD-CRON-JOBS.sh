@@ -3,11 +3,11 @@
 
 echo "📅 Добавляю автоматические задачи в OpenClaw..."
 
-# Утренний дайджест (08:00 Dubai time)
+# Утренний дайджест (08:30 Dubai time)
 echo "🌅 Добавляю утренний дайджест..."
 openclaw cron add --job '{
   "name": "Утренний умный дайджест",
-  "schedule": { "kind": "cron", "expr": "0 8 * * *", "tz": "Asia/Dubai" },
+  "schedule": { "kind": "cron", "expr": "30 8 * * *", "tz": "Asia/Dubai" },
   "payload": { "kind": "systemEvent", "text": "createScheduledSmartDigest(\"morning\")" },
   "sessionTarget": "main",
   "enabled": true
