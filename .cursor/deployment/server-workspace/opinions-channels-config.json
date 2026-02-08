@@ -1,0 +1,151 @@
+{
+  "opinionsChannels": {
+    "ai_ml": [
+      {
+        "name": "@ai_machinelearning_big_data",
+        "category": "AI",
+        "priority": 8,
+        "description": "ИИ, большие данные, аналитика",
+        "focus": "technical_insights"
+      },
+      {
+        "name": "@DeepLearning_ru", 
+        "category": "AI",
+        "priority": 7,
+        "description": "глубокое обучение, нейросети",
+        "focus": "research_commentary"
+      },
+      {
+        "name": "@artificialintelligencenews",
+        "category": "AI", 
+        "priority": 6,
+        "description": "международные новости ИИ",
+        "focus": "global_perspectives"
+      },
+      {
+        "name": "@DataScienceChannel",
+        "category": "AI",
+        "priority": 7,
+        "description": "наука о данных", 
+        "focus": "methodology_opinions"
+      },
+      {
+        "name": "@neural_network",
+        "category": "AI",
+        "priority": 6,
+        "description": "практические кейсы нейросетей",
+        "focus": "practical_insights"
+      }
+    ],
+    "robotics": [
+      {
+        "name": "@roboticstoday",
+        "category": "Robotics",
+        "priority": 7,
+        "description": "современная робототехника",
+        "focus": "industry_analysis"
+      },
+      {
+        "name": "@automationworld", 
+        "category": "Robotics",
+        "priority": 6,
+        "description": "промышленная автоматизация",
+        "focus": "transformation_commentary"
+      },
+      {
+        "name": "@roboticsnews",
+        "category": "Robotics", 
+        "priority": 6,
+        "description": "новости робототехники",
+        "focus": "market_opinions"
+      }
+    ],
+    "business_tech": [
+      {
+        "name": "@tech_trends",
+        "category": "Business",
+        "priority": 8,
+        "description": "технологические тренды",
+        "focus": "strategic_thinking"
+      },
+      {
+        "name": "@startupnews",
+        "category": "Business", 
+        "priority": 7,
+        "description": "стартапы и инвестиции",
+        "focus": "market_analysis"
+      },
+      {
+        "name": "@business_tech",
+        "category": "Business",
+        "priority": 7,
+        "description": "бизнес-технологии",
+        "focus": "implementation_insights"
+      },
+      {
+        "name": "@venture_capital",
+        "category": "Investment",
+        "priority": 8, 
+        "description": "венчурный капитал",
+        "focus": "investment_philosophy"
+      }
+    ],
+    "evtol_transport": [
+      {
+        "name": "@evtol_news",
+        "category": "eVTOL",
+        "priority": 7,
+        "description": "воздушные такси и eVTOL", 
+        "focus": "industry_predictions"
+      },
+      {
+        "name": "@future_transport",
+        "category": "Transport",
+        "priority": 6,
+        "description": "транспорт будущего",
+        "focus": "societal_impact"
+      },
+      {
+        "name": "@aviation_tech", 
+        "category": "Aviation",
+        "priority": 6,
+        "description": "авиационные технологии",
+        "focus": "technical_evolution"
+      }
+    ]
+  },
+  "digestConfig": {
+    "schedule": {
+      "morning": "08:30",
+      "afternoon": "13:30", 
+      "evening": "18:30"
+    },
+    "timeZone": "UTC+4",
+    "format": {
+      "header": "💬 **{author} + {topic}**",
+      "tags": "{category_tags}",
+      "content": "{opinion_summary} + {key_quote}",
+      "footer": "🐦 @{author} — {url}"
+    },
+    "rules": {
+      "count_per_digest": "8-10",
+      "deduplication": true,
+      "reaction_tracking": true,
+      "multilingual_sources": true,
+      "russian_output": true
+    }
+  },
+  "ratingSystem": {
+    "reactions": {
+      "🔥": 10,
+      "👍": 5, 
+      "👎": -3,
+      "💩": -5
+    },
+    "multiArmedBandit": {
+      "exploration": 0.3,
+      "exploitation": 0.7
+    },
+    "userId": 685668909
+  }
+}
