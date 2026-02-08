@@ -122,6 +122,14 @@
         "description": "стратегия развития ИИ, AGI, предпринимательство, будущее технологий",
         "focus": "ai_strategy_agi_entrepreneurship_tech_future",
         "sources": ["OpenAI blog", "Twitter", "interviews", "essays", "Y Combinator insights"]
+      },
+      {
+        "name": "Michael Levin",
+        "category": "Biophilosophy",
+        "priority": 8,
+        "description": "регенеративная биология, биоэлектричество, морфогенез, эмерджентные свойства",
+        "focus": "regenerative_biology_bioelectricity_morphogenesis_emergence",
+        "sources": ["research papers commentary", "interviews", "lectures", "Twitter", "Tufts research"]
       }
     ],
     "evtol_transport": [
