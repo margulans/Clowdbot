@@ -106,6 +106,14 @@
         "description": "принципы управления, экономическая философия, принципы жизни",
         "focus": "management_philosophy_life_principles",
         "sources": ["LinkedIn", "Medium", "Principles book insights", "personal essays"]
+      },
+      {
+        "name": "Dario Amodei",
+        "category": "AI Philosophy",
+        "priority": 9,
+        "description": "философия ИИ, безопасность технологий, будущее человечества",
+        "focus": "ai_safety_future_humanity_ethical_ai",
+        "sources": ["Anthropic blog", "interviews", "research papers commentary", "Twitter"]
       }
     ],
     "evtol_transport": [
