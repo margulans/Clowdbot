@@ -83,7 +83,7 @@
   "channels": {
     "telegram": {
       "capabilities": {
-        "inlineButtons": "all"
+        "inlineButtons": "none"
       },
       "enabled": true,
       "dmPolicy": "allowlist",

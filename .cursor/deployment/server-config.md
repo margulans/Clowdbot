@@ -53,6 +53,7 @@ To                         Action      From
 | LanceDB | `enabled` | Auto-recall/capture |
 | Brave Search | `enabled` | Веб-поиск для новостей |
 | Groq Whisper | `whisper-large-v3` | Транскрипция голосовых |
+| Inline buttons | `none` | Отключены (оценка через нативные реакции) |
 | Reaction notifications | `own` | Нативные emoji-реакции Telegram |
 | DM Policy | `allowlist` | Только ID 685668909 |
 | Commands | restart, text, native, nativeSkills | Telegram команды |

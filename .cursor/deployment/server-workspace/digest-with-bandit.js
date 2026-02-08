@@ -144,26 +144,31 @@ class OpenClawDigestIntegration {
         this.digestSystem = new SmartDigestSystem();
     }
 
-    // Обработка реакции из webhook Telegram
+    // Обработка нативной Telegram реакции (message_reaction event)
     async handleWebhookReaction(update) {
-        if (update.callback_query && update.callback_query.data.startsWith('r:')) {
-            const [prefix, reactionType, chatId, messageId] = update.callback_query.data.split(':');
-            
-            const reactionMap = {
-                'e': '🔥',  // excellent 
-                'l': '👍',  // like
-                'd': '👎',  // dislike  
-                't': '💩'   // trash
+        if (update.message_reaction) {
+            const { chat, message_id, user, new_reaction } = update.message_reaction;
+            const emoji = new_reaction?.[0]?.emoji;
+
+            const reactionScores = {
+                '🔥': +10,  // Отлично
+                '👍': +5,   // Нравится
+                '👎': -3,   // Не нравится
+                '💩': -5    // Мусор
             };
-            
-            const reaction = reactionMap[reactionType];
-            const userId = update.callback_query.from.id;
-            const messageText = update.callback_query.message.text;
-            
-            return await this.digestSystem.handleTelegramReaction(messageText, reaction, userId);
+
+            if (emoji && emoji in reactionScores && user?.id === 685668909) {
+                return await this.digestSystem.handleTelegramReaction(
+                    '', // текст сообщения недоступен в message_reaction
+                    emoji,
+                    user.id
+                );
+            }
+
+            return { success: false, reason: 'Unknown emoji or wrong user' };
         }
         
-        return { success: false, reason: 'Not a reaction callback' };
+        return { success: false, reason: 'Not a reaction event' };
     }
 
     // Генерация дайджеста с учетом Multi-Armed Bandit
