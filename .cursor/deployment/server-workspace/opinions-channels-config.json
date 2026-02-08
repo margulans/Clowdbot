@@ -121,6 +121,7 @@
       "evening": "18:30"
     },
     "timeZone": "UTC+4",
+    "targetChannel": "@opnioneiron",
     "format": {
       "header": "💬 **{author} + {topic}**",
       "tags": "{category_tags}",

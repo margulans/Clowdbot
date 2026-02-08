@@ -4,6 +4,48 @@
   "maxAge": "7d",
   "entries": [
     {
+      "url": "https://www.fool.com/investing/2026/02/07/prediction-this-artificial-intelligence-ai-stock-c/",
+      "title": "Prediction: This Artificial Intelligence (AI) Stock Could Become a Market Leader in 2026",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.fool.com/investing/2026/02/07/these-3-stocks-could-be-the-best-ways-to-invest-in/",
+      "title": "These 3 Stocks Could Be the Best Ways to Invest in the Humanoid Robot Trend",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "Robotics"
+    },
+    {
+      "url": "https://www.engadget.com/ai/what-the-hell-is-moltbook-the-social-network-for-ai-agents-140000787.html",
+      "title": "What the hell is Moltbook, the social network for AI agents?",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.slashgear.com/2095067/openclaw-ai-agent-popularity-security-concerns/",
+      "title": "The Hottest New AI Agent Is Here – But It Has Some Experts Raising Alarms",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "AI"
+    },
+    {
+      "url": "https://techcrunch.com/2026/02/06/maybe-ai-agents-can-be-lawyers-after-all/",
+      "title": "Maybe AI agents can be lawyers after all",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.capgemini.com/insights/research-library/top-tech-trends-of-2026/",
+      "title": "Top Tech Trends of 2026",
+      "digest": "opinions",
+      "date": "2026-02-08",
+      "category": "Business"
+    },
+    {
       "url": "https://www.indiatvnews.com/technology/news/moltbook-ai-only-social-network-sparking-excitement-skepticism-and-security-fears-2026-02-07-1029257",
       "title": "Moltbook: AI-only social network sparking excitement, skepticism, and security fears",
       "digest": "morning",
