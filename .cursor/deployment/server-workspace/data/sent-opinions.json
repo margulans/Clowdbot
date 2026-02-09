@@ -22,6 +22,24 @@
         "FilmoGaz",
         "ScienceDaily"
       ]
+    },
+    {
+      "date": "2026-02-09",
+      "time": "13:31",
+      "type": "дневные",
+      "count": 4,
+      "experts": [
+        "Сэм Альтман - ИИ-устройства",
+        "Motley Fool - инвестстратегия",
+        "Канадский основатель - Y Combinator",
+        "Исследователи - сознание ИИ"
+      ],
+      "sources": [
+        "Storyboard18",
+        "The Motley Fool",
+        "AOL",
+        "ScienceDaily"
+      ]
     }
   ]
 }
