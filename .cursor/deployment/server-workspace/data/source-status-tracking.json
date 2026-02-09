@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-02-08T06:36:00.000Z",
+  "lastUpdated": "2026-02-09T07:42:00.000Z",
   "monthlyGoals": {
     "february2026": {
       "targetDiscoveries": 4,
       "targetPromotions": 2,
-      "currentDiscoveries": 15,
+      "currentDiscoveries": 17,
       "currentPromotions": 5
     }
   },
@@ -49,7 +49,8 @@
     ],
     "risingStars": [
       "Cursor Blog (10 points, 🔥 reaction)",
-      "ScienceDaily AI (5 points, growing engagement)"
+      "ScienceDaily AI (confirmed quality, consistent AI research coverage)",
+      "Insider Monkey (new discovery, NVIDIA AI coverage, Feb 9)"
     ]
   },
   "discoveryPipeline": [
