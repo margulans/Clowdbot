@@ -289,6 +289,76 @@
       "digest": "day",
       "date": "2026-02-09",
       "category": "AI"
+    },
+    {
+      "url": "https://www.nbcnews.com/tech/internet/openai-starts-testing-ads-chatgpt-rcna258242",
+      "title": "OpenAI запустил рекламу в ChatGPT",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.cnbc.com/2026/02/09/sam-altman-touts-chatgpt-growth-as-openai-nears-100-billion-funding.html",
+      "title": "Sam Altman: рост ChatGPT вернулся к 10%+ ежемесячно",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "AI"
+    },
+    {
+      "url": "https://interestingengineering.com/ai-robotics/boston-dynamics-atlas-humanoid-robot-stress-test",
+      "title": "Boston Dynamics Atlas выполняет кульбиты и гимнастические трюки",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Robotics"
+    },
+    {
+      "url": "https://www.electrichybridvehicletechnology.com/news/autoflight-demonstrates-5-ton-matrix-evtol-in-public-transition-flight.html",
+      "title": "AutoFlight представил крупнейший 5-тонный eVTOL Matrix",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.ebc.com/forex/faang-stocks-outlook-ai-capex-and-2026-rebound-signals",
+      "title": "Big Tech планирует сотни миллиардов капвложений в ИИ в 2026",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Investment"
+    },
+    {
+      "url": "https://leehamnews.com/2026/02/09/outlook-2026-the-state-of-the-major-evtol-projects/",
+      "title": "2026 может стать годом коммерческого взлета eVTOL",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://innovation-village.com/african-startups-raise-174m-in-january-2026-as-fintech-leads-funding/",
+      "title": "Африканские стартапы привлекли $174 млн в январе 2026",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Business"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Vibe_coding",
+      "title": "Wikipedia создала статью о \"Vibe coding\"",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Coding"
+    },
+    {
+      "url": "https://www.cvobserver.com/2026/02/10/ibm-unveils-quantum-breakthrough-with-global-impact/",
+      "title": "IBM представила 112-кубитный квантовый прорыв",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Technology"
+    },
+    {
+      "url": "https://www.washingtonpost.com/dc-md-va/2026/02/08/this-maryland-labs-quantum-computer-could-cure-cancer-steal-passwords/",
+      "title": "Maryland строит квантовый компьютер для превосходства над обычными ПК",
+      "digest": "morning",
+      "date": "2026-02-10",
+      "category": "Technology"
     }
   ]
 }
