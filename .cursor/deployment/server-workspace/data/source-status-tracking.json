@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-09T16:30:00.000Z",
+  "lastUpdated": "2026-02-10T06:15:00.000Z",
   "monthlyGoals": {
     "february2026": {
       "targetDiscoveries": 4,
@@ -50,7 +50,11 @@
     "risingStars": [
       "Cursor Blog (10 points, 🔥 reaction)",
       "ScienceDaily AI (confirmed quality, consistent AI research coverage)",
-      "Insider Monkey (new discovery, NVIDIA AI coverage, Feb 9)"
+      "Insider Monkey (new discovery, NVIDIA AI coverage, Feb 9)",
+      "CV Observer (new discovery, quantum computing coverage, Feb 10)",
+      "Interesting Engineering (robotics, engineering focus, Feb 10)",
+      "UASweekly.com (new discovery, eVTOL coverage, Feb 10)",
+      "Aviation Week Network (defense/aerospace focus, eVTOL applications, Feb 10)"
     ]
   },
   "discoveryPipeline": [
