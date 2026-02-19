@@ -4,361 +4,102 @@
   "maxAge": "7d",
   "entries": [
     {
-      "url": "https://www.fool.com/investing/2026/02/07/prediction-this-artificial-intelligence-ai-stock-c/",
-      "title": "Prediction: This Artificial Intelligence (AI) Stock Could Become a Market Leader in 2026",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.fool.com/investing/2026/02/07/these-3-stocks-could-be-the-best-ways-to-invest-in/",
-      "title": "These 3 Stocks Could Be the Best Ways to Invest in the Humanoid Robot Trend",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "Robotics"
-    },
-    {
-      "url": "https://www.engadget.com/ai/what-the-hell-is-moltbook-the-social-network-for-ai-agents-140000787.html",
-      "title": "What the hell is Moltbook, the social network for AI agents?",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.slashgear.com/2095067/openclaw-ai-agent-popularity-security-concerns/",
-      "title": "The Hottest New AI Agent Is Here – But It Has Some Experts Raising Alarms",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://techcrunch.com/2026/02/06/maybe-ai-agents-can-be-lawyers-after-all/",
-      "title": "Maybe AI agents can be lawyers after all",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.capgemini.com/insights/research-library/top-tech-trends-of-2026/",
-      "title": "Top Tech Trends of 2026",
-      "digest": "opinions",
-      "date": "2026-02-08",
-      "category": "Business"
-    },
-    {
-      "url": "https://www.indiatvnews.com/technology/news/moltbook-ai-only-social-network-sparking-excitement-skepticism-and-security-fears-2026-02-07-1029257",
-      "title": "Moltbook: AI-only social network sparking excitement, skepticism, and security fears",
+      "url": "https://www.hindustantimes.com/india-news/ai-summit-artificial-generative-intelligence-may-be-on-horizon-in-5-10-years-google-deepmind-ceo-demis-hassabis-101771456676227.html",
+      "title": "Demis Hassabis: AGI появится через 5-10 лет",
       "digest": "morning",
-      "date": "2026-02-08",
+      "date": "2026-02-19",
       "category": "AI"
     },
     {
-      "url": "https://www.reuters.com/business/media-telecom/anthropic-buys-super-bowl-ads-slap-openai-selling-ads-chatgpt-2026-02-07/",
-      "title": "Anthropic buys Super Bowl ads to slap OpenAI for selling ads in ChatGPT",
-      "digest": "morning", 
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://futurism.com/artificial-intelligence/anthropic-agents-automation",
-      "title": "Anthropic Insiders Afraid They've Crossed a Line",
+      "url": "https://venturebeat.com/orchestration/anthropics-sonnet-4-6-matches-flagship-ai-performance-at-one-fifth-the-cost",
+      "title": "Claude Sonnet 4.6: производительность флагмана за 1/5 цены",
       "digest": "morning",
-      "date": "2026-02-08", 
+      "date": "2026-02-19",
       "category": "AI"
     },
     {
-      "url": "https://hackernoon.com/why-the-$70-million-aicom-domain-could-become-the-front-door-to-agi",
-      "title": "Why the $70 Million ai.com Domain Could Become the Front Door to AGI",
+      "url": "https://www.thehindubusinessline.com/info-tech/india-ai-impact-summit-2026-pm-modi-new-delhi-live-updates/article70646444.ece",
+      "title": "India AI Summit 2026: Индия объявила суверенный ИИ",
       "digest": "morning",
-      "date": "2026-02-08",
+      "date": "2026-02-19",
       "category": "AI"
     },
     {
-      "url": "https://www.thehansindia.com/technology/tech-news/ai-could-replace-coding-jobs-within-a-year-warns-anthropic-ceo-zohos-sridhar-vembu-urges-caution-1046374",
-      "title": "AI Could Replace Coding Jobs Within a Year, Warns Anthropic CEO",
+      "url": "https://www.sciencedaily.com/news/computers_math/artificial_intelligence/",
+      "title": "Нейроморфные компьютеры решают физические симуляции вместо суперкомпьютеров",
       "digest": "morning",
-      "date": "2026-02-08",
+      "date": "2026-02-19",
       "category": "AI"
     },
     {
-      "url": "https://timesofindia.indiatimes.com/technology/tech-news/explained-what-is-anthropics-ai-tool-that-wiped-285-billion-off-software-stocks-in-a-single-day/articleshow/127892310.cms",
-      "title": "What is Anthropic's AI tool that wiped $285 billion off software stocks in a single day",
+      "url": "https://www.nytimes.com/2026/02/18/podcasts/the-daily/ai-vibecoding-claude-code.html",
+      "title": "NYT: Вайбкодинг вышел в мейнстрим",
       "digest": "morning",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://roboticsandautomationnews.com/2026/02/07/the-state-of-humanoid-robotics-from-research-labs-to-real-world-potential/98732/",
-      "title": "The state of humanoid robotics: assessing the capabilities, limitations, and commercial potential",
-      "digest": "morning",
-      "date": "2026-02-08",
-      "category": "Robotics"
-    },
-    {
-      "url": "https://www.techeblog.com/autoflight-matrix-first-5-ton-evtol/",
-      "title": "AutoFlight Matrix Touted as World's First 5-Ton Class Heavy Lift eVTOL Drone",
-      "digest": "morning",
-      "date": "2026-02-08",
-      "category": "eVTOL"
-    },
-    {
-      "url": "https://english.news.cn/20260207/d1442464295b4d538282a502e9b6275c/c.html",
-      "title": "World's first 5-ton eVTOL takes flight",
-      "digest": "morning",
-      "date": "2026-02-08",
-      "category": "eVTOL"
-    },
-    {
-      "url": "https://www.sciencedaily.com/",
-      "title": "Light-based breakthrough could help quantum computers finally scale up",
-      "digest": "morning",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://borncity.com/news/windows-11-microsoft-startet-2026-mit-massivem-ki-update/",
-      "title": "Windows 11: Microsoft startet 2026 mit massivem KI-Update",
-      "digest": "morning",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://finance.yahoo.com/video/ai-chips-amds-product-pipeline-130041711.html",
-      "title": "AI chips: How AMD's product pipeline stacks up with competitors",
-      "digest": "opinions_morning",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.earth.com/news/optical-breakthrough-helps-quantum-computers-read-data-faster/",
-      "title": "Optical breakthrough helps quantum computers read data faster",
-      "digest": "opinions_morning",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://www.fool.com/investing/2026/02/07/why-excited-cautious-tesla-stock-2026/",
-      "title": "Why I'm Excited (and Cautious) for Tesla Stock in 2026",
-      "digest": "opinions_morning",
-      "date": "2026-02-08",
-      "category": "Investment"
-    },
-    {
-      "url": "https://www.nytimes.com/2026/02/07/technology/elon-musk-spacex-xai.html",
-      "title": "SpaceX официально приобрел xAI в сделке на акции",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://techiexpert.com/perplexity-launches-model-council-get-answers-from-gpt-claude-and-gemini-at-the-same-time/",
-      "title": "Perplexity запустил Model Council для одновременной работы с GPT, Claude и Gemini",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.macrumors.com/",
-      "title": "Apple кардинально меняет подход к ИИ, увольняет руководителя проекта Siri",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.technobezz.com/news/amazon-plans-to-spend-200-billion-on-ai-infrastructure-in-2026",
-      "title": "Amazon планирует рекордные $200 млрд инвестиций в ИИ-инфраструктуру в 2026 году",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Investment"
-    },
-    {
-      "url": "https://www.fool.com/investing/stock-market/market-sectors/information-technology/ai-stocks/",
-      "title": "Alphabet планирует капиталовложения $175-185 млрд в ИИ-инфраструктуру в 2026 году",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Investment"
-    },
-    {
-      "url": "https://www.ainvest.com/news/microsoft-meta-assessing-ai-moats-long-term-creation-2602/",
-      "title": "Meta инвестирует $115-135 млрд в персональный сверхинтеллект в 2026 году",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.fool.com/investing/stock-market/types-of-stocks/ipo-stocks/",
-      "title": "Anthropic близка к привлечению $20 млрд в новом раунде финансирования",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Investment"
-    },
-    {
-      "url": "https://www.notebookcheck.net/Boston-Dynamics-new-Atlas-humanoid-robot-pulls-off-backflip-with-cartwheel.1222157.0.html",
-      "title": "Boston Dynamics представил новый Atlas: гуманоидный робот выполняет сальто с кульбитом",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Robotics"
-    },
-    {
-      "url": "https://oilprice.com/Energy/Energy-General/The-Rapid-Rise-of-Humanoid-Robots.html",
-      "title": "Илон Маск: Tesla планирует продавать роботов Optimus публике к концу 2027 года",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Robotics"
-    },
-    {
-      "url": "https://www.sciencedaily.com/",
-      "title": "Квантовый прорыв: операции с непрерывным исправлением ошибок без паузы защиты",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://www.macrumors.com/",
-      "title": "Apple открыл приём заявок на Swift Student Challenge 2026",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://www.analyticsinsight.net/news/spacex-delays-2026-mars-mission-shifts-starship-focus-to-nasa-moon-landing",
-      "title": "SpaceX откладывает миссию на Марс 2026 года, фокусируется на лунной программе NASA",
-      "digest": "day",
-      "date": "2026-02-08",
-      "category": "Technology"
-    },
-    {
-      "url": "https://www.sciencedaily.com/",
-      "title": "NASA Mars Rover использует ИИ для автономного движения",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.insidermonkey.com/blog/nvidia-nvda-eyes-more-efficient-weather-forecasting-with-the-launch-of-three-open-source-artificial-intelligence-models-1691453/",
-      "title": "NVIDIA запустила 3 open-source ИИ-модели для прогноза погоды",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.theguardian.com/us-news/2026/feb/08/ai-washing-job-losses-artificial-intelligence",
-      "title": "Salesforce сократил 4000 сотрудников благодаря ИИ-агентам",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.news18.com/amp/business/ipo/fractal-analytics-ipo-opens-today-should-you-subscribe-price-gmp-recommendations-ws-l-9889113.html",
-      "title": "Fractal Analytics проводит IPO как глобальная ИИ-компания",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.filmogaz.com/140038",
-      "title": "Super Bowl 2026 показал тренд интеграции ИИ в маркетинг",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://learn.ryzlabs.com/ai-coding-assistants/cursor-vs-github-copilot-which-ai-coding-assistant-fits-your-needs-best",
-      "title": "67% разработчиков повысили продуктивность с ИИ-инструментами",
-      "digest": "day",
-      "date": "2026-02-09",
+      "date": "2026-02-19",
       "category": "Coding"
     },
     {
-      "url": "https://www.latestly.com/business/stocks-to-buy-or-sell-today-february-9-2026-hal-tata-motors-bharat-forge-among-shares-likely-to-remain-in-spotlight-on-monday-7306542.html",
-      "title": "HAL, Tata Motors в центре внимания индийского рынка",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "Business"
-    },
-    {
-      "url": "https://tracxn.com/d/companies/openai/__kElhSG7uVGeFk1i71Co9-nwFtmtyMVT7f-YHMn4TFBg/funding-and-investors",
-      "title": "OpenAI привлек $57.9 млрд за 9 раундов финансирования",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "Investment"
-    },
-    {
-      "url": "https://collider.com/ai-artificial-intelligence-steven-spielberg-most-debated-sci-fi-film-free-streaming-success-tubi-february-2026/",
-      "title": "Фильм Спилберга A.I. возвращается в стрим-чарты",
-      "digest": "day",
-      "date": "2026-02-09",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.nbcnews.com/tech/internet/openai-starts-testing-ads-chatgpt-rcna258242",
-      "title": "OpenAI запустил рекламу в ChatGPT",
+      "url": "https://www.techradar.com/pro/best-vibe-coding-tools",
+      "title": "TechRadar: Топ-10 инструментов вайбкодинга 2026",
       "digest": "morning",
-      "date": "2026-02-10",
-      "category": "AI"
-    },
-    {
-      "url": "https://www.cnbc.com/2026/02/09/sam-altman-touts-chatgpt-growth-as-openai-nears-100-billion-funding.html",
-      "title": "Sam Altman: рост ChatGPT вернулся к 10%+ ежемесячно",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "AI"
-    },
-    {
-      "url": "https://interestingengineering.com/ai-robotics/boston-dynamics-atlas-humanoid-robot-stress-test",
-      "title": "Boston Dynamics Atlas выполняет кульбиты и гимнастические трюки",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "Robotics"
-    },
-    {
-      "url": "https://www.electrichybridvehicletechnology.com/news/autoflight-demonstrates-5-ton-matrix-evtol-in-public-transition-flight.html",
-      "title": "AutoFlight представил крупнейший 5-тонный eVTOL Matrix",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "eVTOL"
-    },
-    {
-      "url": "https://www.ebc.com/forex/faang-stocks-outlook-ai-capex-and-2026-rebound-signals",
-      "title": "Big Tech планирует сотни миллиардов капвложений в ИИ в 2026",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "Investment"
-    },
-    {
-      "url": "https://leehamnews.com/2026/02/09/outlook-2026-the-state-of-the-major-evtol-projects/",
-      "title": "2026 может стать годом коммерческого взлета eVTOL",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "eVTOL"
-    },
-    {
-      "url": "https://innovation-village.com/african-startups-raise-174m-in-january-2026-as-fintech-leads-funding/",
-      "title": "Африканские стартапы привлекли $174 млн в январе 2026",
-      "digest": "morning",
-      "date": "2026-02-10",
-      "category": "Business"
-    },
-    {
-      "url": "https://en.wikipedia.org/wiki/Vibe_coding",
-      "title": "Wikipedia создала статью о \"Vibe coding\"",
-      "digest": "morning",
-      "date": "2026-02-10",
+      "date": "2026-02-19",
       "category": "Coding"
     },
     {
-      "url": "https://www.cvobserver.com/2026/02/10/ibm-unveils-quantum-breakthrough-with-global-impact/",
-      "title": "IBM представила 112-кубитный квантовый прорыв",
+      "url": "https://interestingengineering.com/ai-robotics/unitree-targets-20000-humanoid-robots",
+      "title": "Unitree планирует выпустить 20,000 гуманоидных роботов",
       "digest": "morning",
-      "date": "2026-02-10",
+      "date": "2026-02-19",
+      "category": "Robotics"
+    },
+    {
+      "url": "https://www.cnn.com/2026/02/18/china/china-humanoid-robots-new-year-gala-intl-hnk",
+      "title": "Китайские роботы показали кунг-фу на главном ТВ-шоу страны",
+      "digest": "morning",
+      "date": "2026-02-19",
+      "category": "Robotics"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/automation-robotics-jobs-most-vulnerable/",
+      "title": "20% рабочих мест в США уязвимы к роботизации",
+      "digest": "morning",
+      "date": "2026-02-19",
+      "category": "Robotics"
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/02/16/3238866/0/en/EHang-Lights-Up-China-s-Spring-Festival-Gala-with-16-EH216-S-and-22-580-GD4.0-Drones-in-Aerial-Tech-Spectacle.html",
+      "title": "EHang украсил Праздник весны 16 eVTOL и 22,580 дронами",
+      "digest": "morning",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.openpr.com/news/4389498/urban-air-mobility-market-to-reach-usd-54-03-billion-by-2032",
+      "title": "FAA одобрила программу обучения пилотов Joby Aviation",
+      "digest": "morning",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/evtol-aircraft-market-to-reach-us-8-079-7-billion-by-2033-as-urban-air-mobility-and-innovation-drive-demand--pmr-302691606.html",
+      "title": "Рынок eVTOL достигнет $8,079 млрд к 2033 году",
+      "digest": "morning",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.business-standard.com/technology/tech-news/tech-wrap-feb-18-google-i-o-2026-date-announced-apple-ai-devices-antheopic-claude-sonnet-4-6-google-pixel-10a-ios-26-4-public-beta-126021800987_1.html",
+      "title": "Google I/O 2026 назначен на 19-20 мая",
+      "digest": "morning",
+      "date": "2026-02-19",
       "category": "Technology"
     },
     {
-      "url": "https://www.washingtonpost.com/dc-md-va/2026/02/08/this-maryland-labs-quantum-computer-could-cure-cancer-steal-passwords/",
-      "title": "Maryland строит квантовый компьютер для превосходства над обычными ПК",
+      "url": "https://www.reuters.com/business/autos-transportation/uber-invest-over-100-million-autonomous-vehicle-charging-amid-robotaxi-push-2026-02-18/",
+      "title": "Uber инвестирует $100 млн в зарядные хабы для роботакси",
       "digest": "morning",
-      "date": "2026-02-10",
-      "category": "Technology"
+      "date": "2026-02-19",
+      "category": "Business"
     }
   ]
 }
