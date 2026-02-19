@@ -235,6 +235,57 @@
       "lastReaction": null
     }
   },
+  "categoryRatings": {
+    "ИИ": {
+      "name": "ИИ",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "Вайбкодинг": {
+      "name": "Вайбкодинг",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "Робототехника": {
+      "name": "Робототехника",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "eVTOL": {
+      "name": "eVTOL",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "Технологии": {
+      "name": "Технологии",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "Бизнес": {
+      "name": "Бизнес",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    },
+    "Инвестиции": {
+      "name": "Инвестиции",
+      "totalScore": 0,
+      "reactionsCount": 0,
+      "averageScore": 0,
+      "status": "candidate"
+    }
+  },
   "expertRatings": {
     "Андрей Карпатый": {
       "name": "Андрей Карпатый",
