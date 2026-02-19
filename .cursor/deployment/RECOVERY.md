@@ -52,10 +52,13 @@ openclaw node install --host 100.73.176.127 --port 18789 --display-name "mac-fil
 
 1. Проверить Gateway (см. выше)
 2. Проверить токен бота:
+
 ```bash
 ssh openclaw@100.73.176.127 "cat ~/.openclaw/openclaw.json | grep botToken"
 ```
+
 3. Проверить pairing:
+
 ```bash
 ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw pairing list telegram"
 ```
@@ -95,10 +98,12 @@ EOF
 ### 🔴 Tailscale отключён
 
 **На Mac:**
+
 1. Открыть приложение Tailscale
 2. Войти в аккаунт если нужно
 
 **На сервере:**
+
 ```bash
 ssh root@46.224.221.0 "tailscale status"
 # Если отключён:
@@ -110,6 +115,7 @@ ssh root@46.224.221.0 "tailscale up --ssh --hostname=openclaw-server"
 ## Полная переустановка сервера
 
 ### 1. Создать новый VPS на Hetzner
+
 - Ubuntu 24.04 LTS
 - CPX22
 - SSH ключ: `~/.ssh/id_ed25519.pub`
@@ -174,7 +180,7 @@ cat > ~/.openclaw/openclaw.json << 'EOF'
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-sonnet-4-20250514"
+        "primary": "anthropic/claude-sonnet-4-6"
       }
     }
   },
@@ -241,13 +247,13 @@ mkdir -p ~/.openclaw/devices
 
 ## Переменные для замены
 
-| Placeholder | Описание |
-|-------------|----------|
-| `<NEW_IP>` | IP нового сервера |
-| `<TELEGRAM_BOT_TOKEN>` | Токен от @BotFather |
-| `<GATEWAY_TOKEN>` | Сгенерировать: `openssl rand -hex 32` |
-| `<ANTHROPIC_API_KEY>` | Ключ из console.anthropic.com |
+| Placeholder            | Описание                              |
+| ---------------------- | ------------------------------------- |
+| `<NEW_IP>`             | IP нового сервера                     |
+| `<TELEGRAM_BOT_TOKEN>` | Токен от @BotFather                   |
+| `<GATEWAY_TOKEN>`      | Сгенерировать: `openssl rand -hex 32` |
+| `<ANTHROPIC_API_KEY>`  | Ключ из console.anthropic.com         |
 
 ---
 
-*Последнее обновление: 2026-02-05*
+_Последнее обновление: 2026-02-05_

@@ -27,7 +27,7 @@
 │  HETZNER VPS (46.224.221.0)                                     │
 │  ├── OpenClaw Gateway (systemd)                                 │
 │  ├── Telegram Bot (@neironassistant_bot)                        │
-│  ├── Claude Sonnet 4 (Anthropic API)                            │
+│  ├── Claude Sonnet 4.6 (Anthropic API)                          │
 │  ├── Новостной агрегатор (cron + web search)                    │
 │  ├── Система рейтинга (multi-armed bandit)                      │
 │  ├── Долгосрочная память (bank + LanceDB + OpenAI embeddings)   │
@@ -46,6 +46,7 @@
 ## Компоненты
 
 ### 1. Hetzner VPS
+
 - **IP:** `46.224.221.0`
 - **Tailscale IP:** `100.73.176.127`
 - **OS:** Ubuntu 24.04 LTS
@@ -53,15 +54,17 @@
 - **Пользователь:** `openclaw`
 
 ### 2. OpenClaw Gateway
+
 - **Порт:** `18789`
 - **Bind:** `loopback`
 - **Auth:** token-based
-- **Модель:** `anthropic/claude-sonnet-4-20250514`
+- **Модель:** `anthropic/claude-sonnet-4-6`
 - **Context pruning:** `cache-ttl`
 - **Memory flush:** enabled
 - **Session memory:** enabled
 
 ### 3. Telegram Bot
+
 - **Username:** `@neironassistant_bot`
 - **DM Policy:** `allowlist`
 - **Approved User:** `685668909`
@@ -69,6 +72,7 @@
 - **Команды:** `/restart`, `/reset`, `/new`, `/compact`, `/digest`, `/git`
 
 ### 4. Mac Node
+
 - **Name:** `mac-files`
 - **Tailscale IP:** `100.88.178.82`
 - **Service:** LaunchAgent (`ai.openclaw.node`)
@@ -76,7 +80,8 @@
 - **Доступные папки:** ~/Downloads, ~/Desktop, ~/Documents, ~/Pictures
 
 ### 5. Интеграции (API ключи)
-- **Anthropic** — Claude Sonnet 4 (основная модель)
+
+- **Anthropic** — Claude Sonnet 4.6 (основная модель)
 - **Brave Search** — веб-поиск для новостей
 - **Groq** — Whisper Large V3 (транскрипция голосовых)
 - **OpenAI** — text-embedding-3-small (семантический поиск по памяти)
@@ -85,19 +90,20 @@
 
 ## Эндпойнты и доступы
 
-| Компонент | Адрес | Доступ |
-|-----------|-------|--------|
-| Gateway WS | `ws://100.73.176.127:18789` | Tailscale only |
-| Control UI | `http://100.73.176.127:18789/` | Tailscale only |
-| SSH Server | `ssh openclaw@46.224.221.0` | SSH key |
-| SSH Tailscale | `ssh openclaw@100.73.176.127` | SSH key |
-| Telegram | `@neironassistant_bot` | Allowlist (ID: 685668909) |
+| Компонент     | Адрес                          | Доступ                    |
+| ------------- | ------------------------------ | ------------------------- |
+| Gateway WS    | `ws://100.73.176.127:18789`    | Tailscale only            |
+| Control UI    | `http://100.73.176.127:18789/` | Tailscale only            |
+| SSH Server    | `ssh openclaw@46.224.221.0`    | SSH key                   |
+| SSH Tailscale | `ssh openclaw@100.73.176.127`  | SSH key                   |
+| Telegram      | `@neironassistant_bot`         | Allowlist (ID: 685668909) |
 
 ---
 
 ## Возможности бота
 
 ### Новостной агрегатор
+
 - **7 тем** по приоритету: ИИ, Вайбкодинг, Робототехника, eVTOL, Технологии, Бизнес, Инвестиции
 - **3 дайджеста** в день: 08:00, 13:00, 18:00 (местное время)
 - **10-15 новостей** за дайджест, 30% из новых каналов
@@ -106,6 +112,7 @@
 - **Команда `/digest`** — внеочередной дайджест по требованию
 
 ### Память
+
 - **MEMORY.md** — долгосрочная кураторская память
 - **Bank-структура** — world.md, experience.md, opinions.md, entities/
 - **Session memory** — поиск по истории сессий
@@ -114,14 +121,17 @@
 - **Memory flush** — автосохранение памяти перед компактификацией
 
 ### Голос
+
 - **Groq Whisper** — транскрипция голосовых сообщений
 
 ### Файлы Mac
+
 - **Транзакционные бэкапы** перед очисткой
 - **Exec-approvals** — allowlist команд (ls, rm, mv, cp, find, du, cat, file...)
 - **Подтверждение** — всегда спрашивает перед удалением
 
 ### Git Sync (`/git`)
+
 - **Архитектура:** workspace бота = Git-репо через симлинк
   - `~/.openclaw/workspace` → `~/Clowdbot/.cursor/deployment/server-workspace`
 - **Одна папка:** бот читает/пишет напрямую в Git-репо, без копирования
@@ -162,16 +172,17 @@
 
 ### Команды через Telegram
 
-| Команда | Действие |
-|---------|----------|
-| `/restart` | Перезапустить gateway |
-| `/reset` | Очистить сессию (при переполнении) |
-| `/new` | Начать новую сессию |
-| `/compact` | Сжать контекст (набрать текстом) |
-| `/digest` | Внеочередной дайджест новостей |
-| `/git` | Commit и push изменений в GitHub |
+| Команда    | Действие                           |
+| ---------- | ---------------------------------- |
+| `/restart` | Перезапустить gateway              |
+| `/reset`   | Очистить сессию (при переполнении) |
+| `/new`     | Начать новую сессию                |
+| `/compact` | Сжать контекст (набрать текстом)   |
+| `/digest`  | Внеочередной дайджест новостей     |
+| `/git`     | Commit и push изменений в GitHub   |
 
 ### Автоматическая защита
+
 - **Systemd Restart=always** — перезапуск при падении
 - **MemoryMax=2G** — ограничение памяти
 - **Context pruning** — автоочистка старых tool results
@@ -194,6 +205,7 @@ ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH &
 ## Безопасность
 
 ### Реализованные меры:
+
 - UFW firewall (только SSH)
 - Fail2ban (защита от brute-force)
 - SSH key-only (пароли отключены)
@@ -252,11 +264,13 @@ ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH &
 ## Skills (пользовательские команды)
 
 ### `/git` — Git Sync
+
 Автоматический commit и push изменений в репозиторий Clowdbot.
 
 **Расположение:** `~/.openclaw/skills/git-sync/SKILL.md` (на сервере)
 
 **Содержимое:**
+
 ```yaml
 ---
 name: git-sync
@@ -274,9 +288,10 @@ user-invocable: true
 ```
 
 **Использование:**
+
 - После изменений кода через Telegram — отправить `/git`
 - На Mac выполнить `git pull` чтобы получить изменения
 
 ---
 
-*Последнее обновление: 2026-02-07*
+_Последнее обновление: 2026-02-07_
