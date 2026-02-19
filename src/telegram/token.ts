@@ -1,13 +1,12 @@
 import fs from "node:fs";
-
+import type { BaseTokenResolution } from "../channels/plugins/types.js";
 import type { OpenClawConfig } from "../config/config.js";
 import type { TelegramAccountConfig } from "../config/types.telegram.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../routing/session-key.js";
 
 export type TelegramTokenSource = "env" | "tokenFile" | "config" | "none";
 
-export type TelegramTokenResolution = {
-  token: string;
+export type TelegramTokenResolution = BaseTokenResolution & {
   source: TelegramTokenSource;
 };
 
@@ -28,10 +27,14 @@ export function resolveTelegramToken(
   // be normalized, so resolve per-account config by matching normalized IDs.
   const resolveAccountCfg = (id: string): TelegramAccountConfig | undefined => {
     const accounts = telegramCfg?.accounts;
-    if (!accounts || typeof accounts !== "object" || Array.isArray(accounts)) return undefined;
+    if (!accounts || typeof accounts !== "object" || Array.isArray(accounts)) {
+      return undefined;
+    }
     // Direct hit (already normalized key)
     const direct = accounts[id];
-    if (direct) return direct;
+    if (direct) {
+      return direct;
+    }
     // Fallback: match by normalized key
     const matchKey = Object.keys(accounts).find((key) => normalizeAccountId(key) === id);
     return matchKey ? accounts[matchKey] : undefined;
