@@ -134,11 +134,13 @@ function resolveAnthropicOpus46ForwardCompatModel(
   }
   templateIds.push(...ANTHROPIC_OPUS_TEMPLATE_MODEL_IDS);
 
+  // Opus 4.6 поддерживает 1M контекст через beta-заголовок context-1m-2025-08-07
   return cloneFirstTemplateModel({
     normalizedProvider,
     trimmedModelId,
     templateIds,
     modelRegistry,
+    patch: { contextWindow: 1_000_000 },
   });
 }
 
@@ -172,11 +174,13 @@ function resolveAnthropicSonnet46ForwardCompatModel(
   }
   templateIds.push(...ANTHROPIC_SONNET_TEMPLATE_MODEL_IDS);
 
+  // Sonnet 4.6 поддерживает 1M контекст через beta-заголовок context-1m-2025-08-07
   return cloneFirstTemplateModel({
     normalizedProvider,
     trimmedModelId,
     templateIds,
     modelRegistry,
+    patch: { contextWindow: 1_000_000 },
   });
 }
 
