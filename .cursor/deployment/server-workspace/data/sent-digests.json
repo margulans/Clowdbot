@@ -170,6 +170,76 @@
       "digest": "day",
       "date": "2026-02-19",
       "category": "AI"
+    },
+    {
+      "url": "https://startupnews.fyi/2026/02/19/openai-ceo-superintelligence-within/",
+      "title": "Сэм Альтман: суперинтеллект появится в ближайшие годы",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.ndtv.com/india-news/sam-altman-dario-amodei-india-ai-impact-summit-pm-modi-ai-cold-war-on-stage-openai-anthropic-ceos-awkward-moment-at-delhi-summit-11058324",
+      "title": "Альтман vs Амодеи: «холодная война» ИИ на одной сцене",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.thehindu.com/sci-tech/technology/india-ai-impact-summit-2026-day-4-pm-modi-artificial-intelligence-news-delhi-updates/article70650278.ece",
+      "title": "Индия представила «MANAV Vision» — человекоцентричный ИИ",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "AI"
+    },
+    {
+      "url": "https://www.businesstoday.in/technology/news/story/metas-alexandr-wang-unveils-vision-of-personal-superintelligence-bets-on-ai-as-daily-life-partner-517005-2026-02-19",
+      "title": "Meta: «персональный суперинтеллект» станет ежедневным партнёром",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "AI"
+    },
+    {
+      "url": "https://startupnews.fyi/2026/02/19/beyond-vibe-coding-the-case-for-spec-driven-ai-development/",
+      "title": "Spec-driven разработка: альтернатива вайбкодингу",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "Coding"
+    },
+    {
+      "url": "https://dev.to/deep_ghinaiya/vibe-coding-in-2026-why-the-best-developers-are-becoming-ai-orchestrators-omc",
+      "title": "Вайбкодинг 2026: лучшие разработчики становятся AI-оркестраторами",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "Coding"
+    },
+    {
+      "url": "https://startupnews.fyi/2026/02/19/eplane-nvidia-omniverse-digital-twin/",
+      "title": "ePlane строит цифрового двойника eVTOL с NVIDIA Omniverse",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/02/19/3240827/28124/en/Electric-vertical-take-off-and-landing-eVTOL-and-Advanced-Air-Mobility-AAM-Research-Report-2026-A-90-Billion-Opportunity-by-2050-with-a-Projected-160-000-Passenger-Drones-to-be-in-.html",
+      "title": "eVTOL рынок: $90 млрд к 2050 году, 160,000 пассажирских дронов",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.autoevolution.com/news/new-zealand-ready-for-electric-flights-thanks-to-betas-alia-ectol-265863.html",
+      "title": "Beta Alia eCTOL: 100+ полётов в Новой Зеландии",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "eVTOL"
+    },
+    {
+      "url": "https://www.coindesk.com/tech/2026/02/18/sam-altman-s-openai-unveils-evmbench-to-test-whether-ai-can-keep-crypto-s-smart-contracts-safe",
+      "title": "OpenAI запустил EVMbench: ИИ для защиты смарт-контрактов",
+      "digest": "evening",
+      "date": "2026-02-19",
+      "category": "AI"
     }
   ]
 }
