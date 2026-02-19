@@ -6,17 +6,12 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-sonnet-4-6"
+        "primary": "anthropic/claude-sonnet-4-6",
+        "fallbacks": ["openrouter/meta-llama/llama-3.3-70b:free", "google/gemini-3-flash-preview"]
       },
       "memorySearch": {
-        "sources": [
-          "memory",
-          "sessions"
-        ],
-        "extraPaths": [
-          "bank",
-          "bank/entities"
-        ],
+        "sources": ["memory", "sessions"],
+        "extraPaths": ["bank", "bank/entities"],
         "experimental": {
           "sessionMemory": true
         },
@@ -92,9 +87,7 @@
       "streamMode": "partial",
       "reactionNotifications": "all",
       "reactionLevel": "minimal",
-      "allowFrom": [
-        "685668909"
-      ]
+      "allowFrom": ["685668909"]
     }
   },
   "gateway": {

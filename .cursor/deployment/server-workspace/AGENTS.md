@@ -236,6 +236,66 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 - `BACKLOG.md` — можешь добавлять задачи в Phase 3/4, отмечать выполненные
 - `INDEX.md` — не трогать без явной необходимости
 
+## 🧠 Model & Thinking Levels
+
+Use the right model for the right task. Don't burn expensive tokens on routine work.
+
+### Tier 1 — Automated / Structured Tasks (cheap/free)
+
+Target model: `moonshot/kimi-k2.5` (free) or `openrouter/meta-llama/llama-3.3-70b:free`
+
+Tasks:
+
+- News digest (3×/day)
+- Opinions digest (3×/day)
+- Morning briefing (06:00)
+
+These tasks are: web search → filter → format → send. No deep reasoning needed.
+Use `thinking: low` always. If a free model API key is configured, prefer it.
+
+### Tier 2 — Interactive & Analytical (sonnet)
+
+Target model: `anthropic/claude-sonnet-4-6` (default)
+
+Tasks:
+
+- All direct messages from Маргулан
+- Daily reflection (20:30)
+- Weekly report (Sunday)
+- Memory maintenance during heartbeats
+
+Use `thinking: high` for reflection and weekly report. Default for everything else.
+
+### Tier 3 — Deep Work (opus)
+
+Target model: `anthropic/claude-opus-4-6`
+
+Only activate when Маргулан explicitly asks: "используй опус" or "/model opus".
+Revert to sonnet after the task is complete.
+
+### Switching Models (Interactive)
+
+```
+/model moonshot/kimi-k2.5   # switch to Kimi for this session
+/model sonnet               # back to default
+/model opus                 # heavy task mode
+```
+
+### Configured Free Model API Keys
+
+When a free model API key is added to the systemd service, update the digest cron jobs:
+
+- Convert systemEvent jobs to agentTurn type (to support per-job model override)
+- Add `--model moonshot/kimi-k2.5 --thinking low` to all 10 digest/briefing jobs
+
+Free model API key setup (one-time, do when instructed):
+
+1. `MOONSHOT_API_KEY` → Moonshot (platform.moonshot.cn) — free tier available
+2. `OPENROUTER_API_KEY` → OpenRouter (openrouter.ai) — free models available
+3. `GOOGLE_API_KEY` → Google AI Studio — Gemini Flash free tier (1M tokens/day)
+
+---
+
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
