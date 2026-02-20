@@ -120,6 +120,16 @@
       "sessionTarget": "main",
       "wakeMode": "now",
       "payload_kind": "systemEvent"
+    },
+    {
+      "id": "ce006db5-350b-44be-baef-8b216ed687e4",
+      "name": "Auto-commit: Git sync",
+      "schedule": "0 */4 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+      "prompt_summary": "git status → если есть изменения: обнови cron-снапшот, git add -A, commit, push. Тихо.",
+      "added": "2026-02-20"
     }
   ]
 }
