@@ -20,7 +20,7 @@
       "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
       "thinking": "low",
       "summary": "Morning briefing: check calendar, yesterday reflection tasks, send daily plan to Маргулан",
-      "prompt_summary": "Утренний план: календарь + вчерашний Action + напомнить дать доступ Айганым (нужен @username/id для allowlist).",
+      "prompt_summary": "Утренний план: календарь + вчерашний Action + дело дня (система поддержки решений MVP) + напомнить доступ Айганым.",
       "last_fixed": "2026-02-20"
     },
     {
