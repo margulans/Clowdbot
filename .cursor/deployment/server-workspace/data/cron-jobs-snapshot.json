@@ -19,7 +19,9 @@
       "wakeMode": "now",
       "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
       "thinking": "low",
-      "summary": "Morning briefing: check calendar, yesterday reflection tasks, send daily plan to Маргулан"
+      "summary": "Morning briefing: check calendar, yesterday reflection tasks, send daily plan to Маргулан",
+      "prompt_summary": "Утренний план: календарь + вчерашний Action + напомнить дать доступ Айганым (нужен @username/id для allowlist).",
+      "last_fixed": "2026-02-20"
     },
     {
       "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
