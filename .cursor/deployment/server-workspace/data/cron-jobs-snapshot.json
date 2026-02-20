@@ -1,0 +1,125 @@
+{
+  "_comment": "Снапшот cron-задач OpenClaw Gateway. Обновляй после каждого изменения через /git.",
+  "_updated": "2026-02-20",
+  "_note": "Справочный файл. Реальные задачи в БД OpenClaw. Для восстановления — пересоздавать через cron tool.",
+  "jobs": [
+    {
+      "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
+      "name": "Утренний брифинг",
+      "schedule": "0 6 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
+      "name": "Утренний дайджест @newsneiron",
+      "schedule": "0 8 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+      "prompt_summary": "Отправляет 10-15 новостей КАЖДУЮ ОТДЕЛЬНЫМ сообщением в @newsneiron"
+    },
+    {
+      "id": "11c0bfdf-f175-4bc1-aa59-62710160c307",
+      "name": "BACKUP: Утренний дайджест",
+      "schedule": "5 8 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
+      "name": "Утренние мнения",
+      "schedule": "30 8 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+      "prompt_summary": "КАЖДОЕ мнение = ОТДЕЛЬНЫЙ вызов message() в @opnioneiron. НЕ объединять в одно сообщение. Ссылка обязательна.",
+      "last_fixed": "2026-02-20"
+    },
+    {
+      "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
+      "name": "Дневной дайджест @newsneiron",
+      "schedule": "0 13 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "829c063d-10f5-4748-9248-12cf80f3aeed",
+      "name": "BACKUP: Дневной дайджест",
+      "schedule": "5 13 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
+      "name": "Дневные мнения",
+      "schedule": "30 13 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+      "prompt_summary": "КАЖДОЕ мнение = ОТДЕЛЬНЫЙ вызов message() в @opnioneiron. НЕ объединять в одно сообщение. Ссылка обязательна.",
+      "last_fixed": "2026-02-20"
+    },
+    {
+      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
+      "name": "Вечерний дайджест @newsneiron",
+      "schedule": "0 18 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "a68c8df0-ef6b-4f55-86a6-29f1acb5c439",
+      "name": "BACKUP: Вечерний дайджест",
+      "schedule": "5 18 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+    },
+    {
+      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
+      "name": "Вечерние мнения",
+      "schedule": "30 18 * * * (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+      "prompt_summary": "КАЖДОЕ мнение = ОТДЕЛЬНЫЙ вызов message() в @opnioneiron. НЕ объединять в одно сообщение. Ссылка обязательна.",
+      "last_fixed": "2026-02-20"
+    },
+    {
+      "id": "9d558661-b1bd-4636-afba-72ec30bb3190",
+      "name": "Ежедневная рефлексия",
+      "schedule": "30 20 * * * (Asia/Almaty)",
+      "sessionTarget": "main",
+      "wakeMode": "next-heartbeat",
+      "payload_kind": "systemEvent"
+    },
+    {
+      "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
+      "name": "Chat Cleanup — конец дня",
+      "schedule": "0 21 * * * (Asia/Almaty)",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload_kind": "systemEvent"
+    },
+    {
+      "id": "7e21383e-9595-4cae-ac86-498615a41c05",
+      "name": "Еженедельный анализ источников",
+      "schedule": "0 10 * * 0 (Asia/Almaty)",
+      "sessionTarget": "isolated",
+      "wakeMode": "next-heartbeat"
+    },
+    {
+      "id": "f09cd8a5-2b4a-4bea-aa57-f2da041dd9a8",
+      "name": "Авиценна — ежемесячный вес",
+      "schedule": "0 8 28 * * (Asia/Almaty)",
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload_kind": "systemEvent"
+    }
+  ]
+}
