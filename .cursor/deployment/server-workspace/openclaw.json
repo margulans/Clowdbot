@@ -67,7 +67,8 @@
     }
   },
   "messages": {
-    "ackReactionScope": "group-mentions"
+    "ackReactionScope": "all",
+    "removeAckAfterReply": true
   },
   "commands": {
     "native": true,
@@ -86,7 +87,7 @@
       "groupPolicy": "allowlist",
       "streamMode": "partial",
       "reactionNotifications": "all",
-      "reactionLevel": "minimal",
+      "reactionLevel": "ack",
       "allowFrom": ["685668909"]
     }
   },

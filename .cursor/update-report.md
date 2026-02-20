@@ -2,7 +2,7 @@
 status: up-to-date
 current: 2026.2.17
 latest: 2026.2.17
-checked: 2026-02-19T04:34:03Z
+checked: 2026-02-19T05:00:06Z
 ---
 
 # OpenClaw — обновлений нет
