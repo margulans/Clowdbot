@@ -33,7 +33,7 @@
         }
       },
       "contextPruning": {
-        "mode": "safeguard"
+        "mode": "cache-ttl"
       },
       "compaction": {
         "memoryFlush": {
