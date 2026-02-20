@@ -432,6 +432,90 @@
     }
   },
   "messageHistory": {
+    "msg_309": {
+      "chatId": "@newsneiron",
+      "source": { "name": "VentureBeat", "url": "https://venturebeat.com/technology/google-launches-gemini-3-1-pro-retaking-ai-crown-with-2x-reasoning" },
+      "category": "ИИ",
+      "title": "Google выпустил Gemini 3.1 Pro: удвоенный рейтинг в задачах рассуждения",
+      "timestamp": 1771556600000
+    },
+    "msg_310": {
+      "chatId": "@newsneiron",
+      "source": { "name": "VnExpress", "url": "https://e.vnexpress.net/news/tech/tech-news/china-s-lunar-new-year-humanoid-robot-dance-goes-viral-with-23-billion-views-5042349.html" },
+      "category": "Робототехника",
+      "title": "Танец роботов Unitree набрал 23 млрд просмотров",
+      "timestamp": 1771556620000
+    },
+    "msg_311": {
+      "chatId": "@newsneiron",
+      "source": { "name": "Yahoo Finance", "url": "https://finance.yahoo.com/news/toyota-strengthens-ties-joby-aviation-194220886.html" },
+      "category": "eVTOL",
+      "title": "Toyota удвоила ставки на Joby Aviation: защита $1 млрд инвестиции",
+      "timestamp": 1771556640000
+    },
+    "msg_312": {
+      "chatId": "@newsneiron",
+      "source": { "name": "Business Insider", "url": "https://www.businessinsider.com/amazon-tech-lead-vibe-coding-daily-resist-anni-chen-2026-2" },
+      "category": "Вайбкодинг",
+      "title": "Техлид Amazon: вайбкодинг ежедневно использую, но в продакшн — никогда",
+      "timestamp": 1771556660000
+    },
+    "msg_313": {
+      "chatId": "@newsneiron",
+      "source": { "name": "Reuters", "url": "https://www.reuters.com/world/asia-pacific/chip-startup-taalas-raises-169-million-help-build-ai-chips-take-nvidia-2026-02-19/" },
+      "category": "Технологии",
+      "title": "Taalas привлёк $169 млн на чипы для ИИ, специфичные под модели",
+      "timestamp": 1771556680000
+    },
+    "msg_314": {
+      "chatId": "@newsneiron",
+      "source": { "name": "UN News", "url": "https://news.un.org/en/story/2026/02/1166996" },
+      "category": "ИИ",
+      "title": "ООН на India AI Summit: будущее ИИ нельзя отдать паре миллиардеров",
+      "timestamp": 1771556700000
+    },
+    "msg_315": {
+      "chatId": "@newsneiron",
+      "source": { "name": "The Next Web", "url": "https://thenextweb.com/news/david-silver-is-chasing-superhuman-intelligence-with-a-1bn-seed" },
+      "category": "ИИ",
+      "title": "Отец AlphaGo собирает $1 млрд seed-раунд: суперинтеллект без LLM",
+      "timestamp": 1771556720000
+    },
+    "msg_316": {
+      "chatId": "@newsneiron",
+      "source": { "name": "The Hindu", "url": "https://www.thehindu.com/news/international/inside-the-rise-of-robotics-firm-unitree-glimpse-into-chinas-tech-ambitions/article70651457.ece" },
+      "category": "Робототехника",
+      "title": "Unitree: что стоит за кунг-фу роботами — взгляд изнутри компании",
+      "timestamp": 1771556740000
+    },
+    "msg_317": {
+      "chatId": "@newsneiron",
+      "source": { "name": "Tech Startups", "url": "https://techstartups.com/2026/02/19/frist-cressey-ventures-raises-425m-for-fund-iv-pushes-total-assets-toward-1b-to-fuel-ai-healthcare-startups/" },
+      "category": "Инвестиции",
+      "title": "Frist Cressey Ventures закрыл $425 млн фонд на ИИ в здравоохранении",
+      "timestamp": 1771556760000
+    },
+    "msg_318": {
+      "chatId": "@newsneiron",
+      "source": { "name": "The Guardian", "url": "https://www.theguardian.com/technology/ng-interactive/2026/feb/19/ai-work-future" },
+      "category": "Бизнес",
+      "title": "«ИИ-дисфункция замещения»: новый диагноз для работников, боящихся автоматизации",
+      "timestamp": 1771556780000
+    },
+    "msg_319": {
+      "chatId": "@newsneiron",
+      "source": { "name": "DEV Community", "url": "https://dev.to/sashido/artificial-intelligence-coding-is-turning-into-vibe-working-what-still-breaks-1fj1" },
+      "category": "Вайбкодинг",
+      "title": "ИИ в разработке: когда «vibe working» ломается на production",
+      "timestamp": 1771556800000
+    },
+    "msg_320": {
+      "chatId": "@newsneiron",
+      "source": { "name": "GlobeNewswire", "url": "https://www.globenewswire.com/news-release/2026/02/19/3240827/28124/en/Electric-vertical-take-off-and-landing-eVTOL-and-Advanced-Air-Mobility-AAM-Research-Report-2026-A-90-Billion-Opportunity-by-2050-with-a-Projected-160-000-Passenger-Drones-to-be-in-.html" },
+      "category": "eVTOL",
+      "title": "Первый коммерческий eVTOL: когда и кто взлетит — прогноз рынка",
+      "timestamp": 1771556820000
+    },
     "msg_3": {
       "chatId": "@newsneiron",
       "source": {

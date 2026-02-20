@@ -4,6 +4,102 @@
   "maxAge": "7d",
   "entries": [
     {
+      "url": "https://venturebeat.com/technology/google-launches-gemini-3-1-pro-retaking-ai-crown-with-2x-reasoning",
+      "title": "Google выпустил Gemini 3.1 Pro: удвоенный рейтинг в задачах рассуждения",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "AI",
+      "keywords": ["google", "gemini", "3.1", "pro", "reasoning", "модель"]
+    },
+    {
+      "url": "https://e.vnexpress.net/news/tech/tech-news/china-s-lunar-new-year-humanoid-robot-dance-goes-viral-with-23-billion-views-5042349.html",
+      "title": "Танец роботов Unitree набрал 23 млрд просмотров",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Robotics",
+      "keywords": ["unitree", "robot", "viral", "23 billion", "кунг-фу", "просмотры"]
+    },
+    {
+      "url": "https://finance.yahoo.com/news/toyota-strengthens-ties-joby-aviation-194220886.html",
+      "title": "Toyota удвоила ставки на Joby Aviation: защита $1 млрд инвестиции",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "eVTOL",
+      "keywords": ["toyota", "joby", "aviation", "evtol", "$1 млрд", "инвестиция"]
+    },
+    {
+      "url": "https://www.businessinsider.com/amazon-tech-lead-vibe-coding-daily-resist-anni-chen-2026-2",
+      "title": "Техлид Amazon: вайбкодинг ежедневно использую, но в продакшн — никогда",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Coding",
+      "keywords": ["amazon", "vibe coding", "production", "техлид", "anni chen"]
+    },
+    {
+      "url": "https://www.reuters.com/world/asia-pacific/chip-startup-taalas-raises-169-million-help-build-ai-chips-take-nvidia-2026-02-19/",
+      "title": "Taalas привлёк $169 млн на чипы для ИИ, специфичные под модели",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Technology",
+      "keywords": ["taalas", "chip", "$169 million", "nvidia", "ai chip", "inference"]
+    },
+    {
+      "url": "https://news.un.org/en/story/2026/02/1166996",
+      "title": "ООН на India AI Summit: будущее ИИ нельзя отдать паре миллиардеров",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "AI",
+      "keywords": ["ООН", "guterres", "india ai summit", "$3 billion", "фонд"]
+    },
+    {
+      "url": "https://thenextweb.com/news/david-silver-is-chasing-superhuman-intelligence-with-a-1bn-seed",
+      "title": "Отец AlphaGo собирает $1 млрд seed-раунд: суперинтеллект без LLM",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "AI",
+      "keywords": ["david silver", "ineffable intelligence", "alphago", "$1 billion", "superintelligence", "seed"]
+    },
+    {
+      "url": "https://www.thehindu.com/news/international/inside-the-rise-of-robotics-firm-unitree-glimpse-into-chinas-tech-ambitions/article70651457.ece",
+      "title": "Unitree: что стоит за кунг-фу роботами — взгляд изнутри компании",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Robotics",
+      "keywords": ["unitree", "robotics", "china", "humanoid", "ambitions", "inside"]
+    },
+    {
+      "url": "https://techstartups.com/2026/02/19/frist-cressey-ventures-raises-425m-for-fund-iv-pushes-total-assets-toward-1b-to-fuel-ai-healthcare-startups/",
+      "title": "Frist Cressey Ventures закрыл $425 млн фонд на ИИ в здравоохранении",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Investment",
+      "keywords": ["frist cressey", "$425 million", "healthcare", "ai", "fund iv"]
+    },
+    {
+      "url": "https://www.theguardian.com/technology/ng-interactive/2026/feb/19/ai-work-future",
+      "title": "«ИИ-дисфункция замещения»: новый диагноз для работников, боящихся автоматизации",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Business",
+      "keywords": ["ai replacement dysfunction", "workers", "anxiety", "automation", "jobs", "guardian"]
+    },
+    {
+      "url": "https://dev.to/sashido/artificial-intelligence-coding-is-turning-into-vibe-working-what-still-breaks-1fj1",
+      "title": "ИИ в разработке: когда «vibe working» ломается на production",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "Coding",
+      "keywords": ["vibe working", "production", "breaks", "devops", "backend", "coding"]
+    },
+    {
+      "url": "https://www.globenewswire.com/news-release/2026/02/19/3240827/28124/en/Electric-vertical-take-off-and-landing-eVTOL-and-Advanced-Air-Mobility-AAM-Research-Report-2026-A-90-Billion-Opportunity-by-2050-with-a-Projected-160-000-Passenger-Drones-to-be-in-.html",
+      "title": "Первый коммерческий eVTOL: когда и кто взлетит — прогноз рынка",
+      "digest": "morning",
+      "date": "2026-02-20",
+      "category": "eVTOL",
+      "keywords": ["evtol", "commercial", "$90 billion", "2050", "air taxi", "прогноз"]
+    },
+    {
       "url": "https://www.hindustantimes.com/india-news/ai-summit-artificial-generative-intelligence-may-be-on-horizon-in-5-10-years-google-deepmind-ceo-demis-hassabis-101771456676227.html",
       "title": "Demis Hassabis: AGI появится через 5-10 лет",
       "digest": "morning",
