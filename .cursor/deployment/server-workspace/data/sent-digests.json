@@ -82,7 +82,7 @@
       "date": "2026-02-21",
       "category": "AI",
       "keywords": ["un", "guterres", "democratization", "governance"]
-    }
+    },
     {
       "url": "https://www.thehindu.com/sci-tech/technology/india-ai-impact-summit-2026-day-5-pm-modi-artificial-intelligence-news-delhi-updates/article70654611.ece",
       "title": "Delhi Declaration: 80 стран подписали пакт о будущем ИИ",
@@ -90,38 +90,6 @@
       "date": "2026-02-21",
       "category": "AI",
       "keywords": ["delhi declaration", "india ai summit", "governance"]
-    },
-    {
-      "url": "https://www.reuters.com/technology/artificial-intelligence/",
-      "title": "Nvidia вливает $30 млрд в OpenAI",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "AI",
-      "keywords": ["nvidia", "openai", "investment"]
-    },
-    {
-      "url": "https://www.ndtv.com/delhi-news/pm-narendra-modi-united-nations-secretary-general-antonio-guterres-meet-focuses-on-democratising-ai-reforming-un-system-ai-impact-summit-2026-11116510",
-      "title": "UN Secretary-General: ИИ для всех, а не только для миллиардеров",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "AI",
-      "keywords": ["un", "guterres", "democratization"]
-    },
-    {
-      "url": "https://www.cnbc.com/2026/02/20/china-humanoid-robots-spring-festival-gala-unitree-tesla-ai-race.html",
-      "title": "Unitree G1: План на 20 000 гуманоидов в 2026 году",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Robotics",
-      "keywords": ["unitree", "humanoid", "20000 units"]
-    },
-    {
-      "url": "https://www.youtube.com/watch?v=jeb38jicWOE",
-      "title": "Tesla Optimus Academy: Роботы учат друг друга",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Robotics",
-      "keywords": ["tesla", "optimus academy", "simulation"]
     },
     {
       "url": "https://www.autoplus.fr/actualite/tesla-optimus-gen-3-des-2026-dans-les-blocs-chirurgicaux-1426621.html",
@@ -132,44 +100,12 @@
       "keywords": ["tesla", "optimus", "surgery"]
     },
     {
-      "url": "https://techcrunch.com/2026/02/19/all-the-important-news-from-the-ongoing-india-ai-summit/",
-      "title": "Emergent: $100M ARR за 8 месяцев на вайбкодинге",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Coding",
-      "keywords": ["emergent", "arr", "vibe coding"]
-    },
-    {
       "url": "https://www.neuralbuddies.com/p/ai-news-recap-february-20-2026",
       "title": "Spotify: Разработчики полностью перешли на ИИ-агентов",
       "digest": "evening_backup",
       "date": "2026-02-21",
       "category": "Coding",
       "keywords": ["spotify", "ai agents", "vibe coding"]
-    },
-    {
-      "url": "https://siliconangle.com/2026/02/20/ai-code-translation-startup-code-metal-reels-125m-1-25b-valuation/",
-      "title": "Code Metal привлёк $125 млн",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Coding",
-      "keywords": ["code metal", "investment"]
-    },
-    {
-      "url": "https://www.globenewswire.com/news-release/2026/02/20/3242158/0/en/Under-the-Direction-of-Brian-Ferdinand-EverForward-Trading-Reinforces-Qualification-Model-for-2026.html",
-      "title": "Archer и Joby: FAA финализирует правила вертипортов",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "eVTOL",
-      "keywords": ["faa", "vertiport", "archer", "joby"]
-    },
-    {
-      "url": "https://www.news9live.com/technology/artificial-intelligence/qualcomm-ceo-6g-big-part-is-ai-india-ai-impact-summit-2026-2933721",
-      "title": "Qualcomm 6G: Сети для роя роботов",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Technology",
-      "keywords": ["qualcomm", "6g", "connectivity"]
     }
   ]
 }

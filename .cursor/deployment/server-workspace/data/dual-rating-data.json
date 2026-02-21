@@ -767,6 +767,22 @@
       "lastReaction": null
     }
   },
+    "msg_353": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "The Hindu",
+        "url": "https://www.thehindu.com/sci-tech/technology/india-ai-impact-summit-2026-day-5-pm-modi-artificial-intelligence-news-delhi-updates/article70654611.ece"
+      },
+      "category": "ИИ",
+      "title": "Delhi Declaration: 80 стран подписали соглашение о будущем ИИ",
+      "timestamp": 1740160800000
+    },
+    "msg_352": {
+      "chatId": "@newsneiron",
+      "category": "Digest",
+      "title": "ВЕЧЕРНИЙ ДАЙДЖЕСТ | 21.02.2026, 18:00",
+      "timestamp": 1740160800000
+    },
     "msg_351": {
       "chatId": "@newsneiron",
       "source": {
