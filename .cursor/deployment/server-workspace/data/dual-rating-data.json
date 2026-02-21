@@ -1479,6 +1479,96 @@
       "category": "Business",
       "title": "Богатство vs деньги/статус: рычаг как главная стратегия",
       "timestamp": 1771645629407
+    },
+    "msg_77": {
+      "chatId": "@opnioneiron",
+      "category": "Digest",
+      "title": "МНЕНИЯ И КОММЕНТАРИИ | 21.02.2026, 13:30",
+      "timestamp": 1740127800000
+    },
+    "msg_78": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Петер Штайнбергер",
+        "handle": "@steipete"
+      },
+      "source": {
+        "name": "steipete.me",
+        "url": "https://steipete.me/posts/2026/openclaw"
+      },
+      "category": "AI",
+      "title": "Будущее AI-агентов и Open-source",
+      "timestamp": 1740127801000
+    },
+    "msg_79": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Рей Далио",
+        "handle": "@RayDalio"
+      },
+      "source": {
+        "name": "Fortune",
+        "url": "https://fortune.com/2026/02/17/who-is-ray-dalio-bridgewater-associates-founder-great-disorder-politics-munich-security-conference/"
+      },
+      "category": "Investment",
+      "title": "Циклы истории и мировой порядок",
+      "timestamp": 1740127802000
+    },
+    "msg_80": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Сэм Альтман",
+        "handle": "@sama"
+      },
+      "source": {
+        "name": "Times of India",
+        "url": "https://timesofindia.indiatimes.com/technology/tech-news/openai-shows-its-latest-openclaw-hire-to-tease-anthropic-in-viral-picture-of-sam-altman-and-dario-amodei-from-india-ai-summit/articleshow/128600522.cms"
+      },
+      "category": "AI",
+      "title": "Конкуренция и открытость",
+      "timestamp": 1740127803000
+    },
+    "msg_81": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Дарио Амодеи",
+        "handle": "@DarioAmodei"
+      },
+      "source": {
+        "name": "Fortune",
+        "url": "https://fortune.com/article/why-is-anthropic-ceo-dario-amodei-deeply-uncomfortable-companies-in-charge-ai-regulating-themselves/"
+      },
+      "category": "AI",
+      "title": "Безопасность и регулирование ИИ",
+      "timestamp": 1740127804000
+    },
+    "msg_82": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Майкл Левин",
+        "handle": ""
+      },
+      "source": {
+        "name": "Tim Ferriss Blog",
+        "url": "https://tim.blog/2026/01/21/dr-michael-levin/"
+      },
+      "category": "Biology",
+      "title": "Биоэлектричество и перепрограммирование жизни",
+      "timestamp": 1740127805000
+    },
+    "msg_83": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Нассим Талеб",
+        "handle": "@nntaleb"
+      },
+      "source": {
+        "name": "nassimtaleb.org",
+        "url": "https://nassimtaleb.org/"
+      },
+      "category": "Strategy",
+      "title": "Интенсивность против продолжительности",
+      "timestamp": 1740127806000
     }
   },
   "config": {
