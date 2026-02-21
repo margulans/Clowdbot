@@ -767,7 +767,27 @@
       "lastReaction": null
     }
   },
-  "messageHistory": {
+    "msg_342": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "SiliconANGLE",
+        "url": "https://siliconangle.com/2026/02/20/ai-code-translation-startup-code-metal-reels-125m-1-25b-valuation/"
+      },
+      "category": "Вайбкодинг",
+      "title": "Code Metal привлёк $125 млн на инфраструктуру для вайбкодинга",
+      "timestamp": 1740124805000
+    },
+    "msg_341": {
+      "chatId": "@newsneiron",
+      "source": {
+        "name": "BusinessToday",
+        "url": "https://www.businesstoday.in/india/story/india-ai-impact-summit-declaration-endorsed-by-us-79-other-countries-document-likely-to-be-out-today-517388-2026-02-21"
+      },
+      "category": "ИИ",
+      "title": "Delhi Declaration: 80 стран подписали соглашение о будущем ИИ",
+      "timestamp": 1740124800000
+    }
+  },
     "msg_309": {
       "chatId": "@newsneiron",
       "source": {
