@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-02-21",
-  "note": "Primary: llama:free. Backup: google/gemini-3-flash-preview. All critical jobs have Gemini fallback. Special jobs (reflection, cleanup, reminders): gemini-flash.",
+  "note": "Primary: llama:free (timeout 300s for мнения). Backup: anthropic/claude-haiku-3-5 (direct Anthropic key, not via OpenRouter). Special jobs: gemini-flash. Brave search: cacheTtlMinutes=30.",
   "jobs": [
     {
       "id": "4cc76b40",
@@ -13,7 +13,7 @@
       "id": "829eee9e",
       "name": "🚨 BACKUP: Утренний брифинг",
       "schedule": "5 6 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "1c292387",
@@ -26,20 +26,21 @@
       "id": "c1c58593",
       "name": "🚨 BACKUP: Утренний дайджест",
       "schedule": "5 8 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "6d4944f0",
       "name": "Утренние мнения",
       "schedule": "30 8 * * *",
       "model": "llama:free",
+      "timeout": "300s",
       "backup": "10e6c5ea @08:50"
     },
     {
       "id": "10e6c5ea",
       "name": "🚨 BACKUP: Утренние мнения",
       "schedule": "50 8 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "a0ed4696",
@@ -52,20 +53,21 @@
       "id": "62c89740",
       "name": "🚨 BACKUP: Дневной дайджест",
       "schedule": "5 13 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "ba31c42d",
       "name": "Дневные мнения",
       "schedule": "30 13 * * *",
       "model": "llama:free",
+      "timeout": "300s",
       "backup": "d81fedff @13:50"
     },
     {
       "id": "d81fedff",
       "name": "🚨 BACKUP: Дневные мнения",
       "schedule": "50 13 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "582cc3f0",
@@ -78,20 +80,21 @@
       "id": "e758d243",
       "name": "🚨 BACKUP: Вечерний дайджест",
       "schedule": "5 18 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "2fe731f2",
       "name": "Вечерние мнения",
       "schedule": "30 18 * * *",
       "model": "llama:free",
+      "timeout": "300s",
       "backup": "8783bc2f @18:50"
     },
     {
       "id": "8783bc2f",
       "name": "🚨 BACKUP: Вечерние мнения",
       "schedule": "50 18 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "ce006db5",
@@ -104,7 +107,7 @@
       "id": "b0c35166",
       "name": "🚨 BACKUP: Git sync",
       "schedule": "30 */4 * * *",
-      "model": "gemini-flash"
+      "model": "claude-haiku-3-5"
     },
     {
       "id": "9d558661",
