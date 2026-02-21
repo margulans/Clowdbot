@@ -1,140 +1,365 @@
-[
-  {
-    "id": "ce006db5-350b-44be-baef-8b216ed687e4",
-    "name": "Auto-commit: Git sync",
-    "schedule": "0 */4 * * * (Asia/Almaty)",
-    "payload": "Automated git sync check and cron job snapshot update"
-  },
-  {
-    "id": "b0c35166-4062-479c-a777-652657b2fa71",
-    "name": "🚨 BACKUP: Git sync (Gemini)",
-    "schedule": "30 */4 * * * (Asia/Almaty)",
-    "payload": "Backup git sync if primary is missed"
-  },
-  {
-    "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
-    "name": "Утренний брифинг",
-    "schedule": "0 6 * * * (Asia/Almaty)",
-    "payload": "Morning briefing with calendar and actions"
-  },
-  {
-    "id": "829eee9e-de87-4c35-82ed-a469ac67afc2",
-    "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
-    "schedule": "5 6 * * * (Asia/Almaty)",
-    "payload": "Backup morning briefing"
-  },
-  {
-    "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
-    "name": "Утренний дайджест @newsneiron",
-    "schedule": "0 8 * * * (Asia/Almaty)",
-    "payload": "Adaptive news digest"
-  },
-  {
-    "id": "c1c58593-accd-4cf7-a175-3603514b0275",
-    "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
-    "schedule": "5 8 * * * (Asia/Almaty)",
-    "payload": "Backup news digest"
-  },
-  {
-    "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
-    "name": "Утренние мнения",
-    "schedule": "30 8 * * * (Asia/Almaty)",
-    "payload": "Expert opinions digest with dual-rating recording"
-  },
-  {
-    "id": "10e6c5ea-652e-4776-b097-f72dbf6ef050",
-    "name": "🚨 BACKUP: Утренние мнения (Gemini)",
-    "schedule": "50 8 * * * (Asia/Almaty)",
-    "payload": "Backup opinions digest"
-  },
-  {
-    "id": "8f79e567-0759-482d-be85-81f5a9b26285",
-    "name": "Аводарт — воскресное напоминание",
-    "schedule": "0 9 * * 0 (Asia/Almaty)",
-    "payload": "Weekly medication reminder"
-  },
-  {
-    "id": "7e21383e-9595-4cae-ac86-498615a41c05",
-    "name": "Еженедельный анализ источников exploration",
-    "schedule": "0 10 * * 0 (Asia/Almaty)",
-    "payload": "Weekly source exploration and promotion analysis"
-  },
-  {
-    "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
-    "name": "Дневной дайджест @newsneiron",
-    "schedule": "0 13 * * * (Asia/Almaty)",
-    "payload": "Daytime news digest"
-  },
-  {
-    "id": "62c89740-52fa-4364-b1ae-7c81110ef368",
-    "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
-    "schedule": "5 13 * * * (Asia/Almaty)",
-    "payload": "Backup daytime news digest"
-  },
-  {
-    "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
-    "name": "Дневные мнения",
-    "schedule": "30 13 * * * (Asia/Almaty)",
-    "payload": "Daytime opinions digest"
-  },
-  {
-    "id": "d81fedff-8d6f-4e32-a105-a56f8833feb7",
-    "name": "🚨 BACKUP: Дневные мнения (Gemini)",
-    "schedule": "50 13 * * * (Asia/Almaty)",
-    "payload": "Backup daytime opinions digest"
-  },
-  {
-    "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
-    "name": "Вечерний дайджест @newsneiron",
-    "schedule": "0 18 * * * (Asia/Almaty)",
-    "payload": "Evening news digest"
-  },
-  {
-    "id": "e758d243-54e7-4d3b-b684-8115561831e6",
-    "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
-    "schedule": "5 18 * * * (Asia/Almaty)",
-    "payload": "Backup evening news digest"
-  },
-  {
-    "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-    "name": "Вечерние мнения",
-    "schedule": "30 18 * * * (Asia/Almaty)",
-    "payload": "Evening opinions digest"
-  },
-  {
-    "id": "8783bc2f-de99-4742-9229-09921260d546",
-    "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
-    "schedule": "50 18 * * * (Asia/Almaty)",
-    "payload": "Backup evening opinions digest"
-  },
-  {
-    "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
-    "name": "📋 Саммари от Айганым — вечерний отчёт",
-    "schedule": "30 19 * * * (Asia/Almaty)",
-    "payload": "Daily summary of assistant input"
-  },
-  {
-    "id": "9d558661-b1bd-4636-afba-72ec30bb3190",
-    "name": "Ежедневная рефлексия",
-    "schedule": "30 20 * * * (Asia/Almaty)",
-    "payload": "Daily reflection event"
-  },
-  {
-    "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
-    "name": "🧹 Chat Cleanup — конец дня",
-    "schedule": "0 21 * * * (Asia/Almaty)",
-    "payload": "Evening session summary and cleanup proposal"
-  },
-  {
-    "id": "f09cd8a5-2b4a-4bea-aa57-f2da041dd9a8",
-    "name": "Авиценна — ежемесячный вес",
-    "schedule": "0 8 28 * * (Asia/Almaty)",
-    "payload": "Monthly weight tracking prompt"
-  },
-  {
-    "id": "a1de1ef4-e153-4415-8704-741f812ab75a",
-    "name": "🧹 Ежемесячный аудит контекста (Optimizer)",
-    "schedule": "0 10 1 * * (Asia/Almaty)",
-    "payload": "Full context audit (bloat check)"
-  }
-]
+{
+  "generatedAt": "auto",
+  "jobs": [
+    {
+      "id": "ce006db5-350b-44be-baef-8b216ed687e4",
+      "name": "Auto-commit: Git sync",
+      "enabled": true,
+      "schedule": "0 */4 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "summary": "You are performing an automated git sync check."
+      }
+    },
+    {
+      "id": "b0c35166-4062-479c-a777-652657b2fa71",
+      "name": "🚨 BACKUP: Git sync (Gemini)",
+      "enabled": true,
+      "schedule": "30 */4 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "summary": "🚨 **BACKUP GIT SYNC (Gemini fallback)** — запускается только если основной auto-commit (каждые 4ч) пропущен!"
+      }
+    },
+    {
+      "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
+      "name": "Утренний брифинг",
+      "enabled": true,
+      "schedule": "0 6 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🤖 _Модель: Llama 3.3 70B Instruct (free via OpenRouter)_"
+      }
+    },
+    {
+      "id": "829eee9e-de87-4c35-82ed-a469ac67afc2",
+      "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
+      "enabled": true,
+      "schedule": "5 6 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🚨 **BACKUP УТРЕННИЙ БРИФИНГ (Gemini fallback)** - запускается только если основной (06:00) пропущен!"
+      }
+    },
+    {
+      "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
+      "name": "Утренний дайджест @newsneiron",
+      "enabled": true,
+      "schedule": "0 8 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🤖 _Модель: Llama 3.3 70B Instruct (free via OpenRouter)_"
+      }
+    },
+    {
+      "id": "c1c58593-accd-4cf7-a175-3603514b0275",
+      "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
+      "enabled": true,
+      "schedule": "5 8 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🚨 **BACKUP УТРЕННИЙ ДАЙДЖЕСТ (Gemini fallback)** - запускается только если основной (08:00) пропущен!"
+      }
+    },
+    {
+      "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
+      "name": "Утренние мнения",
+      "enabled": true,
+      "schedule": "30 8 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "summary": "💭 **УТРЕННИЕ МНЕНИЯ 08:30** — Отправь дайджест мнений в @opnioneiron."
+      }
+    },
+    {
+      "id": "10e6c5ea-652e-4776-b097-f72dbf6ef050",
+      "name": "🚨 BACKUP: Утренние мнения (Gemini)",
+      "enabled": true,
+      "schedule": "50 8 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "summary": "🚨 **BACKUP УТРЕННИЕ МНЕНИЯ (Gemini fallback)** — запускается только если основной (08:30) пропущен!"
+      }
+    },
+    {
+      "id": "8f79e567-0759-482d-be85-81f5a9b26285",
+      "name": "Аводарт — воскресное напоминание",
+      "enabled": true,
+      "schedule": "0 9 * * 0 (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": null,
+        "summary": "⚕️ Напоминание: сегодня воскресенье — время принять Аводарт (дутастерид 0,5 мг). Не забудь запить достаточным количеством воды."
+      }
+    },
+    {
+      "id": "7e21383e-9595-4cae-ac86-498615a41c05",
+      "name": "Еженедельный анализ источников exploration",
+      "enabled": true,
+      "schedule": "0 10 * * 0 (Asia/Almaty)",
+      "wakeMode": "next-heartbeat",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "systemEvent",
+        "model": null,
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "📊 Еженедельный анализ системы exploration источников! Запусти скрипт анализа и отправь отчет Маргулану:\\n\\n1. Выполни: node weekly-explor…"
+      }
+    },
+    {
+      "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
+      "name": "Дневной дайджест @newsneiron",
+      "enabled": true,
+      "schedule": "0 13 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🤖 _Модель: Llama 3.3 70B Instruct (free via OpenRouter)_"
+      }
+    },
+    {
+      "id": "62c89740-52fa-4364-b1ae-7c81110ef368",
+      "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
+      "enabled": true,
+      "schedule": "5 13 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🚨 **BACKUP ДНЕВНОЙ ДАЙДЖЕСТ (Gemini fallback)** - запускается только если основной (13:00) пропущен!"
+      }
+    },
+    {
+      "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
+      "name": "Дневные мнения",
+      "enabled": true,
+      "schedule": "30 13 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "summary": "💭 **ДНЕВНЫЕ МНЕНИЯ 13:30** — Отправь дайджест мнений в @opnioneiron."
+      }
+    },
+    {
+      "id": "d81fedff-8d6f-4e32-a105-a56f8833feb7",
+      "name": "🚨 BACKUP: Дневные мнения (Gemini)",
+      "enabled": true,
+      "schedule": "50 13 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "summary": "🚨 **BACKUP ДНЕВНЫЕ МНЕНИЯ (Gemini fallback)** — запускается только если основной (13:30) пропущен!"
+      }
+    },
+    {
+      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
+      "name": "Вечерний дайджест @newsneiron",
+      "enabled": true,
+      "schedule": "0 18 * * * (Asia/Almaty)",
+      "wakeMode": "next-heartbeat",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🤖 _Модель: Llama 3.3 70B Instruct (free via OpenRouter)_"
+      }
+    },
+    {
+      "id": "e758d243-54e7-4d3b-b684-8115561831e6",
+      "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
+      "enabled": true,
+      "schedule": "5 18 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "summary": "🚨 **BACKUP ВЕЧЕРНИЙ ДАЙДЖЕСТ (Gemini fallback)** - запускается только если основной (18:00) пропущен!"
+      }
+    },
+    {
+      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
+      "name": "Вечерние мнения",
+      "enabled": true,
+      "schedule": "30 18 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "summary": "💭 **ВЕЧЕРНИЕ МНЕНИЯ 18:30** — Отправь дайджест мнений в @opnioneiron."
+      }
+    },
+    {
+      "id": "8783bc2f-de99-4742-9229-09921260d546",
+      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
+      "enabled": true,
+      "schedule": "50 18 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "summary": "🚨 **BACKUP ВЕЧЕРНИЕ МНЕНИЯ (Gemini fallback)** — запускается только если основной (18:30) пропущен!"
+      }
+    },
+    {
+      "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
+      "name": "📋 Саммари от Айганым — вечерний отчёт",
+      "enabled": true,
+      "schedule": "30 19 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "summary": "📋 Подготовь вечерний саммари всех данных, полученных от Айганым (sender_id: 509646214) за сегодня."
+      }
+    },
+    {
+      "id": "9d558661-b1bd-4636-afba-72ec30bb3190",
+      "name": "Ежедневная рефлексия",
+      "enabled": true,
+      "schedule": "30 20 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": null,
+        "summary": "daily_reflection()"
+      }
+    },
+    {
+      "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
+      "name": "🧹 Chat Cleanup — конец дня",
+      "enabled": true,
+      "schedule": "0 21 * * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": null,
+        "summary": "🧹 Конец дня! Выполни chat-cleanup скилл: сохрани важное из сегодняшней сессии в memory/YYYY-MM-DD.md, обнови MEMORY.md если нужно, затем …"
+      }
+    },
+    {
+      "id": "912d1a14-d4a3-40e3-a760-e52a9e5ffe8a",
+      "name": "Напоминание: корейское лекарство для Асика",
+      "enabled": true,
+      "schedule": "2026-02-26T10:00:00.000Z",
+      "wakeMode": "now",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": null,
+        "summary": "⏰ Напоминание: не забудь взять с собой корейское лекарство (Силодозин / Аводарт) для Асика!"
+      }
+    },
+    {
+      "id": "f09cd8a5-2b4a-4bea-aa57-f2da041dd9a8",
+      "name": "Авиценна — ежемесячный вес",
+      "enabled": true,
+      "schedule": "0 8 28 * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "main",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": null,
+        "summary": "⚕️ Напоминание Авиценна: конец месяца — спроси Маргулана о текущем весе и запиши в profile.md. Текущий целевой вес: 82 кг, сейчас: 86 кг."
+      }
+    },
+    {
+      "id": "a1de1ef4-e153-4415-8704-741f812ab75a",
+      "name": "🧹 Ежемесячный аудит контекста (Optimizer)",
+      "enabled": true,
+      "schedule": "0 10 1 * * (Asia/Almaty)",
+      "wakeMode": "now",
+      "sessionTarget": "isolated",
+      "payload": {
+        "kind": "agentTurn",
+        "model": null,
+        "thinking": null,
+        "timeoutSeconds": null,
+        "summary": "Запусти скилл context-optimizer. Проведи полный аудит всегда-загружаемого контекста (AGENTS, USER, MEMORY, HEARTBEAT, SOUL, TOOLS). Если …"
+      }
+    }
+  ]
+}
