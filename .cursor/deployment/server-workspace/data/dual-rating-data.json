@@ -248,7 +248,7 @@
           "timestamp": 1771566463783
         }
       ],
-      "averageScore": 10.0,
+      "averageScore": 10,
       "status": "proven",
       "lastReaction": 1771566463783
     },
@@ -296,7 +296,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": -4.0,
+      "averageScore": -4,
       "status": "rejected",
       "lastReaction": 1771577309535
     },
@@ -314,7 +314,7 @@
           "timestamp": 1771566740628
         }
       ],
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected",
       "lastReaction": 1771566740628
     },
@@ -332,7 +332,7 @@
           "timestamp": 1771566740628
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771566740628
     },
@@ -350,7 +350,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -368,7 +368,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -386,7 +386,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -404,7 +404,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -422,7 +422,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -440,7 +440,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected",
       "lastReaction": 1771577309535
     },
@@ -458,7 +458,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -476,7 +476,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected",
       "lastReaction": 1771577309535
     },
@@ -494,7 +494,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected",
       "lastReaction": 1771577309535
     },
@@ -512,7 +512,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate",
       "lastReaction": 1771577309535
     },
@@ -530,7 +530,7 @@
           "timestamp": 1771577309535
         }
       ],
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected",
       "lastReaction": 1771577309535
     }
@@ -561,7 +561,7 @@
       "name": "eVTOL",
       "totalScore": 5,
       "reactionsCount": 1,
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate"
     },
     "Технологии": {
@@ -575,14 +575,14 @@
       "name": "Бизнес",
       "totalScore": 5,
       "reactionsCount": 1,
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate"
     },
     "Инвестиции": {
       "name": "Инвестиции",
       "totalScore": -5,
       "reactionsCount": 1,
-      "averageScore": -5.0,
+      "averageScore": -5,
       "status": "rejected"
     },
     "AI": {
@@ -594,31 +594,31 @@
     "Robotics": {
       "totalScore": 12,
       "reactionsCount": 4,
-      "averageScore": 3.0,
+      "averageScore": 3,
       "status": "candidate"
     },
     "Coding": {
       "totalScore": 2,
       "reactionsCount": 2,
-      "averageScore": 1.0,
+      "averageScore": 1,
       "status": "candidate"
     },
     "Technology": {
       "totalScore": -3,
       "reactionsCount": 1,
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected"
     },
     "Business": {
       "totalScore": 5,
       "reactionsCount": 1,
-      "averageScore": 5.0,
+      "averageScore": 5,
       "status": "candidate"
     },
     "Investment": {
       "totalScore": -6,
       "reactionsCount": 2,
-      "averageScore": -3.0,
+      "averageScore": -3,
       "status": "rejected"
     }
   },
@@ -1257,6 +1257,118 @@
       "category": "Investment",
       "title": "Расходы на ИИ в 2026 — $2,5 трлн: сравнение с величайшими мегапроектами в истории",
       "timestamp": 1771574920000
+    },
+    "msg_68": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Нассим Талеб",
+        "handle": "@nntaleb"
+      },
+      "source": {
+        "name": "Substack",
+        "url": "https://nntaleb.substack.com/p/the-world-in-which-we-live"
+      },
+      "category": "Investment",
+      "title": "Мир, в котором мы живём: антихрупкость как стратегия",
+      "timestamp": 1771645563540
+    },
+    "msg_69": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Рэй Далио",
+        "handle": "@RayDalio"
+      },
+      "source": {
+        "name": "Fortune",
+        "url": "https://fortune.com/2026/02/17/who-is-ray-dalio-bridgewater-associates-founder-great-disorder-politics-munich-security-conference/"
+      },
+      "category": "Investment",
+      "title": "“Мировой порядок сломан”: риск режима “law of the jungle”",
+      "timestamp": 1771645573276
+    },
+    "msg_70": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Дарио Амодеи",
+        "handle": "@DarioAmodei"
+      },
+      "source": {
+        "name": "Substack",
+        "url": "https://cheekypint.substack.com/p/a-cheeky-pint-with-anthropic-ceo"
+      },
+      "category": "AI",
+      "title": "Интервью: как отличать реальную ценность ИИ от “демо-магии”",
+      "timestamp": 1771645583313
+    },
+    "msg_71": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Cal Newport",
+        "handle": "@calnewport"
+      },
+      "source": {
+        "name": "Blog",
+        "url": "https://calnewport.com/why-didnt-ai-join-the-workforce-in-2025/"
+      },
+      "category": "Technology",
+      "title": "Почему “ИИ-агенты” не стали массовыми сотрудниками в 2025",
+      "timestamp": 1771645592078
+    },
+    "msg_72": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Grant Tyler",
+        "handle": ""
+      },
+      "source": {
+        "name": "Substack",
+        "url": "https://grantedwardtyler.substack.com/p/market-digest-february-2026"
+      },
+      "category": "Investment",
+      "title": "Market Digest (Feb 2026): режимный макро-взгляд вместо “прогноза”",
+      "timestamp": 1771645600720
+    },
+    "msg_73": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "The Capital Spectator",
+        "handle": ""
+      },
+      "source": {
+        "name": "Substack",
+        "url": "https://capitalspectator.substack.com/p/research-review-20-february-2026"
+      },
+      "category": "Investment",
+      "title": "Research Review (Feb 20, 2026): обновление априоров через исследования",
+      "timestamp": 1771645611362
+    },
+    "msg_74": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Peter Steinberger",
+        "handle": ""
+      },
+      "source": {
+        "name": "Blog",
+        "url": "https://openclaws.io/blog/openclaw-creator-joins-openai/"
+      },
+      "category": "AI",
+      "title": "Персональные AI-агенты: локальность и приватность как дизайн-цель",
+      "timestamp": 1771645621376
+    },
+    "msg_75": {
+      "chatId": "tg:685668909",
+      "expert": {
+        "name": "Naval Ravikant",
+        "handle": "@naval"
+      },
+      "source": {
+        "name": "nav.al",
+        "url": "https://nav.al/rich"
+      },
+      "category": "Business",
+      "title": "Богатство vs деньги/статус: рычаг как главная стратегия",
+      "timestamp": 1771645629407
     }
   },
   "config": {
