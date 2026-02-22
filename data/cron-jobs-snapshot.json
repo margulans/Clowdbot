@@ -161,14 +161,30 @@
       "name": "Ежедневная рефлексия",
       "schedule": "30 20 * * *",
       "model": "gemini-flash",
+      "backup": "76f581a1 @20:35",
       "note": "FIXED 2026-02-22: agentTurn→systemEvent"
+    },
+    {
+      "id": "76f581a1",
+      "name": "🚨 BACKUP: Ежедневная рефлексия",
+      "schedule": "35 20 * * *",
+      "model": "claude-haiku-4-5",
+      "session": "main"
     },
     {
       "id": "14e9b571",
       "name": "🧹 Chat Cleanup",
       "schedule": "0 21 * * *",
       "model": "gemini-flash",
+      "backup": "28b9d12a @21:05",
       "note": "FIXED 2026-02-22: agentTurn→systemEvent"
+    },
+    {
+      "id": "28b9d12a",
+      "name": "🚨 BACKUP: Chat Cleanup",
+      "schedule": "5 21 * * *",
+      "model": "claude-haiku-4-5",
+      "session": "main"
     },
     {
       "id": "b72fece5",
