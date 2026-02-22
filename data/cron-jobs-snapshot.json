@@ -209,6 +209,34 @@
       "schedule": "30 */4 * * *",
       "model": "google/gemini-3-flash-preview"
     },
+    {
+      "id": "f3a7c901",
+      "name": "🔭 Scout — ресёрч",
+      "schedule": "0 20 * * 6 (Asia/Almaty = вс 02:00)",
+      "model": "google/gemini-3-flash-preview",
+      "timeout": "1800s",
+      "session": "isolated",
+      "backup": "e2d5b843 @20:20",
+      "note": "NEW 2026-02-22: еженедельный дип-ресёрч интернета/соцсетей/YouTube/Telegram. Режим research — сохраняет в data/scout-discoveries.json, уведомление НЕ отправляет"
+    },
+    {
+      "id": "e2d5b843",
+      "name": "🚨 BACKUP: Scout — ресёрч",
+      "schedule": "20 20 * * 6 (Asia/Almaty = вс 02:20)",
+      "model": "anthropic/claude-haiku-4-5",
+      "timeout": "1800s",
+      "session": "isolated",
+      "note": "BACKUP для Scout ресёрч"
+    },
+    {
+      "id": "c91f4d07",
+      "name": "🔭 Scout — отчёт",
+      "schedule": "0 6 * * 0 (Asia/Almaty = вс 12:00)",
+      "model": "google/gemini-3-flash-preview",
+      "timeout": "300s",
+      "session": "isolated",
+      "note": "NEW 2026-02-22: читает scout-discoveries.json → формирует и отправляет SCOUT REPORT в личку Маргулану (tg:685668909) → git commit"
+    },
     { "id": "8f79e567", "name": "Аводарт — воскресное", "schedule": "0 9 * * 0", "model": "main" },
     {
       "id": "7e21383e",
