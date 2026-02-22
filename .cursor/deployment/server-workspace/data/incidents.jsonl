@@ -26,3 +26,6 @@
 {"ts":"2026-02-22T07:20:18Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-22T07:30:31Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-22T07:40:04Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-22T07:50:06Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-22T08:00:03Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-22T08:00:13.952Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 3 critical, 0 warn, 4 ok in last 60min"}
