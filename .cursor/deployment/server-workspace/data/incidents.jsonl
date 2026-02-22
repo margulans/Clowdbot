@@ -115,3 +115,6 @@
 {"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
 {"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
 {"ts":"2026-02-22T15:00:00.000Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 0 ok in last 60min"}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
