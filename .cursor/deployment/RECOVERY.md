@@ -110,6 +110,40 @@ ssh root@46.224.221.0 "tailscale status"
 ssh root@46.224.221.0 "tailscale up --ssh --hostname=openclaw-server"
 ```
 
+### 🔴 Gateway зависает / постоянно перезапускается (cron cascade)
+
+**Симптомы:**
+
+- `health-monitor` перезапускает gateway каждые 2-5 минут
+- В логах: `LLM request timed out`, `gateway timeout after 60000ms`, `cron failed`
+- Memory peak 700MB+ перед рестартом
+- После рестарта — то же самое через несколько минут
+
+**Причина:** cron-задача (чаще всего Участковый `305e53a4`) использует модель с низким TPM-лимитом (Groq: 12K TPM). Её isolated-сессия накапливается до 200K+ токенов. Groq отвечает HTTP 413, OpenClaw делает retry → timeout → memory spike → рестарт.
+
+**Диагностика:**
+
+```bash
+# Найти какая cron-задача падает
+ssh openclaw@100.73.176.127 "journalctl --user -u openclaw-gateway -n 200 --no-pager | grep -E '(cron|timeout|413|TPM)'"
+
+# Проверить историю запусков Участкового
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron runs --id 305e53a4-049c-4d2e-b248-0cdbea259d3f"
+```
+
+**Лечение:**
+
+```bash
+# 1. Сменить модель на gemini-3-flash-preview (она в allowlist gateway, 1M TPM)
+# ВАЖНО: gemini-2.0-flash НЕ в allowlist gateway — вызовет "model not allowed"
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit 305e53a4-049c-4d2e-b248-0cdbea259d3f --model google/gemini-3-flash-preview"
+
+# 2. Убедиться что другие groq-задачи не используют накапливающиеся сессии
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron list | grep -i groq"
+```
+
+**Правило:** Cron-задачи с `session: isolated` НАКАПЛИВАЮТ историю. Никогда не назначать groq для задач с isolated-сессией — только gemini (1M context) или openai.
+
 ---
 
 ## Полная переустановка сервера
