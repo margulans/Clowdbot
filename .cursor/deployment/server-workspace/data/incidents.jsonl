@@ -144,3 +144,8 @@
 {"ts":"2026-02-22T15:49:31.230Z","type":"resolved","source":"mekhanik","ref_id":"709310c0","action":"verified current cron config/state: payload.kind correct and job lastStatus=ok in jobs.json; incident no longer reproducible","severity":"info"}
 {"ts":"2026-02-22T15:49:31.230Z","type":"resolved","source":"mekhanik","ref_id":"1487c693","action":"verified current cron config/state: payload.kind correct and job lastStatus=ok in jobs.json; incident no longer reproducible","severity":"info"}
 {"ts":"2026-02-22T15:49:31.230Z","type":"resolved","source":"mekhanik","ref_id":"fcb1a9e6","action":"verified current cron config/state: payload.kind correct and job lastStatus=ok in jobs.json; incident no longer reproducible","severity":"info"}
+{"id":"d3e4e125","type":"cron_error","source":"uchastkovy","job":"Ежедневная рефлексия (9d558661-b1bd-4636-afba-72ec30bb3190)","severity":"critical","msg":"lastStatus=error; consecutiveErrors=1; lastError=cron announce delivery failed","resolved":false}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
+{"id":"d3e4e125","type":"cron_error","source":"uchastkovy","job":"Ежедневная рефлексия (9d558661-b1bd-4636-afba-72ec30bb3190)","severity":"critical","msg":"lastStatus=error; consecutiveErrors=1; lastError=cron announce delivery failed","resolved":false}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
+{"ts":"2026-02-22T16:00:00.000Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 24 ok in last 60min"}
