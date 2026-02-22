@@ -6,7 +6,7 @@
       "total_reactions": 13,
       "avg_rating": 2,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 20,
       "exploration_status": "proven",
       "reaction_history": [
         {
@@ -95,7 +95,7 @@
       "total_reactions": 0,
       "avg_rating": 0,
       "first_added": "2026-02-05",
-      "priority_bonus": 9,
+      "priority_bonus": 10,
       "exploration_status": "new",
       "discovery_method": "citation_analysis",
       "discovery_date": "2026-02-05T08:19:20.155Z",
@@ -110,7 +110,7 @@
       "total_reactions": 1,
       "avg_rating": 1.5,
       "first_added": "2026-02-05",
-      "priority_bonus": 9,
+      "priority_bonus": 10,
       "exploration_status": "new",
       "discovery_method": "citation_analysis",
       "discovery_date": "2026-02-05T08:19:20.156Z",
@@ -133,7 +133,7 @@
       "total_reactions": 0,
       "avg_rating": 0,
       "first_added": "2026-02-05",
-      "priority_bonus": 7,
+      "priority_bonus": 10,
       "exploration_status": "new",
       "discovery_method": "trending_hashtags",
       "discovery_date": "2026-02-05T08:19:20.156Z",
@@ -148,7 +148,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -171,7 +171,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -194,7 +194,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -217,7 +217,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -240,7 +240,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -263,7 +263,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -286,7 +286,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -309,7 +309,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -332,7 +332,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -355,7 +355,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -378,7 +378,7 @@
       "total_reactions": 2,
       "avg_rating": 1.75,
       "first_added": "2026-02-05",
-      "priority_bonus": 15,
+      "priority_bonus": 8,
       "exploration_status": "new",
       "reaction_history": [
         {
@@ -394,16 +394,62 @@
           "running_avg": 1.75
         }
       ]
+    },
+    "https://www.marktechpost.com/feed/": {
+      "status": "auto_discovered",
+      "category": "AI",
+      "total_reactions": 0,
+      "avg_rating": 0,
+      "first_added": "2026-02-22",
+      "priority_bonus": 10,
+      "exploration_status": "new",
+      "discovery_method": "weekly_exploration",
+      "discovery_date": "2026-02-22T05:04:43.137Z",
+      "topics": [
+        "AI",
+        "research"
+      ]
+    },
+    "http://www.therobotreport.com/feed/": {
+      "status": "auto_discovered",
+      "category": "robotics",
+      "total_reactions": 0,
+      "avg_rating": 0,
+      "first_added": "2026-02-22",
+      "priority_bonus": 10,
+      "exploration_status": "new",
+      "discovery_method": "weekly_exploration",
+      "discovery_date": "2026-02-22T05:04:43.137Z",
+      "topics": [
+        "robotics",
+        "automation"
+      ]
+    },
+    "https://www.aviationtoday.com/feed/": {
+      "status": "auto_discovered",
+      "category": "eVTOL",
+      "total_reactions": 0,
+      "avg_rating": 0,
+      "first_added": "2026-02-22",
+      "priority_bonus": 10,
+      "exploration_status": "new",
+      "discovery_method": "weekly_exploration",
+      "discovery_date": "2026-02-22T05:04:43.137Z",
+      "topics": [
+        "eVTOL",
+        "aviation"
+      ]
     }
   },
   "exploration_stats": {
-    "total_sources": 15,
+    "total_sources": 18,
     "proven_sources": 1,
-    "exploration_sources": 14,
+    "exploration_sources": 17,
     "rejected_sources": 0,
     "last_discovery": "2026-02-05",
     "discovery_rate_month": 0,
-    "quality_growth_rate": 0
+    "quality_growth_rate": 0,
+    "last_analysis": "2026-02-22T05:05:18.226Z"
   },
   "discovery_targets": {
     "weekly_new_sources": 3,
@@ -432,7 +478,7 @@
       "AI": {
         "priority_level": 1,
         "weight": 10,
-        "max_share": 1.0,
+        "max_share": 1,
         "description": "Высший приоритет - может занять весь дайджест"
       },
       "robotics": {
@@ -480,7 +526,47 @@
     }
   },
   "exploration_queue": {
-    "high_priority": [],
+    "high_priority": [
+      {
+        "name": "https://www.marktechpost.com/feed/",
+        "type": "rss_feed",
+        "discovery_method": "weekly_exploration",
+        "relevance_score": 7.5,
+        "topics": [
+          "AI",
+          "research"
+        ],
+        "keyword_matches": [],
+        "discovered_date": "2026-02-22T05:04:43.137Z",
+        "status": "queued"
+      },
+      {
+        "name": "http://www.therobotreport.com/feed/",
+        "type": "rss_feed",
+        "discovery_method": "weekly_exploration",
+        "relevance_score": 7.5,
+        "topics": [
+          "robotics",
+          "automation"
+        ],
+        "keyword_matches": [],
+        "discovered_date": "2026-02-22T05:04:43.137Z",
+        "status": "queued"
+      },
+      {
+        "name": "https://www.aviationtoday.com/feed/",
+        "type": "rss_feed",
+        "discovery_method": "weekly_exploration",
+        "relevance_score": 7.5,
+        "topics": [
+          "eVTOL",
+          "aviation"
+        ],
+        "keyword_matches": [],
+        "discovered_date": "2026-02-22T05:04:43.137Z",
+        "status": "queued"
+      }
+    ],
     "medium_priority": [
       {
         "name": "https://techcrunch.com/tag/artificial-intelligence/feed/",
