@@ -16,6 +16,7 @@
 | [ARCHITECTURE.md](./.ai/ARCHITECTURE.md)                             | При архитектурных вопросах, добавлении компонентов |
 | [SNAPSHOT.md](./.ai/SNAPSHOT.md)                                     | Триггер `старт` — узнать текущее состояние         |
 | [BACKLOG.md](./.ai/BACKLOG.md)                                       | Триггер `план` — что делать дальше                 |
+| [EVOLUTION.md](./.ai/EVOLUTION.md)                                   | Эволюция: что умеет, какие задачи снял             |
 | [.cursor/deployment/README.md](./.cursor/deployment/README.md)       | Детали деплоя, эндпойнты, SSH-доступы              |
 | [.cursor/deployment/WORKFLOWS.md](./.cursor/deployment/WORKFLOWS.md) | Схемы автоматизаций (дайджест, рейтинг)            |
 | [.cursor/deployment/RECOVERY.md](./.cursor/deployment/RECOVERY.md)   | Восстановление при сбоях                           |
@@ -74,7 +75,8 @@ Neiron-AI-assistant/
 │   ├── INDEX.md                  # ⭐ Этот файл — единый вход
 │   ├── ARCHITECTURE.md           # Архитектура Нейрона
 │   ├── SNAPSHOT.md               # Текущее состояние
-│   └── BACKLOG.md                # Задачи и roadmap
+│   ├── BACKLOG.md                # Задачи и roadmap
+│   └── EVOLUTION.md              # Эволюция: ценность и снятые задачи
 │
 ├── .cursor/
 │   ├── deployment/               # Документация деплоя
@@ -119,6 +121,7 @@ Neiron-AI-assistant/
 - [ARCHITECTURE.md](./.ai/ARCHITECTURE.md) — архитектура
 - [SNAPSHOT.md](./.ai/SNAPSHOT.md) — текущий статус
 - [BACKLOG.md](./.ai/BACKLOG.md) — план разработки
+- [EVOLUTION.md](./.ai/EVOLUTION.md) — эволюция и ценность
 
 ---
 
