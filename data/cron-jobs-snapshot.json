@@ -1,13 +1,36 @@
 {
   "updatedAt": "2026-02-22",
-  "note": "Primary: llama:free. Backup: gemini-3-flash-preview. All critical jobs have Gemini fallback.",
+  "note": "Primary: llama:free. Backup: gemini-3-flash-preview. Monitoring: Участковый→Чекист→Механик (isolated).",
+  "monitoring": {
+    "uchastkovy": "305e53a4",
+    "chekist": "b72fece5",
+    "mekhanik": "bef4ddfa",
+    "journal": "data/incidents.jsonl"
+  },
   "jobs": [
     {
       "id": "305e53a4",
-      "name": "🩺 Доктор: Авто-проверка",
+      "name": "👮‍♂️ Участковый",
       "schedule": "*/10 * * * *",
-      "model": "main",
-      "note": "Каждые 10 минут"
+      "model": "llama:free",
+      "session": "isolated",
+      "note": "мониторинг здоровья системы, пишет в data/incidents.jsonl"
+    },
+    {
+      "id": "b72fece5",
+      "name": "🕵️ Чекист",
+      "schedule": "0 * * * *",
+      "model": "llama:free",
+      "session": "isolated",
+      "note": "hourly аудит incidents.jsonl, алерт при critical вне тихих часов"
+    },
+    {
+      "id": "bef4ddfa",
+      "name": "🔧 Механик",
+      "schedule": "*/30 * * * *",
+      "model": "llama:free",
+      "session": "isolated",
+      "note": "авто-ремонт нерешённых critical инцидентов из incidents.jsonl"
     },
     {
       "id": "4cc76b40",
