@@ -44,13 +44,11 @@ openclaw cron list
 
 | Текущая модель                           | Замена                                              |
 | ---------------------------------------- | --------------------------------------------------- |
-| `gpt-5.2`                                | `gemini-3-flash-preview`                            |
+| `gpt-5.2`                                | `claude-opus-4.6`                                   |
+| `claude-sonnet-4-6`                      | `gemini-3.1`                                        |
+| `claude-sonnet-4-20250514`               | `gemini-3.1`                                        |
 | `gemini-3-flash-preview`                 | `openrouter/meta-llama/llama-3.3-70b-instruct:free` |
 | `meta-llama/llama-3.3-70b-instruct:free` | `gemini-3-flash-preview`                            |
-| `claude-sonnet-4-6`                      | `gemini-3-flash-preview`                            |
-| `claude-sonnet-4-20250514`               | `gemini-3-flash-preview`                            |
-
-Принцип: понижаем до более стабильной/дешёвой модели. Если задача критична для качества (основная сессия, дайджест) — замени на `gemini-3-flash-preview`, не на `llama:free`.
 
 **4. Выполни замену:**
 
