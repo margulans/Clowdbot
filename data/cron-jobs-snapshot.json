@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-02-22",
-  "note": "Иерархия моделей: Primary=google/gemini-3-flash-preview, Backup=anthropic/claude-haiku-4-5. Мониторинг/Дайджесты/Мнения: gemini-3-flash-preview. claude-haiku-4-5 и claude-opus-4-6 добавлены в agents.defaults.models в openclaw.json. CHANGED 2026-02-22: Чекист — delivery.mode:announce→none (алерты через message() tool).",
+  "note": "Иерархия моделей: Primary=google/gemini-3-flash-preview, Backup=anthropic/claude-haiku-4-5. Мониторинг/Дайджесты/Мнения: gemini-3-flash-preview. claude-haiku-4-5 и claude-opus-4-6 добавлены в agents.defaults.models в openclaw.json. CHANGED 2026-02-22: Чекист — delivery.mode:announce→none. CHANGED 2026-02-22: все 12 дайджест/мнения задач стандартизированы — 3-шаговый формат: (1) заголовок с указанием основной/бэкап + модель, (2) каждая новость/мнение строго отдельным message(), (3) блок АУДИТ в конце.",
   "monitoring": {
     "uchastkovy": "305e53a4",
     "chekist": "b72fece5",
