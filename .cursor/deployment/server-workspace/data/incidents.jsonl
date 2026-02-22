@@ -97,3 +97,6 @@
 {"ts":"2026-02-22T12:50:07Z","type":"resolved","source":"mekhanik","ref_id":"1487c693","action":"mekhanik delivery changed to mode=none to stop announce delivery failures","severity":"info"}
 {"ts":"2026-02-22T12:50:07Z","type":"resolved","source":"mekhanik","ref_id":"fcb1a9e6","action":"mekhanik delivery changed to mode=none to stop announce delivery failures","severity":"info"}
 {"ts":"2026-02-22T12:50:07Z","type":"resolved","source":"mekhanik","ref_id":"4f11f719","action":"gateway status checked via systemctl: active","severity":"info"}
+{"id":"c4bd6a0c","type":"cron_error","source":"uchastkovy","job":"🔧 Механик (bef4ddfa-1fd8-4c64-9495-79d851f4f5f0)","severity":"critical","msg":"lastStatus=error; consecutiveErrors=1; lastError=Error: cron: job execution timed out","resolved":false}
+{"id":"4f11f719","type":"gateway_down","source":"uchastkovy","job":"openclaw-gateway","severity":"critical","msg":"status=","resolved":false}
+{"ts":"2026-02-22T13:02:00.000Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 4 ok in last 60min"}
