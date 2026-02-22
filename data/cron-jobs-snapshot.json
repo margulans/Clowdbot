@@ -28,19 +28,19 @@
       "id": "b72fece5",
       "name": "🕵️ Чекист",
       "schedule": "0 * * * *",
-      "model": "groq/llama-3.3-70b-versatile",
+      "model": "google/gemini-3-flash-preview",
       "timeout": "90s",
       "session": "isolated",
-      "note": "hourly аудит incidents.jsonl, алерт при critical вне тихих часов. FIXED 2026-02-22: llama:free→groq"
+      "note": "hourly аудит incidents.jsonl, алерт при critical вне тихих часов. FIXED 2026-02-22: llama:free→gemini-3-flash-preview"
     },
     {
       "id": "bef4ddfa",
       "name": "🔧 Механик",
       "schedule": "*/30 * * * *",
-      "model": "groq/llama-3.3-70b-versatile",
-      "timeout": "180s",
+      "model": "google/gemini-3-flash-preview",
+      "timeout": "120s",
       "session": "isolated",
-      "note": "авто-ремонт нерешённых critical инцидентов из incidents.jsonl. FIXED 2026-02-22: llama:free→groq"
+      "note": "авто-ремонт нерешённых critical инцидентов из incidents.jsonl. FIXED 2026-02-22: llama:free→gemini-3-flash-preview"
     },
     {
       "id": "22efd91b",
