@@ -1678,6 +1678,132 @@
       "title": "Биоэлектричество и перепрограммирование жизни",
       "timestamp": 1740127805000
     },
+    "msg_104": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Майкл Левин",
+        "handle": "@drmichaellevin"
+      },
+      "source": {
+        "name": "Medium",
+        "url": "https://medium.com/last-week-in-ai/last-week-in-ai-february-2-2026-fe43afefc73b"
+      },
+      "category": "Robotics",
+      "title": "Биологические роботы и программирование клеток",
+      "timestamp": 1740214050000
+    },
+    "msg_103": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Нарендра Моди",
+        "handle": "@narendramodi"
+      },
+      "source": {
+        "name": "Financial Express",
+        "url": "https://www.financialexpress.com/life/technology-openais-sam-altman-vs-anthropics-dario-amodei-rivalry-on-full-display-at-india-ai-impact-summit-2026-4148505/"
+      },
+      "category": "Business",
+      "title": "Человекоцентричный ИИ и цифровая демократия",
+      "timestamp": 1740214040000
+    },
+    "msg_102": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Amazon",
+        "handle": "@amazon"
+      },
+      "source": {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/2026/01/29/amazon-openai-investment-jassy-altman.html"
+      },
+      "category": "Investment",
+      "title": "Инвестиции в OpenAI как мультимодельная стратегия",
+      "timestamp": 1740214030000
+    },
+    "msg_101": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Питер Штайнбергер",
+        "handle": "@steipete"
+      },
+      "source": {
+        "name": "Times of India",
+        "url": "https://timesofindia.indiatimes.com/technology/tech-news/openai-shows-its-latest-openclaw-hire-to-tease-anthropic-in-viral-picture-of-sam-altman-and-dario-amodei-from-india-ai-summit/articleshow/128600522.cms"
+      },
+      "category": "AI",
+      "title": "OpenClaw как стандарт для AI-агентов",
+      "timestamp": 1740214020000
+    },
+    "msg_100": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Майкл Левин",
+        "handle": "@drmichaellevin"
+      },
+      "source": {
+        "name": "Medium",
+        "url": "https://medium.com/last-week-in-ai/last-week-in-ai-february-2-2026-fe43afefc73b"
+      },
+      "category": "Biology",
+      "title": "AlphaGenome и управление морфогенезом",
+      "timestamp": 1740214010000
+    },
+    "msg_99": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Нассим Талеб",
+        "handle": "@nntaleb"
+      },
+      "source": {
+        "name": "TradingView",
+        "url": "https://www.tradingview.com/news/u_today:1fa9c00cf094b:0-stunning-ai-prediction-comes-from-the-black-swan-author-nassim-taleb/"
+      },
+      "category": "AI",
+      "title": "Асимметрия ИИ в медицине и обучении",
+      "timestamp": 1740214000000
+    },
+    "msg_98": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Рей Далио",
+        "handle": "@RayDalio"
+      },
+      "source": {
+        "name": "Acquirer's Multiple",
+        "url": "https://acquirersmultiple.com/2026/02/weekly-investing-roundup-news-podcasts-interviews-02-09-2026/"
+      },
+      "category": "Investment",
+      "title": "Капитальная война и ИИ-неравенство",
+      "timestamp": 1740213990000
+    },
+    "msg_97": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Дарио Амодеи",
+        "handle": "@DarioAmodei"
+      },
+      "source": {
+        "name": "NYT",
+        "url": "https://www.nytimes.com/2026/02/18/technology/anthropic-dario-amodei-effective-altruism.html"
+      },
+      "category": "AI",
+      "title": "Риски автономных систем и безопасность архитектуры",
+      "timestamp": 1740213980000
+    },
+    "msg_96": {
+      "chatId": "@opnioneiron",
+      "expert": {
+        "name": "Сэм Альтман",
+        "handle": "@sama"
+      },
+      "source": {
+        "name": "Times of India",
+        "url": "https://timesofindia.indiatimes.com/technology/tech-news/openai-shows-its-latest-openclaw-hire-to-tease-anthropic-in-viral-picture-of-sam-altman-and-dario-amodei-from-india-ai-summit/articleshow/128600522.cms"
+      },
+      "category": "AI",
+      "title": "OpenClaw и будущее open-source агентов",
+      "timestamp": 1740213970000
+    },
     "msg_83": {
       "chatId": "@opnioneiron",
       "expert": {
