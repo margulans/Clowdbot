@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-02-22",
-  "note": "Primary: llama:free. Backup: gemini-3-flash-preview. Monitoring: Участковый→Чекист→Механик (isolated). Economics: Экономист (сбор+отчёт, isolated).",
+  "note": "Primary: openai/gpt-5.2 → fallback gemini-3-flash-preview → openai/gpt-4o. Monitoring: Участковый→Чекист→Механик (groq/llama-3.3-70b-versatile, isolated). Economics: Экономист (сбор+отчёт, isolated).",
   "monitoring": {
     "uchastkovy": "305e53a4",
     "chekist": "b72fece5",
@@ -19,25 +19,28 @@
       "id": "305e53a4",
       "name": "👮‍♂️ Участковый",
       "schedule": "*/10 * * * *",
-      "model": "llama:free",
+      "model": "groq/llama-3.3-70b-versatile",
+      "timeout": "60s",
       "session": "isolated",
-      "note": "мониторинг здоровья системы, пишет в data/incidents.jsonl"
+      "note": "мониторинг здоровья системы, пишет в data/incidents.jsonl. FIXED 2026-02-22: llama:free→groq (rate limit fix)"
     },
     {
       "id": "b72fece5",
       "name": "🕵️ Чекист",
       "schedule": "0 * * * *",
-      "model": "llama:free",
+      "model": "groq/llama-3.3-70b-versatile",
+      "timeout": "90s",
       "session": "isolated",
-      "note": "hourly аудит incidents.jsonl, алерт при critical вне тихих часов"
+      "note": "hourly аудит incidents.jsonl, алерт при critical вне тихих часов. FIXED 2026-02-22: llama:free→groq"
     },
     {
       "id": "bef4ddfa",
       "name": "🔧 Механик",
       "schedule": "*/30 * * * *",
-      "model": "llama:free",
+      "model": "groq/llama-3.3-70b-versatile",
+      "timeout": "180s",
       "session": "isolated",
-      "note": "авто-ремонт нерешённых critical инцидентов из incidents.jsonl"
+      "note": "авто-ремонт нерешённых critical инцидентов из incidents.jsonl. FIXED 2026-02-22: llama:free→groq"
     },
     {
       "id": "22efd91b",
