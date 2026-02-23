@@ -16,7 +16,7 @@
 
 message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МНЕНИЯ И КОММЕНТАРИИ** | [ДД.ММ.ГГГГ], 08:30
 📊 [N] мнений | 🧠 Что думают эксперты
-🤖 _Модель: Claude Haiku 4.5 (backup)_")
+🤖 _Модель: GPT-4o mini (backup)_")
 
 --- ШАГ 2: КАЖДОЕ МНЕНИЕ = ОТДЕЛЬНОЕ СООБЩЕНИЕ ---
 ЗАПРЕЩЕНО объединять мнения в одном сообщении!
@@ -36,7 +36,7 @@ message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МН
 message(action=send, channel=telegram, target=@opnioneiron, message="🛡️ **АУДИТ ДАЙДЖЕСТА**
 ─────────────────────
 👤 Автор: Нейрон (AI, backup)
-🤖 Модель: Claude Haiku 4.5 (backup)
+🤖 Модель: GPT-4o mini (backup)
 🧠 Мышление: low
 📂 Файлы: digest-format-final.md, dual-rating-data.json, sent-digests.json ✅
 ⏱️ Статус: Бэкап дайджест мнений (утро) сформирован и отправлен в @opnioneiron")
@@ -58,7 +58,7 @@ message(action=send, channel=telegram, target=@opnioneiron, message="🛡️ **�
 
 message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МНЕНИЯ И КОММЕНТАРИИ** | [ДД.ММ.ГГГГ], 13:30
 📊 [N] мнений | 🧠 Что думают эксперты
-🤖 _Модель: Claude Haiku 4.5 (backup)_")
+🤖 _Модель: GPT-4o mini (backup)_")
 
 --- ШАГ 2: КАЖДОЕ МНЕНИЕ = ОТДЕЛЬНОЕ СООБЩЕНИЕ ---
 ЗАПРЕЩЕНО объединять мнения в одном сообщении!
@@ -78,7 +78,7 @@ message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МН
 message(action=send, channel=telegram, target=@opnioneiron, message="🛡️ **АУДИТ ДАЙДЖЕСТА**
 ─────────────────────
 👤 Автор: Нейрон (AI, backup)
-🤖 Модель: Claude Haiku 4.5 (backup)
+🤖 Модель: GPT-4o mini (backup)
 🧠 Мышление: low
 📂 Файлы: digest-format-final.md, dual-rating-data.json, sent-digests.json ✅
 ⏱️ Статус: Бэкап дайджест мнений (день) сформирован и отправлен в @opnioneiron")
@@ -100,7 +100,7 @@ message(action=send, channel=telegram, target=@opnioneiron, message="🛡️ **�
 
 message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МНЕНИЯ И КОММЕНТАРИИ** | [ДД.ММ.ГГГГ], 18:30
 📊 [N] мнений | 🧠 Что думают эксперты
-🤖 _Модель: Claude Haiku 4.5 (backup)_")
+🤖 _Модель: GPT-4o mini (backup)_")
 
 --- ШАГ 2: КАЖДОЕ МНЕНИЕ = ОТДЕЛЬНОЕ СООБЩЕНИЕ ---
 ЗАПРЕЩЕНО объединять мнения в одном сообщении!
@@ -120,7 +120,7 @@ message(action=send, channel=telegram, target=@opnioneiron, message="💬 **МН
 message(action=send, channel=telegram, target=@opnioneiron, message="🛡️ **АУДИТ ДАЙДЖЕСТА**
 ─────────────────────
 👤 Автор: Нейрон (AI, backup)
-🤖 Модель: Claude Haiku 4.5 (backup)
+🤖 Модель: GPT-4o mini (backup)
 🧠 Мышление: low
 📂 Файлы: digest-format-final.md, dual-rating-data.json, sent-digests.json ✅
 ⏱️ Статус: Бэкап дайджест мнений (вечер) сформирован и отправлен в @opnioneiron")
