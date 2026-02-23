@@ -1,3 +1,2 @@
-{"ts":"2026-02-23T04:08:42Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-23T04:10:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 1 ok in last 60min"}
-{"ts":"2026-02-23T04:13:25Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-23T04:25:00Z","type":"resolved","source":"mekhanik","ref_id":"9d558661","action":"cron_error: manual run confirmed problem remains (delivery failed), escalated","severity":"info"}
+{"ts":"2026-02-23T04:26:00Z","type":"escalated","source":"mekhanik","ref_id":"9d558661","severity":"critical","msg":"requires_human: Job 'Ежедневная рефлексия' (9d558661) fails with 'cron announce delivery failed'. Problem is likely in the delivery channel configuration or Telegram availability during isolated run. Escalating to human.","resolved":false}
