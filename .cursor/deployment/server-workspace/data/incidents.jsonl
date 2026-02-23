@@ -26,3 +26,4 @@
 {"id":"05f4248b","ts":"2026-02-23T07:03:45Z","type":"cron_error","source":"uchastkovy","job":"9d558661-b1bd-4636-afba-72ec30bb3190","severity":"critical","msg":"cron job Ежедневная рефлексия failed","resolved":false}
 {"ts":"2026-02-23T07:13:45Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T07:13:42Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-23T07:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 1 critical, 0 warn, 8 ok in last 60min"}
