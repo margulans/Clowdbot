@@ -1,0 +1,127 @@
+{
+  "_comment": "Реестр сервисов и API для мониторинга экономистом. Обновлять при добавлении новых сервисов.",
+  "_updated": "2026-02-23",
+  "subscriptions": [
+    {
+      "id": "hetzner-vps",
+      "name": "Hetzner VPS CPX22",
+      "provider": "Hetzner",
+      "kind": "hosting",
+      "billing": "pay-per-use",
+      "cost_usd_per_month_max": 7.59,
+      "renewal_date": null,
+      "alert_days_before": 3,
+      "links": {
+        "billing": "https://console.hetzner.cloud/account/billing"
+      }
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search API",
+      "provider": "Brave",
+      "kind": "api",
+      "billing": "monthly",
+      "cost_usd_per_month": 5.0,
+      "free_tier_requests": 1000,
+      "renewal_date": "2026-03-01",
+      "alert_days_before": 7,
+      "links": {
+        "subscriptions": "https://api.search.brave.com/app/subscriptions",
+        "keys": "https://api.search.brave.com/app/keys"
+      }
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic Claude",
+      "provider": "Anthropic",
+      "kind": "llm-api",
+      "billing": "prepaid-credits",
+      "model_primary": "claude-sonnet-4-6",
+      "balance_usd": 246.65,
+      "balance_as_of": "2026-02-23",
+      "balance_alert_threshold": 50,
+      "auto_reload": { "trigger_usd": 50, "reload_to_usd": 250 },
+      "credits_expire": "2027-02-23",
+      "links": {
+        "billing": "https://console.anthropic.com/settings/billing",
+        "keys": "https://console.anthropic.com/settings/keys"
+      }
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI (embeddings)",
+      "provider": "OpenAI",
+      "kind": "llm-api",
+      "billing": "prepaid-credits",
+      "model_primary": "text-embedding-3-small",
+      "balance_usd": 248.88,
+      "balance_as_of": "2026-02-23",
+      "balance_alert_threshold": 50,
+      "auto_reload": { "trigger_usd": 50, "reload_to_usd": 100, "max_usd_per_month": 100 },
+      "links": {
+        "billing": "https://platform.openai.com/account/billing",
+        "keys": "https://platform.openai.com/api-keys"
+      }
+    },
+    {
+      "id": "google-gemini",
+      "name": "Google Gemini API",
+      "provider": "Google",
+      "kind": "llm-api",
+      "billing": "pay-per-use",
+      "model_primary": "gemini-3-flash-preview",
+      "usage": "Основная модель всех isolated cron jobs (~20+ запусков в сутки)",
+      "pricing": {
+        "input_per_1m_usd": 0.075,
+        "output_per_1m_usd": 0.3
+      },
+      "balance_alert_threshold": 20,
+      "links": {
+        "billing": "https://console.cloud.google.com/billing",
+        "studio": "https://aistudio.google.com",
+        "keys": "https://aistudio.google.com/app/apikey"
+      }
+    },
+    {
+      "id": "groq",
+      "name": "Groq Whisper",
+      "provider": "Groq",
+      "kind": "api",
+      "billing": "free-tier",
+      "model_primary": "whisper-large-v3",
+      "limits": {
+        "requests_per_minute": 20,
+        "requests_per_day": 2000,
+        "audio_seconds_per_hour": 7200,
+        "audio_seconds_per_day": 28800
+      },
+      "quota_alert_threshold_pct": 80,
+      "links": {
+        "limits": "https://console.groq.com/settings/limits",
+        "keys": "https://console.groq.com/keys"
+      }
+    },
+    {
+      "id": "github",
+      "name": "GitHub Free",
+      "provider": "GitHub",
+      "kind": "platform",
+      "billing": "free",
+      "links": {
+        "billing": "https://github.com/settings/billing/summary",
+        "tokens": "https://github.com/settings/tokens"
+      }
+    },
+    {
+      "id": "tailscale",
+      "name": "Tailscale Personal Free",
+      "provider": "Tailscale",
+      "kind": "networking",
+      "billing": "free",
+      "links": {
+        "billing": "https://login.tailscale.com/admin/settings/billing",
+        "keys": "https://login.tailscale.com/admin/settings/keys"
+      }
+    }
+  ]
+}

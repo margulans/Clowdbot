@@ -37,6 +37,12 @@
       "input_per_1m": 10.0,
       "output_per_1m": 30.0,
       "note": "Alias для gpt-5.2"
+    },
+    "openai/gpt-4o-mini": {
+      "provider": "OpenAI",
+      "input_per_1m": 0.15,
+      "output_per_1m": 0.6,
+      "note": "Бэкап модель для isolated cron jobs (резервирует gemini-3-flash-preview)"
     }
   },
   "external_services": {
