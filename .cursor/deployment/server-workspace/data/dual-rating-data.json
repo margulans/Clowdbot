@@ -111,6 +111,70 @@
       "category": "Vibecoding",
       "title": "Shift to Vibecoding paradigm",
       "timestamp": "2026-02-23T03:59:00Z"
+    },
+    {
+      "messageId": "130",
+      "expert": "Mustafa Suleyman",
+      "source": "Deseret News",
+      "category": "AI",
+      "title": "Suleyman on professional-grade AGI and white-collar automation",
+      "timestamp": "2026-02-23T13:50:56.559Z"
+    },
+    {
+      "messageId": "131",
+      "expert": "Eduardo B. Sandoval",
+      "source": "The Conversation",
+      "category": "Robotics",
+      "title": "Sandoval on home humanoid robots and privacy/teleoperation",
+      "timestamp": "2026-02-23T13:51:38.006Z"
+    },
+    {
+      "messageId": "132",
+      "expert": "James “Buddy” Denham",
+      "source": "FLYING Magazine",
+      "category": "eVTOL",
+      "title": "Denham/Joby on passenger air taxi service in 2026",
+      "timestamp": "2026-02-23T13:52:03.406Z"
+    },
+    {
+      "messageId": "133",
+      "expert": "Faros AI",
+      "source": "Faros AI",
+      "category": "Vibecoding",
+      "title": "Faros on AI coding agents: costs, token efficiency, UX",
+      "timestamp": "2026-02-23T13:52:29.534Z"
+    },
+    {
+      "messageId": "134",
+      "expert": "Goldman Sachs Research (Jim Hammond)",
+      "source": "Goldman Sachs",
+      "category": "Business",
+      "title": "GS on AI capex and shift beyond infrastructure",
+      "timestamp": "2026-02-23T13:52:51.777Z"
+    },
+    {
+      "messageId": "135",
+      "expert": "Eddy Keming Chen",
+      "source": "UC San Diego (Today at UC San Diego)",
+      "category": "AI",
+      "title": "Chen: current LLMs may already constitute AGI (by reasonable standards)",
+      "timestamp": "2026-02-23T13:53:16.198Z"
+    },
+    {
+      "messageId": "136",
+      "expert": "Vivjan Myrto",
+      "source": "StartupBoston.org (panel transcript)",
+      "category": "Investment",
+      "title": "Myrto: chapter two of AI in 2026 = vertical applications; tighter growth rounds",
+      "timestamp": "2026-02-23T13:53:49.311Z"
+    },
+    {
+      "messageId": "137",
+      "expert": "ABI Research (Michael Larner)",
+      "source": "ABI Research",
+      "category": "Technology",
+      "title": "ABI: 2026 is gradual modernization; manufacturers risk falling behind without AI projects",
+      "timestamp": "2026-02-23T13:54:17.581Z"
     }
   ]
 }
