@@ -17,6 +17,7 @@
 | [SNAPSHOT.md](./.ai/SNAPSHOT.md)                                     | Триггер `старт` — узнать текущее состояние         |
 | [BACKLOG.md](./.ai/BACKLOG.md)                                       | Триггер `план` — что делать дальше                 |
 | [EVOLUTION.md](./.ai/EVOLUTION.md)                                   | Эволюция: что умеет, какие задачи снял             |
+| [INFRA.md](./.ai/INFRA.md)                                           | Реестр сервисов, расходы, подписки, ссылки оплаты  |
 | [.cursor/deployment/README.md](./.cursor/deployment/README.md)       | Детали деплоя, эндпойнты, SSH-доступы              |
 | [.cursor/deployment/WORKFLOWS.md](./.cursor/deployment/WORKFLOWS.md) | Схемы автоматизаций (дайджест, рейтинг)            |
 | [.cursor/deployment/RECOVERY.md](./.cursor/deployment/RECOVERY.md)   | Восстановление при сбоях                           |

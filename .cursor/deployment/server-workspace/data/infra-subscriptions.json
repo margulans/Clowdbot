@@ -1,0 +1,103 @@
+{
+  "_comment": "Машиночитаемые данные инфраструктуры для economist/SKILL.md Режим A.2. Обновлять при добавлении новых сервисов.",
+  "last_checked": null,
+  "services": [
+    {
+      "id": "hetzner-vps",
+      "name": "Hetzner VPS CPX22",
+      "type": "pay-per-use",
+      "monthly_cap": 7.59,
+      "currency": "USD",
+      "alert_monthly_threshold": 7.0,
+      "renewal_date": null,
+      "manage_url": "https://console.hetzner.cloud/account/billing",
+      "api_check": "hetzner",
+      "notes": "Pay-per-use почасовой. Макс $6.99/мес сервер + $0.60/мес IP. Feb 2026: $5.28"
+    },
+    {
+      "id": "brave-search",
+      "name": "Brave Search API — Search plan",
+      "type": "subscription-with-credits",
+      "cost_per_1000_requests": 5.0,
+      "free_monthly_credits": 5.0,
+      "free_monthly_requests": 1000,
+      "renewal_date": "2026-03-01",
+      "billing_cycle": "monthly",
+      "alert_days_before": 7,
+      "manage_url": "https://api.search.brave.com/app/subscriptions",
+      "api_check": null,
+      "needs_manual_check": true,
+      "notes": "Активна с 22.02.2026. $5/1000 запросов. Включает $5 кредитов/мес = первые 1000 запросов бесплатно. Превышение: $5 за каждые доп. 1000."
+    },
+    {
+      "id": "brave-search-free",
+      "name": "Brave Search API — Free plan",
+      "type": "free",
+      "renewal_date": null,
+      "manage_url": "https://api.search.brave.com/app/subscriptions",
+      "api_check": null,
+      "notes": "Активна с 06.02.2026. Бесплатный план без дедлайна."
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic Claude",
+      "type": "prepaid-credits",
+      "balance_alert_threshold": 50,
+      "balance_critical_threshold": 20,
+      "auto_reload_enabled": true,
+      "auto_reload_trigger": 50,
+      "auto_reload_target": 250,
+      "credits_expire": "2027-02-23",
+      "currency": "USD",
+      "manage_url": "https://console.anthropic.com/settings/billing",
+      "api_check": "anthropic",
+      "notes": "Баланс на 23.02.2026: $246.65. Auto-reload: при $50 → $250."
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI (embeddings)",
+      "type": "prepaid-credits",
+      "balance_alert_threshold": 50,
+      "balance_critical_threshold": 20,
+      "auto_reload_enabled": true,
+      "auto_reload_trigger": 50,
+      "auto_reload_target": 100,
+      "auto_reload_max_monthly": 100,
+      "currency": "USD",
+      "manage_url": "https://platform.openai.com/account/billing",
+      "api_check": "openai",
+      "notes": "Баланс на 23.02.2026: $248.88. Auto-reload: при $50 → $100 (макс $100/мес)."
+    },
+    {
+      "id": "groq",
+      "name": "Groq Whisper Large V3",
+      "type": "free-with-limits",
+      "daily_request_limit": 2000,
+      "daily_audio_seconds_limit": 28800,
+      "hourly_request_limit": 20,
+      "hourly_audio_seconds_limit": 7200,
+      "alert_threshold_pct": 80,
+      "manage_url": "https://console.groq.com/settings/limits",
+      "api_check": "groq",
+      "notes": "Free tier. Лимиты: 2K req/день, 28.8K аудио-сек/день."
+    },
+    {
+      "id": "github",
+      "name": "GitHub Free",
+      "type": "free",
+      "renewal_date": null,
+      "manage_url": "https://github.com/settings/billing/summary",
+      "api_check": null,
+      "notes": "GitHub Free + Copilot Free. Actions: 2000 мин/мес включено. Feb 2026: $6.47 consumed, $0 billable."
+    },
+    {
+      "id": "tailscale",
+      "name": "Tailscale Personal Free",
+      "type": "free",
+      "renewal_date": null,
+      "manage_url": "https://login.tailscale.com/admin/settings/billing",
+      "api_check": null,
+      "notes": "Personal Free plan, до 3 пользователей. VPS + Mac."
+    }
+  ]
+}
