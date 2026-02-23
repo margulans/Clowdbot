@@ -7,7 +7,7 @@
     "defaults": {
       "model": {
         "primary": "openai/gpt-5.2",
-        "fallbacks": ["google/gemini-3-flash-preview"]
+        "fallbacks": ["anthropic/claude-sonnet-4-6"]
       },
       "memorySearch": {
         "sources": ["memory", "sessions"],
@@ -50,8 +50,13 @@
     "web": {
       "search": {
         "enabled": true,
+        "provider": "perplexity",
         "apiKey": "<BRAVE_API_KEY>",
-        "maxResults": 10
+        "maxResults": 10,
+        "perplexity": {
+          "apiKey": "<PERPLEXITY_API_KEY>",
+          "model": "sonar"
+        }
       }
     },
     "media": {
