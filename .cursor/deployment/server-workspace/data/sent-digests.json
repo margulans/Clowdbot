@@ -26,7 +26,7 @@
       "date": "2026-02-23",
       "category": "Technology",
       "keywords": ["south korea", "regulation", "ai laws", "safety"]
-    }
+    },
     {
       "url": "https://www.bez-kabli.pl/technology-news-21-02-2026/",
       "title": "NVIDIA GB300: Новый стандарт инференса",
@@ -34,7 +34,7 @@
       "date": "2026-02-23",
       "category": "Technology",
       "keywords": ["nvidia", "gb300", "deepseek", "lmsys"]
-    }
+    },
     {
       "url": "https://www.insidermonkey.com/blog/10-unstoppable-ai-stocks-to-invest-in-now-1700688/",
       "title": "Бум человекоподобных роботов: Прогноз Илона Маска",
@@ -42,7 +42,7 @@
       "date": "2026-02-23",
       "category": "Robotics",
       "keywords": ["musk", "robotics", "humanoid", "2040"]
-    }
+    },
     {
       "url": "https://www.fool.com/investing/2026/02/22/unstoppable-ai-stock-warren-buffett-ceo-goog/",
       "title": "Alphabet инвестирует $180 млрд в ИИ-инфраструктуру",
@@ -50,7 +50,7 @@
       "date": "2026-02-23",
       "category": "Business",
       "keywords": ["alphabet", "google", "investment", "capex"]
-    }
+    },
     {
       "url": "https://xpert.digital/en/chinas-open-source-offensive/",
       "title": "Китай наращивает open-source наступление в ИИ",
@@ -58,7 +58,7 @@
       "date": "2026-02-23",
       "category": "AI",
       "keywords": ["china", "opensource", "deepseek", "kimi"]
-    }
+    },
     {
       "url": "https://abeliananalysis.com/posts/jobys-dream-and-flying-cars/",
       "title": "Joby Aviation и водородные eVTOL: Начало стандартизации",
@@ -66,6 +66,78 @@
       "date": "2026-02-23",
       "category": "eVTOL",
       "keywords": ["joby", "hydrogen", "evtol", "regulation"]
+    },
+    {
+      "url": "https://champaignmagazine.com/2026/02/22/ai-by-ai-weekly-top-5-february-16-22-2026/",
+      "title": "Gemini 3.1 Pro: Новый лидер в ARC-AGI-2",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "AI",
+      "keywords": ["google", "gemini", "arc-agi", "benchmark"]
+    },
+    {
+      "url": "https://champaignmagazine.com/2026/02/22/ai-by-ai-weekly-top-5-february-16-22-2026/",
+      "title": "OpenAI Operator: Массовый запуск ИИ-агентов",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "AI",
+      "keywords": ["openai", "operator", "agents"]
+    },
+    {
+      "url": "https://www.eveairmobility.com/airx-signs-firm-order-agreement-with-eve-air-mobility-for-two-evtol-aircraft/",
+      "title": "AirX заказывает флот Eve для Японии",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "eVTOL",
+      "keywords": ["airx", "eve", "japan", "order"]
+    },
+    {
+      "url": "https://stormy.ai/blog/best-vibe-coding-tools-2026-tier-list/",
+      "title": "Тренды 2026: Автономия и одноразовое ПО",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "Vibecoding",
+      "keywords": ["vibe coding", "lovable", "replit", "mcp"]
+    },
+    {
+      "url": "https://evtolinsights.com/february-2026/",
+      "title": "Bristow выбирает Electra EL9 для первых поставок",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "eVTOL",
+      "keywords": ["bristow", "electra", "el9"]
+    },
+    {
+      "url": "https://www.marketbeat.com/instant-alerts/best-artificial-intelligence-stocks-to-consider-february-20th-2026-02-22/",
+      "title": "Топ ИИ-акций февраля: Рынок переключается на инфраструктуру",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "Business",
+      "keywords": ["stocks", "marketbeat", "infrastructure", "investment"]
+    },
+    {
+      "url": "https://muz.li/blog/the-complete-vibe-coding-guide-for-designers-2026/",
+      "title": "Дизайн в эпоху ИИ: От экранов к системному мышлению",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "Vibecoding",
+      "keywords": ["design", "vibe coding", "system thinking"]
+    },
+    {
+      "url": "https://evtolinsights.com/february-2026/",
+      "title": "Vertical Aerospace анонсирует маршруты в Нью-Йорке",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "eVTOL",
+      "keywords": ["vertical aerospace", "new york", "uam"]
+    },
+    {
+      "url": "https://www.ainonline.com/aviation-news/futureflight/2026-01-30/skydrive-chases-evtol-aircraft-certification-milestone",
+      "title": "SkyDrive близится к сертификации SD-05",
+      "digest": "day",
+      "date": "2026-02-23",
+      "category": "Robotics",
+      "keywords": ["skydrive", "japan", "certification", "sd-05"]
     }
   ]
 }
