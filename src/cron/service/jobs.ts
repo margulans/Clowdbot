@@ -586,6 +586,15 @@ function mergeCronDelivery(
     next.bestEffort = patch.bestEffort;
   }
 
+  if (next.mode === "none") {
+    delete next.channel;
+    delete next.to;
+    delete next.bestEffort;
+  } else if (next.mode === "webhook") {
+    delete next.channel;
+    delete next.bestEffort;
+  }
+
   return next;
 }
 

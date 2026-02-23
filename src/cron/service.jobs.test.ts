@@ -90,9 +90,6 @@ describe("applyJobPatch", () => {
     }
     expect(job.delivery).toEqual({
       mode: "none",
-      channel: "signal",
-      to: "555",
-      bestEffort: true,
     });
   });
 
