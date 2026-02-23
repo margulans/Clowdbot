@@ -4,260 +4,28 @@
   "maxAge": "7d",
   "entries": [
     {
-      "url": "https://www.wingerdaily.com/2026/02/21/four-dragons-announces-partnership-with-servicenow-to-accelerate-enterprise-adoption-of-now-assist-and-ai-agents/",
-      "title": "ServiceNow и Four Dragons: Глобальный альянс по внедрению ИИ-агентов",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
+      "url": "https://en.wikipedia.org/wiki/OpenAI",
+      "title": "OpenAI o3: Опубликованы первые тесты нового поколения",
+      "digest": "morning",
+      "date": "2026-02-23",
       "category": "AI",
-      "keywords": ["servicenow", "ai agents", "enterprise"]
+      "keywords": ["openai", "o3", "benchmark", "arc-agi"]
     },
     {
-      "url": "https://eladelantado.com/en/elon-musk-humanoid-robots-tesla/",
-      "title": "Tesla Optimus Gen 3: Массовое производство официально запущено",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
+      "url": "https://www.latimes.com/b2b/ai-technology/story/2026-02-22/ces-2026-highlights-industrial-ai",
+      "title": "Humanoid Revolution: От медицины до заводов",
+      "digest": "morning",
+      "date": "2026-02-23",
       "category": "Robotics",
-      "keywords": ["tesla", "optimus", "mass production"]
+      "keywords": ["unitree", "optimus", "ces 2026", "humanoid"]
     },
     {
-      "url": "https://www.esgnews.earth/latest-news/sustainable-skies-ahead-evtol-market-to-hit-us-8b-by-2033/17673.html",
-      "title": "Рынок eVTOL: Archer и Hyundai фиксируют заказы на $2.5 млрд",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "eVTOL",
-      "keywords": ["archer", "hyundai", "orders"]
-    },
-    {
-      "url": "https://digicrusader.com/vibe-coding-guide/",
-      "title": "Вайбкодинг 2026: Полный гид по созданию приложений силами ИИ",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "Coding",
-      "keywords": ["vibe coding", "tools", "2026 guide"]
-    },
-    {
-      "url": "https://www.latestly.com/business/livspace-layoffs-ai-push-triggers-1000-job-cuts-as-bengaluru-startup-shifts-to-ai-native-model-7323468.html",
-      "title": "Livspace: 1000 сотрудников под сокращение из-за перехода на ИИ-модель",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "Business",
-      "keywords": ["livspace", "layoffs", "ai native"]
-    },
-    {
-      "url": "https://indianexpress.com/article/lifestyle/ai-boom-prenups-relationships-10544257/",
-      "title": "Инвестиционный бум: Кремниевая долина собирает миллиарды на ИИ-стартапы",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "Investment",
-      "keywords": ["venture capital", "silicon valley", "ai startups"]
-    },
-    {
-      "url": "https://www.newsx.com/tech-and-auto/sarvam-launches-indus-ai-can-indias-homegrown-chat-app-challenge-chatgpt-gemini-and-drive-atmanirbhar-bharat-key-features-explained-170737/",
-      "title": "Sarvam AI запускает 'Indus AI': Конкурент ChatGPT для Индии",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
+      "url": "https://www.bez-kabli.pl/technology-news-21-02-2026/",
+      "title": "Южная Корея вводит пакет законов для регулирования ИИ",
+      "digest": "morning",
+      "date": "2026-02-23",
       "category": "Technology",
-      "keywords": ["sarvam ai", "indus ai", "india"]
-    },
-    {
-      "url": "https://ua.news/en/technologies/shtuchnii-intelekt-staie-nevidiemnoiu-chastinoiu-biznesu-61-kompanii-vzhe-vikoristovuiut-neiromerezhi",
-      "title": "61% компаний уже интегрировали нейросети в бизнес-процессы",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "Business",
-      "keywords": ["adoption", "neural networks", "stats"]
-    },
-    {
-      "url": "https://zeenews.india.com/technology/ai-agents-will-reshape-saas-business-models-but-not-render-them-obsolete-overnight-industry-3019336.html",
-      "title": "ИИ-агенты меняют модель SaaS, но не убивают её",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "AI",
-      "keywords": ["saas", "ai agents", "disruption"]
-    },
-    {
-      "url": "https://www.investing.com/analysis/2-ai-stocks-soaring-over-400-that-could-be-the-next-nvidia-200675277",
-      "title": "Micron: Рекордные прогнозы выручки на фоне спроса на ИИ-память",
-      "digest": "morning_backup",
-      "date": "2026-02-22",
-      "category": "Technology",
-      "keywords": ["micron", "hbm", "revenue"]
-    },
-    {
-      "url": "https://www.businesstoday.in/india/story/india-ai-impact-summit-declaration-endorsed-by-us-79-other-countries-document-likely-to-be-out-today-517388-2026-02-21",
-      "title": "Delhi Declaration: 80 стран подписали соглашение о будущем ИИ",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "AI",
-      "keywords": ["delhi declaration", "india ai summit", "80 countries", "governance"]
-    },
-    {
-      "url": "https://siliconangle.com/2026/02/20/ai-code-translation-startup-code-metal-reels-125m-1-25b-valuation/",
-      "title": "Code Metal привлёк $125 млн на инфраструктуру для вайбкодинга",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Coding",
-      "keywords": ["code metal", "series b", "$125 million", "vibe coding"]
-    },
-    {
-      "url": "https://www.cnbc.com/2026/02/20/china-humanoid-robots-spring-festival-gala-unitree-tesla-ai-race.html",
-      "title": "Unitree нацелена на поставку 20 000 гуманоидных роботов в 2026 году",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Robotics",
-      "keywords": ["unitree", "humanoid", "20000 units", "g1"]
-    },
-    {
-      "url": "https://www.globenewswire.com/news-release/2026/02/20/3242158/0/en/Under-the-Direction-of-Brian-Ferdinand-EverForward-Trading-Reinforces-Qualification-Model-for-2026.html",
-      "title": "Archer и Joby: FAA финализирует требования к инфраструктуре вертипортов",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "eVTOL",
-      "keywords": ["faa", "vertiport", "archer", "joby", "infrastructure"]
-    },
-    {
-      "url": "https://www.reuters.com/business/nvidia-close-finalizing-30-billion-investment-openai-funding-round-ft-reports-2026-02-20/",
-      "title": "Nvidia планирует инвестировать $30 млрд в мега-раунд OpenAI",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Investment",
-      "keywords": ["nvidia", "openai", "$30 billion", "funding round"]
-    },
-    {
-      "url": "https://www.news9live.com/technology/artificial-intelligence/qualcomm-ceo-6g-big-part-is-ai-india-ai-impact-summit-2026-2933721",
-      "title": "Qualcomm: 6G станет сетью, рожденной для искусственного интеллекта",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Technology",
-      "keywords": ["qualcomm", "6g", "edge ai", "connectivity"]
-    },
-    {
-      "url": "https://www.stocktitan.net/news/ai.html",
-      "title": "VCI Global запускает ROBODAX: автоматизация ИИ в реальной инфраструктуре",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Business",
-      "keywords": ["vci global", "robodax", "robotics", "automation", "infrastructure"]
-    },
-    {
-      "url": "https://www.youtube.com/watch?v=jeb38jicWOE",
-      "title": "Академия Optimus: Илон Маск ускоряет обучение роботов через симуляции",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Robotics",
-      "keywords": ["tesla", "optimus academy", "self-play", "simulation"]
-    },
-    {
-      "url": "https://techcrunch.com/2026/02/19/all-the-important-news-from-the-ongoing-india-ai-summit/",
-      "title": "Vibe-coding стартап Emergent достиг $100 млн ARR за 8 месяцев",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "Coding",
-      "keywords": ["emergent", "arr", "$100 million", "vibe coding"]
-    },
-    {
-      "url": "https://www.ndtv.com/delhi-news/pm-narendra-modi-united-nations-secretary-general-antonio-guterres-meet-focuses-on-democratising-ai-reforming-un-system-ai-impact-summit-2026-11116510",
-      "title": "UN Secretary-General: ИИ должен служить всему человечеству, а не только миллиардерам",
-      "digest": "day",
-      "date": "2026-02-21",
-      "category": "AI",
-      "keywords": ["un", "guterres", "democratization", "governance"]
-    },
-    {
-      "url": "https://www.thehindu.com/sci-tech/technology/india-ai-impact-summit-2026-day-5-pm-modi-artificial-intelligence-news-delhi-updates/article70654611.ece",
-      "title": "Delhi Declaration: 80 стран подписали пакт о будущем ИИ",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "AI",
-      "keywords": ["delhi declaration", "india ai summit", "governance"]
-    },
-    {
-      "url": "https://www.autoplus.fr/actualite/tesla-optimus-gen-3-des-2026-dans-les-blocs-chirurgicaux-1426621.html",
-      "title": "Tesla Optimus Gen 3 идет в хирургию",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Robotics",
-      "keywords": ["tesla", "optimus", "surgery"]
-    },
-    {
-      "url": "https://www.neuralbuddies.com/p/ai-news-recap-february-20-2026",
-      "title": "Spotify: Разработчики полностью перешли на ИИ-агентов",
-      "digest": "evening_backup",
-      "date": "2026-02-21",
-      "category": "Coding",
-      "keywords": ["spotify", "ai agents", "vibe coding"]
-    }
-    {
-      "url": "https://www.reuters.com/business/aerospace-defense/spacex-compete-pentagon-contest-autonomous-drone-tech-bloomberg-news-reports-2026-02-16/",
-      "title": "OpenAI x Pentagon: Voice-to-Swarm",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "Defense/AI",
-      "keywords": ["openai", "pentagon", "drone swarm", "voice control"]
-    },
-    {
-      "url": "https://www.theinformation.com/articles/inside-openai-team-developing-ai-devices",
-      "title": "Hardware от OpenAI: Smart Speaker 2027",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "Hardware",
-      "keywords": ["openai", "smart speaker", "jony ive", "camera"]
-    },
-    {
-      "url": "https://openai.com/index/introducing-deep-research/",
-      "title": "Deep Research 2.0: Глобальное обновление",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "AI",
-      "keywords": ["openai", "deep research", "gpt-5.2", "mcp"]
-    },
-    {
-      "url": "https://groq.com/blog/llama-4-now-live-on-groq-build-fast-at-the-lowest-cost-without-compromise",
-      "title": "Llama 4: Эпоха сверхскоростей",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "AI",
-      "keywords": ["meta", "llama 4", "groq", "maverick"]
-    },
-    {
-      "url": "https://www.searchenginejournal.com/history-of-chatgpt-timeline/488370/",
-      "title": "OpenAI Deep Research: Теперь для всех",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "AI",
-      "keywords": ["openai", "deep research", "public rollout"]
-    },
-    {
-      "url": "https://www.cnbc.com/2026/02/20/china-humanoid-robots-spring-festival-gala-unitree-tesla-ai-race.html",
-      "title": "Unitree G1: 20 000 роботов в год",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "Robotics",
-      "keywords": ["unitree", "g1", "mass production"]
-    },
-    {
-      "url": "https://finance.yahoo.com/news/flying-cars-rising-bars-2026-233200610.html",
-      "title": "Vertical Aerospace: Нью-Йоркский десант",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "eVTOL",
-      "keywords": ["vertical aerospace", "vx4", "nyc"]
-    },
-    {
-      "url": "https://www.reuters.com/world/us/new-york-governor-hochul-pulls-robotaxi-expansion-proposal-2026-02-19/",
-      "title": "Robotaxi: Нью-Йорк нажал на тормоз",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "Robotics",
-      "keywords": ["hochul", "robotaxi", "ny", "waymo"]
-    },
-    {
-      "url": "https://techcrunch.com/2026/02/17/here-are-the-17-us-based-ai-companies-that-have-raised-100m-or-more-in-2026/",
-      "title": "Anthropic: Раунд на $30 млрд / Startup-реальность",
-      "digest": "day",
-      "date": "2026-02-22",
-      "category": "Investment",
-      "keywords": ["anthropic", "funding", "market trends"]
+      "keywords": ["south korea", "regulation", "ai laws", "safety"]
     }
   ]
 }
