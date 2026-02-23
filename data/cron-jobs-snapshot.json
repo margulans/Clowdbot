@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-23T15:02:13.839Z",
+  "generatedAt": "2026-02-23T19:02:01.278Z",
   "jobs": [
     {
       "id": "ce006db5-350b-44be-baef-8b216ed687e4",
@@ -8,11 +8,12 @@
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
-        "tz": "Asia/Almaty"
+        "tz": "Asia/Almaty",
+        "staggerMs": 300000
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "promptSummary": "You are performing an automated git sync check. Steps: 1. cd ~/Clowdbot 2. Run: git status --short 3. If output is empty → reply only \"HEARTBEAT_OK\" and stop. 4. If there are changes: a. Run cron(action=list) to get c..."
+      "promptSummary": "You are performing an automated git sync check. Steps: 1. cd ~/Clowdbot 2. Run: git status --short 3. If output is empty → reply only \"HEARTBEAT_OK\" and stop. 4. If there are changes: a. Run cron(action=list) to get curr..."
     },
     {
       "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
@@ -25,7 +26,7 @@
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "promptSummary": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сооб..."
+      "promptSummary": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщен..."
     },
     {
       "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
@@ -38,7 +39,7 @@
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "promptSummary": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в п..."
+      "promptSummary": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в прот..."
     },
     {
       "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
@@ -51,7 +52,7 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "BACKUP Участковый (gpt-4o-mini). Шаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только ..."
+      "promptSummary": "BACKUP Участковый (gpt-4o-mini). Шаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только есл..."
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
@@ -59,7 +60,8 @@
       "enabled": true,
       "schedule": {
         "kind": "cron",
-        "expr": "18 * * * *"
+        "expr": "18 * * * *",
+        "staggerMs": 300000
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
@@ -76,7 +78,7 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "BACKUP Механик (gpt-4o-mini). Шаг 1: openclaw cron list → найди job bef4ddfa (Механик), проверь lastRunAtMs. Если последний запуск < 35 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если М..."
+      "promptSummary": "BACKUP Механик (gpt-4o-mini). Шаг 1: openclaw cron list → найди job bef4ddfa (Механик), проверь lastRunAtMs. Если последний запуск < 35 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Меха..."
     },
     {
       "id": "b0c35166-4062-479c-a777-652657b2fa71",
@@ -89,7 +91,278 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "🚨 **BACKUP GIT SYNC (Gemini fallback)** — запускается только если основной auto-commit (каждые 4ч) пропущен! Steps: 1. cd ~/Clowdbot 2. Run: git status --short 3. If output is empty → reply only \"HEARTBEAT_OK\" and st..."
+      "promptSummary": "🚨 **BACKUP GIT SYNC (Gemini fallback)** — запускается только если основной auto-commit (каждые 4ч) пропущен! Steps: 1. cd ~/Clowdbot 2. Run: git status --short 3. If output is empty → reply only \"HEARTBEAT_OK\" and stop...."
+    },
+    {
+      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
+      "name": "🚨 BACKUP: Чекист",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "48 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "BACKUP Чекист (gpt-4o-mini). Шаг 1: openclaw cron list → найди job b72fece5 (Чекист), проверь lastRunAtMs. Если последний запуск < 65 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Чекист..."
+    },
+    {
+      "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
+      "name": "Утренний брифинг",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "🤖 _Модель: Gemini 2.0 Flash_ 🌅 Утренний брифинг! 1) Проверь календарь Маргулана на встречи сегодня. 2) Найди задачи из вчерашней рефлексии (пункт \"Что я буду делать иначе?\" / Action). 3) **Дело дня:** помочь Маргулану ..."
+    },
+    {
+      "id": "fc43001e-8299-4cbd-a2b5-89b76d07a9da",
+      "name": "⏰ Напоминание (брифинг): ключи Perplexity/Brave в ENV VPS",
+      "enabled": true,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-24T01:00:00.000Z"
+      },
+      "wakeMode": "now",
+      "model": null,
+      "promptSummary": "⏰ Напоминание к утреннему брифингу: прописать PERPLEXITY_API_KEY и BRAVE_API_KEY на VPS в systemd env для openclaw-gateway (drop-in perplexity.conf + brave.conf), затем daemon-reload и restart. Ключи, данные Cursor локал..."
+    },
+    {
+      "id": "829eee9e-de87-4c35-82ed-a469ac67afc2",
+      "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 6 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "🚨 **BACKUP УТРЕННИЙ БРИФИНГ (fallback)** - запускается только если основной (06:00) пропущен! 🔍 ПРЕЖДЕ ПРОВЕРЬ: уже отправлял ли ты сегодня утренний брифинг Маргулану? - Если ДА - не делай ничего - Если НЕТ - отправь у..."
+    },
+    {
+      "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
+      "name": "Утренний дайджест @newsneiron",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА: - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.j..."
+    },
+    {
+      "id": "c1c58593-accd-4cf7-a175-3603514b0275",
+      "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "⚡ 🌅 БЭКАП **УТРЕННИЙ ДАЙДЖЕСТ 08:05** — @newsneiron Проверка: - `/home/openclaw/.openclaw/workspace/data/sent-digests.json` - Если сегодня уже есть >=6 записей type=news digest=morning → HEARTBEAT_OK - Иначе публикуй бэ..."
+    },
+    {
+      "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
+      "name": "Утренние мнения",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **УТРЕННИЙ МНЕНИЯ 08:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId ..."
+    },
+    {
+      "id": "10e6c5ea-652e-4776-b097-f72dbf6ef050",
+      "name": "BACKUP: Утренние мнения (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап утреннего дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с typ..."
+    },
+    {
+      "id": "1ea2c60a-ff81-4834-8c8d-37a7120884af",
+      "name": "⏰ Напоминание: снять 3 ролика для Кайдзен клуба",
+      "enabled": true,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-24T04:30:00.000Z"
+      },
+      "wakeMode": "now",
+      "model": null,
+      "promptSummary": "⏰ Напоминание (09:30 Алматы): снять 3 ролика для Кайдзен клуба."
+    },
+    {
+      "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
+      "name": "Дневной дайджест @newsneiron",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 13 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚡ ☀️ **ДНЕВНОЙ ДАЙДЖЕСТ 13:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА: - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.js..."
+    },
+    {
+      "id": "62c89740-52fa-4364-b1ae-7c81110ef368",
+      "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 13 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "⚡ ☀️ БЭКАП **ДНЕВНОЙ ДАЙДЖЕСТ 13:05** — @newsneiron Проверка: - `/home/openclaw/.openclaw/workspace/data/sent-digests.json` - Если сегодня уже есть >=6 записей type=news digest=day → HEARTBEAT_OK - Иначе публикуй бэкап-в..."
+    },
+    {
+      "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
+      "name": "Дневные мнения",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 13 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **ДНЕВНОЙ МНЕНИЯ 13:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId →..."
+    },
+    {
+      "id": "d81fedff-8d6f-4e32-a105-a56f8833feb7",
+      "name": "🚨 BACKUP: Дневные мнения (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 13 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап дневного дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с type..."
+    },
+    {
+      "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
+      "name": "💰 Экономист (сбор)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 17 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-4o-mini",
+      "promptSummary": "Режим: daily-collect + infra-check. Прочитай /home/openclaw/.openclaw/workspace/skills/economist/SKILL.md и строго следуй алгоритму. КРИТИЧНО: - Используй ТОЛЬКО абсолютные пути из SKILL.md (/home/openclaw/.openclaw/work..."
+    },
+    {
+      "id": "7b05bba1-25f3-43e6-b866-02e783c77fa2",
+      "name": "🚨 BACKUP: Экономист (сбор)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 17 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "Бэкап 17:45: если economist daily-collect не запускался в 17:30 — выполни: прочитай skills/economist/SKILL.md, обнови economist-log.jsonl и cost-summary.json, проверь подписки/балансы/лимиты API. Если основной уже отрабо..."
+    },
+    {
+      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
+      "name": "Вечерний дайджест @newsneiron",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА (вместо чтения истории канала): - Прочитай `/home/openclaw/.opencla..."
+    },
+    {
+      "id": "e758d243-54e7-4d3b-b684-8115561831e6",
+      "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "⚡ 🌆 БЭКАП **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:05** — @newsneiron Проверка (без чтения истории канала): - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`. - Если сегодня уже есть >=6 записей type=news digest=even..."
+    },
+    {
+      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
+      "name": "Вечерние мнения",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId ..."
+    },
+    {
+      "id": "8783bc2f-de99-4742-9229-09921260d546",
+      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап вечернего дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с typ..."
+    },
+    {
+      "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
+      "name": "📋 Саммари от Айганым — вечерний отчёт",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "promptSummary": "📋 Подготовь вечерний саммари всех данных, полученных от Айганым (sender_id: 509646214) за сегодня. Алгоритм: 1. Прочитай файлы за сегодняшнюю дату (YYYY = текущий год, MM = текущий месяц, DD = текущий день): - ~/.opencl..."
+    },
+    {
+      "id": "6b3d2e36-4e34-4689-9b44-96deac5904bb",
+      "name": "🚨 BACKUP: Саммари от Айганым",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "promptSummary": "Бэкап 19:45: проверь — был ли отправлен вечерний саммари от Айганым (sender_id: 509646214) Маргулану сегодня в 19:30–19:45? Если ДА (есть запись в memory/YYYY-MM-DD.md за сегодня) — ответь HEARTBEAT_OK и стоп. Если НЕТ —..."
     },
     {
       "id": "9d558661-b1bd-4636-afba-72ec30bb3190",
@@ -102,7 +375,7 @@
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "promptSummary": "daily_reflection() [[DELIVERY_VIA_MESSAGE_TOOL]] Важно: auto-delivery cron отключён (delivery.mode=none). Если по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message: message(action=send, cha..."
+      "promptSummary": "daily_reflection() [[DELIVERY_VIA_MESSAGE_TOOL]] Важно: auto-delivery cron отключён (delivery.mode=none). Если по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message: message(action=send, channe..."
     },
     {
       "id": "76f581a1-960c-4e35-bc9f-9ff0ccc56ae2",
@@ -116,19 +389,6 @@
       "wakeMode": "now",
       "model": null,
       "promptSummary": "daily_reflection()"
-    },
-    {
-      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
-      "name": "🚨 BACKUP: Чекист",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "48 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "BACKUP Чекист (gpt-4o-mini). Шаг 1: openclaw cron list → найди job b72fece5 (Чекист), проверь lastRunAtMs. Если последний запуск < 65 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Чек..."
     },
     {
       "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
@@ -155,264 +415,6 @@
       "wakeMode": "now",
       "model": null,
       "promptSummary": "🧹 Конец дня! Выполни chat-cleanup скилл: сохрани важное из сегодняшней сессии в memory/YYYY-MM-DD.md, обнови MEMORY.md если нужно, затем предложи Маргулану очистить чат. Следуй инструкциям skills/chat-cleanup/SKILL.md."
-    },
-    {
-      "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
-      "name": "Утренний брифинг",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 6 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "🤖 _Модель: Gemini 2.0 Flash_ 🌅 Утренний брифинг! 1) Проверь календарь Маргулана на встречи сегодня. 2) Найди задачи из вчерашней рефлексии (пункт \"Что я буду делать иначе?\" / Action). 3) **Дело дня:** помочь Маргула..."
-    },
-    {
-      "id": "fc43001e-8299-4cbd-a2b5-89b76d07a9da",
-      "name": "⏰ Напоминание (брифинг): ключи Perplexity/Brave в ENV VPS",
-      "enabled": true,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-24T01:00:00.000Z"
-      },
-      "wakeMode": "now",
-      "model": null,
-      "promptSummary": "⏰ Напоминание к утреннему брифингу: прописать PERPLEXITY_API_KEY и BRAVE_API_KEY на VPS в systemd env для openclaw-gateway (drop-in perplexity.conf + brave.conf), затем daemon-reload и restart. Ключи, данные Cursor ло..."
-    },
-    {
-      "id": "829eee9e-de87-4c35-82ed-a469ac67afc2",
-      "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 6 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "🚨 **BACKUP УТРЕННИЙ БРИФИНГ (fallback)** - запускается только если основной (06:00) пропущен! 🔍 ПРЕЖДЕ ПРОВЕРЬ: уже отправлял ли ты сегодня утренний брифинг Маргулану? - Если ДА - не делай ничего - Если НЕТ - отправ..."
-    },
-    {
-      "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
-      "name": "Утренний дайджест @newsneiron",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 8 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА: - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digest..."
-    },
-    {
-      "id": "c1c58593-accd-4cf7-a175-3603514b0275",
-      "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 8 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "⚡ 🌅 БЭКАП **УТРЕННИЙ ДАЙДЖЕСТ 08:05** — @newsneiron Проверка: - `/home/openclaw/.openclaw/workspace/data/sent-digests.json` - Если сегодня уже есть >=6 записей type=news digest=morning → HEARTBEAT_OK - Иначе публикуй..."
-    },
-    {
-      "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
-      "name": "Утренние мнения",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 8 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **УТРЕННИЙ МНЕНИЯ 08:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён message..."
-    },
-    {
-      "id": "10e6c5ea-652e-4776-b097-f72dbf6ef050",
-      "name": "BACKUP: Утренние мнения (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "50 8 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап утреннего дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с ..."
-    },
-    {
-      "id": "1ea2c60a-ff81-4834-8c8d-37a7120884af",
-      "name": "⏰ Напоминание: снять 3 ролика для Кайдзен клуба",
-      "enabled": true,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-24T04:30:00.000Z"
-      },
-      "wakeMode": "now",
-      "model": null,
-      "promptSummary": "⏰ Напоминание (09:30 Алматы): снять 3 ролика для Кайдзен клуба."
-    },
-    {
-      "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
-      "name": "Дневной дайджест @newsneiron",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 13 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚡ ☀️ **ДНЕВНОЙ ДАЙДЖЕСТ 13:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА: - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests..."
-    },
-    {
-      "id": "62c89740-52fa-4364-b1ae-7c81110ef368",
-      "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 13 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "⚡ ☀️ БЭКАП **ДНЕВНОЙ ДАЙДЖЕСТ 13:05** — @newsneiron Проверка: - `/home/openclaw/.openclaw/workspace/data/sent-digests.json` - Если сегодня уже есть >=6 записей type=news digest=day → HEARTBEAT_OK - Иначе публикуй бэка..."
-    },
-    {
-      "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
-      "name": "Дневные мнения",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 13 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **ДНЕВНОЙ МНЕНИЯ 13:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageI..."
-    },
-    {
-      "id": "d81fedff-8d6f-4e32-a105-a56f8833feb7",
-      "name": "🚨 BACKUP: Дневные мнения (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "50 13 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап дневного дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с t..."
-    },
-    {
-      "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
-      "name": "💰 Экономист (сбор)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 17 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-4o-mini",
-      "promptSummary": "Режим: daily-collect + infra-check. Прочитай /home/openclaw/.openclaw/workspace/skills/economist/SKILL.md и строго следуй алгоритму. КРИТИЧНО: - Используй ТОЛЬКО абсолютные пути из SKILL.md (/home/openclaw/.openclaw/w..."
-    },
-    {
-      "id": "7b05bba1-25f3-43e6-b866-02e783c77fa2",
-      "name": "🚨 BACKUP: Экономист (сбор)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "45 17 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "Бэкап 17:45: если economist daily-collect не запускался в 17:30 — выполни: прочитай skills/economist/SKILL.md, обнови economist-log.jsonl и cost-summary.json, проверь подписки/балансы/лимиты API. Если основной уже отр..."
-    },
-    {
-      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
-      "name": "Вечерний дайджест @newsneiron",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron ЦЕЛЬ: выпуск должен выйти всегда. Не возвращай HEARTBEAT_OK, если выпуск не опубликован. ПРОВЕРКА ВЫПУСКА (вместо чтения истории канала): - Прочитай `/home/openclaw/.open..."
-    },
-    {
-      "id": "e758d243-54e7-4d3b-b684-8115561831e6",
-      "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "⚡ 🌆 БЭКАП **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:05** — @newsneiron Проверка (без чтения истории канала): - Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`. - Если сегодня уже есть >=6 записей type=news digest=e..."
-    },
-    {
-      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-      "name": "Вечерние мнения",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский. 💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron ГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён message..."
-    },
-    {
-      "id": "8783bc2f-de99-4742-9229-09921260d546",
-      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "50 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап вечернего дайджеста мнений. ЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский. ШАГ 0: ПРОВЕРКА Прочитай data/sent-digests.json. Найди записи с ..."
-    },
-    {
-      "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
-      "name": "📋 Саммари от Айганым — вечерний отчёт",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 19 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "promptSummary": "📋 Подготовь вечерний саммари всех данных, полученных от Айганым (sender_id: 509646214) за сегодня. Алгоритм: 1. Прочитай файлы за сегодняшнюю дату (YYYY = текущий год, MM = текущий месяц, DD = текущий день): - ~/.ope..."
-    },
-    {
-      "id": "6b3d2e36-4e34-4689-9b44-96deac5904bb",
-      "name": "🚨 BACKUP: Саммари от Айганым",
-      "enabled": true,
-      "schedule": {
-        "kind": "cron",
-        "expr": "45 19 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "promptSummary": "Бэкап 19:45: проверь — был ли отправлен вечерний саммари от Айганым (sender_id: 509646214) Маргулану сегодня в 19:30–19:45? Если ДА (есть запись в memory/YYYY-MM-DD.md за сегодня) — ответь HEARTBEAT_OK и стоп. Если НЕ..."
     },
     {
       "id": "912d1a14-d4a3-40e3-a760-e52a9e5ffe8a",
@@ -463,7 +465,7 @@
       },
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "promptSummary": "Режим: weekly-report. Прочитай skills/economist/SKILL.md. Выполни Режим B: сформируй недельный отчёт с рекомендациями и отправь его Маргулану. [[DELIVERY_VIA_MESSAGE_TOOL]] Важно: auto-delivery cron отключён (delivery..."
+      "promptSummary": "Режим: weekly-report. Прочитай skills/economist/SKILL.md. Выполни Режим B: сформируй недельный отчёт с рекомендациями и отправь его Маргулану. [[DELIVERY_VIA_MESSAGE_TOOL]] Важно: auto-delivery cron отключён (delivery.mo..."
     },
     {
       "id": "ccd9f2e4-9ff2-4922-932c-8f160ba3a955",
@@ -476,7 +478,7 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "Бэкап Вс 03:20: если economist weekly-report не запускался этой ночью (проверь economist-log.jsonl — нет записи с type=weekly-report за эту неделю) — выполни: прочитай skills/economist/SKILL.md, Режим B: недельный отч..."
+      "promptSummary": "Бэкап Вс 03:20: если economist weekly-report не запускался этой ночью (проверь economist-log.jsonl — нет записи с type=weekly-report за эту неделю) — выполни: прочитай skills/economist/SKILL.md, Режим B: недельный отчёт ..."
     },
     {
       "id": "8f79e567-0759-482d-be85-81f5a9b26285",
@@ -515,20 +517,20 @@
       },
       "wakeMode": "now",
       "model": null,
-      "promptSummary": "📊 Еженедельный анализ системы exploration источников! Запусти скрипт анализа и отправь отчет Маргулану:\\n\\n1. Выполни: node weekly-exploration-analysis.js\\n2. Проанализируй результаты по правилу 33%\\n3. Отправь отчет..."
+      "promptSummary": "📊 Еженедельный анализ системы exploration источников! Запусти скрипт анализа и отправь отчет Маргулану:\\n\\n1. Выполни: node weekly-exploration-analysis.js\\n2. Проанализируй результаты по правилу 33%\\n3. Отправь отчет с ..."
     },
     {
       "id": "a1de1ef4-e153-4415-8704-741f812ab75a",
       "name": "🧹 Ежемесячный аудит контекста (Optimizer)",
       "enabled": true,
       "schedule": {
-        "kind": "cron",
         "expr": "0 10 1 * *",
-        "tz": "Asia/Almaty"
+        "tz": "Asia/Almaty",
+        "kind": "cron"
       },
       "wakeMode": "now",
       "model": "anthropic/claude-opus-4-6",
-      "promptSummary": "Запусти скилл context-optimizer. Проведи полный аудит всегда-загружаемого контекста (AGENTS, USER, MEMORY, HEARTBEAT, SOUL, TOOLS). Если суммарный вес превышает лимиты из thresholds.md — предложи план оптимизации. [[D..."
+      "promptSummary": "Запусти скилл context-optimizer. Проведи полный аудит всегда-загружаемого контекста (AGENTS, USER, MEMORY, HEARTBEAT, SOUL, TOOLS). Если суммарный вес превышает лимиты из thresholds.md — предложи план оптимизации. [[DELI..."
     },
     {
       "id": "3138ebbd-e0f2-4937-a761-9b048c314925",
@@ -541,7 +543,7 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "BACKUP Optimizer (gpt-5.2). Шаг 1: openclaw cron list → найди job a1de1ef4 (Ежемесячный аудит), проверь lastRunAtMs. Если последний запуск < 3 часов назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только..."
+      "promptSummary": "BACKUP Optimizer (gpt-5.2). Шаг 1: openclaw cron list → найди job a1de1ef4 (Ежемесячный аудит), проверь lastRunAtMs. Если последний запуск < 3 часов назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только ес..."
     },
     {
       "id": "fb8d930d-9479-4d6f-8948-a6b703dff284",
@@ -567,7 +569,7 @@
       },
       "wakeMode": "now",
       "model": "openai/gpt-5.2",
-      "promptSummary": "BACKUP: weekly_reflection_analytics(). Проверь — запускался ли основной Аналитик сегодня (Вс 21:00 Алматы). Если ДА — HEARTBEAT_OK. Если НЕТ — прочитай skills/analytics/SKILL.md и выполни недельный аналитический отчёт..."
+      "promptSummary": "BACKUP: weekly_reflection_analytics(). Проверь — запускался ли основной Аналитик сегодня (Вс 21:00 Алматы). Если ДА — HEARTBEAT_OK. Если НЕТ — прочитай skills/analytics/SKILL.md и выполни недельный аналитический отчёт по..."
     }
   ]
 }
