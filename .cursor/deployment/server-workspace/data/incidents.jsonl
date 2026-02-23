@@ -7,3 +7,4 @@
 {"ts":"2026-02-23T04:54:15Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T05:04:12Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T05:14:52Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-23T05:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 8 ok in last 60min"}
