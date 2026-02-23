@@ -27,5 +27,45 @@
       "category": "Technology",
       "keywords": ["south korea", "regulation", "ai laws", "safety"]
     }
+    {
+      "url": "https://www.bez-kabli.pl/technology-news-21-02-2026/",
+      "title": "NVIDIA GB300: Новый стандарт инференса",
+      "digest": "morning_backup",
+      "date": "2026-02-23",
+      "category": "Technology",
+      "keywords": ["nvidia", "gb300", "deepseek", "lmsys"]
+    }
+    {
+      "url": "https://www.insidermonkey.com/blog/10-unstoppable-ai-stocks-to-invest-in-now-1700688/",
+      "title": "Бум человекоподобных роботов: Прогноз Илона Маска",
+      "digest": "morning_backup",
+      "date": "2026-02-23",
+      "category": "Robotics",
+      "keywords": ["musk", "robotics", "humanoid", "2040"]
+    }
+    {
+      "url": "https://www.fool.com/investing/2026/02/22/unstoppable-ai-stock-warren-buffett-ceo-goog/",
+      "title": "Alphabet инвестирует $180 млрд в ИИ-инфраструктуру",
+      "digest": "morning_backup",
+      "date": "2026-02-23",
+      "category": "Business",
+      "keywords": ["alphabet", "google", "investment", "capex"]
+    }
+    {
+      "url": "https://xpert.digital/en/chinas-open-source-offensive/",
+      "title": "Китай наращивает open-source наступление в ИИ",
+      "digest": "morning_backup",
+      "date": "2026-02-23",
+      "category": "AI",
+      "keywords": ["china", "opensource", "deepseek", "kimi"]
+    }
+    {
+      "url": "https://abeliananalysis.com/posts/jobys-dream-and-flying-cars/",
+      "title": "Joby Aviation и водородные eVTOL: Начало стандартизации",
+      "digest": "morning_backup",
+      "date": "2026-02-23",
+      "category": "eVTOL",
+      "keywords": ["joby", "hydrogen", "evtol", "regulation"]
+    }
   ]
 }

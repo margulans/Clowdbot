@@ -18,5 +18,35 @@
       "title": "Южная Корея вводит пакет законов для регулирования ИИ",
       "timestamp": "2026-02-23T08:11:00Z"
     }
+    {
+      "messageId": "381",
+      "category": "Technology",
+      "title": "NVIDIA GB300: Новый стандарт инференса",
+      "timestamp": "2026-02-23T03:15:00Z"
+    }
+    {
+      "messageId": "382",
+      "category": "Robotics",
+      "title": "Бум человекоподобных роботов: Прогноз Илона Маска",
+      "timestamp": "2026-02-23T03:17:00Z"
+    }
+    {
+      "messageId": "383",
+      "category": "Business",
+      "title": "Alphabet инвестирует $180 млрд в ИИ-инфраструктуру",
+      "timestamp": "2026-02-23T03:19:00Z"
+    }
+    {
+      "messageId": "384",
+      "category": "AI",
+      "title": "Китай наращивает open-source наступление в ИИ",
+      "timestamp": "2026-02-23T03:21:00Z"
+    }
+    {
+      "messageId": "385",
+      "category": "eVTOL",
+      "title": "Joby Aviation и водородные eVTOL: Начало стандартизации",
+      "timestamp": "2026-02-23T03:23:00Z"
+    }
   ]
 }
