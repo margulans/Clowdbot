@@ -13,3 +13,7 @@
 {"id":"e291578e","ts":"2026-02-23T09:43:56+00:00","type":"cron_error","source":"uchastkovy","job":"734c608b-8b03-4653-b1fc-108edf6785d2","severity":"critical","msg":"cron job '🚨 BACKUP: Чекист' lastStatus=error consecutiveErrors=2 (cron announce delivery failed)","resolved":false}
 {"id":"74005d0f","ts":"2026-02-23T09:43:56+00:00","type":"cron_error","source":"uchastkovy","job":"9d558661-b1bd-4636-afba-72ec30bb3190","severity":"critical","msg":"cron job 'Ежедневная рефлексия' lastStatus=error consecutiveErrors=2 (cron announce delivery failed)","resolved":false}
 {"ts":"2026-02-23T09:54:22Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-23T10:00:48Z","type":"resolved","source":"mekhanik","ref_id":"e84d43ef","action":"stale cron_error closed: BACKUP Chekist job currently healthy (lastStatus=ok)","severity":"info"}
+{"ts":"2026-02-23T10:00:48Z","type":"resolved","source":"mekhanik","ref_id":"e291578e","action":"stale cron_error closed: BACKUP Chekist job currently healthy (lastStatus=ok)","severity":"info"}
+{"ts":"2026-02-23T10:00:48Z","type":"resolved","source":"mekhanik","ref_id":"33b5bd0e","action":"stale cron_error closed: Daily reflection job currently healthy (lastStatus=ok)","severity":"info"}
+{"ts":"2026-02-23T10:00:48Z","type":"resolved","source":"mekhanik","ref_id":"74005d0f","action":"stale cron_error closed: Daily reflection job currently healthy (lastStatus=ok)","severity":"info"}
