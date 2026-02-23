@@ -1,15 +1,17 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": null,
-  "last_session_scan_at": null,
+  "last_updated": "2026-02-23T04:54:00Z",
+  "last_session_scan_at": "2026-02-23T04:54:00Z",
   "period": {
-    "day": { "date": null, "cost_usd": 0, "tokens_input": 0, "tokens_output": 0 },
-    "week": { "start": null, "cost_usd": 0, "tokens_input": 0, "tokens_output": 0 },
-    "month": { "start": null, "cost_usd": 0, "tokens_input": 0, "tokens_output": 0 }
+    "day": { "date": "2026-02-23", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 },
+    "week": { "start": "2026-02-23", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 },
+    "month": { "start": "2026-02-01", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 }
   },
-  "by_model": {},
+  "by_model": {
+    "gemini-3-flash-preview": { "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 }
+  },
   "external_fixed": {
     "hetzner_vps": 5.5
   },
-  "processed_session_ids": []
+  "processed_session_ids": ["6c5b21d4-df8d-47f5-a79f-a77189c76498"]
 }
