@@ -42,9 +42,9 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "schedule": "30 */4 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервный git sync если основной (каждые 4ч) пропущен.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
@@ -60,9 +60,9 @@
       "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
       "schedule": "5 6 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервный брифинг если основной (06:00) не вышел.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
@@ -78,9 +78,9 @@
       "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
       "schedule": "5 8 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервный утренний дайджест если основной не вышел в 08:00.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
@@ -96,9 +96,9 @@
       "name": "🚨 BACKUP: Утренние мнения (Gemini)",
       "schedule": "50 8 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервные утренние мнения если основные не вышли в 08:30.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
@@ -114,9 +114,9 @@
       "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
       "schedule": "5 13 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервный дневной дайджест если основной не вышел в 13:00.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
@@ -132,9 +132,9 @@
       "name": "🚨 BACKUP: Дневные мнения (Gemini)",
       "schedule": "50 13 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервные дневные мнения если основные не вышли в 13:30.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
@@ -159,9 +159,9 @@
       "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
       "schedule": "5 18 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервный вечерний дайджест если основной не вышел в 18:00.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
@@ -177,9 +177,9 @@
       "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
       "schedule": "50 18 * * * (Asia/Almaty)",
       "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openai/gpt-4o-mini",
       "summary": "Резервные вечерние мнения если основные не вышли в 18:30.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
