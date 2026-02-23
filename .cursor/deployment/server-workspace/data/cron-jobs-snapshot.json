@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-02-23",
-  "note": "Snapshot refreshed after fixing Участковый cron payload to use absolute workspace paths (avoid intermittent skill_missing).",
+  "note": "Snapshot refreshed after hardening Economist against hallucinations and switching its cron model to gpt-4o-mini; primary monitoring jobs unchanged.",
   "jobs": [
     {
       "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
@@ -10,7 +10,7 @@
       "schedule": {"kind": "cron", "expr": "3-59/10 * * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Run uchastkovy skill from /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md; write to incidents.jsonl; no user messages."
+      "prompt_summary": "Run uchastkovy skill from /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md; write to /home/openclaw/.openclaw/workspace/data/incidents.jsonl; no user messages."
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
@@ -31,6 +31,16 @@
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
       "prompt_summary": "Run mekhanik skill; fix only per protocol using incidents.jsonl; report only if something fixed."
+    },
+    {
+      "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
+      "name": "💰 Экономист (сбор)",
+      "enabled": true,
+      "sessionTarget": "isolated",
+      "schedule": {"kind": "cron", "expr": "30 17 * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
+      "model": "openai/gpt-4o-mini",
+      "prompt_summary": "Economist daily-collect + infra-check with absolute paths; sessions_list-based; never alert unless cost-summary updated; log scan_error on failures."
     }
   ]
 }

@@ -39,16 +39,18 @@ description: Экономист — фоновый аудитор эффекти
 
 ### Шаг 1: Получить сессии
 
-```
-cron(action=sessions)
-```
+Используй tool **sessions_list** (cron tool не имеет action=sessions):
 
-Это вернёт список всех активных сессий с полями: `key`, `model`, `inputTokens`, `outputTokens`, `totalTokens`, `updatedAt`, `sessionId`.
+- `sessions_list(limit=200, activeMinutes=43200, messageLimit=0)`
+
+Это вернёт список активных сессий с полями (например): `key`, `model`, `totalTokens`, `sessionId`.
+
+⚠️ Если sessions_list недоступен/ошибка — запиши в `economist-log.jsonl` запись `{"type":"scan_error"...}` и заверши без алертов.
 
 ### Шаг 2: Загрузить предыдущее состояние
 
 ```
-read_file("data/cost-summary.json")
+read_file("/home/openclaw/.openclaw/workspace/data/cost-summary.json")
 ```
 
 Прочитать поле `processed_session_ids` — список уже учтённых сессий.
@@ -56,7 +58,7 @@ read_file("data/cost-summary.json")
 ### Шаг 3: Загрузить ценник
 
 ```
-read_file("data/model-pricing.json")
+read_file("/home/openclaw/.openclaw/workspace/data/model-pricing.json")
 ```
 
 ### Шаг 4: Вычислить затраты новых сессий
@@ -98,7 +100,7 @@ task_type = "main_session" if ":main:" in key and not ":cron:" in key else "cron
 ```
 
 ```
-write_file("data/economist-log.jsonl", append=true, content=<строка>)
+write_file("/home/openclaw/.openclaw/workspace/data/economist-log.jsonl", append=true, content=<строка>)
 ```
 
 ### Шаг 6: Обновить cost-summary.json
@@ -117,8 +119,20 @@ write_file("data/economist-log.jsonl", append=true, content=<строка>)
 ### Шаг 7: Сохранить
 
 ```
-write_file("data/cost-summary.json", content=<обновлённый JSON>)
+write_file("/home/openclaw/.openclaw/workspace/data/cost-summary.json", content=<обновлённый JSON>)
 ```
+
+### Защита от галлюцинаций (обязательно)
+
+После записи:
+1) Сразу перечитай `/home/openclaw/.openclaw/workspace/data/cost-summary.json` и убедись, что `last_updated` обновился на текущее выполнение.
+2) Если запись/чтение не удалось или `last_updated` не обновился — **НЕ ДЕЛАЙ выводов и НЕ ПИШИ алерты**. Запиши в `/home/openclaw/.openclaw/workspace/data/economist-log.jsonl` событие:
+
+```json
+{"ts":"<ISO8601>","type":"scan_error","service":"economist","msg":"failed to update cost-summary; skipping alerts"}
+```
+
+и заверши.
 
 **Завершить молча.** Не писать Маргулану, если нет аномалий (см. ниже).
 
@@ -129,11 +143,11 @@ write_file("data/cost-summary.json", content=<обновлённый JSON>)
 ### Шаг 1: Прочитать данные
 
 ```
-read_file("data/cost-summary.json")
-read_file("data/economist-log.jsonl")
-read_file("data/model-pricing.json")
-read_file("data/incidents.jsonl")       ← отказы и сбои за неделю
-read_file("data/cron-jobs-snapshot.json") ← какой cron какую модель использует
+read_file("/home/openclaw/.openclaw/workspace/data/cost-summary.json")
+read_file("/home/openclaw/.openclaw/workspace/data/economist-log.jsonl")
+read_file("/home/openclaw/.openclaw/workspace/data/model-pricing.json")
+read_file("/home/openclaw/.openclaw/workspace/data/incidents.jsonl")       ← отказы и сбои за неделю
+read_file("/home/openclaw/.openclaw/workspace/data/cron-jobs-snapshot.json") ← какой cron какую модель использует
 ```
 
 ### Шаг 2: Провести аудит
@@ -223,7 +237,7 @@ Scout запускает 2 изолированные сессии в недел
 ### Шаг 1: Загрузить реестр инфраструктуры
 
 ```
-read_file("data/infra-subscriptions.json")
+read_file("/home/openclaw/.openclaw/workspace/data/infra-subscriptions.json")
 ```
 
 ### Шаг 2: Проверить подписки (type=subscription)
@@ -303,7 +317,7 @@ CRITICAL_ALERTS пусто AND WARNINGS пусто
 → обновить last_checked в infra-subscriptions.json → INFRA_OK → молчать
 
 WARNINGS есть, CRITICAL_ALERTS пусто
-→ обновить last_checked → сохранить WARNINGS в infra-warnings-pending.json
+→ обновить last_checked → сохранить WARNINGS в `/home/openclaw/.openclaw/workspace/data/infra-warnings-pending.json`
   (включить в ближайший воскресный отчёт)
 
 CRITICAL_ALERTS есть
@@ -340,7 +354,7 @@ CRITICAL_ALERTS есть
 ### Шаг 1: Прочитать данные
 
 ```
-read_file("data/cost-summary.json")
+read_file("/home/openclaw/.openclaw/workspace/data/cost-summary.json")
 ```
 
 Если `last_updated` == null → сказать, что ещё не было ни одного сбора данных.
