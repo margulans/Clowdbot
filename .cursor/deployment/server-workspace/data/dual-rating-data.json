@@ -17,36 +17,100 @@
       "category": "Technology",
       "title": "Южная Корея вводит пакет законов для регулирования ИИ",
       "timestamp": "2026-02-23T08:11:00Z"
-    }
+    },
     {
       "messageId": "381",
       "category": "Technology",
       "title": "NVIDIA GB300: Новый стандарт инференса",
       "timestamp": "2026-02-23T03:15:00Z"
-    }
+    },
     {
       "messageId": "382",
       "category": "Robotics",
       "title": "Бум человекоподобных роботов: Прогноз Илона Маска",
       "timestamp": "2026-02-23T03:17:00Z"
-    }
+    },
     {
       "messageId": "383",
       "category": "Business",
       "title": "Alphabet инвестирует $180 млрд в ИИ-инфраструктуру",
       "timestamp": "2026-02-23T03:19:00Z"
-    }
+    },
     {
       "messageId": "384",
       "category": "AI",
       "title": "Китай наращивает open-source наступление в ИИ",
       "timestamp": "2026-02-23T03:21:00Z"
-    }
+    },
     {
       "messageId": "385",
       "category": "eVTOL",
       "title": "Joby Aviation и водородные eVTOL: Начало стандартизации",
       "timestamp": "2026-02-23T03:23:00Z"
+    },
+    {
+      "messageId": "106",
+      "expert": "Sam Altman",
+      "source": "Fortune",
+      "category": "AI",
+      "title": "Altman on AI-washing and jobs",
+      "timestamp": "2026-02-23T03:45:00Z"
+    },
+    {
+      "messageId": "107",
+      "expert": "Dario Amodei",
+      "source": "CNBC",
+      "category": "AI",
+      "title": "Amodei on autonomy risks",
+      "timestamp": "2026-02-23T03:47:00Z"
+    },
+    {
+      "messageId": "108",
+      "expert": "Ray Dalio",
+      "source": "Acquirer's Multiple",
+      "category": "Investment",
+      "title": "Dalio on capital war and AI bubble",
+      "timestamp": "2026-02-23T03:49:00Z"
+    },
+    {
+      "messageId": "109",
+      "expert": "Peter Steinberger",
+      "source": "Blockchain News",
+      "category": "Robotics",
+      "title": "Steinberger on agentic robotics",
+      "timestamp": "2026-02-23T03:51:00Z"
+    },
+    {
+      "messageId": "110",
+      "expert": "Nassim Taleb",
+      "source": "Acquirer's Multiple",
+      "category": "Philosophy",
+      "title": "Taleb on fragility of AI-driven systems",
+      "timestamp": "2026-02-23T03:53:00Z"
+    },
+    {
+      "messageId": "111",
+      "expert": "Michael Levin",
+      "source": "AI Dispatch",
+      "category": "Technology",
+      "title": "Levin on biological AI",
+      "timestamp": "2026-02-23T03:55:00Z"
+    },
+    {
+      "messageId": "112",
+      "expert": "Robonomics Analysts",
+      "source": "Substack",
+      "category": "eVTOL",
+      "title": "2026 eVTOL predictions",
+      "timestamp": "2026-02-23T03:57:00Z"
+    },
+    {
+      "messageId": "113",
+      "expert": "MIT Tech Review",
+      "source": "MIT Technology Review",
+      "category": "Vibecoding",
+      "title": "Shift to Vibecoding paradigm",
+      "timestamp": "2026-02-23T03:59:00Z"
     }
   ]
 }
