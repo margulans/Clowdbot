@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-02-23",
-  "note": "Snapshot refreshed after fixing cron jobs using disallowed model openai/gpt-4o-mini -> openai/gpt-5.2",
+  "note": "Snapshot refreshed after fixing Участковый cron payload to use absolute workspace paths (avoid intermittent skill_missing).",
   "jobs": [
     {
       "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
@@ -10,7 +10,7 @@
       "schedule": {"kind": "cron", "expr": "3-59/10 * * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Run uchastkovy skill; write result to data/incidents.jsonl; no user messages."
+      "prompt_summary": "Run uchastkovy skill from /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md; write to incidents.jsonl; no user messages."
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
@@ -30,47 +30,7 @@
       "schedule": {"kind": "cron", "expr": "8,38 * * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Run mekhanik skill; fix only per protocol using data/incidents.jsonl; report only if something fixed."
-    },
-    {
-      "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
-      "name": "🚨 BACKUP: Участковый",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "9-59/10 * * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Uchastkovy: verify primary; if stale/error check gateway active/memory/disk; write incidents; optional notify via message tool."
-    },
-    {
-      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
-      "name": "🚨 BACKUP: Чекист",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "48 * * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Chekist: verify primary; if stale/error audit critical unresolved incidents last 6h; notify via message tool."
-    },
-    {
-      "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
-      "name": "🚨 BACKUP: Механик",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "23,53 * * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Mekhanik: verify primary; if stale/error repair critical unresolved incidents; escalate others; notify via message tool."
-    },
-    {
-      "id": "ce006db5-350b-44be-baef-8b216ed687e4",
-      "name": "Auto-commit: Git sync",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "0 */4 * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Periodic git sync: if changes refresh cron snapshot, commit, push."
+      "prompt_summary": "Run mekhanik skill; fix only per protocol using incidents.jsonl; report only if something fixed."
     }
   ]
 }
