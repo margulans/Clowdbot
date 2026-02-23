@@ -1,0 +1,34 @@
+{
+  "ts": "2026-02-23T12:32:36Z",
+  "warnings": [
+    {
+      "service": "brave-search",
+      "name": "Brave Search API",
+      "kind": "renewal",
+      "days_until": 6,
+      "renewal_date": "2026-03-01",
+      "url": "https://api.search.brave.com/app/subscriptions"
+    },
+    {
+      "service": "hetzner-vps",
+      "name": "Hetzner VPS CPX22",
+      "kind": "needs_manual_check",
+      "note": "Нет стабильного API для биллинга/usage или ключ не позволяет. Проверить в консоли.",
+      "url": "https://console.hetzner.cloud/account/billing"
+    },
+    {
+      "service": "google-gemini",
+      "name": "Google Gemini API",
+      "kind": "needs_manual_check",
+      "note": "Нет стабильного API для биллинга/usage или ключ не позволяет. Проверить в консоли.",
+      "url": "https://console.cloud.google.com/billing"
+    },
+    {
+      "service": "groq",
+      "name": "Groq Whisper",
+      "kind": "needs_manual_check",
+      "note": "Нет стабильного API для биллинга/usage или ключ не позволяет. Проверить в консоли.",
+      "url": "https://console.groq.com/settings/limits"
+    }
+  ]
+}

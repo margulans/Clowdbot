@@ -1,0 +1,76 @@
+{
+  "_comment": "Цены за 1M токенов в USD. Обновлять при изменении тарифов. Источник: официальные страницы провайдеров.",
+  "_updated": "2026-02-22",
+  "models": {
+    "gpt-5.2": {
+      "provider": "OpenAI",
+      "input_per_1m": 10.0,
+      "output_per_1m": 30.0,
+      "note": "Приблизительно — уточнить на platform.openai.com/docs/pricing"
+    },
+    "gemini-3-flash-preview": {
+      "provider": "Google",
+      "input_per_1m": 0.075,
+      "output_per_1m": 0.3,
+      "note": "Уточнить на ai.google.dev/pricing"
+    },
+    "meta-llama/llama-3.3-70b-instruct:free": {
+      "provider": "OpenRouter",
+      "input_per_1m": 0.0,
+      "output_per_1m": 0.0,
+      "note": "Бесплатный тир OpenRouter"
+    },
+    "claude-sonnet-4-6": {
+      "provider": "Anthropic",
+      "input_per_1m": 3.0,
+      "output_per_1m": 15.0,
+      "note": "Уточнить на anthropic.com/pricing"
+    },
+    "claude-sonnet-4-20250514": {
+      "provider": "Anthropic",
+      "input_per_1m": 3.0,
+      "output_per_1m": 15.0,
+      "note": "Claude 3.5 Sonnet"
+    },
+    "openai/gpt-5.2": {
+      "provider": "OpenAI (via OpenRouter)",
+      "input_per_1m": 10.0,
+      "output_per_1m": 30.0,
+      "note": "Alias для gpt-5.2"
+    },
+    "openai/gpt-4o-mini": {
+      "provider": "OpenAI",
+      "input_per_1m": 0.15,
+      "output_per_1m": 0.6,
+      "note": "Бэкап модель для isolated cron jobs (резервирует gemini-3-flash-preview)"
+    }
+  },
+  "external_services": {
+    "brave_search": {
+      "provider": "Brave",
+      "unit": "per_query",
+      "cost_usd": 0.005,
+      "free_tier": "2000 запросов/месяц",
+      "note": "~3 поиска на дайджест × 6 дайджестов/день = ~18/день"
+    },
+    "groq_whisper": {
+      "provider": "Groq",
+      "unit": "per_minute_audio",
+      "cost_usd": 0.04,
+      "note": "whisper-large-v3, только при голосовых сообщениях"
+    },
+    "openai_embeddings": {
+      "provider": "OpenAI",
+      "unit": "per_1m_tokens",
+      "cost_usd": 0.02,
+      "model": "text-embedding-3-small",
+      "note": "LanceDB память — при каждом сохранении и поиске"
+    },
+    "hetzner_vps": {
+      "provider": "Hetzner",
+      "unit": "per_month",
+      "cost_usd": 5.5,
+      "note": "CPX22 — фиксированная стоимость"
+    }
+  }
+}
