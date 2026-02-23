@@ -186,7 +186,7 @@ openclaw cron run <id>
 
 Перед каждым инцидентом ответь на вопрос: **входит ли этот тип в протокол выше?**
 
-Разрешённые типы для авто-ремонта: `cron_skip`, `cron_error`, `gateway_down`, `backup_triggered`, `disk_warn`, `git_dirty`, `scout_stale`.
+Разрешённые типы для авто-ремонта: `cron_skip`, `cron_error`, `gateway_down`, `backup_triggered`, `disk_warn`, `git_dirty`, `scout_stale`, `announce_queue_loop`.
 
 Если тип **НЕ в этом списке**, или если причина неясна даже после чтения `lastError` — **не пытайся чинить**. Выполни эскалацию:
 
@@ -244,6 +244,24 @@ openclaw cron run <id>
 3. systemctl --user is-active openclaw-gateway
 4. Если active → инцидент закрыт
 5. Если всё ещё не active → запиши новый инцидент с severity=critical, msg="gateway restart failed"
+```
+
+#### `announce_queue_loop` — announce queue застряла в бесконечном цикле
+
+> Обычно этот тип чинит сам Участковый (≤10 мин). Механик подхватывает только если Участковый не сработал.
+
+```
+1. COUNT=$(journalctl --user -u openclaw-gateway --since "2 minutes ago" --no-pager | grep -c "announce queue drain failed")
+   → если COUNT < 60: цикл уже исчез (Участковый починил), пометить resolved и пропустить
+2. systemctl --user restart openclaw-gateway
+3. sleep 5
+4. AFTER=$(journalctl --user -u openclaw-gateway --since "10 seconds ago" --no-pager | grep -c "announce queue drain")
+   → если AFTER == 0: успех, инцидент закрыт
+   → если AFTER > 0: gateway restart failed — запиши announce_queue_loop_persist, severity=critical
+5. Уведомить Маргулана:
+   🔧 Механик — Gateway перезапущен
+   Причина: announce queue loop (Участковый не поймал)
+   Статус: [✅ исправлено | ❌ продолжается — нужна ручная проверка]
 ```
 
 #### `backup_triggered` — сработал backup, основная задача упала
