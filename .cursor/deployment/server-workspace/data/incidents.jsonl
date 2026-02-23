@@ -74,3 +74,4 @@
 {"ts":"2026-02-23T16:53:48Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T17:03:54Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts": "2026-02-23T17:14:12.210074+00:00", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
+{"ts":"2026-02-23T17:18:34Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 6 ok in last 60min"}
