@@ -239,19 +239,21 @@ if days_until <= 7  → добавить в WARNINGS
 
 ### Шаг 3: Проверить prepaid-кредиты (type=prepaid-credits)
 
-Для Anthropic — запрос к API:
+Для Anthropic:
 
-```
-GET https://api.anthropic.com/v1/organizations/billing/credit_balance
-Headers: x-api-key: $ANTHROPIC_API_KEY, anthropic-version: 2023-06-01
-```
+⚠️ **Уточнение:** у Anthropic нет публичного balance endpoint для обычных ключей. Usage/Cost API существует, но требует **Admin API key** (обычно начинается с `sk-ant-admin...`).
 
-Для OpenAI — запрос к API:
+Алгоритм:
+- Если `ANTHROPIC_API_KEY` начинается с `sk-ant-admin` → можно использовать Usage/Cost Admin API (см. их docs) и оценивать расходы.
+- Иначе → **не делай API-запрос** (чтобы не плодить 404), добавь предупреждение `(требует Admin API key)` и пометь как `needs_manual_check`.
 
-```
-GET https://api.openai.com/v1/dashboard/billing/credit_grants
-Headers: Authorization: Bearer $OPENAI_API_KEY
-```
+Для OpenAI:
+
+Баланс/биллинг эндпоинты OpenAI могут быть недоступны для некоторых типов ключей (часто возвращают 403).
+
+Алгоритм:
+- Попробуй `GET https://api.openai.com/v1/dashboard/billing/credit_grants` с `Authorization: Bearer $OPENAI_API_KEY`.
+- Если ответ `403` → **не считать это аварией**: записать предупреждение `(нет доступа к billing API этим ключом)` и перейти дальше без фейла.
 
 Если API недоступен — записать `{"type": "api_error", "service": "<id>"}` в economist-log.jsonl и пропустить.
 
@@ -283,14 +285,12 @@ if max(daily_req_pct, daily_audio_pct) >= 80 → WARNINGS
 
 ### Шаг 5: Проверить Hetzner (type=pay-per-use)
 
-Запрос к Hetzner API:
+⚠️ Hetzner Cloud API **не предоставляет** billing/invoices в стандартном API (`/v1/billing/invoices` возвращает 404).
 
-```
-GET https://api.hetzner.cloud/v1/billing/invoices?page=1&per_page=1
-Headers: Authorization: Bearer $HETZNER_API_TOKEN
-```
-
-Взять текущий месяц. Если расход > `alert_monthly_threshold` → добавить в WARNINGS.
+Поэтому:
+- **Не делай API-запросы к billing**.
+- Если сервис помечен `needs_manual_check=true` — добавь WARNINGS: `(проверить в консоли)`.
+- Потолок `monthly_cap` используем как ориентир риска, но фактический расход — вручную.
 
 ### Шаг 6: Проверить сервисы с needs_manual_check=true
 

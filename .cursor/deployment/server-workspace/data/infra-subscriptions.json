@@ -11,8 +11,9 @@
       "alert_monthly_threshold": 7.0,
       "renewal_date": null,
       "manage_url": "https://console.hetzner.cloud/account/billing",
-      "api_check": "hetzner",
-      "notes": "Pay-per-use почасовой. Макс $6.99/мес сервер + $0.60/мес IP. Feb 2026: $5.28"
+      "api_check": null,
+      "needs_manual_check": true,
+      "notes": "Pay-per-use почасовой. Hetzner Cloud API не даёт billing/invoices — проверять вручную в консоли. Макс $6.99/мес сервер + $0.60/мес IP. Feb 2026: $5.28"
     },
     {
       "id": "perplexity",
