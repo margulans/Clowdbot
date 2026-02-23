@@ -39,9 +39,58 @@ openclaw cron list
 git add -A && git commit -m "ops: backup jobs переключены на openai/gpt-4o-mini" && git push
 ```
 
-## Что НЕ меняем
+## Что НЕ меняем (cron edit)
 
 - `76f581a1` BACKUP Рефлексия — sessionTarget: main, systemEvent (нет модели)
 - `28b9d12a` BACKUP Chat Cleanup — sessionTarget: main, systemEvent (нет модели)
 
-_Создан: 2026-02-23_
+---
+
+## Часть 2: Создать новые BACKUP jobs (cron add)
+
+Три задачи пока без бэкапа — нужно создать.
+
+```bash
+# BACKUP: Экономист (сбор) — основной в 17:30
+openclaw cron add \
+  --name "🚨 BACKUP: Экономист (сбор)" \
+  --cron "45 17 * * *" \
+  --tz "Asia/Almaty" \
+  --session isolated \
+  --model "openai/gpt-4o-mini" \
+  --thinking low \
+  --wake now \
+  --message "Бэкап 17:45: если economist daily-collect не запускался в 17:30 — выполнить: обновить economist-log.jsonl и cost-summary.json; молчать если нет аномалий; иначе HEARTBEAT_OK."
+
+# BACKUP: Саммари от Айганым — основной в 19:30
+openclaw cron add \
+  --name "🚨 BACKUP: Саммари от Айганым" \
+  --cron "45 19 * * *" \
+  --tz "Asia/Almaty" \
+  --session isolated \
+  --model "openai/gpt-4o-mini" \
+  --thinking low \
+  --wake now \
+  --message "Бэкап 19:45: если вечерний саммари от Айганым (509646214) не отправлялся сегодня — собрать и отправить Маргулану; иначе HEARTBEAT_OK."
+
+# BACKUP: Экономист (отчёт) — основной в Вс 03:00
+openclaw cron add \
+  --name "🚨 BACKUP: Экономист (отчёт)" \
+  --cron "20 3 * * 0" \
+  --tz "Asia/Almaty" \
+  --session isolated \
+  --model "openai/gpt-4o-mini" \
+  --thinking low \
+  --wake now \
+  --message "Бэкап Вс 03:20: если economist weekly-report не запускался этой ночью — выполнить недельный отчёт с рекомендациями → Маргулану."
+```
+
+## После выполнения всех команд
+
+```bash
+openclaw cron list
+# → обнови data/cron-jobs-snapshot.json
+git add -A && git commit -m "ops: добавлены BACKUP jobs для экономиста и саммари Айганым" && git push
+```
+
+_Обновлён: 2026-02-23_
