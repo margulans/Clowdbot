@@ -270,6 +270,22 @@ web_search({ query: "...", freshness: "pd" })  // предпочтительно
 web_search({ query: "...", freshness: "pw" })  // запасной вариант
 ```
 
+### ⚠️ Fallback если web_search недоступен (Brave упал / 429 / пустой ответ):
+
+Не останавливай дайджест. Используй `web_fetch` по RSS-лентам:
+
+```
+web_fetch("https://www.technologyreview.com/feed/")       // ИИ
+web_fetch("https://venturebeat.com/category/ai/feed/")    // ИИ/Бизнес
+web_fetch("https://techcrunch.com/feed/")                 // Технологии
+web_fetch("https://spectrum.ieee.org/feeds/topic/robotics.rss")  // Робототехника
+web_fetch("https://evtol.com/feed/")                      // eVTOL
+web_fetch("https://feeds.arstechnica.com/arstechnica/technology-lab")  // Технологии
+```
+
+Извлеки `<title>`, `<link>`, `<pubDate>` из XML. Фильтруй за последние 48ч.
+В конце дайджеста добавь строку: `⚠️ Поиск Brave недоступен — использованы RSS`
+
 ## 🔁 Дедупликация (ОБЯЗАТЕЛЬНО!)
 
 Перед каждым дайджестом:
