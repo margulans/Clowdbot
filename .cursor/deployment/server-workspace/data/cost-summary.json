@@ -1,17 +1,44 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": "2026-02-23T04:54:00Z",
-  "last_session_scan_at": "2026-02-23T04:54:00Z",
+  "last_updated": "2026-02-23T13:16:49Z",
+  "last_session_scan_at": "2026-02-23T13:16:49Z",
   "period": {
-    "day": { "date": "2026-02-23", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 },
-    "week": { "start": "2026-02-23", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 },
-    "month": { "start": "2026-02-01", "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 }
+    "day": {
+      "date": "2026-02-23",
+      "cost_usd": 0.3663423,
+      "tokens_input": 40094,
+      "tokens_output": 4306
+    },
+    "week": {
+      "start": "2026-02-23",
+      "cost_usd": 0.3663423,
+      "tokens_input": 40094,
+      "tokens_output": 4306
+    },
+    "month": {
+      "start": "2026-02-01",
+      "cost_usd": 0.3663423,
+      "tokens_input": 40094,
+      "tokens_output": 4306
+    }
   },
   "by_model": {
-    "gemini-3-flash-preview": { "cost_usd": 0.0014523, "tokens_input": 8000, "tokens_output": 2841 }
+    "gemini-3-flash-preview": {
+      "cost_usd": 0.0014523,
+      "tokens_input": 8000,
+      "tokens_output": 2841
+    },
+    "gpt-5.2": {
+      "cost_usd": 0.36489,
+      "tokens_input": 32094,
+      "tokens_output": 1465
+    }
   },
   "external_fixed": {
     "hetzner_vps": 5.5
   },
-  "processed_session_ids": ["6c5b21d4-df8d-47f5-a79f-a77189c76498"]
+  "processed_session_ids": [
+    "6c5b21d4-df8d-47f5-a79f-a77189c76498",
+    "8947fd65-66b1-4c3c-8f10-753acf2f13a4"
+  ]
 }

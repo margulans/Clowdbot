@@ -3,3 +3,6 @@
 {"ts": "2026-02-23T11:37:35Z", "type": "api_error", "service": "openai", "msg": "HTTP Error 403: Forbidden"}
 {"ts": "2026-02-23T11:37:35Z", "type": "api_error", "service": "hetzner", "msg": "HTTP Error 404: Not Found"}
 {"ts": "2026-02-23T11:37:35Z", "type": "api_error", "service": "groq", "msg": "HTTP Error 403: Forbidden"}
+{"ts":"2026-02-23T13:16:49Z","session_id":"8947fd65-66b1-4c3c-8f10-753acf2f13a4","session_key":"agent:main:cron:22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd","model":"gpt-5.2","task_type":"cron_job","input_tokens":32094,"output_tokens":1465,"cost_usd":0.36489,"provider":"OpenAI"}
+{"ts":"2026-02-23T13:16:49Z","type":"api_error","service":"openai","msg":"HTTP 403: billing endpoint requires session key / not accessible with secret key"}
+{"ts":"2026-02-23T13:16:49Z","type":"api_error","service":"groq","msg":"HTTP 404: usage endpoint /openai/v1/usage/daily not found"}

@@ -1,6 +1,6 @@
 {
   "_comment": "Машиночитаемые данные инфраструктуры для economist/SKILL.md Режим A.2. Обновлять при добавлении новых сервисов.",
-  "last_checked": "2026-02-23T11:37:35Z",
+  "last_checked": "2026-02-23T13:16:49Z",
   "services": [
     {
       "id": "hetzner-vps",
@@ -8,7 +8,7 @@
       "type": "pay-per-use",
       "monthly_cap": 7.59,
       "currency": "USD",
-      "alert_monthly_threshold": 7.0,
+      "alert_monthly_threshold": 7,
       "renewal_date": null,
       "manage_url": "https://console.hetzner.cloud/account/billing",
       "api_check": null,
@@ -34,8 +34,8 @@
       "id": "brave-search",
       "name": "Brave Search API — Search plan",
       "type": "subscription-with-credits",
-      "cost_per_1000_requests": 5.0,
-      "free_monthly_credits": 5.0,
+      "cost_per_1000_requests": 5,
+      "free_monthly_credits": 5,
       "free_monthly_requests": 1000,
       "renewal_date": "2026-03-01",
       "billing_cycle": "monthly",
