@@ -1,126 +1,76 @@
 {
   "last_updated": "2026-02-23",
-  "note": "Snapshot generated from cron(action=list) in main session",
+  "note": "Snapshot refreshed after fixing cron jobs using disallowed model openai/gpt-4o-mini -> openai/gpt-5.2",
   "jobs": [
-    {
-      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
-      "name": "🚨 BACKUP: Чекист",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "48 * * * *", "tz": "Asia/Almaty"},
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Chekist: verify primary job b72fece5; if stale/error then audit incidents.jsonl last 6h critical unresolved; notify via message tool."
-    },
-    {
-      "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
-      "name": "🚨 BACKUP: Участковый",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "9-59/10 * * * *", "tz": "Asia/Almaty"},
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Uchastkovy: verify primary 305e53a4; if stale/error then check gateway active/memory/disk and write incidents; notify via message tool."
-    },
     {
       "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "sessionTarget": "isolated",
-      "wakeMode": "now",
       "schedule": {"kind": "cron", "expr": "3-59/10 * * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
       "prompt_summary": "Run uchastkovy skill; write result to data/incidents.jsonl; no user messages."
-    },
-    {
-      "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
-      "name": "🚨 BACKUP: Механик",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "23,53 * * * *", "tz": "Asia/Almaty"},
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup Mekhanik: verify primary bef4ddfa; if stale/error then repair critical unresolved incidents (gateway restart, etc) and escalate others; notify via message tool."
-    },
-    {
-      "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
-      "name": "🔧 Механик",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "8,38 * * * *", "tz": "Asia/Almaty"},
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Run mekhanik skill; fix only per protocol using data/incidents.jsonl; report only if something actually fixed."
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
       "name": "🕵️ Чекист",
       "enabled": true,
       "sessionTarget": "isolated",
-      "wakeMode": "now",
       "schedule": {"kind": "cron", "expr": "18 * * * *"},
+      "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Run chekist skill: audit incidents.jsonl last 60 minutes; alert only for critical outside quiet hours."
+      "prompt_summary": "Run chekist skill; audit incidents.jsonl last 60 minutes; alert only for critical outside quiet hours."
+    },
+    {
+      "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
+      "name": "🔧 Механик",
+      "enabled": true,
+      "sessionTarget": "isolated",
+      "schedule": {"kind": "cron", "expr": "8,38 * * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
+      "model": "google/gemini-3-flash-preview",
+      "prompt_summary": "Run mekhanik skill; fix only per protocol using data/incidents.jsonl; report only if something fixed."
+    },
+    {
+      "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
+      "name": "🚨 BACKUP: Участковый",
+      "enabled": true,
+      "sessionTarget": "isolated",
+      "schedule": {"kind": "cron", "expr": "9-59/10 * * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "prompt_summary": "Backup Uchastkovy: verify primary; if stale/error check gateway active/memory/disk; write incidents; optional notify via message tool."
+    },
+    {
+      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
+      "name": "🚨 BACKUP: Чекист",
+      "enabled": true,
+      "sessionTarget": "isolated",
+      "schedule": {"kind": "cron", "expr": "48 * * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "prompt_summary": "Backup Chekist: verify primary; if stale/error audit critical unresolved incidents last 6h; notify via message tool."
+    },
+    {
+      "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
+      "name": "🚨 BACKUP: Механик",
+      "enabled": true,
+      "sessionTarget": "isolated",
+      "schedule": {"kind": "cron", "expr": "23,53 * * * *", "tz": "Asia/Almaty"},
+      "wakeMode": "now",
+      "model": "openai/gpt-5.2",
+      "prompt_summary": "Backup Mekhanik: verify primary; if stale/error repair critical unresolved incidents; escalate others; notify via message tool."
     },
     {
       "id": "ce006db5-350b-44be-baef-8b216ed687e4",
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "sessionTarget": "isolated",
-      "wakeMode": "now",
       "schedule": {"kind": "cron", "expr": "0 */4 * * *", "tz": "Asia/Almaty"},
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Periodic git sync: if changes, refresh cron snapshot, commit, push."
-    },
-    {
-      "id": "b0c35166-4062-479c-a777-652657b2fa71",
-      "name": "🚨 BACKUP: Git sync (Gemini)",
-      "enabled": true,
-      "sessionTarget": "isolated",
       "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "30 */4 * * *", "tz": "Asia/Almaty"},
-      "model": "openai/gpt-5.2",
-      "prompt_summary": "Backup git sync: if changes, commit+push without snapshot step."
-    },
-    {
-      "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
-      "name": "💰 Экономист (сбор)",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "30 17 * * *", "tz": "Asia/Almaty"},
       "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Economist daily collect: update economist-log.jsonl and cost-summary.json; check API balances/limits; notify only on anomalies via message tool."
-    },
-    {
-      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
-      "name": "Вечерний дайджест @newsneiron",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "0 18 * * *", "tz": "Asia/Almaty"},
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Evening news digest to @newsneiron: title + 10-15 separate news msgs, persist messageIds into dual-rating-data.json and sent-digests.json, audit msg, then git commit."
-    },
-    {
-      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-      "name": "Вечерние мнения",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "30 18 * * *", "tz": "Asia/Almaty"},
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "Evening opinions to @opnioneiron: 8-10 separate opinions, save each messageId into dual-rating-data.json, then audit."
-    },
-    {
-      "id": "9d558661-b1bd-4636-afba-72ec30bb3190",
-      "name": "Ежедневная рефлексия",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "schedule": {"kind": "cron", "expr": "30 20 * * *", "tz": "Asia/Almaty"},
-      "model": "google/gemini-3-flash-preview",
-      "prompt_summary": "daily_reflection() prompt; delivery via message tool if needed; auto-delivery disabled."
+      "prompt_summary": "Periodic git sync: if changes refresh cron snapshot, commit, push."
     }
   ]
 }
