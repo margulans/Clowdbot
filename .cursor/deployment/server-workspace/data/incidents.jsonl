@@ -25,4 +25,6 @@
 {"ts": "2026-02-23T10:33:57.480237+00:00", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
 {"ts":"2026-02-23T10:44:15Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T10:53:51Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-23T11:04:03Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":"2026-02-23T11:04:03Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}{"id":"b5056cb6","ts":"2026-02-23T11:13:43Z","type":"skill_missing","source":"uchastkovy","severity":"critical","msg":"cannot run skill: skills/uchastkovy/SKILL.md not found in repo/workspace","resolved":false}
+{"ts":"2026-02-23T11:18:48Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 1 critical, 0 warn, 6 ok in last 60min"}
+{"ts":"2026-02-23T11:19:03Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 1 critical, 0 warn, 6 ok in last 60min"}

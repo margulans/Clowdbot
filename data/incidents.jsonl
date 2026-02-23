@@ -10,3 +10,4 @@
 {"ts":"2026-02-23T09:13:26Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T09:23:26Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T10:18:55Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 1 ok in last 60min"}
+{"ts":"2026-02-23T11:19:03Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 1 critical, 0 warn, 6 ok in last 60min"}
