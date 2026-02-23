@@ -263,28 +263,38 @@ priorityScore = catScore*0.5 + expertScore*0.3 + srcScore*0.2
 - ✅ **Эксклюзив** — ранее недоступная информация
 - ✅ **Аналитика** — глубокий анализ свежего тренда
 
-### Проверка при поиске:
+### Основной поиск (Perplexity):
+
+Задавай вопросы — не ключевые слова. Perplexity возвращает синтез + источники:
 
 ```
-web_search({ query: "...", freshness: "pd" })  // предпочтительно
-web_search({ query: "...", freshness: "pw" })  // запасной вариант
+web_search("What are the most significant AI news in the last 24 hours?")
+web_search("Latest robotics news today — releases, funding, breakthroughs")
+web_search("eVTOL and urban air mobility news today")
+web_search("Top technology and vibe coding news today")
 ```
 
-### ⚠️ Fallback если web_search недоступен (Brave упал / 429 / пустой ответ):
-
-Не останавливай дайджест. Используй `web_fetch` по RSS-лентам:
+### ⚠️ Fallback уровень 1 — Brave (если Perplexity недоступен):
 
 ```
-web_fetch("https://www.technologyreview.com/feed/")       // ИИ
-web_fetch("https://venturebeat.com/category/ai/feed/")    // ИИ/Бизнес
-web_fetch("https://techcrunch.com/feed/")                 // Технологии
-web_fetch("https://spectrum.ieee.org/feeds/topic/robotics.rss")  // Робототехника
-web_fetch("https://evtol.com/feed/")                      // eVTOL
-web_fetch("https://feeds.arstechnica.com/arstechnica/technology-lab")  // Технологии
+web_search(provider=brave, query="AI news today", freshness="pd")
+web_search(provider=brave, query="robotics news today", freshness="pd")
+web_search(provider=brave, query="technology news today", freshness="pd")
+```
+
+### ⚠️ Fallback уровень 2 — RSS (если оба поисковика недоступны):
+
+```
+web_fetch("https://www.technologyreview.com/feed/")
+web_fetch("https://venturebeat.com/category/ai/feed/")
+web_fetch("https://techcrunch.com/feed/")
+web_fetch("https://spectrum.ieee.org/feeds/topic/robotics.rss")
+web_fetch("https://evtol.com/feed/")
+web_fetch("https://feeds.arstechnica.com/arstechnica/technology-lab")
 ```
 
 Извлеки `<title>`, `<link>`, `<pubDate>` из XML. Фильтруй за последние 48ч.
-В конце дайджеста добавь строку: `⚠️ Поиск Brave недоступен — использованы RSS`
+Пометка в конце дайджеста: `⚠️ Perplexity недоступен — использован Brave` или `⚠️ Поиск недоступен — использованы RSS`
 
 ## 🔁 Дедупликация (ОБЯЗАТЕЛЬНО!)
 

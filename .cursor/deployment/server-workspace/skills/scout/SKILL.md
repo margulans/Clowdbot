@@ -3,7 +3,7 @@ name: scout
 description: Скаут — еженедельный дип-ресёрч интернета, соцсетей, YouTube и Telegram-каналов для поиска новых авторов, источников и тем для дайджестов
 command-description: Запустить разведку новых источников и авторов
 user-invocable: yes
-metadata: { "openclaw": { "emoji": "🔭", "requires": { "config": ["brave.apiKey"] } } }
+metadata: { "openclaw": { "emoji": "🔭", "requires": { "config": ["perplexity.apiKey"] } } }
 ---
 
 # Scout — Разведчик
@@ -44,7 +44,7 @@ metadata: { "openclaw": { "emoji": "🔭", "requires": { "config": ["brave.apiKe
 
 ### Шаг 2: Дип-ресёрч по 6 трекам
 
-Для каждого трека выполни указанные запросы. Используй `web_search` с провайдером `perplexity` для синтезирующих запросов и `brave` для конкретных поисков.
+Для каждого трека выполни указанные запросы. Perplexity — основной провайдер для всех запросов. Brave используется только как fallback если Perplexity недоступен.
 
 ---
 
@@ -53,10 +53,10 @@ metadata: { "openclaw": { "emoji": "🔭", "requires": { "config": ["brave.apiKe
 По каждой категории из профиля:
 
 ```
-web_search(provider=perplexity): "who are the most insightful emerging voices in [AI/robotics/eVTOL/investing] in 2026?"
-web_search(provider=brave): "top AI researchers twitter 2026 new voices"
-web_search(provider=brave): "новые авторы про искусственный интеллект блог субстак 2026"
-web_search(provider=brave): "best substack newsletters AI robotics technology 2026"
+web_search("Who are the most insightful emerging voices in AI, robotics, eVTOL, and investing in 2026? Include Twitter/X, Substack, and blog authors.")
+web_search("Top new AI researchers and practitioners gaining attention in 2026 — Twitter, Substack, independent blogs")
+web_search("Best new Substack newsletters on AI, robotics, technology launched in 2025-2026 worth following")
+web_search("Новые авторы и эксперты про искусственный интеллект, вайбкодинг, технологии 2026 — блоги, Substack, Twitter")
 ```
 
 Для каждого кандидата: если есть URL — сделай `web_fetch` страницы профиля/блога для проверки активности.
@@ -66,10 +66,10 @@ web_search(provider=brave): "best substack newsletters AI robotics technology 20
 #### Трек B: Telegram-каналы
 
 ```
-web_search(provider=brave): "лучшие Telegram каналы искусственный интеллект 2026"
-web_search(provider=brave): "топ Telegram каналы технологии вайбкодинг 2026"
-web_search(provider=brave): "best telegram channels AI robotics evtol 2026"
-web_search(provider=brave): "telegram channel luck science psychology 2026"
+web_search("Лучшие Telegram-каналы про искусственный интеллект и технологии 2026 — активные, с высоким качеством контента")
+web_search("Топ Telegram-каналы вайбкодинг, разработка, AI-инструменты 2026")
+web_search("Best active Telegram channels on AI, robotics, eVTOL in 2026 with quality content")
+web_search("Telegram channels about luck, psychology, behavioral science, decision making 2026")
 ```
 
 Для каждого найденного канала — проверь публичный веб-просмотр:
@@ -85,10 +85,10 @@ web_fetch("https://t.me/s/<channel_name>")
 #### Трек C: YouTube-каналы
 
 ```
-web_search(provider=brave): "best youtube channels artificial intelligence 2026 new"
-web_search(provider=brave): "youtube каналы вайбкодинг разработка ИИ 2026"
-web_search(provider=brave): "youtube channels robotics evtol emerging 2026"
-web_search(provider=brave): "youtube channels science of luck probability 2026"
+web_search("Best new YouTube channels on artificial intelligence and LLMs launched or growing in 2026")
+web_search("YouTube каналы вайбкодинг, AI-разработка, cursor, windsurf — лучшие новые в 2026")
+web_search("Best YouTube channels on robotics, humanoid robots, eVTOL, emerging tech 2026 — underrated channels")
+web_search("YouTube channels about luck, probability, behavioral science, decision making 2026")
 ```
 
 Для топ-кандидатов — проверь страницу канала:
@@ -102,9 +102,9 @@ web_fetch("https://www.youtube.com/@<channel>/about")
 #### Трек D: Новые издания, рассылки, медиа
 
 ```
-web_search(provider=perplexity): "best new newsletters technology AI 2026 worth subscribing"
-web_search(provider=brave): "new tech media publications launched 2026"
-web_search(provider=brave): "новые медиа издания технологии ИИ 2026"
+web_search("Best new newsletters and media publications on technology and AI launched in 2025-2026 — worth subscribing")
+web_search("New independent tech media outlets and newsletters covering AI, robotics, deep tech in 2026")
+web_search("Новые медиа и рассылки про технологии, ИИ, вайбкодинг — запущенные в 2025-2026")
 ```
 
 ---
@@ -112,8 +112,9 @@ web_search(provider=brave): "новые медиа издания техноло
 #### Трек E: Новые темы — вне текущего радара
 
 ```
-web_search(provider=perplexity): "what emerging technology trends in 2026 are not yet mainstream?"
-web_search(provider=perplexity): "технологические тренды 2026 о которых мало говорят"
+web_search("What emerging technology trends in 2026 are not yet mainstream but have strong signal from researchers and practitioners?")
+web_search("Технологические тренды 2026, о которых мало говорят в массмедиа, но активно обсуждают эксперты")
+web_search("Overlooked AI and robotics research directions in 2026 that deserve more attention")
 ```
 
 Ищи темы, которых **нет** в текущих 7 категориях дайджеста, но потенциально близки интересам Маргулана.
@@ -123,11 +124,11 @@ web_search(provider=perplexity): "технологические тренды 20
 #### Трек F: Везение и удача
 
 ```
-web_search(provider=perplexity): "science of luck research 2026 new studies findings"
-web_search(provider=brave): "закономерное везение научные исследования психология 2026"
-web_search(provider=brave): "luck vs skill studies scientists authors 2026"
-web_search(provider=brave): "Richard Wiseman luck new research 2026"
-web_search(provider=brave): "systematic luck patterns behavioral economics 2026"
+web_search("New scientific research on luck, serendipity, and systematic fortune in 2025-2026 — studies, authors, findings")
+web_search("Закономерное везение, психология удачи, научные исследования 2025-2026 — новые данные и авторы")
+web_search("Luck vs skill in investing, entrepreneurship, and career — new research and expert voices 2026")
+web_search("Richard Wiseman luck research updates 2026, behavioral economics of luck, new systematic luck studies")
+web_search("Who are the leading researchers studying luck, serendipity, and fortunate outcomes scientifically in 2026?")
 ```
 
 Ищи: новые исследования, авторов, данные, мнения экспертов о природе везения и его закономерностях.

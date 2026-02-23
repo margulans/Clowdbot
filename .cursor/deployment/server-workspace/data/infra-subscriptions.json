@@ -15,6 +15,21 @@
       "notes": "Pay-per-use почасовой. Макс $6.99/мес сервер + $0.60/мес IP. Feb 2026: $5.28"
     },
     {
+      "id": "perplexity",
+      "name": "Perplexity API",
+      "type": "prepaid-credits",
+      "role": "primary-search",
+      "balance_alert_threshold": 50,
+      "balance_critical_threshold": 20,
+      "auto_reload_enabled": true,
+      "usage_tier": 2,
+      "currency": "USD",
+      "manage_url": "https://www.perplexity.ai/settings/api",
+      "api_check": null,
+      "needs_manual_check": true,
+      "notes": "Основной поиск для дайджестов и Scout. Баланс на 23.02.2026: $250.00. Автопополнение включено. Feb 2026: $250, Jan: $20, Dec: $20."
+    },
+    {
       "id": "brave-search",
       "name": "Brave Search API — Search plan",
       "type": "subscription-with-credits",
