@@ -41,8 +41,8 @@ _Последнее обновление экономистом: не запус
 
 **Snapshots (резервные копии):**
 
-- Скрипт: `~/.openclaw/scripts/hetzner-snapshot.sh`
-- Расписание: каждую ночь в 03:00 (LaunchAgent на Mac)
+- Скрипт на VPS: `~/scripts/hetzner-snapshot.sh`
+- Расписание: каждую ночь в 03:00 UTC (system cron на VPS — Mac не нужен)
 - Хранится: последние 3 snapshot (~$0.05/GB/мес ≈ **$0.50/мес**)
 - Восстановление: [RECOVERY.md](../deployment/RECOVERY.md#восстановление-из-snapshot)
 
