@@ -196,8 +196,8 @@
       "schedule": "30 20 * * * (Asia/Almaty)",
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "summary": "daily_reflection() — вечерняя рефлексия дня.",
-      "last_fixed": "2026-02-22"
+      "summary": "daily_reflection() — вечерняя рефлексия дня. delivery→telegram:685668909",
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "76f581a1-960c-4e35-bc9f-9ff0ccc56ae2",
