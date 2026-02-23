@@ -241,3 +241,7 @@ _Создан: 2026-02-23 | Обновлён: 2026-02-23 (добавлен Googl
 - `openai/gpt-4o-mini` (alias: gpt-4o-mini) — для backup cron jobs
 - `openai/gpt-4o` — для fallback
 - `openai/gpt-5.2` — primary model
+
+## Fallback главной сессии (обновлено 2026-02-23)
+- Primary: `openai/gpt-5.2`
+- Fallback: `anthropic/claude-sonnet-4-6` (было: `google/gemini-3-flash-preview`)
