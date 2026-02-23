@@ -4,29 +4,29 @@
     {
       "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
       "name": "👮‍♂️ Участковый",
-      "schedule": "*/10 * * * * (Asia/Almaty)",
+      "schedule": "3-59/10 * * * * (Asia/Almaty) → :03,:13,:23,:33,:43,:53",
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
       "summary": "Мониторинг здоровья системы каждые 10 мин. Пишет в data/incidents.jsonl. Не беспокоит пользователя.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
       "name": "🔧 Механик",
-      "schedule": "every 30 min",
+      "schedule": "8,38 * * * * (Asia/Almaty) → :08,:38",
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
       "summary": "Авто-ремонт нерешённых critical инцидентов из incidents.jsonl.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
       "name": "🕵️ Чекист",
-      "schedule": "0 * * * * (hourly, stagger 5min)",
+      "schedule": "18 * * * * (hourly) → :18",
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
       "summary": "Ревизия incidents.jsonl за час, алерт при critical вне тихих часов.",
-      "last_fixed": "2026-02-22"
+      "last_fixed": "2026-02-23"
     },
     {
       "id": "ce006db5-350b-44be-baef-8b216ed687e4",
