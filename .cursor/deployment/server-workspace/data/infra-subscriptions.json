@@ -1,6 +1,6 @@
 {
   "_comment": "Машиночитаемые данные инфраструктуры для economist/SKILL.md Режим A.2. Обновлять при добавлении новых сервисов.",
-  "last_checked": null,
+  "last_checked": "2026-02-23T11:37:35Z",
   "services": [
     {
       "id": "hetzner-vps",

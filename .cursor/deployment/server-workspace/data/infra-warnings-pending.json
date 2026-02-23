@@ -1,0 +1,11 @@
+{
+  "ts": "2026-02-23T11:37:35Z",
+  "warnings": [
+    "⏰ Brave Search API — Search plan — оплата через 6 дн. (2026-03-01)",
+    "Anthropic API недоступен: HTTPError",
+    "OpenAI API недоступен: HTTPError",
+    "Hetzner API недоступен: HTTPError",
+    "Perplexity API — требует ручной проверки",
+    "Brave Search API — Search plan — требует ручной проверки"
+  ]
+}
