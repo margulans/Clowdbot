@@ -235,3 +235,9 @@ _Таблица дополняется экономистом автоматич
 ---
 
 _Создан: 2026-02-23 | Обновлён: 2026-02-23 (добавлен Google Gemini)_
+
+## Gateway config: allowed models (обновлено 2026-02-23)
+Добавлены в `agents.defaults.models`:
+- `openai/gpt-4o-mini` (alias: gpt-4o-mini) — для backup cron jobs
+- `openai/gpt-4o` — для fallback
+- `openai/gpt-5.2` — primary model
