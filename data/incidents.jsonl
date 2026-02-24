@@ -30,7 +30,7 @@
 {"ts":"2026-02-23T10:02:54Z","type":"resolved","source":"manual-fix","ref_id":"backup-chekist-monitor_silent","action":"announce failure remediated; backup-chekist and daily-reflection now healthy","severity":"info"}
 {"ts":"2026-02-23T10:03:58Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T10:13:46Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-23T10:18:55Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 1 ok in last 60min"}
+{"ts":"2026-02-23T10:18:55Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 6 ok in last 60min"}
 {"ts":"2026-02-23T10:23:39Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T10:33:57.480237+00:00","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-23T10:44:15Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
@@ -52,3 +52,4 @@
 {"ts":"2026-02-23T20:18:46Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 0 ok in last 60min"}
 {"ts":"2026-02-23T21:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 0 ok in last 60min"}
 {"ts":"2026-02-23T22:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 6 ok in last 60min"}
+{"ts":"2026-02-24T07:03:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
