@@ -6,6 +6,7 @@
 import json
 import hashlib
 import os
+import subprocess
 from datetime import datetime, timezone
 
 HOME = os.path.expanduser("~")
@@ -21,6 +22,11 @@ EXPECTED = {
 }
 
 REQUIRED_DROPINS = ["perplexity.conf", "openai.conf"]
+
+# Задокументированные system cron скрипты (обновлять при добавлении нового cron)
+KNOWN_CRON_SCRIPTS = {
+    "/home/openclaw/scripts/hetzner-snapshot.sh",
+}
 
 # Задокументированные user unit-файлы (обновлять при добавлении нового сервиса)
 KNOWN_UNITS = {
@@ -79,6 +85,37 @@ def check_undocumented_units():
     return drifts
 
 
+def check_undocumented_cron():
+    """Обнаруживает system cron задачи не из KNOWN_CRON_SCRIPTS."""
+    drifts = 0
+    try:
+        result = subprocess.run(
+            ["crontab", "-l"], capture_output=True, text=True, timeout=5
+        )
+        lines = result.stdout.strip().splitlines()
+    except Exception as e:
+        print(f"WARN: не могу прочитать crontab: {e}")
+        return 0
+
+    for line in lines:
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        # Извлекаем путь к скрипту/команде (поле после 5 полей расписания)
+        parts = line.split()
+        if len(parts) < 6:
+            continue
+        script = parts[5]
+        if script not in KNOWN_CRON_SCRIPTS:
+            write_drift(
+                "warn",
+                f"undocumented cron job: {script} — add to server-config.md and KNOWN_CRON_SCRIPTS in check-config-drift.py"
+            )
+            drifts += 1
+
+    return drifts
+
+
 def main():
     drifts = 0
 
@@ -107,6 +144,7 @@ def main():
             drifts += 1
 
     drifts += check_undocumented_units()
+    drifts += check_undocumented_cron()
 
     if drifts == 0:
         print("OK: no config drift detected")
