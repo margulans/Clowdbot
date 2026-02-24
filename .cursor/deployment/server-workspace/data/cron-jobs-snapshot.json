@@ -1,258 +1,12 @@
 {
   "jobs": [
     {
-      "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "👮‍♂️ Участковый",
-      "enabled": true,
-      "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771938805273,
-      "schedule": {
-        "kind": "cron",
-        "expr": "3-59/10 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "model": "google/gemini-2.5-flash",
-        "kind": "agentTurn",
-        "thinking": "low",
-        "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771939380000,
-        "lastRunAtMs": 1771938780031,
-        "lastStatus": "ok",
-        "lastDurationMs": 25242,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "runningAtMs": 1771939380031
-      }
-    },
-    {
-      "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
-      "name": "🚨 BACKUP: Механик",
-      "enabled": true,
-      "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771937620076,
-      "schedule": {
-        "kind": "cron",
-        "expr": "23,53 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BACKUP Механик (gpt-4o-mini). Шаг 1: openclaw cron list → найди job bef4ddfa (Механик), проверь lastRunAtMs. Если последний запуск < 35 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Механик не запускался ≥35 мин или lastStatus≠ok): взять обязанности Механика: прочитай data/incidents.jsonl → найди записи где resolved=false, severity=critical, ts не старше 6 часов. Для каждого: если тип gateway_down → systemctl --user restart openclaw-gateway; если тип announce_queue_loop → restart gateway; остальные → записать escalated в incidents.jsonl. Записать в data/incidents.jsonl: {type:monitor_silent, source:backup-mekhanik, job:Механик (bef4ddfa), severity:critical, msg:Gemini недоступен — backup сработал, resolved:false}. Уведомить Маргулана: 🚨 BACKUP Механик: Gemini недоступен, взял авторемонт. Ответить BACKUP_TRIGGERED.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.\n\n[[NO_TEMP_FILES]]\nНе создавай временные/служебные файлы в workspace (например, data/_*.txt, data/_*.json). Проверки выполняй в памяти процесса и пиши только целевые артефакты протокола.",
-        "model": "openai/gpt-5.2",
-        "thinking": "low"
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "last"
-      },
-      "state": {
-        "nextRunAtMs": 1771939380000,
-        "lastRunAtMs": 1771937613004,
-        "lastStatus": "ok",
-        "lastDurationMs": 7072,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1771939500074
-      }
-    },
-    {
-      "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
-      "name": "🚨 BACKUP: Участковый",
-      "enabled": true,
-      "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771939165290,
-      "schedule": {
-        "kind": "cron",
-        "expr": "9-59/10 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BACKUP Участковый (gpt-4o-mini). Шаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Участковый не запускался ≥15 мин или lastStatus≠ok): взять обязанности Участкового: 1) systemctl --user is-active openclaw-gateway → если не active: restart + записать gateway_down в data/incidents.jsonl (severity=critical, resolved=false, source=backup-uchastkovy); 2) ps aux | grep openclaw-gateway | grep -v grep | awk {print $6} → если >1400000: restart + записать gateway_memory_high; 3) df -h / → если >85%: записать disk_warn. Записать в data/incidents.jsonl: {type:monitor_silent, source:backup-uchastkovy, job:Участковый (305e53a4), severity:critical, msg:Gemini недоступен — backup сработал, resolved:false}. Уведомить Маргулана: 🚨 BACKUP Участковый: Gemini недоступен, взял мониторинг. Ответить BACKUP_TRIGGERED.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.\n\n[[NO_TEMP_FILES]]\nНе создавай временные/служебные файлы в workspace (например, data/_*.txt, data/_*.json). Проверки выполняй в памяти процесса и пиши только целевые артефакты протокола.",
-        "model": "openai/gpt-5.2",
-        "thinking": "low"
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "last"
-      },
-      "state": {
-        "nextRunAtMs": 1771939740000,
-        "lastRunAtMs": 1771939149347,
-        "lastStatus": "ok",
-        "lastDurationMs": 15943,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-      "agentId": "main",
-      "name": "Вечерние мнения",
-      "enabled": true,
-      "createdAtMs": 1770522322268,
-      "updatedAtMs": 1771909765866,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8`\n  Затем `web_fetch` по выбранным URL.\n- Backup #2: если Brave недоступен → RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`.\n\nГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId → messageHistory в dual-rating-data.json.\n\n0) startTs = текущее unixMs.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 18:30\n🟢 Основной выпуск | Вечерний выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 _Модель: Gemini 3 Flash_\n📊 8–10 мнений | 🧠 Что думают эксперты\n---\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений):\n━━━━━━━━━━━━━━━━━━━━━━\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении!\n\nДля каждого мнения:\n  a) Найди мнение (Twitter/X, Telegram, Substack — тейки экспертов)\n     - используй поиск Perplexity → Brave → RSS (см. выше)\n  b) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n[Теги]\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🐦 @автор — url\") → mid\n  c) СРАЗУ запиши msg_{{mid}} в data/dual-rating-data.json → messageHistory (expert/source/category/title/timestamp)\n  d) Перечитай файл и проверь, что msg_{{mid}} существует; retry 1 раз; если нет — алерт Маргулану в личку\n  e) Только после (c) и (d) — следующее мнение\n\nФинальная проверка: посчитать записи с timestamp >= startTs; если меньше опубликованных — алерт Маргулану.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 3 — АУДИТ (последнее сообщение, обязателен):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Основной | Вечерний мнения\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 Модель: Gemini 3 Flash\n📊 Опубликовано: N мнений\n✅ Rating IDs: все сохранены\n📁 Data: dual-rating-data.json ✅\n---",
-        "model": "google/gemini-2.5-flash",
-        "thinking": "low",
-        "timeoutSeconds": 300
-      },
-      "state": {
-        "nextRunAtMs": 1771939800000,
-        "lastRunAtMs": 1771853400039,
-        "lastStatus": "ok",
-        "lastDurationMs": 32027,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      },
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
-      "name": "🔧 Механик",
-      "enabled": true,
-      "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771938647491,
-      "schedule": {
-        "kind": "cron",
-        "expr": "8,38 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
-        "model": "google/gemini-2.5-flash",
-        "thinking": "low",
-        "timeoutSeconds": 180
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771940280000,
-        "lastRunAtMs": 1771938633750,
-        "lastStatus": "ok",
-        "lastDurationMs": 13741,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
-      "name": "🚨 BACKUP: Чекист",
-      "enabled": true,
-      "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771937289353,
-      "schedule": {
-        "kind": "cron",
-        "expr": "48 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "BACKUP Чекист (gpt-4o-mini). Шаг 1: openclaw cron list → найди job b72fece5 (Чекист), проверь lastRunAtMs. Если последний запуск < 65 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (только если Чекист не запускался ≥65 мин или lastStatus≠ok): взять обязанности Чекиста: прочитай data/incidents.jsonl → найди critical записи за последние 6 часов где resolved=false. Если есть хотя бы один critical инцидент → уведоми Маргулана с деталями инцидента. Записать в data/incidents.jsonl: {type:monitor_silent, source:backup-chekist, job:Чекист (b72fece5), severity:critical, msg:Gemini недоступен — backup сработал, resolved:false}. Уведомить Маргулана: 🚨 BACKUP Чекист: Gemini недоступен, взял аудит. Ответить BACKUP_TRIGGERED.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.\n\n[[NO_TEMP_FILES]]\nНе создавай временные/служебные файлы в workspace (например, data/_*.txt, data/_*.json). Проверки выполняй в памяти процесса и пиши только целевые артефакты протокола.\n\n[[ACTIVE_INCIDENT_FILTER]]\nПеред алертом по incidents.jsonl собери resolved_ref_ids (все ref_id из type=resolved). Инцидент без id считай закрытым, если его ref_id есть в resolved_ref_ids, либо fallback-ключ <type>:<source> есть в resolved_ref_ids.",
-        "model": "openai/gpt-5.2",
-        "thinking": "low"
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "last",
-        "bestEffort": true
-      },
-      "state": {
-        "nextRunAtMs": 1771940880000,
-        "lastRunAtMs": 1771937280028,
-        "lastStatus": "ok",
-        "lastDurationMs": 9325,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "8783bc2f-de99-4742-9229-09921260d546",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
-      "enabled": true,
-      "createdAtMs": 1771644988152,
-      "updatedAtMs": 1771909890457,
-      "schedule": {
-        "kind": "cron",
-        "expr": "50 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
-        "thinking": "low",
-        "timeoutSeconds": 900,
-        "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап вечернего дайджеста мнений.\n\nЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский.\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI expert opinion today\" 8` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nШАГ 0: ПРОВЕРКА\nПрочитай data/sent-digests.json. Найди записи с type=\"opinions\" И digest=\"evening\" И датой сегодня.\n- Если записей >= 3 — ответь HEARTBEAT_OK и заверши (основной агент справился).\n- Если записей < 3 — выполни шаги ниже.\n\nШАГ 1: ЗАГОЛОВОК\nПрочитай текущее время (UTC+5). ПЕРВЫМ сообщением отправь в @opnioneiron:\n\"💬 МНЕНИЯ И КОММЕНТАРИИ | [ДД.ММ.ГГГГ], 18:30\nБэкап | [N] мнений | Что думают эксперты\nМодель: GPT-4o mini (backup)\"\n\nШАГ 2: КАЖДОЕ МНЕНИЕ = СТРОГО ОТДЕЛЬНОЕ СООБЩЕНИЕ\nЗАПРЕЩЕНО объединять мнения в одном сообщении!\nНЕ ОТПРАВЛЯЙ все мнения разом — только ОДНО за раз!\n\nВыполни 8 итераций подряд. В каждой итерации:\n  1. web_search по одной теме (чередуй): \"AI expert tweets opinions February 2026\", \"robotics humanoid expert commentary 2026\", \"eVTOL aviation expert opinion 2026\", \"vibe coding developer tools expert takes 2026\", \"AI business investment expert analysis 2026\", \"AI safety AGI expert opinions 2026\", \"startup venture capital expert views 2026\", \"tech forecast expert predictions 2026\"\n     - если web_search упал/пусто → Brave script → RSS (см. блок ПОИСК выше)\n  2. Выбери ОДНО конкретное мнение эксперта\n  3. Отправь ОДНИМ отдельным сообщением в @opnioneiron (формат):\n\"💬 [Автор] о [теме]\n#тег1 #тег2\n\n[Пересказ на русском, 3-5 предложений]\n\n[Ключевая цитата в кавычках, переведённая на русский]\n\n🐦 @автор — url\"\n  4. Сохрани messageId в data/dual-rating-data.json — messageHistory\n  5. Запиши в data/sent-digests.json (type=\"opinions\", digest=\"evening\", дата сегодня)\n  6. Только после п.4 и п.5 — следующая итерация\n\nТемы (все должны быть представлены): ИИ, Вайбкодинг, Робототехника, eVTOL, Технологии, Бизнес, Инвестиции\n\nШАГ 3: АУДИТ\nПОСЛЕДНИМ сообщением отправь в @opnioneiron:\n\"Аудит: Нейрон (backup) | GPT-4o mini\ndual-rating-data.json, sent-digests.json OK\nБэкап вечернего дайджеста мнений отправлен в @opnioneiron\"\n\nИтого: 1 заголовок + 8 мнений (каждое отдельно) + 1 аудит = 10 сообщений."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771941000000,
-        "lastRunAtMs": 1771854600036,
-        "lastStatus": "ok",
-        "lastDurationMs": 274897,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
       "agentId": "main",
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771939149312,
+      "updatedAtMs": 1771942705682,
       "schedule": {
         "kind": "cron",
         "expr": "18 * * * *",
@@ -268,122 +22,118 @@
         "timeoutSeconds": 180
       },
       "state": {
-        "nextRunAtMs": 1771942684872,
-        "lastRunAtMs": 1771939084896,
+        "nextRunAtMs": 1771946284872,
+        "lastRunAtMs": 1771942684884,
         "lastStatus": "ok",
-        "lastDurationMs": 64416,
+        "lastDurationMs": 20798,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      },
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
-      "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "📋 Саммари от Айганым — вечерний отчёт",
-      "enabled": true,
-      "createdAtMs": 1771658827106,
-      "updatedAtMs": 1771857024238,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 19 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "google/gemini-2.5-flash",
-        "thinking": "low",
-        "timeoutSeconds": 300,
-        "message": "📋 Подготовь вечерний саммари всех данных, полученных от Айганым (sender_id: 509646214) за сегодня.\n\nАлгоритм:\n\n1. Прочитай файлы за сегодняшнюю дату (YYYY = текущий год, MM = текущий месяц, DD = текущий день):\n   - ~/.openclaw/workspace/memory/YYYY-MM-DD.md — ищи записи с тегом [Айганым | 509646214]\n   - ~/Clowdbot/skills/avicenna/data/profile.md — ищи записи с тегом [Айганым | 509646214]\n   - ~/Clowdbot/skills/avicenna/data/medications.md — то же\n   - ~/Clowdbot/skills/avicenna/data/checkups.md — то же\n   - ~/.openclaw/workspace/memory/sandbox/YYYY-MM-DD.md — всё что pending\n   - ~/.openclaw/workspace/memory/inbox/YYYY-MM-DD.md — всё что в inbox\n\n2. Если НИ ОДНОГО сообщения от Айганым за сегодня нет — ответь только HEARTBEAT_OK и стоп.\n\n3. Если данные есть — сформируй саммари и отправь Маргулану (telegram:685668909):\n\nФормат саммари:\n```\n📋 Айганым сегодня — DD.MM.YYYY\n━━━━━━━━━━━━━━━━━━━━━━━━\n✅ Сохранено автоматически:\n• [список записей с кратким описанием]\n\n⏳ Ожидают твоего апрува:\n• [список pending из sandbox, или «нет»]\n\n📥 Inbox (нужна категория):\n• [список из inbox, или «нет»]\n━━━━━━━━━━━━━━━━━━━━━━━━\nВсего записей: N\n```\n\n4. Если есть pending в sandbox — напомни: «Напиши апрув / апрув 1,2 / отклонить N»"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771943400000,
-        "lastRunAtMs": 1771857000038,
-        "lastStatus": "ok",
-        "lastDurationMs": 24200,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "6b3d2e36-4e34-4689-9b44-96deac5904bb",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🚨 BACKUP: Саммари от Айганым",
-      "enabled": true,
-      "createdAtMs": 1771826007293,
-      "updatedAtMs": 1771857929614,
-      "schedule": {
-        "kind": "cron",
-        "expr": "45 19 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
-        "thinking": "low",
-        "timeoutSeconds": 300,
-        "message": "Бэкап 19:45: проверь — был ли отправлен вечерний саммари от Айганым (sender_id: 509646214) Маргулану сегодня в 19:30–19:45? Если ДА (есть запись в memory/YYYY-MM-DD.md за сегодня) — ответь HEARTBEAT_OK и стоп. Если НЕТ — прочитай memory/YYYY-MM-DD.md и inbox, собери данные от Айганым за сегодня и отправь саммари Маргулану (telegram:685668909). Если данных от Айганым нет — HEARTBEAT_OK."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771944300000,
-        "lastRunAtMs": 1771857900033,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 29581,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "runningAtMs": 1771946284899
+      },
+      "delivery": {
+        "mode": "none"
       }
     },
     {
-      "id": "ce006db5-350b-44be-baef-8b216ed687e4",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "Auto-commit: Git sync",
+      "id": "b9da6746-f3bf-4f00-a2c7-da5014855627",
+      "name": "🚨 BACKUP: Участковый",
       "enabled": true,
-      "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771930881941,
+      "createdAtMs": 1771831793053,
+      "updatedAtMs": 1771946313537,
       "schedule": {
         "kind": "cron",
-        "expr": "0 */4 * * *",
-        "tz": "Asia/Almaty",
-        "staggerMs": 300000
+        "expr": "9-59/10 * * * *",
+        "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
+        "message": "BACKUP Участковый.\n\nШаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs.\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА (никаких HEARTBEAT_OK).\n\nШаг 2 (только если Участковый не запускался ≥20 мин или lastStatus≠ok):\n1) systemctl --user is-active openclaw-gateway → если не active: restart + записать gateway_down (severity=critical, source=backup-uchastkovy)\n2) df -h / → если >85%: записать disk_warn (severity=warn)\n3) RSS gateway (ps) → если >1400000 KB: restart + записать gateway_memory_high (severity=critical)\n\nВАЖНО:\n- НЕ писать инциденты типа monitor_silent про «Gemini недоступен».\n- НЕ слать уведомления, если нет реальной проблемы (gateway_down/announce_queue_loop/gateway_memory_high/disk_warn).\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nЕсли нужно уведомить Маргулана — используй tool message(). Иначе молчи.\n\n[[NO_TEMP_FILES]]\nНе создавать временных файлов.",
+        "model": "openai/gpt-5.2",
+        "thinking": "low"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1771946340000,
+        "lastRunAtMs": 1771945740012,
+        "lastStatus": "ok",
+        "lastDurationMs": 12723,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "👮‍♂️ Участковый",
+      "enabled": true,
+      "createdAtMs": 1771731407619,
+      "updatedAtMs": 1771946313404,
+      "schedule": {
+        "kind": "cron",
+        "expr": "3-59/10 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
         "model": "google/gemini-2.5-flash",
+        "kind": "agentTurn",
         "thinking": "low",
-        "timeoutSeconds": 120,
-        "message": "You are performing an automated git sync check.\n\nSteps:\n1. cd ~/Clowdbot\n2. Run: git pull --rebase origin main\n   - If conflicts → abort rebase, reply \"⚠️ Git pull conflict — manual fix needed\" and stop.\n3. Run: git status --short\n4. If output is empty → reply only \"HEARTBEAT_OK\" and stop.\n5. If there are changes:\n   a. Run cron(action=list) to get current cron jobs\n   b. Copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c. Update data/cron-jobs-snapshot.json with current jobs (name, schedule, wakeMode, model, brief prompt summary)\n   d. git add -A\n   e. git commit -m \"auto-sync: periodic snapshot $(date +%Y-%m-%d)\"\n   f. git push origin main\n   g. Reply: \"✅ Auto-synced N files to git\"\n\nDo not ask for confirmation. Execute silently."
+        "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
+        "timeoutSeconds": 240
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771945273831,
-        "lastRunAtMs": 1771930873859,
+        "nextRunAtMs": 1771946580000,
+        "lastRunAtMs": 1771945980034,
+        "lastStatus": "error",
+        "lastDurationMs": 120031,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
+      }
+    },
+    {
+      "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
+      "name": "🚨 BACKUP: Механик",
+      "enabled": true,
+      "createdAtMs": 1771831803143,
+      "updatedAtMs": 1771946313596,
+      "schedule": {
+        "kind": "cron",
+        "expr": "23,53 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "BACKUP Механик.\n\nШаг 1: openclaw cron list → найди job bef4ddfa (Механик).\n- Если последний запуск < 45 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Механик не запускался ≥45 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Чини только gateway_down / announce_queue_loop / gateway_memory_high.\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n- Уведомлять Маргулана только если реально чинил или если критическое не чинится.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй tool message() только при реальном критическом.\n\n[[NO_TEMP_FILES]]",
+        "model": "openai/gpt-5.2",
+        "thinking": "low"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1771946580000,
+        "lastRunAtMs": 1771944817247,
         "lastStatus": "ok",
-        "lastDurationMs": 8082,
+        "lastDurationMs": 11842,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -497,6 +247,75 @@
       }
     },
     {
+      "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
+      "name": "🔧 Механик",
+      "enabled": true,
+      "createdAtMs": 1771735699824,
+      "updatedAtMs": 1771945729468,
+      "schedule": {
+        "kind": "cron",
+        "expr": "8,38 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
+        "model": "google/gemini-2.5-flash",
+        "thinking": "low",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771947480000,
+        "lastRunAtMs": 1771945680039,
+        "lastStatus": "ok",
+        "lastDurationMs": 49429,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "734c608b-8b03-4653-b1fc-108edf6785d2",
+      "name": "🚨 BACKUP: Чекист",
+      "enabled": true,
+      "createdAtMs": 1771831811990,
+      "updatedAtMs": 1771946313676,
+      "schedule": {
+        "kind": "cron",
+        "expr": "48 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "BACKUP Чекист.\n\nШаг 1: openclaw cron list → найди job b72fece5 (Чекист).\n- Если последний запуск < 75 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Чекист не запускался ≥75 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Если есть critical — отправь Маргулану конкретный алерт (через message()).\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\") только если есть реальный critical.\n\n[[NO_TEMP_FILES]]\n[[ACTIVE_INCIDENT_FILTER]]",
+        "model": "openai/gpt-5.2",
+        "thinking": "low"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last",
+        "bestEffort": true
+      },
+      "state": {
+        "nextRunAtMs": 1771948080000,
+        "lastRunAtMs": 1771944480018,
+        "lastStatus": "ok",
+        "lastDurationMs": 15495,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
       "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
       "agentId": "main",
       "sessionKey": "agent:main:main",
@@ -558,6 +377,43 @@
       "delivery": {
         "mode": "none",
         "channel": "last"
+      }
+    },
+    {
+      "id": "ce006db5-350b-44be-baef-8b216ed687e4",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "Auto-commit: Git sync",
+      "enabled": true,
+      "createdAtMs": 1771566031996,
+      "updatedAtMs": 1771946313753,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */4 * * *",
+        "tz": "Asia/Almaty",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-2.5-flash",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "You are performing an automated git sync check.\n\nSteps:\n1. cd ~/Clowdbot\n2. git pull --rebase origin main\n   - If conflicts → abort rebase, write an incident cron_error in data/incidents.jsonl and STOP.\n3. git status --short\n4. If output is empty → STOP SILENTLY (do NOT reply HEARTBEAT_OK).\n5. If there are changes:\n   a. cron(action=list)\n   b. copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c. update data/cron-jobs-snapshot.json\n   d. git add -A\n   e. git commit -m \"auto-sync: periodic snapshot $(date +%Y-%m-%d)\"\n   f. git push origin main\n\nExecute silently."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771959673831,
+        "lastRunAtMs": 1771945273856,
+        "lastStatus": "ok",
+        "lastDurationMs": 9437,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -989,7 +845,7 @@
       "name": "Вечерний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275698751,
-      "updatedAtMs": 1771939485936,
+      "updatedAtMs": 1771940355267,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * *",
@@ -1000,19 +856,19 @@
       "payload": {
         "kind": "agentTurn",
         "message": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=evening date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ** | {{localDate}}, 18:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
-        "model": "google/gemini-2.5-flash",
+        "model": "groq/llama-3.3-70b-versatile",
         "thinking": "low",
         "timeoutSeconds": 900
       },
       "state": {
         "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771938000035,
-        "lastStatus": "error",
-        "lastDurationMs": 600074,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "lastRunAtMs": 1771940306645,
+        "lastStatus": "ok",
+        "lastDurationMs": 48622,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       },
       "delivery": {
         "mode": "none"
@@ -1052,6 +908,149 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
+      "agentId": "main",
+      "name": "Вечерние мнения",
+      "enabled": true,
+      "createdAtMs": 1770522322268,
+      "updatedAtMs": 1771939812076,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8`\n  Затем `web_fetch` по выбранным URL.\n- Backup #2: если Brave недоступен → RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`.\n\nГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId → messageHistory в dual-rating-data.json.\n\n0) startTs = текущее unixMs.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 18:30\n🟢 Основной выпуск | Вечерний выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 _Модель: Gemini 3 Flash_\n📊 8–10 мнений | 🧠 Что думают эксперты\n---\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений):\n━━━━━━━━━━━━━━━━━━━━━━\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении!\n\nДля каждого мнения:\n  a) Найди мнение (Twitter/X, Telegram, Substack — тейки экспертов)\n     - используй поиск Perplexity → Brave → RSS (см. выше)\n  b) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n[Теги]\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🐦 @автор — url\") → mid\n  c) СРАЗУ запиши msg_{{mid}} в data/dual-rating-data.json → messageHistory (expert/source/category/title/timestamp)\n  d) Перечитай файл и проверь, что msg_{{mid}} существует; retry 1 раз; если нет — алерт Маргулану в личку\n  e) Только после (c) и (d) — следующее мнение\n\nФинальная проверка: посчитать записи с timestamp >= startTs; если меньше опубликованных — алерт Маргулану.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 3 — АУДИТ (последнее сообщение, обязателен):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Основной | Вечерний мнения\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 Модель: Gemini 3 Flash\n📊 Опубликовано: N мнений\n✅ Rating IDs: все сохранены\n📁 Data: dual-rating-data.json ✅\n---",
+        "model": "google/gemini-2.5-flash",
+        "thinking": "low",
+        "timeoutSeconds": 300
+      },
+      "state": {
+        "nextRunAtMs": 1772026200000,
+        "lastRunAtMs": 1771939800037,
+        "lastStatus": "ok",
+        "lastDurationMs": 12039,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      },
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
+      "id": "8783bc2f-de99-4742-9229-09921260d546",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
+      "enabled": true,
+      "createdAtMs": 1771644988152,
+      "updatedAtMs": 1771941281932,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап вечернего дайджеста мнений.\n\nЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский.\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI expert opinion today\" 8` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nШАГ 0: ПРОВЕРКА\nПрочитай data/sent-digests.json. Найди записи с type=\"opinions\" И digest=\"evening\" И датой сегодня.\n- Если записей >= 3 — ответь HEARTBEAT_OK и заверши (основной агент справился).\n- Если записей < 3 — выполни шаги ниже.\n\nШАГ 1: ЗАГОЛОВОК\nПрочитай текущее время (UTC+5). ПЕРВЫМ сообщением отправь в @opnioneiron:\n\"💬 МНЕНИЯ И КОММЕНТАРИИ | [ДД.ММ.ГГГГ], 18:30\nБэкап | [N] мнений | Что думают эксперты\nМодель: GPT-4o mini (backup)\"\n\nШАГ 2: КАЖДОЕ МНЕНИЕ = СТРОГО ОТДЕЛЬНОЕ СООБЩЕНИЕ\nЗАПРЕЩЕНО объединять мнения в одном сообщении!\nНЕ ОТПРАВЛЯЙ все мнения разом — только ОДНО за раз!\n\nВыполни 8 итераций подряд. В каждой итерации:\n  1. web_search по одной теме (чередуй): \"AI expert tweets opinions February 2026\", \"robotics humanoid expert commentary 2026\", \"eVTOL aviation expert opinion 2026\", \"vibe coding developer tools expert takes 2026\", \"AI business investment expert analysis 2026\", \"AI safety AGI expert opinions 2026\", \"startup venture capital expert views 2026\", \"tech forecast expert predictions 2026\"\n     - если web_search упал/пусто → Brave script → RSS (см. блок ПОИСК выше)\n  2. Выбери ОДНО конкретное мнение эксперта\n  3. Отправь ОДНИМ отдельным сообщением в @opnioneiron (формат):\n\"💬 [Автор] о [теме]\n#тег1 #тег2\n\n[Пересказ на русском, 3-5 предложений]\n\n[Ключевая цитата в кавычках, переведённая на русский]\n\n🐦 @автор — url\"\n  4. Сохрани messageId в data/dual-rating-data.json — messageHistory\n  5. Запиши в data/sent-digests.json (type=\"opinions\", digest=\"evening\", дата сегодня)\n  6. Только после п.4 и п.5 — следующая итерация\n\nТемы (все должны быть представлены): ИИ, Вайбкодинг, Робототехника, eVTOL, Технологии, Бизнес, Инвестиции\n\nШАГ 3: АУДИТ\nПОСЛЕДНИМ сообщением отправь в @opnioneiron:\n\"Аудит: Нейрон (backup) | GPT-4o mini\ndual-rating-data.json, sent-digests.json OK\nБэкап вечернего дайджеста мнений отправлен в @opnioneiron\"\n\nИтого: 1 заголовок + 8 мнений (каждое отдельно) + 1 аудит = 10 сообщений."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772027400000,
+        "lastRunAtMs": 1771941000026,
+        "lastStatus": "ok",
+        "lastDurationMs": 281906,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "9e47cd1e-caac-4873-bf51-d70cc50974be",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "📋 Саммари от Айганым — вечерний отчёт",
+      "enabled": true,
+      "createdAtMs": 1771658827106,
+      "updatedAtMs": 1771943412413,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-2.5-flash",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "📋 Подготовь вечерний саммари всех данных, полученных от Айганым (sender_id: 509646214) за сегодня.\n\nАлгоритм:\n\n1. Прочитай файлы за сегодняшнюю дату (YYYY = текущий год, MM = текущий месяц, DD = текущий день):\n   - ~/.openclaw/workspace/memory/YYYY-MM-DD.md — ищи записи с тегом [Айганым | 509646214]\n   - ~/Clowdbot/skills/avicenna/data/profile.md — ищи записи с тегом [Айганым | 509646214]\n   - ~/Clowdbot/skills/avicenna/data/medications.md — то же\n   - ~/Clowdbot/skills/avicenna/data/checkups.md — то же\n   - ~/.openclaw/workspace/memory/sandbox/YYYY-MM-DD.md — всё что pending\n   - ~/.openclaw/workspace/memory/inbox/YYYY-MM-DD.md — всё что в inbox\n\n2. Если НИ ОДНОГО сообщения от Айганым за сегодня нет — ответь только HEARTBEAT_OK и стоп.\n\n3. Если данные есть — сформируй саммари и отправь Маргулану (telegram:685668909):\n\nФормат саммари:\n```\n📋 Айганым сегодня — DD.MM.YYYY\n━━━━━━━━━━━━━━━━━━━━━━━━\n✅ Сохранено автоматически:\n• [список записей с кратким описанием]\n\n⏳ Ожидают твоего апрува:\n• [список pending из sandbox, или «нет»]\n\n📥 Inbox (нужна категория):\n• [список из inbox, или «нет»]\n━━━━━━━━━━━━━━━━━━━━━━━━\nВсего записей: N\n```\n\n4. Если есть pending в sandbox — напомни: «Напиши апрув / апрув 1,2 / отклонить N»"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772029800000,
+        "lastRunAtMs": 1771943400026,
+        "lastStatus": "ok",
+        "lastDurationMs": 12387,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "6b3d2e36-4e34-4689-9b44-96deac5904bb",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Саммари от Айганым",
+      "enabled": true,
+      "createdAtMs": 1771826007293,
+      "updatedAtMs": 1771944327634,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "Бэкап 19:45: проверь — был ли отправлен вечерний саммари от Айганым (sender_id: 509646214) Маргулану сегодня в 19:30–19:45? Если ДА (есть запись в memory/YYYY-MM-DD.md за сегодня) — ответь HEARTBEAT_OK и стоп. Если НЕТ — прочитай memory/YYYY-MM-DD.md и inbox, собери данные от Айганым за сегодня и отправь саммари Маргулану (telegram:685668909). Если данных от Айганым нет — HEARTBEAT_OK."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772030700000,
+        "lastRunAtMs": 1771944300493,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27141,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     },
     {
