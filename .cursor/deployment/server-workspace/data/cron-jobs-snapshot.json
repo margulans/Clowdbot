@@ -1,72 +1,46 @@
 {
-  "last_updated": "2026-02-23",
-  "note": "Switched news digests to Perplexity-first web_search with browser+web_fetch fallback; publish gating uses sent-digests.json (no channel history).",
+  "last_updated": "2026-02-24",
+  "note": "Snapshot updated during /git after docs fix. No cron jobs changed in this step.",
   "jobs": [
     {
-      "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
-      "name": "Утренний дайджест @newsneiron",
+      "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
+      "name": "👮‍♂️ Участковый",
       "enabled": true,
       "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "0 8 * * *", "tz": "Asia/Almaty"},
+      "schedule": {"kind": "cron", "expr": "3-59/10 * * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Morning news digest. Primary web_search (Perplexity) freshness=pd; fallback to browser+web_fetch; dedupe+gating via sent-digests.json; persist mids in dual-rating-data.json; audit." 
+      "prompt_summary": "Run uchastkovy skill; write JSONL to incidents.jsonl; no user messages."
     },
     {
-      "id": "c1c58593-accd-4cf7-a175-3603514b0275",
-      "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
+      "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
+      "name": "🕵️ Чекист",
       "enabled": true,
       "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "5 8 * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Backup morning news digest. Check sent-digests.json for >=6; else publish using Perplexity web_search with browser fallback." 
-    },
-    {
-      "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
-      "name": "Дневной дайджест @newsneiron",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "0 13 * * *", "tz": "Asia/Almaty"},
+      "schedule": {"kind": "cron", "expr": "18 * * * *"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Day news digest. Primary web_search (Perplexity) freshness=pd; fallback browser+web_fetch; gating/dedupe via sent-digests.json; persist mids; audit." 
+      "prompt_summary": "Audit incidents.jsonl last 60m; alert only for critical outside quiet hours."
     },
     {
-      "id": "62c89740-52fa-4364-b1ae-7c81110ef368",
-      "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
+      "id": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",
+      "name": "🔧 Механик",
       "enabled": true,
       "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "5 13 * * *", "tz": "Asia/Almaty"},
-      "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Backup day news digest. Check sent-digests.json; publish if missing. Perplexity web_search + browser fallback." 
-    },
-    {
-      "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
-      "name": "Вечерний дайджест @newsneiron",
-      "enabled": true,
-      "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "0 18 * * *", "tz": "Asia/Almaty"},
+      "schedule": {"kind": "cron", "expr": "8,38 * * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
       "model": "google/gemini-3-flash-preview",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Evening news digest. Always publish unless sent-digests.json shows >=6 for today; Perplexity-first web_search; browser+web_fetch fallback." 
+      "prompt_summary": "Auto-repair unresolved critical incidents per protocol; silent unless fixed."
     },
     {
-      "id": "e758d243-54e7-4d3b-b684-8115561831e6",
-      "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
+      "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
+      "name": "💰 Экономист (сбор)",
       "enabled": true,
       "sessionTarget": "isolated",
-      "schedule": {"kind": "cron", "expr": "5 18 * * *", "tz": "Asia/Almaty"},
+      "schedule": {"kind": "cron", "expr": "30 17 * * *", "tz": "Asia/Almaty"},
       "wakeMode": "now",
-      "model": "openai/gpt-5.2",
-      "last_fixed": "2026-02-23",
-      "prompt_summary": "Backup evening news digest. Check sent-digests.json; publish if missing. Perplexity web_search + browser fallback." 
+      "model": "openai/gpt-4o-mini",
+      "prompt_summary": "Daily collect + infra check; absolute paths; never alert without updated cost-summary; log scan_error on failure."
     }
   ]
 }

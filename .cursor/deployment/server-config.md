@@ -107,7 +107,7 @@ Workspace бота = Git-репо через симлинк (одна папка
 | -------------- | ------------------------------------------------------------------------------------- |
 | Git-репо       | `~/Clowdbot`                                                                          |
 | Workspace бота | `~/.openclaw/workspace` → симлинк на `~/Clowdbot/.cursor/deployment/server-workspace` |
-| Remote         | `https://github.com/margulans/Clowdbot`                                               |
+| Remote         | `https://github.com/margulans/Neiron-AI-assistant`                                    |
 | Branch         | `main`                                                                                |
 
 ### Синхронизация
