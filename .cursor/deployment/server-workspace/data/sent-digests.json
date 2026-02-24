@@ -333,6 +333,54 @@
         "manufacturing",
         "agentic ai"
       ]
+    },
+    {
+      "url": "https://ramp.com/velocity/ai-index-february-2026",
+      "title": "Anthropic догоняет OpenAI в корпоративном секторе (февраль 2026)",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": ["anthropic", "openai", "enterprise", "market share"]
+    },
+    {
+      "url": "https://en.sedaily.com/finance/2026/02/24/hanwha-ocean-eyes-100m-fund-for-us-ai-robotics-startups",
+      "title": "Hyundai и Hanwha инвестируют миллиарды в роботов и ИИ-инфраструктуру",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Investment",
+      "keywords": ["hyundai", "hanwha", "investment", "robotics"]
+    },
+    {
+      "url": "https://www.urbanairmobilitynews.com/air-taxis/skydrive-and-partners-plan-autonomous-evtol-flights-in-tokyo-from-february-24/",
+      "title": "SkyDrive запускает автономные полеты eVTOL в Токио",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "eVTOL",
+      "keywords": ["skydrive", "tokyo", "autonomous", "evtol"]
+    },
+    {
+      "url": "https://blog.mean.ceo/vibecoding-news-february-2026/",
+      "title": "Vibe Coding: YC стартапы переходят на 95% AI-код",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Vibecoding",
+      "keywords": ["vibe coding", "y combinator", "ai code", "bolt.new"]
+    },
+    {
+      "url": "https://technode.com/2026/02/24/honor-reportedly-to-launch-first-humanoid-robot-at-mwc-2026/",
+      "title": "Honor анонсирует робота и ИИ-телефон на MWC 2026",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Robotics",
+      "keywords": ["honor", "mwc", "humanoid", "robot phone"]
+    },
+    {
+      "url": "https://mlq.ai/prediction/brief/openai/openai-markets-brief-february-21-2026-anthropic-secures-february-model-lead-as-o-2026-02-21/",
+      "title": "Claude Opus 4.6 и OpenAI Frontier: Гонка за агентами",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": ["claude", "openai", "agents", "frontier"]
     }
   ]
 }
