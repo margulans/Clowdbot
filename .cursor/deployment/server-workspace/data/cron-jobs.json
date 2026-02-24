@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771917210168,
+      "updatedAtMs": 1771920823055,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771917780000,
-        "lastRunAtMs": 1771917180025,
+        "nextRunAtMs": 1771921380000,
+        "lastRunAtMs": 1771920780013,
         "lastStatus": "ok",
-        "lastDurationMs": 30143,
+        "lastDurationMs": 43042,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771914886768,
+      "updatedAtMs": 1771917526217,
       "schedule": {
         "kind": "cron",
         "expr": "18 * * * *",
@@ -59,15 +59,14 @@
         "timeoutSeconds": 180
       },
       "state": {
-        "nextRunAtMs": 1771917484872,
-        "lastRunAtMs": 1771914851646,
+        "nextRunAtMs": 1771924684872,
+        "lastRunAtMs": 1771917486694,
         "lastStatus": "ok",
-        "lastDurationMs": 35122,
+        "lastDurationMs": 39523,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1771917486691
+        "lastDeliveryStatus": "not-delivered"
       },
       "delivery": {
         "mode": "none"
@@ -78,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771916955939,
+      "updatedAtMs": 1771920489369,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -97,10 +96,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771918680000,
-        "lastRunAtMs": 1771916880027,
+        "nextRunAtMs": 1771922280000,
+        "lastRunAtMs": 1771920480018,
         "lastStatus": "ok",
-        "lastDurationMs": 75912,
+        "lastDurationMs": 9351,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -114,7 +113,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771916479405,
+      "updatedAtMs": 1771921097009,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -128,7 +127,7 @@
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 120,
-        "message": "You are performing an automated git sync check.\n\nSteps:\n1. cd ~/Clowdbot\n2. Run: git status --short\n3. If output is empty → reply only \"HEARTBEAT_OK\" and stop.\n4. If there are changes:\n   a. Run cron(action=list) to get current cron jobs\n   b. Update data/cron-jobs-snapshot.json with current jobs (name, schedule, wakeMode, model, brief prompt summary)\n   c. git add -A\n   d. git commit -m \"auto-sync: periodic snapshot $(date +%Y-%m-%d)\"\n   e. git push origin main\n   f. Reply: \"✅ Auto-synced N files to git\"\n\nDo not ask for confirmation. Execute silently."
+        "message": "You are performing an automated git sync check.\n\nSteps:\n1. cd ~/Clowdbot\n2. Run: git pull --rebase origin main\n   - If conflicts → abort rebase, reply \"⚠️ Git pull conflict — manual fix needed\" and stop.\n3. Run: git status --short\n4. If output is empty → reply only \"HEARTBEAT_OK\" and stop.\n5. If there are changes:\n   a. Run cron(action=list) to get current cron jobs\n   b. Copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c. Update data/cron-jobs-snapshot.json with current jobs (name, schedule, wakeMode, model, brief prompt summary)\n   d. git add -A\n   e. git commit -m \"auto-sync: periodic snapshot $(date +%Y-%m-%d)\"\n   f. git push origin main\n   g. Reply: \"✅ Auto-synced N files to git\"\n\nDo not ask for confirmation. Execute silently."
       },
       "delivery": {
         "mode": "none"
@@ -151,7 +150,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1771903817204,
+      "updatedAtMs": 1771918297358,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -170,10 +169,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771918200000,
-        "lastRunAtMs": 1771903800037,
+        "nextRunAtMs": 1771932600000,
+        "lastRunAtMs": 1771918200046,
         "lastStatus": "ok",
-        "lastDurationMs": 17167,
+        "lastDurationMs": 97312,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -202,7 +201,7 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1771920000000,
+        "nextRunAtMs": 1772006400000,
         "lastRunAtMs": 1771833600033,
         "lastStatus": "ok",
         "lastDurationMs": 97761,
@@ -238,7 +237,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771920300000,
+        "nextRunAtMs": 1772006700000,
         "lastRunAtMs": 1771839536534,
         "lastStatus": "ok",
         "lastDurationMs": 83765,
@@ -1137,7 +1136,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771917009280,
+      "updatedAtMs": 1771920551534,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1156,10 +1155,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771917540000,
-        "lastRunAtMs": 1771916955975,
+        "nextRunAtMs": 1771921140000,
+        "lastRunAtMs": 1771920540044,
         "lastStatus": "ok",
-        "lastDurationMs": 53305,
+        "lastDurationMs": 11490,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1171,7 +1170,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771916072943,
+      "updatedAtMs": 1771919615872,
       "schedule": {
         "kind": "cron",
         "expr": "23,53 * * * *",
@@ -1190,10 +1189,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771917780000,
-        "lastRunAtMs": 1771916062358,
+        "nextRunAtMs": 1771921380000,
+        "lastRunAtMs": 1771919602914,
         "lastStatus": "ok",
-        "lastDurationMs": 10585,
+        "lastDurationMs": 12958,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1205,7 +1204,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771915692864,
+      "updatedAtMs": 1771919298301,
       "schedule": {
         "kind": "cron",
         "expr": "48 * * * *",
@@ -1225,10 +1224,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771919280000,
-        "lastRunAtMs": 1771915680027,
+        "nextRunAtMs": 1771922880000,
+        "lastRunAtMs": 1771919280027,
         "lastStatus": "ok",
-        "lastDurationMs": 12837,
+        "lastDurationMs": 18274,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
