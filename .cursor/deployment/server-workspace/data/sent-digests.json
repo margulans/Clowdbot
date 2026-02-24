@@ -531,6 +531,62 @@
         "vertical ai",
         "series b"
       ]
+    },
+    {
+      "url": "https://thehackernews.com/2026/02/anthropic-says-chinese-ai-firms-used-16.html",
+      "title": "Anthropic обвиняет китайские ИИ-компании в массовой краже моделей.",
+      "digest": "day",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "anthropic",
+        "china",
+        "ai theft",
+        "claude"
+      ],
+      "type": "news"
+    },
+    {
+      "url": "https://www.openmarketsinstitute.org/publications/the-corner-newsletter-googles-proprietary-ai-chips-and-a-playbook-for-stopping-private-equity",
+      "title": "Чипы ИИ от Google лишь минимально бросают вызов доминированию Nvidia.",
+      "digest": "day",
+      "date": "2026-02-24",
+      "category": "Technology",
+      "keywords": [
+        "google",
+        "ai chips",
+        "nvidia",
+        "competition"
+      ],
+      "type": "news"
+    },
+    {
+      "url": "https://www.wusf.org/weather/2026-02-24/how-ai-technology-is-impacting-hurricane-forecasting",
+      "title": "ИИ улучшает прогнозирование ураганов.",
+      "digest": "day",
+      "date": "2026-02-24",
+      "category": "Technology",
+      "keywords": [
+        "ai",
+        "hurricane forecasting",
+        "deepmind",
+        "weather"
+      ],
+      "type": "news"
+    },
+    {
+      "url": "https://quantum-systems.com/news/quantum-systems-launches-ground-robotics-domain-and-presents-ugv-mandrill-at-enforce-tac-2026/",
+      "title": "Quantum Systems запускает подразделение наземной робототехники и представляет БНТС Mandrill.",
+      "digest": "day",
+      "date": "2026-02-24",
+      "category": "Robotics",
+      "keywords": [
+        "quantum systems",
+        "ugv",
+        "mandrill",
+        "robotics"
+      ],
+      "type": "news"
     }
   ]
 }

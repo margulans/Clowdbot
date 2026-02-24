@@ -239,6 +239,30 @@
       "category": "Investment",
       "title": "Venture Capital Crystal Ball: what 2026 holds",
       "timestamp": "2026-02-24T03:53:38.912Z"
+    },
+    {
+      "messageId": "403",
+      "category": "AI",
+      "title": "Anthropic обвиняет китайские ИИ-компании в массовой краже моделей.",
+      "timestamp": "2026-02-24T08:00:00Z"
+    },
+    {
+      "messageId": "404",
+      "category": "Technology",
+      "title": "Чипы ИИ от Google лишь минимально бросают вызов доминированию Nvidia.",
+      "timestamp": "2026-02-24T08:00:00Z"
+    },
+    {
+      "messageId": "405",
+      "category": "Technology",
+      "title": "ИИ улучшает прогнозирование ураганов.",
+      "timestamp": "2026-02-24T08:00:00Z"
+    },
+    {
+      "messageId": "406",
+      "category": "Robotics",
+      "title": "Quantum Systems запускает подразделение наземной робототехники и представляет БНТС Mandrill.",
+      "timestamp": "2026-02-24T08:00:00Z"
     }
   ]
 }
