@@ -1333,7 +1333,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
-        "text": "life_advisor(mode=weekly-insight)"
+        "text": "wendy(mode=weekly-insight)"
       },
       "state": {
         "nextRunAtMs": 1772193600000
@@ -1356,7 +1356,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
-        "text": "life_advisor(mode=goal-check)"
+        "text": "wendy(mode=goal-check)"
       },
       "state": {
         "nextRunAtMs": 1772337600000
