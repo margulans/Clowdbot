@@ -18,6 +18,7 @@
 | [BACKLOG.md](./.ai/BACKLOG.md)                                       | Триггер `план` — что делать дальше                 |
 | [EVOLUTION.md](./.ai/EVOLUTION.md)                                   | Эволюция: что умеет, какие задачи снял             |
 | [INFRA.md](./.ai/INFRA.md)                                           | Реестр сервисов, расходы, подписки, ссылки оплаты  |
+| [ROUTING.md](./.ai/ROUTING.md)                                       | Маршрутизация: Cursor или бот — при каждом запросе |
 | [.cursor/deployment/README.md](./.cursor/deployment/README.md)       | Детали деплоя, эндпойнты, SSH-доступы              |
 | [.cursor/deployment/WORKFLOWS.md](./.cursor/deployment/WORKFLOWS.md) | Схемы автоматизаций (дайджест, рейтинг)            |
 | [.cursor/deployment/RECOVERY.md](./.cursor/deployment/RECOVERY.md)   | Восстановление при сбоях                           |
@@ -46,13 +47,14 @@ Cursor (Mac)          Нейрон (VPS)
 
 ## ⚡ Триггеры
 
-| Команда  | Действие                                         |
-| -------- | ------------------------------------------------ |
-| `старт`  | Прочитай SNAPSHOT.md → сообщи состояние проекта  |
-| `план`   | Прочитай BACKLOG.md → покажи следующий этап      |
-| `финиш`  | Обнови SNAPSHOT.md → предложи commit             |
-| `статус` | Краткая сводка: что работает, что нет            |
-| `коммит` | Следуй `.cursor/skills/workflow-commit/SKILL.md` |
+| Команда   | Действие                                         |
+| --------- | ------------------------------------------------ |
+| `старт`   | Прочитай SNAPSHOT.md → сообщи состояние проекта  |
+| `маршрут` | ROUTING.md → определи канал, выведи решение      |
+| `план`    | Прочитай BACKLOG.md → покажи следующий этап      |
+| `финиш`   | Обнови SNAPSHOT.md → предложи commit             |
+| `статус`  | Краткая сводка: что работает, что нет            |
+| `коммит`  | Следуй `.cursor/skills/workflow-commit/SKILL.md` |
 
 ---
 
@@ -77,7 +79,8 @@ Neiron-AI-assistant/
 │   ├── ARCHITECTURE.md           # Архитектура Нейрона
 │   ├── SNAPSHOT.md               # Текущее состояние
 │   ├── BACKLOG.md                # Задачи и roadmap
-│   └── EVOLUTION.md              # Эволюция: ценность и снятые задачи
+│   ├── EVOLUTION.md              # Эволюция: ценность и снятые задачи
+│   └── ROUTING.md                # Маршрутизация Cursor ↔ бот
 │
 ├── .cursor/
 │   ├── deployment/               # Документация деплоя
@@ -123,7 +126,8 @@ Neiron-AI-assistant/
 - [SNAPSHOT.md](./.ai/SNAPSHOT.md) — текущий статус
 - [BACKLOG.md](./.ai/BACKLOG.md) — план разработки
 - [EVOLUTION.md](./.ai/EVOLUTION.md) — эволюция и ценность
+- [ROUTING.md](./.ai/ROUTING.md) — Cursor ↔ бот
 
 ---
 
-_Обновлено: 2026-02-19_
+_Обновлено: 2026-02-24_
