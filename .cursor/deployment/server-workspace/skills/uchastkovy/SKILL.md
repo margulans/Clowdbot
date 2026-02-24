@@ -64,33 +64,21 @@ description: Участковый — тихий мониторинг здоро
 
 ### Шаг 3. Запись в журнал
 
-Для каждого найденного инцидента — добавь строку в конец `data/incidents.jsonl`:
+Для каждого найденного инцидента — добавь **ровно одну строку JSON (JSONL)** в конец `data/incidents.jsonl`.
 
+⚠️ Важно: **никаких переносов строк/pretty-print/отступов**. Один объект = одна строка.
+
+Пример (одна строка):
 ```json
-{
-  "id": "<8-char-hex>",
-  "ts": "<ISO8601>",
-  "type": "<тип>",
-  "source": "uchastkovy",
-  "job": "<id или name>",
-  "severity": "critical|warn",
-  "msg": "<описание>",
-  "resolved": false
-}
+{"id":"<8-char-hex>","ts":"<ISO8601>","type":"<тип>","source":"uchastkovy","job":"<id или name>","severity":"critical|warn","msg":"<описание>","resolved":false}
 ```
 
 Формирование `id`: первые 8 символов от sha1 строки `<type>+<job>+<ts>`.
 
-Если всё в порядке — запиши одну строку:
+Если всё в порядке — запиши **одну строку JSONL**:
 
 ```json
-{
-  "ts": "<ISO8601>",
-  "type": "ok",
-  "source": "uchastkovy",
-  "severity": "info",
-  "msg": "system healthy"
-}
+{"ts":"<ISO8601>","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 ```
 
 ### Шаг 4. Экстренный ремонт

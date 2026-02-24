@@ -340,7 +340,12 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "AI",
-      "keywords": ["anthropic", "openai", "enterprise", "market share"]
+      "keywords": [
+        "anthropic",
+        "openai",
+        "enterprise",
+        "market share"
+      ]
     },
     {
       "url": "https://en.sedaily.com/finance/2026/02/24/hanwha-ocean-eyes-100m-fund-for-us-ai-robotics-startups",
@@ -348,7 +353,12 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "Investment",
-      "keywords": ["hyundai", "hanwha", "investment", "robotics"]
+      "keywords": [
+        "hyundai",
+        "hanwha",
+        "investment",
+        "robotics"
+      ]
     },
     {
       "url": "https://www.urbanairmobilitynews.com/air-taxis/skydrive-and-partners-plan-autonomous-evtol-flights-in-tokyo-from-february-24/",
@@ -356,7 +366,12 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "eVTOL",
-      "keywords": ["skydrive", "tokyo", "autonomous", "evtol"]
+      "keywords": [
+        "skydrive",
+        "tokyo",
+        "autonomous",
+        "evtol"
+      ]
     },
     {
       "url": "https://blog.mean.ceo/vibecoding-news-february-2026/",
@@ -364,7 +379,12 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "Vibecoding",
-      "keywords": ["vibe coding", "y combinator", "ai code", "bolt.new"]
+      "keywords": [
+        "vibe coding",
+        "y combinator",
+        "ai code",
+        "bolt.new"
+      ]
     },
     {
       "url": "https://technode.com/2026/02/24/honor-reportedly-to-launch-first-humanoid-robot-at-mwc-2026/",
@@ -372,7 +392,12 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "Robotics",
-      "keywords": ["honor", "mwc", "humanoid", "robot phone"]
+      "keywords": [
+        "honor",
+        "mwc",
+        "humanoid",
+        "robot phone"
+      ]
     },
     {
       "url": "https://mlq.ai/prediction/brief/openai/openai-markets-brief-february-21-2026-anthropic-secures-february-model-lead-as-o-2026-02-21/",
@@ -380,7 +405,132 @@
       "digest": "morning",
       "date": "2026-02-24",
       "category": "AI",
-      "keywords": ["claude", "openai", "agents", "frontier"]
+      "keywords": [
+        "claude",
+        "openai",
+        "agents",
+        "frontier"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ttnews.com/articles/joby-targets-2026-us-launch",
+      "title": "JoeBen Bevirt (Joby) о поэтапном запуске eVTOL в 2026",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "eVTOL",
+      "keywords": [
+        "joby",
+        "joeben bevirt",
+        "certification",
+        "dubai",
+        "2026"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/physical-ai-humanoid-robots.html",
+      "title": "Deloitte: физический ИИ требует зрелости безопасности и данных",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Robotics",
+      "keywords": [
+        "physical ai",
+        "robotics",
+        "safety",
+        "hallucinations",
+        "monitoring"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://foundationcapital.com/where-ai-is-headed-in-2026/",
+      "title": "Ashu Garg: 2026 — год перехода enterprise AI из пилотов в прод",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Business",
+      "keywords": [
+        "enterprise ai",
+        "agents",
+        "production",
+        "reliability",
+        "on-prem"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026",
+      "title": "Yoshua Bengio: International AI Safety Report 2026 как база для разговоров о рисках GPAI",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "yoshua bengio",
+        "ai safety report",
+        "gpaI",
+        "risks",
+        "evidence"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://today.ucsd.edu/story/is-artificial-general-intelligence-here",
+      "title": "Eddy Keming Chen: AGI не обязана быть идеальной — LLM уже попадают в разумные критерии",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "eddy keming chen",
+        "agi",
+        "llm",
+        "turing test",
+        "general competence"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://news.berkeley.edu/2026/01/13/what-uc-berkeley-ai-experts-are-watching-for-in-2026/",
+      "title": "Stuart Russell: если AI-пузырь не лопнет, придётся близко подойти к AGI без плана контроля",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Technology",
+      "keywords": [
+        "stuart russell",
+        "ai bubble",
+        "data centers",
+        "agi",
+        "control"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://blog.mean.ceo/vibecoding-news-february-2026/",
+      "title": "Violetta Bonenkamp: вайбкодинг ускоряет разработку, но усиливает риски безопасности и для OSS",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Vibecoding",
+      "keywords": [
+        "vibecoding",
+        "security",
+        "open source",
+        "human oversight",
+        "ai-generated code"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.startupbos.org/post/venture-capital-crystal-ball-what-2026-holds-for-startups-and-investors",
+      "title": "Vivjan Myrto: в 2026 “глава 2” ИИ — вертикальные приложения; ростовые раунды дисциплинируются",
+      "digest": "morning",
+      "date": "2026-02-24",
+      "category": "Investment",
+      "keywords": [
+        "venture capital",
+        "vivjan myrto",
+        "hyperplane",
+        "vertical ai",
+        "series b"
+      ]
     }
   ]
 }
