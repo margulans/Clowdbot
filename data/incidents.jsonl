@@ -53,3 +53,4 @@
 {"ts":"2026-02-23T21:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 0 ok in last 60min"}
 {"ts":"2026-02-23T22:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 6 ok in last 60min"}
 {"ts":"2026-02-24T07:03:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts":1771938675294,"type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг.","resolved":false}
