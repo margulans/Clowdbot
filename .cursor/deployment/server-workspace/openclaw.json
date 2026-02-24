@@ -58,7 +58,7 @@
     "web": {
       "search": {
         "enabled": true,
-        "provider": "brave",
+        "provider": "perplexity",
         "apiKey": "<BRAVE_API_KEY>",
         "maxResults": 10,
         "perplexity": {
