@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771976085784,
+      "updatedAtMs": 1771977209409,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771976580000,
-        "lastRunAtMs": 1771975980017,
+        "nextRunAtMs": 1771977780000,
+        "lastRunAtMs": 1771977180023,
         "lastStatus": "ok",
-        "lastDurationMs": 37884,
+        "lastDurationMs": 29386,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771976085943,
+      "updatedAtMs": 1771976294257,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -96,10 +96,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771976280000,
-        "lastRunAtMs": 1771974480026,
+        "nextRunAtMs": 1771978080000,
+        "lastRunAtMs": 1771976280040,
         "lastStatus": "ok",
-        "lastDurationMs": 12306,
+        "lastDurationMs": 14217,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -359,7 +359,7 @@
       "name": "Вечерний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275698751,
-      "updatedAtMs": 1771940355267,
+      "updatedAtMs": 1771977589795,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * *",
@@ -370,7 +370,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=evening date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ** | {{localDate}}, 18:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
-        "model": "groq/llama-3.3-70b-versatile",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 900
       },
@@ -1144,7 +1144,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771975754350,
+      "updatedAtMs": 1771977550444,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1163,10 +1163,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771976340000,
-        "lastRunAtMs": 1771975740017,
+        "nextRunAtMs": 1771978140000,
+        "lastRunAtMs": 1771977540024,
         "lastStatus": "ok",
-        "lastDurationMs": 14333,
+        "lastDurationMs": 10420,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1178,7 +1178,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771975465321,
+      "updatedAtMs": 1771977220366,
       "schedule": {
         "kind": "cron",
         "expr": "23,53 * * * *",
@@ -1197,10 +1197,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771977180000,
-        "lastRunAtMs": 1771975430150,
+        "nextRunAtMs": 1771978980000,
+        "lastRunAtMs": 1771977209409,
         "lastStatus": "ok",
-        "lastDurationMs": 35171,
+        "lastDurationMs": 10957,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1212,7 +1212,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771973293047,
+      "updatedAtMs": 1771976894447,
       "schedule": {
         "kind": "cron",
         "expr": "48 * * * *",
@@ -1232,10 +1232,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771976880000,
-        "lastRunAtMs": 1771973280025,
+        "nextRunAtMs": 1771980480000,
+        "lastRunAtMs": 1771976880025,
         "lastStatus": "ok",
-        "lastDurationMs": 13022,
+        "lastDurationMs": 14422,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1370,5 +1370,5 @@
       }
     }
   ],
-  "capturedAt": "2026-02-24T23:35:29Z"
+  "capturedAt": "2026-02-24T23:59:53Z"
 }
