@@ -28,6 +28,48 @@ description: Участковый — тихий мониторинг здоро
    → RSS в KB, сохрани как GW_RSS_KB (если процесс не найден — 0)
 ```
 
+### Шаг 1б. Проверка конфига
+
+Читай `openclaw.json` и проверяй критические параметры:
+
+```
+1. read_file("~/Clowdbot/.cursor/deployment/server-workspace/openclaw.json")
+2. Проверь каждый пункт:
+   a. tools.web.search.provider == "perplexity"
+   b. channels.telegram.dmPolicy == "allowlist"
+   c. gateway.mode == "local"
+   d. agents.defaults.maxConcurrent >= 1
+3. ls ~/.config/systemd/user/openclaw-gateway.service.d/
+   → проверь наличие: perplexity.conf, openai.conf, groq.conf, gateway-token.conf
+```
+
+Если хотя бы одна проверка не прошла — добавь в список инцидентов `config_drift` (severity: warn). Если файл `openclaw.json` не читается — `config_drift` с severity: critical.
+
+Формат записи:
+
+```json
+{
+  "id": "<8-char-hex>",
+  "ts": "<ISO8601>",
+  "type": "config_drift",
+  "source": "uchastkovy",
+  "severity": "warn",
+  "msg": "<что именно не совпало>",
+  "resolved": false
+}
+```
+
+Примеры msg:
+
+- `"search provider changed: expected perplexity, got brave"`
+- `"dmPolicy changed to open — security risk"`
+- `"systemd drop-in missing: perplexity.conf"`
+- `"openclaw.json unreadable"`
+
+Если все проверки прошли — ничего не записывай (тихо).
+
+---
+
 ### Шаг 2. Анализ
 
 Для каждой cron-задачи из списка:
@@ -69,8 +111,18 @@ description: Участковый — тихий мониторинг здоро
 ⚠️ Важно: **никаких переносов строк/pretty-print/отступов**. Один объект = одна строка.
 
 Пример (одна строка):
+
 ```json
-{"id":"<8-char-hex>","ts":"<ISO8601>","type":"<тип>","source":"uchastkovy","job":"<id или name>","severity":"critical|warn","msg":"<описание>","resolved":false}
+{
+  "id": "<8-char-hex>",
+  "ts": "<ISO8601>",
+  "type": "<тип>",
+  "source": "uchastkovy",
+  "job": "<id или name>",
+  "severity": "critical|warn",
+  "msg": "<описание>",
+  "resolved": false
+}
 ```
 
 Формирование `id`: первые 8 символов от sha1 строки `<type>+<job>+<ts>`.
@@ -78,7 +130,13 @@ description: Участковый — тихий мониторинг здоро
 Если всё в порядке — запиши **одну строку JSONL**:
 
 ```json
-{"ts":"<ISO8601>","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{
+  "ts": "<ISO8601>",
+  "type": "ok",
+  "source": "uchastkovy",
+  "severity": "info",
+  "msg": "system healthy"
+}
 ```
 
 ### Шаг 4. Экстренный ремонт

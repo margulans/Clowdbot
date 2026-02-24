@@ -41,25 +41,35 @@ To                         Action      From
 
 ## OpenClaw конфигурация
 
-Актуальный конфиг: `server-workspace/openclaw.json` (секреты заменены плейсхолдерами).
+**Источник правды — `server-workspace/openclaw.json`** (секреты заменены плейсхолдерами, реальные ключи в systemd drop-in файлах).
 
-### Ключевые настройки:
+> Актуальные значения смотри напрямую в файле. Эта секция описывает архитектуру настроек — что делает каждый параметр.
 
-| Настройка              | Значение                            | Описание                                  |
-| ---------------------- | ----------------------------------- | ----------------------------------------- |
-| Модель                 | `anthropic/claude-sonnet-4-6`       | Основная AI модель                        |
-| Context pruning        | `cache-ttl`                         | Автоочистка контекста                     |
-| Memory flush           | `enabled`                           | Автосохранение памяти                     |
-| Session memory         | `enabled`                           | Поиск по сессиям                          |
-| Memory search          | OpenAI `text-embedding-3-small`     | Семантический поиск                       |
-| LanceDB                | `enabled`                           | Auto-recall/capture                       |
-| Brave Search           | `enabled`                           | Веб-поиск для новостей                    |
-| Groq Whisper           | `whisper-large-v3`                  | Транскрипция голосовых                    |
-| Inline buttons         | `none`                              | Отключены (оценка через нативные реакции) |
-| Reaction notifications | `own`                               | Нативные emoji-реакции Telegram           |
-| DM Policy              | `allowlist`                         | Только ID 685668909                       |
-| Commands               | restart, text, native, nativeSkills | Telegram команды                          |
-| Max concurrent         | 4 agents, 8 subagents               | Параллелизм                               |
+### Архитектура настроек
+
+| JSON-путь                                                 | Описание                                     |
+| --------------------------------------------------------- | -------------------------------------------- |
+| `agents.defaults.model.primary`                           | Основная AI модель                           |
+| `agents.defaults.model.fallbacks[]`                       | Резервные модели (не авто-переключение)      |
+| `agents.defaults.contextPruning.mode`                     | Стратегия очистки контекста                  |
+| `agents.defaults.compaction.memoryFlush`                  | Автосохранение памяти в конце сессии         |
+| `agents.defaults.memorySearch.experimental.sessionMemory` | Поиск по истории сессий                      |
+| `agents.defaults.memorySearch.model`                      | Модель эмбеддингов для семантического поиска |
+| `plugins.entries.memory-lancedb`                          | Векторная БД для auto-recall/capture         |
+| `tools.web.search.provider`                               | Провайдер веб-поиска (основной)              |
+| `tools.web.search.perplexity.model`                       | Модель Perplexity                            |
+| `tools.web.search.apiKey`                                 | Ключ Brave (fallback уровень 1, legacy поле) |
+| `tools.media.audio.models[0]`                             | Провайдер/модель транскрипции голосовых      |
+| `channels.telegram.capabilities.inlineButtons`            | Inline-кнопки в Telegram                     |
+| `channels.telegram.reactionNotifications`                 | Уведомления о реакциях                       |
+| `channels.telegram.reactionLevel`                         | Роль реакции (ack = подтверждение получения) |
+| `messages.ackReactionScope`                               | Область применения ack-реакции               |
+| `messages.removeAckAfterReply`                            | Убирать ack-реакцию после ответа             |
+| `channels.telegram.dmPolicy`                              | Политика личных сообщений                    |
+| `channels.telegram.allowFrom[]`                           | Белый список Telegram ID                     |
+| `commands.*`                                              | Включённые команды бота                      |
+| `agents.defaults.maxConcurrent`                           | Макс. параллельных агентов                   |
+| `agents.defaults.subagents.maxConcurrent`                 | Макс. параллельных субагентов                |
 
 ## Systemd сервис
 
@@ -84,14 +94,15 @@ systemctl --user start openclaw-gateway
 
 ## API ключи (в systemd env + openclaw.json)
 
-| Ключ                 | Где хранится                   | Назначение                |
-| -------------------- | ------------------------------ | ------------------------- |
-| `ANTHROPIC_API_KEY`  | systemd env                    | Claude API                |
-| `TELEGRAM_BOT_TOKEN` | openclaw.json                  | Telegram Bot API          |
-| `GATEWAY_AUTH_TOKEN` | openclaw.json                  | WebSocket аутентификация  |
-| `BRAVE_API_KEY`      | openclaw.json                  | Brave Search для новостей |
-| `GROQ_API_KEY`       | env (не в systemd)             | Whisper транскрипция      |
-| `OPENAI_API_KEY`     | openclaw.json + LanceDB config | Embeddings для памяти     |
+| Ключ                 | Где хранится                   | Назначение                                   |
+| -------------------- | ------------------------------ | -------------------------------------------- |
+| `ANTHROPIC_API_KEY`  | systemd env                    | Claude API                                   |
+| `TELEGRAM_BOT_TOKEN` | openclaw.json                  | Telegram Bot API                             |
+| `GATEWAY_AUTH_TOKEN` | openclaw.json                  | WebSocket аутентификация                     |
+| `PERPLEXITY_API_KEY` | openclaw.json                  | Perplexity Search (sonar)                    |
+| `BRAVE_API_KEY`      | openclaw.json (legacy)         | Остаток старой конфигурации, не используется |
+| `GROQ_API_KEY`       | env (не в systemd)             | Whisper транскрипция                         |
+| `OPENAI_API_KEY`     | openclaw.json + LanceDB config | Embeddings для памяти                        |
 
 ## Telegram Pairing
 
