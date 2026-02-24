@@ -100,7 +100,18 @@
       "streamMode": "partial",
       "reactionNotifications": "all",
       "reactionLevel": "ack",
-      "allowFrom": ["685668909"]
+      "allowFrom": ["685668909"],
+      "customCommands": [
+        {
+          "command": "wendy",
+          "description": "Венди — проактивный советник по целям и паттернам жизни"
+        },
+        {
+          "command": "warren",
+          "description": "Уоррен — принятие решений (от операционных до стратегических)"
+        },
+        { "command": "scout", "description": "Запустить разведку новых источников и авторов" }
+      ]
     }
   },
   "gateway": {
