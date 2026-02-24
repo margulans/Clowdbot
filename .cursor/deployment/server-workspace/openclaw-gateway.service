@@ -1,21 +1,18 @@
+# ПРИМЕЧАНИЕ: основной [Service] блок управляется OpenClaw автоматически при обновлении.
+# Этот файл — СПРАВОЧНАЯ КОПИЯ структуры. Реальные API ключи хранятся в drop-in файлах:
+#   ~/.config/systemd/user/openclaw-gateway.service.d/
+# Drop-in файлы НЕ перезаписываются при обновлении OpenClaw.
+
 [Unit]
 Description=OpenClaw Gateway
 After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/home/openclaw/.npm-global/bin/openclaw gateway --port 18789 --bind lan
+# ExecStart управляется openclaw install/update — не редактировать вручную
 Restart=always
-RestartSec=10s
-Environment=ANTHROPIC_API_KEY=<ANTHROPIC_API_KEY>
+RestartSec=5s
 WorkingDirectory=/home/openclaw/.openclaw
 StandardOutput=journal
 StandardError=journal
-
-# Увеличим лимиты
-TimeoutStartSec=120
-TimeoutStopSec=30
 MemoryMax=2G
-
-[Install]
-WantedBy=default.target

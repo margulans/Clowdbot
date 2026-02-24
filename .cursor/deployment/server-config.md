@@ -92,17 +92,36 @@ systemctl --user stop openclaw-gateway
 systemctl --user start openclaw-gateway
 ```
 
-## API ключи (в systemd env + openclaw.json)
+## API ключи
 
-| Ключ                 | Где хранится                   | Назначение                                   |
-| -------------------- | ------------------------------ | -------------------------------------------- |
-| `ANTHROPIC_API_KEY`  | systemd env                    | Claude API                                   |
-| `TELEGRAM_BOT_TOKEN` | openclaw.json                  | Telegram Bot API                             |
-| `GATEWAY_AUTH_TOKEN` | openclaw.json                  | WebSocket аутентификация                     |
-| `PERPLEXITY_API_KEY` | openclaw.json                  | Perplexity Search (sonar)                    |
-| `BRAVE_API_KEY`      | openclaw.json (legacy)         | Остаток старой конфигурации, не используется |
-| `GROQ_API_KEY`       | env (не в systemd)             | Whisper транскрипция                         |
-| `OPENAI_API_KEY`     | openclaw.json + LanceDB config | Embeddings для памяти                        |
+Ключи хранятся в drop-in файлах systemd — **не перезаписываются** при обновлении OpenClaw.
+Путь: `~/.config/systemd/user/openclaw-gateway.service.d/*.conf`
+
+### Systemd drop-in файлы
+
+| Drop-in файл         | Переменная               | Назначение                         |
+| -------------------- | ------------------------ | ---------------------------------- |
+| `anthropic.conf`     | `ANTHROPIC_API_KEY`      | Claude API (fallback модель)       |
+| `brave.conf`         | `BRAVE_API_KEY`          | Brave Search (fallback поиск)      |
+| `gateway-token.conf` | `OPENCLAW_GATEWAY_TOKEN` | WebSocket аутентификация           |
+| `gemini.conf`        | `GEMINI_API_KEY`         | Google Gemini (isolated cron jobs) |
+| `groq.conf`          | `GROQ_API_KEY`           | Groq Whisper транскрипция          |
+| `hetzner.conf`       | `HETZNER_API_TOKEN`      | Hetzner API (snapshot скрипт)      |
+| `openai.conf`        | `OPENAI_API_KEY`         | OpenAI Embeddings (LanceDB)        |
+| `openrouter.conf`    | `OPENROUTER_API_KEY`     | OpenRouter (free tier модели)      |
+| `path.conf`          | `PATH`                   | Системный PATH для gateway         |
+| `perplexity.conf`    | `PERPLEXITY_API_KEY`     | Perplexity Search (основной)       |
+
+### В openclaw.json (плейсхолдеры)
+
+| JSON-путь                                                | Переменная             |
+| -------------------------------------------------------- | ---------------------- |
+| `channels.telegram.botToken`                             | `<TELEGRAM_BOT_TOKEN>` |
+| `gateway.auth.token`                                     | `<GATEWAY_AUTH_TOKEN>` |
+| `tools.web.search.apiKey`                                | `<BRAVE_API_KEY>`      |
+| `tools.web.search.perplexity.apiKey`                     | `<PERPLEXITY_API_KEY>` |
+| `agents.defaults.memorySearch.remote.apiKey`             | `<OPENAI_API_KEY>`     |
+| `plugins.entries.memory-lancedb.config.embedding.apiKey` | `<OPENAI_API_KEY>`     |
 
 ## Telegram Pairing
 
@@ -169,4 +188,4 @@ openclaw sessions clear --all
 
 ---
 
-_Последнее обновление: 2026-02-07_
+_Последнее обновление: 2026-02-24_
