@@ -1,7 +1,7 @@
-{"ts":"2026-02-24T06:33:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-24T06:35:00Z","type":"config_report","source":"chekist","severity":"info","msg":"daily config report sent"}
-{"ts":"2026-02-24T06:35:05Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 1 warn, 1 ok in last 60min"}
-{"ts":"2026-02-24T06:44:18Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-24T06:49:00Z","type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4-049c-4d2e-b248-0cdbea259d3f)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг. Основной Участковый: lastStatus=error (6m ago). Gateway=active, RSS_kb=601144, disk=14%.","resolved":false}
-{"id":"68566890","ts":"2026-02-24T06:53:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts":"2026-02-24T07:03:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"ts": "2026-02-24T07:33:00Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
+{"id": "ec3027a2", "ts": "2026-02-24T07:36:41Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "undocumented systemd unit: dbus.service — add to server-config.md and KNOWN_UNITS", "resolved": false}
+{"id": "8ac254e1", "ts": "2026-02-24T07:36:41Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "undocumented systemd unit: gpg-agent.service — add to server-config.md and KNOWN_UNITS", "resolved": false}
+{"id": "1f895fb9", "ts": "2026-02-24T07:37:21Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "undocumented systemd unit: test-new-service.service — add to server-config.md and KNOWN_UNITS in check-config-drift.py", "resolved": false}
+{"id": "e00bfa0a", "ts": "2026-02-24T07:45:33Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "undocumented cron job: /home/openclaw/scripts/test-unknown.sh — add to server-config.md and KNOWN_CRON_SCRIPTS in check-config-drift.py", "resolved": false}
+{"ts": "2026-02-24T07:49:28Z", "type": "monitor_silent", "source": "backup-uchastkovy", "job": "Участковый (305e53a4)", "severity": "critical", "msg": "Gemini недоступен — backup сработал", "resolved": false}
+{"id": "d3758923", "ts": "2026-02-24T07:50:37Z", "type": "config_drift", "source": "uchastkovy", "severity": "critical", "msg": "secret file missing: /home/openclaw/.hetzner_token — HETZNER_API_TOKEN — нужен для hetzner-snapshot.sh cron", "resolved": false}
