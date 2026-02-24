@@ -327,6 +327,48 @@
       "category": "Technology",
       "title": "Top 20 Emerging Technology Trends 2026",
       "timestamp": "2026-02-24T08:53:37Z"
+    },
+    {
+      "messageId": "409",
+      "category": "AI",
+      "title": "Обвал рынка из-за «страха ИИ»: акции IBM падают после обновления Claude COBOL",
+      "timestamp": "2026-02-24T13:01:04Z"
+    },
+    {
+      "messageId": "410",
+      "category": "Cybersecurity",
+      "title": "Гонка вооружений ИИ: время прорыва злоумышленников сократилось до 29 минут",
+      "timestamp": "2026-02-24T13:01:58Z"
+    },
+    {
+      "messageId": "411",
+      "category": "Regulation",
+      "title": "Канадские регуляторы обсуждают обязательную отчетность ИИ-компаний об онлайн-угрозах",
+      "timestamp": "2026-02-24T13:02:58Z"
+    },
+    {
+      "messageId": "412",
+      "category": "Business/Investment",
+      "title": "Джейми Даймон (JPMorgan) предупреждает о «глупых» ИИ-сделках на рынке",
+      "timestamp": "2026-02-24T13:04:39Z"
+    },
+    {
+      "messageId": "413",
+      "category": "Investment/Cybersecurity",
+      "title": "Кибербезопасность: стартап Vega Security привлекает $120 млн в раунде B",
+      "timestamp": "2026-02-24T13:05:56Z"
+    },
+    {
+      "messageId": "414",
+      "category": "Business/AI",
+      "title": "ИИ приведет к консолидации грузовых брокерских услуг, считает CEO C.H. Robinson",
+      "timestamp": "2026-02-24T13:07:25Z"
+    },
+    {
+      "messageId": "415",
+      "category": "AI/Legal Tech",
+      "title": "LexisNexis: Глава ИИ-отдела объясняет, почему стандартный RAG не подходит для юридического ИИ",
+      "timestamp": "2026-02-24T13:08:27Z"
     }
   ]
 }

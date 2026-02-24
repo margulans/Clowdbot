@@ -1,2 +1,4 @@
 {"ts": "2026-02-24T12:43:20Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
 {"id": "67ee35d8", "ts": "2026-02-24T12:53:00+00:00", "type": "git_dirty", "source": "uchastkovy", "job": "git_status", "severity": "warn", "msg": "Uncommitted files detected in git", "resolved": false}
+{"ts": "2026-02-24T13:18:00Z", "type": "cron_error", "source": "chekist", "severity": "critical", "jobId": "582cc3f0-9941-4e74-ae77-0afac52c6258", "job": "Вечерний дайджест @ne...", "model": "->", "msg": "cron job error: lastStatus=error consecutiveErrors=1 lastRunAtMs=2026-02-24T13:00:00Z"}
+{"ts": "2026-02-24T13:18:00Z", "type": "audit", "source": "chekist", "severity": "info", "msg": "hourly audit: 1 critical, 1 warn, 1 ok in last 60min"}

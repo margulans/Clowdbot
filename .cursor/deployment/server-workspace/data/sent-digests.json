@@ -704,6 +704,83 @@
         "cloud governance",
         "cyber resilience"
       ]
+    },
+    {
+      "type": "news_meta",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "kind": "header",
+      "ts": 1771938006372
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Cbqr4QxWI_s",
+      "title": "Обвал рынка из-за «страха ИИ»: акции IBM падают после обновления Claude COBOL",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": ["AI scare trade", "market selloff", "IBM", "Anthropic Claude", "COBOL"],
+      "type": "news",
+      "messageId": "409"
+    },
+    {
+      "url": "https://www.itsecurityguru.org/2026/02/24/ai-arms-race-shrinks-breakout-time-to-29-minutes-as-adversaries-turn-genai-on-the-enterprise/",
+      "title": "Гонка вооружений ИИ: время прорыва злоумышленников сократилось до 29 минут",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Cybersecurity",
+      "keywords": ["AI arms race", "cybersecurity", "generative AI", "adversary breakout time"],
+      "type": "news",
+      "messageId": "410"
+    },
+    {
+      "url": "https://www.ipolitics.ca/2026/02/24/why-forcing-ai-firms-to-report-online-threats-may-not-be-simple/",
+      "title": "Канадские регуляторы обсуждают обязательную отчетность ИИ-компаний об онлайн-угрозах",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Regulation",
+      "keywords": ["Canadian regulators", "AI firms", "online threats", "ChatGPT", "OpenAI"],
+      "type": "news",
+      "messageId": "411"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Cbqr4QxWI_s",
+      "title": "Джейми Даймон (JPMorgan) предупреждает о «глупых» ИИ-сделках на рынке",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Business/Investment",
+      "keywords": ["Jamie Dimon", "JPMorgan", "AI trades", "market", "credit"],
+      "type": "news",
+      "messageId": "412"
+    },
+    {
+      "url": "https://theaiinsider.tech/",
+      "title": "Кибербезопасность: стартап Vega Security привлекает $120 млн в раунде B",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Investment/Cybersecurity",
+      "keywords": ["Vega Security", "AI cybersecurity", "funding", "Series B", "Accel"],
+      "type": "news",
+      "messageId": "413"
+    },
+    {
+      "url": "https://www.reuters.com/technology/artificial-intelligence/",
+      "title": "ИИ приведет к консолидации грузовых брокерских услуг, считает CEO C.H. Robinson",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Business/AI",
+      "keywords": ["AI", "freight brokerage", "consolidation", "C.H. Robinson"],
+      "type": "news",
+      "messageId": "414"
+    },
+    {
+      "url": "https://venturebeat.com/category/ai",
+      "title": "LexisNexis: Глава ИИ-отдела объясняет, почему стандартный RAG не подходит для юридического ИИ",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "AI/Legal Tech",
+      "keywords": ["LexisNexis", "RAG", "legal AI", "Graph RAG", "planner agents", "reflection agents"],
+      "type": "news",
+      "messageId": "415"
     }
   ]
 }
