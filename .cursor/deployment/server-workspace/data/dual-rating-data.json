@@ -263,6 +263,70 @@
       "category": "Robotics",
       "title": "Quantum Systems запускает подразделение наземной робототехники и представляет БНТС Mandrill.",
       "timestamp": "2026-02-24T08:00:00Z"
+    },
+    {
+      "messageId": "152",
+      "expert": "Anil Dash",
+      "source": "anildash.com",
+      "category": "AI",
+      "title": "Taking action against AI harms",
+      "timestamp": "2026-02-24T08:52:20Z"
+    },
+    {
+      "messageId": "153",
+      "expert": "Elon Musk",
+      "source": "Nasdaq/The Motley Fool",
+      "category": "Robotics",
+      "title": "Tesla Optimus production timing and R&D caveats",
+      "timestamp": "2026-02-24T08:52:30Z"
+    },
+    {
+      "messageId": "154",
+      "expert": "Simply Wall St (аналитический обзор)",
+      "source": "Simply Wall St",
+      "category": "eVTOL",
+      "title": "Toyota commitment and FAA progress reshape Joby Aviation story",
+      "timestamp": "2026-02-24T08:52:41Z"
+    },
+    {
+      "messageId": "155",
+      "expert": "AI Tool Analysis (обзор/тест)",
+      "source": "aitoolanalysis.com",
+      "category": "Vibecoding",
+      "title": "Claude Code vs Cursor (2026)",
+      "timestamp": "2026-02-24T08:52:53Z"
+    },
+    {
+      "messageId": "156",
+      "expert": "Kush Varshney / Francesca Rossi (IBM)",
+      "source": "IBM Think",
+      "category": "AI",
+      "title": "What a new global AI safety report means for enterprise",
+      "timestamp": "2026-02-24T08:53:03Z"
+    },
+    {
+      "messageId": "157",
+      "expert": "Codewave (аналитический обзор)",
+      "source": "codewave.com",
+      "category": "Business",
+      "title": "7 AI Trends in 2026: enterprises must prepare for",
+      "timestamp": "2026-02-24T08:53:14Z"
+    },
+    {
+      "messageId": "158",
+      "expert": "Klement on Investing",
+      "source": "Substack",
+      "category": "Investment",
+      "title": "Why pessimists make more money",
+      "timestamp": "2026-02-24T08:53:24Z"
+    },
+    {
+      "messageId": "159",
+      "expert": "Distilinfo (редакционный обзор)",
+      "source": "distilinfo.com",
+      "category": "Technology",
+      "title": "Top 20 Emerging Technology Trends 2026",
+      "timestamp": "2026-02-24T08:53:37Z"
     }
   ]
 }

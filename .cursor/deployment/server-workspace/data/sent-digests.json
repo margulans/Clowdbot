@@ -587,6 +587,123 @@
         "robotics"
       ],
       "type": "news"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.anildash.com/2026/02/23/taking-action-ai-harms/",
+      "title": "Anil Dash: конкретные действия против вреда от ИИ",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "anil dash",
+        "ai harms",
+        "accountability",
+        "platform risk"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.nasdaq.com/articles/teslas-optimus-robot-could-reach-human-level-proficiency-2026-time-buy",
+      "title": "Илон Маск: Optimus всё ещё R&D, производство — ближе к концу года",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "Robotics",
+      "keywords": [
+        "tesla",
+        "optimus",
+        "elon musk",
+        "production",
+        "humanoid"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://simplywall.st/stocks/us/transportation/nyse-joby/joby-aviation/news/toyota-commitment-and-faa-progress-reshape-joby-aviation-inv",
+      "title": "Simply Wall St: Toyota и FAA-прогресс как тест на исполнение Joby",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "eVTOL",
+      "keywords": [
+        "joby",
+        "toyota",
+        "faa",
+        "manufacturing",
+        "funding"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://aitoolanalysis.com/claude-code-vs-cursor/",
+      "title": "AI Tool Analysis: Cursor vs Claude Code — IDE-first vs agent-first",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "Vibecoding",
+      "keywords": [
+        "cursor",
+        "claude code",
+        "developer tools",
+        "agentic coding",
+        "ide"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ibm.com/think/news/new-global-ai-safety-report-means-enterprise",
+      "title": "IBM: риски ИИ смещаются на уровень систем и деплоя",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "ibm",
+        "ai safety report 2026",
+        "governance",
+        "deployment",
+        "agentic ai"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://codewave.com/insights/future-ai-trends-2026-enterprise-use-cases/",
+      "title": "Codewave: 2026 — от “моделей” к ИИ-системам и workflow-исполнению",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "Business",
+      "keywords": [
+        "enterprise ai",
+        "workflow",
+        "agentic ai",
+        "roi",
+        "governance"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://klementoninvesting.substack.com/p/why-pessimists-make-more-money",
+      "title": "Klement: нарративы на рынках ценятся выше данных, пессимизм продаётся дороже",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "Investment",
+      "keywords": [
+        "narratives",
+        "pessimism",
+        "investors",
+        "behavioral finance"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://distilinfo.com/2026/02/23/top-20-emerging-technology-trends-2026/",
+      "title": "Distilinfo: 2026 — фокус на операционных моделях, agentic AI и устойчивости",
+      "digest": "afternoon",
+      "date": "2026-02-24",
+      "category": "Technology",
+      "keywords": [
+        "tech trends 2026",
+        "agentic ai",
+        "cloud governance",
+        "cyber resilience"
+      ]
     }
   ]
 }
