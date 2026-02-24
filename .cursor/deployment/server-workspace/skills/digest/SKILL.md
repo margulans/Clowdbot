@@ -71,14 +71,20 @@ web_search("Robotics startup funding and product release news this week")
 
 ## Fallback при сбое Perplexity
 
-**Уровень 1 — Brave:** если `web_search` вернул ошибку → добавь `provider=brave` явно:
+### Уровень 1 — Brave Search API (через скрипт)
 
-```
-web_search(provider=brave, query="AI news today", freshness="pd")
-web_search(provider=brave, query="robotics news today", freshness="pd")
+Если `web_search` (Perplexity) вернул ошибку/лимит/пусто → используй Brave Search API через локальный скрипт (он берёт ключ из `BRAVE_API_KEY` в env сервиса):
+
+```bash
+node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs "AI news today" 10
+node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs "robotics news today" 10
 ```
 
-**Уровень 2 — RSS:** если и Brave недоступен → `web_fetch` по лентам:
+Дальше: выбери 1–2 лучших URL из результатов и для каждого сделай `web_fetch(url)` чтобы подтвердить/прочитать контент перед публикацией.
+
+### Уровень 2 — RSS
+
+Если и Brave недоступен → `web_fetch` по лентам:
 
 | Источник               | RSS URL                                                    | Тема          |
 | ---------------------- | ---------------------------------------------------------- | ------------- |

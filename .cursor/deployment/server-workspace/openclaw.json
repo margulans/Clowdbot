@@ -7,11 +7,19 @@
     "defaults": {
       "model": {
         "primary": "openai/gpt-5.2",
-        "fallbacks": ["anthropic/claude-sonnet-4-6"]
+        "fallbacks": [
+          "anthropic/claude-sonnet-4-6"
+        ]
       },
       "memorySearch": {
-        "sources": ["memory", "sessions"],
-        "extraPaths": ["bank", "bank/entities"],
+        "sources": [
+          "memory",
+          "sessions"
+        ],
+        "extraPaths": [
+          "bank",
+          "bank/entities"
+        ],
         "experimental": {
           "sessionMemory": true
         },
@@ -93,7 +101,9 @@
       "streamMode": "partial",
       "reactionNotifications": "all",
       "reactionLevel": "ack",
-      "allowFrom": ["685668909"]
+      "allowFrom": [
+        "685668909"
+      ]
     }
   },
   "gateway": {
