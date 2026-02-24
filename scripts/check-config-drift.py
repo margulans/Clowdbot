@@ -23,6 +23,11 @@ EXPECTED = {
 
 REQUIRED_DROPINS = ["perplexity.conf", "openai.conf"]
 
+# Файлы секретов вне systemd (для system cron и прочих задач)
+REQUIRED_SECRET_FILES = [
+    (f"{HOME}/.hetzner_token", "HETZNER_API_TOKEN — нужен для hetzner-snapshot.sh cron"),
+]
+
 # Задокументированные system cron скрипты (обновлять при добавлении нового cron)
 KNOWN_CRON_SCRIPTS = {
     "/home/openclaw/scripts/hetzner-snapshot.sh",
@@ -141,6 +146,12 @@ def main():
     for required in REQUIRED_DROPINS:
         if required not in dropins:
             write_drift("warn", f"systemd drop-in missing: {required} — key lost")
+            drifts += 1
+
+    # Проверяем файлы секретов вне systemd
+    for secret_path, description in REQUIRED_SECRET_FILES:
+        if not os.path.exists(secret_path):
+            write_drift("critical", f"secret file missing: {secret_path} — {description}")
             drifts += 1
 
     drifts += check_undocumented_units()
