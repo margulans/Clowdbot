@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771916662028,
+      "updatedAtMs": 1771917210168,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771917180000,
-        "lastRunAtMs": 1771916580044,
+        "nextRunAtMs": 1771917780000,
+        "lastRunAtMs": 1771917180025,
         "lastStatus": "ok",
-        "lastDurationMs": 81984,
+        "lastDurationMs": 30143,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -66,7 +66,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1771917486691
       },
       "delivery": {
         "mode": "none"
@@ -77,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771915250681,
+      "updatedAtMs": 1771916955939,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -96,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771916880000,
-        "lastRunAtMs": 1771915080032,
+        "nextRunAtMs": 1771918680000,
+        "lastRunAtMs": 1771916880027,
         "lastStatus": "ok",
-        "lastDurationMs": 170649,
+        "lastDurationMs": 75912,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -967,17 +968,19 @@
       "name": "🚨 BACKUP: Ежедневная рефлексия",
       "enabled": true,
       "createdAtMs": 1771739756280,
-      "updatedAtMs": 1771860910131,
+      "updatedAtMs": 1771917478334,
       "schedule": {
         "kind": "cron",
         "expr": "35 20 * * *",
         "tz": "Asia/Almaty"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "kind": "systemEvent",
-        "text": "daily_reflection()"
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "message": "BACKUP Рефлексия (gpt-5.2). Шаг 1: openclaw cron list → найди job 9d558661 (Ежедневная рефлексия), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (если основная не сработала): запусти ежедневную рефлексию. Прочитай skills/reflection/SKILL.md и выполни его полностью. Используй tool message() для отправки результата Маргулану."
       },
       "state": {
         "nextRunAtMs": 1771947300000,
@@ -987,6 +990,10 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-requested"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
       }
     },
     {
@@ -994,17 +1001,19 @@
       "name": "🚨 BACKUP: Chat Cleanup",
       "enabled": true,
       "createdAtMs": 1771739758035,
-      "updatedAtMs": 1771862713371,
+      "updatedAtMs": 1771917478334,
       "schedule": {
         "kind": "cron",
         "expr": "5 21 * * *",
         "tz": "Asia/Almaty"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "kind": "systemEvent",
-        "text": "🧹 Конец дня! Выполни chat-cleanup скилл: сохрани важное из сегодняшней сессии в memory/YYYY-MM-DD.md, обнови MEMORY.md если нужно, затем предложи Маргулану очистить чат. Следуй инструкциям skills/chat-cleanup/SKILL.md."
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "message": "BACKUP Chat Cleanup (gpt-5.2). Шаг 1: openclaw cron list → найди job 14e9b571 (Chat Cleanup), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (если основной не сработал): выполни chat cleanup. Прочитай skills/chat-cleanup/SKILL.md. Сохрани важное из сессии, обнови MEMORY.md если нужно, затем отправь Маргулану предложение очистить чат через message()."
       },
       "state": {
         "nextRunAtMs": 1771949100000,
@@ -1014,6 +1023,10 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-requested"
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
       }
     },
     {
@@ -1124,7 +1137,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771916349856,
+      "updatedAtMs": 1771917009280,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1143,10 +1156,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771916940000,
-        "lastRunAtMs": 1771916340038,
+        "nextRunAtMs": 1771917540000,
+        "lastRunAtMs": 1771916955975,
         "lastStatus": "ok",
-        "lastDurationMs": 9818,
+        "lastDurationMs": 53305,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
