@@ -1,1 +1,2 @@
 {"ts": "2026-02-24T11:23:00Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
+{"ts":"2026-02-24T11:39:18Z","type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг","resolved":false}
