@@ -132,11 +132,12 @@ _Последнее обновление экономистом: не запус
 | Параметр      | Значение                                                                       |
 | ------------- | ------------------------------------------------------------------------------ |
 | Организация   | Margulan.info                                                                  |
-| Модель        | `gemini-3-flash-preview` (`google/gemini-3-flash-preview`)                     |
+| Модель        | `gemini-2.5-flash` (`google/gemini-2.5-flash`)                                 |
+|               | ~~`gemini-3-flash-preview`~~ — заменена 2026-02-24 (нестабильна под нагрузкой) |
 | Тип оплаты    | Pay-per-use (Google AI Studio / Vertex AI)                                     |
 | Использование | Все isolated cron jobs: дайджесты, мнения, брифинг, мониторинг, рефлексия, git |
-| Цена (input)  | $0.075 / 1M токенов                                                            |
-| Цена (output) | $0.30 / 1M токенов                                                             |
+| Цена (input)  | $0.15 / 1M токенов                                                             |
+| Цена (output) | $0.60 / 1M токенов                                                             |
 | Алерт         | при неожиданном росте расходов                                                 |
 
 > Gemini — **основная рабочая лошадь** всех изолированных автоматизированных задач (~20+ cron jobs в сутки).
@@ -234,14 +235,17 @@ _Таблица дополняется экономистом автоматич
 
 ---
 
-_Создан: 2026-02-23 | Обновлён: 2026-02-23 (добавлен Google Gemini)_
+_Создан: 2026-02-23 | Обновлён: 2026-02-24 (Gemini модель: gemini-3-flash-preview → gemini-2.5-flash)_
 
 ## Gateway config: allowed models (обновлено 2026-02-23)
+
 Добавлены в `agents.defaults.models`:
+
 - `openai/gpt-4o-mini` (alias: gpt-4o-mini) — для backup cron jobs
 - `openai/gpt-4o` — для fallback
 - `openai/gpt-5.2` — primary model
 
 ## Fallback главной сессии (обновлено 2026-02-23)
+
 - Primary: `openai/gpt-5.2`
 - Fallback: `anthropic/claude-sonnet-4-6` (было: `google/gemini-3-flash-preview`)

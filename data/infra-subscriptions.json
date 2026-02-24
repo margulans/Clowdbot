@@ -76,7 +76,7 @@
       "provider": "Google",
       "kind": "llm-api",
       "billing": "pay-per-use",
-      "model_primary": "gemini-3-flash-preview",
+      "model_primary": "gemini-2.5-flash",
       "usage": "Основная модель всех isolated cron jobs (~20+ запусков в сутки)",
       "pricing": {
         "input_per_1m_usd": 0.075,
