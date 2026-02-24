@@ -19,7 +19,12 @@ description: Участковый — тихий мониторинг здоро
 1. cron(action=list)                         → список задач
 2. systemctl --user is-active openclaw-gateway → статус gateway
 3. df -h / | tail -1                          → диск (% использования)
-4. git -C ~/Clowdbot status --short           → незакоммиченные файлы
+4. git -C ~/Clowdbot status --short           → GIT_STATUS_RAW
+   Затем отфильтруй «шумные» файлы, которые обновляются мониторингом и не считаются проблемой:
+   - `.cursor/deployment/server-workspace/data/incidents.jsonl`
+   - `.cursor/deployment/server-workspace/data/cron-jobs-snapshot.json`
+   - `.cursor/deployment/server-workspace/data/cron-jobs.json`
+   Получившееся сохрани как GIT_STATUS_FILTERED (если пусто → git чистый).
 5. [только если воскресенье и 03:00–12:00 Алматы]
    read_file("data/scout-discoveries.json")  → поле last_run
 6. journalctl --user -u openclaw-gateway --since "11 minutes ago" --no-pager | grep -c "announce queue drain failed"
@@ -58,7 +63,7 @@ description: Участковый — тихий мониторинг здоро
 
 Для git:
 
-- Есть незакоммиченные файлы >4h → тип `git_dirty`, severity `warn`
+- Если `GIT_STATUS_FILTERED` не пустой (есть незакоммиченные изменения, кроме шумных файлов) → тип `git_dirty`, severity `warn`, msg: "Uncommitted files detected in git (filtered)"
 
 Для Scout (только по воскресеньям, 03:00–12:00 Алматы):
 
@@ -90,17 +95,9 @@ description: Участковый — тихий мониторинг здоро
 
 Формирование `id`: первые 8 символов от sha1 строки `<type>+<job>+<ts>`.
 
-Если всё в порядке — запиши **одну строку JSONL**:
+Если всё в порядке — **ничего не записывай**.
 
-```json
-{
-  "ts": "<ISO8601>",
-  "type": "ok",
-  "source": "uchastkovy",
-  "severity": "info",
-  "msg": "system healthy"
-}
-```
+Причина: запись `type=ok` каждые 10 минут создаёт шум и делает git постоянно «грязным». Инциденты пишем только когда есть отклонения.
 
 ### Шаг 4. Экстренный ремонт
 
