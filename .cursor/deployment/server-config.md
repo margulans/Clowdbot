@@ -71,11 +71,11 @@ To                         Action      From
 | `agents.defaults.maxConcurrent`                           | Макс. параллельных агентов                   |
 | `agents.defaults.subagents.maxConcurrent`                 | Макс. параллельных субагентов                |
 
-## Systemd сервис
+## Systemd сервисы
+
+### openclaw-gateway.service (основной)
 
 Актуальный unit: `server-workspace/openclaw-gateway.service`
-
-### Управление
 
 ```bash
 # Статус
@@ -90,6 +90,56 @@ systemctl --user restart openclaw-gateway
 # Остановка / Запуск
 systemctl --user stop openclaw-gateway
 systemctl --user start openclaw-gateway
+```
+
+---
+
+### telegram-polling-watchdog.service + .timer
+
+| Параметр   | Значение                                                           |
+| ---------- | ------------------------------------------------------------------ |
+| Состояние  | timer **enabled + active** (запускается каждые 2 мин)              |
+| Назначение | Защита polling-режима — удаляет webhook если он вдруг установлен   |
+| Скрипт     | `~/.openclaw/telegram-polling-watchdog.sh`                         |
+| Расписание | `OnBootSec=60`, `OnUnitActiveSec=2min`                             |
+| Unit-файл  | `~/.config/systemd/user/telegram-polling-watchdog.{service,timer}` |
+
+**Зачем нужен:** если какой-либо инструмент или OpenClaw установит webhook — бот перестанет получать сообщения в polling-режиме. Watchdog каждые 2 минуты проверяет `getWebhookInfo` и при наличии webhook вызывает `deleteWebhook`.
+
+```bash
+# Статус
+systemctl --user status telegram-polling-watchdog.timer
+
+# Логи последних срабатываний
+journalctl --user -u telegram-polling-watchdog.service --no-pager -n 20
+```
+
+---
+
+### telegram-reaction-webhook.service
+
+| Параметр   | Значение                                                          |
+| ---------- | ----------------------------------------------------------------- |
+| Состояние  | **disabled + inactive** (был активен 19–20 фев 2026, остановлен)  |
+| Назначение | Node.js сервер — принимает `message_reaction` события от Telegram |
+| Порт       | `8443` (HTTPS, self-signed cert)                                  |
+| Скрипт     | `~/.openclaw/webhook-server/server.js`                            |
+| Unit-файл  | `~/.config/systemd/user/telegram-reaction-webhook.service`        |
+
+**Зачем нужен:** получает реакции (🔥👍👎💩) из канала @newsneiron, конвертирует в баллы рейтинга источников и инжектирует system event в OpenClaw gateway.
+
+**Примечание:** сервис отключён — при работе в polling-режиме реакции обрабатываются напрямую через gateway без отдельного webhook-сервера.
+
+```bash
+# Запуск (если понадобится)
+systemctl --user start telegram-reaction-webhook
+systemctl --user enable telegram-reaction-webhook
+
+# Статус
+systemctl --user status telegram-reaction-webhook
+
+# Логи
+journalctl --user -u telegram-reaction-webhook --no-pager -n 30
 ```
 
 ## API ключи
