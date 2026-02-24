@@ -1,2 +1,2 @@
-{"ts": "2026-02-24T08:33:00Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
-{"ts":"2026-02-24T08:48:00Z","type":"monitor_silent","source":"backup-chekist","job":"Чекист (b72fece5)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял аудит.","resolved":false}
+
+{"ts": "2026-02-24T08:53:00Z", "type": "audit", "source": "chekist", "severity": "info", "msg": "hourly audit: 1 critical, 0 warn, 1 ok in last 60min"}
