@@ -9,9 +9,10 @@ import os
 from datetime import datetime, timezone
 
 HOME = os.path.expanduser("~")
-CONFIG_FILE = f"{HOME}/Clowdbot/.cursor/deployment/server-workspace/openclaw.json"
-INCIDENTS_FILE = f"{HOME}/Clowdbot/.cursor/deployment/server-workspace/data/incidents.jsonl"
+CONFIG_FILE = f"{HOME}/.openclaw/openclaw.json"
+INCIDENTS_FILE = f"{HOME}/.openclaw/workspace/data/incidents.jsonl"
 DROPINS_DIR = f"{HOME}/.config/systemd/user/openclaw-gateway.service.d"
+USER_UNITS_DIR = f"{HOME}/.config/systemd/user"
 
 EXPECTED = {
     "tools.web.search.provider": "perplexity",
@@ -20,6 +21,14 @@ EXPECTED = {
 }
 
 REQUIRED_DROPINS = ["perplexity.conf", "openai.conf"]
+
+# Задокументированные user unit-файлы (обновлять при добавлении нового сервиса)
+KNOWN_UNITS = {
+    "openclaw-gateway.service",
+    "telegram-polling-watchdog.service",
+    "telegram-polling-watchdog.timer",
+    "telegram-reaction-webhook.service",
+}
 
 
 def get_nested(obj, path):
@@ -44,10 +53,35 @@ def write_drift(severity, msg):
     print(f"DRIFT [{severity}]: {msg}")
 
 
+def check_undocumented_units():
+    """Обнаруживает user unit-файлы не из KNOWN_UNITS."""
+    drifts = 0
+    try:
+        files = os.listdir(USER_UNITS_DIR)
+    except Exception as e:
+        print(f"WARN: не могу прочитать {USER_UNITS_DIR}: {e}")
+        return 0
+
+    for fname in files:
+        if not (fname.endswith(".service") or fname.endswith(".timer")):
+            continue
+        # Пропускаем drop-in директории (например openclaw-gateway.service.d)
+        full_path = os.path.join(USER_UNITS_DIR, fname)
+        if os.path.isdir(full_path):
+            continue
+        if fname not in KNOWN_UNITS:
+            write_drift(
+                "warn",
+                f"undocumented systemd unit: {fname} — add to server-config.md and KNOWN_UNITS in check-config-drift.py"
+            )
+            drifts += 1
+
+    return drifts
+
+
 def main():
     drifts = 0
 
-    # Читаем конфиг
     try:
         with open(CONFIG_FILE) as f:
             config = json.load(f)
@@ -55,7 +89,6 @@ def main():
         write_drift("critical", f"openclaw.json unreadable: {e}")
         return
 
-    # Проверяем значения
     for path, expected in EXPECTED.items():
         actual = get_nested(config, path)
         if actual != expected:
@@ -63,7 +96,6 @@ def main():
             write_drift(severity, f"{path} changed: expected {expected}, got {actual}")
             drifts += 1
 
-    # Проверяем systemd drop-ins
     try:
         dropins = os.listdir(DROPINS_DIR)
     except Exception:
@@ -73,6 +105,8 @@ def main():
         if required not in dropins:
             write_drift("warn", f"systemd drop-in missing: {required} — key lost")
             drifts += 1
+
+    drifts += check_undocumented_units()
 
     if drifts == 0:
         print("OK: no config drift detected")
