@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771920823055,
+      "updatedAtMs": 1771921998159,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771921380000,
-        "lastRunAtMs": 1771920780013,
+        "nextRunAtMs": 1771922580000,
+        "lastRunAtMs": 1771921980025,
         "lastStatus": "ok",
-        "lastDurationMs": 43042,
+        "lastDurationMs": 18134,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771920489369,
+      "updatedAtMs": 1771922290352,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -96,10 +96,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771922280000,
-        "lastRunAtMs": 1771920480018,
+        "nextRunAtMs": 1771924080000,
+        "lastRunAtMs": 1771922280040,
         "lastStatus": "ok",
-        "lastDurationMs": 9351,
+        "lastDurationMs": 10312,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -253,7 +253,7 @@
       "name": "Дневные мнения",
       "enabled": true,
       "createdAtMs": 1770522310056,
-      "updatedAtMs": 1771909765814,
+      "updatedAtMs": 1771921809081,
       "schedule": {
         "kind": "cron",
         "expr": "30 13 * * *",
@@ -269,11 +269,14 @@
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1771921800000,
-        "lastRunAtMs": 1771835400042,
+        "nextRunAtMs": 1772008200000,
+        "lastRunAtMs": 1771921800045,
         "lastStatus": "ok",
-        "lastDurationMs": 64040,
-        "consecutiveErrors": 0
+        "lastDurationMs": 9036,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
       },
       "delivery": {
         "mode": "none"
@@ -1136,7 +1139,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771920551534,
+      "updatedAtMs": 1771922346331,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1155,10 +1158,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771921140000,
-        "lastRunAtMs": 1771920540044,
+        "nextRunAtMs": 1771922940000,
+        "lastRunAtMs": 1771922340038,
         "lastStatus": "ok",
-        "lastDurationMs": 11490,
+        "lastDurationMs": 6293,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1170,7 +1173,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771919615872,
+      "updatedAtMs": 1771921406476,
       "schedule": {
         "kind": "cron",
         "expr": "23,53 * * * *",
@@ -1189,10 +1192,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771921380000,
-        "lastRunAtMs": 1771919602914,
+        "nextRunAtMs": 1771923180000,
+        "lastRunAtMs": 1771921396073,
         "lastStatus": "ok",
-        "lastDurationMs": 12958,
+        "lastDurationMs": 10403,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
