@@ -1,1 +1,4 @@
 {"ts":"2026-02-24T06:33:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
+{"id": "251340b5", "ts": "2026-02-24T06:33:39Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "TEST: search provider changed: expected perplexity, got brave", "resolved": false}
+{"ts":"2026-02-24T06:35:00Z","type":"config_report","source":"chekist","severity":"info","msg":"daily config report sent"}
+{"ts":"2026-02-24T06:35:05Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 1 warn, 1 ok in last 60min"}
