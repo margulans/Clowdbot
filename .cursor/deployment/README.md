@@ -90,13 +90,13 @@
 
 ## Эндпойнты и доступы
 
-| Компонент     | Адрес                          | Доступ                    |
-| ------------- | ------------------------------ | ------------------------- |
-| Gateway WS    | `ws://100.73.176.127:18789`    | Tailscale only            |
-| Control UI    | `http://100.73.176.127:18789/` | Tailscale only            |
-| SSH Server    | `ssh openclaw@46.224.221.0`    | SSH key                   |
-| SSH Tailscale | `ssh openclaw@100.73.176.127`  | SSH key                   |
-| Telegram      | `@neironassistant_bot`         | Allowlist (ID: 685668909) |
+| Компонент     | Адрес                                  | Доступ                                  |
+| ------------- | -------------------------------------- | --------------------------------------- |
+| Gateway WS    | `ws://100.73.176.127:18789`            | Tailscale only                          |
+| Control UI    | SSH tunnel → `http://127.0.0.1:18789/` | Gateway на loopback; туннель обязателен |
+| SSH Server    | `ssh openclaw@46.224.221.0`            | SSH key                                 |
+| SSH Tailscale | `ssh openclaw@100.73.176.127`          | SSH key                                 |
+| Telegram      | `@neironassistant_bot`                 | Allowlist (ID: 685668909)               |
 
 ---
 
@@ -186,6 +186,25 @@
 - **Systemd Restart=always** — перезапуск при падении
 - **MemoryMax=2G** — ограничение памяти
 - **Context pruning** — автоочистка старых tool results
+
+### Control UI (браузерная консоль)
+
+Gateway слушает на loopback, доступ только через SSH-туннель:
+
+```bash
+# На Mac: туннель (оставить в фоне)
+ssh -N -L 18789:127.0.0.1:18789 openclaw@100.73.176.127
+```
+
+Затем открыть `http://127.0.0.1:18789/` в браузере. Токен — в `gateway.auth.token` на сервере.
+
+**Если "Control UI assets not found":** Gateway ставится через npm без UI. Собрать вручную:
+
+```bash
+ssh openclaw@100.73.176.127 "cd ~/Clowdbot/ui && npm install && npx vite build"
+ssh openclaw@100.73.176.127 "openclaw config set gateway.controlUi.root /home/openclaw/Clowdbot/dist/control-ui"
+ssh openclaw@100.73.176.127 "systemctl --user restart openclaw-gateway"
+```
 
 ### Через SSH (если Telegram не работает)
 

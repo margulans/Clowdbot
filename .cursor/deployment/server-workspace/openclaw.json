@@ -113,6 +113,9 @@
     "auth": {
       "mode": "token",
       "token": "<GATEWAY_AUTH_TOKEN>"
+    },
+    "controlUi": {
+      "root": "/home/openclaw/Clowdbot/dist/control-ui"
     }
   },
   "plugins": {
