@@ -18,6 +18,7 @@
 ```
 🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | 08.02.2026, 08:00
 📊 12 новостей | 🎯 Только самые важные
+🔎 Поиск: Perplexity (primary) / Brave (fallback) / RSS (fallback)
 🤖 _Модель: [название модели]_
 ```
 
@@ -335,6 +336,7 @@ web_fetch("https://feeds.arstechnica.com/arstechnica/technology-lab")
 ```
 💬 **МНЕНИЯ И КОММЕНТАРИИ** | 08.02.2026, 08:30
 📊 10 мнений | 🧠 Что думают эксперты
+🔎 Поиск: Perplexity (primary) / Brave (fallback) / RSS (fallback)
 🤖 _Модель: [название модели]_
 ```
 

@@ -1,42 +1,6 @@
 {
   "jobs": [
     {
-      "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "👮‍♂️ Участковый",
-      "enabled": true,
-      "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771909419123,
-      "schedule": {
-        "kind": "cron",
-        "expr": "3-59/10 * * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "model": "google/gemini-3-flash-preview",
-        "kind": "agentTurn",
-        "thinking": "low",
-        "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
-        "timeoutSeconds": 120
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1771909980000,
-        "lastRunAtMs": 1771909380024,
-        "lastStatus": "ok",
-        "lastDurationMs": 39099,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
       "agentId": "main",
       "name": "🕵️ Чекист",
@@ -99,6 +63,42 @@
         "lastRunAtMs": 1771909740035,
         "lastStatus": "ok",
         "lastDurationMs": 12035,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered"
+      }
+    },
+    {
+      "id": "305e53a4-049c-4d2e-b248-0cdbea259d3f",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "👮‍♂️ Участковый",
+      "enabled": true,
+      "createdAtMs": 1771731407619,
+      "updatedAtMs": 1771910020525,
+      "schedule": {
+        "kind": "cron",
+        "expr": "3-59/10 * * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "model": "google/gemini-3-flash-preview",
+        "kind": "agentTurn",
+        "thinking": "low",
+        "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
+        "timeoutSeconds": 120
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771910580000,
+        "lastRunAtMs": 1771909980036,
+        "lastStatus": "ok",
+        "lastDurationMs": 40489,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
