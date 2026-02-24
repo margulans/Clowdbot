@@ -441,6 +441,17 @@ loginctl enable-linger openclaw
 systemctl --user start openclaw-gateway
 ```
 
+### 5б. Секреты вне systemd
+
+```bash
+# Токен Hetzner для snapshot cron (не входит в systemd drop-ins)
+echo "HETZNER_API_TOKEN=<HETZNER_API_TOKEN>" > ~/.hetzner_token
+chmod 600 ~/.hetzner_token
+
+# System cron (snapshot каждую ночь в 03:00 UTC)
+(crontab -l 2>/dev/null; echo "0 3 * * * /home/openclaw/scripts/hetzner-snapshot.sh >> /tmp/hetzner-snapshot.log 2>&1") | crontab -
+```
+
 ### 6. Одобрить devices
 
 ```bash

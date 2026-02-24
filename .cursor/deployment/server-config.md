@@ -218,16 +218,15 @@ cd ~/Clowdbot && git pull origin main
 
 ### hetzner-snapshot.sh
 
-| Параметр  | Значение                                                    |
-| --------- | ----------------------------------------------------------- |
-| Server ID | `119957063`                                                 |
-| Label     | `auto-neiron`                                               |
-| Хранится  | Последние 3 snapshot (старые удаляются автоматически)       |
-| API-токен | ⚠️ Хардкодом в скрипте (`HETZNER_API_TOKEN=...`) — см. ниже |
+| Параметр  | Значение                                                      |
+| --------- | ------------------------------------------------------------- |
+| Server ID | `119957063`                                                   |
+| Label     | `auto-neiron`                                                 |
+| Хранится  | Последние 3 snapshot (старые удаляются автоматически)         |
+| API-токен | `~/.hetzner_token` (chmod 600) — скрипт читает через `source` |
 
-> ⚠️ **Проблема безопасности:** `HETZNER_API_TOKEN` захардкожен прямо в скрипте.
-> System cron не имеет доступа к user systemd окружению, поэтому нельзя использовать `hetzner.conf` drop-in напрямую.
-> **Рекомендуется** перенести токен в `~/.hetzner_token` (chmod 600) и читать его в скрипте через `source ~/.hetzner_token`.
+> System cron не имеет доступа к user systemd окружению, поэтому токен хранится в `~/.hetzner_token` (chmod 600), а не в `hetzner.conf` drop-in.
+> При восстановлении VPS: `echo "HETZNER_API_TOKEN=<token>" > ~/.hetzner_token && chmod 600 ~/.hetzner_token`
 
 ```bash
 # Проверить последний запуск
