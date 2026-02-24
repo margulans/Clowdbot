@@ -2,3 +2,5 @@
 {"id": "67ee35d8", "ts": "2026-02-24T12:53:00+00:00", "type": "git_dirty", "source": "uchastkovy", "job": "git_status", "severity": "warn", "msg": "Uncommitted files detected in git", "resolved": false}
 {"ts": "2026-02-24T13:18:00Z", "type": "cron_error", "source": "chekist", "severity": "critical", "jobId": "582cc3f0-9941-4e74-ae77-0afac52c6258", "job": "Вечерний дайджест @ne...", "model": "->", "msg": "cron job error: lastStatus=error consecutiveErrors=1 lastRunAtMs=2026-02-24T13:00:00Z"}
 {"ts": "2026-02-24T13:18:00Z", "type": "audit", "source": "chekist", "severity": "info", "msg": "hourly audit: 1 critical, 1 warn, 1 ok in last 60min"}
+{"ts":1771939766877,"type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг.","resolved":false}
+{"ts":1771940959685,"type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг. Primary lastStatus=error (6m ago); gateway active; rss_kb=653588; disk=14%.","resolved":false}

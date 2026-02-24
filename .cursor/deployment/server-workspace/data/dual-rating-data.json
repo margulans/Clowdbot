@@ -369,6 +369,70 @@
       "category": "AI/Legal Tech",
       "title": "LexisNexis: Глава ИИ-отдела объясняет, почему стандартный RAG не подходит для юридического ИИ",
       "timestamp": "2026-02-24T13:08:27Z"
+    },
+    {
+      "messageId": "162",
+      "expert": "Anil Dash",
+      "source": "anildash.com",
+      "category": "AI",
+      "title": "Taking action against AI harms",
+      "timestamp": "2026-02-24T13:50:45Z"
+    },
+    {
+      "messageId": "163",
+      "expert": "AI Tool Analysis",
+      "source": "aitoolanalysis.com",
+      "category": "Vibecoding",
+      "title": "Claude Code vs Cursor 2026",
+      "timestamp": "2026-02-24T13:51:07Z"
+    },
+    {
+      "messageId": "164",
+      "expert": "Deloitte Insights",
+      "source": "Deloitte Tech Trends 2026",
+      "category": "Robotics",
+      "title": "AI goes physical: Navigating the convergence of AI and robotics",
+      "timestamp": "2026-02-24T13:51:41Z"
+    },
+    {
+      "messageId": "165",
+      "expert": "JoeBen Bevirt",
+      "source": "TTNews/Bloomberg",
+      "category": "eVTOL",
+      "title": "Joby targets 2026 US air taxi launch",
+      "timestamp": "2026-02-24T13:52:15Z"
+    },
+    {
+      "messageId": "166",
+      "expert": "Ashu Garg",
+      "source": "Foundation Capital",
+      "category": "Business",
+      "title": "Where AI is headed in 2026",
+      "timestamp": "2026-02-24T13:52:46Z"
+    },
+    {
+      "messageId": "167",
+      "expert": "Francesca Rossi / Kush Varshney (IBM)",
+      "source": "IBM Think",
+      "category": "AI",
+      "title": "What a new global AI safety report means for enterprise",
+      "timestamp": "2026-02-24T13:53:13Z"
+    },
+    {
+      "messageId": "168",
+      "expert": "Joachim Klement",
+      "source": "Klement on Investing (Substack)",
+      "category": "Investment",
+      "title": "Why pessimists make more money",
+      "timestamp": "2026-02-24T13:53:48Z"
+    },
+    {
+      "messageId": "169",
+      "expert": "Distilinfo (редакционный обзор)",
+      "source": "distilinfo.com",
+      "category": "Technology",
+      "title": "Top 20 Emerging Technology Trends 2026",
+      "timestamp": "2026-02-24T13:54:17Z"
     }
   ]
 }

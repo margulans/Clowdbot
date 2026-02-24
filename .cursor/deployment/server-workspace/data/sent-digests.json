@@ -718,7 +718,13 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "AI",
-      "keywords": ["AI scare trade", "market selloff", "IBM", "Anthropic Claude", "COBOL"],
+      "keywords": [
+        "AI scare trade",
+        "market selloff",
+        "IBM",
+        "Anthropic Claude",
+        "COBOL"
+      ],
       "type": "news",
       "messageId": "409"
     },
@@ -728,7 +734,12 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "Cybersecurity",
-      "keywords": ["AI arms race", "cybersecurity", "generative AI", "adversary breakout time"],
+      "keywords": [
+        "AI arms race",
+        "cybersecurity",
+        "generative AI",
+        "adversary breakout time"
+      ],
       "type": "news",
       "messageId": "410"
     },
@@ -738,7 +749,13 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "Regulation",
-      "keywords": ["Canadian regulators", "AI firms", "online threats", "ChatGPT", "OpenAI"],
+      "keywords": [
+        "Canadian regulators",
+        "AI firms",
+        "online threats",
+        "ChatGPT",
+        "OpenAI"
+      ],
       "type": "news",
       "messageId": "411"
     },
@@ -748,7 +765,13 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "Business/Investment",
-      "keywords": ["Jamie Dimon", "JPMorgan", "AI trades", "market", "credit"],
+      "keywords": [
+        "Jamie Dimon",
+        "JPMorgan",
+        "AI trades",
+        "market",
+        "credit"
+      ],
       "type": "news",
       "messageId": "412"
     },
@@ -758,7 +781,13 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "Investment/Cybersecurity",
-      "keywords": ["Vega Security", "AI cybersecurity", "funding", "Series B", "Accel"],
+      "keywords": [
+        "Vega Security",
+        "AI cybersecurity",
+        "funding",
+        "Series B",
+        "Accel"
+      ],
       "type": "news",
       "messageId": "413"
     },
@@ -768,7 +797,12 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "Business/AI",
-      "keywords": ["AI", "freight brokerage", "consolidation", "C.H. Robinson"],
+      "keywords": [
+        "AI",
+        "freight brokerage",
+        "consolidation",
+        "C.H. Robinson"
+      ],
       "type": "news",
       "messageId": "414"
     },
@@ -778,9 +812,141 @@
       "digest": "evening",
       "date": "2026-02-24",
       "category": "AI/Legal Tech",
-      "keywords": ["LexisNexis", "RAG", "legal AI", "Graph RAG", "planner agents", "reflection agents"],
+      "keywords": [
+        "LexisNexis",
+        "RAG",
+        "legal AI",
+        "Graph RAG",
+        "planner agents",
+        "reflection agents"
+      ],
       "type": "news",
       "messageId": "415"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.anildash.com/2026/02/23/taking-action-ai-harms/",
+      "title": "Anil Dash: конкретные действия против вреда от ИИ",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "anil dash",
+        "ai harms",
+        "accountability",
+        "platform risk"
+      ],
+      "messageId": "162"
+    },
+    {
+      "type": "opinions",
+      "url": "https://aitoolanalysis.com/claude-code-vs-cursor/",
+      "title": "AI Tool Analysis: Cursor vs Claude Code — IDE-first vs agent-first",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Vibecoding",
+      "keywords": [
+        "cursor",
+        "claude code",
+        "developer tools",
+        "agentic coding",
+        "ide"
+      ],
+      "messageId": "163"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.deloitte.com/us/en/insights/topics/technology-management/tech-trends/2026/physical-ai-humanoid-robots.html",
+      "title": "Deloitte: физический ИИ требует зрелости безопасности и данных",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Robotics",
+      "keywords": [
+        "physical ai",
+        "robotics",
+        "safety",
+        "hallucinations",
+        "monitoring"
+      ],
+      "messageId": "164"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ttnews.com/articles/joby-targets-2026-us-launch",
+      "title": "JoeBen Bevirt (Joby) о поэтапном запуске eVTOL в 2026",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "eVTOL",
+      "keywords": [
+        "joby",
+        "joeben bevirt",
+        "certification",
+        "dubai",
+        "2026"
+      ],
+      "messageId": "165"
+    },
+    {
+      "type": "opinions",
+      "url": "https://foundationcapital.com/where-ai-is-headed-in-2026/",
+      "title": "Ashu Garg: 2026 — год перехода enterprise AI из пилотов в прод",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Business",
+      "keywords": [
+        "enterprise ai",
+        "agents",
+        "production",
+        "reliability",
+        "on-prem"
+      ],
+      "messageId": "166"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ibm.com/think/news/new-global-ai-safety-report-means-enterprise",
+      "title": "IBM: риски ИИ смещаются на уровень систем и деплоя",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "AI",
+      "keywords": [
+        "ibm",
+        "ai safety report 2026",
+        "governance",
+        "deployment",
+        "agentic ai"
+      ],
+      "messageId": "167"
+    },
+    {
+      "type": "opinions",
+      "url": "https://klementoninvesting.substack.com/p/why-pessimists-make-more-money",
+      "title": "Klement: нарративы на рынках ценятся выше данных, пессимизм продаётся дороже",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Investment",
+      "keywords": [
+        "narratives",
+        "pessimism",
+        "investors",
+        "behavioral finance"
+      ],
+      "messageId": "168"
+    },
+    {
+      "type": "opinions",
+      "url": "https://distilinfo.com/2026/02/23/top-20-emerging-technology-trends-2026/",
+      "title": "Distilinfo: 2026 — фокус на операционных моделях, agentic AI и устойчивости",
+      "digest": "evening",
+      "date": "2026-02-24",
+      "category": "Technology",
+      "keywords": [
+        "tech trends 2026",
+        "agentic ai",
+        "cloud governance",
+        "cyber resilience"
+      ],
+      "messageId": "169"
     }
   ]
 }
