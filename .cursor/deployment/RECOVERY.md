@@ -195,8 +195,8 @@ ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH &
 **Лечение:**
 
 ```bash
-# 1. Сменить модель на gemini-3-flash-preview (она в allowlist gateway, 1M TPM)
-ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit 305e53a4-049c-4d2e-b248-0cdbea259d3f --model google/gemini-3-flash-preview"
+# 1. Сменить модель на gemini-2.5-flash (стабильная, 1M контекст)
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit 305e53a4-049c-4d2e-b248-0cdbea259d3f --model google/gemini-2.5-flash"
 
 # 2. Убедиться что другие groq-задачи не используют накапливающиеся сессии
 ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron list | grep -i groq"
@@ -214,7 +214,7 @@ ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH &
 - `cron announce delivery failed` + `gateway closed (1008): pairing required`
 - Задача падает за 3–27ms, не стартует
 
-**Причина А (`model not allowed`):** После `openclaw doctor` или ручного редактирования `openclaw.json` список `agents.defaults.models` сбрасывается. Модели не в этом списке — запрещены. Разрешены: `google/gemini-3-flash-preview`, `openai/gpt-5.2`, `openai/gpt-4o`, `openai/gpt-4o-mini`, `anthropic/claude-sonnet-4-6`, `anthropic/claude-opus-4-6`.
+**Причина А (`model not allowed`):** После `openclaw doctor` или ручного редактирования `openclaw.json` список `agents.defaults.models` сбрасывается. Модели не в этом списке — запрещены. Разрешены: `google/gemini-2.5-flash`, `google/gemini-2.0-flash-lite`, `openai/gpt-5.2`, `openai/gpt-4o`, `openai/gpt-4o-mini`, `anthropic/claude-sonnet-4-6`, `anthropic/claude-opus-4-6`.
 
 **Причина Б (`announce delivery failed`):** `delivery.mode: announce` открывает новое WS-соединение к gateway, которое требует pairing. Алерты лучше доставлять через `message()` tool внутри задачи.
 
@@ -238,7 +238,7 @@ ssh openclaw@100.73.176.127 "python3 -c \"import json; c=json.load(open('/home/o
 
 ```bash
 # Сменить модель задачи
-ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit <JOB-ID> --model google/gemini-3-flash-preview"
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit <JOB-ID> --model google/gemini-2.5-flash"
 
 # Отключить announce delivery (если cron announce delivery failed)
 ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron edit <JOB-ID> --no-deliver"
@@ -255,7 +255,39 @@ EOF"
 systemctl --user restart openclaw-gateway
 ```
 
-**Правило:** Эталонная модель для cron-задач — `google/gemini-3-flash-preview` (1M контекст, в allowlist всегда). Backup-задачи используют `openai/gpt-4o-mini` — убедись, что она в allowlist.
+**Правило:** Эталонная модель для cron-задач — `google/gemini-2.5-flash` (1M контекст, стабильная). Backup-задачи используют `openai/gpt-5.2` или `openai/gpt-4o-mini` — убедись, что они в allowlist.
+
+---
+
+### 🔴 Cron jobs пропали (после переустановки или аварии)
+
+**Симптомы:** бот работает, но нет дайджестов, мониторинга, рефлексий — ни один cron job не запускается.
+
+**Причина:** `~/.openclaw/cron/jobs.json` потерян или не был перенесён.
+
+**Восстановление из git-бэкапа (< 1 мин):**
+
+```bash
+ssh openclaw@100.73.176.127
+
+# Убедиться что git-репо актуальное
+cd ~/Clowdbot && git pull origin main
+
+# Восстановить 42 cron jobs из бэкапа
+cp ~/Clowdbot/.cursor/deployment/server-workspace/data/cron-jobs.json \
+   ~/.openclaw/cron/jobs.json
+
+# Перезапустить gateway
+systemctl --user restart openclaw-gateway
+
+# Проверить
+~/.npm-global/bin/openclaw cron list | wc -l
+# Должно быть > 40 строк
+```
+
+> **Что восстановится:** все 42 jobs с расписанием, моделями и промптами — в том виде, в каком они были на момент последнего `/git` коммита.
+
+> **Актуальность бэкапа:** бот обновляет `data/cron-jobs.json` перед каждым `/git` (Шаг A в git-sync скилле). Потеря — только за время с последнего коммита.
 
 ---
 
@@ -431,4 +463,4 @@ mkdir -p ~/.openclaw/devices
 
 ---
 
-_Последнее обновление: 2026-02-05_
+_Последнее обновление: 2026-02-24_
