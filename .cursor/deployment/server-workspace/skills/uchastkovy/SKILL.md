@@ -26,6 +26,10 @@ description: Участковый — тихий мониторинг здоро
    → число сохрани как DRAIN_COUNT
 7. ps aux | grep -E "openclaw-gateway$" | grep -v grep | awk '{print $6}'
    → RSS в KB, сохрани как GW_RSS_KB (если процесс не найден — 0)
+8. cat ~/Clowdbot/.cursor/deployment/server-workspace/openclaw.json
+   → спарси JSON, сохрани как CONFIG (если файл не читается — CONFIG = null)
+9. ls ~/.config/systemd/user/openclaw-gateway.service.d/
+   → сохрани список файлов как DROPINS
 ```
 
 ### Шаг 2. Анализ
@@ -62,20 +66,14 @@ description: Участковый — тихий мониторинг здоро
 - `last_run` в `data/scout-discoveries.json` — null или дата не совпадает с текущим воскресеньем → тип `scout_stale`, severity `warn`, msg: `"Scout research не запустился этой ночью"`
 - Cron job Scout-ресёрч (id: `f3a7c901`): `lastStatus == "error"` или `"skipped"` → уже поймано общей проверкой выше; дополнительно сверь что `lastRunAtMs` — не старше 3 часов
 
-Для конфига (проверяй каждый запуск):
+Для конфига (из CONFIG и DROPINS, собранных в Шаге 1):
 
-Прочитай файл `openclaw.json` из workspace (путь: `data/../openclaw.json` или `openclaw.json` в корне workspace). Проверь:
-
-- `tools.web.search.provider` == `"perplexity"` → иначе тип `config_drift`, msg: `"search provider changed: expected perplexity, got <значение>"`
-- `channels.telegram.dmPolicy` == `"allowlist"` → иначе тип `config_drift`, severity `critical`, msg: `"dmPolicy changed to <значение> — security risk"`
-- `gateway.mode` == `"local"` → иначе тип `config_drift`, msg: `"gateway mode changed: expected local, got <значение>"`
-
-Затем выполни: `ls ~/.config/systemd/user/openclaw-gateway.service.d/`
-
-- Если нет файла `perplexity.conf` → тип `config_drift`, msg: `"systemd drop-in missing: perplexity.conf — search key lost"`
-- Если нет файла `openai.conf` → тип `config_drift`, msg: `"systemd drop-in missing: openai.conf — embeddings key lost"`
-
-Если `openclaw.json` не читается → тип `config_drift`, severity `critical`, msg: `"openclaw.json unreadable"`
+- CONFIG == null → тип `config_drift`, severity `critical`, msg: `"openclaw.json unreadable"`
+- CONFIG.tools.web.search.provider != `"perplexity"` → тип `config_drift`, msg: `"search provider changed: expected perplexity, got <значение>"`
+- CONFIG.channels.telegram.dmPolicy != `"allowlist"` → тип `config_drift`, severity `critical`, msg: `"dmPolicy changed to <значение> — security risk"`
+- CONFIG.gateway.mode != `"local"` → тип `config_drift`, msg: `"gateway mode changed: expected local, got <значение>"`
+- `"perplexity.conf"` отсутствует в DROPINS → тип `config_drift`, msg: `"systemd drop-in missing: perplexity.conf — search key lost"`
+- `"openai.conf"` отсутствует в DROPINS → тип `config_drift`, msg: `"systemd drop-in missing: openai.conf — embeddings key lost"`
 
 Если все проверки прошли — ничего не записывай.
 
