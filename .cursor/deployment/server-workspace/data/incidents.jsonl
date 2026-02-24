@@ -4,3 +4,5 @@
 {"id": "a6447968", "ts": "2026-02-24T06:13:24Z", "type": "config_drift", "source": "uchastkovy", "severity": "warn", "msg": "tools.web.search.provider changed: expected perplexity, got brave", "resolved": false}
 {"ts": "2026-02-24T06:13:30Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
 {"ts": "2026-02-24T06:20:00Z", "type": "audit", "source": "chekist", "severity": "info", "msg": "hourly audit: 0 critical, 2 warn, 2 ok in last 60min"}
+{"ts": "2026-02-24T06:25:00Z", "type": "config_report", "source": "chekist", "severity": "info", "msg": "daily config report sent"}
+{"ts": "2026-02-24T06:25:00Z", "type": "audit", "source": "chekist", "severity": "info", "msg": "hourly audit: 0 critical, 2 warn, 2 ok in last 60min"}
