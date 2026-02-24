@@ -3,3 +3,4 @@
 {"ts":"2026-02-24T06:35:05Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 1 warn, 1 ok in last 60min"}
 {"ts":"2026-02-24T06:44:18Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
 {"ts":"2026-02-24T06:49:00Z","type":"monitor_silent","source":"backup-uchastkovy","job":"Участковый (305e53a4-049c-4d2e-b248-0cdbea259d3f)","severity":"critical","msg":"Gemini недоступен — backup сработал, взял мониторинг. Основной Участковый: lastStatus=error (6m ago). Gateway=active, RSS_kb=601144, disk=14%.","resolved":false}
+{"id":"68566890","ts":"2026-02-24T06:53:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
