@@ -1,5 +1,1 @@
-{"ts":"2026-02-24T05:44:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"ts": "2026-02-24T05:52:51Z", "type": "ok", "source": "uchastkovy", "severity": "info", "msg": "system healthy"}
-{"id":"24020555","ts":"2026-02-24T05:55:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
-{"id":"5f0d26fa","ts":"2026-02-24T05:59:00Z","type":"cron_error","source":"uchastkovy","job":"305e53a4-049c-4d2e-b248-0cdbea259d3f","severity":"critical","msg":"job failed (timeout or internal error)","resolved":false}
-{"id":"98648a11","ts":"2026-02-24T05:59:00Z","type":"config_drift","source":"uchastkovy","job":"openclaw.json","severity":"warn","msg":"search provider changed: expected perplexity, got brave","resolved":false}
+{"ts":"2026-02-24T06:05:00Z","type":"ok","source":"uchastkovy","severity":"info","msg":"system healthy"}
