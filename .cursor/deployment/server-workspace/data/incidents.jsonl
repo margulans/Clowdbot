@@ -1,1 +1,1 @@
-{"id": "4e51e8b0", "ts": "2026-02-25T10:32:00Z", "type": "mem0_health", "source": "uchastkovy", "job": null, "severity": "critical", "msg": "mem0-api — /health endpoint unreachable or unhealthy (response: CURL_FAIL)", "resolved": false}
+{"id": "d783e7d0", "ts": "2026-02-25T11:17:00Z", "type": "config_drift", "source": "uchastkovy", "job": "check-config-drift", "severity": "warn", "msg": "undocumented systemd unit: openclaw-sanitizer-proxy.service — add to server-config.md and KNOWN_UNITS in check-config-drift.py", "resolved": false}
