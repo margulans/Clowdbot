@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772013147596,
+      "updatedAtMs": 1772013753911,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -17,7 +17,7 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "model": "google/gemini-2.5-flash",
+        "model": "openai/gpt-4o-mini",
         "kind": "agentTurn",
         "thinking": "low",
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
@@ -27,14 +27,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772013720000,
-        "lastRunAtMs": 1772012907581,
+        "nextRunAtMs": 1772016420000,
+        "lastRunAtMs": 1772013720033,
         "lastStatus": "error",
-        "lastDurationMs": 240015,
-        "consecutiveErrors": 2,
+        "lastDurationMs": 33878,
+        "consecutiveErrors": 3,
         "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false,
+        "lastDeliveryError": "An unknown error occurred"
       }
     },
     {
@@ -1152,7 +1153,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772013169539,
+      "updatedAtMs": 1772015849747,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1171,10 +1172,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772014020000,
-        "lastRunAtMs": 1772013147653,
+        "nextRunAtMs": 1772016720000,
+        "lastRunAtMs": 1772015820031,
         "lastStatus": "ok",
-        "lastDurationMs": 21886,
+        "lastDurationMs": 29716,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1431,7 +1432,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "google/gemini-2.5-flash",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 240,
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю."
