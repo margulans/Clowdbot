@@ -88,6 +88,9 @@ USER.md
 # OpenClaw monitor temp files
 **/data/uchastkovy_run.tmp
 
+# Auto-generated update report (перезаписывается скриптом check-openclaw-update.sh)
+.cursor/update-report.md
+
 # local tooling
 .serena/
 
