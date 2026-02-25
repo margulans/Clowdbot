@@ -1171,7 +1171,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772005920025
       }
     },
     {
@@ -1179,7 +1180,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772002268009,
+      "updatedAtMs": 1772005877900,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1198,15 +1199,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772005860000,
-        "lastRunAtMs": 1772002260031,
+        "nextRunAtMs": 1772009460000,
+        "lastRunAtMs": 1772005860027,
         "lastStatus": "ok",
-        "lastDurationMs": 7978,
+        "lastDurationMs": 17873,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772005860027
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
