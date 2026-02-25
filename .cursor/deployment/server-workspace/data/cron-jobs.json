@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772019212670,
+      "updatedAtMs": 1772034548036,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772022720000,
-        "lastRunAtMs": 1772019120027,
+        "nextRunAtMs": 1772035320000,
+        "lastRunAtMs": 1772034420043,
         "lastStatus": "ok",
-        "lastDurationMs": 92643,
+        "lastDurationMs": 127993,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772018810327,
+      "updatedAtMs": 1772033231609,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -60,10 +60,10 @@
         "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1772025964872,
-        "lastRunAtMs": 1772018764905,
+        "nextRunAtMs": 1772069164872,
+        "lastRunAtMs": 1772033164900,
         "lastStatus": "ok",
-        "lastDurationMs": 45422,
+        "lastDurationMs": 66709,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772022364823,
+      "updatedAtMs": 1772034390935,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772023560000,
-        "lastRunAtMs": 1772022336375,
+        "nextRunAtMs": 1772037960000,
+        "lastRunAtMs": 1772034360030,
         "lastStatus": "ok",
-        "lastDurationMs": 28448,
+        "lastDurationMs": 30905,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -114,7 +114,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772017290870,
+      "updatedAtMs": 1772031688645,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -134,10 +134,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772031673831,
-        "lastRunAtMs": 1772017273858,
+        "nextRunAtMs": 1772046073831,
+        "lastRunAtMs": 1772031673873,
         "lastStatus": "ok",
-        "lastDurationMs": 17012,
+        "lastDurationMs": 14772,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -151,7 +151,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1772019011192,
+      "updatedAtMs": 1772033417439,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -170,10 +170,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772033400000,
-        "lastRunAtMs": 1772019000030,
+        "nextRunAtMs": 1772047800000,
+        "lastRunAtMs": 1772033400036,
         "lastStatus": "ok",
-        "lastDurationMs": 11162,
+        "lastDurationMs": 17403,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -186,7 +186,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1772012993882,
+      "updatedAtMs": 1772027772164,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -203,15 +203,13 @@
       },
       "state": {
         "nextRunAtMs": 1772092800000,
-        "lastRunAtMs": 1772012800754,
-        "lastStatus": "error",
-        "lastDurationMs": 193128,
-        "consecutiveErrors": 2,
-        "lastRunStatus": "error",
+        "lastRunAtMs": 1772027449663,
+        "lastStatus": "ok",
+        "lastDurationMs": 322501,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDeliveryError": "An unknown error occurred",
-        "lastError": "An unknown error occurred"
+        "lastDeliveryStatus": "not-delivered"
       },
       "delivery": {
         "mode": "none"
@@ -259,7 +257,7 @@
       "name": "Дневные мнения",
       "enabled": true,
       "createdAtMs": 1770522310056,
-      "updatedAtMs": 1772013136147,
+      "updatedAtMs": 1772035125675,
       "schedule": {
         "kind": "cron",
         "expr": "30 13 * * *",
@@ -272,7 +270,7 @@
         "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **ДНЕВНОЙ МНЕНИЯ 13:30** — @opnioneiron\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8` (и запросы по темам)\n  Затем `web_fetch` по выбранным URL.\n- Backup #2: если Brave недоступен → RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`.\n\nГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId → messageHistory в dual-rating-data.json.\n\n0) startTs = текущее unixMs.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 13:30\n🟢 Основной выпуск | Дневной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 _Модель: Gemini 3 Flash_\n📊 8–10 мнений | 🧠 Что думают эксперты\n---\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений):\n━━━━━━━━━━━━━━━━━━━━━━\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении!\n\nДля каждого мнения:\n  a) Найди мнение (Twitter/X, Telegram, Substack — тейки экспертов)\n     - используй поиск Perplexity → Brave → RSS (см. выше)\n  b) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n[Теги]\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🐦 @автор — url\") → mid\n  c) СРАЗУ запиши msg_{{mid}} в data/dual-rating-data.json → messageHistory (expert/source/category/title/timestamp)\n  d) Перечитай файл и проверь, что msg_{{mid}} существует; retry 1 раз; если нет — алерт Маргулану в личку\n  e) Только после (c) и (d) — следующее мнение\n\nФинальная проверка: посчитать записи с timestamp >= startTs; если меньше опубликованных — алерт Маргулану.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 3 — АУДИТ (последнее сообщение, обязателен):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Основной | Дневной мнения\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 Модель: Gemini 3 Flash\n📊 Опубликовано: N мнений\n✅ Rating IDs: все сохранены\n📁 Data: dual-rating-data.json ✅\n---",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 900
       },
       "state": {
         "nextRunAtMs": 1772094600000,
@@ -329,7 +327,7 @@
       "name": "💰 Экономист (сбор)",
       "enabled": true,
       "createdAtMs": 1771737662468,
-      "updatedAtMs": 1771979280850,
+      "updatedAtMs": 1772022613128,
       "schedule": {
         "kind": "cron",
         "expr": "30 17 * * *",
@@ -349,10 +347,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772022600000,
-        "lastRunAtMs": 1771978976012,
+        "nextRunAtMs": 1772109000000,
+        "lastRunAtMs": 1772022600038,
         "lastStatus": "ok",
-        "lastDurationMs": 156980,
+        "lastDurationMs": 13090,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -365,7 +363,7 @@
       "name": "Вечерний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275698751,
-      "updatedAtMs": 1771977589795,
+      "updatedAtMs": 1772035125749,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * *",
@@ -378,17 +376,19 @@
         "message": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=evening date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ** | {{localDate}}, 18:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
-        "timeoutSeconds": 900
+        "timeoutSeconds": 1200
       },
       "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771940306645,
-        "lastStatus": "ok",
-        "lastDurationMs": 48622,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772110800000,
+        "lastRunAtMs": 1772027505294,
+        "lastStatus": "error",
+        "lastDurationMs": 345672,
+        "consecutiveErrors": 2,
+        "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "lastDeliveryError": "An unknown error occurred",
+        "lastError": "An unknown error occurred"
       },
       "delivery": {
         "mode": "none"
@@ -401,7 +401,7 @@
       "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839715,
-      "updatedAtMs": 1771938655810,
+      "updatedAtMs": 1772024922341,
       "schedule": {
         "kind": "cron",
         "expr": "5 18 * * *",
@@ -420,49 +420,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772024700000,
-        "lastRunAtMs": 1771938647491,
+        "nextRunAtMs": 1772111100000,
+        "lastRunAtMs": 1772024700037,
         "lastStatus": "ok",
-        "lastDurationMs": 8319,
+        "lastDurationMs": 222304,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
-    },
-    {
-      "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-      "agentId": "main",
-      "name": "Вечерние мнения",
-      "enabled": true,
-      "createdAtMs": 1770522322268,
-      "updatedAtMs": 1771939812076,
-      "schedule": {
-        "kind": "cron",
-        "expr": "30 18 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8`\n  Затем `web_fetch` по выбранным URL.\n- Backup #2: если Brave недоступен → RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`.\n\nГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId → messageHistory в dual-rating-data.json.\n\n0) startTs = текущее unixMs.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 18:30\n🟢 Основной выпуск | Вечерний выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 _Модель: Gemini 3 Flash_\n📊 8–10 мнений | 🧠 Что думают эксперты\n---\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений):\n━━━━━━━━━━━━━━━━━━━━━━\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении!\n\nДля каждого мнения:\n  a) Найди мнение (Twitter/X, Telegram, Substack — тейки экспертов)\n     - используй поиск Perplexity → Brave → RSS (см. выше)\n  b) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n[Теги]\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🐦 @автор — url\") → mid\n  c) СРАЗУ запиши msg_{{mid}} в data/dual-rating-data.json → messageHistory (expert/source/category/title/timestamp)\n  d) Перечитай файл и проверь, что msg_{{mid}} существует; retry 1 раз; если нет — алерт Маргулану в личку\n  e) Только после (c) и (d) — следующее мнение\n\nФинальная проверка: посчитать записи с timestamp >= startTs; если меньше опубликованных — алерт Маргулану.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 3 — АУДИТ (последнее сообщение, обязателен):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Основной | Вечерний мнения\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 Модель: Gemini 3 Flash\n📊 Опубликовано: N мнений\n✅ Rating IDs: все сохранены\n📁 Data: dual-rating-data.json ✅\n---",
-        "model": "google/gemini-2.5-flash",
-        "thinking": "low",
-        "timeoutSeconds": 300
-      },
-      "state": {
-        "nextRunAtMs": 1772026200000,
-        "lastRunAtMs": 1771939800037,
-        "lastStatus": "ok",
-        "lastDurationMs": 12039,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
-      },
-      "delivery": {
-        "mode": "none"
       }
     },
     {
@@ -491,7 +456,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772027400000,
+        "nextRunAtMs": 1772113800000,
         "lastRunAtMs": 1771941000026,
         "lastStatus": "ok",
         "lastDurationMs": 281906,
@@ -508,7 +473,7 @@
       "name": "📋 Саммари от Айганым — вечерний отчёт",
       "enabled": true,
       "createdAtMs": 1771658827106,
-      "updatedAtMs": 1771948172719,
+      "updatedAtMs": 1772029813374,
       "schedule": {
         "kind": "cron",
         "expr": "30 19 * * *",
@@ -527,10 +492,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772029800000,
-        "lastRunAtMs": 1771948160327,
+        "nextRunAtMs": 1772116200000,
+        "lastRunAtMs": 1772029800028,
         "lastStatus": "ok",
-        "lastDurationMs": 12392,
+        "lastDurationMs": 13346,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -543,7 +508,7 @@
       "name": "Ежедневная рефлексия",
       "enabled": true,
       "createdAtMs": 1770399692088,
-      "updatedAtMs": 1771947016635,
+      "updatedAtMs": 1772033433733,
       "schedule": {
         "kind": "cron",
         "expr": "30 20 * * *",
@@ -558,10 +523,10 @@
         "message": "wendy(mode=daily-reflection)\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nРефлексию отправь Маргулану через tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст вопросов>\")\n\nДалее жди ответа Маргулана и после ответа — сделай краткую запись в skills/wendy/WENDY.md (в USER.md ничего не писать)."
       },
       "state": {
-        "nextRunAtMs": 1772033400000,
-        "lastRunAtMs": 1771947009424,
+        "nextRunAtMs": 1772119800000,
+        "lastRunAtMs": 1772033417439,
         "lastStatus": "ok",
-        "lastDurationMs": 7211,
+        "lastDurationMs": 16294,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -979,7 +944,7 @@
       "name": "🚨 BACKUP: Ежедневная рефлексия",
       "enabled": true,
       "createdAtMs": 1771739756280,
-      "updatedAtMs": 1771947312028,
+      "updatedAtMs": 1772033716518,
       "schedule": {
         "kind": "cron",
         "expr": "35 20 * * *",
@@ -994,10 +959,10 @@
         "message": "BACKUP Рефлексия (gpt-5.2). Шаг 1: openclaw cron list → найди job 9d558661 (Ежедневная рефлексия), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (если основная не сработала): запусти ежедневную рефлексию. Прочитай skills/reflection/SKILL.md и выполни его полностью. Используй tool message() для отправки результата Маргулану."
       },
       "state": {
-        "nextRunAtMs": 1772033700000,
-        "lastRunAtMs": 1771947300033,
+        "nextRunAtMs": 1772120100000,
+        "lastRunAtMs": 1772033700032,
         "lastStatus": "ok",
-        "lastDurationMs": 11995,
+        "lastDurationMs": 16486,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1049,7 +1014,7 @@
       "name": "🚨 BACKUP: Экономист (сбор)",
       "enabled": true,
       "createdAtMs": 1771826007243,
-      "updatedAtMs": 1771937113990,
+      "updatedAtMs": 1772023513695,
       "schedule": {
         "kind": "cron",
         "expr": "45 17 * * *",
@@ -1068,11 +1033,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772023500000,
-        "lastRunAtMs": 1771937100027,
+        "nextRunAtMs": 1772109900000,
+        "lastRunAtMs": 1772023500032,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13963,
+        "lastDurationMs": 13663,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1085,7 +1050,7 @@
       "name": "🚨 BACKUP: Саммари от Айганым",
       "enabled": true,
       "createdAtMs": 1771826007293,
-      "updatedAtMs": 1771948115381,
+      "updatedAtMs": 1772030710261,
       "schedule": {
         "kind": "cron",
         "expr": "45 19 * * *",
@@ -1104,11 +1069,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772030700000,
-        "lastRunAtMs": 1771944300493,
+        "nextRunAtMs": 1772117100000,
+        "lastRunAtMs": 1772030700033,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27141,
+        "lastDurationMs": 10228,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1150,7 +1115,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772022150705,
+      "updatedAtMs": 1772034729510,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1169,10 +1134,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772023020000,
-        "lastRunAtMs": 1772022120012,
+        "nextRunAtMs": 1772035620000,
+        "lastRunAtMs": 1772034720032,
         "lastStatus": "ok",
-        "lastDurationMs": 30693,
+        "lastDurationMs": 9478,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1184,7 +1149,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772016688999,
+      "updatedAtMs": 1772034668945,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1203,10 +1168,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772023860000,
-        "lastRunAtMs": 1772016660028,
+        "nextRunAtMs": 1772038260000,
+        "lastRunAtMs": 1772034660063,
         "lastStatus": "ok",
-        "lastDurationMs": 28971,
+        "lastDurationMs": 8882,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1218,7 +1183,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772020571728,
+      "updatedAtMs": 1772034979782,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1238,10 +1203,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772027760000,
-        "lastRunAtMs": 1772020560038,
+        "nextRunAtMs": 1772070960000,
+        "lastRunAtMs": 1772034960051,
         "lastStatus": "ok",
-        "lastDurationMs": 11690,
+        "lastDurationMs": 19731,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1382,7 +1347,7 @@
       "name": "Auto-push: Git sync (stage 2)",
       "enabled": true,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1772018342820,
+      "updatedAtMs": 1772032759446,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1402,11 +1367,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772032735197,
-        "lastRunAtMs": 1772018335239,
+        "nextRunAtMs": 1772047135197,
+        "lastRunAtMs": 1772032735245,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7581,
+        "lastDurationMs": 24201,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1668,6 +1633,31 @@
       },
       "state": {
         "nextRunAtMs": 1772337600000
+      }
+    },
+    {
+      "id": "1ebe95ac-91c9-45e5-a758-a1ff5be367e4",
+      "name": "Вечерние мнения",
+      "enabled": true,
+      "createdAtMs": 1772026267738,
+      "updatedAtMs": 1772026267738,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 18 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **ВЕЧЕРНИЙ МНЕНИЯ 18:30** — @opnioneiron\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8`\n  Затем `web_fetch` по выбранным URL.\n- Backup #2: если Brave недоступен → RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`.\n\nГЛАВНОЕ: реакционная система работает ТОЛЬКО если для КАЖДОГО сообщения сохранён messageId → messageHistory в dual-rating-data.json.\n\n0) startTs = текущее unixMs.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 18:30\n🟢 Основной выпуск | Вечерний выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 _Модель: Gemini 3 Flash_\n📊 8–10 мнений | 🧠 Что думают эксперты\n---\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений):\n━━━━━━━━━━━━━━━━━━━━━━\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении!\n\nДля каждого мнения:\n  a) Найди мнение (Twitter/X, Telegram, Substack — тейки экспертов)\n     - используй поиск Perplexity → Brave → RSS (см. выше)\n  b) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n[Теги]\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🐦 @автор — url\") → mid\n  c) СРАЗУ запиши msg_{{mid}} в data/dual-rating-data.json → messageHistory (expert/source/category/title/timestamp)\n  d) Перечитай файл и проверь, что msg_{{mid}} существует; retry 1 раз; если нет — алерт Маргулану в личку\n  e) Только после (c) и (d) — следующее мнение\n\nФинальная проверка: посчитать записи с timestamp >= startTs; если меньше опубликованных — алерт Маргулану.\n\n━━━━━━━━━━━━━━━━━━━━━━\nШАГ 3 — АУДИТ (последнее сообщение, обязателен):\n━━━━━━━━━━━━━━━━━━━━━━\nmessage(action=send, to=@opnioneiron):\n---\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Основной | Вечерний мнения\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n🤖 Модель: Gemini 3 Flash\n📊 Опубликовано: N мнений\n✅ Rating IDs: все сохранены\n📁 Data: dual-rating-data.json ✅\n---"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last"
+      },
+      "state": {
+        "nextRunAtMs": 1772112600000
       }
     }
   ]
