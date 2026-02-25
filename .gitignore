@@ -85,6 +85,9 @@ USER.md
 .tgz
 .idea
 
+# OpenClaw monitor temp files
+**/data/uchastkovy_run.tmp
+
 # local tooling
 .serena/
 
