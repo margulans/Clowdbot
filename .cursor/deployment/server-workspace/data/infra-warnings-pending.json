@@ -1,12 +1,12 @@
 {
-  "ts": "2026-02-23T13:16:49Z",
+  "ts": "2026-02-25T00:22:33Z",
   "warnings": [
     "Hetzner VPS CPX22 — требует ручной проверки",
     "Perplexity API — требует ручной проверки",
-    "⏰ Brave Search API — Search plan — оплата через 6 дн. (2026-03-01)",
-    "Brave Search API — Search plan — требует ручной проверки",
+    "⏰ Brave Search API — оплата через 4 дн. (2026-03-01)",
+    "Brave Search API — требует ручной проверки",
     "Anthropic — требует Admin API key для проверки баланса (sk-ant-admin…)",
-    "OpenAI billing API: 403 (этим ключом нельзя проверять баланс через /dashboard/billing)",
-    "Groq usage API: 404 (endpoint /openai/v1/usage/daily не найден — проверить docs)"
+    "OpenAI billing API: 403 (этим ключом нельзя проверять баланс)",
+    "Groq usage API: 404 (endpoint /openai/v1/usage/daily не найден)"
   ]
 }

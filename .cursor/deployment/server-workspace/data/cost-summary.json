@@ -1,24 +1,24 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": "2026-02-23T13:16:49Z",
-  "last_session_scan_at": "2026-02-23T13:16:49Z",
+  "last_updated": "2026-02-25T00:22:33Z",
+  "last_session_scan_at": "2026-02-25T00:22:33Z",
   "period": {
     "day": {
-      "date": "2026-02-23",
-      "cost_usd": 0.3663423,
-      "tokens_input": 40094,
-      "tokens_output": 4306
+      "date": "2026-02-25",
+      "cost_usd": 0.0011763,
+      "tokens_input": 7842,
+      "tokens_output": 0
     },
     "week": {
       "start": "2026-02-23",
-      "cost_usd": 0.3663423,
-      "tokens_input": 40094,
+      "cost_usd": 0.3675186,
+      "tokens_input": 47936,
       "tokens_output": 4306
     },
     "month": {
       "start": "2026-02-01",
-      "cost_usd": 0.3663423,
-      "tokens_input": 40094,
+      "cost_usd": 0.3675186,
+      "tokens_input": 47936,
       "tokens_output": 4306
     }
   },
@@ -32,6 +32,11 @@
       "cost_usd": 0.36489,
       "tokens_input": 32094,
       "tokens_output": 1465
+    },
+    "gpt-4o-mini": {
+      "cost_usd": 0.0011763,
+      "tokens_input": 7842,
+      "tokens_output": 0
     }
   },
   "external_fixed": {
@@ -39,6 +44,7 @@
   },
   "processed_session_ids": [
     "6c5b21d4-df8d-47f5-a79f-a77189c76498",
-    "8947fd65-66b1-4c3c-8f10-753acf2f13a4"
+    "8947fd65-66b1-4c3c-8f10-753acf2f13a4",
+    "4bb1a64c-917c-48d3-b369-2bfc88a65cbd"
   ]
 }
