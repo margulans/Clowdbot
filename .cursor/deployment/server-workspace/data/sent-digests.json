@@ -1511,6 +1511,97 @@
         "humanoid robotics",
         "risks"
       ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.unmannedairspace.info/uncategorized/skygrid-wisk-aero-propose-new-class-of-flight-rules-to-enable-automated-aam-operations/",
+      "title": "Jia Xu (SkyGrid) о том, почему UAM без AFR не масштабируется",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "eVTOL",
+      "keywords": [
+        "afr",
+        "automated flight rules",
+        "uam",
+        "airspace",
+        "wisk",
+        "skygrid"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://x.com/cursor_ai/status/2026369873321013568",
+      "title": "Cursor: «demos, not diffs» — ревью через артефакты, а не патчи",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "Vibecoding",
+      "keywords": [
+        "cursor",
+        "agents",
+        "code review",
+        "demos not diffs",
+        "devtools"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ey.com/en_ch/newsroom/2026/02/ey-start-up-barometer-switzerland-2026-significant-increase-in-investment-volume-ai-start-ups-becoming-much-more-important",
+      "title": "EY Switzerland: ИИ становится ключевым драйвером венчура (рост доли и объёма инвестиций)",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "Business",
+      "keywords": [
+        "ey",
+        "switzerland",
+        "venture capital",
+        "ai startups",
+        "funding"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://aistatement.com",
+      "title": "Yoshua Bengio: экзистенциальные риски ИИ — приоритет уровня пандемий и ядерной войны",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": [
+        "ai safety",
+        "existential risk",
+        "cais",
+        "bengio",
+        "policy"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://murphcapital.substack.com/p/how-to-pick-emerging-managers-in",
+      "title": "David Zhou: как выбирать emerging managers в 2026 (горизонт 12–15 лет)",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "Investment",
+      "keywords": [
+        "vc",
+        "lp",
+        "emerging managers",
+        "time horizon",
+        "due diligence"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://thegadgetflow.com/blog/top-tech-trends/",
+      "title": "The Gadget Flow: техно-тренды 2026 — on-device AI и устройства-компаньоны",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "Technology",
+      "keywords": [
+        "tech trends 2026",
+        "on-device ai",
+        "wearables",
+        "smart glasses",
+        "health tech"
+      ]
     }
   ]
 }

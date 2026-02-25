@@ -1636,7 +1636,32 @@
       "state": {
         "nextRunAtMs": 1772078700000
       }
+    },
+    {
+      "id": "6de61c1c-887a-4e67-90d4-b18c8f6d6863",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Memory Weekly Review",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * 0",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Еженедельный обзор памяти Нейрона. (mem0 search: \"предпочтения\" + \"факты о Маргулане\"; сверка с USER.md/MEMORY.md; предложить добавить факты в USER.md только после подтверждения)",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "685668909"
+      },
+      "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-25T07:51:15Z"
+  "capturedAt": "2026-02-25T08:55:00Z"
 }

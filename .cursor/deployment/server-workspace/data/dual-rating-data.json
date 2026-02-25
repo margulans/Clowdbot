@@ -603,6 +603,54 @@
       "category": "Robotics",
       "title": "Хинтон: ускорение ИИ и риски вытеснения работников",
       "timestamp": "2026-02-25T08:51:30Z"
+    },
+    {
+      "messageId": "185",
+      "expert": "Jia Xu (SkyGrid) / Erick Corona (Wisk)",
+      "source": "UnmannedAirspace + SkyGrid/Wisk whitepaper",
+      "category": "eVTOL",
+      "title": "AFR: автоматические правила полёта как условие масштабирования UAM",
+      "timestamp": "2026-02-25T08:52:30Z"
+    },
+    {
+      "messageId": "186",
+      "expert": "Cursor",
+      "source": "X (Twitter)",
+      "category": "Vibecoding",
+      "title": "Demos, not diffs: видео/демо как артефакт ревью агентного кода",
+      "timestamp": "2026-02-25T08:53:10Z"
+    },
+    {
+      "messageId": "187",
+      "expert": "Milja Vulin Petrovic (EY Switzerland)",
+      "source": "EY Start-Up Barometer Switzerland 2026",
+      "category": "Business/Investment",
+      "title": "ИИ-стартапы: 32% раундов и кратный рост объёма инвестиций",
+      "timestamp": "2026-02-25T08:53:50Z"
+    },
+    {
+      "messageId": "188",
+      "expert": "Yoshua Bengio (подписант CAIS statement)",
+      "source": "CAIS Statement on AI Risk",
+      "category": "AI Safety",
+      "title": "Экзистенциальный риск ИИ как глобальный приоритет",
+      "timestamp": "2026-02-25T08:54:20Z"
+    },
+    {
+      "messageId": "189",
+      "expert": "David Zhou",
+      "source": "Murph Capital (Substack)",
+      "category": "Investment/VC",
+      "title": "Emerging managers 2026: реалистичный горизонт 12–15 лет и проверка паттернов GP",
+      "timestamp": "2026-02-25T08:55:05Z"
+    },
+    {
+      "messageId": "190",
+      "expert": "The Gadget Flow (редакция)",
+      "source": "thegadgetflow.com",
+      "category": "Technology/Forecast",
+      "title": "Тренды-2026: on-device AI, “умные компаньоны” и практичный health-tech",
+      "timestamp": "2026-02-25T08:55:45Z"
     }
   ]
 }

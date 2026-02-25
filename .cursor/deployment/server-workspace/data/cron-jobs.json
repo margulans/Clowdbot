@@ -298,7 +298,7 @@
       "name": "🚨 BACKUP: Дневные мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988124,
-      "updatedAtMs": 1771923236509,
+      "updatedAtMs": 1772009701232,
       "schedule": {
         "kind": "cron",
         "expr": "50 13 * * *",
@@ -317,15 +317,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772009400000,
-        "lastRunAtMs": 1771923000093,
+        "nextRunAtMs": 1772095800000,
+        "lastRunAtMs": 1772009400060,
         "lastStatus": "ok",
-        "lastDurationMs": 236416,
+        "lastDurationMs": 301172,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772009400056
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1173,7 +1172,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772009520000,
+        "nextRunAtMs": 1772010420000,
         "lastRunAtMs": 1772008620045,
         "lastStatus": "ok",
         "lastDurationMs": 13397,
@@ -1207,7 +1206,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772009460000,
+        "nextRunAtMs": 1772013060000,
         "lastRunAtMs": 1772005860027,
         "lastStatus": "ok",
         "lastDurationMs": 17873,
@@ -1643,6 +1642,35 @@
       },
       "state": {
         "nextRunAtMs": 1772078700000
+      }
+    },
+    {
+      "id": "6de61c1c-887a-4e67-90d4-b18c8f6d6863",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Memory Weekly Review",
+      "enabled": true,
+      "createdAtMs": 1772009681450,
+      "updatedAtMs": 1772009681450,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 4 * * 0",
+        "tz": "UTC"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Еженедельный обзор памяти Нейрона.\n\nЗАДАЧА:\n1) Запусти: openclaw mem0 search \"предпочтения\" (topK=10)\n2) Запусти: openclaw mem0 search \"факты о Маргулане\" (topK=10)\n3) Сравни найденные факты с содержимым USER.md и MEMORY.md\n4) Если Mem0 содержит подтверждённые факты которых нет в USER.md — покажи их Маргулану\n5) Спроси: \"Добавить эти факты в USER.md как долгосрочную память?\"\n6) НЕ вноси изменения в USER.md автоматически — только после подтверждения",
+        "timeoutSeconds": 300
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "685668909",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1772337600000
       }
     }
   ]
