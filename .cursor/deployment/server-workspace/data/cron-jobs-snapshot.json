@@ -8,10 +8,10 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771992838347,
+      "updatedAtMs": 1771994544764,
       "schedule": {
         "kind": "cron",
-        "expr": "3-59/10 * * * *",
+        "expr": "2,17,32,47 6-21 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771993380000,
-        "lastRunAtMs": 1771992780032,
+        "nextRunAtMs": 1771994820000,
+        "lastRunAtMs": 1771993980035,
         "lastStatus": "ok",
-        "lastDurationMs": 58315,
+        "lastDurationMs": 40596,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,10 +43,11 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771989592022,
+      "updatedAtMs": 1771994544920,
       "schedule": {
         "kind": "cron",
-        "expr": "18 * * * *",
+        "expr": "26 6-21/2 * * *",
+        "tz": "Asia/Almaty",
         "staggerMs": 300000
       },
       "sessionTarget": "isolated",
@@ -56,13 +57,13 @@
         "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).",
         "model": "openai/gpt-5.2",
         "thinking": "low",
-        "timeoutSeconds": 180
+        "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1771993084872,
-        "lastRunAtMs": 1771989484918,
+        "nextRunAtMs": 1771997164872,
+        "lastRunAtMs": 1771993084900,
         "lastStatus": "ok",
-        "lastDurationMs": 107104,
+        "lastDurationMs": 93141,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -77,10 +78,10 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771992504055,
+      "updatedAtMs": 1771994545047,
       "schedule": {
         "kind": "cron",
-        "expr": "8,38 * * * *",
+        "expr": "46 6-21 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -96,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771994280000,
-        "lastRunAtMs": 1771992480027,
+        "nextRunAtMs": 1771994760000,
+        "lastRunAtMs": 1771994280029,
         "lastStatus": "ok",
-        "lastDurationMs": 24028,
+        "lastDurationMs": 107212,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1144,10 +1145,10 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771992553246,
+      "updatedAtMs": 1771994544869,
       "schedule": {
         "kind": "cron",
-        "expr": "9-59/10 * * * *",
+        "expr": "7,22,37,52 6-21 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1163,10 +1164,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771993140000,
-        "lastRunAtMs": 1771992540032,
+        "nextRunAtMs": 1771995120000,
+        "lastRunAtMs": 1771994387274,
         "lastStatus": "ok",
-        "lastDurationMs": 13214,
+        "lastDurationMs": 9627,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1178,10 +1179,10 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771991694307,
+      "updatedAtMs": 1771994545173,
       "schedule": {
         "kind": "cron",
-        "expr": "23,53 * * * *",
+        "expr": "51 6-21 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1197,10 +1198,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771993380000,
-        "lastRunAtMs": 1771991679633,
+        "nextRunAtMs": 1771995060000,
+        "lastRunAtMs": 1771993418678,
         "lastStatus": "ok",
-        "lastDurationMs": 14674,
+        "lastDurationMs": 12387,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1212,10 +1213,10 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771991290388,
+      "updatedAtMs": 1771994544972,
       "schedule": {
         "kind": "cron",
-        "expr": "48 * * * *",
+        "expr": "56 6-21/2 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1232,7 +1233,7 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771994880000,
+        "nextRunAtMs": 1771998960000,
         "lastRunAtMs": 1771991280025,
         "lastStatus": "ok",
         "lastDurationMs": 10363,
@@ -1405,7 +1406,178 @@
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
+    },
+    {
+      "id": "bc20e704-af13-445d-af52-eaa3ac157d4b",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "👮‍♂️ Участковый (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568502,
+      "updatedAtMs": 1771994568502,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 1,4 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772049600000
+      }
+    },
+    {
+      "id": "8e8e7e2c-8616-43e3-a7e0-022a6f4c204f",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Участковый (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568598,
+      "updatedAtMs": 1771994568598,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 1,4 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "message": "BACKUP Участковый.\n\nШаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs.\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА (никаких HEARTBEAT_OK).\n\nШаг 2 (только если Участковый не запускался ≥20 мин или lastStatus≠ok):\n1) systemctl --user is-active openclaw-gateway → если не active: restart + записать gateway_down (severity=critical, source=backup-uchastkovy)\n2) df -h / → если >85%: записать disk_warn (severity=warn)\n3) RSS gateway (ps) → если >1400000 KB: restart + записать gateway_memory_high (severity=critical)\n\nВАЖНО:\n- НЕ писать инциденты типа monitor_silent про «Gemini недоступен».\n- НЕ слать уведомления, если нет реальной проблемы (gateway_down/announce_queue_loop/gateway_memory_high/disk_warn).\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nЕсли нужно уведомить Маргулана — используй tool message(). Иначе молчи.\n\n[[NO_TEMP_FILES]]\nНе создавать временных файлов."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772049900000
+      }
+    },
+    {
+      "id": "89db97f7-e05e-4e3b-990b-fefc1815e7d7",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🕵️ Чекист (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568679,
+      "updatedAtMs": 1771994568679,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 3 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 240,
+        "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы)."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772058600000
+      }
+    },
+    {
+      "id": "e529cf2b-6d25-4323-9c0d-63b68d8b0453",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Чекист (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568787,
+      "updatedAtMs": 1771994568787,
+      "schedule": {
+        "kind": "cron",
+        "expr": "50 3 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "message": "BACKUP Чекист.\n\nШаг 1: openclaw cron list → найди job b72fece5 (Чекист).\n- Если последний запуск < 75 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Чекист не запускался ≥75 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Если есть critical — отправь Маргулану конкретный алерт (через message()).\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\") только если есть реальный critical.\n\n[[NO_TEMP_FILES]]\n[[ACTIVE_INCIDENT_FILTER]]"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772059800000
+      }
+    },
+    {
+      "id": "0ece27a3-dfc0-47a4-bd3c-6fb6c8c9d403",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🔧 Механик (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568876,
+      "updatedAtMs": 1771994568876,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 1,4 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-3-flash-preview",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772051400000
+      }
+    },
+    {
+      "id": "585d2b84-e992-47a7-ba3c-acd268165874",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Механик (ночь)",
+      "enabled": true,
+      "createdAtMs": 1771994568930,
+      "updatedAtMs": 1771994568930,
+      "schedule": {
+        "kind": "cron",
+        "expr": "45 1,4 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "message": "BACKUP Механик.\n\nШаг 1: openclaw cron list → найди job bef4ddfa (Механик).\n- Если последний запуск < 45 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Механик не запускался ≥45 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Чини только gateway_down / announce_queue_loop / gateway_memory_high.\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n- Уведомлять Маргулана только если реально чинил или если критическое не чинится.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй tool message() только при реальном критическом.\n\n[[NO_TEMP_FILES]]"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772052300000
+      }
     }
   ],
-  "capturedAt": "2026-02-25T04:14:36Z"
+  "capturedAt": "2026-02-25T04:43:04Z"
 }
