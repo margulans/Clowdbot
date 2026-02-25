@@ -1,6 +1,6 @@
 # SNAPSHOT.md — Текущее состояние Нейрона
 
-_Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrade — полностью задеплоен, auto-capture/recall работает)_
+_Последнее обновление: 2026-02-25 (Cursor + Бот: Mem0 Memory Upgrade — завершён полностью)_
 
 📚 **Навигация:** [INDEX.md](./.ai/INDEX.md)
 
@@ -57,7 +57,7 @@ _Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrad
 - Unit-файл исправлен: `OPENCLAW_SERVICE_VERSION` и `Description` обновлены до `2026.2.24`
 - Ключевые фиксы: `announce_queue_loop` (больше не зависает), OpenRouter cooldown, model fallback chain traversal, Telegram IPv4/IPv6
 
-### 2026-02-25 — Mem0 Memory Upgrade — полностью задеплоен (feat)
+### 2026-02-25 — Mem0 Memory Upgrade — завершён (feat)
 
 - **Результат:** `auto-captured 1 memories` после первого сообщения, recall работает через `/new` ✅
 - **Фиксы в процессе деплоя:**
@@ -69,6 +69,8 @@ _Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrad
   - Sanitizer Proxy `:8888` (systemd) — strip secrets/PII перед OpenAI
   - `@mem0/openclaw-mem0` плагин — auto-capture через `gpt-4o-mini`, recall через `text-embedding-3-small`
   - Canonical truth: USER.md > MEMORY.md > Mem0
+  - Weekly Memory Review cron (Вс 10:00 Алматы, job: `6de61c1c`) — Mem0 → предложения → USER.md
+  - Участковый (Шаг 1) — мониторинг Qdrant + Sanitizer Proxy через `check-mem0.sh` каждые 10 мин
 
 ### 2026-02-25 — Mem0 Memory Upgrade — артефакты готовы (feat)
 
