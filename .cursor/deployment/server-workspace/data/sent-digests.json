@@ -1251,11 +1251,11 @@
       "messageId": "180"
     },
     {
-      "type":"news_meta", 
-      "digest":"day", 
-      "date":"2026-02-25", 
-      "kind":"header", 
-      "ts":1772005200000,
+      "type": "news_meta",
+      "digest": "day",
+      "date": "2026-02-25",
+      "kind": "header",
+      "ts": 1772005200000,
       "messageId": "420"
     },
     {
@@ -1264,7 +1264,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "AI",
-      "keywords": ["anthropic", "claude", "ai tools", "market", "stocks"],
+      "keywords": [
+        "anthropic",
+        "claude",
+        "ai tools",
+        "market",
+        "stocks"
+      ],
       "type": "news",
       "messageId": "421"
     },
@@ -1274,7 +1280,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "AI",
-      "keywords": ["ibm", "cybersecurity", "ai attacks", "x-force", "threats"],
+      "keywords": [
+        "ibm",
+        "cybersecurity",
+        "ai attacks",
+        "x-force",
+        "threats"
+      ],
       "type": "news",
       "messageId": "422"
     },
@@ -1284,7 +1296,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "AI",
-      "keywords": ["trump", "data centers", "energy", "ai dominance", "policy"],
+      "keywords": [
+        "trump",
+        "data centers",
+        "energy",
+        "ai dominance",
+        "policy"
+      ],
       "type": "news",
       "messageId": "423"
     },
@@ -1294,7 +1312,12 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "AI",
-      "keywords": ["ai adoption", "risks", "aicpa-cima", "business impact"],
+      "keywords": [
+        "ai adoption",
+        "risks",
+        "aicpa-cima",
+        "business impact"
+      ],
       "type": "news",
       "messageId": "424"
     },
@@ -1304,7 +1327,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Vibecoding",
-      "keywords": ["vibecoding", "open source", "ai code", "low quality", "sustainability"],
+      "keywords": [
+        "vibecoding",
+        "open source",
+        "ai code",
+        "low quality",
+        "sustainability"
+      ],
       "type": "news",
       "messageId": "425"
     },
@@ -1314,7 +1343,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Vibecoding",
-      "keywords": ["vibecoding", "enterprise software", "ai agents", "hsbc", "enhancement"],
+      "keywords": [
+        "vibecoding",
+        "enterprise software",
+        "ai agents",
+        "hsbc",
+        "enhancement"
+      ],
       "type": "news",
       "messageId": "426"
     },
@@ -1324,7 +1359,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Vibecoding",
-      "keywords": ["vibecoding", "security", "zero-click hack", "orchids platform", "cisos"],
+      "keywords": [
+        "vibecoding",
+        "security",
+        "zero-click hack",
+        "orchids platform",
+        "cisos"
+      ],
       "type": "news",
       "messageId": "427"
     },
@@ -1334,7 +1375,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Robotics",
-      "keywords": ["seeds ai2 robotics", "funding", "alphabot", "govla ai", "humanoid"],
+      "keywords": [
+        "seeds ai2 robotics",
+        "funding",
+        "alphabot",
+        "govla ai",
+        "humanoid"
+      ],
       "type": "news",
       "messageId": "428"
     },
@@ -1344,7 +1391,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Robotics",
-      "keywords": ["hexagon robotics", "aeon robot", "humanoid", "design award", "industrial tasks"],
+      "keywords": [
+        "hexagon robotics",
+        "aeon robot",
+        "humanoid",
+        "design award",
+        "industrial tasks"
+      ],
       "type": "news",
       "messageId": "429"
     },
@@ -1354,7 +1407,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Robotics",
-      "keywords": ["hyundai", "firefighting robots", "unmanned", "korea", "national fire agency"],
+      "keywords": [
+        "hyundai",
+        "firefighting robots",
+        "unmanned",
+        "korea",
+        "national fire agency"
+      ],
       "type": "news",
       "messageId": "430"
     },
@@ -1364,7 +1423,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "eVTOL",
-      "keywords": ["evtol", "humanoid robots", "wuhan", "low-altitude economy", "ai industries"],
+      "keywords": [
+        "evtol",
+        "humanoid robots",
+        "wuhan",
+        "low-altitude economy",
+        "ai industries"
+      ],
       "type": "news",
       "messageId": "431"
     },
@@ -1374,7 +1439,14 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Technology",
-      "keywords": ["xr", "wearables", "vr", "mixed-reality", "smart glasses", "privacy"],
+      "keywords": [
+        "xr",
+        "wearables",
+        "vr",
+        "mixed-reality",
+        "smart glasses",
+        "privacy"
+      ],
       "type": "news",
       "messageId": "432"
     },
@@ -1384,7 +1456,13 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Business/Investment",
-      "keywords": ["meta", "amd", "ai chips", "investment", "data centers"],
+      "keywords": [
+        "meta",
+        "amd",
+        "ai chips",
+        "investment",
+        "data centers"
+      ],
       "type": "news",
       "messageId": "433"
     },
@@ -1394,9 +1472,45 @@
       "digest": "day",
       "date": "2026-02-25",
       "category": "Business/Investment",
-      "keywords": ["stocks", "market rebound", "ai selloff", "tech recovery", "amd"],
+      "keywords": [
+        "stocks",
+        "market rebound",
+        "ai selloff",
+        "tech recovery",
+        "amd"
+      ],
       "type": "news",
       "messageId": "434"
+    },
+    {
+      "type": "opinions",
+      "url": "https://x.com/StefanoErmon/status/2026340720064520670",
+      "title": "Stefano Ermon о diffusion-LLM и гонке за скоростью",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": [
+        "diffusion llm",
+        "latency",
+        "throughput",
+        "agents",
+        "mercury 2"
+      ]
+    },
+    {
+      "type": "opinions",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/godfather-of-ai-geoffrey-hinton-made-a-bold-prediction-for-2026-robots-may-rule-how-we-work-and-live/articleshow/128751693.cms",
+      "title": "Geoffrey Hinton о том, почему ИИ/роботы изменят рынок труда быстрее, чем кажется",
+      "digest": "afternoon",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": [
+        "geoffrey hinton",
+        "automation",
+        "jobs",
+        "humanoid robotics",
+        "risks"
+      ]
     }
   ]
 }

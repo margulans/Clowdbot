@@ -587,6 +587,22 @@
       "category": "Business/Investment",
       "title": "Stocks Rebound Amid AI Sector Shifts: American stock markets rebounded on Tuesday after an AI-related selloff, with the technology sector showing recovery, and AMD becoming a prominent growth leader.",
       "timestamp": "2026-02-25T13:00:00Z"
+    },
+    {
+      "messageId": "183",
+      "expert": "Stefano Ermon",
+      "source": "X (Twitter)",
+      "category": "AI",
+      "title": "Diffusion-LLM Mercury 2 и гонка за скорость/латентность",
+      "timestamp": "2026-02-25T08:50:00Z"
+    },
+    {
+      "messageId": "184",
+      "expert": "Geoffrey Hinton",
+      "source": "Times of India (ссылка на интервью CNN)",
+      "category": "Robotics",
+      "title": "Хинтон: ускорение ИИ и риски вытеснения работников",
+      "timestamp": "2026-02-25T08:51:30Z"
     }
   ]
 }
