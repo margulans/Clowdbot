@@ -359,38 +359,28 @@
     {
       "id": "582cc3f0-9941-4e74-ae77-0afac52c6258",
       "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "wakeMode": "now",
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "685668909"
+      },
+      "last_fixed": "2026-02-25",
       "name": "Вечерний дайджест @newsneiron",
-      "enabled": true,
-      "createdAtMs": 1770275698751,
-      "updatedAtMs": 1771977589795,
       "schedule": {
         "kind": "cron",
         "expr": "0 18 * * *",
         "tz": "Asia/Almaty"
       },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "⚡ 🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=evening date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌆 **ВЕЧЕРНИЙ ДАЙДЖЕСТ** | {{localDate}}, 18:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"evening\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
         "model": "google/gemini-2.5-flash",
-        "thinking": "low",
-        "timeoutSeconds": 1200
+        "timeoutSeconds": 1200,
+        "message": "Вечерний дайджест: строгая атомарность send→(dual-rating+sent-digests) с messageId; обязательные header/audit meta + финальная валидация."
       },
-      "state": {
-        "nextRunAtMs": 1772024400000,
-        "lastRunAtMs": 1771940306645,
-        "lastStatus": "ok",
-        "lastDurationMs": 48622,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "last_fixed": "2026-02-25"
+      "enabled": true,
+      "sessionTarget": "isolated"
     },
     {
       "id": "e758d243-54e7-4d3b-b684-8115561831e6",
@@ -1664,7 +1654,33 @@
         "to": "685668909"
       },
       "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "12459c64-6d58-428a-a63a-aeaf44594656",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "wakeMode": "now",
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "685668909"
+      },
+      "last_fixed": "2026-02-25",
+      "name": "Digest Weekly Improvement",
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 4 * * 0",
+        "tz": "UTC"
+      },
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "timeoutSeconds": 600,
+        "message": "Еженедельный feedback loop: анализ sent-digests + dual-rating за 7 дней; рекомендации без автоприменения; отчёт Маргулану."
+      },
+      "enabled": true,
+      "sessionTarget": "isolated"
     }
   ],
-  "capturedAt": "2026-02-25T15:58:57Z"
+  "capturedAt": "2026-02-25T16:22:35Z"
 }
