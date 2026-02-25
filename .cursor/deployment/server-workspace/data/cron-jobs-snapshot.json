@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771994978415,
+      "updatedAtMs": 1772005868407,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -17,7 +17,7 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "kind": "agentTurn",
         "thinking": "low",
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771995720000,
-        "lastRunAtMs": 1771994952401,
+        "nextRunAtMs": 1772006520000,
+        "lastRunAtMs": 1772005712140,
         "lastStatus": "ok",
-        "lastDurationMs": 26014,
+        "lastDurationMs": 37644,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771994544920,
+      "updatedAtMs": 1772005868641,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -55,15 +55,15 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1771997164872,
-        "lastRunAtMs": 1771993084900,
+        "nextRunAtMs": 1772011564872,
+        "lastRunAtMs": 1772004364893,
         "lastStatus": "ok",
-        "lastDurationMs": 93141,
+        "lastDurationMs": 42641,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771994952077,
+      "updatedAtMs": 1772005868774,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -89,7 +89,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
-        "model": "google/gemini-3-flash-preview",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600
       },
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771998360000,
-        "lastRunAtMs": 1771994760034,
+        "nextRunAtMs": 1772009160000,
+        "lastRunAtMs": 1772005560044,
         "lastStatus": "ok",
-        "lastDurationMs": 192043,
+        "lastDurationMs": 151802,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -114,7 +114,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771988516253,
+      "updatedAtMs": 1772002882430,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -134,10 +134,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772002873831,
-        "lastRunAtMs": 1771988506851,
+        "nextRunAtMs": 1772017273831,
+        "lastRunAtMs": 1772002873879,
         "lastStatus": "ok",
-        "lastDurationMs": 9402,
+        "lastDurationMs": 8551,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -151,7 +151,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1771990212935,
+      "updatedAtMs": 1772004606809,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -170,10 +170,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772004600000,
-        "lastRunAtMs": 1771990200055,
+        "nextRunAtMs": 1772019000000,
+        "lastRunAtMs": 1772004600027,
         "lastStatus": "ok",
-        "lastDurationMs": 12880,
+        "lastDurationMs": 6782,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1145,7 +1145,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771995131145,
+      "updatedAtMs": 1772005035206,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1164,10 +1164,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771996020000,
-        "lastRunAtMs": 1771995120031,
+        "nextRunAtMs": 1772005920000,
+        "lastRunAtMs": 1772005023750,
         "lastStatus": "ok",
-        "lastDurationMs": 11114,
+        "lastDurationMs": 11456,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1179,7 +1179,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771995076425,
+      "updatedAtMs": 1772002268009,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1198,14 +1198,15 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771998660000,
-        "lastRunAtMs": 1771995060045,
+        "nextRunAtMs": 1772005860000,
+        "lastRunAtMs": 1772002260031,
         "lastStatus": "ok",
-        "lastDurationMs": 16380,
+        "lastDurationMs": 7978,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772005860027
       }
     },
     {
@@ -1213,7 +1214,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771994544972,
+      "updatedAtMs": 1771998968061,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1233,10 +1234,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771998960000,
-        "lastRunAtMs": 1771991280025,
+        "nextRunAtMs": 1772006160000,
+        "lastRunAtMs": 1771998960042,
         "lastStatus": "ok",
-        "lastDurationMs": 10363,
+        "lastDurationMs": 8019,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1377,7 +1378,7 @@
       "name": "Auto-push: Git sync (stage 2)",
       "enabled": true,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1771989618516,
+      "updatedAtMs": 1772003952441,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1397,11 +1398,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772003935197,
-        "lastRunAtMs": 1771989602846,
+        "nextRunAtMs": 1772018335197,
+        "lastRunAtMs": 1772003935210,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15670,
+        "lastDurationMs": 17231,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1414,7 +1415,7 @@
       "name": "👮‍♂️ Участковый (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568502,
-      "updatedAtMs": 1771994568502,
+      "updatedAtMs": 1772005868473,
       "schedule": {
         "kind": "cron",
         "expr": "0 1,4 * * *",
@@ -1424,7 +1425,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240,
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю."
@@ -1471,7 +1472,7 @@
       "name": "🕵️ Чекист (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568679,
-      "updatedAtMs": 1771994568679,
+      "updatedAtMs": 1772005868696,
       "schedule": {
         "kind": "cron",
         "expr": "30 3 * * *",
@@ -1481,7 +1482,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240,
         "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы)."
@@ -1528,7 +1529,7 @@
       "name": "🔧 Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568876,
-      "updatedAtMs": 1771994568876,
+      "updatedAtMs": 1772005868879,
       "schedule": {
         "kind": "cron",
         "expr": "30 1,4 * * *",
@@ -1538,7 +1539,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "google/gemini-3-flash-preview",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи."
@@ -1606,7 +1607,36 @@
       "state": {
         "nextRunAtMs": 1772064300000
       }
+    },
+    {
+      "id": "bb57b6eb-28a4-4d76-9788-8495c2ac335d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "📊 Экономия токенов мониторинга — отчёт (daily)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1771996363015,
+      "updatedAtMs": 1771996363015,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-26T04:05:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "anthropic/claude-sonnet-4-6",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "message": "Задача: посчитать итоговую экономию токенов/сутки и $/сутки по мониторингу от изменений «без нулевых аудитов + heartbeat вне репо».\n\nМетод:\n- Точка изменения: 2026-02-25T04:53:00Z.\n- Возьми два окна по 24 часа:\n  A) BEFORE: [2026-02-24T04:53:00Z, 2026-02-25T04:53:00Z)\n  B) AFTER : [2026-02-25T04:53:00Z, 2026-02-26T04:53:00Z)\n- Источник токенов: /home/openclaw/.openclaw/agents/main/sessions/sessions.json\n- Рассчитывай только сессии cron следующих jobId (в session_key содержится :cron:<jobId>):\n  uchastkovy day/night: 305e53a4-049c-4d2e-b248-0cdbea259d3f, bc20e704-af13-445d-af52-eaa3ac157d4b\n  chekist day/night:    b72fece5-c8f7-4b9b-842a-208b7efcecc2, 89db97f7-e05e-4e3b-990b-fefc1815e7d7\n  mekhanik day/night:   bef4ddfa-1fd8-4c64-9495-79d851f4f5f0, 0ece27a3-dfc0-47a4-bd3c-6fb6c8c9d403\n  (backup jobs НЕ включать)\n- Для каждого окна посчитай суммарные input_tokens и output_tokens по этим сессиям.\n- Экономия токенов/сутки = (BEFORE_total - AFTER_total) отдельно input/output и суммарно.\n- Экономия $/сутки: используя /home/openclaw/.openclaw/workspace/data/model-pricing.json и модели из sessions.json (по каждой сессии). Если у модели нет pricing — посчитай $=0 и явно укажи «pricing missing: <model>».\n\nОтправка:\n- Отправь Маргулану в личку (telegram 685668909) коротко, одним сообщением:\n  «Экономия мониторинга: X токенов/сутки (in:…, out:…) и $Y/сутки»\n  + строка «Окна: BEFORE … / AFTER …».\n- Используй tool message(action=send, channel=telegram, to=685668909, message=\"...\")\n\nНикаких записей в incidents.jsonl. Никаких файлов, кроме чтения указанных."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772078700000
+      }
     }
   ],
-  "capturedAt": "2026-02-25T04:53:56Z"
+  "capturedAt": "2026-02-25T07:51:15Z"
 }

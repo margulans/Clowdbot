@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772004751224,
+      "updatedAtMs": 1772005868407,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -17,7 +17,7 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "kind": "agentTurn",
         "thinking": "low",
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772005620000,
-        "lastRunAtMs": 1772004720027,
+        "nextRunAtMs": 1772006520000,
+        "lastRunAtMs": 1772005712140,
         "lastStatus": "ok",
-        "lastDurationMs": 31197,
+        "lastDurationMs": 37644,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772004407534,
+      "updatedAtMs": 1772005868641,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -55,7 +55,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240
       },
@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772001999986,
+      "updatedAtMs": 1772005868774,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -89,7 +89,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
-        "model": "google/gemini-3-flash-preview",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600
       },
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772005560000,
-        "lastRunAtMs": 1772001960031,
+        "nextRunAtMs": 1772009160000,
+        "lastRunAtMs": 1772005560044,
         "lastStatus": "ok",
-        "lastDurationMs": 39955,
+        "lastDurationMs": 151802,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1205,7 +1205,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772005860027
       }
     },
     {
@@ -1414,7 +1415,7 @@
       "name": "👮‍♂️ Участковый (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568502,
-      "updatedAtMs": 1771994568502,
+      "updatedAtMs": 1772005868473,
       "schedule": {
         "kind": "cron",
         "expr": "0 1,4 * * *",
@@ -1424,7 +1425,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240,
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю."
@@ -1471,7 +1472,7 @@
       "name": "🕵️ Чекист (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568679,
-      "updatedAtMs": 1771994568679,
+      "updatedAtMs": 1772005868696,
       "schedule": {
         "kind": "cron",
         "expr": "30 3 * * *",
@@ -1481,7 +1482,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240,
         "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы)."
@@ -1528,7 +1529,7 @@
       "name": "🔧 Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568876,
-      "updatedAtMs": 1771994568876,
+      "updatedAtMs": 1772005868879,
       "schedule": {
         "kind": "cron",
         "expr": "30 1,4 * * *",
@@ -1538,7 +1539,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "google/gemini-3-flash-preview",
+        "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи."
