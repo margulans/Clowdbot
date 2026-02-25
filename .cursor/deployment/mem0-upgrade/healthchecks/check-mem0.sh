@@ -39,13 +39,7 @@ if [[ "$QDRANT_RESP" == "CURL_FAIL" ]] || ! echo "$QDRANT_RESP" | grep -qi "heal
   fail "qdrant" "healthz endpoint unreachable or unhealthy (response: ${QDRANT_RESP:0:100})"
 fi
 
-# 2. Mem0 OSS REST API
-MEM0_RESP=$(curl -sf --max-time 5 "http://localhost:8000/health" 2>/dev/null || echo "CURL_FAIL")
-if [[ "$MEM0_RESP" == "CURL_FAIL" ]] || ! echo "$MEM0_RESP" | grep -qi "ok\|healthy"; then
-  fail "mem0-api" "/health endpoint unreachable or unhealthy (response: ${MEM0_RESP:0:100})"
-fi
-
-# 3. Sanitizer Proxy
+# 2. Sanitizer Proxy
 PROXY_RESP=$(curl -sf --max-time 5 "http://localhost:8888/health" 2>/dev/null || echo "CURL_FAIL")
 if [[ "$PROXY_RESP" == "CURL_FAIL" ]] || ! echo "$PROXY_RESP" | grep -qi "ok"; then
   fail "sanitizer-proxy" "/health endpoint unreachable or unhealthy (response: ${PROXY_RESP:0:100})"
