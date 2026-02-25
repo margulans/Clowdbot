@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771977841239,
+      "updatedAtMs": 1771978415205,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771978380000,
-        "lastRunAtMs": 1771977780032,
+        "nextRunAtMs": 1771978980000,
+        "lastRunAtMs": 1771978380029,
         "lastStatus": "ok",
-        "lastDurationMs": 61207,
+        "lastDurationMs": 35176,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771976085871,
+      "updatedAtMs": 1771978774225,
       "schedule": {
         "kind": "cron",
         "expr": "18 * * * *",
@@ -59,10 +59,10 @@
         "timeoutSeconds": 180
       },
       "state": {
-        "nextRunAtMs": 1771978684872,
-        "lastRunAtMs": 1771975084896,
+        "nextRunAtMs": 1771982284872,
+        "lastRunAtMs": 1771978684906,
         "lastStatus": "ok",
-        "lastDurationMs": 37727,
+        "lastDurationMs": 89319,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771976294257,
+      "updatedAtMs": 1771978260068,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -96,14 +96,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771978080000,
-        "lastRunAtMs": 1771976280040,
-        "lastStatus": "ok",
-        "lastDurationMs": 14217,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "nextRunAtMs": 1771979880000,
+        "lastRunAtMs": 1771978080033,
+        "lastStatus": "error",
+        "lastDurationMs": 180035,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -113,7 +113,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771978047750,
+      "updatedAtMs": 1771978267888,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -134,13 +134,13 @@
       },
       "state": {
         "nextRunAtMs": 1771988473831,
-        "lastRunAtMs": 1771974073875,
-        "lastStatus": "error",
-        "lastDurationMs": 120060,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "lastRunAtMs": 1771978108639,
+        "lastStatus": "ok",
+        "lastDurationMs": 159249,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -323,7 +323,7 @@
       "name": "💰 Экономист (сбор)",
       "enabled": true,
       "createdAtMs": 1771737662468,
-      "updatedAtMs": 1771936219691,
+      "updatedAtMs": 1771978948021,
       "schedule": {
         "kind": "cron",
         "expr": "30 17 * * *",
@@ -333,10 +333,10 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Режим: daily-collect + infra-check. Прочитай /home/openclaw/.openclaw/workspace/skills/economist/SKILL.md и строго следуй алгоритму.\n\nКРИТИЧНО:\n- Используй ТОЛЬКО абсолютные пути из SKILL.md (/home/openclaw/.openclaw/workspace/data/...).\n- Если не удалось прочитать/обновить cost-summary.json (last_updated не изменился) — запиши scan_error в economist-log.jsonl и ЗАВЕРШИ БЕЗ алертов.\n- Никаких оценок \"на глаз\". Только то, что реально посчитано и записано в файлы.\n\nЗадача:\n1) Собери сессии через sessions_list.\n2) Обнови economist-log.jsonl и cost-summary.json.\n3) Выполни infra-check согласно SKILL.md.\n\nМолчи (delivery.mode=none).",
-        "model": "openai/gpt-4o-mini",
+        "message": "Режим: daily-collect + infra-check + token-ledger.\n\nПрочитай /home/openclaw/.openclaw/workspace/skills/economist/SKILL.md и строго следуй алгоритму.\n\nДОПОЛНИТЕЛЬНО (token-ledger):\n- После обновления cost-summary.json добавь/обнови агрегат по Gemini-cron:\n  1) Прочитай /home/openclaw/.openclaw/workspace/data/cron-jobs-snapshot.json\n  2) Сформируй список jobId, где payload.model начинается с \"google/gemini\" (включая gemini-2.5-flash) и sessionTarget=isolated.\n  3) По текущему прогону sessions_list суммируй input/output tokens по сессиям, относящимся к этим jobId (по session_key содержащему \":cron:<jobId>\").\n  4) Запиши строкой в /home/openclaw/.openclaw/workspace/data/token-usage.jsonl:\n     {\"ts\":\"<ISO>\",\"type\":\"gemini_cron_snapshot\",\"input_tokens\":N,\"output_tokens\":M,\"sessions\":K}\n- Если нужных сессий нет в sessions_list — всё равно запиши snapshot с sessions=0 (это важно для диагностики полноты).\n\nКРИТИЧНО:\n- Используй ТОЛЬКО абсолютные пути из SKILL.md (/home/openclaw/.openclaw/workspace/data/...).\n- Если не удалось обновить cost-summary.json — запиши scan_error и заверши без алертов.\n- Никаких оценок \"на глаз\".\n\nМолчи (delivery.mode=none).",
+        "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
-        "timeoutSeconds": 300
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none",
@@ -863,7 +863,7 @@
       "name": "📊 Экономист (отчёт)",
       "enabled": true,
       "createdAtMs": 1771737664336,
-      "updatedAtMs": 1771839903039,
+      "updatedAtMs": 1771978948193,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * 0",
@@ -874,9 +874,9 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Режим: weekly-report. Прочитай skills/economist/SKILL.md. Выполни Режим B: сформируй недельный отчёт с рекомендациями и отправь его Маргулану.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.",
-        "model": "google/gemini-2.5-flash",
+        "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
-        "timeoutSeconds": 180
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none",
@@ -1144,7 +1144,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771977550444,
+      "updatedAtMs": 1771978782237,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1163,10 +1163,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771978140000,
-        "lastRunAtMs": 1771977540024,
+        "nextRunAtMs": 1771979340000,
+        "lastRunAtMs": 1771978774267,
         "lastStatus": "ok",
-        "lastDurationMs": 10420,
+        "lastDurationMs": 7970,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1400,5 +1400,5 @@
       }
     }
   ],
-  "capturedAt": "2026-02-25T00:07:32Z"
+  "capturedAt": "2026-02-25T00:22:33Z"
 }
