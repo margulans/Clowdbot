@@ -1680,7 +1680,85 @@
       },
       "enabled": true,
       "sessionTarget": "isolated"
+    },
+    {
+      "id": "489dc543-09f4-4e25-8b31-25c31194b6a2",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (morning check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "timeoutSeconds": 120,
+        "message": "Send friendly morning check-in to Aiganym (509646214)."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "694a76a6-f519-4107-824a-e81eb30ce37a",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (lunch check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 12 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "timeoutSeconds": 120,
+        "message": "Send friendly lunch check-in to Aiganym (509646214)."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "255d2287-3a5a-4c56-b3a9-a809cece114d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (evening check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "timeoutSeconds": 120,
+        "message": "Send friendly evening check-in to Aiganym (509646214)."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-25T16:22:35Z"
+  "capturedAt": "2026-02-25T16:40:24Z"
 }

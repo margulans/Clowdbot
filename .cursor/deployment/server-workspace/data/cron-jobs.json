@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772036293294,
+      "updatedAtMs": 1772037207792,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772037120000,
-        "lastRunAtMs": 1772036220039,
+        "nextRunAtMs": 1772038020000,
+        "lastRunAtMs": 1772037120030,
         "lastStatus": "ok",
-        "lastDurationMs": 73255,
+        "lastDurationMs": 87762,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1114,7 +1114,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772036533224,
+      "updatedAtMs": 1772037435631,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1133,10 +1133,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772037420000,
-        "lastRunAtMs": 1772036520041,
+        "nextRunAtMs": 1772038320000,
+        "lastRunAtMs": 1772037420032,
         "lastStatus": "ok",
-        "lastDurationMs": 13183,
+        "lastDurationMs": 15599,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1686,6 +1686,93 @@
       },
       "state": {
         "nextRunAtMs": 1772339400000
+      }
+    },
+    {
+      "id": "489dc543-09f4-4e25-8b31-25c31194b6a2",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (morning check-in)",
+      "enabled": true,
+      "createdAtMs": 1772037589803,
+      "updatedAtMs": 1772037589803,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Ты — Марта. Отправь Айганым (telegram id: 509646214) дружеское утреннее сообщение. Каждый раз формулируй чуть по‑разному, чтобы звучало по‑человечески, без «роботского» шаблона.\n\nСмысл:\n- поздороваться\n- спросить, как дела/настроение\n- спросить план на день\n- предложить сделать сегодня что-то полезное для Маргулана\n- без давления, с уважением к её времени\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")\n\nНичего не записывай в USER.md/MEMORY.md. Никаких файлов. Только отправка сообщения."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772074800000
+      }
+    },
+    {
+      "id": "694a76a6-f519-4107-824a-e81eb30ce37a",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (lunch check-in)",
+      "enabled": true,
+      "createdAtMs": 1772037599008,
+      "updatedAtMs": 1772037599008,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 12 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Ты — Марта. Отправь Айганым (telegram id: 509646214) короткое тёплое сообщение днём. Каждый раз формулируй чуть по‑разному.\n\nСмысл:\n- спросить как дела/самочувствие\n- отметить, что приятно быть коллегами\n- мягко спросить: есть ли что-то важное/полезное по Маргулану на сегодня (если удобно)\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")\n\nТолько отправка сообщения; никаких файлов/записей."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772091000000
+      }
+    },
+    {
+      "id": "255d2287-3a5a-4c56-b3a9-a809cece114d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Marta → Aiganym (evening check-in)",
+      "enabled": true,
+      "createdAtMs": 1772037599058,
+      "updatedAtMs": 1772037599058,
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Ты — Марта. Отправь Айганым (telegram id: 509646214) тёплое вечернее сообщение. Каждый раз формулируй чуть по‑разному.\n\nСмысл:\n- спросить как прошёл день/не устала ли\n- спросить настроение\n- предложить поделиться тем, что получилось/что не получилось\n- если у неё есть апдейты по задачам/контексту Маргулана — попросить прислать (только если удобно)\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")\n\nТолько отправка сообщения; никаких файлов/записей."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772116200000
       }
     }
   ]
