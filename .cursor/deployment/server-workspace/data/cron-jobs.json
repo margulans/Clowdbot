@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772009273556,
+      "updatedAtMs": 1772013147596,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,16 +27,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772010120000,
-        "lastRunAtMs": 1772009228148,
+        "nextRunAtMs": 1772013720000,
+        "lastRunAtMs": 1772012907581,
         "lastStatus": "error",
-        "lastDurationMs": 45408,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 240015,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -45,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772005868641,
+      "updatedAtMs": 1772011617399,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -62,10 +60,10 @@
         "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1772011564872,
-        "lastRunAtMs": 1772004364893,
+        "nextRunAtMs": 1772018764872,
+        "lastRunAtMs": 1772011564901,
         "lastStatus": "ok",
-        "lastDurationMs": 42641,
+        "lastDurationMs": 52498,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -80,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772005868774,
+      "updatedAtMs": 1772012907207,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -99,14 +97,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772012760000,
-        "lastRunAtMs": 1772005560044,
-        "lastStatus": "ok",
-        "lastDurationMs": 151802,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772016360000,
+        "lastRunAtMs": 1772012760031,
+        "lastStatus": "error",
+        "lastDurationMs": 147176,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -188,7 +188,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1772006705736,
+      "updatedAtMs": 1772012993882,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -205,14 +205,15 @@
       },
       "state": {
         "nextRunAtMs": 1772092800000,
-        "lastRunAtMs": 1772006400039,
+        "lastRunAtMs": 1772012800754,
         "lastStatus": "error",
-        "lastDurationMs": 305697,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 193128,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "lastDeliveryError": "⚠️ ✉️ Message failed"
+        "lastDeliveryError": "An unknown error occurred",
+        "lastError": "An unknown error occurred"
       },
       "delivery": {
         "mode": "none"
@@ -260,7 +261,7 @@
       "name": "Дневные мнения",
       "enabled": true,
       "createdAtMs": 1770522310056,
-      "updatedAtMs": 1772008205279,
+      "updatedAtMs": 1772013136147,
       "schedule": {
         "kind": "cron",
         "expr": "30 13 * * *",
@@ -277,15 +278,13 @@
       },
       "state": {
         "nextRunAtMs": 1772094600000,
-        "lastRunAtMs": 1772008200029,
+        "lastRunAtMs": 1772012836073,
         "lastStatus": "error",
-        "lastDurationMs": 5250,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 300074,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "Error: cron: job execution timed out"
       },
       "delivery": {
         "mode": "none"
@@ -1153,7 +1152,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772008633442,
+      "updatedAtMs": 1772013169539,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1172,10 +1171,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772010420000,
-        "lastRunAtMs": 1772008620045,
+        "nextRunAtMs": 1772014020000,
+        "lastRunAtMs": 1772013147653,
         "lastStatus": "ok",
-        "lastDurationMs": 13397,
+        "lastDurationMs": 21886,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1187,7 +1186,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772005877900,
+      "updatedAtMs": 1772013188954,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1206,10 +1205,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772013060000,
-        "lastRunAtMs": 1772005860027,
+        "nextRunAtMs": 1772016660000,
+        "lastRunAtMs": 1772013169539,
         "lastStatus": "ok",
-        "lastDurationMs": 17873,
+        "lastDurationMs": 19415,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1221,7 +1220,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772006167858,
+      "updatedAtMs": 1772013372981,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1241,10 +1240,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772013360000,
-        "lastRunAtMs": 1772006160030,
+        "nextRunAtMs": 1772020560000,
+        "lastRunAtMs": 1772013360032,
         "lastStatus": "ok",
-        "lastDurationMs": 7828,
+        "lastDurationMs": 12949,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
