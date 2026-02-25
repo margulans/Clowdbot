@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771979622307,
+      "updatedAtMs": 1771992220124,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771980180000,
-        "lastRunAtMs": 1771979580029,
+        "nextRunAtMs": 1771992780000,
+        "lastRunAtMs": 1771992180030,
         "lastStatus": "ok",
-        "lastDurationMs": 42278,
+        "lastDurationMs": 40094,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1771978774225,
+      "updatedAtMs": 1771989592022,
       "schedule": {
         "kind": "cron",
         "expr": "18 * * * *",
@@ -59,10 +59,10 @@
         "timeoutSeconds": 180
       },
       "state": {
-        "nextRunAtMs": 1771982284872,
-        "lastRunAtMs": 1771978684906,
+        "nextRunAtMs": 1771993084872,
+        "lastRunAtMs": 1771989484918,
         "lastStatus": "ok",
-        "lastDurationMs": 89319,
+        "lastDurationMs": 107104,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771979844698,
+      "updatedAtMs": 1771990783827,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -88,7 +88,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
-        "model": "openai/gpt-5.2",
+        "model": "google/gemini-3-flash-preview",
         "thinking": "low",
         "timeoutSeconds": 600
       },
@@ -96,14 +96,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771979880000,
-        "lastRunAtMs": 1771978080033,
-        "lastStatus": "error",
-        "lastDurationMs": 180035,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1771992480000,
+        "lastRunAtMs": 1771990680027,
+        "lastStatus": "ok",
+        "lastDurationMs": 103800,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -113,7 +113,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771978267888,
+      "updatedAtMs": 1771988516253,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -133,10 +133,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771988473831,
-        "lastRunAtMs": 1771978108639,
+        "nextRunAtMs": 1772002873831,
+        "lastRunAtMs": 1771988506851,
         "lastStatus": "ok",
-        "lastDurationMs": 159249,
+        "lastDurationMs": 9402,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -150,7 +150,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1771975808364,
+      "updatedAtMs": 1771990212935,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -169,10 +169,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771990200000,
-        "lastRunAtMs": 1771975800029,
+        "nextRunAtMs": 1772004600000,
+        "lastRunAtMs": 1771990200055,
         "lastStatus": "ok",
-        "lastDurationMs": 8335,
+        "lastDurationMs": 12880,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -605,7 +605,7 @@
       "name": "Утренний брифинг",
       "enabled": true,
       "createdAtMs": 1770358767605,
-      "updatedAtMs": 1771936176448,
+      "updatedAtMs": 1771981209467,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -621,10 +621,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1771981200000,
-        "lastRunAtMs": 1771894800043,
+        "nextRunAtMs": 1772067600000,
+        "lastRunAtMs": 1771981200028,
         "lastStatus": "ok",
-        "lastDurationMs": 27288,
+        "lastDurationMs": 9439,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -641,7 +641,7 @@
       "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839779,
-      "updatedAtMs": 1771895198825,
+      "updatedAtMs": 1771981568329,
       "schedule": {
         "kind": "cron",
         "expr": "5 6 * * *",
@@ -660,10 +660,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771981500000,
-        "lastRunAtMs": 1771895100043,
+        "nextRunAtMs": 1772067900000,
+        "lastRunAtMs": 1771981500031,
         "lastStatus": "ok",
-        "lastDurationMs": 98782,
+        "lastDurationMs": 68298,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -676,7 +676,7 @@
       "name": "Утренний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275670265,
-      "updatedAtMs": 1771923498884,
+      "updatedAtMs": 1771988506522,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -692,10 +692,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1771988400000,
-        "lastRunAtMs": 1771902000052,
+        "nextRunAtMs": 1772074800000,
+        "lastRunAtMs": 1771988400029,
         "lastStatus": "ok",
-        "lastDurationMs": 133361,
+        "lastDurationMs": 106493,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -712,7 +712,7 @@
       "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839665,
-      "updatedAtMs": 1771909779908,
+      "updatedAtMs": 1771992442133,
       "schedule": {
         "kind": "cron",
         "expr": "5 8 * * *",
@@ -725,16 +725,16 @@
         "model": "openai/gpt-5.2",
         "thinking": "low",
         "timeoutSeconds": 600,
-        "message": "⚡ 🌅 БЭКАП **УТРЕННИЙ ДАЙДЖЕСТ 08:05** — @newsneiron\n\nПроверка:\n- `/home/openclaw/.openclaw/workspace/data/sent-digests.json`\n- Если сегодня уже есть >=6 записей type=news digest=morning → HEARTBEAT_OK\n- Иначе публикуй бэкап-выпуск\n\nПоиск (3 уровня):\n- Primary: web_search(freshness=pd) (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch` по выбранным URL\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nФормат: заголовок → 10–15 отдельных новостей → запись mid в dual-rating-data.json + запись в sent-digests.json → аудит."
+        "message": "⚡ 🌅 **БЭКАП УТРЕННИЙ ДАЙДЖЕСТ 08:05** — @newsneiron\n\nЦЕЛЬ: если основной выпуск не вышел — выпустить бэкап ПРАВИЛЬНОГО ФОРМАТА.\n\nШАГ 0 — ПРОВЕРКА\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если сегодня уже есть >=6 записей type=news digest=morning date=сегодня → ЗАВЕРШИ МОЛЧА (без HEARTBEAT_OK).\n\nШАГ 1 — ЗАГОЛОВОК (ОБЯЗАТЕЛЬНО ПЕРВЫМ СООБЩЕНИЕМ)\nОтправь ОДНИМ сообщением:\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟠 Бэкап выпуск (08:05)\n🔎 Поиск: Perplexity → Brave → RSS\n\nШАГ 2 — НОВОСТИ (СТРОГО: КАЖДАЯ НОВОСТЬ ОТДЕЛЬНЫМ message())\n- 10–15 новостей.\n- ЗАПРЕЩЕНО публиковать одним блоком.\n- На КАЖДУЮ новость: отдельный `message(action=send, to=@newsneiron, message=\"...\")`.\n- После каждой новости: сохрани messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity)\n- Backup: если Perplexity ошибка/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`\n\nШАГ 3 — АУДИТ (ОБЯЗАТЕЛЬНО ПОСЛЕДНИМ СООБЩЕНИЕМ)\nОтправь ОДНИМ сообщением:\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Бэкап | Утренний дайджест\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\nШАГ 4 — СТРАХОВКА\n- Если заголовок не был отправлен — отправь его СЕЙЧАС.\n- Если аудит не был отправлен — отправь его СЕЙЧАС.\n- Запиши meta-записи header/audit в `sent-digests.json`.\n\nШАГ 5 — Git commit.\n\nВАЖНО: если нет уверенности, что каждое сообщение ушло отдельно — перепроверь и исправь ДО завершения."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771988700000,
-        "lastRunAtMs": 1771902300035,
+        "nextRunAtMs": 1772075100000,
+        "lastRunAtMs": 1771988700025,
         "lastStatus": "ok",
-        "lastDurationMs": 15222,
+        "lastDurationMs": 150281,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -747,7 +747,7 @@
       "name": "Утренние мнения",
       "enabled": true,
       "createdAtMs": 1770522295821,
-      "updatedAtMs": 1771909765760,
+      "updatedAtMs": 1771990246914,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -763,10 +763,10 @@
         "timeoutSeconds": 300
       },
       "state": {
-        "nextRunAtMs": 1771990200000,
-        "lastRunAtMs": 1771903817204,
+        "nextRunAtMs": 1772076600000,
+        "lastRunAtMs": 1771990212935,
         "lastStatus": "ok",
-        "lastDurationMs": 47946,
+        "lastDurationMs": 33979,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -783,7 +783,7 @@
       "name": "BACKUP: Утренние мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988095,
-      "updatedAtMs": 1771909890294,
+      "updatedAtMs": 1771991661169,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -802,10 +802,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771991400000,
-        "lastRunAtMs": 1771905000030,
+        "nextRunAtMs": 1772077800000,
+        "lastRunAtMs": 1771991400025,
         "lastStatus": "ok",
-        "lastDurationMs": 223814,
+        "lastDurationMs": 261144,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1144,7 +1144,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771979356292,
+      "updatedAtMs": 1771991950280,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1163,10 +1163,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771979940000,
-        "lastRunAtMs": 1771979340026,
+        "nextRunAtMs": 1771992540000,
+        "lastRunAtMs": 1771991940026,
         "lastStatus": "ok",
-        "lastDurationMs": 16266,
+        "lastDurationMs": 10254,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1178,7 +1178,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771979206941,
+      "updatedAtMs": 1771991694307,
       "schedule": {
         "kind": "cron",
         "expr": "23,53 * * * *",
@@ -1197,10 +1197,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771980780000,
-        "lastRunAtMs": 1771979175269,
+        "nextRunAtMs": 1771993380000,
+        "lastRunAtMs": 1771991679633,
         "lastStatus": "ok",
-        "lastDurationMs": 31672,
+        "lastDurationMs": 14674,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1212,7 +1212,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771976894447,
+      "updatedAtMs": 1771991290388,
       "schedule": {
         "kind": "cron",
         "expr": "48 * * * *",
@@ -1232,10 +1232,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1771980480000,
-        "lastRunAtMs": 1771976880025,
+        "nextRunAtMs": 1771994880000,
+        "lastRunAtMs": 1771991280025,
         "lastStatus": "ok",
-        "lastDurationMs": 14422,
+        "lastDurationMs": 10363,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1376,7 +1376,7 @@
       "name": "Auto-push: Git sync (stage 2)",
       "enabled": true,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1771978047879,
+      "updatedAtMs": 1771989618516,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1396,9 +1396,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771989535197
+        "nextRunAtMs": 1772003935197,
+        "lastRunAtMs": 1771989602846,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 15670,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     }
   ],
-  "capturedAt": "2026-02-25T00:37:30Z"
+  "capturedAt": "2026-02-25T04:07:30Z"
 }
