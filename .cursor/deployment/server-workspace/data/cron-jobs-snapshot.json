@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771994544764,
+      "updatedAtMs": 1771994978415,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771994820000,
-        "lastRunAtMs": 1771993980035,
+        "nextRunAtMs": 1771995720000,
+        "lastRunAtMs": 1771994952401,
         "lastStatus": "ok",
-        "lastDurationMs": 40596,
+        "lastDurationMs": 26014,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771994545047,
+      "updatedAtMs": 1771994952077,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771994760000,
-        "lastRunAtMs": 1771994280029,
+        "nextRunAtMs": 1771998360000,
+        "lastRunAtMs": 1771994760034,
         "lastStatus": "ok",
-        "lastDurationMs": 107212,
+        "lastDurationMs": 192043,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1145,7 +1145,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771994544869,
+      "updatedAtMs": 1771995131145,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1164,10 +1164,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771995120000,
-        "lastRunAtMs": 1771994387274,
+        "nextRunAtMs": 1771996020000,
+        "lastRunAtMs": 1771995120031,
         "lastStatus": "ok",
-        "lastDurationMs": 9627,
+        "lastDurationMs": 11114,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1179,7 +1179,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771994545173,
+      "updatedAtMs": 1771995076425,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1198,10 +1198,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771995060000,
-        "lastRunAtMs": 1771993418678,
+        "nextRunAtMs": 1771998660000,
+        "lastRunAtMs": 1771995060045,
         "lastStatus": "ok",
-        "lastDurationMs": 12387,
+        "lastDurationMs": 16380,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1577,7 +1577,36 @@
       "state": {
         "nextRunAtMs": 1772052300000
       }
+    },
+    {
+      "id": "f4ac0949-f857-4ab5-b534-4e826d0bf1fb",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "📈 Monitor daily summary (incidents only)",
+      "enabled": true,
+      "createdAtMs": 1771995221338,
+      "updatedAtMs": 1771995221338,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 5 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run daily monitor aggregation (ONE record/day).\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/scripts/monitor_daily_aggregate.py\n\nRules:\n- Do not write anything to data/incidents.jsonl.\n- Do not message the user.\n- If the script errors, append a single line to /home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl with type=aggregate_error and the error string."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772064300000
+      }
     }
   ],
-  "capturedAt": "2026-02-25T04:43:04Z"
+  "capturedAt": "2026-02-25T04:53:56Z"
 }

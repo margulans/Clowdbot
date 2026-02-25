@@ -1,0 +1,1 @@
+{"ts": "2026-02-25T04:53:34Z", "date": "2026-02-25", "window": "24h", "counts": {"critical": 9, "warn": 2, "cron_error": 8, "cron_skip": 0, "gateway_down": 1, "config_drift": 0, "backup_triggered": 2, "model_replaced": 0}, "note": "Daily aggregated monitoring stats (incidents only; success heartbeats are out-of-repo)."}

@@ -417,6 +417,13 @@ Snapshot auto-neiron-<дата> создан.
 
 Если ничего не чинил — **молчи**. Никаких "всё ок" сообщений.
 
+Но чтобы был тихий мониторинг без мусора в git: если ничего не чинил и нет автозамены модели — запиши heartbeat в runtime-файл вне репо:
+`/home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl`
+
+```json
+{"ts":"<ISO8601>","type":"heartbeat","source":"mekhanik","status":"ok"}
+```
+
 ### Шаг 5. Коммит
 
 ```
