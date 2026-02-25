@@ -526,7 +526,7 @@
     {
       "messageId": "424",
       "category": "AI",
-      "title": "Global AI Adoption and Risk Gaps: A survey reveals "AI leaders" pulling ahead in adoption, with mining, professional services, and transportation advancing fastest, while risks evolve rapidly.",
+      "title": "Global AI Adoption and Risk Gaps: A survey reveals \"AI leaders\" pulling ahead in adoption, with mining, professional services, and transportation advancing fastest, while risks evolve rapidly.",
       "timestamp": "2026-02-25T13:00:00Z"
     },
     {
@@ -683,6 +683,22 @@
       "source": "https://www.vedomosti.ru/press_releases/2026/02/25/iskusstvennii-intellekt-natsionalnaya-strategiya-i-novaya-paradigma-v-visshem-obrazovanii",
       "category": "ИИ",
       "title": "Стратегическая роль ИИ в образовании и экономике России",
+      "timestamp": "2026-02-25T15:59:00Z"
+    },
+    {
+      "messageId": "199",
+      "expert": "Эксперты по маркетингу",
+      "source": "https://www.sostav.ru/blogs/278699/78160",
+      "category": "ИИ",
+      "title": "Влияние ИИ на маркетинг и профессии",
+      "timestamp": "2026-02-25T15:59:00Z"
+    },
+    {
+      "messageId": "200",
+      "expert": "Российские регуляторы / Эксперты по регулированию ИИ",
+      "source": "https://www.cnews.ru/news/top/2026-02-25_rossijskih_razrabotchikov",
+      "category": "ИИ",
+      "title": "Регуляторные и этические аспекты ИИ в России",
       "timestamp": "2026-02-25T15:59:00Z"
     }
   ]
