@@ -206,7 +206,8 @@
         "lastRunAtMs": 1771833600033,
         "lastStatus": "ok",
         "lastDurationMs": 97761,
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772006400035
       },
       "delivery": {
         "mode": "none"
@@ -1213,7 +1214,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1771998968061,
+      "updatedAtMs": 1772006167858,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1233,10 +1234,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772006160000,
-        "lastRunAtMs": 1771998960042,
+        "nextRunAtMs": 1772013360000,
+        "lastRunAtMs": 1772006160030,
         "lastStatus": "ok",
-        "lastDurationMs": 8019,
+        "lastDurationMs": 7828,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
