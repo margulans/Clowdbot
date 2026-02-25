@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772005868407,
+      "updatedAtMs": 1772006739034,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,14 +27,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772006520000,
-        "lastRunAtMs": 1772005712140,
-        "lastStatus": "ok",
-        "lastDurationMs": 37644,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772007420000,
+        "lastRunAtMs": 1772006706000,
+        "lastStatus": "error",
+        "lastDurationMs": 33034,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "lastError": "An unknown error occurred",
+        "lastDeliveryError": "An unknown error occurred"
       }
     },
     {
@@ -186,7 +188,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1771923499080,
+      "updatedAtMs": 1772006705736,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -202,12 +204,16 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772006400000,
-        "lastRunAtMs": 1771833600033,
-        "lastStatus": "ok",
-        "lastDurationMs": 97761,
-        "consecutiveErrors": 0,
-        "runningAtMs": 1772006400035
+        "nextRunAtMs": 1772092800000,
+        "lastRunAtMs": 1772006400039,
+        "lastStatus": "error",
+        "lastDurationMs": 305697,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       },
       "delivery": {
         "mode": "none"
@@ -220,7 +226,7 @@
       "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839690,
-      "updatedAtMs": 1771909780023,
+      "updatedAtMs": 1772006748969,
       "schedule": {
         "kind": "cron",
         "expr": "5 13 * * *",
@@ -239,10 +245,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772006700000,
-        "lastRunAtMs": 1771839536534,
+        "nextRunAtMs": 1772093100000,
+        "lastRunAtMs": 1772006739034,
         "lastStatus": "ok",
-        "lastDurationMs": 83765,
+        "lastDurationMs": 9935,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,

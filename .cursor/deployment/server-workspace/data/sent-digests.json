@@ -1257,6 +1257,146 @@
       "kind":"header", 
       "ts":1772005200000,
       "messageId": "420"
+    },
+    {
+      "url": "https://www2.ljworld.com/news/2026/feb/25/us-stocks-rise-after-getting-a-reminder-of-ais-potential-upsides/",
+      "title": "Market Boost from AI Tools: Anthropic launched Claude AI tools for HR, engineering, and investment banking, boosting U.S. stocks and easing fears of AI replacing software ecosystems.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": ["anthropic", "claude", "ai tools", "market", "stocks"],
+      "type": "news",
+      "messageId": "421"
+    },
+    {
+      "url": "https://newsroom.ibm.com/2026-02-25-IBM-2026-X-Force-Threat-Index-AI-Driven-Attacks-are-Escalating-as-Basic-Security-Gaps-Leave-Enterprises-Exposed",
+      "title": "Rising AI-Driven Cyber Threats: IBM's 2026 X-Force Threat Index reports a 44% rise in attacks exploiting public-facing apps due to missing authentication, accelerated by AI tools for vulnerability discovery and reconnaissance.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": ["ibm", "cybersecurity", "ai attacks", "x-force", "threats"],
+      "type": "news",
+      "messageId": "422"
+    },
+    {
+      "url": "https://www.nextgov.com/artificial-intelligence/2026/02/trump-unveils-big-tech-pledge-offset-rising-data-center-energy-costs/411668/",
+      "title": "Trump Announces Data Center Energy Pledge: President Trump unveiled a Big Tech commitment to offset AI data center electricity surges, supporting U.S. AI dominance.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": ["trump", "data centers", "energy", "ai dominance", "policy"],
+      "type": "news",
+      "messageId": "423"
+    },
+    {
+      "url": "https://www.aicpa-cima.com/news/article/global-survey-reveals-growing-ai-adoption-gap-as-organizations-struggle-with",
+      "title": "Global AI Adoption and Risk Gaps: A survey reveals \"AI leaders\" pulling ahead in adoption, with mining, professional services, and transportation advancing fastest, while risks evolve rapidly.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": ["ai adoption", "risks", "aicpa-cima", "business impact"],
+      "type": "news",
+      "messageId": "424"
+    },
+    {
+      "url": "https://www.infoq.com/news/2026/02/ai-floods-close-projects/",
+      "title": "Open Source Crisis: AI vibe coding is reportedly flooding open-source projects with low-quality contributions, threatening sustainability, with some projects banning unapproved AI code.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Vibecoding",
+      "keywords": ["vibecoding", "open source", "ai code", "low quality", "sustainability"],
+      "type": "news",
+      "messageId": "425"
+    },
+    {
+      "url": "https://www.tribuneindia.com/news/business/enterprise-software-unlikely-to-be-threatened-by-ai-rather-ai-will-enhance-its-capabilities-hsbc/",
+      "title": "Enterprise Software Resilience: HSBC reports that vibe coding and foundation models will enhance, rather than replace, enterprise platforms through domain-specific AI agents.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Vibecoding",
+      "keywords": ["vibecoding", "enterprise software", "ai agents", "hsbc", "enhancement"],
+      "type": "news",
+      "messageId": "426"
+    },
+    {
+      "url": "https://www.informationweek.com/software-services/zero-click-hack-exposes-flaw-in-orchids-vibe-coding-platform",
+      "title": "Vibe Coding Security Concerns: A zero-click hack exposed vulnerabilities in the Orchids vibe coding platform, prompting CISOs to re-evaluate risks.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Vibecoding",
+      "keywords": ["vibecoding", "security", "zero-click hack", "orchids platform", "cisos"],
+      "type": "news",
+      "messageId": "427"
+    },
+    {
+      "url": "https://autonews.gasgoo.com/articles/news/seeds-ai-robotics-officially-announces-completion-of-series-b-round-exceeding-1-billion-yuan-2026536571551883265",
+      "title": "Seeds AI² Robotics Funding: The company completed a Series B funding round exceeding 1 billion yuan (~$140 million USD) to advance its GOVLA AI model and expand AlphaBot production.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": ["seeds ai2 robotics", "funding", "alphabot", "govla ai", "humanoid"],
+      "type": "news",
+      "messageId": "428"
+    },
+    {
+      "url": "https://robotics.hexagon.com/hexagon-robotics-wins-the-if-design-award-2026/",
+      "title": "Hexagon Robotics' AEON humanoid robot wins iF DESIGN AWARD 2026: Recognized for its wheeled design, which enables fast industrial tasks and self-battery swaps.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": ["hexagon robotics", "aeon robot", "humanoid", "design award", "industrial tasks"],
+      "type": "news",
+      "messageId": "429"
+    },
+    {
+      "url": "https://www.newswire.ca/news-releases/hyundai-motor-group-donates-unmanned-firefighting-robots-to-korea-national-fire-agency-for-safeguarding-firefighters-829237053.html",
+      "title": "Hyundai's Firefighting Robots: Hyundai Motor Group donated four unmanned robots to South Korea's National Fire Agency for initial fire suppression in toxic environments.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": ["hyundai", "firefighting robots", "unmanned", "korea", "national fire agency"],
+      "type": "news",
+      "messageId": "430"
+    },
+    {
+      "url": "https://www.kunming.cn/en/c/2026-02-25/14020698.shtml",
+      "title": "eVTOL and Humanoid Robots Debut in Wuhan: Wuhan, China, showcased its latest achievements in low-altitude economy and artificial intelligence, featuring eVTOL aircraft and humanoid robots.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "eVTOL",
+      "keywords": ["evtol", "humanoid robots", "wuhan", "low-altitude economy", "ai industries"],
+      "type": "news",
+      "messageId": "431"
+    },
+    {
+      "url": "https://www.computerworld.com/article/4136836/with-attention-shifting-to-ai-smart-glasses-vr-faces-another-reality-check.html",
+      "title": "XR and Wearables Market: VR and mixed-reality headsets show modest growth, with AI smart glasses gaining popularity, despite privacy concerns.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Technology",
+      "keywords": ["xr", "wearables", "vr", "mixed-reality", "smart glasses", "privacy"],
+      "type": "news",
+      "messageId": "432"
+    },
+    {
+      "url": "https://gulfnews.com/business/markets/meta-strikes-100-billion-amd-chip-deal-to-power-next-gen-ai-push-1.500454181",
+      "title": "Meta Strikes AMD Chip Deal: Meta announced a multi-billion-dollar deal with AMD for AI chips and data center supplies to power its next-gen AI push.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Business/Investment",
+      "keywords": ["meta", "amd", "ai chips", "investment", "data centers"],
+      "type": "news",
+      "messageId": "433"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=C3xo3fk5NsM",
+      "title": "Stocks Rebound Amid AI Sector Shifts: American stock markets rebounded on Tuesday after an AI-related selloff, with the technology sector showing recovery, and AMD becoming a prominent growth leader.",
+      "digest": "day",
+      "date": "2026-02-25",
+      "category": "Business/Investment",
+      "keywords": ["stocks", "market rebound", "ai selloff", "tech recovery", "amd"],
+      "type": "news",
+      "messageId": "434"
     }
   ]
 }
