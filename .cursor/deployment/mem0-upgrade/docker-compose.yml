@@ -20,27 +20,13 @@ services:
     environment:
       - QDRANT__SERVICE__GRPC_PORT=6334
     healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:6333/healthz"]
+      # Qdrant не имеет curl/wget в образе — проверяем TCP-соединение
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/localhost/6333' 2>/dev/null || exit 1"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
 
-  mem0:
-    image: mem0/mem0-api-server:latest
-    container_name: neiron-mem0
-    restart: unless-stopped
-    ports:
-      - "127.0.0.1:8000:8000"
-    env_file: .env
-    depends_on:
-      qdrant:
-        condition: service_healthy
-    volumes:
-      - ./data/mem0:/app/data
-    healthcheck:
-      test: ["CMD", "curl", "-sf", "http://localhost:8000/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 15s
+# mem0-api-server не имеет amd64-образа.
+# Плагин @mem0/openclaw-mem0 в open-source mode подключается к Qdrant напрямую —
+# отдельный REST-сервер не нужен.
