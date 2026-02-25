@@ -126,3 +126,6 @@ dist/protocol.schema.json
 
 # Synthing
 **/.stfolder/
+
+# Runtime logs (do not track in git)
+.cursor/deployment/server-workspace/data/incidents.jsonl
