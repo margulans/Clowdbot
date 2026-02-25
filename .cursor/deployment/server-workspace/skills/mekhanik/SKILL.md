@@ -352,34 +352,39 @@ message(action=send, to=685668909,
 3. Если lastStatus == "ok" но last_run в scout-discoveries.json устарел:
    - Значит job запустился, но не обновил файл — запиши инцидент warn и эскалируй
 4. После успешного запуска — пометь инцидент resolved
-5. Уведоми Маргулана:
-```
+5. Уведоми Маргулана (to=685668909):
 
 ```
+
+message(action=send, to=685668909,
 🔧 Механик — Scout восстановлен
 ──────────────────────────────
 🔭 Scout ресёрч не запустился в 02:00. Принудительный запуск → ok.
 Находки сохранены в data/scout-discoveries.json.
 Отчёт придёт в 12:00 по расписанию.
+)
+
 ```
 
 #### `snapshot_stale` — Hetzner snapshot не создался ночью
 
 ```
+
 1. Проверь причину: tail -50 /tmp/hetzner-snapshot.log
 2. Если лог пустой или ошибка API → запусти вручную:
    bash ~/scripts/hetzner-snapshot.sh >> /tmp/hetzner-snapshot.log 2>&1
 3. Дождись завершения (скрипт блокирующий, до 10 мин)
 4. Проверь результат: grep "Готово" /tmp/hetzner-snapshot.log | tail -1
 5. Если успешно → пометь инцидент resolved
-6. Уведоми Маргулана:
-```
+6. Уведоми Маргулана (to=685668909):
 
 ```
+message(action=send, to=685668909,
 🔧 Механик — Snapshot Hetzner восстановлен
 ──────────────────────────────
 📦 Snapshot Hetzner не создался в 03:00. Принудительный запуск → ok.
 Snapshot auto-neiron-<дата> создан.
+)
 ```
 
 ---
