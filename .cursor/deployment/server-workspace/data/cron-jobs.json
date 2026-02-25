@@ -1145,7 +1145,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772005035206,
+      "updatedAtMs": 1772005935164,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1164,15 +1164,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772005920000,
-        "lastRunAtMs": 1772005023750,
+        "nextRunAtMs": 1772006820000,
+        "lastRunAtMs": 1772005920028,
         "lastStatus": "ok",
-        "lastDurationMs": 11456,
+        "lastDurationMs": 15136,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772005920025
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
