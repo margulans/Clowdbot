@@ -27,3 +27,4 @@
 {"id": "322c9a3c", "ts": "2026-02-25T03:13:32.198480+00:00", "type": "gateway_down", "source": "uchastkovy", "job": "openclaw-gateway", "severity": "critical", "msg": "gateway status=unknown", "resolved": false}
 {"ts": "2026-02-25T03:13:45.051293+00:00", "type": "resolved", "source": "uchastkovy", "ref_id": "322c9a3c", "action": "gateway restarted", "severity": "info"}
 {"ts":"2026-02-25T03:18:00Z","type":"audit","source":"chekist","severity":"info","msg":"hourly audit: 0 critical, 0 warn, 0 ok in last 60min"}
+{"ts":"2026-02-25T03:38:00Z","type":"resolved","source":"mekhanik","ref_id":"monitor_health","action":"uchastkovy & chekist are ok","severity":"info"}

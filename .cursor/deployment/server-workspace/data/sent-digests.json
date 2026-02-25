@@ -1115,6 +1115,140 @@
       ],
       "type": "news",
       "messageId": "419"
+    },
+    {
+      "type": "opinions",
+      "url": "https://johnsviokla.substack.com/p/ep-521-daily-ai-news-february-24",
+      "title": "John Sviokla: GenAI меняет маркетинг (SEO→GEO) и почему важна «AI fluency»",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "AI/Business",
+      "keywords": [
+        "marketing",
+        "geo",
+        "ai fluency",
+        "genai",
+        "gai insights",
+        "substack"
+      ],
+      "messageId": "173"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.edge-ai-vision.com/2026/02/ces-2026-physical-ai-moves-from-concept-to-system-architecture/",
+      "title": "Pierrick Boulay (Yole): CES 2026 — физический ИИ, гуманоиды идут на фабрики",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": [
+        "physical ai",
+        "humanoid",
+        "ces 2026",
+        "yole",
+        "factory roi",
+        "compute stack"
+      ],
+      "messageId": "174"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.jdsupra.com/legalnews/taking-to-the-skies-what-to-expect-in-4120273/",
+      "title": "Morgan Lewis: 2026 — точка перегиба для AAM/eVTOL (eIPP, инфраструктура, ОАЭ)",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "eVTOL",
+      "keywords": [
+        "aam",
+        "eipp",
+        "faa",
+        "uae",
+        "vertiport",
+        "certification"
+      ],
+      "messageId": "175"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.qodo.ai/blog/ai-code-review-tools/",
+      "title": "Qodo.ai: 2026 — код-ревью становится system-aware; нужен измеримый ROI от AI-инструментов",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "Vibecoding",
+      "keywords": [
+        "code review",
+        "agentic",
+        "system-aware",
+        "roi",
+        "pull requests"
+      ],
+      "messageId": "176"
+    },
+    {
+      "type": "opinions",
+      "url": "https://icapital.com/insights/investment-market-strategy/icapital-market-pulse-ai-disruption-the-vibes-feel-off/",
+      "title": "iCapital: AI disruption расширяется; признаки уязвимых бизнес-моделей и последствия для рынка",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "Investment",
+      "keywords": [
+        "ai disruption",
+        "dispersion",
+        "moats",
+        "proprietary data",
+        "capex",
+        "software"
+      ],
+      "messageId": "177"
+    },
+    {
+      "type": "opinions",
+      "url": "https://www.ibm.com/think/news/new-global-ai-safety-report-means-enterprise",
+      "title": "Francesca Rossi (IBM): AI safety сместилась на уровень систем и деплоя",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "AI",
+      "keywords": [
+        "ai safety",
+        "deployment",
+        "governance",
+        "human in the loop",
+        "system risk"
+      ],
+      "messageId": "178"
+    },
+    {
+      "type": "opinions",
+      "url": "https://techcrunch.com/2026/02/24/more-startups-are-hitting-10m-arr-in-3-months-than-ever-before/",
+      "title": "TechCrunch/Stripe: AI-стартапы всё чаще достигают $10M ARR за 3 месяца, но важнее удержание",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "Investment",
+      "keywords": [
+        "startups",
+        "arr",
+        "stripe",
+        "retention",
+        "ai-native",
+        "vc"
+      ],
+      "messageId": "179"
+    },
+    {
+      "type": "opinions",
+      "url": "https://thegadgetflow.com/blog/top-tech-trends/",
+      "title": "The Gadget Flow: тренды 2026 — ИИ-компаньоны, практичная домашняя робототехника и новые форм-факторы",
+      "digest": "morning",
+      "date": "2026-02-25",
+      "category": "Technology",
+      "keywords": [
+        "tech trends",
+        "ai on device",
+        "wearables",
+        "smart glasses",
+        "home robots",
+        "ces 2026"
+      ],
+      "messageId": "180"
     }
   ]
 }
