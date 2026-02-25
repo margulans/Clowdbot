@@ -21,7 +21,7 @@
         "kind": "agentTurn",
         "thinking": "low",
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю.",
-        "timeoutSeconds": 240
+        "timeoutSeconds": 420
       },
       "delivery": {
         "mode": "none"
@@ -1434,7 +1434,7 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 240,
+        "timeoutSeconds": 420,
         "message": "Выполни скилл uchastkovy. Прочитай /home/openclaw/.openclaw/workspace/skills/uchastkovy/SKILL.md и строго следуй алгоритму. Запиши результат в /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Не отправляй сообщения пользователю."
       },
       "delivery": {
