@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771979175269,
+      "updatedAtMs": 1771979622307,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771979580000,
-        "lastRunAtMs": 1771978980023,
+        "nextRunAtMs": 1771980180000,
+        "lastRunAtMs": 1771979580029,
         "lastStatus": "ok",
-        "lastDurationMs": 195246,
+        "lastDurationMs": 42278,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1771978260068,
+      "updatedAtMs": 1771979844698,
       "schedule": {
         "kind": "cron",
         "expr": "8,38 * * * *",
@@ -90,7 +90,7 @@
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
         "model": "openai/gpt-5.2",
         "thinking": "low",
-        "timeoutSeconds": 180
+        "timeoutSeconds": 600
       },
       "delivery": {
         "mode": "none"
@@ -1144,7 +1144,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1771978782237,
+      "updatedAtMs": 1771979356292,
       "schedule": {
         "kind": "cron",
         "expr": "9-59/10 * * * *",
@@ -1163,10 +1163,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771979340000,
-        "lastRunAtMs": 1771978774267,
+        "nextRunAtMs": 1771979940000,
+        "lastRunAtMs": 1771979340026,
         "lastStatus": "ok",
-        "lastDurationMs": 7970,
+        "lastDurationMs": 16266,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1400,5 +1400,5 @@
       }
     }
   ],
-  "capturedAt": "2026-02-25T00:28:05Z"
+  "capturedAt": "2026-02-25T00:37:30Z"
 }
