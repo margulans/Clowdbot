@@ -14,6 +14,12 @@
       "output_per_1m": 0.3,
       "note": "Уточнить на ai.google.dev/pricing"
     },
+    "gemini-2.5-flash": {
+      "provider": "Google",
+      "input_per_1m": 0.075,
+      "output_per_1m": 0.3,
+      "note": "Временно приравнено к gemini-3-flash-preview; уточнить на ai.google.dev/pricing"
+    },
     "meta-llama/llama-3.3-70b-instruct:free": {
       "provider": "OpenRouter",
       "input_per_1m": 0.0,

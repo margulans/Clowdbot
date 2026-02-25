@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771978415205,
+      "updatedAtMs": 1771979175269,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771978980000,
-        "lastRunAtMs": 1771978380029,
+        "nextRunAtMs": 1771979580000,
+        "lastRunAtMs": 1771978980023,
         "lastStatus": "ok",
-        "lastDurationMs": 35176,
+        "lastDurationMs": 195246,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -323,7 +323,7 @@
       "name": "💰 Экономист (сбор)",
       "enabled": true,
       "createdAtMs": 1771737662468,
-      "updatedAtMs": 1771978948021,
+      "updatedAtMs": 1771979280850,
       "schedule": {
         "kind": "cron",
         "expr": "30 17 * * *",
@@ -333,10 +333,10 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Режим: daily-collect + infra-check + token-ledger.\n\nПрочитай /home/openclaw/.openclaw/workspace/skills/economist/SKILL.md и строго следуй алгоритму.\n\nДОПОЛНИТЕЛЬНО (token-ledger):\n- После обновления cost-summary.json добавь/обнови агрегат по Gemini-cron:\n  1) Прочитай /home/openclaw/.openclaw/workspace/data/cron-jobs-snapshot.json\n  2) Сформируй список jobId, где payload.model начинается с \"google/gemini\" (включая gemini-2.5-flash) и sessionTarget=isolated.\n  3) По текущему прогону sessions_list суммируй input/output tokens по сессиям, относящимся к этим jobId (по session_key содержащему \":cron:<jobId>\").\n  4) Запиши строкой в /home/openclaw/.openclaw/workspace/data/token-usage.jsonl:\n     {\"ts\":\"<ISO>\",\"type\":\"gemini_cron_snapshot\",\"input_tokens\":N,\"output_tokens\":M,\"sessions\":K}\n- Если нужных сессий нет в sessions_list — всё равно запиши snapshot с sessions=0 (это важно для диагностики полноты).\n\nКРИТИЧНО:\n- Используй ТОЛЬКО абсолютные пути из SKILL.md (/home/openclaw/.openclaw/workspace/data/...).\n- Если не удалось обновить cost-summary.json — запиши scan_error и заверши без алертов.\n- Никаких оценок \"на глаз\".\n\nМолчи (delivery.mode=none).",
+        "message": "Режим: daily-collect + infra-check (authoritative sessions.json).\n\nЗапусти скрипт:\n/home/openclaw/.openclaw/workspace/scripts/economist_collect.py\n\nОн обновит:\n- /home/openclaw/.openclaw/workspace/data/cost-summary.json\n- /home/openclaw/.openclaw/workspace/data/economist-log.jsonl\n- /home/openclaw/.openclaw/workspace/data/token-usage.jsonl (gemini_cron_snapshot)\n\nКРИТИЧНО:\n- Если скрипт завершился с ошибкой — запиши scan_error в economist-log.jsonl и заверши.\n- Ничего не отправляй пользователю (delivery.mode=none).",
         "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
-        "timeoutSeconds": 600
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "none",
@@ -344,9 +344,9 @@
       },
       "state": {
         "nextRunAtMs": 1772022600000,
-        "lastRunAtMs": 1771936200112,
+        "lastRunAtMs": 1771978976012,
         "lastStatus": "ok",
-        "lastDurationMs": 19579,
+        "lastDurationMs": 156980,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1178,7 +1178,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1771977220366,
+      "updatedAtMs": 1771979206941,
       "schedule": {
         "kind": "cron",
         "expr": "23,53 * * * *",
@@ -1197,10 +1197,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1771978980000,
-        "lastRunAtMs": 1771977209409,
+        "nextRunAtMs": 1771980780000,
+        "lastRunAtMs": 1771979175269,
         "lastStatus": "ok",
-        "lastDurationMs": 10957,
+        "lastDurationMs": 31672,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1400,5 +1400,5 @@
       }
     }
   ],
-  "capturedAt": "2026-02-25T00:22:33Z"
+  "capturedAt": "2026-02-25T00:28:05Z"
 }

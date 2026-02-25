@@ -1,50 +1,66 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": "2026-02-25T00:22:33Z",
-  "last_session_scan_at": "2026-02-25T00:22:33Z",
+  "last_updated": "2026-02-25T00:27:47Z",
+  "last_session_scan_at": "2026-02-25T00:27:47Z",
   "period": {
     "day": {
       "date": "2026-02-25",
-      "cost_usd": 0.0011763,
-      "tokens_input": 7842,
-      "tokens_output": 0
+      "cost_usd": 20.496656,
+      "tokens_input": 10082501,
+      "tokens_output": 280535
     },
     "week": {
       "start": "2026-02-23",
-      "cost_usd": 0.3675186,
-      "tokens_input": 47936,
-      "tokens_output": 4306
+      "cost_usd": 83.844283825,
+      "tokens_input": 51411540,
+      "tokens_output": 782308
     },
     "month": {
       "start": "2026-02-01",
-      "cost_usd": 0.3675186,
-      "tokens_input": 47936,
-      "tokens_output": 4306
+      "cost_usd": 84.141489825,
+      "tokens_input": 51435584,
+      "tokens_output": 784668
     }
   },
   "by_model": {
-    "gemini-3-flash-preview": {
-      "cost_usd": 0.0014523,
-      "tokens_input": 8000,
-      "tokens_output": 2841
+    "claude-sonnet-4-20250514": {
+      "cost_usd": 0.003,
+      "tokens_input": 0,
+      "tokens_output": 200
     },
-    "gpt-5.2": {
-      "cost_usd": 0.36489,
-      "tokens_input": 32094,
-      "tokens_output": 1465
+    "claude-sonnet-4-6": {
+      "cost_usd": 0.291252,
+      "tokens_input": 144,
+      "tokens_output": 19388
+    },
+    "gemini-2.5-flash": {
+      "cost_usd": 0.0,
+      "tokens_input": 27995703,
+      "tokens_output": 548258
+    },
+    "gemini-3-flash-preview": {
+      "cost_usd": 1.191297825,
+      "tokens_input": 15608095,
+      "tokens_output": 68969
     },
     "gpt-4o-mini": {
-      "cost_usd": 0.0011763,
-      "tokens_input": 7842,
-      "tokens_output": 0
+      "cost_usd": 0.0,
+      "tokens_input": 8749,
+      "tokens_output": 286
+    },
+    "gpt-5.2": {
+      "cost_usd": 82.65594,
+      "tokens_input": 7822893,
+      "tokens_output": 147567
     }
   },
   "external_fixed": {
     "hetzner_vps": 5.5
   },
-  "processed_session_ids": [
-    "6c5b21d4-df8d-47f5-a79f-a77189c76498",
-    "8947fd65-66b1-4c3c-8f10-753acf2f13a4",
-    "4bb1a64c-917c-48d3-b369-2bfc88a65cbd"
-  ]
+  "processed_session_ids": [],
+  "unknown_pricing_models": [
+    "gemini-2.5-flash",
+    "gpt-4o-mini"
+  ],
+  "source": "sessions.json"
 }
