@@ -545,19 +545,20 @@
       "name": "🧹 Chat Cleanup — конец дня",
       "enabled": true,
       "createdAtMs": 1771544794698,
-      "updatedAtMs": 1772035358852,
+      "updatedAtMs": 1772038674739,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * *",
         "tz": "Asia/Almaty"
       },
-      "sessionTarget": "main",
+      "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "kind": "systemEvent",
-        "model": "google/gemini-2.5-flash",
+        "kind": "agentTurn",
+        "message": "Выполни chat-cleanup.\n\n1) Получи историю основной сессии: sessions_history(sessionKey=\"agent:main:main\", limit=100).\n2) Сохрани важное в /home/openclaw/.openclaw/workspace/memory/YYYY-MM-DD.md (сегодня), в формате из skills/chat-cleanup/SKILL.md.\n3) Отправь Маргулану (telegram 685668909) сообщение:\n\n\"🧹 Я готов очистить чат за последние 48 часов.\n📝 Я уже сохранил важное в память.\n\nЕсли готов — ответь: **подтверждаю очистку**\"\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\")\n\nВАЖНО:\n- Ничего не удаляй сейчас. Удаление только после отдельного подтверждения пользователя.\n- Никаких изменений в USER.md/MEMORY.md без явной причины.\n- Git commit не делай (это runtime-память).",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "text": "🧹 Конец дня! Выполни chat-cleanup скилл: сохрани важное из сегодняшней сессии в memory/YYYY-MM-DD.md, обнови MEMORY.md если нужно, затем предложи Маргулану очистить чат. Следуй инструкциям skills/chat-cleanup/SKILL.md."
+        "timeoutSeconds": 300
       },
       "state": {
         "nextRunAtMs": 1772121600000,
@@ -567,6 +568,9 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-requested"
+      },
+      "delivery": {
+        "mode": "none"
       }
     },
     {
@@ -1114,7 +1118,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772037435631,
+      "updatedAtMs": 1772038338946,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1133,10 +1137,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772038320000,
-        "lastRunAtMs": 1772037420032,
+        "nextRunAtMs": 1772068020000,
+        "lastRunAtMs": 1772038320014,
         "lastStatus": "ok",
-        "lastDurationMs": 15599,
+        "lastDurationMs": 18932,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
