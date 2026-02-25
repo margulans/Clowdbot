@@ -1,25 +1,25 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": "2026-02-25T00:28:23Z",
-  "last_session_scan_at": "2026-02-25T00:28:23Z",
+  "last_updated": "2026-02-25T12:30:04Z",
+  "last_session_scan_at": "2026-02-25T12:30:04Z",
   "period": {
     "day": {
       "date": "2026-02-25",
-      "cost_usd": 21.176906075,
-      "tokens_input": 10082501,
-      "tokens_output": 280535
+      "cost_usd": 101.505938525,
+      "tokens_input": 30705678,
+      "tokens_output": 649274
     },
     "week": {
       "start": "2026-02-23",
-      "cost_usd": 86.10843895,
-      "tokens_input": 51411540,
-      "tokens_output": 782308
+      "cost_usd": 123.728599675,
+      "tokens_input": 42725825,
+      "tokens_output": 868726
     },
     "month": {
       "start": "2026-02-01",
-      "cost_usd": 86.40564495,
-      "tokens_input": 51435584,
-      "tokens_output": 784668
+      "cost_usd": 124.025805675,
+      "tokens_input": 42749869,
+      "tokens_output": 871086
     }
   },
   "by_model": {
@@ -29,29 +29,29 @@
       "tokens_output": 200
     },
     "claude-sonnet-4-6": {
-      "cost_usd": 0.291252,
-      "tokens_input": 144,
-      "tokens_output": 19388
+      "cost_usd": 0.470109,
+      "tokens_input": 278,
+      "tokens_output": 31285
     },
     "gemini-2.5-flash": {
-      "cost_usd": 2.264155125,
-      "tokens_input": 27995703,
-      "tokens_output": 548258
+      "cost_usd": 2.108891025,
+      "tokens_input": 25817191,
+      "tokens_output": 575339
     },
     "gemini-3-flash-preview": {
-      "cost_usd": 1.191297825,
-      "tokens_input": 15608095,
-      "tokens_output": 68969
+      "cost_usd": 0.39782565,
+      "tokens_input": 5251994,
+      "tokens_output": 13087
     },
     "gpt-4o-mini": {
       "cost_usd": 0.0,
-      "tokens_input": 8749,
-      "tokens_output": 286
+      "tokens_input": 305078,
+      "tokens_output": 8085
     },
     "gpt-5.2": {
-      "cost_usd": 82.65594,
-      "tokens_input": 7822893,
-      "tokens_output": 147567
+      "cost_usd": 121.04598,
+      "tokens_input": 11375328,
+      "tokens_output": 243090
     }
   },
   "external_fixed": {
