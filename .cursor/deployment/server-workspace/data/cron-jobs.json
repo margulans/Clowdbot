@@ -27,14 +27,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772038020000,
+        "nextRunAtMs": 1772067720000,
         "lastRunAtMs": 1772037120030,
         "lastStatus": "ok",
         "lastDurationMs": 87762,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1772038020035
       }
     },
     {
@@ -78,7 +79,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772034390935,
+      "updatedAtMs": 1772037982270,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -97,10 +98,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772037960000,
-        "lastRunAtMs": 1772034360030,
+        "nextRunAtMs": 1772070360000,
+        "lastRunAtMs": 1772037960036,
         "lastStatus": "ok",
-        "lastDurationMs": 30905,
+        "lastDurationMs": 22234,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1773,6 +1774,93 @@
       },
       "state": {
         "nextRunAtMs": 1772116200000
+      }
+    },
+    {
+      "id": "d10935f5-ebbb-4f6f-b964-d14c719b433d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (morning check-in)",
+      "enabled": true,
+      "createdAtMs": 1772038036188,
+      "updatedAtMs": 1772038036188,
+      "schedule": {
+        "kind": "cron",
+        "expr": "7 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "BACKUP Marta morning check-in.\n\nШаг 1: openclaw cron list → найди job 489dc543 (Marta → Aiganym (morning check-in)).\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2: если основной не сработал → отправь Айганым (509646214) тёплое утреннее сообщение (перефразируй по‑человечески), без давления.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772075220000
+      }
+    },
+    {
+      "id": "ff2dfcf2-f093-42e6-8581-4720e9c0de32",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (lunch check-in)",
+      "enabled": true,
+      "createdAtMs": 1772038036243,
+      "updatedAtMs": 1772038036243,
+      "schedule": {
+        "kind": "cron",
+        "expr": "37 12 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "BACKUP Marta lunch check-in.\n\nШаг 1: openclaw cron list → найди job 694a76a6 (Marta → Aiganym (lunch check-in)).\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2: если основной не сработал → отправь Айганым (509646214) короткое тёплое дневное сообщение, без давления.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772091420000
+      }
+    },
+    {
+      "id": "0caa28fa-a6ba-4e57-bd72-ff94ea55932b",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (evening check-in)",
+      "enabled": true,
+      "createdAtMs": 1772038036302,
+      "updatedAtMs": 1772038036302,
+      "schedule": {
+        "kind": "cron",
+        "expr": "33 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "BACKUP Marta evening check-in.\n\nШаг 1: openclaw cron list → найди job 255d2287 (Marta → Aiganym (evening check-in)).\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2: если основной не сработал → отправь Айганым (509646214) тёплое вечернее сообщение, без давления.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=509646214, message=\"<текст>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772116380000
       }
     }
   ]

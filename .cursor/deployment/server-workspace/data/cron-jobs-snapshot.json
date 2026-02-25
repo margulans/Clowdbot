@@ -1759,7 +1759,88 @@
         "to": "509646214"
       },
       "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "d10935f5-ebbb-4f6f-b964-d14c719b433d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (morning check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "7 8 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Backup check-in to Aiganym (509646214). Checks main job status; if main failed, sends warm message."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "ff2dfcf2-f093-42e6-8581-4720e9c0de32",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (lunch check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "37 12 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Backup check-in to Aiganym (509646214). Checks main job status; if main failed, sends warm message."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
+    },
+    {
+      "id": "0caa28fa-a6ba-4e57-bd72-ff94ea55932b",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🚨 BACKUP: Marta → Aiganym (evening check-in)",
+      "enabled": true,
+      "schedule": {
+        "kind": "cron",
+        "expr": "33 19 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-5.2",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Backup check-in to Aiganym (509646214). Checks main job status; if main failed, sends warm message."
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "telegram",
+        "to": "509646214"
+      },
+      "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-25T16:44:52Z"
+  "capturedAt": "2026-02-25T16:47:34Z"
 }
