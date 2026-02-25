@@ -22,3 +22,4 @@
 {"ts":"2026-02-25T01:40:00Z","type":"resolved","source":"mekhanik","ref_id":"56554dcd","action":"current run ok","severity":"info"}
 {"ts":"2026-02-25T01:40:00Z","type":"resolved","source":"mekhanik","ref_id":"37e3c155","action":"current run ok","severity":"info"}
 {"ts":"2026-02-25T01:40:00Z","type":"resolved","source":"mekhanik","ref_id":"d1750358","action":"current run ok","severity":"info"}
+{"ts": "2026-02-25T02:11:10Z", "type": "resolved", "source": "mekhanik", "ref_id": "snapshot_stale", "action": "manual snapshot triggered and finished ok", "severity": "info"}
