@@ -34,6 +34,10 @@ description: Участковый — тихий мониторинг здоро
 8. python3 ~/scripts/check-config-drift.py
    → скрипт сам читает openclaw.json, проверяет провайдер/dmPolicy/gateway mode/drop-ins
      и пишет config_drift в incidents.jsonl при расхождении (ничего не делай с выводом)
+9. bash ~/Clowdbot/.cursor/deployment/mem0-upgrade/healthchecks/check-mem0.sh
+   → проверяет Qdrant (:6333) + Sanitizer Proxy (:8888)
+   → при ошибке сам пишет mem0_health в incidents.jsonl и выходит с кодом 1
+   → при успехе — просто OK, ничего не делай с выводом
 ```
 
 ### Шаг 2. Анализ
@@ -72,6 +76,8 @@ description: Участковый — тихий мониторинг здоро
 
 Для конфига: скрипт из Шага 1 уже записал `config_drift` в incidents.jsonl если было расхождение. Здесь ничего дополнительно не делать.
 
+Для Mem0 stack: `check-mem0.sh` из Шага 1 уже записал `mem0_health` в incidents.jsonl если был сбой. Здесь ничего дополнительно не делать.
+
 ### Шаг 3. Запись в журнал
 
 Для каждого найденного инцидента — добавь **ровно одну строку JSON (JSONL)** в конец `data/incidents.jsonl`.
@@ -101,7 +107,7 @@ description: Участковый — тихий мониторинг здоро
 `/home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl`:
 
 ```json
-{"ts":"<ISO8601>","type":"heartbeat","source":"uchastkovy","status":"ok"}
+{ "ts": "<ISO8601>", "type": "heartbeat", "source": "uchastkovy", "status": "ok" }
 ```
 
 Причина: запись `type=ok` каждые N минут создаёт шум и делает git постоянно «грязным». Инциденты пишем только когда есть отклонения.
