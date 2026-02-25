@@ -1,0 +1,44 @@
+{
+  "_comment": "Добавить этот блок в ~/.openclaw/openclaw.json → plugins.entries",
+  "_comment2": "Заменить YOUR_USER_ID на реальный userId (например: margulan)",
+
+  "openclaw-mem0": {
+    "enabled": true,
+    "config": {
+      "mode": "open-source",
+      "userId": "margulan",
+      "autoRecall": true,
+      "autoCapture": true,
+      "topK": 5,
+      "searchThreshold": 0.35,
+
+      "oss": {
+        "embedder": {
+          "provider": "openai",
+          "config": {
+            "model": "text-embedding-3-small",
+            "baseURL": "http://localhost:8888/v1",
+            "apiKey": "USE_ENV"
+          }
+        },
+        "vectorStore": {
+          "provider": "qdrant",
+          "config": {
+            "host": "localhost",
+            "port": 6333,
+            "collectionName": "openclaw-mem0"
+          }
+        },
+        "llm": {
+          "provider": "openai",
+          "config": {
+            "model": "gpt-4o-mini",
+            "baseURL": "http://localhost:8888/v1",
+            "apiKey": "USE_ENV"
+          }
+        },
+        "historyDbPath": "/home/openclaw/.openclaw/mem0/history.db"
+      }
+    }
+  }
+}

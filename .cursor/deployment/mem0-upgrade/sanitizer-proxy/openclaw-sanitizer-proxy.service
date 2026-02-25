@@ -1,0 +1,36 @@
+# Systemd user unit для Sanitizer Proxy
+# Путь установки: ~/.config/systemd/user/openclaw-sanitizer-proxy.service
+#
+# Установка:
+#   cp openclaw-sanitizer-proxy.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable openclaw-sanitizer-proxy
+#   systemctl --user start openclaw-sanitizer-proxy
+#
+# Проверка:
+#   systemctl --user status openclaw-sanitizer-proxy
+#   curl http://localhost:8888/health
+
+[Unit]
+Description=OpenClaw Sanitizer Proxy (OpenAI gateway with PII redaction)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.openclaw/sanitizer-proxy
+ExecStart=%h/.openclaw/sanitizer-proxy/venv/bin/uvicorn proxy:app --host 127.0.0.1 --port 8888
+Restart=always
+RestartSec=5
+
+# Ограничения ресурсов
+MemoryMax=200M
+CPUQuota=20%
+
+# Логи через journald (дополнительно к файлу лога)
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sanitizer-proxy
+
+[Install]
+WantedBy=default.target

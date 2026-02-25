@@ -86,6 +86,14 @@
 - **Groq** — Whisper Large V3 (транскрипция голосовых)
 - **OpenAI** — text-embedding-3-small (семантический поиск по памяти)
 
+### 6. Mem0 Memory Stack (Docker)
+
+- **Mem0 OSS REST API** — `127.0.0.1:8000`, Docker, `~/mem0-stack/`
+- **Qdrant** — `127.0.0.1:6333`, Docker, векторная БД для Mem0
+- **Sanitizer Proxy** — `127.0.0.1:8888`, systemd user service, защита перед OpenAI
+- **Плагин** — `@mem0/openclaw-mem0` в режиме `open-source`
+- **Деплой-гайд** — [`mem0-upgrade/RUNBOOK.md`](./mem0-upgrade/RUNBOOK.md)
+
 ---
 
 ## Эндпойнты и доступы
@@ -113,12 +121,15 @@
 
 ### Память
 
-- **MEMORY.md** — долгосрочная кураторская память
+- **MEMORY.md / USER.md** — canonical источник истины (приоритет 1)
 - **Bank-структура** — world.md, experience.md, opinions.md, entities/
+- **Mem0 OSS** — auto-capture/recall через `@mem0/openclaw-mem0` плагин (приоритет 2)
+- **Qdrant** — векторное хранилище Mem0 (Docker, localhost:6333)
+- **Sanitizer Proxy** — strip secrets/PII перед OpenAI (localhost:8888)
 - **Session memory** — поиск по истории сессий
-- **OpenAI embeddings** — семантический поиск (text-embedding-3-small)
-- **LanceDB** — auto-recall/capture (плагин)
+- **OpenAI embeddings** — text-embedding-3-small через Sanitizer Proxy
 - **Memory flush** — автосохранение памяти перед компактификацией
+- **Weekly review** — еженедельный cron (Вс 10:00 Алматы) для промоута Mem0 → USER.md
 
 ### Голос
 
