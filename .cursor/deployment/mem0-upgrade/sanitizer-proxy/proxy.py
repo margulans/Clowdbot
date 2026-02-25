@@ -134,6 +134,9 @@ async def proxy(request: Request, path: str):
     if request.url.query:
         url += f"?{request.url.query}"
 
+    # Запрещаем httpx сжимать запрос (accept-encoding убираем, чтобы получить raw тело)
+    headers.pop("accept-encoding", None)
+
     async with httpx.AsyncClient(timeout=120.0) as client:
         upstream_resp = await client.request(
             method=request.method,
@@ -142,9 +145,20 @@ async def proxy(request: Request, path: str):
             content=body_bytes,
         )
 
-    # Стриминговый ответ, чтобы не буферизовать большие тела
+    # Убираем заголовки которые конфликтуют с уже-декодированным телом:
+    # content-encoding и transfer-encoding — httpx уже раскодировал тело,
+    # форвардить эти заголовки сломает клиент (OpenAI SDK throws Connection error)
+    skip_headers = {
+        "content-encoding", "transfer-encoding", "content-length",
+        "connection", "keep-alive",
+    }
+    safe_headers = {
+        k: v for k, v in upstream_resp.headers.items()
+        if k.lower() not in skip_headers
+    }
+
     return Response(
         content=upstream_resp.content,
         status_code=upstream_resp.status_code,
-        headers=dict(upstream_resp.headers),
+        headers=safe_headers,
     )

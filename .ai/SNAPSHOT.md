@@ -1,6 +1,6 @@
 # SNAPSHOT.md — Текущее состояние Нейрона
 
-_Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrade — артефакты деплоя, Sanitizer Proxy, RUNBOOK)_
+_Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrade — полностью задеплоен, auto-capture/recall работает)_
 
 📚 **Навигация:** [INDEX.md](./.ai/INDEX.md)
 
@@ -16,23 +16,23 @@ _Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrad
 
 ## 🟢 Текущий статус: РАБОТАЕТ
 
-| Компонент                             | Статус           | Примечание                                        |
-| ------------------------------------- | ---------------- | ------------------------------------------------- |
-| OpenClaw Gateway (VPS)                | ✅ Работает      | systemd, автоперезапуск                           |
-| Мониторинг конфига (`config_drift`)   | ✅ Активен       | check-config-drift.py каждые 10 мин, алерт Чекист |
-| Telegram Bot (`@neironassistant_bot`) | ✅ Работает      | Webhook активен                                   |
-| Новостной дайджест                    | ✅ Работает      | 3×/день + backup jobs, поиск: Perplexity sonar    |
-| Hetzner Snapshot                      | ✅ Активен       | cron 03:00 UTC с VPS, хранит 3 шт.                |
-| Mac Node (`mac-files`)                | ✅ Работает      | LaunchAgent, Tailscale                            |
-| Память (MEMORY.md + bank)             | ✅ Работает      | LanceDB + OpenAI embeddings                       |
-| Qdrant (Docker, :6333)                | ✅ Работает      | ~/mem0-stack/, restart: unless-stopped            |
-| Sanitizer Proxy (systemd, :8888)      | ✅ Работает      | ~/.openclaw/sanitizer-proxy/, FastAPI прокси      |
-| Mem0 плагин (@mem0/openclaw-mem0)     | ⏳ Не установлен | ТЗ для бота готово в RUNBOOK.md                   |
-| Голос (Groq Whisper)                  | ✅ Работает      | Транскрипция войсов                               |
-| Git Sync (`/git`)                     | ✅ Работает      | workspace → GitHub                                |
-| Дайджест мнений                       | ✅ Работает      | 08:30, 13:30, 18:30                               |
-| Рефлексия                             | ✅ Работает      | 20:30 местного времени                            |
-| Утренний брифинг                      | ✅ Работает      | 06:00 местного времени                            |
+| Компонент                             | Статус      | Примечание                                        |
+| ------------------------------------- | ----------- | ------------------------------------------------- |
+| OpenClaw Gateway (VPS)                | ✅ Работает | systemd, автоперезапуск                           |
+| Мониторинг конфига (`config_drift`)   | ✅ Активен  | check-config-drift.py каждые 10 мин, алерт Чекист |
+| Telegram Bot (`@neironassistant_bot`) | ✅ Работает | Webhook активен                                   |
+| Новостной дайджест                    | ✅ Работает | 3×/день + backup jobs, поиск: Perplexity sonar    |
+| Hetzner Snapshot                      | ✅ Активен  | cron 03:00 UTC с VPS, хранит 3 шт.                |
+| Mac Node (`mac-files`)                | ✅ Работает | LaunchAgent, Tailscale                            |
+| Память (MEMORY.md + bank)             | ✅ Работает | LanceDB + OpenAI embeddings                       |
+| Qdrant (Docker, :6333)                | ✅ Работает | ~/mem0-stack/, restart: unless-stopped            |
+| Sanitizer Proxy (systemd, :8888)      | ✅ Работает | ~/.openclaw/sanitizer-proxy/, FastAPI прокси      |
+| Mem0 плагин (@mem0/openclaw-mem0)     | ✅ Работает | open-source mode, Qdrant, auto-capture/recall     |
+| Голос (Groq Whisper)                  | ✅ Работает | Транскрипция войсов                               |
+| Git Sync (`/git`)                     | ✅ Работает | workspace → GitHub                                |
+| Дайджест мнений                       | ✅ Работает | 08:30, 13:30, 18:30                               |
+| Рефлексия                             | ✅ Работает | 20:30 местного времени                            |
+| Утренний брифинг                      | ✅ Работает | 06:00 местного времени                            |
 
 ---
 
@@ -56,6 +56,19 @@ _Последнее обновление: 2026-02-25 (Cursor: Mem0 Memory Upgrad
 - Mac: merge upstream tag `v2026.2.24` + `pnpm install` + push
 - Unit-файл исправлен: `OPENCLAW_SERVICE_VERSION` и `Description` обновлены до `2026.2.24`
 - Ключевые фиксы: `announce_queue_loop` (больше не зависает), OpenRouter cooldown, model fallback chain traversal, Telegram IPv4/IPv6
+
+### 2026-02-25 — Mem0 Memory Upgrade — полностью задеплоен (feat)
+
+- **Результат:** `auto-captured 1 memories` после первого сообщения, recall работает через `/new` ✅
+- **Фиксы в процессе деплоя:**
+  - SQLite native bindings: `npm rebuild` в `~/.openclaw/extensions/openclaw-mem0/node_modules/sqlite3`
+  - OpenAI API key: прописан в `oss.embedder.config.apiKey` и `oss.llm.config.apiKey`
+  - Sanitizer Proxy bug: убраны `content-encoding`/`transfer-encoding` из forwarded headers — иначе OpenAI SDK бросал `Connection error`
+- **Итоговый стек памяти:**
+  - Qdrant `:6333` (Docker, `~/mem0-stack/`) — векторная БД
+  - Sanitizer Proxy `:8888` (systemd) — strip secrets/PII перед OpenAI
+  - `@mem0/openclaw-mem0` плагин — auto-capture через `gpt-4o-mini`, recall через `text-embedding-3-small`
+  - Canonical truth: USER.md > MEMORY.md > Mem0
 
 ### 2026-02-25 — Mem0 Memory Upgrade — артефакты готовы (feat)
 
