@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1771977209409,
+      "updatedAtMs": 1771977841239,
       "schedule": {
         "kind": "cron",
         "expr": "3-59/10 * * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1771977780000,
-        "lastRunAtMs": 1771977180023,
+        "nextRunAtMs": 1771978380000,
+        "lastRunAtMs": 1771977780032,
         "lastStatus": "ok",
-        "lastDurationMs": 29386,
+        "lastDurationMs": 61207,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -113,7 +113,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1771974193935,
+      "updatedAtMs": 1771978047750,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -126,8 +126,8 @@
         "kind": "agentTurn",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
-        "timeoutSeconds": 120,
-        "message": "You are performing an automated git sync check.\n\nSteps:\n1. cd ~/Clowdbot\n2. git pull --rebase origin main\n   - If conflicts → abort rebase, write an incident cron_error in data/incidents.jsonl and STOP.\n3. git status --short\n4. If output is empty → STOP SILENTLY (do NOT reply HEARTBEAT_OK).\n5. If there are changes:\n   a. cron(action=list)\n   b. copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c. update data/cron-jobs-snapshot.json\n   d. git add -A\n   e. git commit -m \"auto-sync: periodic snapshot $(date +%Y-%m-%d)\"\n   f. git push origin main\n\nExecute silently."
+        "timeoutSeconds": 300,
+        "message": "You are performing automated git sync — STAGE 1/2 (pull + snapshot + local commit).\n\nSteps:\n1) cd ~/Clowdbot\n2) git pull --rebase origin main\n   - If conflicts → abort rebase, write an incident cron_error in data/incidents.jsonl and STOP.\n3) git status --short\n4) If output is empty → STOP SILENTLY (do NOT reply HEARTBEAT_OK).\n5) If there are changes:\n   a) cron(action=list)\n   b) copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c) update data/cron-jobs-snapshot.json\n   d) git add -A\n   e) git commit -m \"auto-sync: snapshot $(date +%Y-%m-%dT%H:%M)\"\n6) DO NOT PUSH here. Push is handled by STAGE 2.\n\nExecute silently."
       },
       "delivery": {
         "mode": "none"
@@ -1368,7 +1368,37 @@
       "state": {
         "nextRunAtMs": 1772337600000
       }
+    },
+    {
+      "id": "db2dc5f6-46c8-4b4e-8458-d0d7241d2e02",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "Auto-push: Git sync (stage 2)",
+      "enabled": true,
+      "createdAtMs": 1771978047879,
+      "updatedAtMs": 1771978047879,
+      "schedule": {
+        "kind": "cron",
+        "expr": "15 */4 * * *",
+        "tz": "Asia/Almaty",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "google/gemini-2.5-flash",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "You are performing automated git sync — STAGE 2/2 (push).\n\nSteps:\n1) cd ~/Clowdbot\n2) git status --short\n3) git log --oneline origin/main..HEAD | head -n 20\n4) If there are NO commits ahead → STOP SILENTLY.\n5) If there ARE commits ahead:\n   a) git push origin main\n   b) If push fails → write an incident cron_error in data/incidents.jsonl with lastError and STOP.\n\nExecute silently."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1771989535197
+      }
     }
   ],
-  "capturedAt": "2026-02-24T23:59:53Z"
+  "capturedAt": "2026-02-25T00:07:32Z"
 }
