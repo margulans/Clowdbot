@@ -116,6 +116,35 @@ journalctl --user -u telegram-polling-watchdog.service --no-pager -n 20
 
 ---
 
+### openclaw-sanitizer-proxy.service
+
+| Параметр   | Значение                                                           |
+| ---------- | ------------------------------------------------------------------ |
+| Состояние  | **enabled + active** (запускается при старте системы)              |
+| Назначение | Sanitizer Proxy — прокси для OpenAI API с удалением PII и секретов |
+| Порт       | `8888` (HTTP, только localhost)                                    |
+| Скрипт     | `~/.openclaw/sanitizer-proxy/proxy.py`                             |
+| venv       | `~/.openclaw/sanitizer-proxy/venv/`                                |
+| Unit-файл  | `~/.config/systemd/user/openclaw-sanitizer-proxy.service`          |
+
+**Зачем нужен:** Mem0 плагин (`openclaw-mem0`) делает запросы к OpenAI для embeddings и LLM extraction. Прокси перехватывает эти запросы, убирает API-ключи, токены и PII из тела запроса перед отправкой в OpenAI API. Логирует все `SANITIZED` события.
+
+```bash
+# Статус
+systemctl --user status openclaw-sanitizer-proxy
+
+# Логи
+journalctl --user -u openclaw-sanitizer-proxy -n 30
+
+# Проверка
+curl http://localhost:8888/health
+
+# Перезапуск
+systemctl --user restart openclaw-sanitizer-proxy
+```
+
+---
+
 ### telegram-reaction-webhook.service
 
 | Параметр   | Значение                                                          |

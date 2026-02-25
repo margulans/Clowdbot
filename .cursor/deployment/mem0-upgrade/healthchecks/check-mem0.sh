@@ -33,8 +33,9 @@ ok() {
 }
 
 # 1. Qdrant
+# Qdrant возвращает "healthz check passed" — матчим по слову "passed" тоже
 QDRANT_RESP=$(curl -sf --max-time 5 "http://localhost:6333/healthz" 2>/dev/null || echo "CURL_FAIL")
-if [[ "$QDRANT_RESP" == "CURL_FAIL" ]] || ! echo "$QDRANT_RESP" | grep -qi "healthy\|ok\|true"; then
+if [[ "$QDRANT_RESP" == "CURL_FAIL" ]] || ! echo "$QDRANT_RESP" | grep -qi "healthy\|ok\|true\|passed"; then
   fail "qdrant" "healthz endpoint unreachable or unhealthy (response: ${QDRANT_RESP:0:100})"
 fi
 

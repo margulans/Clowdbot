@@ -39,6 +39,7 @@ KNOWN_UNITS = {
     "telegram-polling-watchdog.service",
     "telegram-polling-watchdog.timer",
     "telegram-reaction-webhook.service",
+    "openclaw-sanitizer-proxy.service",
 }
 
 
