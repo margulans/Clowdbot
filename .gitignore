@@ -129,3 +129,6 @@ dist/protocol.schema.json
 
 # Runtime logs (do not track in git)
 .cursor/deployment/server-workspace/data/incidents.jsonl
+
+# Local memory DB (runtime)
+.cursor/deployment/server-workspace/memory.db

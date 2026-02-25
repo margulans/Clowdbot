@@ -89,7 +89,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
-        "model": "google/gemini-2.5-flash",
+        "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
         "timeoutSeconds": 600
       },
@@ -105,7 +105,8 @@
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
-      }
+      },
+      "last_fixed": "2026-02-25"
     },
     {
       "id": "ce006db5-350b-44be-baef-8b216ed687e4",
