@@ -1,6 +1,6 @@
 # SNAPSHOT.md — Текущее состояние Нейрона
 
-_Последнее обновление: 2026-02-25 (Cursor + Бот: Mem0 Memory Upgrade — завершён полностью)_
+_Последнее обновление: 2026-02-25 (Cursor: Trust policy, мониторинг-фиксы, EVALUATION.md)_
 
 📚 **Навигация:** [INDEX.md](./.ai/INDEX.md)
 
@@ -49,6 +49,17 @@ _Последнее обновление: 2026-02-25 (Cursor + Бот: Mem0 Memo
 ---
 
 ## 📅 Последние значимые изменения
+
+### 2026-02-25 — Trust policy, мониторинг-фиксы, Evaluation plan (feat/fix)
+
+- **`server-workspace/AGENTS.md`** — добавлена политика доверия памяти: VERIFIED_CANONICAL (USER.md/MEMORY.md) > UNVERIFIED_HINT (Mem0) > SESSION; правила записи и разрешения конфликтов; антипаттерны
+- **`mem0-upgrade/EVALUATION.md`** — создан план оценки памяти: 6 тест-кейсов (recall, conflict detection, secrets leak, latency, storage growth, MMR diversity), метрики, расписание
+- **`check-mem0.sh`** — исправлен false positive: Qdrant возвращает `"healthz check passed"`, добавлен паттерн `passed` в grep
+- **`check-config-drift.py`** — `openclaw-sanitizer-proxy.service` добавлен в `KNOWN_UNITS` → Чекист больше не алертит
+- **`server-config.md`** — добавлен раздел `openclaw-sanitizer-proxy.service` с полным описанием
+- **`INFRA.md`** — добавлены разделы Qdrant и Sanitizer Proxy
+- **`EVOLUTION.md`** — добавлена запись о Mem0 memory upgrade
+- **VPS:** uncommitted `dual-rating-data.json` закоммичен; `topK=8` применён; gateway стабилен
 
 ### 2026-02-25 — Обновление OpenClaw 2026.2.24 (chore)
 
