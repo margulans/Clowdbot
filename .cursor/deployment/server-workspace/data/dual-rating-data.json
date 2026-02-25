@@ -1,3 +1,4 @@
+
 {
   "messageHistory": [
     {
@@ -35,7 +36,7 @@
       "category": "Business",
       "title": "Alphabet инвестирует $180 млрд в ИИ-инфраструктуру",
       "timestamp": "2026-02-23T03:19:00Z"
-    },\
+    },
     {
       "messageId": "384",
       "category": "AI",
@@ -67,7 +68,7 @@
     {
       "messageId": "108",
       "expert": "Ray Dalio",
-      "source": "Acquirer\'s Multiple",
+      "source": "Acquirer's Multiple",
       "category": "Investment",
       "title": "Dalio on capital war and AI bubble",
       "timestamp": "2026-02-23T03:49:00Z"
@@ -83,7 +84,7 @@
     {
       "messageId": "110",
       "expert": "Nassim Taleb",
-      "source": "Acquirer\'s Multiple",
+      "source": "Acquirer's Multiple",
       "category": "Philosophy",
       "title": "Taleb on fragility of AI-driven systems",
       "timestamp": "2026-02-23T03:53:00Z"
@@ -509,11 +510,11 @@
       "category": "AI",
       "title": "Market Boost from AI Tools: Anthropic launched Claude AI tools for HR, engineering, and investment banking, boosting U.S. stocks and easing fears of AI replacing software ecosystems.",
       "timestamp": "2026-02-25T13:00:00Z"
-    },\
+    },
     {
       "messageId": "422",
       "category": "AI",
-      "title": "Rising AI-Driven Cyber Threats: IBM\'s 2026 X-Force Threat Index reports a 44% rise in attacks exploiting public-facing apps due to missing authentication, accelerated by AI tools for vulnerability discovery and reconnaissance.",
+      "title": "Rising AI-Driven Cyber Threats: IBM's 2026 X-Force Threat Index reports a 44% rise in attacks exploiting public-facing apps due to missing authentication, accelerated by AI tools for vulnerability discovery and reconnaissance.",
       "timestamp": "2026-02-25T13:00:00Z"
     },
     {
@@ -525,7 +526,7 @@
     {
       "messageId": "424",
       "category": "AI",
-      "title": "Global AI Adoption and Risk Gaps: A survey reveals \\"AI leaders\\" pulling ahead in adoption, with mining, professional services, and transportation advancing fastest, while risks evolve rapidly.",
+      "title": "Global AI Adoption and Risk Gaps: A survey reveals "AI leaders" pulling ahead in adoption, with mining, professional services, and transportation advancing fastest, while risks evolve rapidly.",
       "timestamp": "2026-02-25T13:00:00Z"
     },
     {
@@ -555,13 +556,13 @@
     {
       "messageId": "429",
       "category": "Robotics",
-      "title": "Hexagon Robotics\' AEON humanoid robot wins iF DESIGN AWARD 2026: Recognized for its wheeled design, which enables fast industrial tasks and self-battery swaps.",
+      "title": "Hexagon Robotics' AEON humanoid robot wins iF DESIGN AWARD 2026: Recognized for its wheeled design, which enables fast industrial tasks and self-battery swaps.",
       "timestamp": "2026-02-25T13:00:00Z"
     },
     {
       "messageId": "430",
       "category": "Robotics",
-      "title": "Hyundai\'s Firefighting Robots: Hyundai Motor Group donated four unmanned robots to South Korea\'s National Fire Agency for initial fire suppression in toxic environments.",
+      "title": "Hyundai's Firefighting Robots: Hyundai Motor Group donated four unmanned robots to South Korea's National Fire Agency for initial fire suppression in toxic environments.",
       "timestamp": "2026-02-25T13:00:00Z"
     },
     {
@@ -667,6 +668,22 @@
       "category": "AI/Labor Market",
       "title": "Угроза традиционному аутсорсингу от ИИ",
       "timestamp": "2026-02-25T09:49:30Z"
+    },
+    {
+      "messageId": "197",
+      "expert": "Соучредитель Aiso",
+      "source": "https://minfin.com.ua/2026/02/25/168878538/",
+      "category": "AI",
+      "title": "Перспективы ИИ и сравнение с интернетом 2005 года",
+      "timestamp": "2026-02-25T15:59:00Z"
+    },
+    {
+      "messageId": "198",
+      "expert": "Российские эксперты",
+      "source": "https://www.vedomosti.ru/press_releases/2026/02/25/iskusstvennii-intellekt-natsionalnaya-strategiya-i-novaya-paradigma-v-visshem-obrazovanii",
+      "category": "ИИ",
+      "title": "Стратегическая роль ИИ в образовании и экономике России",
+      "timestamp": "2026-02-25T15:59:00Z"
     }
   ]
 }
