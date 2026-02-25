@@ -947,6 +947,174 @@
         "cyber resilience"
       ],
       "messageId": "169"
+    },
+    {
+      "type": "news_meta",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "kind": "header",
+      "ts": 1771988700000,
+      "messageId": "419"
+    },
+    {
+      "url": "https://gulfnews.com/business/markets/meta-strikes-100-billion-amd-chip-deal-to-power-next-gen-ai-push-1.500454181",
+      "title": "Meta заключила соглашение с AMD на AI-чипы (до $100 млрд) для следующего витка AI-инференса",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "AI/Hardware",
+      "keywords": [
+        "meta",
+        "amd",
+        "ai chips",
+        "inference",
+        "data centers"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://techcrunch.com/2026/02/19/openai-reportedly-finalizing-100b-deal-at-more-than-850b-valuation/",
+      "title": "OpenAI, по данным Bloomberg, близка к раунду >$100 млрд при оценке >$850 млрд",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "AI/Business",
+      "keywords": [
+        "openai",
+        "fundraising",
+        "valuation",
+        "amazon",
+        "softbank"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://techcrunch.com/2026/02/24/nvidia-challenger-ai-chip-startup-matx-raised-500m/",
+      "title": "MatX (экс-Google TPU) привлёк $500 млн на чипы для обучения LLM",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "AI/Hardware",
+      "keywords": [
+        "matx",
+        "tsmc",
+        "llm training",
+        "chips",
+        "series b"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://247wallst.com/investing/2026/02/24/heres-the-200-billion-reason-wall-street-is-nervous-for-nvidias-earnings-tomorrow/",
+      "title": "В преддверии отчёта Nvidia рынок обсуждает риски/устойчивость hyperscaler CapEx",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Business/Markets",
+      "keywords": [
+        "nvidia",
+        "earnings",
+        "amazon",
+        "capex",
+        "hyperscalers"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://www.therobotreport.com/ai2-robotics-raises-series-b-funding-advance-alphabot-embodied-ai/",
+      "title": "AI² Robotics привлёк около $145 млн для развития embodied AI и роботов AlphaBot",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": [
+        "ai2 robotics",
+        "alphabot",
+        "embodied ai",
+        "vla",
+        "funding"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://www.caixinglobal.com/2026-02-24/chinas-spirit-ai-valued-at-over-10-billion-yuan-after-two-funding-rounds-102416556.html",
+      "title": "Spirit AI сообщил о привлечении ~$290 млн и оценке >10 млрд юаней",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Robotics",
+      "keywords": [
+        "spirit ai",
+        "humanoid",
+        "robot brain",
+        "china",
+        "funding"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://localnewsmatters.org/2026/02/24/becker-bill-targets-ai-deepfakes-would-require-removal-of-harmful-digital-replicas/",
+      "title": "California SB1142 (Digital Dignity Act): ответственность за вредоносные deepfake-реплики и процедуры удаления",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Regulation",
+      "keywords": [
+        "california",
+        "sb1142",
+        "deepfakes",
+        "digital replicas",
+        "regulation"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://www.bakerbotts.com/thought-leadership/publications/2026/february/california-takes-significant-step-forward",
+      "title": "California SB574: ограничения использования generative AI для юристов/арбитров (верификация, конфиденциальность, bias)",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Regulation",
+      "keywords": [
+        "california",
+        "sb574",
+        "lawyers",
+        "generative ai",
+        "ethics"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://techcrunch.com/2026/02/24/music-generator-producerai-joins-google-labs/",
+      "title": "ProducerAI (музыкальная генерация на DeepMind Lyria 3) присоединился к Google Labs",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "AI/Creative",
+      "keywords": [
+        "google labs",
+        "producerai",
+        "lyria 3",
+        "music",
+        "deepmind"
+      ],
+      "type": "news",
+      "messageId": "419"
+    },
+    {
+      "url": "https://www.hrci.org/community/blogs-and-announcements/hr-leads-business-blog/hr-leads-business/2026/02/24/ai-skill-development-framework-released",
+      "title": "DOL выпустил AI literacy framework: принципы обучения и ответственного использования AI на рабочем месте",
+      "digest": "morning_backup",
+      "date": "2026-02-25",
+      "category": "Workforce",
+      "keywords": [
+        "dol",
+        "ai literacy",
+        "skills",
+        "workforce",
+        "responsible ai"
+      ],
+      "type": "news",
+      "messageId": "419"
     }
   ]
 }
