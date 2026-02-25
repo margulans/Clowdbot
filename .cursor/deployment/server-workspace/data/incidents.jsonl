@@ -10,3 +10,7 @@
 {"id": "7d564bda", "ts": "2026-02-25T00:43:50.258410Z", "type": "cron_error", "source": "uchastkovy", "job": "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0", "severity": "critical", "msg": "cron job 🔧 Механик (bef4ddfa-1fd8-4c64-9495-79d851f4f5f0) lastStatus=error consecutiveErrors=1 lastRunAtMs=1771978080033", "resolved": false}
 {"id":"56554dcd","ts":"2026-02-25T00:53:44+00:00","type":"cron_error","source":"uchastkovy","job":"bef4ddfa-1fd8-4c64-9495-79d851f4f5f0","severity":"critical","msg":"Cron job has errors: consecutiveErrors=1 lastStatus=error (Механик)","resolved":false}
 {"id":"d1750358","ts":"2026-02-25T00:53:44+00:00","type":"backup_triggered","source":"uchastkovy","job":"a532ac04-61cf-419e-9eca-012b5595fd00","severity":"warn","msg":"Backup job ran after primary error: BACKUP Механик executed (primary bef4ddfa lastStatus=error)","resolved":false}
+{"ts": "2026-02-25T01:11:00Z", "type": "resolved", "source": "mekhanik", "ref_id": "b6f8a4c1", "action": "git sync already ok", "severity": "info"}
+{"ts": "2026-02-25T01:11:00Z", "type": "resolved", "source": "mekhanik", "ref_id": "1fd41121", "action": "git sync already ok", "severity": "info"}
+{"ts": "2026-02-25T01:11:00Z", "type": "resolved", "source": "mekhanik", "ref_id": "dd4d0e98", "action": "git sync already ok", "severity": "info"}
+{"ts": "2026-02-25T01:11:00Z", "type": "resolved", "source": "mekhanik", "ref_id": "git_dirty:mekhanik", "action": "git add/commit/push completed", "severity": "info"}
