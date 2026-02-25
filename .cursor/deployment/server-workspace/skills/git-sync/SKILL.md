@@ -1,7 +1,7 @@
 ---
 name: git-sync
 description: Коммит и пуш в Clowdbot
-user-invocable: true
+user-invocable: false
 ---
 
 # Git Sync
