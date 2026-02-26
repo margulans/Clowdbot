@@ -2,3 +2,5 @@
 {"ts": "2026-02-25T00:27:47Z", "type": "gemini_cron_snapshot", "input_tokens": 2168321, "output_tokens": 33576, "sessions": 28}
 {"ts": "2026-02-25T00:28:23Z", "type": "gemini_cron_snapshot", "input_tokens": 2168321, "output_tokens": 33576, "sessions": 28}
 {"ts": "2026-02-25T12:30:04Z", "type": "gemini_cron_snapshot", "input_tokens": 25766369, "output_tokens": 629524, "sessions": 189}
+{"ts": "2026-02-26T00:54:23Z", "type": "gemini_cron_snapshot", "input_tokens": 12652974, "output_tokens": 317140, "sessions": 132}
+{"ts": "2026-02-26T01:01:32Z", "type": "gemini_cron_snapshot", "input_tokens": 12984062, "output_tokens": 318953, "sessions": 132}

@@ -49,6 +49,12 @@
       "input_per_1m": 0.15,
       "output_per_1m": 0.6,
       "note": "Бэкап модель для isolated cron jobs (резервирует gemini-3-flash-preview)"
+    },
+    "gpt-4o-mini": {
+      "provider": "OpenAI",
+      "input_per_1m": 0.15,
+      "output_per_1m": 0.6,
+      "note": "Alias for openai/gpt-4o-mini (нормализация имени модели)"
     }
   },
   "external_services": {
