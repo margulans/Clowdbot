@@ -106,7 +106,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1772084760038
       }
     },
     {
@@ -642,9 +643,9 @@
         "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
-        "lastError": "⚠️ ✉️ Message failed",
         "lastDelivered": false,
-        "lastDeliveryError": "⚠️ ✉️ Message failed"
+        "lastDeliveryError": "⚠️ ✉️ Message failed",
+        "runningAtMs": 1772084598185
       },
       "delivery": {
         "mode": "none"
@@ -692,7 +693,7 @@
       "name": "Утренние мнения",
       "enabled": true,
       "createdAtMs": 1770522295821,
-      "updatedAtMs": 1772084074257,
+      "updatedAtMs": 1772084679229,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -709,15 +710,13 @@
       },
       "state": {
         "nextRunAtMs": 1772163000000,
-        "lastRunAtMs": 1772076609138,
-        "lastStatus": "error",
-        "lastDurationMs": 13089,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
+        "lastRunAtMs": 1772084477922,
+        "lastStatus": "ok",
+        "lastDurationMs": 201307,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDeliveryError": "An unknown error occurred",
-        "runningAtMs": 1772084120006
+        "lastDeliveryStatus": "not-delivered"
       },
       "delivery": {
         "mode": "none"
@@ -730,7 +729,7 @@
       "name": "BACKUP: Утренние мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988095,
-      "updatedAtMs": 1772084074375,
+      "updatedAtMs": 1772084702246,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -750,15 +749,13 @@
       },
       "state": {
         "nextRunAtMs": 1772164200000,
-        "lastRunAtMs": 1772077800015,
-        "lastStatus": "error",
-        "lastDurationMs": 105746,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
+        "lastRunAtMs": 1772084538055,
+        "lastStatus": "ok",
+        "lastDurationMs": 164191,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastError": "⚠️ ✉️ Message failed",
-        "lastDeliveryError": "⚠️ ✉️ Message failed"
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1079,7 +1076,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772084220000,
+        "nextRunAtMs": 1772085120000,
         "lastRunAtMs": 1772080620034,
         "lastStatus": "ok",
         "lastDurationMs": 15865,
