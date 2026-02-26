@@ -2327,29 +2327,6 @@
       "state": {
         "nextRunAtMs": 1772364600000
       }
-    },
-    {
-      "id": "639101a2-30d6-4979-95bf-a7bb0d42689d",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🔔 Night reminder 03:00 (Almaty)",
-      "enabled": true,
-      "createdAtMs": 1772148940845,
-      "updatedAtMs": 1772148940845,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 3 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent",
-        "text": "Ночное напоминание (03:00 Алматы): проверь Cron Health (Участковый/Чекист/Механик) и критические incidents."
-      },
-      "state": {
-        "nextRunAtMs": 1772229600000
-      }
     }
   ]
 }
