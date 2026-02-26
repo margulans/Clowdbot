@@ -539,41 +539,6 @@
       }
     },
     {
-      "id": "14e9b571-ee59-46b5-bd2c-37590d108a09",
-      "agentId": "main",
-      "sessionKey": "agent:main:main",
-      "name": "🧹 Chat Cleanup — конец дня",
-      "enabled": true,
-      "createdAtMs": 1771544794698,
-      "updatedAtMs": 1772065174622,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Выполни chat-cleanup.\n\n1) Получи историю основной сессии: sessions_history(sessionKey=\"agent:main:main\", limit=100).\n2) Сохрани важное в /home/openclaw/.openclaw/workspace/memory/YYYY-MM-DD.md.\n3) Через tool message() отправь Маргулану запрос подтверждения очистки чата (сообщения бота за 48ч).\n4) КРИТИЧНО: сохрани messageId этого запроса в /home/openclaw/.openclaw/workspace/data/chat-cleanup-state.json (promptMessageId).\n\nВАЖНО:\n- Сейчас ничего не удаляй.\n- Удаление — только когда пользователь напишет \"подтверждаю очистку\" (тогда запускается skill вручную/по сообщению).\n- Git commit не делай.",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 300
-      },
-      "state": {
-        "nextRunAtMs": 1772121600000,
-        "lastRunAtMs": 1772035200027,
-        "lastStatus": "ok",
-        "lastDurationMs": 158825,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-requested"
-      },
-      "delivery": {
-        "mode": "none"
-      }
-    },
-    {
       "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
       "agentId": "main",
       "name": "Утренний брифинг",
@@ -966,40 +931,6 @@
         "lastRunAtMs": 1772033700032,
         "lastStatus": "ok",
         "lastDurationMs": 16486,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "last"
-      }
-    },
-    {
-      "id": "28b9d12a-b9d1-4fc0-89ec-3bcde5554e51",
-      "name": "🚨 BACKUP: Chat Cleanup",
-      "enabled": true,
-      "createdAtMs": 1771739758035,
-      "updatedAtMs": 1772035515726,
-      "schedule": {
-        "kind": "cron",
-        "expr": "5 21 * * *",
-        "tz": "Asia/Almaty"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
-        "thinking": "low",
-        "message": "BACKUP Chat Cleanup (gpt-5.2). Шаг 1: openclaw cron list → найди job 14e9b571 (Chat Cleanup), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (если основной не сработал): выполни chat cleanup. Прочитай skills/chat-cleanup/SKILL.md. Сохрани важное из сессии, обнови MEMORY.md если нужно, затем отправь Маргулану предложение очистить чат через message()."
-      },
-      "state": {
-        "nextRunAtMs": 1772121900000,
-        "lastRunAtMs": 1772035500048,
-        "lastStatus": "ok",
-        "lastDurationMs": 15678,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
