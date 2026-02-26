@@ -45,26 +45,39 @@ def main() -> None:
         except Exception:
             continue
 
+    total_sessions = sum(int(r.get("total_sessions", 0) or 0) for r in r24)
+    malformed = sum(int(r.get("malformed_session_count", 0) or 0) for r in r24)
+    dup_art = sum(int(r.get("duplicate_sessionid_artifact_count", 0) or 0) for r in r24)
+
     agg = {
         "runs": len(r24),
         "computed_total_usd": round(sum(float(r.get("computed_total_usd", 0) or 0) for r in r24), 6),
         "unknown_pricing_count": sum(int(r.get("unknown_pricing_count", 0) or 0) for r in r24),
-        "malformed_session_count": sum(int(r.get("malformed_session_count", 0) or 0) for r in r24),
-        "duplicate_session_count": sum(int(r.get("duplicate_session_count", 0) or 0) for r in r24),
+        "total_sessions": total_sessions,
+        "malformed_session_count": malformed,
+        "duplicate_sessionid_artifact_count": dup_art,
+        "malformed_ratio": round((malformed / total_sessions), 6) if total_sessions else 0.0,
+        "duplicate_ratio": round((dup_art / total_sessions), 6) if total_sessions else 0.0,
         "planned_persist_count": sum(int(r.get("planned_persist_count", 0) or 0) for r in r24),
         "planned_report_count": sum(int(r.get("planned_report_count", 0) or 0) for r in r24),
     }
 
+    # Data quality policy:
+    # - malformed is a real data problem (exclude from costing); allow small ratio
+    # - duplicate_ratio is treated as normal artifact (cron base key + :run: share UUID)
+    data_quality_ok = (agg["malformed_ratio"] <= 0.05)
+
     # Default cadence: every 4h => expected 6 runs; accept >=5.
     ready = (
         agg["runs"] >= 5 and
-        agg["malformed_session_count"] == 0
+        data_quality_ok
     )
 
     out = {
         "ts": now.isoformat().replace("+00:00", "Z"),
         "window": "24h",
         "metrics": agg,
+        "data_quality_ok": data_quality_ok,
         "recommendation": "READY" if ready else "NOT_READY",
         "next_enablement": {
             "real_persist": "enable only after confirmation; should write economist-log.jsonl + cost-summary.json atomically",

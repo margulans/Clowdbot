@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772093867137,
+      "updatedAtMs": 1772094754858,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,11 +27,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772094720000,
-        "lastRunAtMs": 1772093820049,
+        "nextRunAtMs": 1772095654858,
+        "lastRunAtMs": 1772094720045,
         "lastStatus": "error",
-        "lastDurationMs": 47088,
-        "consecutiveErrors": 3,
+        "lastDurationMs": 34813,
+        "consecutiveErrors": 4,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,

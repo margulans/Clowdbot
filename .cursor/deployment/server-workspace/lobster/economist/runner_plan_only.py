@@ -56,17 +56,20 @@ def cost_for(model: str, in_tokens: int, out_tokens: int, pricing: Dict[str, Any
 
 @dataclass
 class Metrics:
+    total_sessions: int = 0
     computed_total_usd: float = 0.0
     unknown_pricing_count: int = 0
     malformed_session_count: int = 0
-    duplicate_session_count: int = 0
+    # Duplicates by sessionId in sessions.json are typically a *normal artifact*
+    # (base cron session key + :run: key share the same UUID). We track it separately.
+    duplicate_sessionid_artifact_count: int = 0
     planned_persist_count: int = 0
     planned_report_count: int = 0
 
 
 def compute_metrics(sessions: Dict[str, Any], pricing: Dict[str, Any]) -> Metrics:
-    seen_ids = set()
-    m = Metrics()
+    seen_session_ids = set()
+    m = Metrics(total_sessions=len(sessions))
 
     for key, s in sessions.items():
         # Prefer explicit sessionId if present; fallback to registry key.
@@ -79,10 +82,11 @@ def compute_metrics(sessions: Dict[str, Any], pricing: Dict[str, Any]) -> Metric
             m.malformed_session_count += 1
             continue
 
-        if sid in seen_ids:
-            m.duplicate_session_count += 1
-            continue
-        seen_ids.add(sid)
+        if sid in seen_session_ids:
+            m.duplicate_sessionid_artifact_count += 1
+            # Do NOT skip: treat as artifact and continue costing by unique registry key.
+        else:
+            seen_session_ids.add(sid)
 
         model_raw = s.get('model') or s.get('modelProvider')
         if not isinstance(model_raw, str) or not model_raw.strip():
@@ -119,13 +123,19 @@ def main() -> None:
 
     met = compute_metrics(sessions, pricing)
 
+    malformed_ratio = (met.malformed_session_count / met.total_sessions) if met.total_sessions else 0.0
+    duplicate_ratio = (met.duplicate_sessionid_artifact_count / met.total_sessions) if met.total_sessions else 0.0
+
     rec = {
         'ts': iso_now_utc(),
         'runs_total': 1,
+        'total_sessions': met.total_sessions,
         'computed_total_usd': met.computed_total_usd,
         'unknown_pricing_count': met.unknown_pricing_count,
         'malformed_session_count': met.malformed_session_count,
-        'duplicate_session_count': met.duplicate_session_count,
+        'duplicate_sessionid_artifact_count': met.duplicate_sessionid_artifact_count,
+        'malformed_ratio': float(f"{malformed_ratio:.6f}"),
+        'duplicate_ratio': float(f"{duplicate_ratio:.6f}"),
         'planned_persist_count': met.planned_persist_count,
         'planned_report_count': 0,
     }
