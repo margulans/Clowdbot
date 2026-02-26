@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772066046248,
+      "updatedAtMs": 1772067762388,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,14 +27,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772067720000,
-        "lastRunAtMs": 1772038020035,
-        "lastStatus": "ok",
-        "lastDurationMs": 44064,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772068620000,
+        "lastRunAtMs": 1772067720037,
+        "lastStatus": "error",
+        "lastDurationMs": 42351,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false
+        "lastDelivered": false,
+        "lastError": "An unknown error occurred",
+        "lastDeliveryError": "An unknown error occurred"
       }
     },
     {
@@ -544,7 +546,7 @@
       "name": "Утренний брифинг",
       "enabled": true,
       "createdAtMs": 1770358767605,
-      "updatedAtMs": 1771981209467,
+      "updatedAtMs": 1772067629593,
       "schedule": {
         "kind": "cron",
         "expr": "0 6 * * *",
@@ -560,10 +562,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772067600000,
-        "lastRunAtMs": 1771981200028,
+        "nextRunAtMs": 1772154000000,
+        "lastRunAtMs": 1772067600043,
         "lastStatus": "ok",
-        "lastDurationMs": 9439,
+        "lastDurationMs": 29550,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -580,7 +582,7 @@
       "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839779,
-      "updatedAtMs": 1772065772456,
+      "updatedAtMs": 1772068008957,
       "schedule": {
         "kind": "cron",
         "expr": "5 6 * * *",
@@ -599,14 +601,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772067900000,
-        "lastRunAtMs": 1771981500031,
-        "lastStatus": "ok",
-        "lastDurationMs": 68298,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772154300000,
+        "lastRunAtMs": 1772067900045,
+        "lastStatus": "error",
+        "lastDurationMs": 108912,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -887,11 +891,11 @@
       "name": "🧹 Ежемесячный аудит контекста (Optimizer)",
       "enabled": true,
       "createdAtMs": 1771691862697,
-      "updatedAtMs": 1771839906626,
+      "updatedAtMs": 1772068329925,
       "schedule": {
-        "expr": "0 10 1 * *",
-        "tz": "Asia/Almaty",
-        "kind": "cron"
+        "kind": "cron",
+        "expr": "0 10 * * 0",
+        "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -1068,7 +1072,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772068020000,
+        "nextRunAtMs": 1772068920000,
         "lastRunAtMs": 1772038320014,
         "lastStatus": "ok",
         "lastDurationMs": 18932,
@@ -1152,10 +1156,10 @@
       "name": "🚨 BACKUP: Ежемесячный аудит (Optimizer)",
       "enabled": true,
       "createdAtMs": 1771832083558,
-      "updatedAtMs": 1771839908437,
+      "updatedAtMs": 1772068343027,
       "schedule": {
         "kind": "cron",
-        "expr": "0 12 1 * *",
+        "expr": "0 12 * * 0",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
