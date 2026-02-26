@@ -60,6 +60,7 @@
         "provider": "perplexity",
         "apiKey": "<BRAVE_API_KEY>",
         "maxResults": 10,
+        "cacheTtlMinutes": 30,
         "perplexity": {
           "apiKey": "<PERPLEXITY_API_KEY>",
           "model": "sonar"
@@ -128,14 +129,54 @@
   },
   "plugins": {
     "slots": {
-      "memory": "memory-lancedb"
+      "memory": "openclaw-mem0"
     },
     "entries": {
       "telegram": {
         "enabled": true
       },
-      "memory-lancedb": {
+      "openclaw-mem0": {
         "enabled": true,
+        "config": {
+          "mode": "open-source",
+          "userId": "margulan",
+          "autoRecall": true,
+          "autoCapture": true,
+          "topK": 8,
+          "searchThreshold": 0.42,
+          "mmr": { "enabled": true, "lambda": 0.6 },
+          "temporalDecay": { "enabled": true, "halfLifeDays": 45 },
+          "oss": {
+            "embedder": {
+              "provider": "openai",
+              "config": {
+                "model": "text-embedding-3-small",
+                "baseURL": "http://localhost:8888/v1",
+                "apiKey": "<OPENAI_API_KEY>"
+              }
+            },
+            "vectorStore": {
+              "provider": "qdrant",
+              "config": {
+                "host": "localhost",
+                "port": 6333,
+                "collectionName": "openclaw-mem0"
+              }
+            },
+            "llm": {
+              "provider": "openai",
+              "config": {
+                "model": "gpt-4o-mini",
+                "baseURL": "http://localhost:8888/v1",
+                "apiKey": "<OPENAI_API_KEY>"
+              }
+            },
+            "historyDbPath": "/home/openclaw/.openclaw/mem0/history.db"
+          }
+        }
+      },
+      "memory-lancedb": {
+        "enabled": false,
         "config": {
           "embedding": {
             "apiKey": "<OPENAI_API_KEY>",
