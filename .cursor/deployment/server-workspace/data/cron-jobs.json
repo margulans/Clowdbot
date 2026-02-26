@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772091156477,
+      "updatedAtMs": 1772093134277,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,16 +27,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772092920000,
-        "lastRunAtMs": 1772091120034,
+        "nextRunAtMs": 1772093820000,
+        "lastRunAtMs": 1772093097374,
         "lastStatus": "error",
-        "lastDurationMs": 36443,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 36903,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryError": "An unknown error occurred",
+        "lastError": "An unknown error occurred"
       }
     },
     {
@@ -82,7 +82,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772088465856,
+      "updatedAtMs": 1772092560097,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -102,14 +102,13 @@
       },
       "state": {
         "nextRunAtMs": 1772095560000,
-        "lastRunAtMs": 1772088360051,
-        "lastStatus": "ok",
-        "lastDurationMs": 105805,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "runningAtMs": 1772091960034
+        "lastRunAtMs": 1772091960034,
+        "lastStatus": "error",
+        "lastDurationMs": 600063,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -119,7 +118,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772089302316,
+      "updatedAtMs": 1772092430358,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -140,15 +139,13 @@
       },
       "state": {
         "nextRunAtMs": 1772103673831,
-        "lastRunAtMs": 1772089273875,
+        "lastRunAtMs": 1772092130356,
         "lastStatus": "error",
-        "lastDurationMs": 28441,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 300002,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastDeliveryError": "An unknown error occurred",
-        "runningAtMs": 1772092130356
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "Error: cron: job execution timed out"
       }
     },
     {
@@ -193,7 +190,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1772027772164,
+      "updatedAtMs": 1772093097095,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -209,10 +206,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772092800000,
-        "lastRunAtMs": 1772027449663,
+        "nextRunAtMs": 1772179200000,
+        "lastRunAtMs": 1772092800012,
         "lastStatus": "ok",
-        "lastDurationMs": 322501,
+        "lastDurationMs": 297083,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -248,7 +245,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772093100000,
+        "nextRunAtMs": 1772179500000,
         "lastRunAtMs": 1772006739034,
         "lastStatus": "ok",
         "lastDurationMs": 9935,
@@ -587,7 +584,7 @@
       "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839779,
-      "updatedAtMs": 1772068008957,
+      "updatedAtMs": 1772092642230,
       "schedule": {
         "kind": "cron",
         "expr": "5 6 * * *",
@@ -607,15 +604,13 @@
       },
       "state": {
         "nextRunAtMs": 1772154300000,
-        "lastRunAtMs": 1772067900045,
-        "lastStatus": "error",
-        "lastDurationMs": 108912,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
+        "lastRunAtMs": 1772092215256,
+        "lastStatus": "ok",
+        "lastDurationMs": 426974,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDeliveryError": "⚠️ ✉️ Message failed",
-        "runningAtMs": 1772092215256
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1078,7 +1073,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772092320000,
+        "nextRunAtMs": 1772093220000,
         "lastRunAtMs": 1772091420099,
         "lastStatus": "ok",
         "lastDurationMs": 44906,
@@ -1112,7 +1107,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772092260000,
+        "nextRunAtMs": 1772095860000,
         "lastRunAtMs": 1772088660045,
         "lastStatus": "ok",
         "lastDurationMs": 12835,
@@ -1147,7 +1142,7 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772092560000,
+        "nextRunAtMs": 1772099760000,
         "lastRunAtMs": 1772085360017,
         "lastStatus": "ok",
         "lastDurationMs": 18754,
@@ -1399,7 +1394,7 @@
       "name": "🕵️ Чекист (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568679,
-      "updatedAtMs": 1772058622316,
+      "updatedAtMs": 1772092406946,
       "schedule": {
         "kind": "cron",
         "expr": "30 3 * * *",
@@ -1419,15 +1414,13 @@
       },
       "state": {
         "nextRunAtMs": 1772145000000,
-        "lastRunAtMs": 1772058600058,
+        "lastRunAtMs": 1772092166943,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 22258,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "lastDeliveryError": "An unknown error occurred",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1772092166943
+        "lastDurationMs": 240003,
+        "lastError": "Error: cron: job execution timed out",
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 2
       }
     },
     {
@@ -1897,7 +1890,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772091637418,
+      "updatedAtMs": 1772093145221,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1916,11 +1909,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772092228151,
-        "lastRunAtMs": 1772091628151,
+        "nextRunAtMs": 1772093734277,
+        "lastRunAtMs": 1772093134277,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9267,
+        "lastDurationMs": 10944,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1992,10 +1985,10 @@
       "enabled": true,
       "deleteAfterRun": true,
       "createdAtMs": 1772091433069,
-      "updatedAtMs": 1772092383121,
+      "updatedAtMs": 1772092464477,
       "schedule": {
         "kind": "at",
-        "at": "2026-02-27T07:52:53.000Z"
+        "at": "2026-02-27T07:54:14.000Z"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -2010,7 +2003,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772178773000
+        "nextRunAtMs": 1772178854000
       }
     },
     {
@@ -2021,10 +2014,10 @@
       "enabled": true,
       "deleteAfterRun": true,
       "createdAtMs": 1772092209938,
-      "updatedAtMs": 1772092383177,
+      "updatedAtMs": 1772092473340,
       "schedule": {
         "kind": "at",
-        "at": "2026-02-27T07:54:00.000Z"
+        "at": "2026-02-27T07:55:14.000Z"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -2039,7 +2032,65 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772178840000
+        "nextRunAtMs": 1772178914000
+      }
+    },
+    {
+      "id": "54abc66d-1d8e-42d2-a10a-17fc910078c9",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Git sync (plan-only soak)",
+      "enabled": true,
+      "createdAtMs": 1772093131200,
+      "updatedAtMs": 1772093131200,
+      "schedule": {
+        "kind": "cron",
+        "expr": "5 */4 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Lobster git-sync plan-only runner.\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/git-sync/runner_plan_only.py\n\nRules:\n- Do not commit/push.\n- Do not message the user.\n- If runner fails: append incident {type:\"git_sync_lobster_runner_failed\", severity:\"critical\", msg:<err>} and stop."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772103900000
+      }
+    },
+    {
+      "id": "ea29eaec-5621-4757-95b7-2dc78617b83f",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Git sync decision-gate (T+24h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772093147342,
+      "updatedAtMs": 1772093147342,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T08:06:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Lobster git-sync post-check and send decision report to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/git-sync/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short summary with READY/NOT_READY + metrics + phased disable order if READY>)\n\nRules:\n- Do NOT disable legacy jobs automatically.\n- Do NOT commit/push automatically."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772179560000
       }
     }
   ]
