@@ -36,7 +36,7 @@
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
         "lastDeliveryError": "An unknown error occurred",
-        "lastError": "An unknown error occurred"
+        "runningAtMs": 1772096160547
       }
     },
     {
@@ -45,7 +45,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772090819342,
+      "updatedAtMs": 1772096322632,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -56,7 +56,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Выполни скилл chekist. Прочитай skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).",
+        "message": "Выполни скилл chekist. Прочитай /home/openclaw/.openclaw/workspace/skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).\n- Транспорт: ВСЕГДА вызывай message tool только так: `message(action=send, channel=telegram, to=685668909, message=\"...\")`. Если упало — 1 ретрай через `target=\"685668909\"`. Если снова упало — пиши `message_transport_failed` в data/incidents.jsonl с точной ошибкой.",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 240
@@ -82,7 +82,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772095727166,
+      "updatedAtMs": 1772096160093,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -101,14 +101,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772095560000,
-        "lastRunAtMs": 1772091960034,
+        "nextRunAtMs": 1772099160000,
+        "lastRunAtMs": 1772095560037,
         "lastStatus": "error",
-        "lastDurationMs": 600063,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 600056,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
-        "runningAtMs": 1772095560037
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -118,7 +118,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772095727044,
+      "updatedAtMs": 1772096172185,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -139,13 +139,13 @@
       },
       "state": {
         "nextRunAtMs": 1772103673831,
-        "lastRunAtMs": 1772092130356,
-        "lastStatus": "error",
-        "lastDurationMs": 300002,
-        "consecutiveErrors": 2,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "Error: cron: job execution timed out"
+        "lastRunAtMs": 1772095834143,
+        "lastStatus": "ok",
+        "lastDurationMs": 338042,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       }
     },
     {
@@ -323,7 +323,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772096160547
       }
     },
     {
@@ -1081,7 +1082,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772096160547
       }
     },
     {
@@ -1115,7 +1117,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772096160547
       }
     },
     {
@@ -1917,7 +1920,8 @@
         "lastDurationMs": 8054,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772096160547
       }
     },
     {
