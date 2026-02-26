@@ -15,14 +15,29 @@ TIMESTAMP=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 mkdir -p "$(dirname "$INCIDENTS_FILE")" "$(dirname "$LOG_FILE")"
 
 fail() {
-  local service="$1"
-  local detail="$2"
+  local type="$1"     # mem0_health | mem0_e2e_failed
+  local service="$2"  # qdrant | sanitizer-proxy | e2e
+  local detail="$3"
+
+  # Safe JSON encoding (detail may contain quotes/newlines)
   local incident
-  incident=$(printf '{"ts":"%s","type":"mem0_health","source":"%s","severity":"critical","detail":"%s","resolved":false}' \
-    "$TIMESTAMP" "$service" "$detail")
+  incident=$(python3 - "$TIMESTAMP" "$type" "$service" "$detail" <<'PY'
+import json, sys
+(ts, typ, src, detail) = sys.argv[1:5]
+print(json.dumps({
+  "ts": ts,
+  "type": typ,
+  "source": src,
+  "severity": "critical",
+  "detail": detail,
+  "resolved": False,
+}, ensure_ascii=False))
+PY
+)
+
   echo "$incident" >> "$INCIDENTS_FILE"
-  echo "$TIMESTAMP ERROR $service: $detail" >> "$LOG_FILE"
-  echo "FAIL: $service — $detail" >&2
+  echo "$TIMESTAMP ERROR $type $service: ${detail:0:500}" >> "$LOG_FILE"
+  echo "FAIL: $type $service — ${detail:0:500}" >&2
   exit 1
 }
 
@@ -36,13 +51,20 @@ ok() {
 # Qdrant возвращает "healthz check passed" — матчим по слову "passed" тоже
 QDRANT_RESP=$(curl -sf --max-time 5 "http://localhost:6333/healthz" 2>/dev/null || echo "CURL_FAIL")
 if [[ "$QDRANT_RESP" == "CURL_FAIL" ]] || ! echo "$QDRANT_RESP" | grep -qi "healthy\|ok\|true\|passed"; then
-  fail "qdrant" "healthz endpoint unreachable or unhealthy (response: ${QDRANT_RESP:0:100})"
+  fail "mem0_health" "qdrant" "healthz endpoint unreachable or unhealthy (response: ${QDRANT_RESP:0:100})"
 fi
 
 # 2. Sanitizer Proxy
 PROXY_RESP=$(curl -sf --max-time 5 "http://localhost:8888/health" 2>/dev/null || echo "CURL_FAIL")
 if [[ "$PROXY_RESP" == "CURL_FAIL" ]] || ! echo "$PROXY_RESP" | grep -qi "ok"; then
-  fail "sanitizer-proxy" "/health endpoint unreachable or unhealthy (response: ${PROXY_RESP:0:100})"
+  fail "mem0_health" "sanitizer-proxy" "/health endpoint unreachable or unhealthy (response: ${PROXY_RESP:0:100})"
 fi
 
+# 3. E2E: pseudo-embed -> upsert -> search -> cleanup (Qdrant)
+E2E_OUT=$(python3 "${HOME}/.openclaw/workspace/scripts/mem0_qdrant_e2e.py" 2>&1 || true)
+if ! echo "$E2E_OUT" | grep -q '"ok"[[:space:]]*:[[:space:]]*true'; then
+  fail "mem0_e2e_failed" "e2e" "qdrant e2e failed: ${E2E_OUT:0:220}"
+fi
+
+echo "$TIMESTAMP OK mem0 e2e: $E2E_OUT" >> "$LOG_FILE"
 ok

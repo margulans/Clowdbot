@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "report": [
+    {
+      "name": "single_cron_error",
+      "expected": {
+        "append_incidents": 1,
+        "alerts_allowed": 1
+      },
+      "actual": {
+        "append_incidents": [
+          {
+            "type": "cron_error",
+            "severity": "critical",
+            "jobId": "job1",
+            "lastRunAtMs": 111
+          }
+        ],
+        "alerts": [
+          {
+            "type": "cron_error",
+            "scope_id": "job1",
+            "allowed": true,
+            "dry_run_disabled": true
+          }
+        ],
+        "heartbeat": null,
+        "audit": {
+          "ts": "2026-02-26T07:22:48.585661Z"
+        }
+      }
+    },
+    {
+      "name": "repeated_cron_error",
+      "expected": {
+        "append_incidents": 0,
+        "alerts_allowed": 0
+      },
+      "actual": {
+        "append_incidents": [],
+        "alerts": [
+          {
+            "type": "cron_error",
+            "scope_id": "job1",
+            "allowed": false,
+            "reason": "deduped"
+          }
+        ],
+        "heartbeat": null,
+        "audit": {
+          "ts": "2026-02-26T07:22:48.586176Z"
+        }
+      }
+    },
+    {
+      "name": "config_drift",
+      "expected": {
+        "alerts_allowed": 1,
+        "type": "config_drift"
+      },
+      "actual": {
+        "append_incidents": [],
+        "alerts": [
+          {
+            "type": "config_drift",
+            "scope_id": "config_drift",
+            "allowed": true,
+            "dry_run_disabled": true
+          }
+        ],
+        "heartbeat": null,
+        "audit": {
+          "ts": "2026-02-26T07:22:48.586614Z"
+        }
+      }
+    },
+    {
+      "name": "resolved_filter",
+      "expected": {
+        "alerts_allowed": 0,
+        "heartbeat": "ok"
+      },
+      "actual": {
+        "append_incidents": [],
+        "alerts": [],
+        "heartbeat": {
+          "type": "heartbeat",
+          "source": "chekist",
+          "status": "ok"
+        },
+        "audit": {
+          "ts": "2026-02-26T07:22:48.587219Z"
+        }
+      }
+    },
+    {
+      "name": "malformed_input",
+      "expected": {
+        "invalid": true
+      },
+      "actual": {
+        "append_incidents": [
+          {
+            "type": "invalid_input",
+            "severity": "critical",
+            "msg": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          }
+        ],
+        "alerts": [],
+        "heartbeat": null
+      }
+    }
+  ]
+}

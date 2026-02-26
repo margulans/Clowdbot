@@ -1,0 +1,63 @@
+version: 1
+name: chekist
+mvp:
+  rule_first: true
+  llm: disabled
+
+pipeline:
+  order:
+    - collect
+    - normalize
+    - rules
+    - action
+    - emit
+
+collect:
+  inputs:
+    - incidents_jsonl_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl
+    - cron_state: cron(action=list)
+    - config_drift_signals: incidents(type=config_drift) + check-config-drift.py stdout (optional)
+
+normalize:
+  output_schema:
+    ts: iso8601
+    window_minutes: 60
+    incidents_recent: []
+    cron_errors: []   # {jobId, job, lastStatus, consecutiveErrors, lastRunAtMs, model}
+
+policy:
+  dedupe:
+    # incident append dedupe
+    window_minutes: 180
+    key: [type, jobId, lastRunAtMs]
+    applies_to: [cron_error]
+  alert_dedupe:
+    # suppress repeated alerts (anti-spam)
+    window_minutes: 180
+    key: [type, scope_id, normalizedWindowTs]
+    applies_to: [cron_error, config_drift]
+    normalizedWindowTs:
+      bucket_minutes: 60
+  alert_rate_limit:
+    window_minutes: 60
+    max_alerts: 3
+
+rules:
+  classify:
+    cron_error: critical
+    cron_skip: critical
+    gateway_down: critical
+    config_drift: critical
+    disk_warn: warn
+    git_dirty: warn
+
+action:
+  on_critical:
+    - alert_message
+  on_cron_error_detected:
+    - append_incident_cron_error (deduped)
+
+emit:
+  heartbeat_path: /home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl
+  audit_path: /home/openclaw/.openclaw/.runtime/chekist-audit.jsonl
+  incidents_append_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl

@@ -1,0 +1,191 @@
+{
+  "ok": true,
+  "report": [
+    {
+      "name": "no_changes",
+      "expected": {
+        "inc": [],
+        "has": [
+          "emit_audit"
+        ],
+        "result": "noop"
+      },
+      "actual": {
+        "incidents": [],
+        "actions": [
+          {
+            "kind": "git_pull_rebase",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "snapshot_write",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "emit_audit",
+            "dry_run_disabled": false,
+            "approval_required": false,
+            "result": "noop"
+          }
+        ]
+      }
+    },
+    {
+      "name": "snapshot_diff_commit_push",
+      "expected": {
+        "inc": [],
+        "has": [
+          "git_commit",
+          "git_push"
+        ],
+        "result": "would_commit_push"
+      },
+      "actual": {
+        "incidents": [],
+        "actions": [
+          {
+            "kind": "git_pull_rebase",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "snapshot_write",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "git_commit",
+            "dry_run_disabled": true,
+            "approval_required": true
+          },
+          {
+            "kind": "git_push",
+            "dry_run_disabled": true,
+            "approval_required": true
+          },
+          {
+            "kind": "emit_audit",
+            "dry_run_disabled": false,
+            "approval_required": false,
+            "result": "would_commit_push"
+          }
+        ]
+      }
+    },
+    {
+      "name": "remote_ahead_rebase_ok",
+      "expected": {
+        "inc": [],
+        "has": [
+          "git_pull_rebase",
+          "git_commit",
+          "git_push"
+        ],
+        "result": "would_commit_push"
+      },
+      "actual": {
+        "incidents": [],
+        "actions": [
+          {
+            "kind": "git_pull_rebase",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "snapshot_write",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "git_commit",
+            "dry_run_disabled": true,
+            "approval_required": true
+          },
+          {
+            "kind": "git_push",
+            "dry_run_disabled": true,
+            "approval_required": true
+          },
+          {
+            "kind": "emit_audit",
+            "dry_run_disabled": false,
+            "approval_required": false,
+            "result": "would_commit_push"
+          }
+        ]
+      }
+    },
+    {
+      "name": "rebase_conflict",
+      "expected": {
+        "inc": [
+          "git_rebase_conflict"
+        ],
+        "has": [
+          "git_rebase_abort",
+          "message_alert"
+        ]
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "git_rebase_conflict",
+            "severity": "critical",
+            "msg": "rebase conflict; aborted"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "git_pull_rebase",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "git_rebase_abort",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "message_alert",
+            "dry_run_disabled": true,
+            "approval_required": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "network_fail",
+      "expected": {
+        "inc": [
+          "git_remote_unreachable"
+        ],
+        "has": [
+          "message_alert"
+        ]
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "git_remote_unreachable",
+            "severity": "critical",
+            "msg": "ls-remote/push failed"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "git_pull_rebase",
+            "dry_run_disabled": false,
+            "approval_required": false
+          },
+          {
+            "kind": "message_alert",
+            "dry_run_disabled": true,
+            "approval_required": false
+          }
+        ]
+      }
+    }
+  ]
+}

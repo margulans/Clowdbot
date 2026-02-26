@@ -1,0 +1,137 @@
+{
+  "ok": true,
+  "report": [
+    {
+      "name": "normal_day",
+      "expected": {
+        "total_usd": "~0.0085",
+        "warnings": []
+      },
+      "actual": {
+        "total_usd": 0.0105,
+        "by_model": {
+          "openai/gpt-4o-mini": 0.0045,
+          "google/gemini-2.5-flash": 0.006
+        },
+        "warnings": [],
+        "persist": {
+          "append_economist_log": true,
+          "update_cost_summary": true
+        },
+        "planned_actions": [
+          {
+            "kind": "weekly_report_message",
+            "approval_required": true,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "missing_pricing",
+      "expected": {
+        "total_usd": 0.0,
+        "warnings": [
+          "unknown_pricing:unknown/model"
+        ]
+      },
+      "actual": {
+        "total_usd": 0.0,
+        "by_model": {
+          "unknown/model": 0.0
+        },
+        "warnings": [
+          "unknown_pricing:unknown/model"
+        ],
+        "persist": {
+          "append_economist_log": true,
+          "update_cost_summary": true
+        },
+        "planned_actions": [
+          {
+            "kind": "weekly_report_message",
+            "approval_required": true,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "zero_sessions",
+      "expected": {
+        "total_usd": 0.0,
+        "warnings": []
+      },
+      "actual": {
+        "total_usd": 0.0,
+        "by_model": {},
+        "warnings": [],
+        "persist": {
+          "append_economist_log": true,
+          "update_cost_summary": true
+        },
+        "planned_actions": [
+          {
+            "kind": "weekly_report_message",
+            "approval_required": true,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "malformed_session",
+      "expected": {
+        "warnings": [
+          "malformed_session:missing_sessionId"
+        ]
+      },
+      "actual": {
+        "total_usd": 0.0,
+        "by_model": {},
+        "warnings": [
+          "malformed_session:missing_sessionId"
+        ],
+        "persist": {
+          "append_economist_log": true,
+          "update_cost_summary": true
+        },
+        "planned_actions": [
+          {
+            "kind": "weekly_report_message",
+            "approval_required": true,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate_sessions",
+      "expected": {
+        "warnings": [
+          "duplicate_session:s4"
+        ]
+      },
+      "actual": {
+        "total_usd": 0.00075,
+        "by_model": {
+          "openai/gpt-4o-mini": 0.00075
+        },
+        "warnings": [
+          "duplicate_session:s4"
+        ],
+        "persist": {
+          "append_economist_log": true,
+          "update_cost_summary": true
+        },
+        "planned_actions": [
+          {
+            "kind": "weekly_report_message",
+            "approval_required": true,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    }
+  ]
+}

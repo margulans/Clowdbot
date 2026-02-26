@@ -1,0 +1,160 @@
+{
+  "ok": true,
+  "action_classes": {
+    "safe_auto": [
+      "cron_run_monitor",
+      "restart_gateway"
+    ],
+    "risky": [
+      "delete_remote_resource",
+      "git_commit_push",
+      "modify_cron_job",
+      "run_hetzner_snapshot"
+    ],
+    "blocked": [
+      "auto_force_push",
+      "change_model",
+      "rm_files"
+    ]
+  },
+  "report": [
+    {
+      "name": "single_recoverable_gateway_down",
+      "actual": {
+        "plan": [
+          {
+            "kind": "restart_gateway",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": true
+          }
+        ],
+        "incidents": [],
+        "attempts": 0
+      }
+    },
+    {
+      "name": "repeated_same_critical_dedupe",
+      "actual": {
+        "deduped": true,
+        "plan": [],
+        "incidents": []
+      }
+    },
+    {
+      "name": "risky_requires_approval",
+      "actual": {
+        "plan": [
+          {
+            "kind": "run_hetzner_snapshot",
+            "class": "risky",
+            "approval_required": true,
+            "allowed": false,
+            "reason": "approval_required"
+          }
+        ],
+        "incidents": [],
+        "attempts": 0
+      }
+    },
+    {
+      "name": "fail1",
+      "actual": {
+        "plan": [
+          {
+            "kind": "restart_gateway",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": true
+          }
+        ],
+        "incidents": [],
+        "attempts": 1
+      }
+    },
+    {
+      "name": "fail2",
+      "actual": {
+        "plan": [
+          {
+            "kind": "restart_gateway",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": false,
+            "reason": "restart_loop_blocked"
+          }
+        ],
+        "incidents": [
+          {
+            "type": "restart_loop_blocked",
+            "severity": "critical"
+          }
+        ],
+        "attempts": 1
+      }
+    },
+    {
+      "name": "fail3",
+      "actual": {
+        "plan": [
+          {
+            "kind": "restart_gateway",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": false,
+            "reason": "restart_loop_blocked"
+          }
+        ],
+        "incidents": [
+          {
+            "type": "restart_loop_blocked",
+            "severity": "critical"
+          }
+        ],
+        "attempts": 1
+      }
+    },
+    {
+      "name": "circuit_breaker_after_failures",
+      "actual": {
+        "plan": [
+          {
+            "kind": "restart_gateway",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": false,
+            "reason": "circuit_breaker"
+          }
+        ],
+        "incidents": [
+          {
+            "type": "mekhanik_circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "attempts": 1
+      }
+    },
+    {
+      "name": "malformed_incident",
+      "actual": {
+        "plan": [
+          {
+            "kind": "escalate",
+            "class": "safe_auto",
+            "approval_required": false,
+            "allowed": false,
+            "reason": "circuit_breaker"
+          }
+        ],
+        "incidents": [
+          {
+            "type": "mekhanik_circuit_breaker",
+            "severity": "critical"
+          }
+        ],
+        "attempts": 0
+      }
+    }
+  ]
+}

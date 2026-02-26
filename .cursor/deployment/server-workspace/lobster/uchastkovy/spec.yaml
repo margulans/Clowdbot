@@ -1,0 +1,51 @@
+version: 1
+name: uchastkovy
+pipeline:
+  - stage: collect
+    outputs:
+      - cron_jobs
+      - gateway_active
+      - disk_pct
+      - git_dirty_filtered
+      - drain_count
+      - gw_rss_kb
+      - mem0
+  - stage: normalize
+    outputs:
+      - state
+  - stage: rules
+    outputs:
+      - incidents
+      - actions
+  - stage: action
+    policy:
+      restart_limit:
+        max_restarts: 2
+        window_minutes: 30
+        on_exceed:
+          action: no-restart
+          incident:
+            type: restart_loop_blocked
+            severity: critical
+            msg: "restart limit exceeded (2/30m)"
+  - stage: emit
+    outputs:
+      - incidents_jsonl_append
+      - heartbeat_jsonl_append
+      - actions_log
+
+actions:
+  - kind: restart_gateway
+    approval_required: false
+    dry_run_disabled: false
+  - kind: git_push_snapshot
+    approval_required: true
+    dry_run_disabled: true
+  - kind: message_user
+    approval_required: false
+    dry_run_disabled: true
+
+emit:
+  incidents_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl
+  heartbeat_path: /home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl
+  actions_log_path: /home/openclaw/.openclaw/.runtime/lobster-actions.jsonl

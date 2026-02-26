@@ -1,0 +1,69 @@
+version: 1
+name: git-sync
+pipeline:
+  order:
+    - precheck_lock
+    - pull_rebase
+    - snapshot_write
+    - stage_commit
+    - push
+    - emit_audit
+
+lock:
+  path: /home/openclaw/.openclaw/.runtime/git-sync.lock.json
+  ttl_seconds: 1200
+  metadata:
+    - pid
+    - created_at
+    - ttl_seconds
+    - run_id
+  stale_lock_policy:
+    on_ttl_expired:
+      action: safe_unlock
+      incident:
+        type: git_sync_stale_lock
+        severity: warn
+        msg: "stale lock recovered"
+
+policies:
+  anti_loop:
+    commit_whitelist_paths:
+      - data/cron-jobs.json
+      - data/cron-jobs-snapshot.json
+      - data/cron-jobs-snapshot.json
+      - data/sent-digests.json
+      - data/dual-rating-data.json
+    no_op_if_diff_empty: true
+  conflicts:
+    rebase_conflict:
+      action: abort_rebase
+      incident:
+        type: git_rebase_conflict
+        severity: critical
+      notify: alert_only
+  remote_fail:
+    incident:
+      type: git_remote_unreachable
+      severity: critical
+    notify: alert_only
+
+emit:
+  audit_path: /home/openclaw/.openclaw/.runtime/git-sync-audit.jsonl
+  incidents_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl
+
+actions:
+  - kind: git_pull_rebase
+    approval_required: false
+    dry_run_disabled: false
+  - kind: snapshot_write
+    approval_required: false
+    dry_run_disabled: false
+  - kind: git_commit
+    approval_required: true
+    dry_run_disabled: true
+  - kind: git_push
+    approval_required: true
+    dry_run_disabled: true
+  - kind: message_alert
+    approval_required: false
+    dry_run_disabled: true

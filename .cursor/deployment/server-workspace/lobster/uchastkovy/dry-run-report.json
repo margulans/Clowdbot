@@ -1,0 +1,176 @@
+{
+  "ok": true,
+  "policy": {
+    "max_restarts": 2,
+    "window_s": 1800
+  },
+  "report": [
+    {
+      "name": "normal",
+      "expected": {
+        "incidents": [],
+        "actions": [
+          "emit_heartbeat"
+        ]
+      },
+      "actual": {
+        "incidents": [],
+        "actions": [
+          {
+            "kind": "emit_heartbeat",
+            "approval_required": false,
+            "allowed": true,
+            "dry_run_disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "warning_disk",
+      "expected": {
+        "incidents": [
+          "disk_warn"
+        ],
+        "actions": []
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "disk_warn",
+            "severity": "warn",
+            "msg": "disk 86%"
+          }
+        ],
+        "actions": []
+      }
+    },
+    {
+      "name": "critical_gateway_down",
+      "expected": {
+        "incidents": [
+          "gateway_down"
+        ],
+        "actions": [
+          "restart_gateway"
+        ]
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "gateway_down",
+            "severity": "critical",
+            "msg": "gateway inactive"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "restart_gateway",
+            "approval_required": false,
+            "allowed": true,
+            "dry_run_disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "critical_gateway_down",
+      "expected": {
+        "incidents": [
+          "gateway_down"
+        ],
+        "actions": [
+          "restart_gateway"
+        ]
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "gateway_down",
+            "severity": "critical",
+            "msg": "gateway inactive"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "restart_gateway",
+            "approval_required": false,
+            "allowed": true,
+            "dry_run_disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "critical_gateway_down",
+      "expected": {
+        "incidents": [
+          "gateway_down"
+        ],
+        "actions": [
+          "restart_gateway"
+        ]
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "gateway_down",
+            "severity": "critical",
+            "msg": "gateway inactive"
+          },
+          {
+            "type": "restart_loop_blocked",
+            "severity": "critical",
+            "msg": "restart limit exceeded (2/30m)"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "restart_gateway",
+            "approval_required": false,
+            "allowed": false,
+            "dry_run_disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "timeout_probe",
+      "expected": {
+        "incidents": [
+          "probe_failed"
+        ],
+        "actions": []
+      },
+      "actual": {
+        "incidents": [
+          {
+            "type": "probe_failed",
+            "severity": "warn",
+            "msg": "probe timeout"
+          }
+        ],
+        "actions": []
+      }
+    },
+    {
+      "name": "invalid_input",
+      "expected": {
+        "incidents": [
+          "invalid_input"
+        ],
+        "actions": []
+      },
+      "actual": {
+        "error": "gateway_active must be bool",
+        "incidents": [
+          {
+            "type": "invalid_input",
+            "severity": "critical",
+            "msg": "gateway_active must be bool"
+          }
+        ],
+        "actions": []
+      }
+    }
+  ]
+}

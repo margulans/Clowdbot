@@ -1,0 +1,43 @@
+version: 1
+name: economist-daily-collect
+mvp:
+  rule_first: true
+  llm: disabled
+
+pipeline:
+  order:
+    - collect
+    - normalize
+    - compute
+    - persist
+    - emit
+
+collect:
+  inputs:
+    - sessions_list: sessions_list(limit=200, activeMinutes=43200, messageLimit=0)
+    - pricing_path: /home/openclaw/.openclaw/workspace/data/model-pricing.json
+    - cost_summary_path: /home/openclaw/.openclaw/workspace/data/cost-summary.json
+
+policy:
+  no_model_switch: true
+  no_config_mutation: true
+  messaging:
+    daily_collect:
+      mode: planned_only
+      dry_run_disabled: true
+
+compute:
+  rules:
+    - cost_usd = input_tokens*input_per_1m/1e6 + output_tokens*output_per_1m/1e6
+    - unknown_model_pricing => warning + cost_usd=0
+    - duplicate_sessionId => dedupe (keep first)
+
+persist:
+  artifacts:
+    - append_log: /home/openclaw/.openclaw/workspace/data/economist-log.jsonl
+    - update_summary: /home/openclaw/.openclaw/workspace/data/cost-summary.json
+
+emit:
+  audit_path: /home/openclaw/.openclaw/.runtime/economist-audit.jsonl
+  planned_actions:
+    - weekly_report_message (approval_gate)

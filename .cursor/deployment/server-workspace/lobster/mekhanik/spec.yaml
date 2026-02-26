@@ -1,0 +1,60 @@
+version: 1
+name: mekhanik
+mode: approval-heavy
+mvp:
+  rule_first: true
+  llm: disabled
+  default_action_mode: plan_only
+
+pipeline:
+  order:
+    - collect
+    - normalize
+    - decide
+    - action
+    - emit
+
+collect:
+  inputs:
+    - incidents_jsonl_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl
+    - reset_ts_path: /home/openclaw/.openclaw/runtime/incidents-reset.json
+    - gateway_unit: openclaw-gateway
+
+action_classes:
+  safe_auto:
+    - restart_gateway (only for gateway_down/announce_queue_loop/gateway_memory_high)
+    - cron_run_monitor (only for monitors: uchastkovy/chekist)
+  risky_approval_required:
+    - run_hetzner_snapshot
+    - modify_cron_job
+    - git_commit_push
+    - delete_remote_resource
+  blocked_mvp:
+    - rm_files
+    - auto_force_push
+    - change_model
+
+policy:
+  restart_guard:
+    max_restarts: 2
+    window_minutes: 30
+    on_exceed:
+      incident:
+        type: restart_loop_blocked
+        severity: critical
+      alert: true
+  retry_budget:
+    max_attempts_per_incident: 2
+  circuit_breaker:
+    max_failures: 3
+    window_minutes: 30
+    on_trip:
+      incident:
+        type: mekhanik_circuit_breaker
+        severity: critical
+      alert: true
+
+emit:
+  audit_path: /home/openclaw/.openclaw/.runtime/mekhanik-audit.jsonl
+  heartbeat_path: /home/openclaw/.openclaw/runtime/monitor-heartbeat.jsonl
+  incidents_append_path: /home/openclaw/.openclaw/workspace/data/incidents.jsonl
