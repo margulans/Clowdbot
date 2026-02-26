@@ -35,7 +35,8 @@
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "b72fece5-c8f7-4b9b-842a-208b7efcecc2",
@@ -1161,7 +1162,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "BACKUP Участковый.\n\nШаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs.\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА (никаких HEARTBEAT_OK).\n\nШаг 2 (только если Участковый не запускался ≥20 мин или lastStatus≠ok):\n1) systemctl --user is-active openclaw-gateway → если не active: restart + записать gateway_down (severity=critical, source=backup-uchastkovy)\n2) df -h / → если >85%: записать disk_warn (severity=warn)\n3) RSS gateway (ps) → если >1400000 KB: restart + записать gateway_memory_high (severity=critical)\n\nВАЖНО:\n- НЕ писать инциденты типа monitor_silent про «Gemini недоступен».\n- НЕ слать уведомления, если нет реальной проблемы (gateway_down/announce_queue_loop/gateway_memory_high/disk_warn).\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nЕсли нужно уведомить Маргулана — используй tool message(). Иначе молчи.\n\n[[NO_TEMP_FILES]]\nНе создавать временных файлов.",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low"
       },
       "delivery": {
@@ -1177,7 +1178,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "a532ac04-61cf-419e-9eca-012b5595fd00",
@@ -1441,7 +1443,8 @@
       },
       "state": {
         "nextRunAtMs": 1772049600000
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "8e8e7e2c-8616-43e3-a7e0-022a6f4c204f",
@@ -1460,7 +1463,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "message": "BACKUP Участковый.\n\nШаг 1: openclaw cron list → найди job 305e53a4 (Участковый), проверь lastRunAtMs.\n- Если последний запуск < 20 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА (никаких HEARTBEAT_OK).\n\nШаг 2 (только если Участковый не запускался ≥20 мин или lastStatus≠ok):\n1) systemctl --user is-active openclaw-gateway → если не active: restart + записать gateway_down (severity=critical, source=backup-uchastkovy)\n2) df -h / → если >85%: записать disk_warn (severity=warn)\n3) RSS gateway (ps) → если >1400000 KB: restart + записать gateway_memory_high (severity=critical)\n\nВАЖНО:\n- НЕ писать инциденты типа monitor_silent про «Gemini недоступен».\n- НЕ слать уведомления, если нет реальной проблемы (gateway_down/announce_queue_loop/gateway_memory_high/disk_warn).\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nЕсли нужно уведомить Маргулана — используй tool message(). Иначе молчи.\n\n[[NO_TEMP_FILES]]\nНе создавать временных файлов."
       },
@@ -1469,7 +1472,8 @@
       },
       "state": {
         "nextRunAtMs": 1772049900000
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "89db97f7-e05e-4e3b-990b-fefc1815e7d7",
@@ -1855,5 +1859,5 @@
       "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-26T00:29:48Z"
+  "capturedAt": "2026-02-26T00:34:38Z"
 }
