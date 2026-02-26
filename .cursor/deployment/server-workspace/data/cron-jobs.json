@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772108091393,
+      "updatedAtMs": 1772108263035,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,16 +27,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772108220000,
-        "lastRunAtMs": 1772107332268,
-        "lastStatus": "error",
-        "lastDurationMs": 67198,
-        "consecutiveErrors": 1,
-        "lastRunStatus": "error",
+        "nextRunAtMs": 1772109120000,
+        "lastRunAtMs": 1772108220041,
+        "lastStatus": "ok",
+        "lastDurationMs": 42994,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDelivered": false
       }
     },
     {
@@ -45,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772108135047,
+      "updatedAtMs": 1772108365860,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -59,7 +57,7 @@
         "message": "Выполни скилл chekist. Прочитай /home/openclaw/.openclaw/workspace/skills/chekist/SKILL.md и строго следуй алгоритму.\n\nВАЖНОЕ:\n- Делай диагностику cron jobs через cron(action=list) и при падениях пиши `cron_error` в data/incidents.jsonl (jobId, job name, lastStatus, consecutiveErrors, lastRunAtMs, model).\n- Уведомление пользователю: `cron_error` и `config_drift` алертить всегда (включая тихие часы).\n- Транспорт: ВСЕГДА вызывай message tool только так: `message(action=send, channel=telegram, to=685668909, message=\"...\")`. Если упало — 1 ретрай через `target=\"685668909\"`. Если снова упало — пиши `message_transport_failed` в data/incidents.jsonl с точной ошибкой.",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 240
+        "timeoutSeconds": 600
       },
       "state": {
         "nextRunAtMs": 1772112364872,
