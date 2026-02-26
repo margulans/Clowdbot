@@ -1,2 +1,2 @@
-{"type":"alert_sent","key":"alert_sent:cron_error:89db97f7","severity":"info"}
-{timestamp: 2026-02-26T23:01:28Z, type: cron_error, message: Git sync failed: Unstaged changes prevent rebase pull., details: Error from 'git pull --rebase origin main': Warning: workdir ~/Clowdbot is unavailable; using /home/openclaw/Clowdbot/.cursor/deployment/server-workspace. error: cannot pull with rebase: You have unstaged changes. error: Please commit or stash them.}
+
+{"ts": "2026-02-26T23:30:00Z", "type": "escalated", "source": "mekhanik", "ref_id": "ce006db5-350b-44be-baef-8b216ed687e4", "severity": "critical", "msg": "requires_human: Manual run of 'Auto-commit: Git sync' job failed with 'gateway timeout'. Original 'unstaged changes' issue appears resolved, but a new timeout issue prevents job completion.", "resolved": false}
