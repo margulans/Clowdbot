@@ -81,7 +81,14 @@
   },
   "messages": {
     "ackReactionScope": "all",
-    "removeAckAfterReply": true
+    "removeAckAfterReply": true,
+    "statusReactions": {
+      "enabled": true,
+      "timing": {
+        "stallSoftMs": 20000,
+        "stallHardMs": 60000
+      }
+    }
   },
   "commands": {
     "native": true,
