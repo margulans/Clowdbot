@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772077840332,
+      "updatedAtMs": 1772083054191,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772078520000,
-        "lastRunAtMs": 1772077630504,
+        "nextRunAtMs": 1772083920000,
+        "lastRunAtMs": 1772083020047,
         "lastStatus": "error",
-        "lastDurationMs": 209828,
+        "lastDurationMs": 34144,
         "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
@@ -99,7 +99,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772081160000,
+        "nextRunAtMs": 1772084760000,
         "lastRunAtMs": 1772077560042,
         "lastStatus": "ok",
         "lastDurationMs": 230987,
@@ -728,7 +728,7 @@
       "name": "BACKUP: Утренние мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988095,
-      "updatedAtMs": 1772065773044,
+      "updatedAtMs": 1772077905761,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -747,15 +747,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772077800000,
-        "lastRunAtMs": 1771991400025,
-        "lastStatus": "ok",
-        "lastDurationMs": 261144,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772164200000,
+        "lastRunAtMs": 1772077800015,
+        "lastStatus": "error",
+        "lastDurationMs": 105746,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772077800013
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       }
     },
     {
@@ -1057,7 +1058,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772073430249,
+      "updatedAtMs": 1772080635899,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1076,10 +1077,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772077920000,
-        "lastRunAtMs": 1772073420019,
+        "nextRunAtMs": 1772084220000,
+        "lastRunAtMs": 1772080620034,
         "lastStatus": "ok",
-        "lastDurationMs": 10230,
+        "lastDurationMs": 15865,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1091,7 +1092,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772074274552,
+      "updatedAtMs": 1772077914511,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1110,10 +1111,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772077860000,
-        "lastRunAtMs": 1772074260036,
+        "nextRunAtMs": 1772085060000,
+        "lastRunAtMs": 1772077905790,
         "lastStatus": "ok",
-        "lastDurationMs": 14516,
+        "lastDurationMs": 8721,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1125,7 +1126,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772071005546,
+      "updatedAtMs": 1772078189533,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1145,10 +1146,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772078160000,
-        "lastRunAtMs": 1772070960034,
+        "nextRunAtMs": 1772085360000,
+        "lastRunAtMs": 1772078160047,
         "lastStatus": "ok",
-        "lastDurationMs": 45512,
+        "lastDurationMs": 29486,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1571,42 +1572,13 @@
       }
     },
     {
-      "id": "bb57b6eb-28a4-4d76-9788-8495c2ac335d",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "📊 Экономия токенов мониторинга — отчёт (daily)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1771996363015,
-      "updatedAtMs": 1771996363015,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-26T04:05:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "anthropic/claude-sonnet-4-6",
-        "thinking": "low",
-        "timeoutSeconds": 900,
-        "message": "Задача: посчитать итоговую экономию токенов/сутки и $/сутки по мониторингу от изменений «без нулевых аудитов + heartbeat вне репо».\n\nМетод:\n- Точка изменения: 2026-02-25T04:53:00Z.\n- Возьми два окна по 24 часа:\n  A) BEFORE: [2026-02-24T04:53:00Z, 2026-02-25T04:53:00Z)\n  B) AFTER : [2026-02-25T04:53:00Z, 2026-02-26T04:53:00Z)\n- Источник токенов: /home/openclaw/.openclaw/agents/main/sessions/sessions.json\n- Рассчитывай только сессии cron следующих jobId (в session_key содержится :cron:<jobId>):\n  uchastkovy day/night: 305e53a4-049c-4d2e-b248-0cdbea259d3f, bc20e704-af13-445d-af52-eaa3ac157d4b\n  chekist day/night:    b72fece5-c8f7-4b9b-842a-208b7efcecc2, 89db97f7-e05e-4e3b-990b-fefc1815e7d7\n  mekhanik day/night:   bef4ddfa-1fd8-4c64-9495-79d851f4f5f0, 0ece27a3-dfc0-47a4-bd3c-6fb6c8c9d403\n  (backup jobs НЕ включать)\n- Для каждого окна посчитай суммарные input_tokens и output_tokens по этим сессиям.\n- Экономия токенов/сутки = (BEFORE_total - AFTER_total) отдельно input/output и суммарно.\n- Экономия $/сутки: используя /home/openclaw/.openclaw/workspace/data/model-pricing.json и модели из sessions.json (по каждой сессии). Если у модели нет pricing — посчитай $=0 и явно укажи «pricing missing: <model>».\n\nОтправка:\n- Отправь Маргулану в личку (telegram 685668909) коротко, одним сообщением:\n  «Экономия мониторинга: X токенов/сутки (in:…, out:…) и $Y/сутки»\n  + строка «Окна: BEFORE … / AFTER …».\n- Используй tool message(action=send, channel=telegram, to=685668909, message=\"...\")\n\nНикаких записей в incidents.jsonl. Никаких файлов, кроме чтения указанных."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772078700000
-      }
-    },
-    {
       "id": "6de61c1c-887a-4e67-90d4-b18c8f6d6863",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "Memory Weekly Review",
       "enabled": true,
       "createdAtMs": 1772009681450,
-      "updatedAtMs": 1772066656097,
+      "updatedAtMs": 1772080093403,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * 0",
@@ -1627,7 +1599,14 @@
         "channel": "telegram"
       },
       "state": {
-        "nextRunAtMs": 1772337600000
+        "nextRunAtMs": 1772337600000,
+        "lastRunAtMs": 1772080075435,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 17968,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     },
     {
