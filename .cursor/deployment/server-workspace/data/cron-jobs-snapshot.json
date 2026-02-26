@@ -584,7 +584,7 @@
         "thinking": "low",
         "text": "🧹 Конец дня! Выполни chat-cleanup скилл: сохрани важное из сегодняшней сессии в memory/YYYY-MM-DD.md, обнови MEMORY.md если нужно, затем предложи Маргулану очистить чат. Следуй инструкциям skills/chat-cleanup/SKILL.md.",
         "timeoutSeconds": 300,
-        "message": "Chat cleanup: save summary to memory/YYYY-MM-DD.md then ask confirmation (reply: подтверждаю очистку)."
+        "message": "Chat cleanup: save summary then send confirm prompt and store promptMessageId in data/chat-cleanup-state.json."
       },
       "state": {
         "nextRunAtMs": 1772035200000,
@@ -595,7 +595,7 @@
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-requested"
       },
-      "last_fixed": "2026-02-25"
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "4cc76b40-8c26-4d88-aa2d-967f432e9cee",
@@ -1845,5 +1845,5 @@
       "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-25T16:58:16Z"
+  "capturedAt": "2026-02-26T00:19:48Z"
 }
