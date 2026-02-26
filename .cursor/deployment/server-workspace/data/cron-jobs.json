@@ -1960,9 +1960,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772092307673,
+      "updatedAtMs": 1772092383060,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1980,20 +1980,22 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {}
+      "state": {
+        "nextRunAtMs": 1772093220100
+      }
     },
     {
       "id": "f2d9921a-d061-4595-a61d-6239a3de59d4",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Механик cutover eval (T+24h)",
-      "enabled": false,
+      "enabled": true,
       "deleteAfterRun": true,
       "createdAtMs": 1772091433069,
-      "updatedAtMs": 1772092307737,
+      "updatedAtMs": 1772092383121,
       "schedule": {
         "kind": "at",
-        "at": "2026-02-27T07:36:41.000Z"
+        "at": "2026-02-27T07:52:53.000Z"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -2007,20 +2009,22 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {}
+      "state": {
+        "nextRunAtMs": 1772178773000
+      }
     },
     {
       "id": "2e4e5c98-c62e-4fe4-9aa5-1531577df61d",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Механик post-check + report (T+24h)",
-      "enabled": false,
+      "enabled": true,
       "deleteAfterRun": true,
       "createdAtMs": 1772092209938,
-      "updatedAtMs": 1772092307772,
+      "updatedAtMs": 1772092383177,
       "schedule": {
         "kind": "at",
-        "at": "2026-02-27T07:38:00.000Z"
+        "at": "2026-02-27T07:54:00.000Z"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
@@ -2034,7 +2038,9 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {}
+      "state": {
+        "nextRunAtMs": 1772178840000
+      }
     }
   ]
 }
