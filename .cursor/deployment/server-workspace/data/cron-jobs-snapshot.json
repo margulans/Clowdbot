@@ -162,7 +162,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 120,
         "message": "🚨 **BACKUP GIT SYNC (Gemini fallback)** — запускается только если основной auto-commit (каждые 4ч) пропущен!\n\nSteps:\n1. cd ~/Clowdbot\n2. Run: git status --short\n3. If output is empty → reply only \"HEARTBEAT_OK\" and stop.\n4. If there are changes:\n   a. git add -A\n   b. git commit -m \"auto-sync backup (gemini): $(date +%Y-%m-%d)\"\n   c. git push origin main\n   d. Reply: \"✅ Backup git-sync: N files committed\"\n\nDo not ask for confirmation. Execute silently."
@@ -179,7 +179,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6",
@@ -230,7 +231,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "⚡ ☀️ БЭКАП **ДНЕВНОЙ ДАЙДЖЕСТ 13:05** — @newsneiron\n\nПроверка:\n- `/home/openclaw/.openclaw/workspace/data/sent-digests.json`\n- Если сегодня уже есть >=6 записей type=news digest=day → HEARTBEAT_OK\n- Иначе публикуй бэкап-выпуск\n\nПоиск (3 уровня):\n- Primary: web_search(freshness=pd) (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch` по выбранным URL\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nФормат: заголовок → 10–15 отдельных новостей → запись mid в dual-rating-data.json + запись в sent-digests.json → аудит."
@@ -247,7 +248,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed",
@@ -302,7 +304,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 900,
         "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап дневного дайджеста мнений.\n\nЯЗЫК: ВСЕ сообщения ТОЛЬКО на русском языке. Мнения переводи на русский.\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI expert opinion today\" 8` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nШАГ 0: ПРОВЕРКА\nПрочитай data/sent-digests.json. Найди записи с type=\"opinions\" И digest=\"afternoon\" И датой сегодня.\n- Если записей >= 3 — ответь HEARTBEAT_OK и заверши (основной агент справился).\n- Если записей < 3 — выполни шаги ниже.\n\nШАГ 1: ЗАГОЛОВОК\nПрочитай текущее время (UTC+5). ПЕРВЫМ сообщением отправь в @opnioneiron:\n\"💬 МНЕНИЯ И КОММЕНТАРИИ | [ДД.ММ.ГГГГ], 13:30\nБэкап | [N] мнений | Что думают эксперты\nМодель: GPT-4o mini (backup)\"\n\nШАГ 2: КАЖДОЕ МНЕНИЕ = СТРОГО ОТДЕЛЬНОЕ СООБЩЕНИЕ\nЗАПРЕЩЕНО объединять мнения в одном сообщении!\nНЕ ОТПРАВЛЯЙ все мнения разом — только ОДНО за раз!\n\nВыполни 8 итераций подряд. В каждой итерации:\n  1. web_search по одной теме (чередуй): \"AI expert tweets opinions February 2026\", \"robotics humanoid expert commentary 2026\", \"eVTOL aviation expert opinion 2026\", \"vibe coding developer tools expert takes 2026\", \"AI business investment expert analysis 2026\", \"AI safety AGI expert opinions 2026\", \"startup venture capital expert views 2026\", \"tech forecast expert predictions 2026\"\n     - если web_search упал/пусто → Brave script → RSS (см. блок ПОИСК выше)\n  2. Выбери ОДНО конкретное мнение эксперта\n  3. Отправь ОДНИМ отдельным сообщением в @opnioneiron (формат):\n\"💬 [Автор] о [теме]\n#тег1 #тег2\n\n[Пересказ на русском, 3-5 предложений]\n\n[Ключевая цитата в кавычках, переведённая на русский]\n\n🐦 @автор — url\"\n  4. Сохрани messageId в data/dual-rating-data.json — messageHistory\n  5. Запиши в data/sent-digests.json (type=\"opinions\", digest=\"afternoon\", дата сегодня)\n  6. Только после п.4 и п.5 — следующая итерация\n\nТемы (все должны быть представлены): ИИ, Вайбкодинг, Робототехника, eVTOL, Технологии, Бизнес, Инвестиции\n\nШАГ 3: АУДИТ\nПОСЛЕДНИМ сообщением отправь в @opnioneiron:\n\"Аудит: Нейрон (backup) | GPT-4o mini\ndual-rating-data.json, sent-digests.json OK\nБэкап дневного дайджеста мнений отправлен в @opnioneiron\"\n\nИтого: 1 заголовок + 8 мнений (каждое отдельно) + 1 аудит = 10 сообщений."
@@ -319,7 +321,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd",
@@ -399,7 +402,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "⚡ 🌆 БЭКАП **ВЕЧЕРНИЙ ДАЙДЖЕСТ 18:05** — @newsneiron\n\nПроверка (без чтения истории канала):\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если сегодня уже есть >=6 записей type=news digest=evening → STOP (HEARTBEAT_OK).\n- Иначе публикуй бэкап-выпуск.\n\nПоиск (3 уровня):\n- Primary: web_search(freshness=pd) (Perplexity)\n- Backup: если Perplexity недоступен/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) + `web_fetch`\n\nДальше по основному шаблону: заголовок → 10–15 отдельных новостей → запись mid в dual-rating-data.json + запись в sent-digests.json → аудит."
@@ -416,7 +419,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
@@ -649,7 +653,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "🚨 **BACKUP УТРЕННИЙ БРИФИНГ (fallback)** - запускается только если основной (06:00) пропущен!\n\n🔍 ПРЕЖДЕ ПРОВЕРЬ: уже отправлял ли ты сегодня утренний брифинг Маргулану?\n- Если ДА - не делай ничего\n- Если НЕТ - отправь утренний брифинг в Telegram (id: 685668909):\n  1) Проверь календарь на встречи сегодня\n  2) Найди задачи из вчерашней рефлексии (пункт \"Что я буду делать иначе?\")\n  3) Краткий план дня\n\n🤖 Модель: gpt-4o-mini (backup)"
@@ -666,7 +670,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "1c292387-c997-46f1-b8a1-e5fd40059713",
@@ -720,7 +725,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "⚡ 🌅 **БЭКАП УТРЕННИЙ ДАЙДЖЕСТ 08:05** — @newsneiron\n\nЦЕЛЬ: если основной выпуск не вышел — выпустить бэкап ПРАВИЛЬНОГО ФОРМАТА.\n\nШАГ 0 — ПРОВЕРКА\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если сегодня уже есть >=6 записей type=news digest=morning date=сегодня → ЗАВЕРШИ МОЛЧА (без HEARTBEAT_OK).\n\nШАГ 1 — ЗАГОЛОВОК (ОБЯЗАТЕЛЬНО ПЕРВЫМ СООБЩЕНИЕМ)\nОтправь ОДНИМ сообщением:\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟠 Бэкап выпуск (08:05)\n🔎 Поиск: Perplexity → Brave → RSS\n\nШАГ 2 — НОВОСТИ (СТРОГО: КАЖДАЯ НОВОСТЬ ОТДЕЛЬНЫМ message())\n- 10–15 новостей.\n- ЗАПРЕЩЕНО публиковать одним блоком.\n- На КАЖДУЮ новость: отдельный `message(action=send, to=@newsneiron, message=\"...\")`.\n- После каждой новости: сохрани messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\nПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity)\n- Backup: если Perplexity ошибка/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`\n\nШАГ 3 — АУДИТ (ОБЯЗАТЕЛЬНО ПОСЛЕДНИМ СООБЩЕНИЕМ)\nОтправь ОДНИМ сообщением:\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n📌 Бэкап | Утренний дайджест\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\nШАГ 4 — СТРАХОВКА\n- Если заголовок не был отправлен — отправь его СЕЙЧАС.\n- Если аудит не был отправлен — отправь его СЕЙЧАС.\n- Запиши meta-записи header/audit в `sent-digests.json`.\n\nШАГ 5 — Git commit.\n\nВАЖНО: если нет уверенности, что каждое сообщение ушло отдельно — перепроверь и исправь ДО завершения."
@@ -737,7 +742,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "6d4944f0-7679-4c5f-b22d-49afc05158b2",
@@ -791,7 +797,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 900,
         "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап утреннего дайджеста мнений.\n\nШАГ 0: ПРОВЕРКА\nПрочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Посчитай entries: type=\"opinions\" digest=\"morning\" date=сегодня.\n- Проверь наличие записи: type=\"opinions_meta\" digest=\"morning\" date=сегодня kind=\"audit\".\nЕсли opinions>=8 И audit_meta существует → ЗАВЕРШИ МОЛЧА (без HEARTBEAT_OK).\n\nИНАЧЕ: выполни бэкап-выпуск по своему протоколу (заголовок → 8 мнений отдельно → аудит), и после каждого сообщения обязательно сохраняй messageId в dual-rating-data.json и sent-digests.json."
@@ -808,7 +814,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "912d1a14-d4a3-40e3-a760-e52a9e5ffe8a",
@@ -981,7 +988,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "message": "BACKUP Рефлексия (gpt-5.2). Шаг 1: openclaw cron list → найди job 9d558661 (Ежедневная рефлексия), проверь lastRunAtMs. Если последний запуск < 15 минут назад И lastStatus=ok → ответь HEARTBEAT_OK и заверши. Шаг 2 (если основная не сработала): запусти ежедневную рефлексию. Прочитай skills/reflection/SKILL.md и выполни его полностью. Используй tool message() для отправки результата Маргулану."
       },
@@ -998,7 +1005,8 @@
       "delivery": {
         "mode": "none",
         "channel": "last"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "28b9d12a-b9d1-4fc0-89ec-3bcde5554e51",
@@ -1222,7 +1230,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "BACKUP Чекист.\n\nШаг 1: openclaw cron list → найди job b72fece5 (Чекист).\n- Если последний запуск < 75 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Чекист не запускался ≥75 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Если есть critical — отправь Маргулану конкретный алерт (через message()).\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\") только если есть реальный critical.\n\n[[NO_TEMP_FILES]]\n[[ACTIVE_INCIDENT_FILTER]]",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low"
       },
       "delivery": {
@@ -1239,7 +1247,8 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered"
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "3138ebbd-e0f2-4937-a761-9b048c314925",
@@ -1508,7 +1517,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "message": "BACKUP Чекист.\n\nШаг 1: openclaw cron list → найди job b72fece5 (Чекист).\n- Если последний запуск < 75 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Чекист не запускался ≥75 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Если есть critical — отправь Маргулану конкретный алерт (через message()).\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\") только если есть реальный critical.\n\n[[NO_TEMP_FILES]]\n[[ACTIVE_INCIDENT_FILTER]]"
       },
@@ -1517,7 +1526,8 @@
       },
       "state": {
         "nextRunAtMs": 1772059800000
-      }
+      },
+      "last_fixed": "2026-02-26"
     },
     {
       "id": "0ece27a3-dfc0-47a4-bd3c-6fb6c8c9d403",
@@ -1845,5 +1855,5 @@
       "last_fixed": "2026-02-25"
     }
   ],
-  "capturedAt": "2026-02-26T00:19:48Z"
+  "capturedAt": "2026-02-26T00:29:48Z"
 }
