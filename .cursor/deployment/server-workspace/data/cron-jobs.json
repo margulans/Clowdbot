@@ -27,7 +27,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772092020000,
+        "nextRunAtMs": 1772092920000,
         "lastRunAtMs": 1772091120034,
         "lastStatus": "error",
         "lastDurationMs": 36443,
@@ -101,7 +101,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772091960000,
+        "nextRunAtMs": 1772095560000,
         "lastRunAtMs": 1772088360051,
         "lastStatus": "ok",
         "lastDurationMs": 105805,
@@ -614,8 +614,8 @@
         "lastRunStatus": "error",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "lastError": "⚠️ ✉️ Message failed",
-        "lastDeliveryError": "⚠️ ✉️ Message failed"
+        "lastDeliveryError": "⚠️ ✉️ Message failed",
+        "runningAtMs": 1772092215256
       }
     },
     {
@@ -1423,11 +1423,11 @@
         "lastRunStatus": "error",
         "lastStatus": "error",
         "lastDurationMs": 22258,
-        "lastError": "An unknown error occurred",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "lastDeliveryError": "An unknown error occurred",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 1,
+        "runningAtMs": 1772092166943
       }
     },
     {
@@ -1960,9 +1960,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772091420100,
+      "updatedAtMs": 1772092307673,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1980,19 +1980,17 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772093220100
-      }
+      "state": {}
     },
     {
       "id": "f2d9921a-d061-4595-a61d-6239a3de59d4",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Механик cutover eval (T+24h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772091433069,
-      "updatedAtMs": 1772091433069,
+      "updatedAtMs": 1772092307737,
       "schedule": {
         "kind": "at",
         "at": "2026-02-27T07:36:41.000Z"
@@ -2009,9 +2007,34 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772177801000
-      }
+      "state": {}
+    },
+    {
+      "id": "2e4e5c98-c62e-4fe4-9aa5-1531577df61d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Механик post-check + report (T+24h)",
+      "enabled": false,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772092209938,
+      "updatedAtMs": 1772092307772,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T07:38:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Lobster Mekhanik 24h post-check and report to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/post_check_report.py\n2) Send a short summary to Margulan via message(action=send, channel=telegram, to=685668909, message=...). Include:\n- duplicates_with_legacy\n- alert spam (proxy)\n- state_write_failed\n- restart_loop_blocked / circuit_breaker_triggered\n- recommendation ready/not_ready for enabling safe-auto\n\nRules:\n- Do NOT enable safe-auto automatically.\n- Keep it concise."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {}
     }
   ]
 }
