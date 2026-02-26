@@ -1,0 +1,32 @@
+# Report for post-check
+
+status = 'NOT_READY'
+
+metrics = {
+    "runs": 2,
+    "lock_acquired": 2,
+    "stale_lock_recovered": 0,
+    "no_op_runs": 1,
+    "planned_commit": 1,
+    "planned_push": 1,
+    "rebase_conflicts": 0,
+    "remote_unreachable": 0
+}
+
+incident_scope = {
+    "incidents_total_delta": 8,
+    "incidents_lobster_scoped_delta": 0,
+    "incidents_legacy_scoped_delta": 1,
+    "incidents_unknown_scoped_delta": 7
+}
+
+# Recommendation and status
+recommendation = 'NEEDS_REVIEW'
+
+# Legacy scope examples
+phased_disable_legacy = []
+scope_examples = {
+    "ce006db5": "legacy",
+    "582cc3f0": "legacy",
+    "89db97f7": "legacy"
+}
