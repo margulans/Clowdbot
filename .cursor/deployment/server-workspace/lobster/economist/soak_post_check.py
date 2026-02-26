@@ -7,7 +7,9 @@ import json
 import os
 from datetime import datetime, timedelta, timezone
 
-METRICS = os.path.expanduser("~/.openclaw/.runtime/economist-lobster-metrics.jsonl")
+METRICS = os.path.expanduser(os.environ.get("ECON_SOAK_METRICS", "~/.openclaw/.runtime/economist-lobster-metrics.jsonl"))
+INCIDENTS = os.path.expanduser(os.environ.get("ECON_SOAK_INCIDENTS", "~/.openclaw/workspace/data/incidents.jsonl"))
+SESSIONS_JSON = os.path.expanduser(os.environ.get("ECON_SOAK_SESSIONS", "~/.openclaw/agents/main/sessions/sessions.json"))
 
 
 def read_jsonl(path: str) -> list[dict]:
@@ -30,6 +32,31 @@ def parse_ts(ts: str) -> datetime:
     if ts.endswith("Z"):
         ts = ts[:-1] + "+00:00"
     return datetime.fromisoformat(ts)
+
+
+def append_incident(obj: dict) -> None:
+    os.makedirs(os.path.dirname(INCIDENTS), exist_ok=True)
+    with open(INCIDENTS, 'a', encoding='utf-8') as f:
+        f.write(json.dumps(obj, ensure_ascii=False) + '\n')
+
+
+def sample_malformed_keys(limit: int = 5) -> list[str]:
+    # Best-effort: find 3–5 examples of sessions missing model/modelProvider.
+    try:
+        with open(SESSIONS_JSON, 'r', encoding='utf-8') as f:
+            sessions = json.load(f)
+        out = []
+        for k, s in sessions.items():
+            if not isinstance(s, dict):
+                continue
+            model = s.get('model') or s.get('modelProvider')
+            if not isinstance(model, str) or not model.strip():
+                out.append(str(k))
+                if len(out) >= limit:
+                    break
+        return out
+    except Exception:
+        return []
 
 
 def main() -> None:
@@ -65,7 +92,27 @@ def main() -> None:
     # Data quality policy:
     # - malformed is a real data problem (exclude from costing); allow small ratio
     # - duplicate_ratio is treated as normal artifact (cron base key + :run: share UUID)
-    data_quality_ok = (agg["malformed_ratio"] <= 0.05)
+    malformed_ratio = agg["malformed_ratio"]
+    data_quality_ok = (malformed_ratio <= 0.05)
+
+    dq_incident = None
+    if malformed_ratio > 0.05:
+        sev = "warn" if malformed_ratio <= 0.1 else "critical"
+        examples = sample_malformed_keys(limit=5)
+        dq_incident = {
+            "ts": now.isoformat().replace("+00:00", "Z"),
+            "type": "economist_data_quality_degraded",
+            "source": "economist-soak-post-check",
+            "severity": sev,
+            "detail": {
+                "total_sessions": agg["total_sessions"],
+                "malformed_session_count": agg["malformed_session_count"],
+                "malformed_ratio": malformed_ratio,
+                "examples": examples,
+            },
+            "resolved": False,
+        }
+        append_incident(dq_incident)
 
     # Default cadence: every 4h => expected 6 runs; accept >=5.
     ready = (
@@ -78,6 +125,7 @@ def main() -> None:
         "window": "24h",
         "metrics": agg,
         "data_quality_ok": data_quality_ok,
+        "data_quality_incident_written": bool(dq_incident),
         "recommendation": "READY" if ready else "NOT_READY",
         "next_enablement": {
             "real_persist": "enable only after confirmation; should write economist-log.jsonl + cost-summary.json atomically",
