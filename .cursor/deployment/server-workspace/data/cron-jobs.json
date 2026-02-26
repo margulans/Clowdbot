@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772083054191,
+      "updatedAtMs": 1772083962998,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,11 +27,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772083920000,
-        "lastRunAtMs": 1772083020047,
+        "nextRunAtMs": 1772084820000,
+        "lastRunAtMs": 1772083920033,
         "lastStatus": "error",
-        "lastDurationMs": 34144,
-        "consecutiveErrors": 2,
+        "lastDurationMs": 42965,
+        "consecutiveErrors": 3,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
@@ -619,7 +619,7 @@
       "name": "Утренний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275670265,
-      "updatedAtMs": 1772075400166,
+      "updatedAtMs": 1772084118171,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -629,20 +629,22 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=morning date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
+        "message": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron\n\nТЕХ-ПРАВИЛО: для отправки сообщений всегда указывай `channel=telegram` в tool-вызове message(action=send,...).\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=morning date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
-        "timeoutSeconds": 600
+        "timeoutSeconds": 900
       },
       "state": {
         "nextRunAtMs": 1772161200000,
-        "lastRunAtMs": 1772074800043,
+        "lastRunAtMs": 1772084085028,
         "lastStatus": "error",
-        "lastDurationMs": 600123,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 33143,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "lastDeliveryStatus": "not-delivered",
+        "lastError": "⚠️ ✉️ Message failed",
+        "lastDelivered": false,
+        "lastDeliveryError": "⚠️ ✉️ Message failed"
       },
       "delivery": {
         "mode": "none"
@@ -690,7 +692,7 @@
       "name": "Утренние мнения",
       "enabled": true,
       "createdAtMs": 1770522295821,
-      "updatedAtMs": 1772076622227,
+      "updatedAtMs": 1772084074257,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -700,10 +702,10 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **УТРЕННИЙ МНЕНИЯ 08:30** — @opnioneiron\n\nЦЕЛЬ: Выпуск должен выйти всегда в правильном формате: заголовок → 8–10 отдельных мнений → аудит.\n\nШАГ 0 — ПРОВЕРКА (чтобы не дублировать)\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Посчитай entries где type=\"opinions\" AND digest=\"morning\" AND date=сегодня.\n- Если таких записей >= 8 И есть запись type=\"opinions_meta\" digest=\"morning\" date=сегодня kind=\"audit\" → ЗАВЕРШИ МОЛЧА.\n\n0) startTs = текущее unixMs.\n\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое)\nmessage(action=send, to=@opnioneiron, message=\n\"💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 08:30\\n🟢 Основной выпуск | Утренний выпуск\\n🔎 Поиск: Perplexity → Brave → RSS\") → mid_header\n- Запиши meta в sent-digests.json:\n  {type:\"opinions_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs, messageId: mid_header}\n\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений)\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении.\n\nПОИСК (3 уровня):\n- Primary: web_search(freshness=pd) (Perplexity)\n- Backup: если web_search ошибка/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`\n\nНа каждое мнение:\n  a) message(action=send, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n#теги\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🔗 url\") → mid\n  b) СРАЗУ запиши msg_{{mid}} в `data/dual-rating-data.json` → messageHistory\n  c) Запиши в `sent-digests.json`:\n     {type:\"opinions\", digest:\"morning\", date:{{localDate}}, category:\"...\", title:\"...\", url:\"...\", keywords:[...], messageId: mid}\n  d) Перечитай файлы и убедись, что запись реально появилась (retry 1 раз). Если нет — ВЫЗОВИ ОШИБКУ (чтобы сработал бэкап).\n\nШАГ 3 — АУДИТ (последнее сообщение, обязателен)\nmessage(action=send, to=@opnioneiron, message=\n\"🛡️ **АУДИТ ДАЙДЖЕСТА**\\n─────────────────────\\n📌 Основной | Утренний мнения\\n⏱️ Время: {{localTime}} Алматы\\n🔎 Поиск: Perplexity → Brave → RSS\\n📊 Опубликовано: N мнений\\n✅ Rating IDs: все сохранены\") → mid_audit\n- Запиши meta в sent-digests.json:\n  {type:\"opinions_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs, messageId: mid_audit}\n\nШАГ 4 — ФИНАЛЬНАЯ ВАЛИДАЦИЯ (обязательна)\n- Снова посчитай: type=\"opinions\" digest=\"morning\" date=сегодня должно быть >= 8.\n- Должна существовать запись opinions_meta kind=audit за сегодня.\n- Если не так — ВЫЗОВИ ОШИБКУ (raise/throw), чтобы бэкап отправил выпуск правильно.\n\nШАГ 5 — Git commit.",
-        "model": "google/gemini-2.5-flash",
+        "message": "⚠️ ЯЗЫК: ВСЕ сообщения и мнения ТОЛЬКО на русском языке. Цитаты переводи на русский.\n\n💭 **УТРЕННИЙ МНЕНИЯ 08:30** — @opnioneiron\n\nТЕХ-ПРАВИЛО: при отправке сообщений в Telegram всегда указывай `channel=telegram` в tool-вызове message(action=send,...).\n\nЦЕЛЬ: Выпуск должен выйти всегда в правильном формате: заголовок → 8–10 отдельных мнений → аудит.\n\nШАГ 0 — ПРОВЕРКА (чтобы не дублировать)\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Посчитай entries где type=\"opinions\" AND digest=\"morning\" AND date=сегодня.\n- Если таких записей >= 8 И есть запись type=\"opinions_meta\" digest=\"morning\" date=сегодня kind=\"audit\" → ЗАВЕРШИ МОЛЧА.\n\n0) startTs = текущее unixMs.\n\nШАГ 1 — ЗАГОЛОВОК (1 сообщение, обязательно первое)\nmessage(action=send, channel=telegram, to=@opnioneiron, message=\n\"💬 **МНЕНИЯ И КОММЕНТАРИИ** | {{localDate}}, 08:30\\n🟢 Основной выпуск | Утренний выпуск\\n🔎 Поиск: Perplexity → Brave → RSS\") → mid_header\n- Запиши meta в sent-digests.json:\n  {type:\"opinions_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs, messageId: mid_header}\n\nШАГ 2 — КАЖДОЕ МНЕНИЕ СТРОГО ОТДЕЛЬНЫМ message() (8–10 мнений)\n🚫 ЗАПРЕЩЕНО объединять мнения в одном сообщении.\n\nПОИСК (3 уровня):\n- Primary: web_search(freshness=pd) (Perplexity)\n- Backup: если web_search ошибка/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"<author> opinion on AI today\" 8` → затем `web_fetch`\n- Backup #2: RSS (см. skills/digest/SKILL.md список лент) + `web_fetch`\n\nНа каждое мнение:\n  a) message(action=send, channel=telegram, to=@opnioneiron, message=\"💬 **[Автор] о [теме]**\\n#теги\\n\\n[Пересказ 3–5 предл.]\\n[Цитата]\\n🔗 url\") → mid\n  b) СРАЗУ запиши msg_{{mid}} в `data/dual-rating-data.json` → messageHistory\n  c) Запиши в `sent-digests.json`:\n     {type:\"opinions\", digest:\"morning\", date:{{localDate}}, category:\"...\", title:\"...\", url:\"...\", keywords:[...], messageId: mid}\n  d) Перечитай файлы и убедись, что запись реально появилась (retry 1 раз). Если нет — ВЫЗОВИ ОШИБКУ (чтобы сработал бэкап).\n\nШАГ 3 — АУДИТ (последнее сообщение, обязателен)\nmessage(action=send, channel=telegram, to=@opnioneiron, message=\n\"🛡️ **АУДИТ ДАЙДЖЕСТА**\\n─────────────────────\\n📌 Основной | Утренний мнения\\n⏱️ Время: {{localTime}} Алматы\\n🔎 Поиск: Perplexity → Brave → RSS\\n📊 Опубликовано: N мнений\\n✅ Rating IDs: все сохранены\") → mid_audit\n- Запиши meta в sent-digests.json:\n  {type:\"opinions_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs, messageId: mid_audit}\n\nШАГ 4 — ФИНАЛЬНАЯ ВАЛИДАЦИЯ (обязательна)\n- Снова посчитай: type=\"opinions\" digest=\"morning\" date=сегодня должно быть >= 8.\n- Должна существовать запись opinions_meta kind=audit за сегодня.\n- Если не так — ВЫЗОВИ ОШИБКУ (raise/throw), чтобы бэкап отправил выпуск правильно.\n\nШАГ 5 — Git commit.",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 900
+        "timeoutSeconds": 1200
       },
       "state": {
         "nextRunAtMs": 1772163000000,
@@ -714,8 +716,8 @@
         "lastRunStatus": "error",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryError": "An unknown error occurred",
+        "runningAtMs": 1772084120006
       },
       "delivery": {
         "mode": "none"
@@ -728,7 +730,7 @@
       "name": "BACKUP: Утренние мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988095,
-      "updatedAtMs": 1772077905761,
+      "updatedAtMs": 1772084074375,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -740,8 +742,8 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 900,
-        "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап утреннего дайджеста мнений.\n\nШАГ 0: ПРОВЕРКА\nПрочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Посчитай entries: type=\"opinions\" digest=\"morning\" date=сегодня.\n- Проверь наличие записи: type=\"opinions_meta\" digest=\"morning\" date=сегодня kind=\"audit\".\nЕсли opinions>=8 И audit_meta существует → ЗАВЕРШИ МОЛЧА (без HEARTBEAT_OK).\n\nИНАЧЕ: выполни бэкап-выпуск по своему протоколу (заголовок → 8 мнений отдельно → аудит), и после каждого сообщения обязательно сохраняй messageId в dual-rating-data.json и sent-digests.json."
+        "timeoutSeconds": 1200,
+        "message": "Ты — Нейрон (BACKUP-агент). Проверь, нужен ли бэкап утреннего дайджеста мнений.\n\nТЕХ-ПРАВИЛО: при отправке сообщений в Telegram всегда указывай `channel=telegram` в tool-вызове message(action=send,...).\n\nШАГ 0: ПРОВЕРКА\nПрочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Посчитай entries: type=\"opinions\" digest=\"morning\" date=сегодня.\n- Проверь наличие записи: type=\"opinions_meta\" digest=\"morning\" date=сегодня kind=\"audit\".\nЕсли opinions>=8 И audit_meta существует → ЗАВЕРШИ МОЛЧА (без HEARTBEAT_OK).\n\nИНАЧЕ: выполни бэкап-выпуск по своему протоколу (заголовок → 8 мнений отдельно → аудит), и после каждого сообщения обязательно сохраняй messageId в dual-rating-data.json и sent-digests.json.\n\nВажно: при каждом message(action=send, ...) явно указывай `channel=telegram` и `to=@opnioneiron`."
       },
       "delivery": {
         "mode": "none"
