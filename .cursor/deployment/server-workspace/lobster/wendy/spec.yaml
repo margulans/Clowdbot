@@ -1,0 +1,51 @@
+version: 1
+name: wendy
+mode: approval-heavy
+mvp:
+  plan_only: true
+  llm: allowed_for_draft
+
+pipeline:
+  order:
+    - collect
+    - normalize
+    - draft
+    - policy
+    - action
+    - emit
+
+actions:
+  safe:
+    - emit_audit
+    - emit_heartbeat
+  approval_required:
+    - message_send
+    - write_briefing_md
+    - write_reflection_md
+    - write_user_md
+  blocked_mvp:
+    - mass_memory_edits
+
+policy:
+  plan_only_enforced: true
+  violations:
+    - any_real_message_send
+    - any_user_file_write
+
+metrics:
+  path: /home/openclaw/.openclaw/.runtime/wendy-lobster-metrics.jsonl
+  fields:
+    - ts
+    - runs_total
+    - planned_messages
+    - planned_user_writes
+    - blocked_actions
+    - policy_violations
+    - malformed_input_count
+
+post_check:
+  expected_runs_24h: 48
+  accept_runs_min: 46
+  ready_if:
+    - policy_violations == 0
+    - malformed_input_count == 0

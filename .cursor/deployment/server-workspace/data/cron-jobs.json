@@ -1074,7 +1074,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772095020000,
+        "nextRunAtMs": 1772095920000,
         "lastRunAtMs": 1772091420099,
         "lastStatus": "ok",
         "lastDurationMs": 44906,
@@ -1891,7 +1891,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772094342815,
+      "updatedAtMs": 1772094938767,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1910,11 +1910,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772094934385,
-        "lastRunAtMs": 1772094334385,
+        "nextRunAtMs": 1772095534422,
+        "lastRunAtMs": 1772094934422,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8430,
+        "lastDurationMs": 4345,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1956,7 +1956,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772093259919,
+      "updatedAtMs": 1772095059219,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1975,11 +1975,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772095039964,
-        "lastRunAtMs": 1772093239964,
+        "nextRunAtMs": 1772096843394,
+        "lastRunAtMs": 1772095043394,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19955,
+        "lastDurationMs": 15825,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2164,6 +2164,64 @@
       },
       "state": {
         "nextRunAtMs": 1772180460000
+      }
+    },
+    {
+      "id": "551ee6bf-21fa-4891-a211-2a5dc31a641e",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Wendy (plan-only soak)",
+      "enabled": true,
+      "createdAtMs": 1772095282193,
+      "updatedAtMs": 1772095282193,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1772095282193
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Run Wendy plan-only soak runner (no messages, no user file writes).\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/wendy/runner_plan_only.py\n\nRules:\n- Do not call message(action=send).\n- Do not write Briefing.md/Reflection.md/USER.md.\n- Append only to ~/.openclaw/.runtime/wendy-lobster-metrics.jsonl.\n- Stay silent."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772097082193
+      }
+    },
+    {
+      "id": "88bed7ff-931d-4fd1-b1c1-8f376c6806c6",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Wendy decision-gate (T+24h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772095282239,
+      "updatedAtMs": 1772095282239,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T08:42:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Wendy soak post-check and send decision to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/wendy/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short READY/NOT_READY + agg metrics>)\n\nRules:\n- Do NOT change Wendy legacy jobs.\n- Do NOT enable real mode.\n- Keep concise."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772181720000
       }
     }
   ]
