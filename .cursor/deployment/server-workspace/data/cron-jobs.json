@@ -261,7 +261,7 @@
       "name": "Дневные мнения",
       "enabled": true,
       "createdAtMs": 1770522310056,
-      "updatedAtMs": 1772035125675,
+      "updatedAtMs": 1772094609441,
       "schedule": {
         "kind": "cron",
         "expr": "30 13 * * *",
@@ -277,13 +277,14 @@
         "timeoutSeconds": 900
       },
       "state": {
-        "nextRunAtMs": 1772094600000,
-        "lastRunAtMs": 1772012836073,
-        "lastStatus": "error",
-        "lastDurationMs": 300074,
-        "consecutiveErrors": 2,
-        "lastRunStatus": "error",
-        "lastDeliveryStatus": "not-requested"
+        "nextRunAtMs": 1772181000000,
+        "lastRunAtMs": 1772094600036,
+        "lastStatus": "ok",
+        "lastDurationMs": 9405,
+        "consecutiveErrors": 0,
+        "lastRunStatus": "ok",
+        "lastDeliveryStatus": "not-delivered",
+        "lastDelivered": false
       },
       "delivery": {
         "mode": "none"
@@ -2107,7 +2108,7 @@
       "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772094058261,
-      "updatedAtMs": 1772094445438,
+      "updatedAtMs": 1772094654129,
       "schedule": {
         "kind": "every",
         "everyMs": 14400000,
@@ -2120,7 +2121,7 @@
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 180,
-        "message": "You are Economist (plan-only soak, integration).\n\nGOAL: real collect via tools, then *guaranteed* append metrics line to a file using exec.\n\nSteps (rule-first):\n1) sessions_list(limit=200, activeMinutes=43200, messageLimit=0)\n2) Read pricing JSON: /home/openclaw/.openclaw/workspace/data/model-pricing.json\n3) Read cost-summary JSON: /home/openclaw/.openclaw/workspace/data/cost-summary.json\n4) Compute metrics:\n   - computed_total_usd (float)\n   - unknown_pricing_count (int)\n   - malformed_session_count (int)\n   - duplicate_session_count (int)\n   - planned_persist_count (int)\n   - planned_report_count = 0\n\n5) Append ONE JSON line to:\n   ~/.openclaw/.runtime/economist-lobster-metrics.jsonl\n\nCRITICAL: write the file via exec (not just \"saying\" it was written).\nUse this exact pattern:\n- exec: mkdir -p ~/.openclaw/.runtime\n- exec: python3 - <<'PY'\nimport json, os, datetime\npath=os.path.expanduser('~/.openclaw/.runtime/economist-lobster-metrics.jsonl')\nrec={\n  'ts': datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00','Z'),\n  'runs_total': 1,\n  'computed_total_usd': <computed_total_usd>,\n  'unknown_pricing_count': <unknown_pricing_count>,\n  'malformed_session_count': <malformed_session_count>,\n  'duplicate_session_count': <duplicate_session_count>,\n  'planned_persist_count': <planned_persist_count>,\n  'planned_report_count': 0,\n}\nos.makedirs(os.path.dirname(path), exist_ok=True)\nwith open(path,'a',encoding='utf-8') as f:\n  f.write(json.dumps(rec, ensure_ascii=False)+'\\n')\nprint('WROTE', path)\nPY\n- exec: tail -n 1 ~/.openclaw/.runtime/economist-lobster-metrics.jsonl\n\nConstraints:\n- No model switching. No config mutation.\n- No writes to economist-log.jsonl or cost-summary.json.\n- No message(action=send).\n- Stay silent."
+        "message": "Economist plan-only soak (deterministic numbers).\n\nExec:\npython3 /home/openclaw/.openclaw/workspace/lobster/economist/runner_plan_only.py\n\nRules:\n- This script computes computed_total_usd deterministically from sessions.json + model-pricing.json.\n- No writes to economist-log.jsonl or cost-summary.json.\n- No message(action=send).\n- Stay silent."
       },
       "delivery": {
         "mode": "none"
