@@ -18,7 +18,15 @@ from datetime import datetime, timedelta, timezone
 METRICS = os.path.expanduser("~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl")
 INCIDENTS = os.path.expanduser("~/.openclaw/workspace/data/incidents.jsonl")
 
-LEGACY_MEKHANIK_JOB_ID = "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0"
+# Scope classification
+LOBSTER_SOURCES = {"mekhanik-lobster", "lobster-mekhanik"}
+LOBSTER_JOB_IDS: set[str] = set()  # fill if/when lobster writes jobId-scoped incidents
+LEGACY_JOB_IDS = {
+    "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0",  # 🔧 Механик (legacy)
+    "ce006db5-350b-44be-baef-8b216ed687e4",  # Auto-commit: Git sync (legacy)
+    "582cc3f0-9941-4e74-ae77-0afac52c6258",  # Вечерний дайджест @newsneiron (legacy)
+    "89db97f7-e05e-4e3b-990b-fefc1815e7d7",  # 🕵️ Чекист (ночь) (legacy)
+}
 
 
 def read_jsonl(path: str) -> list[dict]:
@@ -41,6 +49,43 @@ def parse_ts(ts: str) -> datetime:
     if ts.endswith("Z"):
         ts = ts[:-1] + "+00:00"
     return datetime.fromisoformat(ts)
+
+
+def classify_scope(inc: dict) -> str:
+    job_id = inc.get("jobId")
+    src = inc.get("source")
+    if src in LOBSTER_SOURCES or (isinstance(job_id, str) and job_id in LOBSTER_JOB_IDS):
+        return "lobster"
+    if isinstance(job_id, str) and job_id in LEGACY_JOB_IDS:
+        return "legacy"
+    return "unknown"
+
+
+def scoped_incident_deltas(incidents: list[dict], since_ts: datetime) -> dict:
+    total = lobster = legacy = unknown = 0
+    for r in incidents:
+        ts = r.get("ts")
+        if not isinstance(ts, str):
+            continue
+        try:
+            if parse_ts(ts) < since_ts:
+                continue
+        except Exception:
+            continue
+        total += 1
+        scope = classify_scope(r)
+        if scope == "lobster":
+            lobster += 1
+        elif scope == "legacy":
+            legacy += 1
+        else:
+            unknown += 1
+    return {
+        "incidents_total_delta": total,
+        "incidents_lobster_scoped_delta": lobster,
+        "incidents_legacy_scoped_delta": legacy,
+        "incidents_unknown_scoped_delta": unknown,
+    }
 
 
 def main() -> None:
@@ -101,6 +146,13 @@ def main() -> None:
         agg["circuit_breaker_triggered"] == 0
     )
 
+    deltas = scoped_incident_deltas(i24, now - timedelta(hours=2))
+    gate_status = "ok"
+    if deltas["incidents_unknown_scoped_delta"] > 0:
+        gate_status = "needs_review"
+    if deltas["incidents_lobster_scoped_delta"] > 0:
+        gate_status = "blocked"
+
     out = {
         "ts": now.isoformat().replace("+00:00", "Z"),
         "window": "24h",
@@ -110,11 +162,13 @@ def main() -> None:
             "lobster_incident_rows_24h": lobster_activity,
             "note": "plan-only runner should be 0 lobster rows; legacy may be >0 if it repaired incidents",
         },
+        "incident_scope": deltas,
+        "gate_status": gate_status,
         "alert_spam": {
             "proxy": "no message events counted; use incidents+metrics only",
             "state_write_failed": agg["state_write_failed"],
         },
-        "recommendation": "ready" if ready else "not_ready",
+        "recommendation": "ready" if (ready and gate_status == "ok") else ("needs_review" if gate_status == "needs_review" else "not_ready"),
     }
 
     print(json.dumps({"ok": True, "summary": out}, ensure_ascii=False))
