@@ -57,8 +57,9 @@ def main() -> None:
         "planned_risky": sum(int(r.get("planned_risky", 0) or 0) for r in rows24),
     }
 
+    # 30m period => expected_runs_24h=48; accept >=46 to tolerate minor scheduling jitter
     ok = (
-        agg["runs"] >= 24 and
+        agg["runs"] >= 46 and
         agg["state_write_failed"] == 0 and
         agg["restart_loop_blocked"] == 0 and
         agg["circuit_breaker_triggered"] == 0

@@ -93,8 +93,9 @@ def main() -> None:
         if r.get("source") in ("mekhanik-lobster", "lobster-mekhanik"):
             lobster_activity += 1
 
+    # 30m period => expected_runs_24h=48; accept >=46 to tolerate minor scheduling jitter
     ready = (
-        agg["runs"] >= 24 and
+        agg["runs"] >= 46 and
         agg["state_write_failed"] == 0 and
         agg["restart_loop_blocked"] == 0 and
         agg["circuit_breaker_triggered"] == 0
