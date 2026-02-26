@@ -3,6 +3,7 @@
   "action_classes": {
     "safe_auto": [
       "cron_run_monitor",
+      "escalate",
       "restart_gateway"
     ],
     "risky": [
@@ -17,143 +18,128 @@
       "rm_files"
     ]
   },
-  "report": [
+  "prod_enablement_checklist": [
+    "State path exists: ~/.openclaw/.runtime/mekhanik-state.json (owner=openclaw, mode 600/640)",
+    "Atomic writes enabled (tmp+fsync+rename); monitor state_write_failed incidents",
+    "Restart-guard verified: 2 restarts/30m per incident_key; window resets after 30m",
+    "Circuit-breaker per incident_key (not global); verify no cross-incident blocking",
+    "Rollback: set Mеханик cron enabled=false; preserve incidents.jsonl"
+  ],
+  "cases": [
     {
-      "name": "single_recoverable_gateway_down",
+      "name": "shared_state_restart_guard",
+      "expected": [
+        {
+          "t": 0,
+          "allowed": true
+        },
+        {
+          "t": 600,
+          "allowed": true
+        },
+        {
+          "t": 1200,
+          "allowed": false,
+          "incident": "restart_loop_blocked"
+        },
+        {
+          "t": 1860,
+          "allowed": true
+        }
+      ],
+      "actual": [
+        {
+          "now_offset_s": 0,
+          "actual": {
+            "incidents": [],
+            "actions": [
+              {
+                "kind": "restart_gateway",
+                "allowed": true,
+                "approval_required": false
+              }
+            ],
+            "attempts": 1,
+            "window_start": 1772091219.9405222
+          }
+        },
+        {
+          "now_offset_s": 600,
+          "actual": {
+            "incidents": [],
+            "actions": [
+              {
+                "kind": "restart_gateway",
+                "allowed": true,
+                "approval_required": false
+              }
+            ],
+            "attempts": 2,
+            "window_start": 1772091219.9405222
+          }
+        },
+        {
+          "now_offset_s": 1200,
+          "actual": {
+            "incidents": [
+              {
+                "type": "restart_loop_blocked",
+                "severity": "critical"
+              }
+            ],
+            "actions": [
+              {
+                "kind": "restart_gateway",
+                "allowed": false,
+                "reason": "restart_loop_blocked",
+                "approval_required": false
+              }
+            ],
+            "attempts": 2,
+            "window_start": 1772091219.9405222
+          }
+        },
+        {
+          "now_offset_s": 1860,
+          "actual": {
+            "incidents": [],
+            "actions": [
+              {
+                "kind": "restart_gateway",
+                "allowed": true,
+                "approval_required": false
+              }
+            ],
+            "attempts": 1,
+            "window_start": 1772093079.9405222
+          }
+        }
+      ]
+    },
+    {
+      "name": "atomic_write_failure",
+      "expected": {
+        "append_incidents": [
+          "state_write_failed"
+        ],
+        "actions": [
+          "safe_stop"
+        ]
+      },
       "actual": {
-        "plan": [
+        "error": "[Errno 13] Permission denied: '/root/forbidden'",
+        "append_incidents": [
           {
-            "kind": "restart_gateway",
-            "class": "safe_auto",
-            "approval_required": false,
+            "type": "state_write_failed",
+            "severity": "critical"
+          }
+        ],
+        "actions": [
+          {
+            "kind": "safe_stop",
             "allowed": true
           }
-        ],
-        "incidents": [],
-        "attempts": 0
-      }
-    },
-    {
-      "name": "repeated_same_critical_dedupe",
-      "actual": {
-        "deduped": true,
-        "plan": [],
-        "incidents": []
-      }
-    },
-    {
-      "name": "risky_requires_approval",
-      "actual": {
-        "plan": [
-          {
-            "kind": "run_hetzner_snapshot",
-            "class": "risky",
-            "approval_required": true,
-            "allowed": false,
-            "reason": "approval_required"
-          }
-        ],
-        "incidents": [],
-        "attempts": 0
-      }
-    },
-    {
-      "name": "fail1",
-      "actual": {
-        "plan": [
-          {
-            "kind": "restart_gateway",
-            "class": "safe_auto",
-            "approval_required": false,
-            "allowed": true
-          }
-        ],
-        "incidents": [],
-        "attempts": 1
-      }
-    },
-    {
-      "name": "fail2",
-      "actual": {
-        "plan": [
-          {
-            "kind": "restart_gateway",
-            "class": "safe_auto",
-            "approval_required": false,
-            "allowed": false,
-            "reason": "restart_loop_blocked"
-          }
-        ],
-        "incidents": [
-          {
-            "type": "restart_loop_blocked",
-            "severity": "critical"
-          }
-        ],
-        "attempts": 1
-      }
-    },
-    {
-      "name": "fail3",
-      "actual": {
-        "plan": [
-          {
-            "kind": "restart_gateway",
-            "class": "safe_auto",
-            "approval_required": false,
-            "allowed": false,
-            "reason": "restart_loop_blocked"
-          }
-        ],
-        "incidents": [
-          {
-            "type": "restart_loop_blocked",
-            "severity": "critical"
-          }
-        ],
-        "attempts": 1
-      }
-    },
-    {
-      "name": "circuit_breaker_after_failures",
-      "actual": {
-        "plan": [
-          {
-            "kind": "restart_gateway",
-            "class": "safe_auto",
-            "approval_required": false,
-            "allowed": false,
-            "reason": "circuit_breaker"
-          }
-        ],
-        "incidents": [
-          {
-            "type": "mekhanik_circuit_breaker",
-            "severity": "critical"
-          }
-        ],
-        "attempts": 1
-      }
-    },
-    {
-      "name": "malformed_incident",
-      "actual": {
-        "plan": [
-          {
-            "kind": "escalate",
-            "class": "safe_auto",
-            "approval_required": false,
-            "allowed": false,
-            "reason": "circuit_breaker"
-          }
-        ],
-        "incidents": [
-          {
-            "type": "mekhanik_circuit_breaker",
-            "severity": "critical"
-          }
-        ],
-        "attempts": 0
+        ]
       }
     }
   ]
