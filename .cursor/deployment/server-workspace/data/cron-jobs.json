@@ -2223,6 +2223,64 @@
       "state": {
         "nextRunAtMs": 1772181720000
       }
+    },
+    {
+      "id": "3a62294c-8109-4f71-9f4d-62d3450d4ae5",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Marta (plan-only soak)",
+      "enabled": true,
+      "createdAtMs": 1772095397594,
+      "updatedAtMs": 1772095397594,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000,
+        "anchorMs": 1772095397594
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 120,
+        "message": "Run Marta plan-only soak runner (no messages, no memory writes, no git).\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/marta/runner_plan_only.py\n\nRules:\n- Do not call message(action=send).\n- Do not write memory/*.\n- Do not git commit/push.\n- Append only to ~/.openclaw/.runtime/marta-lobster-metrics.jsonl.\n- Stay silent."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772097197594
+      }
+    },
+    {
+      "id": "cd329770-306a-4715-b84b-37b99057f1c9",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Marta decision-gate (T+24h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772095397805,
+      "updatedAtMs": 1772095397805,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T08:44:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Marta soak post-check and send decision to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/marta/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short READY/NOT_READY + agg metrics>)\n\nRules:\n- Do NOT change legacy Marta jobs.\n- Do NOT enable real mode.\n- Keep concise."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772181840000
+      }
     }
   ]
 }

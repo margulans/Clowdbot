@@ -1,0 +1,53 @@
+version: 1
+name: marta
+mode: approval-heavy
+mvp:
+  plan_only: true
+
+pipeline:
+  order:
+    - collect
+    - normalize
+    - draft
+    - policy
+    - action
+    - emit
+
+actions:
+  safe:
+    - emit_audit
+    - emit_heartbeat
+    - emit_runtime_metrics
+  approval_required:
+    - memory_write
+    - message_send
+    - git_commit_push
+  blocked_mvp:
+    - mass_memory_edits
+    - cross_file_memory_refactor
+
+policy:
+  plan_only_enforced: true
+  violations:
+    - any_real_message_send
+    - any_memory_write
+    - any_git_commit_push
+
+metrics:
+  path: /home/openclaw/.openclaw/.runtime/marta-lobster-metrics.jsonl
+  fields:
+    - ts
+    - runs_total
+    - planned_memory_writes
+    - planned_messages
+    - planned_git_actions
+    - blocked_actions
+    - policy_violations
+    - malformed_input_count
+
+post_check:
+  expected_runs_24h: 48
+  accept_runs_min: 46
+  ready_if:
+    - policy_violations == 0
+    - malformed_input_count == 0
