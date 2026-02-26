@@ -954,7 +954,7 @@
       "id": "a1de1ef4-e153-4415-8704-741f812ab75a",
       "agentId": "main",
       "sessionKey": "agent:main:main",
-      "name": "🧹 Еженедельный аудит контекста (Optimizer)",
+      "name": "🧹 Еженедельный куратор контекста (Optimizer)",
       "enabled": true,
       "createdAtMs": 1771691862697,
       "updatedAtMs": 1771839906626,
@@ -968,7 +968,8 @@
       "payload": {
         "message": "Запусти скилл context-optimizer. Проведи полный аудит всегда-загружаемого контекста (AGENTS, USER, MEMORY, HEARTBEAT, SOUL, TOOLS). Если суммарный вес превышает лимиты из thresholds.md — предложи план оптимизации.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.",
         "kind": "agentTurn",
-        "model": "anthropic/claude-opus-4-6"
+        "model": "anthropic/claude-opus-4-6",
+        "timeoutSeconds": 900
       },
       "delivery": {
         "mode": "none"
@@ -1892,5 +1893,5 @@
       "last_fixed": "2026-02-26"
     }
   ],
-  "capturedAt": "2026-02-26T01:12:49Z"
+  "capturedAt": "2026-02-26T03:51:26Z"
 }

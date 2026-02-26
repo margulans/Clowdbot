@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772067762388,
+      "updatedAtMs": 1772077840332,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,16 +27,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772068620000,
-        "lastRunAtMs": 1772067720037,
+        "nextRunAtMs": 1772078520000,
+        "lastRunAtMs": 1772077630504,
         "lastStatus": "error",
-        "lastDurationMs": 42351,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 209828,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryError": "An unknown error occurred",
+        "lastError": "An unknown error occurred"
       }
     },
     {
@@ -45,7 +45,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772033231609,
+      "updatedAtMs": 1772076407220,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -62,10 +62,10 @@
         "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1772069164872,
-        "lastRunAtMs": 1772033164900,
+        "nextRunAtMs": 1772083564872,
+        "lastRunAtMs": 1772076364916,
         "lastStatus": "ok",
-        "lastDurationMs": 66709,
+        "lastDurationMs": 42304,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -80,7 +80,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772037982270,
+      "updatedAtMs": 1772077791029,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -99,10 +99,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772070360000,
-        "lastRunAtMs": 1772037960036,
+        "nextRunAtMs": 1772081160000,
+        "lastRunAtMs": 1772077560042,
         "lastStatus": "ok",
-        "lastDurationMs": 22234,
+        "lastDurationMs": 230987,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -136,7 +136,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772074873831,
+        "nextRunAtMs": 1772089273831,
         "lastRunAtMs": 1772060514998,
         "lastStatus": "ok",
         "lastDurationMs": 14196,
@@ -153,7 +153,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1772065772689,
+      "updatedAtMs": 1772076609138,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -172,10 +172,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772076600000,
-        "lastRunAtMs": 1772062200043,
+        "nextRunAtMs": 1772091000000,
+        "lastRunAtMs": 1772076600034,
         "lastStatus": "ok",
-        "lastDurationMs": 12182,
+        "lastDurationMs": 9104,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -619,7 +619,7 @@
       "name": "Утренний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275670265,
-      "updatedAtMs": 1771988506522,
+      "updatedAtMs": 1772075400166,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -635,14 +635,14 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772074800000,
-        "lastRunAtMs": 1771988400029,
-        "lastStatus": "ok",
-        "lastDurationMs": 106493,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "nextRunAtMs": 1772161200000,
+        "lastRunAtMs": 1772074800043,
+        "lastStatus": "error",
+        "lastDurationMs": 600123,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
+        "lastDeliveryStatus": "not-requested",
+        "lastError": "cron: job execution timed out"
       },
       "delivery": {
         "mode": "none"
@@ -674,7 +674,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772075100000,
+        "nextRunAtMs": 1772161500000,
         "lastRunAtMs": 1771988700025,
         "lastStatus": "ok",
         "lastDurationMs": 150281,
@@ -690,7 +690,7 @@
       "name": "Утренние мнения",
       "enabled": true,
       "createdAtMs": 1770522295821,
-      "updatedAtMs": 1771992871472,
+      "updatedAtMs": 1772076622227,
       "schedule": {
         "kind": "cron",
         "expr": "30 8 * * *",
@@ -706,14 +706,16 @@
         "timeoutSeconds": 900
       },
       "state": {
-        "nextRunAtMs": 1772076600000,
-        "lastRunAtMs": 1771990212935,
-        "lastStatus": "ok",
-        "lastDurationMs": 33979,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772163000000,
+        "lastRunAtMs": 1772076609138,
+        "lastStatus": "error",
+        "lastDurationMs": 13089,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "lastError": "An unknown error occurred",
+        "lastDeliveryError": "An unknown error occurred"
       },
       "delivery": {
         "mode": "none"
@@ -752,7 +754,8 @@
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "runningAtMs": 1772077800013
       }
     },
     {
@@ -888,10 +891,10 @@
       "id": "a1de1ef4-e153-4415-8704-741f812ab75a",
       "agentId": "main",
       "sessionKey": "agent:main:main",
-      "name": "🧹 Ежемесячный аудит контекста (Optimizer)",
+      "name": "🧹 Еженедельный куратор контекста (Optimizer)",
       "enabled": true,
       "createdAtMs": 1771691862697,
-      "updatedAtMs": 1772068329925,
+      "updatedAtMs": 1772077858901,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * 0",
@@ -900,9 +903,10 @@
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
-        "message": "Запусти скилл context-optimizer. Проведи полный аудит всегда-загружаемого контекста (AGENTS, USER, MEMORY, HEARTBEAT, SOUL, TOOLS). Если суммарный вес превышает лимиты из thresholds.md — предложи план оптимизации.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nВажно: auto-delivery cron отключён (delivery.mode=none).\nЕсли по задаче нужно уведомить Маргулана или отправить отчёт — используй tool message:\nmessage(action=send, channel=telegram, to=685668909, message=\"<готовый текст>\")\nЕсли по протоколу результат HEARTBEAT_OK / «молчать» — ничего не отправляй.",
+        "message": "Запусти скилл context-optimizer в режиме **Curator (обогащение)**.\n\nЦель: улучшать качество всегда-загружаемого контекста, НЕ раздувая токены.\n\n1) Прочитай (hot context): AGENTS.md, USER.md, MEMORY.md, HEARTBEAT.md, SOUL.md, TOOLS.md.\n2) Прочитай документацию (reference):\n   - docs/protocols/skills-index.md\n   - docs/user/values-and-principles.md\n   - docs/protocols/digest-operations.md\n   - docs/protocols/context-manifest.md\n3) Сформируй предложения: что добавить/уточнить в hot context (макс 10 коротких пунктов).\n   - Каждое предложение: файл → точная вставка (1–5 строк) → зачем.\n   - Соблюдай thresholds.md (горячий контекст держим <= 12KB).\n4) НИЧЕГО не редактируй автоматически. Protected Context меняется только после явного \"да, меняй\".\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nОтправь Маргулану одним сообщением summary + список предложений:\nmessage(action=send, channel=telegram, to=685668909, message=\"<текст>\")\n\nВажно: auto-delivery cron отключён (delivery.mode=none).",
         "kind": "agentTurn",
-        "model": "anthropic/claude-opus-4-6"
+        "model": "anthropic/claude-opus-4-6",
+        "timeoutSeconds": 900
       },
       "delivery": {
         "mode": "none"
@@ -1053,7 +1057,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772066063805,
+      "updatedAtMs": 1772073430249,
       "schedule": {
         "kind": "cron",
         "expr": "7,22,37,52 6-21 * * *",
@@ -1072,10 +1076,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772068920000,
-        "lastRunAtMs": 1772038320014,
+        "nextRunAtMs": 1772077920000,
+        "lastRunAtMs": 1772073420019,
         "lastStatus": "ok",
-        "lastDurationMs": 18932,
+        "lastDurationMs": 10230,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1087,7 +1091,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772038268975,
+      "updatedAtMs": 1772074274552,
       "schedule": {
         "kind": "cron",
         "expr": "51 6-21 * * *",
@@ -1106,10 +1110,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772070660000,
-        "lastRunAtMs": 1772038260050,
+        "nextRunAtMs": 1772077860000,
+        "lastRunAtMs": 1772074260036,
         "lastStatus": "ok",
-        "lastDurationMs": 8925,
+        "lastDurationMs": 14516,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1121,7 +1125,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772065772525,
+      "updatedAtMs": 1772071005546,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1141,10 +1145,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772070960000,
-        "lastRunAtMs": 1772034960051,
+        "nextRunAtMs": 1772078160000,
+        "lastRunAtMs": 1772070960034,
         "lastStatus": "ok",
-        "lastDurationMs": 19731,
+        "lastDurationMs": 45512,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1285,7 +1289,7 @@
       "name": "Auto-push: Git sync (stage 2)",
       "enabled": true,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1772061542279,
+      "updatedAtMs": 1772075949321,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1305,11 +1309,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772075935197,
-        "lastRunAtMs": 1772061535251,
+        "nextRunAtMs": 1772090335197,
+        "lastRunAtMs": 1772075935237,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7028,
+        "lastDurationMs": 14084,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1689,7 +1693,7 @@
       "name": "Marta → Aiganym (morning check-in)",
       "enabled": true,
       "createdAtMs": 1772037589803,
-      "updatedAtMs": 1772037589803,
+      "updatedAtMs": 1772075414927,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -1708,7 +1712,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772074800000
+        "nextRunAtMs": 1772161200000,
+        "lastRunAtMs": 1772075400166,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 14761,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -1795,7 +1806,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772075220000
+        "nextRunAtMs": 1772161620000
       }
     },
     {
