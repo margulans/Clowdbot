@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772093134277,
+      "updatedAtMs": 1772093867137,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,11 +27,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772093820000,
-        "lastRunAtMs": 1772093097374,
+        "nextRunAtMs": 1772094720000,
+        "lastRunAtMs": 1772093820049,
         "lastStatus": "error",
-        "lastDurationMs": 36903,
-        "consecutiveErrors": 2,
+        "lastDurationMs": 47088,
+        "consecutiveErrors": 3,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
@@ -1073,7 +1073,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772093220000,
+        "nextRunAtMs": 1772095020000,
         "lastRunAtMs": 1772091420099,
         "lastStatus": "ok",
         "lastDurationMs": 44906,
@@ -1890,7 +1890,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772093145221,
+      "updatedAtMs": 1772094342815,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1909,11 +1909,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772093734277,
-        "lastRunAtMs": 1772093134277,
+        "nextRunAtMs": 1772094934385,
+        "lastRunAtMs": 1772094334385,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10944,
+        "lastDurationMs": 8430,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1955,7 +1955,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772092383060,
+      "updatedAtMs": 1772093259919,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1974,7 +1974,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772093220100
+        "nextRunAtMs": 1772095039964,
+        "lastRunAtMs": 1772093239964,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 19955,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     },
     {
@@ -2091,6 +2098,71 @@
       },
       "state": {
         "nextRunAtMs": 1772179560000
+      }
+    },
+    {
+      "id": "58a1d597-33b5-4820-96f0-a344a4f9affe",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
+      "enabled": true,
+      "createdAtMs": 1772094058261,
+      "updatedAtMs": 1772094445438,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 14400000,
+        "anchorMs": 1772094058261
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "You are Economist (plan-only soak, integration).\n\nGOAL: real collect via tools, then *guaranteed* append metrics line to a file using exec.\n\nSteps (rule-first):\n1) sessions_list(limit=200, activeMinutes=43200, messageLimit=0)\n2) Read pricing JSON: /home/openclaw/.openclaw/workspace/data/model-pricing.json\n3) Read cost-summary JSON: /home/openclaw/.openclaw/workspace/data/cost-summary.json\n4) Compute metrics:\n   - computed_total_usd (float)\n   - unknown_pricing_count (int)\n   - malformed_session_count (int)\n   - duplicate_session_count (int)\n   - planned_persist_count (int)\n   - planned_report_count = 0\n\n5) Append ONE JSON line to:\n   ~/.openclaw/.runtime/economist-lobster-metrics.jsonl\n\nCRITICAL: write the file via exec (not just \"saying\" it was written).\nUse this exact pattern:\n- exec: mkdir -p ~/.openclaw/.runtime\n- exec: python3 - <<'PY'\nimport json, os, datetime\npath=os.path.expanduser('~/.openclaw/.runtime/economist-lobster-metrics.jsonl')\nrec={\n  'ts': datetime.datetime.now(datetime.timezone.utc).isoformat().replace('+00:00','Z'),\n  'runs_total': 1,\n  'computed_total_usd': <computed_total_usd>,\n  'unknown_pricing_count': <unknown_pricing_count>,\n  'malformed_session_count': <malformed_session_count>,\n  'duplicate_session_count': <duplicate_session_count>,\n  'planned_persist_count': <planned_persist_count>,\n  'planned_report_count': 0,\n}\nos.makedirs(os.path.dirname(path), exist_ok=True)\nwith open(path,'a',encoding='utf-8') as f:\n  f.write(json.dumps(rec, ensure_ascii=False)+'\\n')\nprint('WROTE', path)\nPY\n- exec: tail -n 1 ~/.openclaw/.runtime/economist-lobster-metrics.jsonl\n\nConstraints:\n- No model switching. No config mutation.\n- No writes to economist-log.jsonl or cost-summary.json.\n- No message(action=send).\n- Stay silent."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772108828532,
+        "lastRunAtMs": 1772094428532,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 16906,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "63910ad0-8861-4891-9543-502cfa080b4c",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster: Economist decision-gate (T+24h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772094077379,
+      "updatedAtMs": 1772094077379,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T08:21:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 180,
+        "message": "Run Economist soak post-check and report decision to Margulan.\n\n1) exec: python3 /home/openclaw/.openclaw/workspace/lobster/economist/soak_post_check.py\n2) message(action=send, channel=telegram, to=685668909, message=<short summary READY/NOT_READY + agg metrics + next_enablement>)\n\nRules:\n- Do NOT enable real persist.\n- Do NOT send weekly report.\n- Keep concise."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772180460000
       }
     }
   ]
