@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772094754858,
+      "updatedAtMs": 1772096553916,
       "schedule": {
         "kind": "cron",
         "expr": "2,17,32,47 6-21 * * *",
@@ -27,16 +27,16 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772095654858,
-        "lastRunAtMs": 1772094720045,
+        "nextRunAtMs": 1772100153916,
+        "lastRunAtMs": 1772096520059,
         "lastStatus": "error",
-        "lastDurationMs": 34813,
-        "consecutiveErrors": 4,
+        "lastDurationMs": 33857,
+        "consecutiveErrors": 5,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
         "lastDeliveryError": "An unknown error occurred",
-        "runningAtMs": 1772096160547
+        "lastError": "An unknown error occurred"
       }
     },
     {
@@ -316,15 +316,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772095800000,
+        "nextRunAtMs": 1772182200000,
         "lastRunAtMs": 1772009400060,
         "lastStatus": "ok",
         "lastDurationMs": 301172,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772096160547
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -621,7 +620,7 @@
       "name": "Утренний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275670265,
-      "updatedAtMs": 1772084829344,
+      "updatedAtMs": 1772096772665,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -631,7 +630,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron\n\nТЕХ-ПРАВИЛО: для отправки сообщений всегда указывай `channel=telegram` в tool-вызове message(action=send,...).\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=morning date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
+        "message": "⚡ 🌅 **УТРЕННИЙ ДАЙДЖЕСТ 08:00** — @newsneiron\n\nТЕХ-ПРАВИЛО: публикация только через Telegram tool-вызов с явным адресатом:\n- `message(action=send, channel=telegram, target=@newsneiron, message=\"...\")`\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=morning date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n🌅 **УТРЕННИЙ ДАЙДЖЕСТ** | {{localDate}}, 08:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"morning\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 900
@@ -1075,15 +1074,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772095920000,
+        "nextRunAtMs": 1772096820000,
         "lastRunAtMs": 1772091420099,
         "lastStatus": "ok",
         "lastDurationMs": 44906,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772096160547
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1110,15 +1108,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772095860000,
+        "nextRunAtMs": 1772099460000,
         "lastRunAtMs": 1772088660045,
         "lastStatus": "ok",
         "lastDurationMs": 12835,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772096160547
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1913,15 +1910,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772096134462,
+        "nextRunAtMs": 1772097027811,
         "lastRunAtMs": 1772095534462,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 8054,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1772096160547
+        "consecutiveErrors": 0
       }
     },
     {

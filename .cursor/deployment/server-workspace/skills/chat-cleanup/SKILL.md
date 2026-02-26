@@ -51,7 +51,7 @@ description: Очистка чата в конце дня. Вызывай ког
 
 КРИТИЧНО: чтобы потом гарантированно удалить сообщения без доступа к истории чата, **зафиксируй message_id сообщения-подтверждения** в state-файле.
 
-1) Отправь сообщение пользователю через tool `message(action=send, ...)` и получи `mid_prompt`.
+1) Отправь сообщение пользователю через tool `message(action=send, channel=telegram, to=685668909, message="...")` и получи `mid_prompt`.
 2) Запиши state в файл: `/home/openclaw/.openclaw/workspace/data/chat-cleanup-state.json`
 
 Формат сообщения:
