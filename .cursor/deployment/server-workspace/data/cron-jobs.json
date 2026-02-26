@@ -45,7 +45,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772076407220,
+      "updatedAtMs": 1772083633263,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/2 * * *",
@@ -62,10 +62,10 @@
         "timeoutSeconds": 240
       },
       "state": {
-        "nextRunAtMs": 1772083564872,
-        "lastRunAtMs": 1772076364916,
+        "nextRunAtMs": 1772090764872,
+        "lastRunAtMs": 1772083564902,
         "lastStatus": "ok",
-        "lastDurationMs": 42304,
+        "lastDurationMs": 68361,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
