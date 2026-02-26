@@ -82,7 +82,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772092560097,
+      "updatedAtMs": 1772095727166,
       "schedule": {
         "kind": "cron",
         "expr": "46 6-21 * * *",
@@ -95,7 +95,7 @@
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи.",
         "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
-        "timeoutSeconds": 600
+        "timeoutSeconds": 900
       },
       "delivery": {
         "mode": "none"
@@ -108,7 +108,7 @@
         "consecutiveErrors": 1,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-requested",
-        "lastError": "cron: job execution timed out"
+        "runningAtMs": 1772095560037
       }
     },
     {
@@ -118,7 +118,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772092430358,
+      "updatedAtMs": 1772095727044,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -131,7 +131,7 @@
         "kind": "agentTurn",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
-        "timeoutSeconds": 300,
+        "timeoutSeconds": 600,
         "message": "You are performing automated git sync — STAGE 1/2 (pull + snapshot + local commit).\n\nSteps:\n1) cd ~/Clowdbot\n2) git pull --rebase origin main\n   - If conflicts → abort rebase, write an incident cron_error in data/incidents.jsonl and STOP.\n3) git status --short\n4) If output is empty → STOP SILENTLY (do NOT reply HEARTBEAT_OK).\n5) If there are changes:\n   a) cron(action=list)\n   b) copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c) update data/cron-jobs-snapshot.json\n   d) git add -A\n   e) git commit -m \"auto-sync: snapshot $(date +%Y-%m-%dT%H:%M)\"\n6) DO NOT PUSH here. Push is handled by STAGE 2.\n\nExecute silently."
       },
       "delivery": {
@@ -1891,7 +1891,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772094938767,
+      "updatedAtMs": 1772095542516,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1910,11 +1910,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772095534422,
-        "lastRunAtMs": 1772094934422,
+        "nextRunAtMs": 1772096134462,
+        "lastRunAtMs": 1772095534462,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4345,
+        "lastDurationMs": 8054,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
