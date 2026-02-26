@@ -100,6 +100,22 @@ def main() -> None:
     except Exception:
         state_write_failed = 1
 
+    # message event accounting (plan-only): count planned messages and mark them suppressed.
+    message_events_by_type = {"alert": 0, "escalation": 0, "other": 0}
+    message_events_suppressed = 0
+
+    # Heuristic: any active critical incident implies we'd alert/escalate in real mode.
+    if active_critical:
+        message_events_by_type["alert"] += 1
+        message_events_suppressed += 1  # plan_only suppresses sending
+
+    # Test hook (no state mutation): force a planned message
+    if os.environ.get("MEKHANIK_TEST_PLANNED_MESSAGE") == "1":
+        message_events_by_type["other"] += 1
+        message_events_suppressed += 1
+
+    message_events_total = sum(message_events_by_type.values())
+
     rec = {
         "ts": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "runs_total": 1,
@@ -108,6 +124,9 @@ def main() -> None:
         "state_write_failed": state_write_failed,
         "restart_loop_blocked": 0,
         "circuit_breaker_triggered": 0,
+        "message_events_total": message_events_total,
+        "message_events_by_type": message_events_by_type,
+        "message_events_suppressed": message_events_suppressed,
     }
 
     os.makedirs(os.path.dirname(OUT_METRICS), exist_ok=True)

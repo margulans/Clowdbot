@@ -63,6 +63,13 @@ def main() -> None:
         "state_write_failed": sum(int(r.get("state_write_failed", 0) or 0) for r in m24),
         "restart_loop_blocked": sum(int(r.get("restart_loop_blocked", 0) or 0) for r in m24),
         "circuit_breaker_triggered": sum(int(r.get("circuit_breaker_triggered", 0) or 0) for r in m24),
+        "message_events_total": sum(int(r.get("message_events_total", 0) or 0) for r in m24),
+        "message_events_suppressed": sum(int(r.get("message_events_suppressed", 0) or 0) for r in m24),
+        "message_events_by_type": {
+            "alert": sum(int((r.get("message_events_by_type") or {}).get("alert", 0) or 0) for r in m24),
+            "escalation": sum(int((r.get("message_events_by_type") or {}).get("escalation", 0) or 0) for r in m24),
+            "other": sum(int((r.get("message_events_by_type") or {}).get("other", 0) or 0) for r in m24),
+        },
     }
 
     # Duplicates with legacy: check if legacy wrote any resolved/escalated by source=mekhanik in last 24h
