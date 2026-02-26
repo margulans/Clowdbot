@@ -22,10 +22,11 @@ description: Участковый — тихий мониторинг здоро
 2. systemctl --user is-active openclaw-gateway → статус gateway
 3. df -h / | tail -1                          → диск (% использования)
 4. git -C ~/Clowdbot status --short           → GIT_STATUS_RAW
-   Затем отфильтруй «шумные» файлы, которые обновляются мониторингом и не считаются проблемой:
+   Затем отфильтруй строки с «шумными» путями из текста git output (grep/строковый фильтр):
    - `.cursor/deployment/server-workspace/data/incidents.jsonl`
    - `.cursor/deployment/server-workspace/data/cron-jobs-snapshot.json`
    - `.cursor/deployment/server-workspace/data/cron-jobs.json`
+   ⚠️ ВАЖНО: это фильтрация строк из git output. НЕ вызывай read_file для этих путей — они git-root-relative и не существуют как workspace-relative пути.
    Получившееся сохрани как GIT_STATUS_FILTERED (если пусто → git чистый).
 5. [только если воскресенье и 03:00–12:00 Алматы]
    read_file("data/scout-discoveries.json")  → поле last_run
