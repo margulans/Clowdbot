@@ -14,6 +14,8 @@
 | **Latency (p95)**      | Время autoRecall при старте сессии                    | < 800 мс |
 | **False Recall**       | Бот «вспомнил» факт которого нет                      | = 0      |
 | **Conflict Detection** | Бот корректно разрешил противоречие Mem0 vs canonical | = 100%   |
+| **Capture Errors**     | Количество `openclaw-mem0: capture failed`            | = 0      |
+| **Qdrant 400 Search**  | Ошибки `POST /points/search ... 400` из runtime       | = 0      |
 
 ---
 
@@ -101,6 +103,53 @@ curl -s http://localhost:6333/collections/openclaw-mem0 | jq '.result.vectors_co
 
 ---
 
+### TC-07: Регрессия baseURL в mem0ai после обновления
+
+**Сценарий:** После обновления `openclaw` или `@mem0/openclaw-mem0` проверить, что embedder ходит через sanitizer proxy  
+**Ожидаемое:** В логах `openclaw-sanitizer-proxy` есть `POST /v1/embeddings 200`, а в gateway нет `capture failed`  
+**Как проверить:**
+
+```bash
+# 1) Применить воспроизводимый hotfix (идемпотентный)
+bash ~/Clowdbot/.cursor/deployment/mem0-upgrade/hotfixes/apply-mem0-embedder-baseurl-fix.sh
+
+# 2) Перезапустить gateway
+systemctl --user restart openclaw-gateway
+
+# 3) Сгенерировать трафик памяти (любой короткий диалог с новым фактом)
+# 4) Проверить прокси:
+journalctl --user -u openclaw-sanitizer-proxy -n 50 --no-pager | rg "/v1/embeddings"
+
+# 5) Проверить отсутствие capture failed:
+journalctl --user -u openclaw-gateway -n 200 --no-pager | rg "capture failed"
+```
+
+**Частота:** После каждого обновления `openclaw`/`@mem0/openclaw-mem0`  
+**Провал:** Нет `/v1/embeddings` в proxy логах или есть `capture failed`
+
+---
+
+### TC-08: Soak stability 72h
+
+**Сценарий:** Наблюдать production-трафик 72 часа после апдейтов  
+**Ожидаемое:** `capture_failed_count=0` и `qdrant_400_count=0` (без ручных тестов)  
+**Как проверить:**
+
+```bash
+# Gateway: capture failed за окно наблюдения
+journalctl --user -u openclaw-gateway --since "72 hours ago" --no-pager \
+  | rg "openclaw-mem0: capture failed" | wc -l
+
+# Qdrant: search 400 за окно наблюдения (runtime only)
+docker logs neiron-qdrant --since 72h 2>&1 \
+  | rg "POST /collections/openclaw-mem0/points/search HTTP/1.1\" 400" | wc -l
+```
+
+**Частота:** После каждого релиза memory-контура  
+**Провал:** Любая ошибка > 0
+
+---
+
 ## Расписание проверок
 
 | Проверка            | Частота                       | Кто запускает               |
@@ -109,6 +158,8 @@ curl -s http://localhost:6333/collections/openclaw-mem0 | jq '.result.vectors_co
 | TC-02               | При изменении USER.md         | Вручную (Маргулан / Cursor) |
 | TC-03               | Ежемесячно                    | Cron (`0 10 1 * *` UTC+6)   |
 | TC-05               | Ежемесячно                    | Тот же monthly cron         |
+| TC-07               | После каждого апдейта         | Вручную (оператор)          |
+| TC-08               | После каждого апдейта         | Soak 72h (оператор)         |
 
 ---
 
@@ -117,9 +168,22 @@ curl -s http://localhost:6333/collections/openclaw-mem0 | jq '.result.vectors_co
 При обновлении `openclaw` или `@mem0/openclaw-mem0`:
 
 1. Запустить `check-mem0.sh` — убедиться что stack жив
-2. Выполнить TC-01 вручную (< 2 мин)
-3. Проверить лог gateway на ошибки `capture failed` или `recall failed`
-4. Если что-то сломалось — откат через RUNBOOK.md § Rollback
+2. Применить `apply-mem0-embedder-baseurl-fix.sh` (идемпотентно)
+3. Выполнить TC-01 вручную (< 2 мин)
+4. Выполнить TC-07 (proxy embeddings + capture without errors)
+5. Запустить TC-08 (soak 72h) и зафиксировать результаты
+6. Если что-то сломалось — откат через RUNBOOK.md § Rollback
+
+---
+
+## Критерии приёмки релиза памяти
+
+Релиз memory-контура можно считать успешным только при всех условиях:
+
+1. `check-mem0.sh` возвращает `OK`
+2. TC-01 и TC-07 пройдены
+3. За 72 часа (`TC-08`): `capture_failed_count=0`, `qdrant_400_count=0`
+4. Нет деградации по метрике `Latency (p95)` относительно прошлого релиза
 
 ---
 
