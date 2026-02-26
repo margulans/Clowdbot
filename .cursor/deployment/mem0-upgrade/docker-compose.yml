@@ -9,10 +9,9 @@ version: "3.9"
 services:
 
   qdrant:
-    # Привязан к v1.14.0: mem0ai использует @qdrant/js-client-rest@1.13.0,
-    # который совместим с сервером 1.12–1.14 (minor diff ≤1).
-    # latest (v1.17+) даёт "Bad Request" на часть API-вызовов.
-    image: qdrant/qdrant:v1.14.0
+    # v1.17.0: клиент @qdrant/js-client-rest обновлён до 1.17.0 через npm override
+    # в ~/.openclaw/extensions/openclaw-mem0/package.json. Версии клиент=сервер совпадают.
+    image: qdrant/qdrant:v1.17.0
     container_name: neiron-qdrant
     restart: unless-stopped
     ports:
