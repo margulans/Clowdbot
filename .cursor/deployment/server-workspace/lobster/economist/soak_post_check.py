@@ -34,10 +34,37 @@ def parse_ts(ts: str) -> datetime:
     return datetime.fromisoformat(ts)
 
 
-def append_incident(obj: dict) -> None:
+def append_incident(obj: dict) -> str:
+    """Append incident and return incident id."""
     os.makedirs(os.path.dirname(INCIDENTS), exist_ok=True)
     with open(INCIDENTS, 'a', encoding='utf-8') as f:
         f.write(json.dumps(obj, ensure_ascii=False) + '\n')
+    return obj.get('id') or ''
+
+
+def find_recent_dq_incident(date_key: str) -> dict | None:
+    """Find latest economist_data_quality_degraded for a given date_key (UTC date).
+
+    Dedupe key: type + date_key.
+    """
+    if not os.path.exists(INCIDENTS):
+        return None
+    latest = None
+    with open(INCIDENTS, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except Exception:
+                continue
+            if obj.get('type') != 'economist_data_quality_degraded':
+                continue
+            if obj.get('dedupe_key') != f"economist_data_quality_degraded:{date_key}":
+                continue
+            latest = obj
+    return latest
 
 
 def sample_malformed_keys(limit: int = 5) -> list[str]:
@@ -96,23 +123,42 @@ def main() -> None:
     data_quality_ok = (malformed_ratio <= 0.05)
 
     dq_incident = None
+    dq_incident_id = None
+    dq_suppressed = 0
+
     if malformed_ratio > 0.05:
-        sev = "warn" if malformed_ratio <= 0.1 else "critical"
-        examples = sample_malformed_keys(limit=5)
-        dq_incident = {
-            "ts": now.isoformat().replace("+00:00", "Z"),
-            "type": "economist_data_quality_degraded",
-            "source": "economist-soak-post-check",
-            "severity": sev,
-            "detail": {
-                "total_sessions": agg["total_sessions"],
-                "malformed_session_count": agg["malformed_session_count"],
-                "malformed_ratio": malformed_ratio,
-                "examples": examples,
-            },
-            "resolved": False,
-        }
-        append_incident(dq_incident)
+        # Dedupe key uses the latest metrics timestamp's UTC date (not wall-clock now),
+        # so tests and backfills are stable.
+        date_key = None
+        try:
+            latest_ts = max(parse_ts(r["ts"]) for r in r24)
+            date_key = latest_ts.date().isoformat()
+        except Exception:
+            date_key = now.date().isoformat()
+        dedupe_key = f"economist_data_quality_degraded:{date_key}"
+        existing = find_recent_dq_incident(date_key)
+
+        if existing is not None:
+            dq_suppressed = 1
+        else:
+            sev = "warn" if malformed_ratio <= 0.1 else "critical"
+            examples = sample_malformed_keys(limit=5)
+            dq_incident = {
+                "id": f"econ_dq_{now.strftime('%Y%m%d')}",
+                "ts": now.isoformat().replace("+00:00", "Z"),
+                "type": "economist_data_quality_degraded",
+                "dedupe_key": dedupe_key,
+                "source": "economist-soak-post-check",
+                "severity": sev,
+                "detail": {
+                    "total_sessions": agg["total_sessions"],
+                    "malformed_session_count": agg["malformed_session_count"],
+                    "malformed_ratio": malformed_ratio,
+                    "examples": examples,
+                },
+                "resolved": False,
+            }
+            dq_incident_id = append_incident(dq_incident)
 
     # Default cadence: every 4h => expected 6 runs; accept >=5.
     ready = (
@@ -120,12 +166,20 @@ def main() -> None:
         data_quality_ok
     )
 
+    data_quality_signal = "none"
+    if dq_incident_id:
+        data_quality_signal = "emitted"
+    elif dq_suppressed:
+        data_quality_signal = "suppressed"
+
     out = {
         "ts": now.isoformat().replace("+00:00", "Z"),
         "window": "24h",
         "metrics": agg,
         "data_quality_ok": data_quality_ok,
-        "data_quality_incident_written": bool(dq_incident),
+        "data_quality_signal": data_quality_signal,
+        "data_quality_incident_id": dq_incident_id,
+        "data_quality_incident_suppressed_count": dq_suppressed,
         "recommendation": "READY" if ready else "NOT_READY",
         "next_enablement": {
             "real_persist": "enable only after confirmation; should write economist-log.jsonl + cost-summary.json atomically",
