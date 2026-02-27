@@ -24,17 +24,41 @@ import sys
 from typing import Any
 
 
-def is_reminder(name: str) -> bool:
-    """Heuristic: only *explicit* reminder jobs we create by protocol.
-
-    We intentionally avoid catching legacy systemEvent reminders (e.g. meds) that may exist.
-    """
+def is_exempt_legacy(name: str) -> bool:
+    """Allowlist for legacy reminders we don't want to break immediately."""
     n = name.lower().strip()
+    # medication/system reminders can remain systemEvent for now
     return (
-        n.startswith("🔔")
-        or n.startswith("reminder")
-        or "reminder:" in n
+        "аводарт" in n
+        or "авиценна" in n
+        or n.startswith("⚕️")
     )
+
+
+def is_reminder_like(job: dict) -> bool:
+    """Stronger heuristic for user-requested reminders.
+
+    We now catch:
+    - any name with 🔔 / reminder / напомин*
+    - any one-shot schedule.kind=at with name mentioning reminder/напомин*
+
+    Legacy exemptions are excluded.
+    """
+    name = str(job.get("name", ""))
+    n = name.lower().strip()
+    if not name or is_exempt_legacy(name):
+        return False
+
+    sched = job.get("schedule") or {}
+    kind = sched.get("kind")
+
+    if n.startswith("🔔") or "reminder" in n or "напомин" in n:
+        return True
+
+    if kind == "at" and ("reminder" in n or "напомин" in n):
+        return True
+
+    return False
 
 
 REQUIRED_SNIPPET_RE = re.compile(
@@ -68,7 +92,7 @@ def main() -> None:
         if not isinstance(j, dict):
             continue
         name = str(j.get("name", ""))
-        if not name or not is_reminder(name):
+        if not name or not is_reminder_like(j):
             continue
 
         sid = str(j.get("id", ""))
