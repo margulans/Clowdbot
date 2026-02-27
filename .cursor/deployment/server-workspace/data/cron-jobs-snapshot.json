@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772164421534,
+      "updatedAtMs": 1772182966200,
       "schedule": {
         "kind": "cron",
         "expr": "2 6-21 * * *",
@@ -27,10 +27,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772168520000,
-        "lastRunAtMs": 1772164151365,
+        "nextRunAtMs": 1772186520000,
+        "lastRunAtMs": 1772182920041,
         "lastStatus": "ok",
-        "lastDurationMs": 26091,
+        "lastDurationMs": 46159,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772166380036,
+      "updatedAtMs": 1772177181146,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/3 * * *",
@@ -60,10 +60,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772177164872,
-        "lastRunAtMs": 1772166364906,
+        "nextRunAtMs": 1772187964872,
+        "lastRunAtMs": 1772177164905,
         "lastStatus": "ok",
-        "lastDurationMs": 15130,
+        "lastDurationMs": 16241,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772166377355,
+      "updatedAtMs": 1772178681167,
       "schedule": {
         "kind": "cron",
         "expr": "50 6-22/2 * * *",
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772171400000,
-        "lastRunAtMs": 1772163960052,
+        "nextRunAtMs": 1772185800000,
+        "lastRunAtMs": 1772178600051,
         "lastStatus": "ok",
-        "lastDurationMs": 190964,
+        "lastDurationMs": 81116,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -114,7 +114,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772161291704,
+      "updatedAtMs": 1772175693634,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -134,10 +134,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772175673831,
-        "lastRunAtMs": 1772161273908,
+        "nextRunAtMs": 1772190073831,
+        "lastRunAtMs": 1772175673876,
         "lastStatus": "ok",
-        "lastDurationMs": 17796,
+        "lastDurationMs": 19758,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -151,7 +151,7 @@
       "name": "🚨 BACKUP: Git sync (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1772166699311,
+      "updatedAtMs": 1772177411749,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -170,10 +170,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772177400000,
-        "lastRunAtMs": 1772163000040,
+        "nextRunAtMs": 1772191800000,
+        "lastRunAtMs": 1772177400017,
         "lastStatus": "ok",
-        "lastDurationMs": 8526,
+        "lastDurationMs": 11732,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -186,7 +186,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1772093097095,
+      "updatedAtMs": 1772179307045,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -202,14 +202,16 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772179200000,
-        "lastRunAtMs": 1772092800012,
-        "lastStatus": "ok",
-        "lastDurationMs": 297083,
-        "consecutiveErrors": 0,
-        "lastRunStatus": "ok",
+        "nextRunAtMs": 1772265600000,
+        "lastRunAtMs": 1772179200038,
+        "lastStatus": "error",
+        "lastDurationMs": 107007,
+        "consecutiveErrors": 1,
+        "lastRunStatus": "error",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered"
+        "lastDeliveryStatus": "not-delivered",
+        "lastError": "⚠️ ✉️ Message: `685668909` failed",
+        "lastDeliveryError": "⚠️ ✉️ Message: `685668909` failed"
       },
       "delivery": {
         "mode": "none"
@@ -222,7 +224,7 @@
       "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644839690,
-      "updatedAtMs": 1772166699368,
+      "updatedAtMs": 1772179528080,
       "schedule": {
         "kind": "cron",
         "expr": "5 13 * * *",
@@ -241,10 +243,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772179500000,
-        "lastRunAtMs": 1772006739034,
+        "nextRunAtMs": 1772265900000,
+        "lastRunAtMs": 1772179500035,
         "lastStatus": "ok",
-        "lastDurationMs": 9935,
+        "lastDurationMs": 28045,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -257,7 +259,7 @@
       "name": "Дневные мнения",
       "enabled": true,
       "createdAtMs": 1770522310056,
-      "updatedAtMs": 1772094609441,
+      "updatedAtMs": 1772181018317,
       "schedule": {
         "kind": "cron",
         "expr": "30 13 * * *",
@@ -273,10 +275,10 @@
         "timeoutSeconds": 900
       },
       "state": {
-        "nextRunAtMs": 1772181000000,
-        "lastRunAtMs": 1772094600036,
+        "nextRunAtMs": 1772267400000,
+        "lastRunAtMs": 1772181000044,
         "lastStatus": "ok",
-        "lastDurationMs": 9405,
+        "lastDurationMs": 18273,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -293,7 +295,7 @@
       "name": "🚨 BACKUP: Дневные мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988124,
-      "updatedAtMs": 1772166718806,
+      "updatedAtMs": 1772182328136,
       "schedule": {
         "kind": "cron",
         "expr": "50 13 * * *",
@@ -312,10 +314,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772182200000,
-        "lastRunAtMs": 1772009400060,
+        "nextRunAtMs": 1772268600000,
+        "lastRunAtMs": 1772182200041,
         "lastStatus": "ok",
-        "lastDurationMs": 301172,
+        "lastDurationMs": 128095,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1028,7 +1030,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772165549982,
+      "updatedAtMs": 1772183537311,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1048,10 +1050,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772169120000,
-        "lastRunAtMs": 1772165520064,
+        "nextRunAtMs": 1772187120000,
+        "lastRunAtMs": 1772183520041,
         "lastStatus": "ok",
-        "lastDurationMs": 29918,
+        "lastDurationMs": 17270,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1063,7 +1065,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772166377429,
+      "updatedAtMs": 1772178909967,
       "schedule": {
         "kind": "cron",
         "expr": "55 6-22/2 * * *",
@@ -1083,10 +1085,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772171700000,
-        "lastRunAtMs": 1772164275966,
+        "nextRunAtMs": 1772186100000,
+        "lastRunAtMs": 1772178900023,
         "lastStatus": "ok",
-        "lastDurationMs": 20223,
+        "lastDurationMs": 9944,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1098,7 +1100,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772165320847,
+      "updatedAtMs": 1772178974687,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/3 * * *",
@@ -1119,10 +1121,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772168160000,
-        "lastRunAtMs": 1772164560038,
+        "nextRunAtMs": 1772189760000,
+        "lastRunAtMs": 1772178960036,
         "lastStatus": "ok",
-        "lastDurationMs": 19177,
+        "lastDurationMs": 14651,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1263,7 +1265,7 @@
       "name": "Auto-push: Git sync (stage 2)",
       "enabled": true,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1772162341299,
+      "updatedAtMs": 1772176741550,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1283,11 +1285,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772176735197,
-        "lastRunAtMs": 1772162335238,
+        "nextRunAtMs": 1772191135197,
+        "lastRunAtMs": 1772176735248,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6061,
+        "lastDurationMs": 6302,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1691,7 +1693,7 @@
       "name": "Marta → Aiganym (lunch check-in)",
       "enabled": true,
       "createdAtMs": 1772037599008,
-      "updatedAtMs": 1772091027053,
+      "updatedAtMs": 1772177419136,
       "schedule": {
         "kind": "cron",
         "expr": "30 12 * * *",
@@ -1710,11 +1712,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772177400000,
-        "lastRunAtMs": 1772091013347,
+        "nextRunAtMs": 1772263800000,
+        "lastRunAtMs": 1772177411749,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 13706,
+        "lastDurationMs": 7387,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1801,7 +1803,7 @@
       "name": "🚨 BACKUP: Marta → Aiganym (lunch check-in)",
       "enabled": true,
       "createdAtMs": 1772038036243,
-      "updatedAtMs": 1772091552224,
+      "updatedAtMs": 1772177830462,
       "schedule": {
         "kind": "cron",
         "expr": "37 12 * * *",
@@ -1820,11 +1822,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772177820000,
-        "lastRunAtMs": 1772091465005,
+        "nextRunAtMs": 1772264220000,
+        "lastRunAtMs": 1772177820040,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 87219,
+        "lastDurationMs": 10422,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1902,7 +1904,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772166857416,
+      "updatedAtMs": 1772185455067,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1921,11 +1923,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772167441503,
-        "lastRunAtMs": 1772166841503,
+        "nextRunAtMs": 1772186051007,
+        "lastRunAtMs": 1772185451007,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15913,
+        "lastDurationMs": 4060,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1967,7 +1969,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772167116609,
+      "updatedAtMs": 1772185474237,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1979,79 +1981,21 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 120,
-        "message": "Run plan-only Lobster Mekhanik runner and stay silent.\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_plan_only.py\n\nRules:\n- Do not message the user.\n- If command fails, append a critical incident {type:\"mekhanik_lobster_runner_failed\", severity:\"critical\", msg:<err>}. Then stop.\n- Otherwise stop silently."
+        "timeoutSeconds": 180,
+        "message": "Lobster Механик — REAL mode (controlled cutover).\n\nCommand (must be executed exactly):\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_real.py\"], commandTimeoutMs=170000)\n\nRules:\n- safe-auto DISABLED (runner_real enforces: no automated actions)\n- risky actions approval-only (not executed)\n- do NOT call message(action=send)\n- do NOT write memory/*\n- do NOT git commit/push\n- append metrics to ~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl\n- stay silent (no delivery)\n\nIf exec fails: append critical incident {type:\"mekhanik_lobster_runner_failed\", severity:\"critical\", msg:<stderr/stdout first 500>} and stop."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772168911072,
-        "lastRunAtMs": 1772167111072,
+        "nextRunAtMs": 1772186911501,
+        "lastRunAtMs": 1772185111501,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5537,
+        "lastDurationMs": 5429,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "f2d9921a-d061-4595-a61d-6239a3de59d4",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Механик cutover eval (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772091433069,
-      "updatedAtMs": 1772092464477,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T07:54:14.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Evaluate 24h Lobster Mekhanik plan-only metrics.\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/eval_and_cutover.py\n\nRules:\n- Do NOT change any cron jobs automatically.\n- If ok_to_enable_safe_auto=true, write an incident of type=mekhanik_lobster_ready (severity=warn) with agg24h summary.\n- If false, write incident type=mekhanik_lobster_not_ready (severity=critical) with agg24h summary.\n- Do not message the user (Chekist will alert on critical)."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772178854000
-      }
-    },
-    {
-      "id": "2e4e5c98-c62e-4fe4-9aa5-1531577df61d",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Механик post-check + report (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772092209938,
-      "updatedAtMs": 1772092473340,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T07:55:14.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Lobster Mekhanik 24h post-check and report to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/post_check_report.py\n2) Send a short summary to Margulan via message(action=send, channel=telegram, to=685668909, message=...). Include:\n- duplicates_with_legacy\n- alert spam (proxy)\n- state_write_failed\n- restart_loop_blocked / circuit_breaker_triggered\n- recommendation ready/not_ready for enabling safe-auto\n\nRules:\n- Do NOT enable safe-auto automatically.\n- Keep it concise."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772178914000
       }
     },
     {
@@ -2061,7 +2005,7 @@
       "name": "🦞 Lobster: Git sync (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772093131200,
-      "updatedAtMs": 1772161551240,
+      "updatedAtMs": 1772175935013,
       "schedule": {
         "kind": "cron",
         "expr": "5 */4 * * *",
@@ -2080,43 +2024,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772175900000,
-        "lastRunAtMs": 1772161512023,
+        "nextRunAtMs": 1772190300000,
+        "lastRunAtMs": 1772175900044,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39217,
+        "lastDurationMs": 34969,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "ea29eaec-5621-4757-95b7-2dc78617b83f",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Git sync decision-gate (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772093147342,
-      "updatedAtMs": 1772093147342,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T08:06:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Lobster git-sync post-check and send decision report to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/git-sync/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short summary with READY/NOT_READY + metrics + phased disable order if READY>)\n\nRules:\n- Do NOT disable legacy jobs automatically.\n- Do NOT commit/push automatically."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772179560000
       }
     },
     {
@@ -2126,7 +2041,7 @@
       "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772094058261,
-      "updatedAtMs": 1772166439716,
+      "updatedAtMs": 1772180835580,
       "schedule": {
         "kind": "every",
         "everyMs": 14400000,
@@ -2145,43 +2060,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772180828735,
-        "lastRunAtMs": 1772166428735,
+        "nextRunAtMs": 1772195228773,
+        "lastRunAtMs": 1772180828773,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10981,
+        "lastDurationMs": 6807,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "63910ad0-8861-4891-9543-502cfa080b4c",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Economist decision-gate (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772094077379,
-      "updatedAtMs": 1772094077379,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T08:21:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Economist soak post-check and report decision to Margulan.\n\n1) exec: python3 /home/openclaw/.openclaw/workspace/lobster/economist/soak_post_check.py\n2) message(action=send, channel=telegram, to=685668909, message=<short summary READY/NOT_READY + agg metrics + next_enablement>)\n\nRules:\n- Do NOT enable real persist.\n- Do NOT send weekly report.\n- Keep concise."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772180460000
       }
     },
     {
@@ -2191,7 +2077,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772167295924,
+      "updatedAtMs": 1772185290197,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2210,43 +2096,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772169083996,
-        "lastRunAtMs": 1772167283996,
+        "nextRunAtMs": 1772187084402,
+        "lastRunAtMs": 1772185284402,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11928,
+        "lastDurationMs": 5795,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "88bed7ff-931d-4fd1-b1c1-8f376c6806c6",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Wendy decision-gate (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772095282239,
-      "updatedAtMs": 1772095282239,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T08:42:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Wendy soak post-check and send decision to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/wendy/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short READY/NOT_READY + agg metrics>)\n\nRules:\n- Do NOT change Wendy legacy jobs.\n- Do NOT enable real mode.\n- Keep concise."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772181720000
       }
     },
     {
@@ -2256,7 +2113,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772165615685,
+      "updatedAtMs": 1772185411211,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2275,43 +2132,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772167404670,
-        "lastRunAtMs": 1772165604670,
+        "nextRunAtMs": 1772187205136,
+        "lastRunAtMs": 1772185405136,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11015,
+        "lastDurationMs": 6075,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "cd329770-306a-4715-b84b-37b99057f1c9",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Lobster: Marta decision-gate (T+24h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772095397805,
-      "updatedAtMs": 1772095397805,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-27T08:44:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Marta soak post-check and send decision to Margulan.\n\n1) python3 /home/openclaw/.openclaw/workspace/lobster/marta/post_check_report.py\n2) message(action=send, channel=telegram, to=685668909, message=<short READY/NOT_READY + agg metrics>)\n\nRules:\n- Do NOT change legacy Marta jobs.\n- Do NOT enable real mode.\n- Keep concise."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772181840000
       }
     },
     {
@@ -2370,6 +2198,35 @@
       },
       "state": {
         "nextRunAtMs": 1772251800000
+      }
+    },
+    {
+      "id": "9ece64e6-90a0-4c4c-8ce3-afd1abff05a6",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover verifier (T+2h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772185485695,
+      "updatedAtMs": 1772185485695,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T11:44:30.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "You are the cutover verifier for Lobster Mekhanik (T+2h). Do NOT touch Git sync/Wendy/Marta.\n\nLoad baseline:\n- read JSON: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-baseline.json\n- startTs = baseline.startTs\n\nCompute counts for ts>=startTs (inclusive):\nA) incidents_count: count of records in /home/openclaw/.openclaw/workspace/data/incidents.jsonl where\n   - severity==\"critical\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nB) transport_failures_count: count where\n   - type==\"message_transport_failed\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nC) rollback_events_count: count where\n   - type contains \"rollback\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\n\nDeltas = current - baseline.\n\nDecision rule:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   1) Disable legacy Mekhanik job bef4ddfa-1fd8-4c64-9495-79d851f4f5f0 via cron(action=update, patch={enabled:false}).\n   2) Append incident {type:\"mekhanik_cutover_success\", severity:\"warn\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: SUCCESS\", detail:{deltas...}}.\n- Else (any Δ>0): STOP-LOSS\n   1) Roll back Lobster real: change job 5c8b1424 payload back to plan-only runner:\n      exec python3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_plan_only.py\n      (do not disable it; just revert to plan-only)\n   2) Ensure legacy bef4ddfa remains enabled.\n   3) Append critical incident {type:\"mekhanik_cutover_rolled_back\", severity:\"critical\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: ROLLED_BACK\", detail:{deltas...}, rca:\"<1-2 lines>\"}.\n\nFinally: send a concise report to Margulan in Telegram DM (one message) with format:\n1) Что сделано\n2) Что не сделано\n3) Риски\n4) Следующий шаг\nKeep 200–300 words.\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772192670000
       }
     }
   ]
