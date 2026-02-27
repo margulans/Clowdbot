@@ -1,1 +1,195 @@
-[{"messageId":"253","type":"opinions","digest":"morning","date":"2026-02-27","status":"no_backup"}]
+[
+  {
+    "messageId": "253",
+    "type": "opinions",
+    "digest": "morning",
+    "date": "2026-02-27",
+    "status": "no_backup"
+  },
+  {
+    "messageId": "3193",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news_meta",
+    "kind": "header",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3194",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3195",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3196",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3197",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3198",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3199",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3200",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3201",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3202",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3203",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3204",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3205",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "3206",
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "news_meta",
+    "kind": "audit",
+    "status": "sent",
+    "ts": 1772172000000
+  },
+  {
+    "messageId": "256",
+    "expert": "Mission North",
+    "source": "O'Dwyer's PR / Web Search (Perplexity)",
+    "category": "AI, Общество",
+    "title": "Доверие к ИИ",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  },
+  {
+    "messageId": "257",
+    "expert": "McKinsey (Erik Roth)",
+    "source": "Fortune / Web Search (Perplexity)",
+    "category": "AI, Бизнес",
+    "title": "ИИ и производительность",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  },
+  {
+    "messageId": "258",
+    "expert": "Harvard Business Review",
+    "source": "Harvard Business Review / Web Search (Perplexity)",
+    "category": "AI, Бизнес, Руководство",
+    "title": "Человеческий фактор в ИИ",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  },
+  {
+    "messageId": "259",
+    "expert": "Sandeep Aujla (Intuit)",
+    "source": "Fortune / Web Search (Perplexity)",
+    "category": "AI, SaaS, Бизнес",
+    "title": "ИИ и ускорение SaaS",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  },
+  {
+    "messageId": "260",
+    "expert": "Andreas Welsch",
+    "source": "Technical.ly / Web Search (Perplexity)",
+    "category": "AI, Агентный ИИ",
+    "title": "Принцип двойной линзы в ИИ",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  },
+  {
+    "messageId": "261",
+    "expert": "Jonghwi Park (UNU-IAS)",
+    "source": "UNU-IAS / Web Search (Perplexity)",
+    "category": "AI, Образование",
+    "title": "ИИ и высшее образование",
+    "timestamp": 1709040600000,
+    "digest": "evening",
+    "date": "2026-02-27",
+    "type": "opinions",
+    "status": "sent"
+  }
+]

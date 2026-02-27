@@ -1,33 +1,33 @@
 {
   "_comment": "Текущий агрегат затрат. Обновляется Экономистом ежедневно. Читается для мгновенных ответов.",
-  "last_updated": "2026-02-26T01:01:32Z",
-  "last_session_scan_at": "2026-02-26T01:01:32Z",
+  "last_updated": "2026-02-27T12:30:04Z",
+  "last_session_scan_at": "2026-02-27T12:30:04Z",
   "period": {
     "last24h": {
       "window": "rolling_24h",
-      "from_utc": "2026-02-25T01:01:32Z",
-      "to_utc": "2026-02-26T01:01:32Z",
-      "cost_usd": 92.986063575,
-      "tokens_input": 25889550,
-      "tokens_output": 462373
+      "from_utc": "2026-02-26T12:30:04Z",
+      "to_utc": "2026-02-27T12:30:04Z",
+      "cost_usd": 24.8794973,
+      "tokens_input": 22314493,
+      "tokens_output": 383491
     },
     "day": {
-      "date": "2026-02-26",
-      "cost_usd": 20.99742745,
-      "tokens_input": 3353459,
-      "tokens_output": 27952
+      "date": "2026-02-27",
+      "cost_usd": 21.531851625,
+      "tokens_input": 12709999,
+      "tokens_output": 206474
     },
     "week": {
       "start": "2026-02-23",
-      "cost_usd": 95.116974275,
-      "tokens_input": 26086829,
-      "tokens_output": 472347
+      "cost_usd": 25.47498185,
+      "tokens_input": 22875006,
+      "tokens_output": 399754
     },
     "month": {
       "start": "2026-02-01",
-      "cost_usd": 95.414180275,
-      "tokens_input": 26110873,
-      "tokens_output": 474707
+      "cost_usd": 25.77218785,
+      "tokens_input": 22899050,
+      "tokens_output": 402114
     }
   },
   "by_model": {
@@ -37,326 +37,442 @@
       "tokens_output": 200
     },
     "claude-sonnet-4-6": {
-      "cost_usd": 0.123567,
-      "tokens_input": 334,
-      "tokens_output": 8171
+      "cost_usd": 1.113246,
+      "tokens_input": 1492,
+      "tokens_output": 73918
     },
     "gemini-2.5-flash": {
-      "cost_usd": 0.905170425,
-      "tokens_input": 11174759,
-      "tokens_output": 223545
-    },
-    "gemini-3-flash-preview": {
-      "cost_usd": 0.39782565,
-      "tokens_input": 5251994,
-      "tokens_output": 13087
+      "cost_usd": 1.0921215,
+      "tokens_input": 13782980,
+      "tokens_output": 194660
     },
     "openai/gpt-4o-mini": {
-      "cost_usd": 0.1519572,
-      "tokens_input": 919384,
-      "tokens_output": 23416
+      "cost_usd": 1.10836035,
+      "tokens_input": 6908953,
+      "tokens_output": 120029
     },
     "openai/gpt-5.2": {
-      "cost_usd": 93.83266,
-      "tokens_input": 8764402,
-      "tokens_output": 206288
+      "cost_usd": 22.45546,
+      "tokens_input": 2205625,
+      "tokens_output": 13307
     }
   },
   "by_model_last24h": {
     "claude-sonnet-4-6": {
-      "cost_usd": 0.112581,
-      "tokens_input": 322,
-      "tokens_output": 7441
+      "cost_usd": 0.985404,
+      "tokens_input": 1398,
+      "tokens_output": 65414
     },
     "gemini-2.5-flash": {
-      "cost_usd": 0.904009725,
-      "tokens_input": 11164283,
-      "tokens_output": 222295
-    },
-    "gemini-3-flash-preview": {
-      "cost_usd": 0.39782565,
-      "tokens_input": 5251994,
-      "tokens_output": 13087
+      "cost_usd": 1.0526556,
+      "tokens_input": 13287108,
+      "tokens_output": 187075
     },
     "openai/gpt-4o-mini": {
-      "cost_usd": 0.1519572,
-      "tokens_input": 919384,
-      "tokens_output": 23416
+      "cost_usd": 1.1047077,
+      "tokens_input": 6887126,
+      "tokens_output": 119398
     },
     "openai/gpt-5.2": {
-      "cost_usd": 91.41969,
-      "tokens_input": 8553567,
-      "tokens_output": 196134
+      "cost_usd": 21.73673,
+      "tokens_input": 2138861,
+      "tokens_output": 11604
     }
   },
   "by_cron_job_last24h": {
+    "0caa28fa-a6ba-4e57-bd72-ff94ea55932b": {
+      "name": "🚨 BACKUP: Marta → Aiganym (evening check-in)",
+      "cost_usd": 0.57797,
+      "tokens_input": 56912,
+      "tokens_output": 295
+    },
     "0ece27a3-dfc0-47a4-bd3c-6fb6c8c9d403": {
       "name": "🔧 Механик (ночь)",
-      "cost_usd": 0.014598525,
-      "tokens_input": 183947,
-      "tokens_output": 2675
+      "cost_usd": 0.11381955,
+      "tokens_input": 1474014,
+      "tokens_output": 10895
+    },
+    "0f52e141-cc4f-4e8f-9ec4-82cdbd0083d6": {
+      "name": "0f52e141-cc4f-4e8f-9ec4-82cdbd0083d6",
+      "cost_usd": 0.00456255,
+      "tokens_input": 24709,
+      "tokens_output": 1427
     },
     "10e6c5ea-652e-4776-b097-f72dbf6ef050": {
       "name": "BACKUP: Утренние мнения (Gemini)",
-      "cost_usd": 1.42785,
-      "tokens_input": 117639,
-      "tokens_output": 8382
+      "cost_usd": 0.00385905,
+      "tokens_input": 22707,
+      "tokens_output": 755
+    },
+    "1424f238-d69f-456f-8410-67ecde70ae3b": {
+      "name": "1424f238-d69f-456f-8410-67ecde70ae3b",
+      "cost_usd": 0.0057786,
+      "tokens_input": 34616,
+      "tokens_output": 977
     },
     "1c292387-c997-46f1-b8a1-e5fd40059713": {
       "name": "Утренний дайджест @newsneiron",
-      "cost_usd": 0.01845705,
-      "tokens_input": 232078,
-      "tokens_output": 3504
+      "cost_usd": 0.0009813,
+      "tokens_input": 13084,
+      "tokens_output": 0
+    },
+    "1ebe95ac-91c9-45e5-a758-a1ff5be367e4": {
+      "name": "Вечерние мнения",
+      "cost_usd": 0.086607225,
+      "tokens_input": 1058451,
+      "tokens_output": 24078
     },
     "22efd91b-5dbf-4cfe-a623-9cbe6a5b56bd": {
       "name": "💰 Экономист (сбор)",
-      "cost_usd": 0.007707,
-      "tokens_input": 34,
-      "tokens_output": 507
+      "cost_usd": 0.0021813,
+      "tokens_input": 27372,
+      "tokens_output": 428
     },
-    "28b9d12a-b9d1-4fc0-89ec-3bcde5554e51": {
-      "name": "28b9d12a-b9d1-4fc0-89ec-3bcde5554e51",
-      "cost_usd": 0.43551,
-      "tokens_input": 42732,
-      "tokens_output": 273
+    "255d2287-3a5a-4c56-b3a9-a809cece114d": {
+      "name": "Marta → Aiganym (evening check-in)",
+      "cost_usd": 0.00181245,
+      "tokens_input": 10523,
+      "tokens_output": 390
     },
-    "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8": {
-      "name": "2fe731f2-6254-4a2e-ba80-4c326a3a1fe8",
-      "cost_usd": 0.0372846,
-      "tokens_input": 468500,
-      "tokens_output": 7157
+    "2e4e5c98-c62e-4fe4-9aa5-1531577df61d": {
+      "name": "2e4e5c98-c62e-4fe4-9aa5-1531577df61d",
+      "cost_usd": 0.00100905,
+      "tokens_input": 5691,
+      "tokens_output": 259
     },
     "305e53a4-049c-4d2e-b248-0cdbea259d3f": {
       "name": "👮‍♂️ Участковый",
-      "cost_usd": 18.2650958,
-      "tokens_input": 5353861,
-      "tokens_output": 113827
+      "cost_usd": 0.14249205,
+      "tokens_input": 863347,
+      "tokens_output": 21650
+    },
+    "3a62294c-8109-4f71-9f4d-62d3450d4ae5": {
+      "name": "🦞 Lobster: Marta (plan-only soak)",
+      "cost_usd": 0.1008543,
+      "tokens_input": 613270,
+      "tokens_output": 14773
+    },
+    "489dc543-09f4-4e25-8b31-25c31194b6a2": {
+      "name": "Marta → Aiganym (morning check-in)",
+      "cost_usd": 0.0029475,
+      "tokens_input": 19202,
+      "tokens_output": 112
     },
     "4cc76b40-8c26-4d88-aa2d-967f432e9cee": {
       "name": "Утренний брифинг",
-      "cost_usd": 0.015484125,
-      "tokens_input": 196243,
-      "tokens_output": 2553
+      "cost_usd": 0.001946475,
+      "tokens_input": 25197,
+      "tokens_output": 189
+    },
+    "54abc66d-1d8e-42d2-a10a-17fc910078c9": {
+      "name": "🦞 Lobster: Git sync (plan-only soak)",
+      "cost_usd": 0.0205434,
+      "tokens_input": 122300,
+      "tokens_output": 3664
+    },
+    "551ee6bf-21fa-4891-a211-2a5dc31a641e": {
+      "name": "🦞 Lobster: Wendy (plan-only soak)",
+      "cost_usd": 0.10310205,
+      "tokens_input": 643555,
+      "tokens_output": 10948
     },
     "582cc3f0-9941-4e74-ae77-0afac52c6258": {
       "name": "Вечерний дайджест @newsneiron",
-      "cost_usd": 0.010306725,
-      "tokens_input": 132135,
-      "tokens_output": 1322
+      "cost_usd": 0.16517565,
+      "tokens_input": 2091762,
+      "tokens_output": 27645
     },
     "585d2b84-e992-47a7-ba3c-acd268165874": {
       "name": "🚨 BACKUP: Механик (ночь)",
-      "cost_usd": 0.86868,
-      "tokens_input": 80085,
-      "tokens_output": 2261
+      "cost_usd": 0.83657,
+      "tokens_input": 76832,
+      "tokens_output": 2275
+    },
+    "58a1d597-33b5-4820-96f0-a344a4f9affe": {
+      "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
+      "cost_usd": 0.01110915,
+      "tokens_input": 69257,
+      "tokens_output": 1201
+    },
+    "5c8b1424-d472-4c18-873c-df61e0dc69f3": {
+      "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
+      "cost_usd": 0.09079125,
+      "tokens_input": 583351,
+      "tokens_output": 5481
     },
     "62c89740-52fa-4364-b1ae-7c81110ef368": {
       "name": "🚨 BACKUP: Дневной дайджест (Gemini)",
-      "cost_usd": 0.28518,
-      "tokens_input": 27765,
-      "tokens_output": 251
+      "cost_usd": 0.00163905,
+      "tokens_input": 10411,
+      "tokens_output": 129
+    },
+    "63910ad0-8861-4891-9543-502cfa080b4c": {
+      "name": "63910ad0-8861-4891-9543-502cfa080b4c",
+      "cost_usd": 0.00171555,
+      "tokens_input": 10441,
+      "tokens_output": 249
+    },
+    "694a76a6-f519-4107-824a-e81eb30ce37a": {
+      "name": "Marta → Aiganym (lunch check-in)",
+      "cost_usd": 0.0015186,
+      "tokens_input": 9644,
+      "tokens_output": 120
     },
     "6b3d2e36-4e34-4689-9b44-96deac5904bb": {
       "name": "🚨 BACKUP: Саммари от Айганым",
-      "cost_usd": 0.18238,
-      "tokens_input": 17824,
-      "tokens_output": 138
+      "cost_usd": 0.24679,
+      "tokens_input": 24028,
+      "tokens_output": 217
     },
     "6d4944f0-7679-4c5f-b22d-49afc05158b2": {
       "name": "Утренние мнения",
-      "cost_usd": 0.0058584,
-      "tokens_input": 70112,
-      "tokens_output": 2000
+      "cost_usd": 0.00647445,
+      "tokens_input": 38927,
+      "tokens_output": 1059
     },
     "734c608b-8b03-4653-b1fc-108edf6785d2": {
       "name": "🚨 BACKUP: Чекист",
-      "cost_usd": 2.03581,
-      "tokens_input": 199069,
-      "tokens_output": 1504
+      "cost_usd": 0.0360813,
+      "tokens_input": 45168,
+      "tokens_output": 2647
     },
     "76f581a1-960c-4e35-bc9f-9ff0ccc56ae2": {
       "name": "🚨 BACKUP: Ежедневная рефлексия",
-      "cost_usd": 0.18198,
-      "tokens_input": 17745,
-      "tokens_output": 151
+      "cost_usd": 0.0061767,
+      "tokens_input": 40222,
+      "tokens_output": 239
     },
     "7b05bba1-25f3-43e6-b866-02e783c77fa2": {
       "name": "🚨 BACKUP: Экономист (сбор)",
-      "cost_usd": 0.20384,
-      "tokens_input": 19520,
-      "tokens_output": 288
+      "cost_usd": 0.0024192,
+      "tokens_input": 14676,
+      "tokens_output": 363
     },
     "829eee9e-de87-4c35-82ed-a469ac67afc2": {
       "name": "🚨 BACKUP: Утренний брифинг (Gemini)",
-      "cost_usd": 0.61884,
-      "tokens_input": 55227,
-      "tokens_output": 2219
+      "cost_usd": 0.00358335,
+      "tokens_input": 22741,
+      "tokens_output": 287
+    },
+    "8783bc2f-de99-4742-9229-09921260d546": {
+      "name": "🚨 BACKUP: Вечерние мнения (Gemini)",
+      "cost_usd": 0.00846165,
+      "tokens_input": 49911,
+      "tokens_output": 1625
+    },
+    "88bed7ff-931d-4fd1-b1c1-8f376c6806c6": {
+      "name": "88bed7ff-931d-4fd1-b1c1-8f376c6806c6",
+      "cost_usd": 0.00172635,
+      "tokens_input": 10349,
+      "tokens_output": 290
     },
     "89db97f7-e05e-4e3b-990b-fefc1815e7d7": {
       "name": "🕵️ Чекист (ночь)",
-      "cost_usd": 0.006662175,
-      "tokens_input": 86225,
-      "tokens_output": 651
+      "cost_usd": 0.01884915,
+      "tokens_input": 207726,
+      "tokens_output": 1691
+    },
+    "8b4e2fb6-0044-425a-ac2d-935fcd2de699": {
+      "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
+      "cost_usd": 0.0045477,
+      "tokens_input": 29182,
+      "tokens_output": 284
     },
     "8e8e7e2c-8616-43e3-a7e0-022a6f4c204f": {
       "name": "🚨 BACKUP: Участковый (ночь)",
-      "cost_usd": 1.90954,
-      "tokens_input": 187636,
-      "tokens_output": 1106
+      "cost_usd": 0.0087858,
+      "tokens_input": 57508,
+      "tokens_output": 266
     },
     "9d558661-b1bd-4636-afba-72ec30bb3190": {
       "name": "Ежедневная рефлексия",
-      "cost_usd": 0.002815425,
-      "tokens_input": 36519,
-      "tokens_output": 255
+      "cost_usd": 0.002144775,
+      "tokens_input": 27041,
+      "tokens_output": 389
     },
     "9e47cd1e-caac-4873-bf51-d70cc50974be": {
       "name": "📋 Марта: Саммари от Айганым — вечерний отчёт",
-      "cost_usd": 0.005971425,
-      "tokens_input": 75835,
-      "tokens_output": 946
+      "cost_usd": 0.003267,
+      "tokens_input": 20332,
+      "tokens_output": 362
+    },
+    "9ff401d1-81d9-462b-ac6f-f077ddc25743": {
+      "name": "🧪 Soak: Mem0 monitoring probe (10m)",
+      "cost_usd": 0.2578995,
+      "tokens_input": 1677358,
+      "tokens_output": 10493
     },
     "a0ed4696-8c15-4ab2-b21d-e3e2e9a0b6b6": {
       "name": "Дневной дайджест @newsneiron",
-      "cost_usd": 0.188342775,
-      "tokens_input": 2101581,
-      "tokens_output": 102414
+      "cost_usd": 0.0629472,
+      "tokens_input": 786528,
+      "tokens_output": 13192
     },
     "a532ac04-61cf-419e-9eca-012b5595fd00": {
       "name": "🚨 BACKUP: Механик",
-      "cost_usd": 5.16239,
-      "tokens_input": 499544,
-      "tokens_output": 5565
+      "cost_usd": 2.01281125,
+      "tokens_input": 309217,
+      "tokens_output": 3531
     },
     "b0c35166-4062-479c-a777-652657b2fa71": {
       "name": "🚨 BACKUP: Git sync (Gemini)",
-      "cost_usd": 1.4627,
-      "tokens_input": 142022,
-      "tokens_output": 1416
+      "cost_usd": 0.01419675,
+      "tokens_input": 89733,
+      "tokens_output": 1228
     },
     "b72fece5-c8f7-4b9b-842a-208b7efcecc2": {
       "name": "🕵️ Чекист",
-      "cost_usd": 4.80179975,
-      "tokens_input": 1502239,
-      "tokens_output": 42289
+      "cost_usd": 0.100152375,
+      "tokens_input": 1072906,
+      "tokens_output": 13856
     },
     "b9da6746-f3bf-4f00-a2c7-da5014855627": {
       "name": "🚨 BACKUP: Участковый",
-      "cost_usd": 23.9671,
-      "tokens_input": 2324335,
-      "tokens_output": 24125
+      "cost_usd": 0.19871835,
+      "tokens_input": 547927,
+      "tokens_output": 13582
     },
     "ba31c42d-be5d-486e-9897-6fb4fa6ae2ed": {
       "name": "Дневные мнения",
-      "cost_usd": 0.00389205,
-      "tokens_input": 51894,
-      "tokens_output": 0
+      "cost_usd": 0.00206415,
+      "tokens_input": 13674,
+      "tokens_output": 3462
     },
     "bc20e704-af13-445d-af52-eaa3ac157d4b": {
       "name": "👮‍♂️ Участковый (ночь)",
-      "cost_usd": 0.01393365,
-      "tokens_input": 88011,
-      "tokens_output": 1220
+      "cost_usd": 0.03291915,
+      "tokens_input": 429738,
+      "tokens_output": 2296
     },
     "bef4ddfa-1fd8-4c64-9495-79d851f4f5f0": {
       "name": "🔧 Механик",
-      "cost_usd": 0.55595865,
-      "tokens_input": 6198678,
-      "tokens_output": 27353
+      "cost_usd": 0.763365,
+      "tokens_input": 1000,
+      "tokens_output": 50691
     },
     "c1c58593-accd-4cf7-a175-3603514b0275": {
       "name": "🚨 BACKUP: Утренний дайджест (Gemini)",
-      "cost_usd": 0.60513,
-      "tokens_input": 39630,
-      "tokens_output": 6961
+      "cost_usd": 0.00344835,
+      "tokens_input": 22469,
+      "tokens_output": 130
+    },
+    "cd329770-306a-4715-b84b-37b99057f1c9": {
+      "name": "cd329770-306a-4715-b84b-37b99057f1c9",
+      "cost_usd": 0.0008694,
+      "tokens_input": 5124,
+      "tokens_output": 168
     },
     "ce006db5-350b-44be-baef-8b216ed687e4": {
       "name": "Auto-commit: Git sync",
-      "cost_usd": 0.024067425,
-      "tokens_input": 307311,
-      "tokens_output": 3397
+      "cost_usd": 0.033564675,
+      "tokens_input": 400489,
+      "tokens_output": 11760
+    },
+    "d10935f5-ebbb-4f6f-b964-d14c719b433d": {
+      "name": "🚨 BACKUP: Marta → Aiganym (morning check-in)",
+      "cost_usd": 0.57494,
+      "tokens_input": 56747,
+      "tokens_output": 249
     },
     "d81fedff-8d6f-4e32-a105-a56f8833feb7": {
       "name": "🚨 BACKUP: Дневные мнения (Gemini)",
-      "cost_usd": 2.71411,
-      "tokens_input": 243790,
-      "tokens_output": 9207
+      "cost_usd": 0.00610935,
+      "tokens_input": 26329,
+      "tokens_output": 3600
     },
     "db2dc5f6-46c8-4b4e-8458-d0d7241d2e02": {
       "name": "Auto-push: Git sync (stage 2)",
-      "cost_usd": 0.025352775,
-      "tokens_input": 320545,
-      "tokens_output": 4373
+      "cost_usd": 0.01811025,
+      "tokens_input": 231158,
+      "tokens_output": 2578
     },
     "e529cf2b-6d25-4323-9c0d-63b68d8b0453": {
       "name": "🚨 BACKUP: Чекист (ночь)",
-      "cost_usd": 0.95765,
-      "tokens_input": 93548,
-      "tokens_output": 739
+      "cost_usd": 0.0044973,
+      "tokens_input": 28990,
+      "tokens_output": 248
     },
     "e758d243-54e7-4d3b-b684-8115561831e6": {
       "name": "🚨 BACKUP: Вечерний дайджест (Gemini)",
-      "cost_usd": 0.77561,
-      "tokens_input": 57815,
-      "tokens_output": 6582
+      "cost_usd": 0.0038004,
+      "tokens_input": 19720,
+      "tokens_output": 1404
+    },
+    "ea29eaec-5621-4757-95b7-2dc78617b83f": {
+      "name": "ea29eaec-5621-4757-95b7-2dc78617b83f",
+      "cost_usd": 0.0003264,
+      "tokens_input": 1088,
+      "tokens_output": 272
+    },
+    "f2d9921a-d061-4595-a61d-6239a3de59d4": {
+      "name": "f2d9921a-d061-4595-a61d-6239a3de59d4",
+      "cost_usd": 0.00249495,
+      "tokens_input": 14845,
+      "tokens_output": 447
     },
     "f4ac0949-f857-4ab5-b534-4e826d0bf1fb": {
       "name": "📈 Monitor daily summary (incidents only)",
-      "cost_usd": 0.00220455,
-      "tokens_input": 14517,
-      "tokens_output": 45
+      "cost_usd": 0.0015474,
+      "tokens_input": 9860,
+      "tokens_output": 114
+    },
+    "ff2dfcf2-f093-42e6-8581-4720e9c0de32": {
+      "name": "🚨 BACKUP: Marta → Aiganym (lunch check-in)",
+      "cost_usd": 0.24171,
+      "tokens_input": 23712,
+      "tokens_output": 153
     }
   },
   "by_cron_category_last24h": {
     "aiganym_marta": {
-      "cost_usd": 0.188351425,
-      "tokens_input": 93659,
-      "tokens_output": 1084
+      "cost_usd": 1.75180985,
+      "tokens_input": 834370,
+      "tokens_output": 16671
     },
     "digest_news": {
-      "cost_usd": 1.88302655,
-      "tokens_input": 2591004,
-      "tokens_output": 121034
+      "cost_usd": 0.23799195,
+      "tokens_input": 2943974,
+      "tokens_output": 42500
     },
     "digest_opinions": {
-      "cost_usd": 4.15171045,
-      "tokens_input": 483435,
-      "tokens_output": 19589
+      "cost_usd": 0.113575875,
+      "tokens_input": 1209999,
+      "tokens_output": 34579
     },
     "economist": {
-      "cost_usd": 0.211547,
-      "tokens_input": 19554,
-      "tokens_output": 795
+      "cost_usd": 0.0046005,
+      "tokens_input": 42048,
+      "tokens_output": 791
     },
     "git_sync": {
-      "cost_usd": 1.5121202,
-      "tokens_input": 769878,
-      "tokens_output": 9186
+      "cost_usd": 0.086415075,
+      "tokens_input": 843680,
+      "tokens_output": 19230
     },
     "monitor_aggregate": {
-      "cost_usd": 0.00220455,
-      "tokens_input": 14517,
-      "tokens_output": 45
+      "cost_usd": 0.0015474,
+      "tokens_input": 9860,
+      "tokens_output": 114
     },
     "monitoring_chekist": {
-      "cost_usd": 7.801921925,
-      "tokens_input": 1881081,
-      "tokens_output": 45183
+      "cost_usd": 0.159580125,
+      "tokens_input": 1354790,
+      "tokens_output": 18442
     },
     "monitoring_mekhanik": {
-      "cost_usd": 6.601627175,
-      "tokens_input": 6962254,
-      "tokens_output": 37854
+      "cost_usd": 3.81735705,
+      "tokens_input": 2444414,
+      "tokens_output": 72873
     },
     "monitoring_uchastkovy": {
-      "cost_usd": 44.15566945,
-      "tokens_input": 7953843,
-      "tokens_output": 140278
+      "cost_usd": 0.38746305,
+      "tokens_input": 1927702,
+      "tokens_output": 38078
     },
     "other": {
-      "cost_usd": 1.29191415,
-      "tokens_input": 816966,
-      "tokens_output": 12608
+      "cost_usd": 0.40444485,
+      "tokens_input": 2612234,
+      "tokens_output": 27835
     }
   },
   "external_fixed": {

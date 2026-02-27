@@ -27,3 +27,4 @@
 {"ts":"2026-02-26T02:46:00Z","type":"resolved","source":"mekhanik","ref_id":"8cb2c1b6","action":"backup e758d243 ran ok 14h ago; Вечерний дайджест content published via backup","severity":"info"}
 {"ts":"2026-02-26T02:46:00Z","type":"resolved","source":"mekhanik","ref_id":"e8c76e8b","action":"git -C ~/Clowdbot status shows clean working tree; no uncommitted files","severity":"info"}
 {"type": "cron_error", "message": "Git pull failed due to unstaged changes during auto-sync STAGE 1", "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+{"timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")", "type": "cron_error", "message": "Git sync failed: Cannot pull with rebase, unstaged changes detected."}
