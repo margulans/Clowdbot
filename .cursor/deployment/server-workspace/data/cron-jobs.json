@@ -1065,7 +1065,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772178909967,
+      "updatedAtMs": 1772186117660,
       "schedule": {
         "kind": "cron",
         "expr": "55 6-22/2 * * *",
@@ -1085,10 +1085,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772186100000,
-        "lastRunAtMs": 1772178900023,
+        "nextRunAtMs": 1772193300000,
+        "lastRunAtMs": 1772186100038,
         "lastStatus": "ok",
-        "lastDurationMs": 9944,
+        "lastDurationMs": 17622,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -2256,6 +2256,35 @@
       },
       "state": {
         "nextRunAtMs": 1772189070000
+      }
+    },
+    {
+      "id": "0ab0dd04-8354-4bbd-91e3-9659a0d0f8fb",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Lobster metrics control (T+3 cycles) — git_sync/wendy/marta",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772186416848,
+      "updatedAtMs": 1772186416848,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T22:05:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "One-shot контроль метрик Lobster через 3 цикла.\n\nОГРАНИЧЕНИЯ:\n- Ничего не менять в cutover/cron (никаких cron update/enable/disable).\n- Только чтение/проверка и сообщение Маргулану.\n\nBaseline (line_count):\n- git_sync=2, wendy=7, marta=14\n- также попробуй прочитать /home/openclaw/.openclaw/.runtime/lobster-metrics-baseline.json (если есть) и сверить, но baseline значения считать эталоном.\n\nШаги:\n1) Для каждого файла метрик:\n   - ~/.openclaw/.runtime/git-sync-lobster-metrics.jsonl\n   - ~/.openclaw/.runtime/wendy-lobster-metrics.jsonl\n   - ~/.openclaw/.runtime/marta-lobster-metrics.jsonl\n   a) посчитать текущий line_count (non-empty lines)\n   b) delta_vs_baseline\n   c) распарсить последнюю строку как JSON и проверить наличие ключа ts (и что ts парсится как ISO8601Z)\n\n2) Для каждого jobId:\n   - 54abc66d (Git sync)\n   - 551ee6bf (Wendy)\n   - 3a62294c (Marta)\n   a) cron(action=runs) (последние 10)\n   b) убедиться, что среди последних 10 НЕТ строки ошибки/summary содержащей подстроку: \"Edit\" и \"metrics.jsonl\" (регистронезависимо)\n\n3) Пересчитать gate (только чтение):\n   - python3 /home/openclaw/.openclaw/workspace/lobster/git-sync/post_check_report.py\n   - python3 /home/openclaw/.openclaw/workspace/lobster/wendy/post_check_report.py\n   - python3 /home/openclaw/.openclaw/workspace/lobster/marta/post_check_report.py\n   Вернуть READY/NOT_READY по recommendation.\n\n4) Отправить Маргулану один отчёт в Telegram DM:\n   - line_count + Δ vs baseline по каждому\n   - last_line_valid + last_ts по каждому\n   - runs_check: OK/FAIL по каждому (Edit metrics отсутствует/есть)\n   - gate: READY/NOT_READY по каждому\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<отчёт>\")\n\nФормат: компактный список по 3 контурам."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772229900000
       }
     }
   ]
