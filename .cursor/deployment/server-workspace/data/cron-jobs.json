@@ -1902,7 +1902,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772166246731,
+      "updatedAtMs": 1772166857416,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1921,11 +1921,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772166841460,
-        "lastRunAtMs": 1772166241460,
+        "nextRunAtMs": 1772167441503,
+        "lastRunAtMs": 1772166841503,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5271,
+        "lastDurationMs": 15913,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1967,7 +1967,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772165319300,
+      "updatedAtMs": 1772167116609,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1986,11 +1986,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772167111029,
-        "lastRunAtMs": 1772165311029,
+        "nextRunAtMs": 1772168911072,
+        "lastRunAtMs": 1772167111072,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8271,
+        "lastDurationMs": 5537,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2191,7 +2191,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772165493350,
+      "updatedAtMs": 1772167295924,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2210,11 +2210,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772167283948,
-        "lastRunAtMs": 1772165483948,
+        "nextRunAtMs": 1772169083996,
+        "lastRunAtMs": 1772167283996,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9402,
+        "lastDurationMs": 11928,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2341,6 +2341,35 @@
       },
       "state": {
         "nextRunAtMs": 1772364600000
+      }
+    },
+    {
+      "id": "bb3166ae-76e5-4fdb-aaae-a02555ab84ba",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "📊 Экономист: факт-отчёт затрат за сутки (09:10 Алматы)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772167337144,
+      "updatedAtMs": 1772167337144,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T04:10:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "Сформируй ФАКТИЧЕСКИЙ отчёт затрат за последние 24 часа и отправь Маргулану в Telegram DM.\n\nШаги:\n1) Обнови данные:\n   - запусти: /home/openclaw/.openclaw/workspace/scripts/economist_collect.py\n   - если скрипт упал: отправь Маргулану краткую ошибку и остановись.\n2) Прочитай /home/openclaw/.openclaw/workspace/data/cost-summary.json\n3) Собери отчёт строго по факту (без предположений):\n   - last24h: $ + input/output tokens\n   - разрез по моделям (by_model_last24h): топ-5 по $\n   - разрез по задачам (by_cron_job_last24h): топ-10 по $\n   - разрез по ролям/категориям (by_cron_category_last24h): всё, отсортировано по $\n   - выдели «основных пожирателей» (top-3 jobs + top-1 model)\n4) Рекомендации (3–5 пунктов), только из класса «оптимизация без смены моделей»:\n   - уменьшить частоту/дублирование primary+backup\n   - сужение окна логов/последние N строк\n   - diff-only/кэширование тяжёлых данных\n   - early-exit при отсутствии active critical\n\nТранспорт (обязательно):\nmessage(action=send, channel=telegram, to=685668909, message=\"<отчёт одним сообщением>\")\n\nВажно:\n- Никаких systemEvent.\n- Не менять никакие cron jobs.\n- Уложись в одно сообщение (до ~3500 символов)."
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772251800000
       }
     }
   ]
