@@ -27,7 +27,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772164920000,
+        "nextRunAtMs": 1772168520000,
         "lastRunAtMs": 1772164151365,
         "lastStatus": "ok",
         "lastDurationMs": 26091,
@@ -1097,7 +1097,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772157381964,
+      "updatedAtMs": 1772164579215,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/2 * * *",
@@ -1117,10 +1117,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772164560000,
-        "lastRunAtMs": 1772157360063,
+        "nextRunAtMs": 1772171760000,
+        "lastRunAtMs": 1772164560038,
         "lastStatus": "ok",
-        "lastDurationMs": 21901,
+        "lastDurationMs": 19177,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1298,10 +1298,10 @@
       "name": "👮‍♂️ Участковый (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568502,
-      "updatedAtMs": 1772164424348,
+      "updatedAtMs": 1772165004946,
       "schedule": {
         "kind": "cron",
-        "expr": "2 0,3 * * *",
+        "expr": "2 22,1,4 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1317,7 +1317,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772218920000,
+        "nextRunAtMs": 1772211720000,
         "lastRunAtMs": 1772146800041,
         "lastRunStatus": "error",
         "lastStatus": "error",
@@ -1336,10 +1336,10 @@
       "name": "🚨 BACKUP: Участковый (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568598,
-      "updatedAtMs": 1772164437091,
+      "updatedAtMs": 1772165005083,
       "schedule": {
         "kind": "cron",
-        "expr": "12 0,3 * * *",
+        "expr": "12 22,1,4 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1355,7 +1355,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772219520000,
+        "nextRunAtMs": 1772212320000,
         "lastRunAtMs": 1772136300057,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
