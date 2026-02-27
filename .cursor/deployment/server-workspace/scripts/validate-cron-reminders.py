@@ -100,11 +100,18 @@ def main() -> None:
         payload = j.get("payload") or {}
         pkind = payload.get("kind")
 
+        sched = j.get("schedule") or {}
+        skind = sched.get("kind")
+        delete_after = j.get("deleteAfterRun")
+
         if session_target != "isolated":
             violations.append(f"{sid} {name}: sessionTarget must be isolated (got {session_target})")
             continue
         if pkind != "agentTurn":
             violations.append(f"{sid} {name}: payload.kind must be agentTurn (got {pkind})")
+            continue
+        if skind == "at" and delete_after is not True:
+            violations.append(f"{sid} {name}: one-shot reminder (schedule.kind=at) must set deleteAfterRun=true")
             continue
 
         message = payload.get("message")
