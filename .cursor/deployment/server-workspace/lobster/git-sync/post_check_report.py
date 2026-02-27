@@ -44,6 +44,10 @@ def parse_ts(ts: str) -> datetime:
 
 def classify_scope(inc: dict) -> str:
     """Return scope in {lobster, legacy, unknown}."""
+    # hotfix: treat uchastkovy:git_dirty as legacy-scoped (should not block gates)
+    if inc.get("source") == "uchastkovy" and inc.get("type") == "git_dirty":
+        return "legacy"
+
     job_id = inc.get("jobId")
     src = inc.get("source")
     if src in LOBSTER_SOURCES or (isinstance(job_id, str) and job_id in LOBSTER_JOB_IDS):
@@ -84,11 +88,19 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     since = now - timedelta(hours=24)
 
-    rows = [r for r in read_jsonl(METRICS) if isinstance(r.get("ts"), str)]
+    def get_ts(rec: dict):
+        # hotfix: accept both ts and legacy timestamp keys
+        ts = rec.get("ts")
+        if not isinstance(ts, str):
+            ts = rec.get("timestamp")
+        return ts if isinstance(ts, str) else None
+
+    rows = [r for r in read_jsonl(METRICS) if get_ts(r) is not None]
     r24 = []
     for r in rows:
+        ts_val = get_ts(r)
         try:
-            if parse_ts(r["ts"]) >= since:
+            if ts_val and parse_ts(ts_val) >= since:
                 r24.append(r)
         except Exception:
             continue
