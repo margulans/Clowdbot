@@ -2208,7 +2208,7 @@
       "enabled": true,
       "deleteAfterRun": true,
       "createdAtMs": 1772185485695,
-      "updatedAtMs": 1772185485695,
+      "updatedAtMs": 1772185643962,
       "schedule": {
         "kind": "at",
         "at": "2026-02-27T11:44:30.000Z"
@@ -2220,13 +2220,42 @@
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 600,
-        "message": "You are the cutover verifier for Lobster Mekhanik (T+2h). Do NOT touch Git sync/Wendy/Marta.\n\nLoad baseline:\n- read JSON: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-baseline.json\n- startTs = baseline.startTs\n\nCompute counts for ts>=startTs (inclusive):\nA) incidents_count: count of records in /home/openclaw/.openclaw/workspace/data/incidents.jsonl where\n   - severity==\"critical\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nB) transport_failures_count: count where\n   - type==\"message_transport_failed\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nC) rollback_events_count: count where\n   - type contains \"rollback\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\n\nDeltas = current - baseline.\n\nDecision rule:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   1) Disable legacy Mekhanik job bef4ddfa-1fd8-4c64-9495-79d851f4f5f0 via cron(action=update, patch={enabled:false}).\n   2) Append incident {type:\"mekhanik_cutover_success\", severity:\"warn\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: SUCCESS\", detail:{deltas...}}.\n- Else (any Δ>0): STOP-LOSS\n   1) Roll back Lobster real: change job 5c8b1424 payload back to plan-only runner:\n      exec python3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_plan_only.py\n      (do not disable it; just revert to plan-only)\n   2) Ensure legacy bef4ddfa remains enabled.\n   3) Append critical incident {type:\"mekhanik_cutover_rolled_back\", severity:\"critical\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: ROLLED_BACK\", detail:{deltas...}, rca:\"<1-2 lines>\"}.\n\nFinally: send a concise report to Margulan in Telegram DM (one message) with format:\n1) Что сделано\n2) Что не сделано\n3) Риски\n4) Следующий шаг\nKeep 200–300 words.\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+        "message": "You are the cutover verifier for Lobster Mekhanik (T+2h). Do NOT touch Git sync/Wendy/Marta.\n\nLoad baseline:\n- read JSON: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-baseline.json\n- startTs = baseline.startTs\n\nCompute counts for ts>=startTs (inclusive):\nA) incidents_count: count of records in /home/openclaw/.openclaw/workspace/data/incidents.jsonl where\n   - severity==\"critical\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nB) transport_failures_count: count where\n   - type==\"message_transport_failed\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\nC) rollback_events_count: count where\n   - type contains \"rollback\"\n   - source in {\"mekhanik-lobster\",\"lobster-mekhanik\"}\n\nIMPORTANT:\n- Count ONLY lobster-scoped deltas above. Ignore legacy noise.\n\nDeltas = current - baseline.\n\nDecision rule:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   1) Disable legacy Mekhanik job bef4ddfa-1fd8-4c64-9495-79d851f4f5f0 via cron(action=update, patch={enabled:false}).\n   2) Append incident {type:\"mekhanik_cutover_success\", severity:\"warn\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: SUCCESS\", detail:{deltas...}}.\n- Else (any Δ>0): STOP-LOSS\n   1) Roll back Lobster real: change job 5c8b1424 payload back to plan-only runner:\n      exec python3 /home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_plan_only.py\n      (do not disable it; just revert to plan-only)\n   2) Ensure legacy bef4ddfa remains enabled.\n   3) Append critical incident {type:\"mekhanik_cutover_rolled_back\", severity:\"critical\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER: ROLLED_BACK\", detail:{deltas...}, rca:\"<1-2 lines>\"}.\n\nFinally: send a concise report to Margulan in Telegram DM (one message) with format:\n1) Что сделано\n2) Что не сделано\n3) Риски\n4) Следующий шаг\n\nInclude explicit line:\nMEKHANIK_CUTOVER: SUCCESS|ROLLED_BACK\nΔincidents_lobster_critical=<ΔA> Δtransport_failures=<ΔB> Δrollback_events=<ΔC>\n\nKeep 200–300 words.\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
         "nextRunAtMs": 1772192670000
+      }
+    },
+    {
+      "id": "1b17c84c-d72e-4a87-bb74-f6cbb17d4507",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover sanity-check (T+1h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772185643769,
+      "updatedAtMs": 1772185643769,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-27T10:44:30.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "T+1h sanity-check for Lobster Mekhanik cutover.\n\nDO NOT change any cron jobs.\n\nLoad baseline:\n- read /home/openclaw/.openclaw/.runtime/mekhanik-cutover-baseline.json\n- startTs\n\nChecks:\n1) Verify job 5c8b1424 lastStatus=ok and lastRunAtMs within last 45 minutes via cron(action=list).\n2) Count for ts>=startTs in data/incidents.jsonl:\n   A) lobster-scoped critical incidents where source in {mekhanik-lobster,lobster-mekhanik}\n   B) lobster-scoped message_transport_failed\n   C) lobster-scoped rollback events (type contains \"rollback\")\n\nSend a short DM to Margulan with:\n- T+1h status: OK/DEGRADED\n- job_5c8b1424_lastStatus + lastRunAgeMin\n- current deltas vs baseline: ΔA, ΔB, ΔC\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772189070000
       }
     }
   ]
