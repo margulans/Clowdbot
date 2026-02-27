@@ -43,7 +43,7 @@
       "name": "🕵️ Чекист",
       "enabled": true,
       "createdAtMs": 1771735167295,
-      "updatedAtMs": 1772165308996,
+      "updatedAtMs": 1772166380036,
       "schedule": {
         "kind": "cron",
         "expr": "26 6-21/3 * * *",
@@ -60,10 +60,10 @@
         "timeoutSeconds": 600
       },
       "state": {
-        "nextRunAtMs": 1772166364872,
-        "lastRunAtMs": 1772162764921,
+        "nextRunAtMs": 1772177164872,
+        "lastRunAtMs": 1772166364906,
         "lastStatus": "ok",
-        "lastDurationMs": 14753,
+        "lastDurationMs": 15130,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -78,10 +78,10 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772166182810,
+      "updatedAtMs": 1772166377355,
       "schedule": {
         "kind": "cron",
-        "expr": "46 6-22/2 * * *",
+        "expr": "50 6-22/2 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -97,7 +97,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772171160000,
+        "nextRunAtMs": 1772171400000,
         "lastRunAtMs": 1772163960052,
         "lastStatus": "ok",
         "lastDurationMs": 190964,
@@ -1063,10 +1063,10 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772166192771,
+      "updatedAtMs": 1772166377429,
       "schedule": {
         "kind": "cron",
-        "expr": "51 6-22/2 * * *",
+        "expr": "55 6-22/2 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1083,7 +1083,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772171460000,
+        "nextRunAtMs": 1772171700000,
         "lastRunAtMs": 1772164275966,
         "lastStatus": "ok",
         "lastDurationMs": 20223,
@@ -1446,10 +1446,10 @@
       "name": "🔧 Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568876,
-      "updatedAtMs": 1772166186694,
+      "updatedAtMs": 1772166377499,
       "schedule": {
         "kind": "cron",
-        "expr": "30 3 * * *",
+        "expr": "40 3 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1465,7 +1465,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772231400000,
+        "nextRunAtMs": 1772232000000,
         "lastRunAtMs": 1772148624926,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1482,10 +1482,10 @@
       "name": "🚨 BACKUP: Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568930,
-      "updatedAtMs": 1772166198262,
+      "updatedAtMs": 1772166377590,
       "schedule": {
         "kind": "cron",
-        "expr": "45 4 * * *",
+        "expr": "10 4 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -1501,7 +1501,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772235900000,
+        "nextRunAtMs": 1772233800000,
         "lastRunAtMs": 1772149500054,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1902,7 +1902,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772165649028,
+      "updatedAtMs": 1772166246731,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1921,11 +1921,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772166241418,
-        "lastRunAtMs": 1772165641418,
+        "nextRunAtMs": 1772166841460,
+        "lastRunAtMs": 1772166241460,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7610,
+        "lastDurationMs": 5271,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
