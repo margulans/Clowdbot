@@ -78,10 +78,10 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772164151016,
+      "updatedAtMs": 1772166182810,
       "schedule": {
         "kind": "cron",
-        "expr": "46 6-21 * * *",
+        "expr": "46 6-22/2 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
@@ -97,7 +97,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772167560000,
+        "nextRunAtMs": 1772171160000,
         "lastRunAtMs": 1772163960052,
         "lastStatus": "ok",
         "lastDurationMs": 190964,
@@ -1028,7 +1028,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772164432000,
+      "updatedAtMs": 1772165549982,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1048,10 +1048,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772165520000,
-        "lastRunAtMs": 1772162520036,
+        "nextRunAtMs": 1772169120000,
+        "lastRunAtMs": 1772165520064,
         "lastStatus": "ok",
-        "lastDurationMs": 15542,
+        "lastDurationMs": 29918,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1063,26 +1063,27 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772164296189,
+      "updatedAtMs": 1772166192771,
       "schedule": {
         "kind": "cron",
-        "expr": "51 6-21 * * *",
+        "expr": "51 6-22/2 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "BACKUP Механик.\n\nШаг 1: openclaw cron list → найди job bef4ddfa (Механик).\n- Если последний запуск < 45 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Механик не запускался ≥45 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Чини только gateway_down / announce_queue_loop / gateway_memory_high.\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n- Уведомлять Маргулана только если реально чинил или если критическое не чинится.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй tool message() только при реальном критическом.\n\n[[NO_TEMP_FILES]]",
-        "model": "openai/gpt-5.2",
-        "thinking": "low"
+        "message": "🚨 BACKUP: Механик (event-based, critical-only, diff-only)\n\nТриггеры (делай работу ТОЛЬКО если сработал хотя бы один):\n- основной job bef4ddfa пропустил окно: lastRunAtMs старше 150 минут\n- lastStatus у bef4ddfa != ok\n- consecutiveErrors у bef4ddfa > 0\n\nШаг 1: cron(action=list) → найди job bef4ddfa и сними lastRunAtMs/lastStatus/consecutiveErrors.\n- Если триггеров нет → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (если триггер есть):\n- Прочитай data/incidents.jsonl (только последние N строк / последние 4 часа) и возьми только active severity=critical.\n- Чини ТОЛЬКО: gateway_down / announce_queue_loop / gateway_memory_high.\n- Логи не вставляй целиком: дай команду + 20 строк вокруг.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй message() только если реально чинил или если критическое не чинится.\n\n[[NO_TEMP_FILES]]",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "none",
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772167860000,
+        "nextRunAtMs": 1772171460000,
         "lastRunAtMs": 1772164275966,
         "lastStatus": "ok",
         "lastDurationMs": 20223,
@@ -1445,17 +1446,17 @@
       "name": "🔧 Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568876,
-      "updatedAtMs": 1772148756676,
+      "updatedAtMs": 1772166186694,
       "schedule": {
         "kind": "cron",
-        "expr": "30 1,4 * * *",
+        "expr": "30 3 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "google/gemini-2.5-flash",
+        "model": "anthropic/claude-sonnet-4-6",
         "thinking": "low",
         "timeoutSeconds": 600,
         "message": "Выполни скилл mekhanik. Прочитай /home/openclaw/.openclaw/workspace/skills/mekhanik/SKILL.md и строго следуй алгоритму. Работай с /home/openclaw/.openclaw/workspace/data/incidents.jsonl. Чини только то, что входит в протокол. В конце: если реально что-то починил — краткий отчёт; если нет — молчи."
@@ -1464,7 +1465,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772224200000,
+        "nextRunAtMs": 1772231400000,
         "lastRunAtMs": 1772148624926,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1481,25 +1482,26 @@
       "name": "🚨 BACKUP: Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568930,
-      "updatedAtMs": 1772149537087,
+      "updatedAtMs": 1772166198262,
       "schedule": {
         "kind": "cron",
-        "expr": "45 1,4 * * *",
+        "expr": "45 4 * * *",
         "tz": "Asia/Almaty"
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "model": "openai/gpt-5.2",
+        "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "message": "BACKUP Механик.\n\nШаг 1: openclaw cron list → найди job bef4ddfa (Механик).\n- Если последний запуск < 45 минут назад И lastStatus=ok → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (только если Механик не запускался ≥45 мин или lastStatus≠ok):\n- Прочитай data/incidents.jsonl → найди severity=critical, resolved=false, ts ≤ 6ч.\n- Чини только gateway_down / announce_queue_loop / gateway_memory_high.\n\nВАЖНО:\n- НЕ писать monitor_silent про «Gemini недоступен».\n- Уведомлять Маргулана только если реально чинил или если критическое не чинится.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй tool message() только при реальном критическом.\n\n[[NO_TEMP_FILES]]"
+        "message": "🚨 BACKUP: Механик (ночь) (event-based, critical-only, diff-only)\n\nТриггеры (делай работу ТОЛЬКО если сработал хотя бы один):\n- основной ночной job 0ece27a3 пропустил окно: lastRunAtMs старше 300 минут\n- lastStatus у 0ece27a3 != ok\n- consecutiveErrors у 0ece27a3 > 0\n\nШаг 1: cron(action=list) → найди job 0ece27a3 и сними lastRunAtMs/lastStatus/consecutiveErrors.\n- Если триггеров нет → ЗАВЕРШИ МОЛЧА.\n\nШаг 2 (если триггер есть):\n- Прочитай data/incidents.jsonl (только последние N строк / последние 4 часа) и возьми только active severity=critical.\n- Чини ТОЛЬКО: gateway_down / announce_queue_loop / gateway_memory_high.\n- Логи не вставляй целиком: дай команду + 20 строк вокруг.\n\n[[DELIVERY_VIA_MESSAGE_TOOL]]\nИспользуй message() только если реально чинил или если критическое не чинится.\n\n[[NO_TEMP_FILES]]",
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772225100000,
+        "nextRunAtMs": 1772235900000,
         "lastRunAtMs": 1772149500054,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1900,7 +1902,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772165047969,
+      "updatedAtMs": 1772165649028,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1919,11 +1921,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772165641382,
-        "lastRunAtMs": 1772165041382,
+        "nextRunAtMs": 1772166241418,
+        "lastRunAtMs": 1772165641418,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6587,
+        "lastDurationMs": 7610,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2189,7 +2191,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772163691343,
+      "updatedAtMs": 1772165493350,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2208,11 +2210,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772165483923,
-        "lastRunAtMs": 1772163683923,
+        "nextRunAtMs": 1772167283948,
+        "lastRunAtMs": 1772165483948,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7420,
+        "lastDurationMs": 9402,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2254,7 +2256,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772163812201,
+      "updatedAtMs": 1772165615685,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2273,11 +2275,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772165604618,
-        "lastRunAtMs": 1772163804618,
+        "nextRunAtMs": 1772167404670,
+        "lastRunAtMs": 1772165604670,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7583,
+        "lastDurationMs": 11015,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
