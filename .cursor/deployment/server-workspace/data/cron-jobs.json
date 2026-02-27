@@ -2205,10 +2205,10 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Mekhanik cutover verifier (T+2h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772185485695,
-      "updatedAtMs": 1772185643962,
+      "updatedAtMs": 1772186737449,
       "schedule": {
         "kind": "at",
         "at": "2026-02-27T11:44:30.000Z"
@@ -2225,19 +2225,17 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772192670000
-      }
+      "state": {}
     },
     {
       "id": "1b17c84c-d72e-4a87-bb74-f6cbb17d4507",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Mekhanik cutover sanity-check (T+1h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772185643769,
-      "updatedAtMs": 1772185643769,
+      "updatedAtMs": 1772186737324,
       "schedule": {
         "kind": "at",
         "at": "2026-02-27T10:44:30.000Z"
@@ -2254,9 +2252,7 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772189070000
-      }
+      "state": {}
     },
     {
       "id": "0ab0dd04-8354-4bbd-91e3-9659a0d0f8fb",
