@@ -2126,7 +2126,7 @@
       "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772094058261,
-      "updatedAtMs": 1772152056363,
+      "updatedAtMs": 1772166439716,
       "schedule": {
         "kind": "every",
         "everyMs": 14400000,
@@ -2145,11 +2145,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772166428691,
-        "lastRunAtMs": 1772152028691,
+        "nextRunAtMs": 1772180828735,
+        "lastRunAtMs": 1772166428735,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27672,
+        "lastDurationMs": 10981,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
