@@ -78,7 +78,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772178681167,
+      "updatedAtMs": 1772185818297,
       "schedule": {
         "kind": "cron",
         "expr": "50 6-22/2 * * *",
@@ -97,10 +97,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772185800000,
-        "lastRunAtMs": 1772178600051,
+        "nextRunAtMs": 1772193000000,
+        "lastRunAtMs": 1772185800049,
         "lastStatus": "ok",
-        "lastDurationMs": 81116,
+        "lastDurationMs": 18248,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1904,7 +1904,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772185455067,
+      "updatedAtMs": 1772186069916,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1923,11 +1923,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772186051007,
-        "lastRunAtMs": 1772185451007,
+        "nextRunAtMs": 1772186651050,
+        "lastRunAtMs": 1772186051050,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 4060,
+        "lastDurationMs": 18866,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2005,7 +2005,7 @@
       "name": "🦞 Lobster: Git sync (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772093131200,
-      "updatedAtMs": 1772175935013,
+      "updatedAtMs": 1772185842394,
       "schedule": {
         "kind": "cron",
         "expr": "5 */4 * * *",
@@ -2017,18 +2017,18 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 180,
-        "message": "Run Lobster git-sync plan-only runner **via exec**.\n\nCommand (must be executed exactly):\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/git-sync/runner_plan_only.py\"], commandTimeoutMs=120000)\n\nRules:\n- Do NOT use edit/write tools.\n- Do NOT commit/push.\n- Do NOT message the user.\n- If the exec command fails: append incident {type:\"git_sync_lobster_runner_failed\", severity:\"critical\", msg:<stderr/stdout>} and stop.\n- Success criterion: runner prints JSON with ok=true and metrics file ~/.openclaw/.runtime/git-sync-lobster-metrics.jsonl gets a new line."
+        "timeoutSeconds": 240,
+        "message": "🦞 Lobster Git sync (plan-only) — RELIABILITY HOTFIX\n\nSTRICT PROTOCOL (no side paths):\n- You MUST use exec() only. Do NOT use edit/write tools at all.\n- You MUST run the plan-only runner via exec exactly as written.\n- You MUST verify that metrics file appended (size/mtime and line count). If not appended → RAISE ERROR (do NOT return ok).\n\nFiles:\n- METRICS=~/.openclaw/.runtime/git-sync-lobster-metrics.jsonl\n- RUNNER=/home/openclaw/.openclaw/workspace/lobster/git-sync/runner_plan_only.py\n\nStep 0) Capture BEFORE stats (single exec):\nexec(command=[\"bash\",\"-lc\",\"set -euo pipefail; f=~/.openclaw/.runtime/git-sync-lobster-metrics.jsonl; [ -f $f ] || :> $f; echo BEFORE_SIZE=$(stat -c %s $f); echo BEFORE_MTIME=$(stat -c %Y $f); echo BEFORE_LINES=$(wc -l < $f)\"])\n\nStep 1) Run runner (mandatory):\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/git-sync/runner_plan_only.py\"], commandTimeoutMs=120000)\n\nStep 2) Capture AFTER stats:\nexec(command=[\"bash\",\"-lc\",\"set -euo pipefail; f=~/.openclaw/.runtime/git-sync-lobster-metrics.jsonl; echo AFTER_SIZE=$(stat -c %s $f); echo AFTER_MTIME=$(stat -c %Y $f); echo AFTER_LINES=$(wc -l < $f); tail -n 1 $f | python3 -c 'import sys,json; r=json.load(sys.stdin); assert \"ts\" in r and r.get(\"runs_total\")==1; print(\"LAST_OK\")'\"])\n\nStep 3) Verify append:\n- If AFTER_LINES <= BEFORE_LINES OR AFTER_SIZE <= BEFORE_SIZE → raise/throw error.\n\nStay silent on success."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
         "nextRunAtMs": 1772190300000,
-        "lastRunAtMs": 1772175900044,
+        "lastRunAtMs": 1772185821510,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 34969,
+        "lastDurationMs": 20884,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2077,7 +2077,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772185290197,
+      "updatedAtMs": 1772186049964,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2089,18 +2089,18 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 120,
-        "message": "Run Wendy plan-only soak runner (no messages, no user file writes).\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/wendy/runner_plan_only.py\n\nRules:\n- Do not call message(action=send).\n- Do not write Briefing.md/Reflection.md/USER.md.\n- Append only to ~/.openclaw/.runtime/wendy-lobster-metrics.jsonl.\n- Stay silent."
+        "timeoutSeconds": 180,
+        "message": "🦞 Lobster Wendy (plan-only soak) — RELIABILITY HOTFIX v2\n\nRun EXACTLY ONE exec() command below. No other tools. No edit/write.\n\nexec(command=[\"bash\",\"-lc\", \"set -euo pipefail; f=~/.openclaw/.runtime/wendy-lobster-metrics.jsonl; r=/home/openclaw/.openclaw/workspace/lobster/wendy/runner_plan_only.py; mkdir -p $(dirname $f); [ -f $f ] || :> $f; exec 9>~/.openclaw/.runtime/wendy-lobster-metrics.lock; flock -x 9; BEFORE_LINES=$(wc -l < $f); BEFORE_SIZE=$(stat -c %s $f); python3 $r >/tmp/wendy_lobster_runner.out 2>/tmp/wendy_lobster_runner.err; AFTER_LINES=$(wc -l < $f); AFTER_SIZE=$(stat -c %s $f); tail -n 1 $f | python3 -c 'import sys,json; r=json.load(sys.stdin); assert \"ts\" in r and r.get(\"runs_total\")==1'; if [ \"$AFTER_LINES\" -le \"$BEFORE_LINES\" ] || [ \"$AFTER_SIZE\" -le \"$BEFORE_SIZE\" ]; then echo \"NO_APPEND\"; exit 2; fi; echo \"APPEND_OK\"\"], commandTimeoutMs=120000)\n\nIf exec returns non-zero, the run MUST be error (do not swallow). Stay silent on success."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772187084402,
-        "lastRunAtMs": 1772185284402,
+        "nextRunAtMs": 1772187827065,
+        "lastRunAtMs": 1772186027065,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5795,
+        "lastDurationMs": 22899,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2113,7 +2113,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772185411211,
+      "updatedAtMs": 1772186065862,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2125,18 +2125,18 @@
         "kind": "agentTurn",
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
-        "timeoutSeconds": 120,
-        "message": "Run Marta plan-only soak runner (no messages, no memory writes, no git).\n\nCommand:\npython3 /home/openclaw/.openclaw/workspace/lobster/marta/runner_plan_only.py\n\nRules:\n- Do not call message(action=send).\n- Do not write memory/*.\n- Do not git commit/push.\n- Append only to ~/.openclaw/.runtime/marta-lobster-metrics.jsonl.\n- Stay silent."
+        "timeoutSeconds": 180,
+        "message": "🦞 Lobster Marta (plan-only soak) — RELIABILITY HOTFIX v2\n\nRun EXACTLY ONE exec() command below. No other tools. No edit/write.\n\nexec(command=[\"bash\",\"-lc\", \"set -euo pipefail; f=~/.openclaw/.runtime/marta-lobster-metrics.jsonl; r=/home/openclaw/.openclaw/workspace/lobster/marta/runner_plan_only.py; mkdir -p $(dirname $f); [ -f $f ] || :> $f; exec 9>~/.openclaw/.runtime/marta-lobster-metrics.lock; flock -x 9; BEFORE_LINES=$(wc -l < $f); BEFORE_SIZE=$(stat -c %s $f); python3 $r >/tmp/marta_lobster_runner.out 2>/tmp/marta_lobster_runner.err; AFTER_LINES=$(wc -l < $f); AFTER_SIZE=$(stat -c %s $f); tail -n 1 $f | python3 -c 'import sys,json; r=json.load(sys.stdin); assert \"ts\" in r and r.get(\"runs_total\")==1'; if [ \"$AFTER_LINES\" -le \"$BEFORE_LINES\" ] || [ \"$AFTER_SIZE\" -le \"$BEFORE_SIZE\" ]; then echo \"NO_APPEND\"; exit 2; fi; echo \"APPEND_OK\"\"], commandTimeoutMs=120000)\n\nIf exec returns non-zero, the run MUST be error (do not swallow). Stay silent on success."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772187205136,
-        "lastRunAtMs": 1772185405136,
+        "nextRunAtMs": 1772187850378,
+        "lastRunAtMs": 1772186050378,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6075,
+        "lastDurationMs": 15484,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
