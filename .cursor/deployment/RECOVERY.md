@@ -15,6 +15,39 @@ openclaw node status
 
 ---
 
+## Известные конфигурационные правила (после обновлений)
+
+### Heartbeat directPolicy (с v2026.2.25)
+
+Дефолт вернулся на `allow` — heartbeat шлёт DM в личку. Для блокировки явно прописано:
+
+```bash
+ssh openclaw@100.73.176.127 "python3 << 'EOF'
+import json
+with open('/home/openclaw/.openclaw/openclaw.json', 'r') as f: c=json.load(f)
+c.setdefault('agents', {}).setdefault('defaults', {}).setdefault('heartbeat', {})['directPolicy'] = 'block'
+with open('/home/openclaw/.openclaw/openclaw.json', 'w') as f: json.dump(c, f, indent=2)
+print('Done')
+EOF"
+systemctl --user restart openclaw-gateway
+```
+
+### Cron-задачи: правило доставки
+
+**Правило:** все cron-задачи ДОЛЖНЫ использовать `delivery.mode=none` + явный `message(action=send, channel=telegram, to=685668909)` в промпте.
+`delivery.mode=announce` — риск потери результата (открывает новое WS-соединение с pairing).
+
+**Аудит announce-задач:**
+
+```bash
+ssh openclaw@100.73.176.127 "export PATH=/home/openclaw/.npm-global/bin:\$PATH && openclaw cron list --json" | python3 -c "
+import json,sys; data=json.load(sys.stdin); jobs=data.get('jobs',data) if isinstance(data,dict) else data
+[print(j['id'][:8], j['name'][:40], '| announce ⚠️') for j in jobs if (j.get('delivery') or {}).get('mode')=='announce']
+"
+```
+
+---
+
 ## Сценарии восстановления
 
 ### 🟡 Telegram недоступен — переключиться на WhatsApp (2 мин)
