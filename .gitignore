@@ -132,3 +132,5 @@ dist/protocol.schema.json
 
 # Local memory DB (runtime)
 .cursor/deployment/server-workspace/memory.db
+
+.cursor/deployment/server-workspace/scripts/mem0_soak_probe_results.log
