@@ -134,3 +134,10 @@ dist/protocol.schema.json
 .cursor/deployment/server-workspace/memory.db
 
 .cursor/deployment/server-workspace/scripts/mem0_soak_probe_results.log
+
+# Chekist gate baselines (runtime snapshots, not for version control)
+.cursor/deployment/server-workspace/data/chekist-gate-baseline-*.json
+
+# Albert runtime data (auto-generated)
+.cursor/deployment/server-workspace/data/albert-discoveries.json
+.cursor/deployment/server-workspace/data/albert-report-latest.md
