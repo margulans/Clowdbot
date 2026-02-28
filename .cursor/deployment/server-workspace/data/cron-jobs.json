@@ -1036,7 +1036,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772251942163,
+      "updatedAtMs": 1772255555723,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1056,10 +1056,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772255520000,
-        "lastRunAtMs": 1772251920064,
+        "nextRunAtMs": 1772259120000,
+        "lastRunAtMs": 1772255520048,
         "lastStatus": "ok",
-        "lastDurationMs": 22099,
+        "lastDurationMs": 35675,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1106,7 +1106,7 @@
       "name": "🚨 BACKUP: Чекист",
       "enabled": true,
       "createdAtMs": 1771831811990,
-      "updatedAtMs": 1772243983312,
+      "updatedAtMs": 1772254595219,
       "schedule": {
         "kind": "cron",
         "expr": "56 6-21/3 * * *",
@@ -1127,10 +1127,10 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1772254560000,
-        "lastRunAtMs": 1772243938506,
+        "nextRunAtMs": 1772265360000,
+        "lastRunAtMs": 1772254560042,
         "lastStatus": "ok",
-        "lastDurationMs": 44806,
+        "lastDurationMs": 35177,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1913,7 +1913,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772252415454,
+      "updatedAtMs": 1772257189999,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1932,11 +1932,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772252983957,
-        "lastRunAtMs": 1772252383957,
+        "nextRunAtMs": 1772257784280,
+        "lastRunAtMs": 1772257184280,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 31497,
+        "lastDurationMs": 5719,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1978,7 +1978,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772252530603,
+      "updatedAtMs": 1772257157756,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1997,11 +1997,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772253546097,
-        "lastRunAtMs": 1772251746097,
+        "nextRunAtMs": 1772258946202,
+        "lastRunAtMs": 1772257146202,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7228,
+        "lastDurationMs": 11554,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2050,7 +2050,7 @@
       "name": "🦞 Lobster: Economist daily-collect (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772094058261,
-      "updatedAtMs": 1772238573313,
+      "updatedAtMs": 1772252977438,
       "schedule": {
         "kind": "every",
         "everyMs": 14400000,
@@ -2069,11 +2069,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772252960535,
-        "lastRunAtMs": 1772238560535,
+        "nextRunAtMs": 1772267360571,
+        "lastRunAtMs": 1772252960571,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12778,
+        "lastDurationMs": 16867,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2086,7 +2086,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772251236510,
+      "updatedAtMs": 1772256770314,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2105,11 +2105,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772253000688,
-        "lastRunAtMs": 1772251200688,
+        "nextRunAtMs": 1772258400820,
+        "lastRunAtMs": 1772256600820,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 35822,
+        "lastDurationMs": 169494,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2122,7 +2122,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772251380685,
+      "updatedAtMs": 1772256787586,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2141,11 +2141,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772253162198,
-        "lastRunAtMs": 1772251362198,
+        "nextRunAtMs": 1772258570393,
+        "lastRunAtMs": 1772256770393,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 18487,
+        "lastDurationMs": 17193,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2268,7 +2268,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772251466488,
+      "updatedAtMs": 1772255067416,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2287,11 +2287,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772255057583,
-        "lastRunAtMs": 1772251457583,
+        "nextRunAtMs": 1772258657634,
+        "lastRunAtMs": 1772255057634,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 8905,
+        "lastDurationMs": 9782,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2304,7 +2304,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772252492532,
+      "updatedAtMs": 1772256075478,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2323,11 +2323,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772256063230,
-        "lastRunAtMs": 1772252463230,
+        "nextRunAtMs": 1772259663297,
+        "lastRunAtMs": 1772256063297,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 29302,
+        "lastDurationMs": 12181,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2340,7 +2340,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772252023062,
+      "updatedAtMs": 1772255620894,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2359,43 +2359,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772252015332,
+        "lastRunAtMs": 1772255615384,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7730,
+        "lastDurationMs": 5510,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772255615332
-      }
-    },
-    {
-      "id": "63888385-1fa8-4dbd-9706-f168e55c4608",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Git sync cutover v2 sanity-check (T+1h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772251470929,
-      "updatedAtMs": 1772251470929,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T05:04:30.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 300,
-        "message": "T+1h sanity-check for Git sync cutover v2.\n\nDO NOT change any cron jobs.\nRead baseline: /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json\nstartTs\n\n1) cron(action=list) -> find jobId 002cd768 (🦞 Lobster: Git sync REAL) and report lastStatus + lastRun age minutes.\n2) Inspect last 5 runs of job 002cd768: ensure there are no git_sync_pull_failed cascades. If there are failures, check if they are controlled-skip due to dirty_tree.\n3) Count for ts>=startTs in incidents.jsonl (lobster-scoped only source in {git-sync-lobster,lobster-git-sync}):\n A) critical incidents (severity==\"critical\")\n B) message_transport_failed\n C) rollback events (type contains rollback)\nAlso count dirty-tree guard incidents (type==git_sync_dirty_tree_blocked_pull).\n\nSend DM to Margulan:\n- status OK/DEGRADED\n- lastRunAgeMin + lastStatus\n- Δcritical/Δtransport/Δrollback + dirty_tree_events\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772255070000
+        "nextRunAtMs": 1772259215384
       }
     },
     {
@@ -2425,35 +2396,6 @@
       },
       "state": {
         "nextRunAtMs": 1772258670000
-      }
-    },
-    {
-      "id": "e6716fef-89e5-4681-8eb0-379d64021b68",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Mekhanik cutover v2 sanity-check (T+1h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772252530744,
-      "updatedAtMs": 1772252530744,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T05:22:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 300,
-        "message": "T+1h sanity-check for Lobster Mekhanik cutover v2.\n\nDO NOT change any cron jobs.\nRead baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v2-baseline.json\nstartTs\n\n1) cron(action=list) -> find job 5c8b1424 and report lastStatus + lastRun age.\n2) Count for ts>=startTs in incidents.jsonl:\n A) critical incidents with source in {mekhanik-lobster,lobster-mekhanik}\n B) message_transport_failed with same sources\n C) rollback events (type contains rollback) with same sources\n\nSend DM to Margulan with current Δ.\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772256120000
       }
     },
     {
