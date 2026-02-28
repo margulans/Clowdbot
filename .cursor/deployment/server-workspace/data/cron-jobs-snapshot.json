@@ -1909,7 +1909,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772257791464,
+      "updatedAtMs": 1772259033331,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1928,11 +1928,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772259027811,
-        "lastRunAtMs": 1772257784316,
+        "nextRunAtMs": 1772259627849,
+        "lastRunAtMs": 1772259027849,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7148,
+        "lastDurationMs": 5482,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2101,14 +2101,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772259082193,
+        "nextRunAtMs": 1772260882193,
         "lastRunAtMs": 1772256600820,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 169494,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false
+        "lastDelivered": false,
+        "runningAtMs": 1772259082230
       }
     },
     {
@@ -2397,10 +2398,10 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Mekhanik cutover v3 sanity-check (T+1h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772258466901,
-      "updatedAtMs": 1772258466901,
+      "updatedAtMs": 1772259074101,
       "schedule": {
         "kind": "at",
         "at": "2026-02-28T07:00:00.000Z"
@@ -2417,19 +2418,17 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772262000000
-      }
+      "state": {}
     },
     {
       "id": "7d35cbe3-7053-484c-a3eb-765cceb8d8f9",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Mekhanik cutover v3 verifier (T+2h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772258467414,
-      "updatedAtMs": 1772258467414,
+      "updatedAtMs": 1772259074300,
       "schedule": {
         "kind": "at",
         "at": "2026-02-28T08:00:00.000Z"
@@ -2446,9 +2445,7 @@
       "delivery": {
         "mode": "none"
       },
-      "state": {
-        "nextRunAtMs": 1772265600000
-      }
+      "state": {}
     },
     {
       "id": "550392b2-159e-4f3f-9b2e-1c4f0b882061",
@@ -2477,6 +2474,64 @@
       },
       "state": {
         "nextRunAtMs": 1772261640000
+      }
+    },
+    {
+      "id": "7f863100-d4fa-4899-8fbc-a46680126f9d",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v3 sanity-check (T+1h, strict elapsed)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772259087939,
+      "updatedAtMs": 1772259087939,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T07:06:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 420,
+        "message": "T+1h sanity-check for Mekhanik cutover v3 (strict elapsed + lobster scope).\n\nDO NOT change any cron jobs.\n\n1) Read baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v3-baseline.json\n- startTs\n- Compute elapsedSeconds = now_utc - startTs\n- If elapsedSeconds < 3600:\n  send DM \"invalid_window\" + elapsedSeconds and STOP (no state changes).\n\n2) Compute deltas since startTs for source in {mekhanik-lobster,lobster-mekhanik}:\n- Δcritical: count severity==\"critical\"\n- Δtransport: count type==\"message_transport_failed\"\n- Δrollback: count type contains \"rollback\"\n(Note: warn/info must NOT be counted as critical.)\n\n3) Guards: read last metrics line from ~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl and report:\nstate_write_failed / restart_loop_blocked / circuit_breaker_triggered.\n\nSend DM to Margulan with:\n- elapsedSeconds\n- Δcritical/Δtransport/Δrollback\n- guards\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772262360000
+      }
+    },
+    {
+      "id": "915d19e4-e036-4a80-a604-644180af594a",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v3 verifier (T+2h, strict elapsed)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772259102233,
+      "updatedAtMs": 1772259102233,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T08:06:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 900,
+        "message": "T+2h verifier for Mekhanik cutover v3 (strict elapsed + lobster scope).\n\n1) Read baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v3-baseline.json\n- startTs\n- Compute elapsedSeconds = now_utc - startTs\n- If elapsedSeconds < 7200:\n  send DM \"invalid_window\" + elapsedSeconds and STOP (no state changes).\n\n2) Compute deltas since startTs for source in {mekhanik-lobster,lobster-mekhanik}:\nΔcritical (severity==\"critical\")\nΔtransport (type==\"message_transport_failed\")\nΔrollback (type contains \"rollback\")\n\n3) Guards healthy if last metrics line in ~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl has:\nstate_write_failed=0 restart_loop_blocked=0 circuit_breaker_triggered=0\n\nDecision:\n- SUCCESS only if Δcritical=0 Δtransport=0 Δrollback=0 AND guards healthy.\n  Then disable legacy day job bef4ddfa-1fd8-4c64-9495-79d851f4f5f0 (enabled=false).\n- Else ROLLBACK:\n  revert Lobster job 5c8b1424 payload back to runner_plan_only.py (plan-only), keep legacy enabled.\n\nAppend incident:\n- mekhanik_cutover_v3_success (severity=warn) OR mekhanik_cutover_v3_rolled_back (severity=critical)\nInclude one-line RCA.\n\nSend DM report with explicit line:\nMEKHANIK_CUTOVER_V3: SUCCESS|ROLLED_BACK\nelapsedSeconds=<..>\nΔcritical=<..> Δtransport=<..> Δrollback=<..>\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772265960000
       }
     }
   ]
