@@ -186,7 +186,7 @@
       "name": "Дневной дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770543655002,
-      "updatedAtMs": 1772179307045,
+      "updatedAtMs": 1772251001142,
       "schedule": {
         "kind": "cron",
         "expr": "0 13 * * *",
@@ -196,7 +196,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "⚡ ☀️ **ДНЕВНОЙ ДАЙДЖЕСТ 13:00** — @newsneiron\n\nЦЕЛЬ: выпуск должен выйти всегда.\n\n0) startTs = текущее unixMs (Алматы).\n\nПРОВЕРКА ВЫПУСКА:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если уже есть >=6 записей type=news digest=day date=сегодня → заверши молча.\n\nИСТОЧНИКИ/ПОИСК (3 уровня):\n- Primary: `web_search(freshness=pd)` (Perplexity).\n- Backup: если `web_search` дал ошибку/лимит/пусто → Brave Search API:\n  `node /home/openclaw/.openclaw/workspace/scripts/brave-search.mjs \"AI news today\" 10` → затем `web_fetch`.\n- Backup #2: RSS (см. skills/digest/SKILL.md) через `web_fetch`.\n\nПУБЛИКАЦИЯ (строго):\n1) ЗАГОЛОВОК (первое сообщение):\n☀️ **ДНЕВНОЙ ДАЙДЖЕСТ** | {{localDate}}, 13:00\n🟢 Основной выпуск\n🔎 Поиск: Perplexity → Brave → RSS\n\n2) 10–15 новостей (каждая отдельным message()). После каждого сообщения: записать messageId в `dual-rating-data.json` и запись в `sent-digests.json`.\n\n3) АУДИТ (последнее сообщение, обязателен):\n🛡️ **АУДИТ ДАЙДЖЕСТА**\n─────────────────────\n⏱️ Время: {{localTime}} Алматы\n🔎 Поиск: Perplexity → Brave → RSS\n📊 Опубликовано: N новостей\n✅ Rating IDs: все сохранены\n\n4) СТРАХОВКА ОТ \"БЕЗ ЗАГОЛОВКА/БЕЗ АУДИТА\":\n- Если по любой причине заголовок (шаг 1) не был отправлен — отправь его СЕЙЧАС (до завершения) отдельным message().\n- Если аудит (шаг 3) не был отправлен — отправь его СЕЙЧАС отдельным message().\n- После отправки заголовка/аудита запиши meta-записи в `sent-digests.json`:\n  - {type:\"news_meta\", digest:\"day\", date:{{localDate}}, kind:\"header\", ts:startTs}\n  - {type:\"news_meta\", digest:\"day\", date:{{localDate}}, kind:\"audit\", ts:startTs}\n\n5) Git commit.",
+        "message": "⚡ ☀️ **ДНЕВНОЙ ДАЙДЖЕСТ 13:00** — @newsneiron\n\nКРИТИЧНО: маршрутизация публикации\n- Публикуй ТОЛЬКО в канал @newsneiron.\n- Никогда не отправляй выпуск в личку 685668909.\n- Для каждого сообщения используй ТОЛЬКО:\n  message(action=send, channel=telegram, target=@newsneiron, message=\"...\")\n\nДедуп/проверка выпуска:\n- Прочитай `/home/openclaw/.openclaw/workspace/data/sent-digests.json`.\n- Если сегодня уже есть >=6 записей type=news digest=day date=сегодня → STOP SILENTLY.\n\nДальше алгоритм без изменений: заголовок → 10–15 новостей (каждая отдельным сообщением) → аудит → запись messageId в dual-rating-data.json + sent-digests.json.\n\nЕсли любой message(action=send, ...) упал:\n- зафиксируй `message_transport_failed` в data/incidents.jsonl с точной ошибкой\n- брось ошибку (чтобы бэкап мог отработать)\n\nВАЖНО: все сообщения на русском.",
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600
@@ -616,7 +616,7 @@
       "name": "Утренний дайджест @newsneiron",
       "enabled": true,
       "createdAtMs": 1770275670265,
-      "updatedAtMs": 1772247619536,
+      "updatedAtMs": 1772251026828,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * *",
@@ -633,15 +633,15 @@
       },
       "state": {
         "nextRunAtMs": 1772334000000,
-        "lastRunAtMs": 1772247613077,
+        "lastRunAtMs": 1772250819480,
         "lastStatus": "error",
-        "lastDurationMs": 6459,
-        "consecutiveErrors": 1,
+        "lastDurationMs": 207348,
+        "consecutiveErrors": 2,
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
-        "lastError": "An unknown error occurred",
-        "lastDeliveryError": "An unknown error occurred"
+        "lastDeliveryError": "⚠️ 📖 Read: `from ~/.openclaw/workspace/memory/2026-02-27.md` failed",
+        "lastError": "⚠️ 📖 Read: `from ~/.openclaw/workspace/memory/2026-02-27.md` failed"
       },
       "delivery": {
         "mode": "none"
@@ -754,7 +754,7 @@
         "lastRunStatus": "ok",
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772250600025
+        "runningAtMs": 1772250897618
       }
     },
     {
@@ -1461,7 +1461,7 @@
       "name": "🔧 Механик (ночь)",
       "enabled": true,
       "createdAtMs": 1771994568876,
-      "updatedAtMs": 1772232600130,
+      "updatedAtMs": 1772251018184,
       "schedule": {
         "kind": "cron",
         "expr": "40 3 * * *",
@@ -1481,13 +1481,13 @@
       },
       "state": {
         "nextRunAtMs": 1772318400000,
-        "lastRunAtMs": 1772232000042,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 600088,
-        "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1772250768275
+        "lastRunAtMs": 1772250768275,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 249909,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
       }
     },
     {
@@ -2336,7 +2336,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772247905147,
+      "updatedAtMs": 1772251001055,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2349,7 +2349,7 @@
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 180,
-        "message": "Controlled cutover: Lobster Чекист REAL.\n\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/chekist/runner_real.py\"], commandTimeoutMs=170000)\n\nRules:\n- no message()\n- no cron updates\n- no restarts\n- only append incidents/heartbeat/metrics\n- silent success"
+        "message": "Controlled cutover: Lobster Чекист REAL (notification hotfix).\n\nStep 1) Run detector (no side effects):\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/chekist/runner_real.py\"], commandTimeoutMs=170000)\n\nStep 2) If a new marker critical was appended in this run, notify Margulan.\n- Read last 50 lines of incidents.jsonl and find the newest record with:\n  type=\"chekist_lobster_real_detected_critical\" AND source=\"chekist-lobster\".\n- If not found → STOP SILENTLY.\n- If found → send ONE alert DM with:\n  \"🦞 Чекист (REAL): detected <N> critical signals (last 4h). Sample: <up to 3 types/jobIds>\"\n\nTransport (strict):\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")\nIf message fails: retry once with target=\"685668909\".\nIf still fails: append incident type=message_transport_failed severity=critical source=chekist-lobster with the exact error string.\n\nRules:\n- Do not edit files except append incidents/metrics/heartbeat (runner already does that).\n- Do not touch cron config.\n- Silent success if no marker or after sending."
       },
       "delivery": {
         "mode": "none"
