@@ -8,7 +8,7 @@
       "name": "👮‍♂️ Участковый",
       "enabled": true,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772247748721,
+      "updatedAtMs": 1772251361820,
       "schedule": {
         "kind": "cron",
         "expr": "2 6-21 * * *",
@@ -27,15 +27,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251320000,
-        "lastRunAtMs": 1772247720031,
+        "nextRunAtMs": 1772254920000,
+        "lastRunAtMs": 1772251320040,
         "lastStatus": "ok",
-        "lastDurationMs": 28690,
+        "lastDurationMs": 41780,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "runningAtMs": 1772251320035
+        "lastDelivered": false
       }
     },
     {
@@ -2124,7 +2123,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772249557301,
+      "updatedAtMs": 1772251380685,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2143,11 +2142,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251342539,
-        "lastRunAtMs": 1772249542539,
+        "nextRunAtMs": 1772253162198,
+        "lastRunAtMs": 1772251362198,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 14762,
+        "lastDurationMs": 18487,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2299,7 +2298,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772247878948,
+      "updatedAtMs": 1772251466488,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2318,11 +2317,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251457543,
-        "lastRunAtMs": 1772247857543,
+        "nextRunAtMs": 1772255057583,
+        "lastRunAtMs": 1772251457583,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21405,
+        "lastDurationMs": 8905,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2361,7 +2360,8 @@
         "lastDurationMs": 16247,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772251488945
       }
     },
     {
@@ -2369,9 +2369,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
-      "enabled": false,
+      "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772250780234,
+      "updatedAtMs": 1772251462011,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2396,7 +2396,66 @@
         "lastDurationMs": 10812,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1772252015285
+      }
+    },
+    {
+      "id": "63888385-1fa8-4dbd-9706-f168e55c4608",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Git sync cutover v2 sanity-check (T+1h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772251470929,
+      "updatedAtMs": 1772251470929,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T05:04:30.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "T+1h sanity-check for Git sync cutover v2.\n\nDO NOT change any cron jobs.\nRead baseline: /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json\nstartTs\n\n1) cron(action=list) -> find jobId 002cd768 (🦞 Lobster: Git sync REAL) and report lastStatus + lastRun age minutes.\n2) Inspect last 5 runs of job 002cd768: ensure there are no git_sync_pull_failed cascades. If there are failures, check if they are controlled-skip due to dirty_tree.\n3) Count for ts>=startTs in incidents.jsonl (lobster-scoped only source in {git-sync-lobster,lobster-git-sync}):\n A) critical incidents (severity==\"critical\")\n B) message_transport_failed\n C) rollback events (type contains rollback)\nAlso count dirty-tree guard incidents (type==git_sync_dirty_tree_blocked_pull).\n\nSend DM to Margulan:\n- status OK/DEGRADED\n- lastRunAgeMin + lastStatus\n- Δcritical/Δtransport/Δrollback + dirty_tree_events\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772255070000
+      }
+    },
+    {
+      "id": "07fe03ef-49c5-45f4-a5c2-735ee110b195",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Git sync cutover v2 verifier (T+2h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772251483017,
+      "updatedAtMs": 1772251483017,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T06:04:30.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "T+2h verifier for Git sync cutover v2.\n\nDO NOT touch Wendy/Marta.\nRead baseline: /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json\nstartTs\n\nCompute lobster-scoped deltas only (source in {git-sync-lobster,lobster-git-sync}):\nΔA critical incidents (severity==\"critical\")\nΔB transport_failures (type==\"message_transport_failed\")\nΔC rollback_events (type contains \"rollback\")\nAlso compute dirty-tree guard count (type==git_sync_dirty_tree_blocked_pull) but it does NOT affect ΔA unless severity critical (should be warn).\n\nDecision:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   GIT_SYNC_CUTOVER_V2: SUCCESS\n   Disable legacy jobs (enabled=false): ce006db5, db2dc5f6, b0c35166.\n   Append incident {type:\"git_sync_cutover_v2_success\", severity:\"warn\", source:\"lobster-git-sync\", msg:\"GIT_SYNC_CUTOVER_V2: SUCCESS\", detail:{deltas,dirty_tree_events}}.\n- Else:\n   GIT_SYNC_CUTOVER_V2: ROLLED_BACK\n   Disable Lobster REAL job 002cd768 (enabled=false).\n   Keep legacy enabled.\n   Append critical incident {type:\"git_sync_cutover_v2_rolled_back\", severity:\"critical\", source:\"lobster-git-sync\", msg:\"GIT_SYNC_CUTOVER_V2: ROLLED_BACK\", detail:{deltas,dirty_tree_events}, rca:\"<1-2 lines>\"}.\n\nSend DM report (200-300 words, 4 sections) incl explicit line:\nGIT_SYNC_CUTOVER_V2: SUCCESS|ROLLED_BACK\nΔincidents_lobster_critical=<ΔA> Δtransport_failures=<ΔB> Δrollback_events=<ΔC>\nTimes: include UTC and Almaty.\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772258670000
       }
     }
   ]
