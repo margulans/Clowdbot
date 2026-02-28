@@ -6,9 +6,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:main",
       "name": "👮‍♂️ Участковый",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771731407619,
-      "updatedAtMs": 1772251361820,
+      "updatedAtMs": 1772252345228,
       "schedule": {
         "kind": "cron",
         "expr": "2 6-21 * * *",
@@ -27,7 +27,6 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772254920000,
         "lastRunAtMs": 1772251320040,
         "lastStatus": "ok",
         "lastDurationMs": 41780,
@@ -1037,7 +1036,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772248335580,
+      "updatedAtMs": 1772251942163,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1057,10 +1056,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772251920000,
-        "lastRunAtMs": 1772248320053,
+        "nextRunAtMs": 1772255520000,
+        "lastRunAtMs": 1772251920064,
         "lastStatus": "ok",
-        "lastDurationMs": 15527,
+        "lastDurationMs": 22099,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1914,7 +1913,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772251801977,
+      "updatedAtMs": 1772252415454,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1933,11 +1932,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772252383919,
-        "lastRunAtMs": 1772251783919,
+        "nextRunAtMs": 1772252983957,
+        "lastRunAtMs": 1772252383957,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 18058,
+        "lastDurationMs": 31497,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1979,7 +1978,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772251753325,
+      "updatedAtMs": 1772252530603,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1992,7 +1991,7 @@
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 180,
-        "message": "Lobster Механик — PLAN-ONLY (HOLD until Uchastkovy/Chekist complete).\n\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_plan_only.py\"], commandTimeoutMs=170000)\n\nRules:\n- no message()\n- no cron updates\n- no restarts\n- plan-only metrics only\n- silent success"
+        "message": "Controlled cutover: Lobster Механик REAL (safe-auto disabled).\n\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/mekhanik/runner_real.py\"], commandTimeoutMs=170000)\n\nRules:\n- no message()\n- no cron updates\n- no restarts\n- silent success\n- on exec failure: append critical incident mekhanik_lobster_runner_failed"
       },
       "delivery": {
         "mode": "none"
@@ -2182,36 +2181,6 @@
       }
     },
     {
-      "id": "bb3166ae-76e5-4fdb-aaae-a02555ab84ba",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "📊 Экономист: факт-отчёт затрат за сутки (09:10 Алматы)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772167337144,
-      "updatedAtMs": 1772167337144,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T04:10:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 600,
-        "message": "Сформируй ФАКТИЧЕСКИЙ отчёт затрат за последние 24 часа и отправь Маргулану в Telegram DM.\n\nШаги:\n1) Обнови данные:\n   - запусти: /home/openclaw/.openclaw/workspace/scripts/economist_collect.py\n   - если скрипт упал: отправь Маргулану краткую ошибку и остановись.\n2) Прочитай /home/openclaw/.openclaw/workspace/data/cost-summary.json\n3) Собери отчёт строго по факту (без предположений):\n   - last24h: $ + input/output tokens\n   - разрез по моделям (by_model_last24h): топ-5 по $\n   - разрез по задачам (by_cron_job_last24h): топ-10 по $\n   - разрез по ролям/категориям (by_cron_category_last24h): всё, отсортировано по $\n   - выдели «основных пожирателей» (top-3 jobs + top-1 model)\n4) Рекомендации (3–5 пунктов), только из класса «оптимизация без смены моделей»:\n   - уменьшить частоту/дублирование primary+backup\n   - сужение окна логов/последние N строк\n   - diff-only/кэширование тяжёлых данных\n   - early-exit при отсутствии active critical\n\nТранспорт (обязательно):\nmessage(action=send, channel=telegram, to=685668909, message=\"<отчёт одним сообщением>\")\n\nВажно:\n- Никаких systemEvent.\n- Не менять никакие cron jobs.\n- Уложись в одно сообщение (до ~3500 символов)."
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772251800000,
-        "runningAtMs": 1772251802102
-      }
-    },
-    {
       "id": "9ece64e6-90a0-4c4c-8ce3-afd1abff05a6",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
@@ -2335,7 +2304,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772251525341,
+      "updatedAtMs": 1772252492532,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2348,17 +2317,17 @@
         "model": "openai/gpt-4o-mini",
         "thinking": "low",
         "timeoutSeconds": 180,
-        "message": "Controlled cutover: Lobster Чекист REAL (notification hotfix).\n\nStep 1) Run detector (no side effects):\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/lobster/chekist/runner_real.py\"], commandTimeoutMs=170000)\n\nStep 2) If a new marker critical was appended in this run, notify Margulan.\n- Read last 50 lines of incidents.jsonl and find the newest record with:\n  type=\"chekist_lobster_real_detected_critical\" AND source=\"chekist-lobster\".\n- If not found → STOP SILENTLY.\n- If found → send ONE alert DM with:\n  \"🦞 Чекист (REAL): detected <N> critical signals (last 4h). Sample: <up to 3 types/jobIds>\"\n\nTransport (strict):\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")\nIf message fails: retry once with target=\"685668909\".\nIf still fails: append incident type=message_transport_failed severity=critical source=chekist-lobster with the exact error string.\n\nRules:\n- Do not edit files except append incidents/metrics/heartbeat (runner already does that).\n- Do not touch cron config.\n- Silent success if no marker or after sending."
+        "message": "Controlled cutover: Lobster Чекист REAL (exec-only core + notifier).\n\nRun EXACTLY ONE exec() command below (no other tools):\nexec(command=[\"bash\",\"-lc\", \"set -euo pipefail; python3 /home/openclaw/.openclaw/workspace/lobster/chekist/runner_real.py\"], commandTimeoutMs=170000)\n\nAfter exec finishes:\n- Read last 200 lines of /home/openclaw/.openclaw/.runtime/chekist-critical-signals.jsonl (if any lines).\n- If there are new lines in the last 4h window and any scope==\"lobster-git-sync\" with severity==\"critical\" OR any legacy cron_error/config_drift/gateway_down/announce_queue_loop/gateway_memory_high/message_transport_failed:\n  send ONE DM summary (count by scope + top-3 types).\n\nTransport (strict):\nmessage(action=send, channel=telegram, to=685668909, message=\"<summary>\")\nIf message fails: retry once with target=\"685668909\".\nIf still fails: append incident type=message_transport_failed severity=critical source=chekist-lobster with the exact error.\n\nRules:\n- No cron updates. No edits. No file writes (except runner_real’s append). Silent if nothing new."
       },
       "delivery": {
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772255088949,
-        "lastRunAtMs": 1772251488949,
+        "nextRunAtMs": 1772256063230,
+        "lastRunAtMs": 1772252463230,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 36392,
+        "lastDurationMs": 29302,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2371,7 +2340,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772251462011,
+      "updatedAtMs": 1772252023062,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2390,14 +2359,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772248415285,
+        "lastRunAtMs": 1772252015332,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10812,
+        "lastDurationMs": 7730,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772252015285
+        "nextRunAtMs": 1772255615332
       }
     },
     {
@@ -2456,6 +2425,64 @@
       },
       "state": {
         "nextRunAtMs": 1772258670000
+      }
+    },
+    {
+      "id": "e6716fef-89e5-4681-8eb0-379d64021b68",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v2 sanity-check (T+1h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772252530744,
+      "updatedAtMs": 1772252530744,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T05:22:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "T+1h sanity-check for Lobster Mekhanik cutover v2.\n\nDO NOT change any cron jobs.\nRead baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v2-baseline.json\nstartTs\n\n1) cron(action=list) -> find job 5c8b1424 and report lastStatus + lastRun age.\n2) Count for ts>=startTs in incidents.jsonl:\n A) critical incidents with source in {mekhanik-lobster,lobster-mekhanik}\n B) message_transport_failed with same sources\n C) rollback events (type contains rollback) with same sources\n\nSend DM to Margulan with current Δ.\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772256120000
+      }
+    },
+    {
+      "id": "bc718856-175c-4b07-b50f-df24c3a4ad6e",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v2 verifier (T+2h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772252531001,
+      "updatedAtMs": 1772252531001,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T06:22:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "T+2h verifier for Lobster Mekhanik cutover v2.\n\nRead baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v2-baseline.json\n\nCompute lobster-scoped deltas only (source in {mekhanik-lobster,lobster-mekhanik}):\nΔA critical incidents (severity==\"critical\")\nΔB transport_failures (type==\"message_transport_failed\")\nΔC rollback_events (type contains rollback)\n\nDecision:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   MEKHANIK_CUTOVER_V2: SUCCESS\n   Disable legacy job bef4ddfa (enabled=false).\n   Append incident {type:\"mekhanik_cutover_v2_success\", severity:\"warn\", source:\"lobster-mekhanik\", msg:\"MEKHANIK_CUTOVER_V2: SUCCESS\", detail:{deltas}}.\n- Else:\n   MEKHANIK_CUTOVER_V2: ROLLED_BACK\n   Revert job 5c8b1424 back to plan-only runner_plan_only.py.\n   Keep legacy enabled.\n   Append critical incident mekhanik_cutover_v2_rolled_back with RCA.\n\nSend DM report (200-300 words, 4 sections) incl explicit line and deltas.\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772259720000
       }
     }
   ]
