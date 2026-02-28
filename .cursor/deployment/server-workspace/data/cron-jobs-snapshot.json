@@ -95,7 +95,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772257800000,
+        "nextRunAtMs": 1772265000000,
         "lastRunAtMs": 1772250600029,
         "lastStatus": "ok",
         "lastDurationMs": 297588,
@@ -638,8 +638,7 @@
         "lastRunStatus": "error",
         "lastDeliveryStatus": "not-delivered",
         "lastDelivered": false,
-        "lastDeliveryError": "⚠️ 📖 Read: `from ~/.openclaw/workspace/memory/2026-02-27.md` failed",
-        "lastError": "⚠️ 📖 Read: `from ~/.openclaw/workspace/memory/2026-02-27.md` failed"
+        "lastDeliveryError": "⚠️ 📖 Read: `from ~/.openclaw/workspace/memory/2026-02-27.md` failed"
       },
       "delivery": {
         "mode": "none"
@@ -1091,7 +1090,7 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772258100000,
+        "nextRunAtMs": 1772265300000,
         "lastRunAtMs": 1772251049683,
         "lastStatus": "ok",
         "lastDurationMs": 15128,
@@ -1913,7 +1912,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772257189999,
+      "updatedAtMs": 1772257791464,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1932,11 +1931,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772257784280,
-        "lastRunAtMs": 1772257184280,
+        "nextRunAtMs": 1772259027811,
+        "lastRunAtMs": 1772257784316,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5719,
+        "lastDurationMs": 7148,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2105,7 +2104,7 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772258400820,
+        "nextRunAtMs": 1772259082193,
         "lastRunAtMs": 1772256600820,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -2122,7 +2121,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772256787586,
+      "updatedAtMs": 1772258591828,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2141,11 +2140,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772258570393,
-        "lastRunAtMs": 1772256770393,
+        "nextRunAtMs": 1772260370443,
+        "lastRunAtMs": 1772258570443,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17193,
+        "lastDurationMs": 21385,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2268,7 +2267,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772255067416,
+      "updatedAtMs": 1772258683213,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2287,11 +2286,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772258657634,
-        "lastRunAtMs": 1772255057634,
+        "nextRunAtMs": 1772262257696,
+        "lastRunAtMs": 1772258657696,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9782,
+        "lastDurationMs": 25517,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2370,43 +2369,14 @@
       }
     },
     {
-      "id": "07fe03ef-49c5-45f4-a5c2-735ee110b195",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Git sync cutover v2 verifier (T+2h)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772251483017,
-      "updatedAtMs": 1772251483017,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T06:04:30.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 600,
-        "message": "T+2h verifier for Git sync cutover v2.\n\nDO NOT touch Wendy/Marta.\nRead baseline: /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json\nstartTs\n\nCompute lobster-scoped deltas only (source in {git-sync-lobster,lobster-git-sync}):\nΔA critical incidents (severity==\"critical\")\nΔB transport_failures (type==\"message_transport_failed\")\nΔC rollback_events (type contains \"rollback\")\nAlso compute dirty-tree guard count (type==git_sync_dirty_tree_blocked_pull) but it does NOT affect ΔA unless severity critical (should be warn).\n\nDecision:\n- If ΔA==0 and ΔB==0 and ΔC==0:\n   GIT_SYNC_CUTOVER_V2: SUCCESS\n   Disable legacy jobs (enabled=false): ce006db5, db2dc5f6, b0c35166.\n   Append incident {type:\"git_sync_cutover_v2_success\", severity:\"warn\", source:\"lobster-git-sync\", msg:\"GIT_SYNC_CUTOVER_V2: SUCCESS\", detail:{deltas,dirty_tree_events}}.\n- Else:\n   GIT_SYNC_CUTOVER_V2: ROLLED_BACK\n   Disable Lobster REAL job 002cd768 (enabled=false).\n   Keep legacy enabled.\n   Append critical incident {type:\"git_sync_cutover_v2_rolled_back\", severity:\"critical\", source:\"lobster-git-sync\", msg:\"GIT_SYNC_CUTOVER_V2: ROLLED_BACK\", detail:{deltas,dirty_tree_events}, rca:\"<1-2 lines>\"}.\n\nSend DM report (200-300 words, 4 sections) incl explicit line:\nGIT_SYNC_CUTOVER_V2: SUCCESS|ROLLED_BACK\nΔincidents_lobster_critical=<ΔA> Δtransport_failures=<ΔB> Δrollback_events=<ΔC>\nTimes: include UTC and Almaty.\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772258670000
-      }
-    },
-    {
       "id": "bc718856-175c-4b07-b50f-df24c3a4ad6e",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "🦞 Mekhanik cutover v2 verifier (T+2h)",
-      "enabled": true,
+      "enabled": false,
       "deleteAfterRun": true,
       "createdAtMs": 1772252531001,
-      "updatedAtMs": 1772252531001,
+      "updatedAtMs": 1772258450354,
       "schedule": {
         "kind": "at",
         "at": "2026-02-28T06:22:00.000Z"
@@ -2423,8 +2393,64 @@
       "delivery": {
         "mode": "none"
       },
+      "state": {}
+    },
+    {
+      "id": "edd4f15a-9e7b-49fc-87f6-d4c6e4b6aaab",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v3 sanity-check (T+1h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772258466901,
+      "updatedAtMs": 1772258466901,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T07:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 300,
+        "message": "T+1h sanity-check for Mekhanik cutover v3 (lobster-scoped only).\n\nDO NOT change any cron jobs.\nRead baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v3-baseline.json\n\nCompute deltas since startTs for source in {mekhanik-lobster,lobster-mekhanik}:\n- Δcritical (severity==\"critical\")\n- Δtransport (type==\"message_transport_failed\")\n- Δrollback (type contains rollback)\n\nAlso read last metrics line from ~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl and report:\nstate_write_failed / restart_loop_blocked / circuit_breaker_triggered.\n\nSend DM to Margulan.\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
       "state": {
-        "nextRunAtMs": 1772259720000
+        "nextRunAtMs": 1772262000000
+      }
+    },
+    {
+      "id": "7d35cbe3-7053-484c-a3eb-765cceb8d8f9",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Mekhanik cutover v3 verifier (T+2h)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772258467414,
+      "updatedAtMs": 1772258467414,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T08:00:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "T+2h verifier for Mekhanik cutover v3.\n\nRead baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v3-baseline.json\n\nCompute deltas since startTs for source in {mekhanik-lobster,lobster-mekhanik}:\nΔcritical (severity==\"critical\")\nΔtransport (message_transport_failed)\nΔrollback (type contains rollback)\n\nGuards healthy if last metrics line has:\nstate_write_failed=0 restart_loop_blocked=0 circuit_breaker_triggered=0\n\nDecision:\n- SUCCESS only if Δcritical=0 Δtransport=0 Δrollback=0 AND guards healthy.\n  Then disable legacy day bef4ddfa (enabled=false). Night legacy 0ece27a3 unchanged.\n- Else ROLLBACK:\n  revert Lobster job 5c8b1424 payload back to runner_plan_only.py (plan-only), keep legacy enabled.\n\nAppend incident mekhanik_cutover_v3_success (warn) or mekhanik_cutover_v3_rolled_back (critical) with one-line RCA.\n\nSend DM report with explicit line:\nMEKHANIK_CUTOVER_V3: SUCCESS|ROLLED_BACK\nΔcritical=<..> Δtransport=<..> Δrollback=<..>\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772265600000
       }
     }
   ]

@@ -131,8 +131,9 @@ def main() -> None:
             "ts": iso_now(),
             "type": "mekhanik_lobster_real_detected_critical",
             "source": SOURCE,
-            "severity": "critical",
+            "severity": "warn",
             "msg": f"Detected {len(crit)} active critical incidents in last 4h (safe_auto disabled; no actions executed).",
+            "detail_note": "marker severity=warn to avoid self-generated lobster-critical during controlled gate" ,
             "detail": {
                 "sample": [
                     {
