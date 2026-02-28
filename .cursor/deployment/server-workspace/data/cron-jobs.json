@@ -1033,7 +1033,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772255555723,
+      "updatedAtMs": 1772259290988,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1053,10 +1053,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772259120000,
-        "lastRunAtMs": 1772255520048,
+        "nextRunAtMs": 1772262720000,
+        "lastRunAtMs": 1772259228149,
         "lastStatus": "ok",
-        "lastDurationMs": 35675,
+        "lastDurationMs": 62839,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1562,7 +1562,7 @@
       "name": "Memory Weekly Review",
       "enabled": true,
       "createdAtMs": 1772009681450,
-      "updatedAtMs": 1772080093403,
+      "updatedAtMs": 1772259774383,
       "schedule": {
         "kind": "cron",
         "expr": "0 4 * * 0",
@@ -1572,15 +1572,15 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Еженедельный обзор памяти Нейрона.\n\nЗАДАЧА:\n1) Запусти: openclaw mem0 search \"предпочтения\" (topK=10)\n2) Запусти: openclaw mem0 search \"факты о Маргулане\" (topK=10)\n3) Сравни найденные факты с содержимым USER.md и MEMORY.md\n4) Если Mem0 содержит подтверждённые факты которых нет в USER.md — покажи их Маргулану\n5) Спроси: \"Добавить эти факты в USER.md как долгосрочную память?\"\n6) НЕ вноси изменения в USER.md автоматически — только после подтверждения",
+        "message": "Еженедельный обзор памяти Нейрона.\n\nЗАДАЧА:\n1) Запусти: openclaw mem0 search \"предпочтения\" (topK=10)\n2) Запусти: openclaw mem0 search \"факты о Маргулане\" (topK=10)\n3) Сравни найденные факты с содержимым USER.md и MEMORY.md\n4) Если Mem0 содержит подтверждённые факты которых нет в USER.md — покажи их Маргулану\n5) Спроси: \"Добавить эти факты в USER.md как долгосрочную память?\"\n6) НЕ вноси изменения в USER.md автоматически — только после подтверждения\n\nmessage(action=send, channel=telegram, to=685668909, message=\"🧠 Memory Weekly Review готов. [результат шагов 4–5 выше]\")",
         "timeoutSeconds": 300,
         "model": "openai/gpt-4o-mini",
         "thinking": "low"
       },
       "delivery": {
-        "mode": "announce",
-        "to": "685668909",
-        "channel": "telegram"
+        "mode": "none",
+        "channel": "telegram",
+        "to": "685668909"
       },
       "state": {
         "nextRunAtMs": 1772337600000,
@@ -1598,7 +1598,7 @@
       "name": "Вечерние мнения",
       "enabled": true,
       "createdAtMs": 1772026267738,
-      "updatedAtMs": 1772199152580,
+      "updatedAtMs": 1772259774610,
       "schedule": {
         "kind": "cron",
         "expr": "30 18 * * *",
@@ -1613,7 +1613,7 @@
         "timeoutSeconds": 900
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "last"
       },
       "state": {
@@ -1909,7 +1909,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772259033331,
+      "updatedAtMs": 1772259644783,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1928,11 +1928,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772259627849,
-        "lastRunAtMs": 1772259027849,
+        "nextRunAtMs": 1772260227899,
+        "lastRunAtMs": 1772259627899,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5482,
+        "lastDurationMs": 16884,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2082,7 +2082,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772256770314,
+      "updatedAtMs": 1772259228105,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2101,15 +2101,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772260882193,
-        "lastRunAtMs": 1772256600820,
+        "nextRunAtMs": 1772260882230,
+        "lastRunAtMs": 1772259082230,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 169494,
+        "lastDurationMs": 145875,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1772259082230
+        "lastDelivered": false
       }
     },
     {
@@ -2301,7 +2300,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772256075478,
+      "updatedAtMs": 1772259693303,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2320,11 +2319,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772259663297,
-        "lastRunAtMs": 1772256063297,
+        "nextRunAtMs": 1772263263362,
+        "lastRunAtMs": 1772259663362,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12181,
+        "lastDurationMs": 29941,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2337,7 +2336,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772255620894,
+      "updatedAtMs": 1772259307606,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2356,14 +2355,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772255615384,
+        "lastRunAtMs": 1772259290988,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5510,
+        "lastDurationMs": 16618,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772259215384
+        "nextRunAtMs": 1772262890988
       }
     },
     {
