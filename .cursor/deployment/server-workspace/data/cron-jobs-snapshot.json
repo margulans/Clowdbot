@@ -77,7 +77,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772243779517,
+      "updatedAtMs": 1772250897617,
       "schedule": {
         "kind": "cron",
         "expr": "50 6-22/2 * * *",
@@ -96,15 +96,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772250600000,
-        "lastRunAtMs": 1772243400039,
+        "nextRunAtMs": 1772257800000,
+        "lastRunAtMs": 1772250600029,
         "lastStatus": "ok",
-        "lastDurationMs": 379478,
+        "lastDurationMs": 297588,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
-        "lastDelivered": false,
-        "runningAtMs": 1772250600029
+        "lastDelivered": false
       }
     },
     {
@@ -114,7 +113,7 @@
       "name": "Auto-commit: Git sync",
       "enabled": true,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772247696014,
+      "updatedAtMs": 1772251238482,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -128,7 +127,7 @@
         "model": "google/gemini-2.5-flash",
         "thinking": "low",
         "timeoutSeconds": 600,
-        "message": "You are performing automated git sync — STAGE 1/2 (pull + snapshot + local commit).\n\nSteps:\n1) cd ~/Clowdbot\n2) git pull --rebase origin main\n   - If conflicts → abort rebase, write an incident cron_error in data/incidents.jsonl and STOP.\n3) git status --short\n4) If output is empty → STOP SILENTLY (do NOT reply HEARTBEAT_OK).\n5) If there are changes:\n   a) cron(action=list)\n   b) copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c) update data/cron-jobs-snapshot.json\n   d) git add -A\n   e) git commit -m \"auto-sync: snapshot $(date +%Y-%m-%dT%H:%M)\"\n6) DO NOT PUSH here. Push is handled by STAGE 2.\n\nExecute silently."
+        "message": "You are performing automated git sync — STAGE 1/2 (pull + snapshot + local commit).\n\nPRECHECK (anti-cascade):\n0) cd ~/Clowdbot\n1) git status --porcelain\n- If output is NOT empty (dirty tree):\n  a) Write incident to /home/openclaw/.openclaw/workspace/data/incidents.jsonl:\n     type=git_sync_dirty_tree_blocked_pull severity=warn\n     include fields: dirty_files_count, dirty_file_samples(3-5 paths), decision=skip_pull_due_to_dirty_tree\n  b) STOP SILENTLY (do NOT run pull/rebase; do NOT fail).\n\nNORMAL PATH (only if clean tree):\n2) git pull --rebase origin main\n   - If conflicts → abort rebase, write incident cron_error in data/incidents.jsonl and STOP.\n3) git status --short\n4) If output is empty → STOP SILENTLY.\n5) If there are changes:\n   a) cron(action=list)\n   b) copy ~/.openclaw/cron/jobs.json to data/cron-jobs.json\n   c) update data/cron-jobs-snapshot.json\n   d) git add -A\n   e) git commit -m \"auto-sync: snapshot $(date +%Y-%m-%dT%H:%M)\"\n6) DO NOT PUSH here. Push is handled by STAGE 2.\n\nExecute silently."
       },
       "delivery": {
         "mode": "none"
@@ -727,7 +726,7 @@
       "name": "BACKUP: Утренние мнения (Gemini)",
       "enabled": true,
       "createdAtMs": 1771644988095,
-      "updatedAtMs": 1772164275921,
+      "updatedAtMs": 1772251049253,
       "schedule": {
         "kind": "cron",
         "expr": "50 8 * * *",
@@ -746,15 +745,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772250600000,
-        "lastRunAtMs": 1772164200051,
+        "nextRunAtMs": 1772337000000,
+        "lastRunAtMs": 1772250897618,
         "lastStatus": "ok",
-        "lastDurationMs": 75870,
+        "lastDurationMs": 151635,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "runningAtMs": 1772250897618
+        "lastDeliveryStatus": "not-delivered"
       }
     },
     {
@@ -1074,7 +1072,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772243938506,
+      "updatedAtMs": 1772251064811,
       "schedule": {
         "kind": "cron",
         "expr": "55 6-22/2 * * *",
@@ -1094,10 +1092,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772250900000,
-        "lastRunAtMs": 1772243779970,
+        "nextRunAtMs": 1772258100000,
+        "lastRunAtMs": 1772251049683,
         "lastStatus": "ok",
-        "lastDurationMs": 158536,
+        "lastDurationMs": 15128,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1916,7 +1914,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772250590976,
+      "updatedAtMs": 1772251200599,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1935,11 +1933,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251183815,
-        "lastRunAtMs": 1772250583815,
+        "nextRunAtMs": 1772251783870,
+        "lastRunAtMs": 1772251183870,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7161,
+        "lastDurationMs": 16729,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2089,7 +2087,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772249401847,
+      "updatedAtMs": 1772251236510,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2108,11 +2106,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251191057,
-        "lastRunAtMs": 1772249391057,
+        "nextRunAtMs": 1772253000688,
+        "lastRunAtMs": 1772251200688,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10790,
+        "lastDurationMs": 35822,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false

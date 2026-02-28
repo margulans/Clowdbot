@@ -110,6 +110,33 @@ def main() -> None:
         return
 
     try:
+        # Precheck: if dirty tree, do NOT attempt pull --rebase (avoid cascade)
+        st0 = run(['git','status','--porcelain'], cwd=REPO, timeout=60)
+        dirty_lines = [ln for ln in (st0.stdout or '').splitlines() if ln.strip()]
+        if dirty_lines:
+            samples = []
+            for ln in dirty_lines[:5]:
+                parts = ln.split()
+                # porcelain lines often end with path; best-effort
+                samples.append(parts[-1] if parts else ln)
+            append_jsonl(INCIDENTS, {
+                'ts': ts,
+                'type': 'git_sync_dirty_tree_blocked_pull',
+                'source': SOURCE,
+                'severity': 'warn',
+                'msg': 'Dirty tree detected; skip git pull --rebase to avoid cascade',
+                'detail': {
+                    'dirty_files_count': len(dirty_lines),
+                    'dirty_file_samples': samples,
+                    'decision': 'skip_pull_due_to_dirty_tree',
+                },
+                'resolved': False,
+            })
+            metrics['no_op_runs'] = 1
+            append_jsonl(METRICS, metrics)
+            print(json.dumps({'ok': True, 'skipped': 'dirty_tree', **metrics}, ensure_ascii=False))
+            return
+
         # Stage 1: pull --rebase
         p = run(['git','pull','--rebase','origin','main'], cwd=REPO, timeout=300)
         if p.returncode != 0:
