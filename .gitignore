@@ -141,3 +141,6 @@ dist/protocol.schema.json
 # Albert runtime data (auto-generated)
 .cursor/deployment/server-workspace/data/albert-discoveries.json
 .cursor/deployment/server-workspace/data/albert-report-latest.md
+
+# Lobster incident reports (runtime)
+.cursor/deployment/server-workspace/incident_report_*.txt
