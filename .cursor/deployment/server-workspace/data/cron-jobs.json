@@ -1914,7 +1914,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772251200599,
+      "updatedAtMs": 1772251801977,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1933,11 +1933,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251783870,
-        "lastRunAtMs": 1772251183870,
+        "nextRunAtMs": 1772252383919,
+        "lastRunAtMs": 1772251783919,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16729,
+        "lastDurationMs": 18058,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1979,7 +1979,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772249951950,
+      "updatedAtMs": 1772251753325,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1998,11 +1998,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251746034,
-        "lastRunAtMs": 1772249946034,
+        "nextRunAtMs": 1772253546097,
+        "lastRunAtMs": 1772251746097,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5916,
+        "lastDurationMs": 7228,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2207,7 +2207,8 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251800000
+        "nextRunAtMs": 1772251800000,
+        "runningAtMs": 1772251802102
       }
     },
     {
@@ -2334,7 +2335,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772251001055,
+      "updatedAtMs": 1772251525341,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2353,15 +2354,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772251488900,
-        "lastRunAtMs": 1772247888900,
+        "nextRunAtMs": 1772255088949,
+        "lastRunAtMs": 1772251488949,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16247,
+        "lastDurationMs": 36392,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "runningAtMs": 1772251488945
+        "consecutiveErrors": 0
       }
     },
     {
