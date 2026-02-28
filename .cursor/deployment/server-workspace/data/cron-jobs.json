@@ -1033,7 +1033,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772259290988,
+      "updatedAtMs": 1772262760549,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1053,10 +1053,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772262720000,
-        "lastRunAtMs": 1772259228149,
+        "nextRunAtMs": 1772266320000,
+        "lastRunAtMs": 1772262720037,
         "lastStatus": "ok",
-        "lastDurationMs": 62839,
+        "lastDurationMs": 40512,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1909,7 +1909,7 @@
       "name": "🧪 Soak: Mem0 monitoring probe (10m)",
       "enabled": true,
       "createdAtMs": 1772086827811,
-      "updatedAtMs": 1772259644783,
+      "updatedAtMs": 1772262643761,
       "schedule": {
         "kind": "every",
         "everyMs": 600000,
@@ -1928,11 +1928,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772260227899,
-        "lastRunAtMs": 1772259627899,
+        "nextRunAtMs": 1772263228138,
+        "lastRunAtMs": 1772262628138,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16884,
+        "lastDurationMs": 15623,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -1974,7 +1974,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772258952428,
+      "updatedAtMs": 1772262577577,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1993,11 +1993,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772260746240,
-        "lastRunAtMs": 1772258946240,
+        "nextRunAtMs": 1772264346328,
+        "lastRunAtMs": 1772262546328,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 6188,
+        "lastDurationMs": 31249,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2010,7 +2010,7 @@
       "name": "🦞 Lobster: Git sync (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772093131200,
-      "updatedAtMs": 1772248021290,
+      "updatedAtMs": 1772262353742,
       "schedule": {
         "kind": "cron",
         "expr": "5 */4 * * *",
@@ -2029,11 +2029,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772262300000,
-        "lastRunAtMs": 1772247971400,
+        "nextRunAtMs": 1772276700000,
+        "lastRunAtMs": 1772262300040,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 49890,
+        "lastDurationMs": 53702,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2082,7 +2082,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772259228105,
+      "updatedAtMs": 1772262707243,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2101,11 +2101,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772260882230,
-        "lastRunAtMs": 1772259082230,
+        "nextRunAtMs": 1772264482333,
+        "lastRunAtMs": 1772262682333,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 145875,
+        "lastDurationMs": 24910,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2118,7 +2118,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772258591828,
+      "updatedAtMs": 1772262188067,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2137,11 +2137,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772260370443,
-        "lastRunAtMs": 1772258570443,
+        "nextRunAtMs": 1772263970862,
+        "lastRunAtMs": 1772262170862,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21385,
+        "lastDurationMs": 17205,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2264,7 +2264,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772258683213,
+      "updatedAtMs": 1772262272228,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2283,11 +2283,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772262257696,
-        "lastRunAtMs": 1772258657696,
+        "nextRunAtMs": 1772265857766,
+        "lastRunAtMs": 1772262257766,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 25517,
+        "lastDurationMs": 14462,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2336,7 +2336,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772259307606,
+      "updatedAtMs": 1772262901989,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2355,14 +2355,14 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772259290988,
+        "lastRunAtMs": 1772262891036,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16618,
+        "lastDurationMs": 10953,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772262890988
+        "nextRunAtMs": 1772266491036
       }
     },
     {
@@ -2447,64 +2447,6 @@
       "state": {}
     },
     {
-      "id": "550392b2-159e-4f3f-9b2e-1c4f0b882061",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "✅ Git-sync v2 post-check (T+45m)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772258998053,
-      "updatedAtMs": 1772258998053,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T06:54:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 600,
-        "message": "Post-check Git-sync v2 (stabilization).\n\nDO NOT change any cron jobs.\n\nChecks:\n1) cron(action=list): confirm enabled statuses:\n - 002cd768 (Lobster REAL) must be enabled=true\n - ce006db5, db2dc5f6, b0c35166 must be enabled=false\n2) Confirm 002cd768 lastStatus=ok and lastRunAtMs within last 70 minutes.\n3) Compute deltas since startTs from /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json for sources {git-sync-lobster,lobster-git-sync}:\n - Δcritical (severity==critical)\n - Δtransport (message_transport_failed)\n - Δrollback (type contains rollback)\n4) stable=true only if:\n - 002cd768 ok recently\n - legacy all disabled\n - Δcritical=0 Δtransport=0 Δrollback=0\n\nSend DM to Margulan with explicit line:\nGIT_SYNC_V2_FULLY_MIGRATED=true|false\nand the numbers.\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772261640000
-      }
-    },
-    {
-      "id": "7f863100-d4fa-4899-8fbc-a46680126f9d",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🦞 Mekhanik cutover v3 sanity-check (T+1h, strict elapsed)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772259087939,
-      "updatedAtMs": 1772259087939,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-02-28T07:06:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "model": "openai/gpt-4o-mini",
-        "thinking": "low",
-        "timeoutSeconds": 420,
-        "message": "T+1h sanity-check for Mekhanik cutover v3 (strict elapsed + lobster scope).\n\nDO NOT change any cron jobs.\n\n1) Read baseline: /home/openclaw/.openclaw/.runtime/mekhanik-cutover-v3-baseline.json\n- startTs\n- Compute elapsedSeconds = now_utc - startTs\n- If elapsedSeconds < 3600:\n  send DM \"invalid_window\" + elapsedSeconds and STOP (no state changes).\n\n2) Compute deltas since startTs for source in {mekhanik-lobster,lobster-mekhanik}:\n- Δcritical: count severity==\"critical\"\n- Δtransport: count type==\"message_transport_failed\"\n- Δrollback: count type contains \"rollback\"\n(Note: warn/info must NOT be counted as critical.)\n\n3) Guards: read last metrics line from ~/.openclaw/.runtime/mekhanik-lobster-metrics.jsonl and report:\nstate_write_failed / restart_loop_blocked / circuit_breaker_triggered.\n\nSend DM to Margulan with:\n- elapsedSeconds\n- Δcritical/Δtransport/Δrollback\n- guards\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<text>\")"
-      },
-      "delivery": {
-        "mode": "none"
-      },
-      "state": {
-        "nextRunAtMs": 1772262360000
-      }
-    },
-    {
       "id": "915d19e4-e036-4a80-a604-644180af594a",
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
@@ -2531,6 +2473,64 @@
       },
       "state": {
         "nextRunAtMs": 1772265960000
+      }
+    },
+    {
+      "id": "47eb57b2-b6bb-4712-8744-c4940e599643",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🧾 CHEKIST GATE REPORT (Spec v1) — daily 09:35 Алматы",
+      "enabled": true,
+      "createdAtMs": 1772260454612,
+      "updatedAtMs": 1772260454612,
+      "schedule": {
+        "kind": "cron",
+        "expr": "35 9 * * *",
+        "tz": "Asia/Almaty"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 420,
+        "message": "CHEKIST GATE REPORT (Almaty UTC+6)\n\nPolicy fixed:\n- CHEKIST_GATE=NO-GO (fallback 89db97f7 must remain enabled until clean window passes)\n\nRun deterministic aggregator Spec v1:\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/scripts/chekist_aggregator_v1.py\",\"--hours\",\"24\"], commandTimeoutMs=120000)\n\nParse JSON from stdout and send report in the exact format:\nCHEKIST GATE REPORT (Almaty UTC+6)\nWindow: <start> -> <end>\nAggregation: <VALID_AGGREGATION|INVALID_AGGREGATION>, malformed_json=<N>, dedup=<N>\nCritical: total=<N>, by_scope=<...>, by_type=<...>\nSafety: transport_failed=<0|N>, rollback=<0|N>\nDecision: NO-GO keep fallback 24h | Reason: policy hold\n\nSafety triggers:\n- if any message_transport_failed (critical) or rollback event in window => NO-GO + extend hold 24h\n\nTransport:\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772339700000
+      }
+    },
+    {
+      "id": "ed4e2c08-c900-4f6d-a769-accbc9cc2403",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🧾 CHEKIST GATE REPORT (Spec v1) — checkpoint T+24h",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772260469547,
+      "updatedAtMs": 1772260469547,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-01T06:35:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "CHEKIST 24h checkpoint (Spec v1).\n\nRun:\nexec(command=[\"python3\",\"/home/openclaw/.openclaw/workspace/scripts/chekist_aggregator_v1.py\",\"--hours\",\"24\"], commandTimeoutMs=120000)\n\nDecision rule (still conservative):\n- Always NO-GO unless all criteria for disabling fallback are explicitly met (2 night ok + Δ=0 + safety ok).\n- Fallback 89db97f7 must stay enabled.\n\nSend report in Spec format + include: \"Decision: NO-GO keep fallback 24h\".\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772346900000
       }
     }
   ]
