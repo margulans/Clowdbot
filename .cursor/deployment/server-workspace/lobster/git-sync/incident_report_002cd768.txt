@@ -1,0 +1,5 @@
+Incident Report for Lobster Git Sync
+Date: February 28, 2026
+Command Executed: python3 /home/openclaw/.openclaw/workspace/lobster/git-sync/runner_real.py
+Exit Code: 2
+Description: The command encountered an error during execution. Immediate investigation required.
