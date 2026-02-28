@@ -110,9 +110,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:main",
       "name": "Auto-commit: Git sync",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771566031996,
-      "updatedAtMs": 1772251238482,
+      "updatedAtMs": 1772258956733,
       "schedule": {
         "kind": "cron",
         "expr": "0 */4 * * *",
@@ -132,7 +132,6 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772262073831,
         "lastRunAtMs": 1772247678889,
         "lastStatus": "ok",
         "lastDurationMs": 17125,
@@ -147,9 +146,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:main",
       "name": "🚨 BACKUP: Git sync (Gemini)",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771644988177,
-      "updatedAtMs": 1772249437321,
+      "updatedAtMs": 1772258980083,
       "schedule": {
         "kind": "cron",
         "expr": "30 */4 * * *",
@@ -168,7 +167,6 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772263800000,
         "lastRunAtMs": 1772249401902,
         "lastStatus": "ok",
         "lastDurationMs": 35419,
@@ -1274,9 +1272,9 @@
       "agentId": "main",
       "sessionKey": "agent:main:telegram:direct:685668909",
       "name": "Auto-push: Git sync (stage 2)",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1771978047879,
-      "updatedAtMs": 1772248742375,
+      "updatedAtMs": 1772258970532,
       "schedule": {
         "kind": "cron",
         "expr": "15 */4 * * *",
@@ -1296,7 +1294,6 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772263135197,
         "lastRunAtMs": 1772248735261,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
@@ -1977,7 +1974,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772257157756,
+      "updatedAtMs": 1772258952428,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -1996,11 +1993,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772258946202,
-        "lastRunAtMs": 1772257146202,
+        "nextRunAtMs": 1772260746240,
+        "lastRunAtMs": 1772258946240,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 11554,
+        "lastDurationMs": 6188,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2451,6 +2448,35 @@
       },
       "state": {
         "nextRunAtMs": 1772265600000
+      }
+    },
+    {
+      "id": "550392b2-159e-4f3f-9b2e-1c4f0b882061",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "✅ Git-sync v2 post-check (T+45m)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772258998053,
+      "updatedAtMs": 1772258998053,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-02-28T06:54:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "Post-check Git-sync v2 (stabilization).\n\nDO NOT change any cron jobs.\n\nChecks:\n1) cron(action=list): confirm enabled statuses:\n - 002cd768 (Lobster REAL) must be enabled=true\n - ce006db5, db2dc5f6, b0c35166 must be enabled=false\n2) Confirm 002cd768 lastStatus=ok and lastRunAtMs within last 70 minutes.\n3) Compute deltas since startTs from /home/openclaw/.openclaw/.runtime/git-sync-cutover-v2-baseline.json for sources {git-sync-lobster,lobster-git-sync}:\n - Δcritical (severity==critical)\n - Δtransport (message_transport_failed)\n - Δrollback (type contains rollback)\n4) stable=true only if:\n - 002cd768 ok recently\n - legacy all disabled\n - Δcritical=0 Δtransport=0 Δrollback=0\n\nSend DM to Margulan with explicit line:\nGIT_SYNC_V2_FULLY_MIGRATED=true|false\nand the numbers.\n\nmessage(action=send, channel=telegram, to=685668909, message=\"<report>\")"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772261640000
       }
     }
   ]
