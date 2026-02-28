@@ -1935,7 +1935,8 @@
         "lastDurationMs": 15623,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1772263228179
       }
     },
     {
@@ -2531,6 +2532,64 @@
       },
       "state": {
         "nextRunAtMs": 1772346900000
+      }
+    },
+    {
+      "id": "7666923f-8572-4009-bfd9-cf5ab6837016",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Участковый lobster-gate checkpoint T+24h (09:29 Алматы)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772263215425,
+      "updatedAtMs": 1772263215425,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-01T04:29:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "Uchastkovy lobster-only gate checkpoint T+24h.\n\nPRECONDITION (single source of truth):\n- Read baseline JSON: /home/openclaw/.openclaw/.runtime/uchastkovy-lobster-gate-baseline.json\n- startTs MUST equal \"2026-02-28T07:09:46Z\". If not, send DM \"BASELINE_MISMATCH\" + found value and STOP (no cron changes).\n\nCompute lobster-scoped deltas since startTs (inclusive) from /home/openclaw/.openclaw/workspace/data/incidents.jsonl:\n- Scope filter: source in {\"uchastkovy-lobster\",\"lobster-uchastkovy\"}\n- Δcritical: count severity==\"critical\" where type != \"cron_error\" (do NOT mix legacy cron_error noise)\n- Δtransport: count type==\"message_transport_failed\"\n- Δrollback: count type contains \"rollback\"\n\nDecision:\nA) If Δcritical==0 AND Δtransport==0 AND Δrollback==0:\n   - Disable ONLY legacy night + fallback night:\n     cron(action=update, jobId=\"bc20e704-af13-445d-af52-eaa3ac157d4b\", patch={\"enabled\":false})\n     cron(action=update, jobId=\"8e8e7e2c-8616-43e3-a7e0-022a6f4c204f\", patch={\"enabled\":false})\n   - Do NOT touch backup day b9da6746.\n   - Report status FULLY_MIGRATED remains pending T+48.\nB) Else (any Δ>0): STOP-LOSS\n   - Disable Lobster REAL job 8b4e2fb6-0044-425a-ac2d-935fcd2de699 (enabled=false)\n   - Re-enable legacy day job 305e53a4-049c-4d2e-b248-0cdbea259d3f (enabled=true)\n   - Keep legacy night/fallback enabled (no changes)\n   - Do NOT touch backup day b9da6746.\n\nSend one DM report to Margulan:\nUCHASTKOVY_GATE_T24: PASS|STOP_LOSS\nstartTs=<...> now=<...>\nelapsedSeconds=<...>\nΔcritical=<..> Δtransport=<..> Δrollback=<..>\nchanges: <what was toggled>"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772339340000
+      }
+    },
+    {
+      "id": "42b46cdd-d2a1-4557-a1b6-68ee2efaa7f3",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:direct:685668909",
+      "name": "🦞 Участковый lobster-gate checkpoint T+48h (09:29 Алматы)",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1772263223699,
+      "updatedAtMs": 1772263223699,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-03-02T04:29:00.000Z"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "model": "openai/gpt-4o-mini",
+        "thinking": "low",
+        "timeoutSeconds": 600,
+        "message": "Uchastkovy lobster-only gate checkpoint T+48h (final decision).\n\nSingle source of truth:\n- Read /home/openclaw/.openclaw/.runtime/uchastkovy-lobster-gate-baseline.json\n- startTs MUST equal \"2026-02-28T07:09:46Z\" else DM \"BASELINE_MISMATCH\" and STOP.\n\nCompute lobster-scoped deltas since startTs (inclusive) from incidents.jsonl:\n- source in {uchastkovy-lobster,lobster-uchastkovy}\n- Δcritical: severity==critical AND type!=cron_error\n- Δtransport: type==message_transport_failed\n- Δrollback: type contains rollback\n\nCheck job states via cron(action=list):\n- Lobster REAL: 8b4e2fb6 enabled?\n- Legacy night: bc20e704 enabled?\n- Fallback night: 8e8e7e2c enabled?\n(Do NOT touch backup day b9da6746.)\n\nDecision:\n- FULLY_MIGRATED if Δcritical==0 AND Δtransport==0 AND Δrollback==0 AND bc20e704 enabled==false AND 8e8e7e2c enabled==false AND 8b4e2fb6 enabled==true.\n- Otherwise PARTIAL with one-line blockers.\n\nSend one DM report:\nUCHASTKOVY_GATE_T48: FULLY_MIGRATED|PARTIAL\nstartTs=<...> now=<...>\nelapsedSeconds=<...>\nΔcritical=<..> Δtransport=<..> Δrollback=<..>\njob_enabled: lobster_real=<..> legacy_night=<..> fallback_night=<..>\nblockers: <...>"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1772425740000
       }
     }
   ]
