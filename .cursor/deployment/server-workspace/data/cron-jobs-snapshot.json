@@ -1998,7 +1998,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772392176985,
+      "updatedAtMs": 1772395778885,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2017,11 +2017,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772393962765,
-        "lastRunAtMs": 1772392162765,
+        "nextRunAtMs": 1772397562862,
+        "lastRunAtMs": 1772395762862,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 14220,
+        "lastDurationMs": 16023,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2106,7 +2106,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772392302122,
+      "updatedAtMs": 1772395913229,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2125,11 +2125,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772394086104,
-        "lastRunAtMs": 1772392286104,
+        "nextRunAtMs": 1772397686228,
+        "lastRunAtMs": 1772395886228,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16018,
+        "lastDurationMs": 27001,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2142,7 +2142,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772391922255,
+      "updatedAtMs": 1772395513156,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2161,11 +2161,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772393694291,
-        "lastRunAtMs": 1772391894291,
+        "nextRunAtMs": 1772397294394,
+        "lastRunAtMs": 1772395494394,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27964,
+        "lastDurationMs": 18762,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2259,7 +2259,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772392184522,
+      "updatedAtMs": 1772395786214,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2278,11 +2278,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772395776985,
-        "lastRunAtMs": 1772392176985,
+        "nextRunAtMs": 1772399378980,
+        "lastRunAtMs": 1772395778980,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 7537,
+        "lastDurationMs": 7234,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2295,7 +2295,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772389299355,
+      "updatedAtMs": 1772392900670,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2314,11 +2314,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772392883162,
-        "lastRunAtMs": 1772389283162,
+        "nextRunAtMs": 1772396483225,
+        "lastRunAtMs": 1772392883225,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16193,
+        "lastDurationMs": 17445,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2331,7 +2331,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772388947161,
+      "updatedAtMs": 1772392535409,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2350,15 +2350,15 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772388923577,
+        "lastRunAtMs": 1772392523625,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23584,
+        "lastDurationMs": 11784,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772392523577,
-        "runningAtMs": 1772392523622
+        "nextRunAtMs": 1772396123625,
+        "runningAtMs": 1772396123676
       }
     },
     {
