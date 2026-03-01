@@ -1998,7 +1998,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772388566076,
+      "updatedAtMs": 1772392176985,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2017,11 +2017,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772390349552,
-        "lastRunAtMs": 1772388549552,
+        "nextRunAtMs": 1772393962765,
+        "lastRunAtMs": 1772392162765,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16524,
+        "lastDurationMs": 14220,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2034,7 +2034,7 @@
       "name": "🦞 Lobster: Git sync (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772093131200,
-      "updatedAtMs": 1772377624130,
+      "updatedAtMs": 1772392162345,
       "schedule": {
         "kind": "cron",
         "expr": "5 */4 * * *",
@@ -2053,14 +2053,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772391900000,
-        "lastRunAtMs": 1772377530575,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 93555,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": false
+        "nextRunAtMs": 1772406300000,
+        "lastRunAtMs": 1772391922334,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 240011,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -2106,7 +2106,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772388713945,
+      "updatedAtMs": 1772392302122,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2125,11 +2125,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772390485971,
-        "lastRunAtMs": 1772388685971,
+        "nextRunAtMs": 1772394086104,
+        "lastRunAtMs": 1772392286104,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27974,
+        "lastDurationMs": 16018,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2142,7 +2142,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772388310115,
+      "updatedAtMs": 1772391922255,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2161,11 +2161,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772390094203,
-        "lastRunAtMs": 1772388294203,
+        "nextRunAtMs": 1772393694291,
+        "lastRunAtMs": 1772391894291,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15912,
+        "lastDurationMs": 27964,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2259,7 +2259,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772388450239,
+      "updatedAtMs": 1772392184522,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2278,11 +2278,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772392024371,
-        "lastRunAtMs": 1772388424371,
+        "nextRunAtMs": 1772395776985,
+        "lastRunAtMs": 1772392176985,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 25868,
+        "lastDurationMs": 7537,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2295,7 +2295,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772385708036,
+      "updatedAtMs": 1772389299355,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2314,11 +2314,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772389283087,
-        "lastRunAtMs": 1772385683087,
+        "nextRunAtMs": 1772392883162,
+        "lastRunAtMs": 1772389283162,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 24949,
+        "lastDurationMs": 16193,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2331,7 +2331,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772385334279,
+      "updatedAtMs": 1772388947161,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2350,15 +2350,15 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772385323531,
+        "lastRunAtMs": 1772388923577,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 10748,
+        "lastDurationMs": 23584,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772388923531,
-        "runningAtMs": 1772388923573
+        "nextRunAtMs": 1772392523577,
+        "runningAtMs": 1772392523622
       }
     },
     {
