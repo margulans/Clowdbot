@@ -76,7 +76,7 @@
       "name": "🔧 Механик",
       "enabled": true,
       "createdAtMs": 1771735699824,
-      "updatedAtMs": 1772358731264,
+      "updatedAtMs": 1772365878122,
       "schedule": {
         "kind": "cron",
         "expr": "50 6-22/2 * * *",
@@ -95,10 +95,10 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772365800000,
-        "lastRunAtMs": 1772358600058,
+        "nextRunAtMs": 1772373000000,
+        "lastRunAtMs": 1772365800050,
         "lastStatus": "ok",
-        "lastDurationMs": 131206,
+        "lastDurationMs": 78072,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1050,7 +1050,7 @@
       "name": "🚨 BACKUP: Участковый",
       "enabled": true,
       "createdAtMs": 1771831793053,
-      "updatedAtMs": 1772363620242,
+      "updatedAtMs": 1772367146306,
       "schedule": {
         "kind": "cron",
         "expr": "12 6-21 * * *",
@@ -1070,10 +1070,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772367120000,
-        "lastRunAtMs": 1772363588752,
+        "nextRunAtMs": 1772370720000,
+        "lastRunAtMs": 1772367120043,
         "lastStatus": "ok",
-        "lastDurationMs": 31490,
+        "lastDurationMs": 26263,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDelivered": false,
@@ -1085,7 +1085,7 @@
       "name": "🚨 BACKUP: Механик",
       "enabled": true,
       "createdAtMs": 1771831803143,
-      "updatedAtMs": 1772358914472,
+      "updatedAtMs": 1772366198392,
       "schedule": {
         "kind": "cron",
         "expr": "55 6-22/2 * * *",
@@ -1105,10 +1105,10 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1772366100000,
-        "lastRunAtMs": 1772358900044,
+        "nextRunAtMs": 1772373300000,
+        "lastRunAtMs": 1772366100063,
         "lastStatus": "ok",
-        "lastDurationMs": 14428,
+        "lastDurationMs": 98329,
         "consecutiveErrors": 0,
         "lastRunStatus": "ok",
         "lastDeliveryStatus": "not-delivered",
@@ -1985,7 +1985,7 @@
       "name": "🦞 Lobster: Механик (plan-only, 24h soak)",
       "enabled": true,
       "createdAtMs": 1772091420100,
-      "updatedAtMs": 1772363361387,
+      "updatedAtMs": 1772366975243,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2004,11 +2004,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772365148845,
-        "lastRunAtMs": 1772363348845,
+        "nextRunAtMs": 1772368748949,
+        "lastRunAtMs": 1772366948949,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 12542,
+        "lastDurationMs": 26294,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2093,7 +2093,7 @@
       "name": "🦞 Lobster: Wendy (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095282193,
-      "updatedAtMs": 1772363588268,
+      "updatedAtMs": 1772367099335,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2112,11 +2112,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772365285288,
-        "lastRunAtMs": 1772363485288,
+        "nextRunAtMs": 1772368885344,
+        "lastRunAtMs": 1772367085344,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 102980,
+        "lastDurationMs": 13991,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -2129,7 +2129,7 @@
       "name": "🦞 Lobster: Marta (plan-only soak)",
       "enabled": true,
       "createdAtMs": 1772095397594,
-      "updatedAtMs": 1772363110325,
+      "updatedAtMs": 1772366719136,
       "schedule": {
         "kind": "every",
         "everyMs": 1800000,
@@ -2148,43 +2148,14 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772364893530,
-        "lastRunAtMs": 1772363093530,
+        "nextRunAtMs": 1772368493618,
+        "lastRunAtMs": 1772366693618,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 16795,
+        "lastDurationMs": 25518,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
-      }
-    },
-    {
-      "id": "63dda3ef-0060-4d8a-9fec-9887c979429a",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:685668909",
-      "name": "🔔 Reminder: check 72h Mem0 soak (metrics)",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1772106136716,
-      "updatedAtMs": 1772106136716,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-03-01T11:30:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "thinking": "low",
-        "message": "Это напоминание (запланировано заранее): проверь 72h soak по памяти (Mem0/Qdrant).\n\nСобери и отправь Маргулану краткую сводку в одном сообщении (Telegram DM), строго с полями:\n- status: OK/DEGRADED\n- capture_failed\n- recall_failed\n- qdrant_search_400\n- invalidAllowFrom\n- p95_latency_ms\n- итог: OK/DEGRADED\n\nКак снять метрики:\n1) errors15m: `journalctl --user -u openclaw-gateway --since '15 minutes ago'` и посчитать:\n   - capture_failed = count('capture failed')\n   - recall_failed = count('recall failed')\n   - qdrant_search_400 = count('/collections/openclaw-mem0/points/search' AND ' 400 ')\n   - invalidAllowFrom = count('Invalid allowFrom entry')\n2) p95_latency_ms: если есть записи latency в runtime-файле soak (например `~/.openclaw/.runtime/mem0-soak.jsonl`) — посчитай p95 за последние 60 минут; если данных нет — поставь null и кратко укажи причину.\n3) status=OK только если errors15m все 0 и soak-метрики без регрессий; иначе DEGRADED.\n\nПосле вычисления отправь message(action=send, channel=telegram, to=685668909, message=\"...\") и заверши."
-      },
-      "delivery": {
-        "mode": "announce",
-        "to": "685668909",
-        "channel": "telegram"
-      },
-      "state": {
-        "nextRunAtMs": 1772364600000
       }
     },
     {
@@ -2275,7 +2246,7 @@
       "name": "🦞 Lobster: Участковый (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772186656870,
-      "updatedAtMs": 1772363232357,
+      "updatedAtMs": 1772366833289,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2294,11 +2265,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772366822844,
-        "lastRunAtMs": 1772363222844,
+        "nextRunAtMs": 1772370422896,
+        "lastRunAtMs": 1772366822896,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9513,
+        "lastDurationMs": 10393,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2311,7 +2282,7 @@
       "name": "🦞 Lobster: Чекист (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772193862021,
-      "updatedAtMs": 1772360500137,
+      "updatedAtMs": 1772364105743,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2330,11 +2301,11 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1772364082722,
-        "lastRunAtMs": 1772360482722,
+        "nextRunAtMs": 1772367682782,
+        "lastRunAtMs": 1772364082782,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17415,
+        "lastDurationMs": 22961,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -2347,7 +2318,7 @@
       "name": "🦞 Lobster: Git sync (REAL controlled cutover)",
       "enabled": true,
       "createdAtMs": 1772201614692,
-      "updatedAtMs": 1772360132625,
+      "updatedAtMs": 1772363736060,
       "schedule": {
         "kind": "every",
         "everyMs": 3600000,
@@ -2366,15 +2337,15 @@
         "mode": "none"
       },
       "state": {
-        "lastRunAtMs": 1772360123150,
+        "lastRunAtMs": 1772363723214,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 9475,
+        "lastDurationMs": 12846,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772363723150,
-        "runningAtMs": 1772363723209
+        "nextRunAtMs": 1772367323214,
+        "runningAtMs": 1772367323283
       }
     },
     {
