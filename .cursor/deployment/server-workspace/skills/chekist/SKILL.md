@@ -17,6 +17,53 @@ description: Чекист — аудитор системы. Днём кажды
 
 ## Reliability Hotfix (Outbox + Missed-alert guard) — Spec v1
 
+## Protocol hard-fail (prevent) + fast transcript-guard (detect)
+
+Цель: убрать корень ошибок (tool misuse + wrong path) **и** оставить быстрый детектор, если такое всё же произошло.
+
+### Prevent (обязательные инварианты)
+
+1) Cron диагностика:
+- **ТОЛЬКО** через tool: `cron(action=list)`.
+- 🚫 Запрещено: `exec("cron ...")`, `openclaw cron ...`, `crontab -l` как замена.
+
+2) Запись инцидентов:
+- **ТОЛЬКО** в файл: `/home/openclaw/.openclaw/workspace/data/incidents.jsonl`
+- 🚫 Запрещено: `~/data/incidents.jsonl`, `/home/openclaw/data/...`, любые пути вне `/home/openclaw/.openclaw/workspace/`.
+- Для записи в JSONL используй `exec()` (echo >>) или `write()` **только по разрешённому пути**. (Предпочтительно `exec` + append.)
+
+3) Любое отклонение от (1) или (2) → это **chekist_protocol_violation (severity=critical)** и run должен завершиться как error.
+
+Формат инцидента:
+```json
+{
+  "ts":"<ISO8601>",
+  "type":"chekist_protocol_violation",
+  "source":"chekist",
+  "severity":"critical",
+  "jobId":"<current chekist job id>",
+  "msg":"protocol violation: <one-line>",
+  "detail": {"hint": "use cron(action=list); write only to /home/openclaw/.openclaw/workspace/data/incidents.jsonl"},
+  "resolved": false
+}
+```
+
+### Detect (fast guard, post-factum)
+
+Если в ходе выполнения ты видишь **любой** из симптомов ниже — немедленно:
+1) запиши `chekist_protocol_violation` (critical) в incidents.jsonl
+2) положи алерт в outbox и попробуй доставить (retry policy)
+3) завершай run ошибкой (raise)
+
+Симптомы:
+- `cron: command not found`
+- `Path escapes workspace root`
+- `Write: \'to ~/data/incidents.jsonl\' failed`
+
+Это нужно, чтобы остался audit-след даже если ошибка произошла до основной логики.
+
+---
+
 Цель: **гарантировать доставку critical-алертов** и уметь детектить ситуацию "critical есть, уведомления нет".
 
 ### Outbox (персистентный реестр отправок)
