@@ -171,6 +171,7 @@ def aggregate(start: datetime, end: datetime) -> dict:
 
     transport_failed = 0
     rollback = 0
+    critical_without_notification = 0
 
     for r in deduped:
         typ = str(r.get("type") or "unknown_type")
@@ -183,6 +184,8 @@ def aggregate(start: datetime, end: datetime) -> dict:
 
         if typ == "message_transport_failed":
             transport_failed += 1
+        if typ == "critical_without_notification":
+            critical_without_notification += 1
         if "rollback" in typ:
             rollback += 1
 
@@ -208,6 +211,7 @@ def aggregate(start: datetime, end: datetime) -> dict:
         },
         "safety": {
             "transport_failed": transport_failed,
+            "critical_without_notification": critical_without_notification,
             "rollback": rollback,
         },
         "invariants": {
