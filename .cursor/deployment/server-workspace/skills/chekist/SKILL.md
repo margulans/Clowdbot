@@ -34,7 +34,7 @@ description: Чекист — аудитор системы. Днём кажды
 
 3) Любое отклонение от (1) или (2) → это **chekist_protocol_violation (severity=critical)** и run должен завершиться как error.
 
-Формат инцидента:
+Формат инцидента (**строго, для машинной валидации**):
 ```json
 {
   "ts":"<ISO8601>",
@@ -43,10 +43,17 @@ description: Чекист — аудитор системы. Днём кажды
   "severity":"critical",
   "jobId":"<current chekist job id>",
   "msg":"protocol violation: <one-line>",
-  "detail": {"hint": "use cron(action=list); write only to /home/openclaw/.openclaw/workspace/data/incidents.jsonl"},
+  "detail": {
+    "signature": "tool_misuse|path_escape|write_failed_signature",
+    "hint": "use cron(action=list); write only to /home/openclaw/.openclaw/workspace/data/incidents.jsonl"
+  },
   "resolved": false
 }
 ```
+
+Требования:
+- `source` **всегда** ровно `"chekist"` (не `lobster-chekist` и т.п.)
+- `detail.signature` обязателен и должен быть одним из enum выше.
 
 ### Detect (fast guard, post-factum)
 
