@@ -144,3 +144,13 @@ dist/protocol.schema.json
 
 # Lobster incident reports (runtime)
 .cursor/deployment/server-workspace/incident_report_*.txt
+
+# Cursor/OpenClaw runtime artifacts
+.cursor/debug-*.log
+.cursor/deployment/server-workspace/**/alerts/
+.cursor/deployment/server-workspace/**/logs/
+.cursor/deployment/server-workspace/**/*.log
+.cursor/deployment/server-workspace/**/*.lock
+.cursor/deployment/server-workspace/**/tmp/
+.cursor/deployment/server-workspace/**/.cache/
+.cursor/deployment/server-workspace/alerts.json
