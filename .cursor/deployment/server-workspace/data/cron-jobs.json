@@ -2357,7 +2357,8 @@
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "nextRunAtMs": 1772424923903
+        "nextRunAtMs": 1772424923903,
+        "runningAtMs": 1772424923947
       }
     },
     {
