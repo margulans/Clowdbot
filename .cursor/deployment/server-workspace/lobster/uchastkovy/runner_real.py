@@ -25,7 +25,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 INCIDENTS = os.path.expanduser('~/.openclaw/workspace/data/incidents.jsonl')
 HEARTBEAT = os.path.expanduser('~/.openclaw/runtime/monitor-heartbeat.jsonl')
@@ -45,6 +45,107 @@ def append_jsonl(path: str, rec: dict) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path,'a',encoding='utf-8') as f:
         f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+
+
+def parse_iso(ts: str):
+    try:
+        return datetime.fromisoformat(ts.replace('Z', '+00:00'))
+    except Exception:
+        return None
+
+
+def auto_close_stale_incidents(*, now_ts: str, ttl_hours: int = 24) -> int:
+    """Auto-close stale incidents whose jobId is not present in live cron jobs.
+
+    Stale definition:
+    - record has jobId
+    - resolved is not True
+    - jobId not in ~/.openclaw/cron/jobs.json
+
+    Auto-close after TTL (default 24h) by appending:
+    - a 'resolved' record with ref_id
+    - an info record type=auto_closed_stale_jobid_ttl
+
+    Returns number of auto-closures performed.
+    """
+    now_dt = parse_iso(now_ts) or datetime.now(timezone.utc)
+    cutoff = now_dt - timedelta(hours=ttl_hours)
+
+    # Load live job ids
+    live_ids = set()
+    try:
+        with open(os.path.expanduser('~/.openclaw/cron/jobs.json'), 'r', encoding='utf-8') as f:
+            jobs = json.load(f).get('jobs', [])
+        for j in jobs:
+            jid = j.get('id')
+            if isinstance(jid, str):
+                live_ids.add(jid)
+    except Exception:
+        return 0
+
+    # Scan incidents (file is expected to be moderate; keep single pass)
+    stale_candidates = []
+    try:
+        with open(INCIDENTS, 'r', encoding='utf-8') as f:
+            for line in f:
+                line=line.strip()
+                if not line:
+                    continue
+                try:
+                    r=json.loads(line)
+                except Exception:
+                    continue
+
+                if r.get('type') == 'resolved':
+                    continue
+
+                jid = r.get('jobId')
+                if not isinstance(jid, str) or not jid:
+                    continue
+
+                if jid in live_ids:
+                    continue
+
+                if r.get('resolved') is True:
+                    continue
+
+                ts = r.get('ts')
+                if not isinstance(ts, str):
+                    continue
+                t = parse_iso(ts)
+                if not t or t > cutoff:
+                    continue
+
+                # Use best-effort reference id
+                ref = r.get('id') or r.get('ref_id') or f"{r.get('type','unknown')}:{jid}"
+                stale_candidates.append((ts, jid, ref, r.get('type','unknown')))
+    except Exception:
+        return 0
+
+    closed = 0
+    for ts0, jid, ref, typ in stale_candidates:
+        append_jsonl(INCIDENTS, {
+            'ts': now_ts,
+            'type': 'resolved',
+            'source': SOURCE,
+            'severity': 'info',
+            'ref_id': ref,
+            'msg': 'auto-closed stale incident (jobId missing in live cron) after TTL',
+            'detail': {'jobId': jid, 'orig_ts': ts0, 'orig_type': typ, 'ttl_hours': ttl_hours},
+        })
+        append_jsonl(INCIDENTS, {
+            'ts': now_ts,
+            'type': 'auto_closed_stale_jobid_ttl',
+            'source': SOURCE,
+            'severity': 'info',
+            'jobId': jid,
+            'msg': 'auto-closed stale incident by TTL',
+            'detail': {'ref_id': ref, 'orig_ts': ts0, 'orig_type': typ, 'ttl_hours': ttl_hours},
+            'resolved': True,
+        })
+        closed += 1
+
+    return closed
 
 
 def main() -> None:
@@ -124,10 +225,17 @@ def main() -> None:
             'resolved': False,
         })
 
+    # stale cleanup (TTL-based) — keep noise out of gates
+    stale_closed = 0
+    try:
+        stale_closed = auto_close_stale_incidents(now_ts=ts, ttl_hours=24)
+    except Exception:
+        stale_closed = 0
+
     if gw_active and not problems:
         append_jsonl(HEARTBEAT, {'ts': ts,'type':'heartbeat','source':SOURCE,'status':'ok','window':'now'})
 
-    print(json.dumps({'ok': True, 'ts': ts, 'gateway_active': gw_active, 'problems': len(problems)}, ensure_ascii=False))
+    print(json.dumps({'ok': True, 'ts': ts, 'gateway_active': gw_active, 'problems': len(problems), 'stale_closed': stale_closed}, ensure_ascii=False))
 
 
 if __name__=='__main__':
